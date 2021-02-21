@@ -4,7 +4,7 @@ date: 2021-02-21T13:37:18+08:00
 slug: ""
 description: ""
 keywords: ["automation", "powershell", "azure"]
-draft: true
+draft: false
 tags: ["automation", "powershell", "azure"]
 math: false
 toc: false

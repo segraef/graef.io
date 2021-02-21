@@ -4,7 +4,7 @@ date: 2021-02-21T13:37:18+08:00
 slug: ""
 description: ""
 keywords: ["automation", "iac", "powershell", "azure", "devops"]
-draft: true
+draft: false
 tags: ["automation", "iac", "powershell", "azure", "devops"]
 math: false
 toc: false
