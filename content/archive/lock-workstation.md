@@ -1,5 +1,5 @@
 ---
-title: "Function Lock-Workstation locally or remotely"
+title: "Function Lock-Workstation locally and remotely"
 date: 2021-02-21T13:37:18+08:00
 slug: ""
 description: ""

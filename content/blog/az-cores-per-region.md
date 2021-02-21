@@ -30,4 +30,4 @@ ForEach ($AzureLocation in $AzureLocations) {
 $Result
 ```
 
-![](cores.png)
+![](2021-02-21-14-30-27.png)
