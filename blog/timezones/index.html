@@ -80,7 +80,7 @@
         Write-Verbose &quot; [$($MyInvocation.InvocationName)] :: End Process&quot;
     }
 }
-</code></pre><p>This will give you following output:</p><p><img src=2021-02-21-15-32-21.png alt></p><p>With Set-Timezone you can set timezones remotely. If you need to disable automatic daylight saving time you can add the additional parameter DSTOff.</p><pre><code class=language-powershell>Function Set-Timezones {
+</code></pre><p>This will give you following output:</p><p><img src=../../static/img/2021-02-21-15-32-21.png alt></p><p>With Set-Timezone you can set timezones remotely. If you need to disable automatic daylight saving time you can add the additional parameter DSTOff.</p><pre><code class=language-powershell>Function Set-Timezones {
     &lt;#
     .SYNOPSIS
     Sets and retries timezones on local or remote computers via WinRM and
@@ -192,7 +192,7 @@
         Write-Verbose &quot; [$($MyInvocation.InvocationName)] :: End Process&quot;
     }
 }
-</code></pre><p>This will give you following output:</p><p><img src=2021-02-21-15-30-27.png alt></p><p>To get a full list of all timezone IDs type “tzutil /l” and you will get following list:</p><pre><code class=language-powershell>UTC-12:00) International Date Line West
+</code></pre><p>This will give you following output:</p><p><img src=../../static/img/2021-02-21-15-30-27.png alt></p><p>To get a full list of all timezone IDs type “tzutil /l” and you will get following list:</p><pre><code class=language-powershell>UTC-12:00) International Date Line West
 Dateline Standard Time
  
 (UTC-11:00) Coordinated Universal Time-11
