@@ -99,7 +99,7 @@ Function Get-Timezones {
 This will give you following output:
 
 
-![](../../static/img/2021-02-21-15-32-21.png)
+![](img/2021-02-21-15-32-21.png)
 
 
 With Set-Timezone you can set timezones remotely. If you need to disable automatic daylight saving time you can add the additional parameter DSTOff.
@@ -221,7 +221,7 @@ Function Set-Timezones {
 
 This will give you following output:
 
-![](../../static/img/2021-02-21-15-30-27.png)
+![](img/2021-02-21-15-30-27.png)
 
 
 To get a full list of all timezone IDs type “tzutil /l” and you will get following list:
