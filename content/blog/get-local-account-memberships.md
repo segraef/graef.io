@@ -78,18 +78,18 @@ gc output.xml
 
 A simple output of Get-LocalAccountMemberships looks like this
 
-
+![](img/2021-02-21-20-55-28.png)
 
 
 So, while exporting your output with the help of Export-Clixml and showing the output of your XML file again in the console output as a readable xml structure.
 
 
-
+![](img/2021-02-21-20-56-04.png)
 
 Once a script was being run on a VM the common output of the Custom Script Extensions looks like this:
 
 
-
+![](img/2021-02-21-20-56-27.png)
 
 You can grab this output of your CustomScriptExtension on your VM with the help of that:
 
@@ -105,7 +105,7 @@ The trick here is to get the output message from your CustomScriptExtension with
 Once digested and imported with Import-Clixml you get the same output as before.
 
 
-
+![](img/2021-02-21-20-56-53.png)
 
 
 So why are we doing it this way?
