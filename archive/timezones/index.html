@@ -1,62 +1,136 @@
-<!doctype html><html lang=en-us><head><title>Get and Set Timezones via PowerShell remotely | graef.io</title><meta charset=utf-8><meta name=language content="en"><meta name=description content><meta name=keywords content="powershell ,wmi ,date and time ,daylight saving ,get-timezone ,get-wmiobject ,invoke-command ,set-timezone ,timezone ,tzutil ,win32_timezone ,WinRM ,wmi"><meta name=viewport content="width=device-width,initial-scale=1"><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=twitter:card content="summary"><meta name=twitter:title content="Get and Set Timezones via PowerShell remotely"><meta name=twitter:description content><meta name=twitter:site content="https://twitter.com/segraef"><meta name=twitter:creator content="https://twitter.com/segraef"><link rel="shortcut icon" type=image/png href=/favicon.ico><link type=text/css rel=stylesheet href=/graef.io/css/post.min.a4712d0376acf8c0491ef2b98baf2f9287629f027a654e15b0ca42433957f47d.css integrity="sha256-pHEtA3as+MBJHvK5i68vkodinwJ6ZU4VsMpCQzlX9H0="><link type=text/css rel=stylesheet href=/graef.io/css/custom.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css integrity="sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","url":"https:\/\/segraef.github.io\/graef.io\/archive\/timezones\/","name":"Get and Set Timezones via PowerShell remotely","author":{"@type":"Person","name":""},"description":""}</script></head><body><div class=burger__container><div class=burger aria-controls=navigation aria-label=Menu><div class="burger__meat burger__meat--1"></div><div class="burger__meat burger__meat--2"></div><div class="burger__meat burger__meat--3"></div></div></div><nav class=nav id=navigation><ul class=nav__list><li><a href=/graef.io/>about</a></li><li><a class=active href=/graef.io/archive>archive</a></li><li><a href=/graef.io/blog>blog</a></li></ul></nav><main><div class=flex-wrapper><div class=post__container><div class=post><header class=post__header><h1 id=post__title>Get and Set Timezones via PowerShell remotely</h1><time datetime="2017-06-28 15:27:45 +0800 +0800" class=post__date>Jun 28 2017</time></header><article class=post__content><p>As published in my Technet Gallery Script Center <a href=https://gallery.technet.microsoft.com/scriptcenter/Get-Timezones-PowerShell-24781869 target=_blank rel="noreferrer noopener">here</a>
-, you can get current timezones remotely via PowerShell with Get-Timezones. Get-Timezones is using WMI to communicate with your servers.</p><pre><code class=language-powershell>Function Get-Timezones {
-    &lt;#
-    .SYNOPSIS
-    Retrieves timezones of local or remote computers via WMI.
-    
-    .DESCRIPTION
-    Retrieves timezones of local or remote computers via WMI.
-    
-    .PARAMETER ComputerName
-    A single Computer or an array of computer names. The default is localhost ($env:COMPUTERNAME).
-    
-    .PARAMETER Credentials
-    Commit Credentials for a different domain.
-    
-    .PARAMETER Verbose
-    Run in Verbose Mode.
-    
-    .EXAMPLE
-    PS C:\&amp;amp;amp;amp;gt; Get-Timezones -ComputerName (gc 'C:\computers.txt') -Credentials Get-Credential
-    
-    ComputerName TimezoneName DaylightSaving TimezoneCaption 
-    ------------ ------------ -------------- --------------- 
-    SERVER01 W. Europe Standard Time yes (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna
-    SERVER02 W. Europe Standard Time yes (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna
-    
-    .NOTES
-    Author: Sebastian Gräf
-    Website: https://graef.io
-    Email: ps@graef.io
-    Date: June 27, 2017
-    PSVer: 3.0/4.0/5.0
-    #&gt;
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta http-equiv=content-language content="en">
+<meta name=color-scheme content="light dark">
+<meta http-equiv=content-security-policy content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self'; img-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; prefetch-src 'self'; connect-src 'self' https://www.google-analytics.com;">
+<meta name=description content="As published in my Technet Gallery Script Center here, you can get current timezones remotely via PowerShell with Get-Timezones. Get-Timezones is using WMI to communicate with your servers.
+Function Get-Timezones { <# .SYNOPSISRetrieves timezones of local or remote computers via WMI. .DESCRIPTIONRetrieves timezones of local or remote computers via WMI. .PARAMETERComputerName A single Computer or an array of computer names. The default is localhost ($env:COMPUTERNAME). .PARAMETERCredentials Commit Credentials for a different domain.">
+<meta name=keywords content="powershell,wmi,date and time,daylight saving,get-timezone,get-wmiobject,invoke-command,set-timezone,timezone,tzutil,win32_timezone,WinRM,wmi">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Get and Set Timezones via PowerShell remotely">
+<meta name=twitter:description content="As published in my Technet Gallery Script Center here, you can get current timezones remotely via PowerShell with Get-Timezones. Get-Timezones is using WMI to communicate with your servers.
+Function Get-Timezones { <# .SYNOPSISRetrieves timezones of local or remote computers via WMI. .DESCRIPTIONRetrieves timezones of local or remote computers via WMI. .PARAMETERComputerName A single Computer or an array of computer names. The default is localhost ($env:COMPUTERNAME). .PARAMETERCredentials Commit Credentials for a different domain.">
+<meta property="og:title" content="Get and Set Timezones via PowerShell remotely">
+<meta property="og:description" content="As published in my Technet Gallery Script Center here, you can get current timezones remotely via PowerShell with Get-Timezones. Get-Timezones is using WMI to communicate with your servers.
+Function Get-Timezones { <# .SYNOPSISRetrieves timezones of local or remote computers via WMI. .DESCRIPTIONRetrieves timezones of local or remote computers via WMI. .PARAMETERComputerName A single Computer or an array of computer names. The default is localhost ($env:COMPUTERNAME). .PARAMETERCredentials Commit Credentials for a different domain.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://segraef.github.io/graef.io/archive/timezones/"><meta property="article:section" content="archive">
+<meta property="article:published_time" content="2017-06-28T15:27:45+08:00">
+<meta property="article:modified_time" content="2017-06-28T15:27:45+08:00">
+<title>
+Get and Set Timezones via PowerShell remotely · graef.io
+</title>
+<link rel=canonical href=https://segraef.github.io/graef.io/archive/timezones/>
+<link rel=preload href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as=font type=font/woff2 crossorigin>
+<link rel=stylesheet href=/graef.io/css/coder.min.708686f8ab8176e91d44fcbe488a0fe0333b94f405cf18a52383d67ba22f0ccb.css integrity="sha256-cIaG+KuBdukdRPy+SIoP4DM7lPQFzxilI4PWe6IvDMs=" crossorigin=anonymous media=screen>
+<link rel=stylesheet href=/graef.io/css/coder-dark.min.aa883b9ce35a8ff4a2a5008619005175e842bb18a8a9f9cc2bbcf44dab2d91fa.css integrity="sha256-qog7nONaj/SipQCGGQBRdehCuxioqfnMK7z0Tastkfo=" crossorigin=anonymous media=screen>
+<link rel=icon type=image/png href=/graef.io/img/favicon-32x32.png sizes=32x32>
+<link rel=icon type=image/png href=/graef.io/img/favicon-16x16.png sizes=16x16>
+<link rel=apple-touch-icon href=/graef.io/images/apple-touch-icon.png>
+<link rel=apple-touch-icon sizes=180x180 href=/graef.io/images/apple-touch-icon.png>
+<script defer src=https://twemoji.maxcdn.com/v/13.0.2/twemoji.min.js integrity=sha384-wyB/MspSJ/r2bT2kCj44qtsYRYlpzO2oAPhRj5myrWD63dt6qWv4x8AZe7Fl3K3b crossorigin=anonymous></script>
+<meta name=generator content="Hugo 0.86.1">
+</head>
+<body class="preload-transitions colorscheme-auto" onload=twemoji.parse(document.body)>
+<div class=float-container>
+<a id=dark-mode-toggle class=colorscheme-toggle>
+<i class="fa fa-adjust fa-fw" aria-hidden=true></i>
+</a>
+</div>
+<main class=wrapper>
+<nav class=navigation>
+<section class=container>
+<a class=navigation-title href=/graef.io>
+graef.io
+</a>
+<input type=checkbox id=menu-toggle>
+<label class="menu-button float-right" for=menu-toggle>
+<i class="fa fa-bars fa-fw" aria-hidden=true></i>
+</label>
+<ul class=navigation-list>
+<li class=navigation-item>
+<a class=navigation-link href=/graef.io/posts/>Blog</a>
+</li>
+<li class=navigation-item>
+<a class=navigation-link href=https://www.linkedin.com/in/sgraef/>About</a>
+</li>
+<li class=navigation-item>
+<a class=navigation-link href=/graef.io/archive/>Archive</a>
+</li>
+</ul>
+</section>
+</nav>
+<div class=content>
+<section class="container page">
+<article>
+<header>
+<h1 class=title>
+<a class=title-link href=https://segraef.github.io/graef.io/archive/timezones/>
+Get and Set Timezones via PowerShell remotely
+</a>
+</h1>
+</header>
+<p>As published in my Technet Gallery Script Center <a href=https://gallery.technet.microsoft.com/scriptcenter/Get-Timezones-PowerShell-24781869>here</a>, you can get current timezones remotely via PowerShell with Get-Timezones. Get-Timezones is using WMI to communicate with your servers.</p>
+<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=font-weight:700>Function</span> Get-Timezones {
+    <span style=font-style:italic>&lt;#
+</span><span style=font-style:italic>    </span><span style=font-style:italic>.SYNOPSIS</span><span style=font-style:italic>
+</span><span style=font-style:italic>    Retrieves timezones of local or remote computers via WMI.
+</span><span style=font-style:italic>    
+</span><span style=font-style:italic>    </span><span style=font-style:italic>.DESCRIPTION</span><span style=font-style:italic>
+</span><span style=font-style:italic>    Retrieves timezones of local or remote computers via WMI.
+</span><span style=font-style:italic>    
+</span><span style=font-style:italic>    </span><span style=font-style:italic>.PARAMETER</span><span style=font-style:italic> ComputerName
+</span><span style=font-style:italic>    A single Computer or an array of computer names. The default is localhost ($env:COMPUTERNAME).
+</span><span style=font-style:italic>    
+</span><span style=font-style:italic>    </span><span style=font-style:italic>.PARAMETER</span><span style=font-style:italic> Credentials
+</span><span style=font-style:italic>    Commit Credentials for a different domain.
+</span><span style=font-style:italic>    
+</span><span style=font-style:italic>    </span><span style=font-style:italic>.PARAMETER</span><span style=font-style:italic> Verbose
+</span><span style=font-style:italic>    Run in Verbose Mode.
+</span><span style=font-style:italic>    
+</span><span style=font-style:italic>    </span><span style=font-style:italic>.EXAMPLE</span><span style=font-style:italic>
+</span><span style=font-style:italic>    PS C:\&amp;amp;amp;amp;gt; Get-Timezones -ComputerName (gc &#39;C:\computers.txt&#39;) -Credentials Get-Credential
+</span><span style=font-style:italic>    
+</span><span style=font-style:italic>    ComputerName TimezoneName DaylightSaving TimezoneCaption 
+</span><span style=font-style:italic>    ------------ ------------ -------------- --------------- 
+</span><span style=font-style:italic>    SERVER01 W. Europe Standard Time yes (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna
+</span><span style=font-style:italic>    SERVER02 W. Europe Standard Time yes (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna
+</span><span style=font-style:italic>    
+</span><span style=font-style:italic>    </span><span style=font-style:italic>.NOTES</span><span style=font-style:italic>
+</span><span style=font-style:italic>    Author: Sebastian Gräf
+</span><span style=font-style:italic>    Website: https://graef.io
+</span><span style=font-style:italic>    Email: ps@graef.io
+</span><span style=font-style:italic>    Date: June 27, 2017
+</span><span style=font-style:italic>    PSVer: 3.0/4.0/5.0
+</span><span style=font-style:italic>    #&gt;</span>
  
-    [Cmdletbinding()]
-    Param (
-        [Parameter(ValueFromPipelineByPropertyName = $true, ValueFromPipeline = $true)]
+    [<span style=font-weight:700>Cmdletbinding</span>()]
+    <span style=font-weight:700>Param</span> (
+        [<span style=font-weight:700>Parameter</span>(<span style=font-weight:700>ValueFromPipelineByPropertyName</span> = $true, <span style=font-weight:700>ValueFromPipeline</span> = $true)]
         $ComputerName = $Env:COMPUTERNAME,
-        [Parameter(ValueFromPipelineByPropertyName = $true, ValueFromPipeline = $true)]
+        [<span style=font-weight:700>Parameter</span>(<span style=font-weight:700>ValueFromPipelineByPropertyName</span> = $true, <span style=font-weight:700>ValueFromPipeline</span> = $true)]
         [ValidateNotNull()]
         [System.Management.Automation.PSCredential][System.Management.Automation.Credential()]
         $Credentials = [System.Management.Automation.PSCredential]::Empty
     )
  
-    Begin {
-        Write-Verbose &quot; [$($MyInvocation.InvocationName)] :: Start Process&quot;
+    <span style=font-weight:700>Begin</span> {
+        Write-Verbose <span style=font-style:italic>&#34; [</span>$($MyInvocation.InvocationName)<span style=font-style:italic>] :: Start Process&#34;</span>
         $Results = @()
         $ProgressCounter = 0
     }
  
-    Process {
-        foreach ($Computer in $ComputerName) {
+    <span style=font-weight:700>Process</span> {
+        <span style=font-weight:700>foreach</span> ($Computer <span style=font-weight:700>in</span> $ComputerName) {
             $ProgressCounter++
-            Write-Progress -activity &quot;Running on $Computer&quot; -status &quot;Please wait ...&quot; -PercentComplete (($ProgressCounter / $ComputerName.length) * 100)
-            if (Test-Connection $Computer -Count 1 -Quiet) {
-                Write-Verbose &quot; [$($MyInvocation.InvocationName)] :: Processing $Computer&quot;
-                try {
+            Write-Progress -activity <span style=font-style:italic>&#34;Running on $Computer&#34;</span> -status <span style=font-style:italic>&#34;Please wait ...&#34;</span> -PercentComplete (($ProgressCounter / $ComputerName.length) * 100)
+            <span style=font-weight:700>if</span> (Test-Connection $Computer -Count 1 -Quiet) {
+                Write-Verbose <span style=font-style:italic>&#34; [</span>$($MyInvocation.InvocationName)<span style=font-style:italic>] :: Processing $Computer&#34;</span>
+                <span style=font-weight:700>try</span> {
                     $win32_timezone = Get-WmiObject -Class win32_timezone -ComputerName $Computer -ErrorAction Stop -Credential $Credentials
-                    if ($win32_timezone.DaylightBias -eq 0) { $daylightsaving = &quot;no&quot; } else { $daylightsaving = &quot;yes&quot; }
+                    <span style=font-weight:700>if</span> ($win32_timezone.DaylightBias -eq 0) { $daylightsaving = <span style=font-style:italic>&#34;no&#34;</span> } <span style=font-weight:700>else</span> { $daylightsaving = <span style=font-style:italic>&#34;yes&#34;</span> }
                     $obj = New-Object -Type PSCustomObject -Property @{
                         ComputerName    = $Computer
                         TimezoneCaption = $win32_timezone.Caption
@@ -65,111 +139,114 @@
                     }
                     $Results += $obj
                 }
-                catch {
-                    Write-Verbose &quot; Host [$Computer] Failed with Error: $($Error[0])&quot;
+                <span style=font-weight:700>catch</span> {
+                    Write-Verbose <span style=font-style:italic>&#34; Host [$Computer] Failed with Error: </span>$($Error[0])<span style=font-style:italic>&#34;</span>
                 }
             }
-            else {
-                Write-Verbose &quot; Host [$Computer] Failed Connectivity Test&quot;
+            <span style=font-weight:700>else</span> {
+                Write-Verbose <span style=font-style:italic>&#34; Host [$Computer] Failed Connectivity Test&#34;</span>
             }
         }
         $Results | select ComputerName, TimezoneName, DaylightSaving, TimezoneCaption
     }
-    End {
-        Write-Progress -activity &quot;Running on $Computer&quot; -Status &quot;Completed.&quot; -Completed
-        Write-Verbose &quot; [$($MyInvocation.InvocationName)] :: End Process&quot;
+    <span style=font-weight:700>End</span> {
+        Write-Progress -activity <span style=font-style:italic>&#34;Running on $Computer&#34;</span> -Status <span style=font-style:italic>&#34;Completed.&#34;</span> -Completed
+        Write-Verbose <span style=font-style:italic>&#34; [</span>$($MyInvocation.InvocationName)<span style=font-style:italic>] :: End Process&#34;</span>
     }
 }
-</code></pre><p>This will give you following output:</p><p><img src=img/2021-02-21-15-32-21.png alt></p><p>With Set-Timezone you can set timezones remotely. If you need to disable automatic daylight saving time you can add the additional parameter DSTOff.</p><pre><code class=language-powershell>Function Set-Timezones {
-    &lt;#
-    .SYNOPSIS
-    Sets and retries timezones on local or remote computers via WinRM and
-    enables or disables daylight saving.
-    
-    .DESCRIPTION
-    This PowerShell function sets and retrieves the timezone of a local or remote computer using WinRM (Invoke-Command). 
-    It also enables or disables dayligt saving times. The function accepts pipeline input and outputs to 
-    the pipeline as well as credentials if you want to run it for a specific domain. If the remote computer 
-    won't be accessible the function will catch the error but will continue to work. You can use tzutil /l 
-    to get a list of available time zone IDs. 
-    
-    Timezone TimeZoneID 
-    --------- ---------- 
-    (UTC-06:00) Central Time (US &amp;amp;amp;amp;amp; Canada) Central Standard Time 
-    (UTC) Coordinated Universal Time UTC 
-    (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna W. Europe Standard Time
-    
-    .PARAMETER TimezoneID
-    A single Computer or an array of computer names. The default is localhost ($env:COMPUTERNAME).
-    
-    .PARAMETER DSTOff 
-    Enables or disables Daylight Saving Time adjustments 
-    for the time zone (where applicable). Default: ON 
-    If switch parameter DST committed as true, Daylight saving Time will be disabled.
-    
-    .PARAMETER ComputerName
-    A single Computer or an array of computer names. The default is localhost ($env:COMPUTERNAME).
-    
-    .PARAMETER Credentials
-    Commit Credentials for a different domain.
-    
-    .PARAMETER Verbose
-    Run in Verbose Mode.
-    
-    .EXAMPLE
-    PS C:\&amp;amp;amp;amp;gt; Set-Timezones -ComputerName (gc 'C:\computers.txt') -TimezoneID &quot;W. Europe Standard Time&quot; -DSTOff
-    
-    ComputerName DaylightSaving TimezoneName 
-    ------------ -------------- ------------ 
-    SERVER01 no W. Europe Standard Time_dstoff
-    SERVER02 no W. Europe Standard Time_dstoff 
-    
-    .NOTES
-    Author: Sebastian Gräf
-    Website: https://graef.io
-    Email: ps@graef.io
-    Date: June 27, 2017
-    PSVer: 3.0/4.0/5.0
-    
-    #&gt;
+</code></pre></div><p>This will give you following output:</p>
+<p><img src=img/2021-02-21-15-32-21.png alt></p>
+<p>With Set-Timezone you can set timezones remotely. If you need to disable automatic daylight saving time you can add the additional parameter DSTOff.</p>
+<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell><span style=font-weight:700>Function</span> Set-Timezones {
+    <span style=font-style:italic>&lt;#
+</span><span style=font-style:italic>    </span><span style=font-style:italic>.SYNOPSIS</span><span style=font-style:italic>
+</span><span style=font-style:italic>    Sets and retries timezones on local or remote computers via WinRM and
+</span><span style=font-style:italic>    enables or disables daylight saving.
+</span><span style=font-style:italic>    
+</span><span style=font-style:italic>    </span><span style=font-style:italic>.DESCRIPTION</span><span style=font-style:italic>
+</span><span style=font-style:italic>    This PowerShell function sets and retrieves the timezone of a local or remote computer using WinRM (Invoke-Command). 
+</span><span style=font-style:italic>    It also enables or disables dayligt saving times. The function accepts pipeline input and outputs to 
+</span><span style=font-style:italic>    the pipeline as well as credentials if you want to run it for a specific domain. If the remote computer 
+</span><span style=font-style:italic>    won&#39;t be accessible the function will catch the error but will continue to work. You can use tzutil /l 
+</span><span style=font-style:italic>    to get a list of available time zone IDs. 
+</span><span style=font-style:italic>    
+</span><span style=font-style:italic>    Timezone TimeZoneID 
+</span><span style=font-style:italic>    --------- ---------- 
+</span><span style=font-style:italic>    (UTC-06:00) Central Time (US &amp;amp;amp;amp;amp; Canada) Central Standard Time 
+</span><span style=font-style:italic>    (UTC) Coordinated Universal Time UTC 
+</span><span style=font-style:italic>    (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna W. Europe Standard Time
+</span><span style=font-style:italic>    
+</span><span style=font-style:italic>    </span><span style=font-style:italic>.PARAMETER</span><span style=font-style:italic> TimezoneID
+</span><span style=font-style:italic>    A single Computer or an array of computer names. The default is localhost ($env:COMPUTERNAME).
+</span><span style=font-style:italic>    
+</span><span style=font-style:italic>    </span><span style=font-style:italic>.PARAMETER</span><span style=font-style:italic> DSTOff 
+</span><span style=font-style:italic>    Enables or disables Daylight Saving Time adjustments 
+</span><span style=font-style:italic>    for the time zone (where applicable). Default: ON 
+</span><span style=font-style:italic>    If switch parameter DST committed as true, Daylight saving Time will be disabled.
+</span><span style=font-style:italic>    
+</span><span style=font-style:italic>    </span><span style=font-style:italic>.PARAMETER</span><span style=font-style:italic> ComputerName
+</span><span style=font-style:italic>    A single Computer or an array of computer names. The default is localhost ($env:COMPUTERNAME).
+</span><span style=font-style:italic>    
+</span><span style=font-style:italic>    </span><span style=font-style:italic>.PARAMETER</span><span style=font-style:italic> Credentials
+</span><span style=font-style:italic>    Commit Credentials for a different domain.
+</span><span style=font-style:italic>    
+</span><span style=font-style:italic>    </span><span style=font-style:italic>.PARAMETER</span><span style=font-style:italic> Verbose
+</span><span style=font-style:italic>    Run in Verbose Mode.
+</span><span style=font-style:italic>    
+</span><span style=font-style:italic>    </span><span style=font-style:italic>.EXAMPLE</span><span style=font-style:italic>
+</span><span style=font-style:italic>    PS C:\&amp;amp;amp;amp;gt; Set-Timezones -ComputerName (gc &#39;C:\computers.txt&#39;) -TimezoneID &#34;W. Europe Standard Time&#34; -DSTOff
+</span><span style=font-style:italic>    
+</span><span style=font-style:italic>    ComputerName DaylightSaving TimezoneName 
+</span><span style=font-style:italic>    ------------ -------------- ------------ 
+</span><span style=font-style:italic>    SERVER01 no W. Europe Standard Time_dstoff
+</span><span style=font-style:italic>    SERVER02 no W. Europe Standard Time_dstoff 
+</span><span style=font-style:italic>    
+</span><span style=font-style:italic>    </span><span style=font-style:italic>.NOTES</span><span style=font-style:italic>
+</span><span style=font-style:italic>    Author: Sebastian Gräf
+</span><span style=font-style:italic>    Website: https://graef.io
+</span><span style=font-style:italic>    Email: ps@graef.io
+</span><span style=font-style:italic>    Date: June 27, 2017
+</span><span style=font-style:italic>    PSVer: 3.0/4.0/5.0
+</span><span style=font-style:italic>    
+</span><span style=font-style:italic>    #&gt;</span>
  
-    [Cmdletbinding()]
-    Param (
-        [Parameter(ValueFromPipelineByPropertyName = $true, ValueFromPipeline = $true)] 
+    [<span style=font-weight:700>Cmdletbinding</span>()]
+    <span style=font-weight:700>Param</span> (
+        [<span style=font-weight:700>Parameter</span>(<span style=font-weight:700>ValueFromPipelineByPropertyName</span> = $true, <span style=font-weight:700>ValueFromPipeline</span> = $true)] 
         $ComputerName = $Env:COMPUTERNAME, 
-        [Parameter(ValueFromPipelineByPropertyName = $true, ValueFromPipeline = $true, Mandatory = $true)] 
+        [<span style=font-weight:700>Parameter</span>(<span style=font-weight:700>ValueFromPipelineByPropertyName</span> = $true, <span style=font-weight:700>ValueFromPipeline</span> = $true, <span style=font-weight:700>Mandatory</span> = $true)] 
         $TimezoneID, 
-        [Parameter(ValueFromPipelineByPropertyName = $true, ValueFromPipeline = $true)] 
+        [<span style=font-weight:700>Parameter</span>(<span style=font-weight:700>ValueFromPipelineByPropertyName</span> = $true, <span style=font-weight:700>ValueFromPipeline</span> = $true)] 
         [switch]$DSTOff, 
-        [Parameter(ValueFromPipelineByPropertyName = $true, ValueFromPipeline = $true)] 
+        [<span style=font-weight:700>Parameter</span>(<span style=font-weight:700>ValueFromPipelineByPropertyName</span> = $true, <span style=font-weight:700>ValueFromPipeline</span> = $true)] 
         [ValidateNotNull()] 
         [System.Management.Automation.PSCredential][System.Management.Automation.Credential()] 
         $Credentials = [System.Management.Automation.PSCredential]::Empty 
     )
  
-    Begin {
-        Write-Verbose &quot; [$($MyInvocation.InvocationName)] :: Start Process&quot;
+    <span style=font-weight:700>Begin</span> {
+        Write-Verbose <span style=font-style:italic>&#34; [</span>$($MyInvocation.InvocationName)<span style=font-style:italic>] :: Start Process&#34;</span>
         $Results = @()
         $ProgressCounter = 0
-        if (!$DSTOff) { 
-            $DaylightSaving = '' 
+        <span style=font-weight:700>if</span> (!$DSTOff) { 
+            $DaylightSaving = <span style=font-style:italic>&#39;&#39;</span> 
         } 
-        else { 
-            $DaylightSaving = &quot;_dstoff&quot;
+        <span style=font-weight:700>else</span> { 
+            $DaylightSaving = <span style=font-style:italic>&#34;_dstoff&#34;</span>
         } 
         $TimezoneID += $DaylightSaving
     }
  
-    Process {
-        foreach ($Computer in $ComputerName) {
+    <span style=font-weight:700>Process</span> {
+        <span style=font-weight:700>foreach</span> ($Computer <span style=font-weight:700>in</span> $ComputerName) {
             $ProgressCounter++
-            Write-Progress -activity &quot;Running on $Computer&quot; -status &quot;Please wait ...&quot; -PercentComplete (($ProgressCounter / $ComputerName.length) * 100)
-            if (Test-Connection $Computer -Count 1 -Quiet) {
-                Write-Verbose &quot; [$($MyInvocation.InvocationName)] :: Processing $Computer&quot;
-                try {
-                    $win32_timezone = Invoke-Command -ComputerName $Computer -Command { param($TimezoneID); tzutil /s $TimezoneID; tzutil /g } -ArgumentList $TimezoneID -Credential $Credentials
+            Write-Progress -activity <span style=font-style:italic>&#34;Running on $Computer&#34;</span> -status <span style=font-style:italic>&#34;Please wait ...&#34;</span> -PercentComplete (($ProgressCounter / $ComputerName.length) * 100)
+            <span style=font-weight:700>if</span> (Test-Connection $Computer -Count 1 -Quiet) {
+                Write-Verbose <span style=font-style:italic>&#34; [</span>$($MyInvocation.InvocationName)<span style=font-style:italic>] :: Processing $Computer&#34;</span>
+                <span style=font-weight:700>try</span> {
+                    $win32_timezone = Invoke-Command -ComputerName $Computer -Command { <span style=font-weight:700>param</span>($TimezoneID); tzutil /s $TimezoneID; tzutil /g } -ArgumentList $TimezoneID -Credential $Credentials
                     $win32_timezone = Invoke-Command -ComputerName $Computer -Command { tzutil /g } -ArgumentList $Timezone -Credential $Credentials
-                    if ($win32_timezone -like &quot;*dstoff&quot;) { $DST = &quot;no&quot; } else { $DST = &quot;yes&quot; }
+                    <span style=font-weight:700>if</span> ($win32_timezone -like <span style=font-style:italic>&#34;*dstoff&#34;</span>) { $DST = <span style=font-style:italic>&#34;no&#34;</span> } <span style=font-weight:700>else</span> { $DST = <span style=font-style:italic>&#34;yes&#34;</span> }
                     $obj = New-Object -Type PSCustomObject -Property @{
                         ComputerName   = $Computer
                         TimezoneName   = $win32_timezone
@@ -177,415 +254,432 @@
                     }
                     $Results += $obj
                 }
-                catch {
-                    Write-Verbose &quot; Host [$Computer] Failed with Error: $($Error[0])&quot;
+                <span style=font-weight:700>catch</span> {
+                    Write-Verbose <span style=font-style:italic>&#34; Host [$Computer] Failed with Error: </span>$($Error[0])<span style=font-style:italic>&#34;</span>
                 }
             }
-            else {
-                Write-Verbose &quot; Host [$Computer] Failed Connectivity Test&quot;
+            <span style=font-weight:700>else</span> {
+                Write-Verbose <span style=font-style:italic>&#34; Host [$Computer] Failed Connectivity Test&#34;</span>
             }
         }
         $Results | select ComputerName, DaylightSaving, TimezoneName
     }
-    End {
-        Write-Progress -activity &quot;Running on $Computer&quot; -Status &quot;Completed.&quot; -Completed
-        Write-Verbose &quot; [$($MyInvocation.InvocationName)] :: End Process&quot;
+    <span style=font-weight:700>End</span> {
+        Write-Progress -activity <span style=font-style:italic>&#34;Running on $Computer&#34;</span> -Status <span style=font-style:italic>&#34;Completed.&#34;</span> -Completed
+        Write-Verbose <span style=font-style:italic>&#34; [</span>$($MyInvocation.InvocationName)<span style=font-style:italic>] :: End Process&#34;</span>
     }
 }
-</code></pre><p>This will give you following output:</p><p><img src=img/2021-02-21-15-30-27.png alt></p><p>To get a full list of all timezone IDs type “tzutil /l” and you will get following list:</p><pre><code class=language-powershell>UTC-12:00) International Date Line West
+</code></pre></div><p>This will give you following output:</p>
+<p><img src=img/2021-02-21-15-30-27.png alt></p>
+<p>To get a full list of all timezone IDs type “tzutil /l” and you will get following list:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-powershell data-lang=powershell>UTC-12<span>:</span>00) International Date Line West
 Dateline Standard Time
  
-(UTC-11:00) Coordinated Universal Time-11
+(UTC-11<span>:</span>00) Coordinated Universal Time-11
 UTC-11
  
-(UTC-10:00) Aleutian Islands
+(UTC-10<span>:</span>00) Aleutian Islands
 Aleutian Standard Time
  
-(UTC-10:00) Hawaii
+(UTC-10<span>:</span>00) Hawaii
 Hawaiian Standard Time
  
-(UTC-09:30) Marquesas Islands
+(UTC-09<span>:</span>30) Marquesas Islands
 Marquesas Standard Time
  
-(UTC-09:00) Alaska
+(UTC-09<span>:</span>00) Alaska
 Alaskan Standard Time
  
-(UTC-09:00) Coordinated Universal Time-09
+(UTC-09<span>:</span>00) Coordinated Universal Time-09
 UTC-09
  
-(UTC-08:00) Baja California
+(UTC-08<span>:</span>00) Baja California
 Pacific Standard Time (Mexico)
  
-(UTC-08:00) Coordinated Universal Time-08
+(UTC-08<span>:</span>00) Coordinated Universal Time-08
 UTC-08
  
-(UTC-08:00) Pacific Time (US &amp;amp;amp;amp;amp; Canada)
+(UTC-08<span>:</span>00) Pacific Time (US &amp;amp;amp;amp;amp; Canada)
 Pacific Standard Time
  
-(UTC-07:00) Arizona
+(UTC-07<span>:</span>00) Arizona
 US Mountain Standard Time
  
-(UTC-07:00) Chihuahua, La Paz, Mazatlan
+(UTC-07<span>:</span>00) Chihuahua, La Paz, Mazatlan
 Mountain Standard Time (Mexico)
  
-(UTC-07:00) Mountain Time (US &amp;amp;amp;amp;amp; Canada)
+(UTC-07<span>:</span>00) Mountain Time (US &amp;amp;amp;amp;amp; Canada)
 Mountain Standard Time
  
-(UTC-06:00) Central America
+(UTC-06<span>:</span>00) Central America
 Central America Standard Time
  
-(UTC-06:00) Central Time (US &amp;amp;amp;amp;amp; Canada)
+(UTC-06<span>:</span>00) Central Time (US &amp;amp;amp;amp;amp; Canada)
 Central Standard Time
  
-(UTC-06:00) Easter Island
+(UTC-06<span>:</span>00) Easter Island
 Easter Island Standard Time
  
-(UTC-06:00) Guadalajara, Mexico City, Monterrey
+(UTC-06<span>:</span>00) Guadalajara, Mexico City, Monterrey
 Central Standard Time (Mexico)
  
-(UTC-06:00) Saskatchewan
+(UTC-06<span>:</span>00) Saskatchewan
 Canada Central Standard Time
  
-(UTC-05:00) Bogota, Lima, Quito, Rio Branco
+(UTC-05<span>:</span>00) Bogota, Lima, Quito, Rio Branco
 SA Pacific Standard Time
  
-(UTC-05:00) Chetumal
+(UTC-05<span>:</span>00) Chetumal
 Eastern Standard Time (Mexico)
  
-(UTC-05:00) Eastern Time (US &amp;amp;amp;amp;amp; Canada)
+(UTC-05<span>:</span>00) Eastern Time (US &amp;amp;amp;amp;amp; Canada)
 Eastern Standard Time
  
-(UTC-05:00) Haiti
+(UTC-05<span>:</span>00) Haiti
 Haiti Standard Time
  
-(UTC-05:00) Havana
+(UTC-05<span>:</span>00) Havana
 Cuba Standard Time
  
-(UTC-05:00) Indiana (East)
+(UTC-05<span>:</span>00) Indiana (East)
 US Eastern Standard Time
  
-(UTC-04:00) Asuncion
+(UTC-04<span>:</span>00) Asuncion
 Paraguay Standard Time
  
-(UTC-04:00) Atlantic Time (Canada)
+(UTC-04<span>:</span>00) Atlantic Time (Canada)
 Atlantic Standard Time
  
-(UTC-04:00) Caracas
+(UTC-04<span>:</span>00) Caracas
 Venezuela Standard Time
  
-(UTC-04:00) Cuiaba
+(UTC-04<span>:</span>00) Cuiaba
 Central Brazilian Standard Time
  
-(UTC-04:00) Georgetown, La Paz, Manaus, San Juan
+(UTC-04<span>:</span>00) Georgetown, La Paz, Manaus, San Juan
 SA Western Standard Time
  
-(UTC-04:00) Santiago
+(UTC-04<span>:</span>00) Santiago
 Pacific SA Standard Time
  
-(UTC-04:00) Turks and Caicos
+(UTC-04<span>:</span>00) Turks and Caicos
 Turks And Caicos Standard Time
  
-(UTC-03:30) Newfoundland
+(UTC-03<span>:</span>30) Newfoundland
 Newfoundland Standard Time
  
-(UTC-03:00) Araguaina
+(UTC-03<span>:</span>00) Araguaina
 Tocantins Standard Time
  
-(UTC-03:00) Brasilia
+(UTC-03<span>:</span>00) Brasilia
 E. South America Standard Time
  
-(UTC-03:00) Cayenne, Fortaleza
+(UTC-03<span>:</span>00) Cayenne, Fortaleza
 SA Eastern Standard Time
  
-(UTC-03:00) City of Buenos Aires
+(UTC-03<span>:</span>00) City of Buenos Aires
 Argentina Standard Time
  
-(UTC-03:00) Greenland
+(UTC-03<span>:</span>00) Greenland
 Greenland Standard Time
  
-(UTC-03:00) Montevideo
+(UTC-03<span>:</span>00) Montevideo
 Montevideo Standard Time
  
-(UTC-03:00) Punta Arenas
+(UTC-03<span>:</span>00) Punta Arenas
 Magallanes Standard Time
  
-(UTC-03:00) Saint Pierre and Miquelon
+(UTC-03<span>:</span>00) Saint Pierre and Miquelon
 Saint Pierre Standard Time
  
-(UTC-03:00) Salvador
+(UTC-03<span>:</span>00) Salvador
 Bahia Standard Time
  
-(UTC-02:00) Coordinated Universal Time-02
+(UTC-02<span>:</span>00) Coordinated Universal Time-02
 UTC-02
  
-(UTC-01:00) Azores
+(UTC-01<span>:</span>00) Azores
 Azores Standard Time
  
-(UTC-01:00) Cabo Verde Is.
+(UTC-01<span>:</span>00) Cabo Verde Is.
 Cape Verde Standard Time
  
 (UTC) Coordinated Universal Time
 UTC
  
-(UTC+00:00) Casablanca
+(UTC+00<span>:</span>00) Casablanca
 Morocco Standard Time
  
-(UTC+00:00) Dublin, Edinburgh, Lisbon, London
+(UTC+00<span>:</span>00) Dublin, Edinburgh, Lisbon, London
 GMT Standard Time
  
-(UTC+00:00) Monrovia, Reykjavik
+(UTC+00<span>:</span>00) Monrovia, Reykjavik
 Greenwich Standard Time
  
-(UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna
+(UTC+01<span>:</span>00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna
 W. Europe Standard Time
  
-(UTC+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague
+(UTC+01<span>:</span>00) Belgrade, Bratislava, Budapest, Ljubljana, Prague
 Central Europe Standard Time
  
-(UTC+01:00) Brussels, Copenhagen, Madrid, Paris
+(UTC+01<span>:</span>00) Brussels, Copenhagen, Madrid, Paris
 Romance Standard Time
  
-(UTC+01:00) Sarajevo, Skopje, Warsaw, Zagreb
+(UTC+01<span>:</span>00) Sarajevo, Skopje, Warsaw, Zagreb
 Central European Standard Time
  
-(UTC+01:00) West Central Africa
+(UTC+01<span>:</span>00) West Central Africa
 W. Central Africa Standard Time
  
-(UTC+01:00) Windhoek
+(UTC+01<span>:</span>00) Windhoek
 Namibia Standard Time
  
-(UTC+02:00) Amman
+(UTC+02<span>:</span>00) Amman
 Jordan Standard Time
  
-(UTC+02:00) Athens, Bucharest
+(UTC+02<span>:</span>00) Athens, Bucharest
 GTB Standard Time
  
-(UTC+02:00) Beirut
+(UTC+02<span>:</span>00) Beirut
 Middle East Standard Time
  
-(UTC+02:00) Cairo
+(UTC+02<span>:</span>00) Cairo
 Egypt Standard Time
  
-(UTC+02:00) Chisinau
+(UTC+02<span>:</span>00) Chisinau
 E. Europe Standard Time
  
-(UTC+02:00) Damascus
+(UTC+02<span>:</span>00) Damascus
 Syria Standard Time
  
-(UTC+02:00) Gaza, Hebron
+(UTC+02<span>:</span>00) Gaza, Hebron
 West Bank Standard Time
  
-(UTC+02:00) Harare, Pretoria
+(UTC+02<span>:</span>00) Harare, Pretoria
 South Africa Standard Time
  
-(UTC+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius
+(UTC+02<span>:</span>00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius
 FLE Standard Time
  
-(UTC+02:00) Jerusalem
+(UTC+02<span>:</span>00) Jerusalem
 Israel Standard Time
  
-(UTC+02:00) Kaliningrad
+(UTC+02<span>:</span>00) Kaliningrad
 Kaliningrad Standard Time
  
-(UTC+02:00) Tripoli
+(UTC+02<span>:</span>00) Tripoli
 Libya Standard Time
  
-(UTC+03:00) Baghdad
+(UTC+03<span>:</span>00) Baghdad
 Arabic Standard Time
  
-(UTC+03:00) Istanbul
+(UTC+03<span>:</span>00) Istanbul
 Turkey Standard Time
  
-(UTC+03:00) Kuwait, Riyadh
+(UTC+03<span>:</span>00) Kuwait, Riyadh
 Arab Standard Time
  
-(UTC+03:00) Minsk
+(UTC+03<span>:</span>00) Minsk
 Belarus Standard Time
  
-(UTC+03:00) Moscow, St. Petersburg, Volgograd
+(UTC+03<span>:</span>00) Moscow, St. Petersburg, Volgograd
 Russian Standard Time
  
-(UTC+03:00) Nairobi
+(UTC+03<span>:</span>00) Nairobi
 E. Africa Standard Time
  
-(UTC+03:30) Tehran
+(UTC+03<span>:</span>30) Tehran
 Iran Standard Time
  
-(UTC+04:00) Abu Dhabi, Muscat
+(UTC+04<span>:</span>00) Abu Dhabi, Muscat
 Arabian Standard Time
  
-(UTC+04:00) Astrakhan, Ulyanovsk
+(UTC+04<span>:</span>00) Astrakhan, Ulyanovsk
 Astrakhan Standard Time
  
-(UTC+04:00) Baku
+(UTC+04<span>:</span>00) Baku
 Azerbaijan Standard Time
  
-(UTC+04:00) Izhevsk, Samara
+(UTC+04<span>:</span>00) Izhevsk, Samara
 Russia Time Zone 3
  
-(UTC+04:00) Port Louis
+(UTC+04<span>:</span>00) Port Louis
 Mauritius Standard Time
  
-(UTC+04:00) Saratov
+(UTC+04<span>:</span>00) Saratov
 Saratov Standard Time
  
-(UTC+04:00) Tbilisi
+(UTC+04<span>:</span>00) Tbilisi
 Georgian Standard Time
  
-(UTC+04:00) Yerevan
+(UTC+04<span>:</span>00) Yerevan
 Caucasus Standard Time
  
-(UTC+04:30) Kabul
+(UTC+04<span>:</span>30) Kabul
 Afghanistan Standard Time
  
-(UTC+05:00) Ashgabat, Tashkent
+(UTC+05<span>:</span>00) Ashgabat, Tashkent
 West Asia Standard Time
  
-(UTC+05:00) Ekaterinburg
+(UTC+05<span>:</span>00) Ekaterinburg
 Ekaterinburg Standard Time
  
-(UTC+05:00) Islamabad, Karachi
+(UTC+05<span>:</span>00) Islamabad, Karachi
 Pakistan Standard Time
  
-(UTC+05:30) Chennai, Kolkata, Mumbai, New Delhi
+(UTC+05<span>:</span>30) Chennai, Kolkata, Mumbai, New Delhi
 India Standard Time
  
-(UTC+05:30) Sri Jayawardenepura
+(UTC+05<span>:</span>30) Sri Jayawardenepura
 Sri Lanka Standard Time
  
-(UTC+05:45) Kathmandu
+(UTC+05<span>:</span>45) Kathmandu
 Nepal Standard Time
  
-(UTC+06:00) Astana
+(UTC+06<span>:</span>00) Astana
 Central Asia Standard Time
  
-(UTC+06:00) Dhaka
+(UTC+06<span>:</span>00) Dhaka
 Bangladesh Standard Time
  
-(UTC+06:00) Omsk
+(UTC+06<span>:</span>00) Omsk
 Omsk Standard Time
  
-(UTC+06:30) Yangon (Rangoon)
+(UTC+06<span>:</span>30) Yangon (Rangoon)
 Myanmar Standard Time
  
-(UTC+07:00) Bangkok, Hanoi, Jakarta
+(UTC+07<span>:</span>00) Bangkok, Hanoi, Jakarta
 SE Asia Standard Time
  
-(UTC+07:00) Barnaul, Gorno-Altaysk
+(UTC+07<span>:</span>00) Barnaul, Gorno-Altaysk
 Altai Standard Time
  
-(UTC+07:00) Hovd
+(UTC+07<span>:</span>00) Hovd
 W. Mongolia Standard Time
  
-(UTC+07:00) Krasnoyarsk
+(UTC+07<span>:</span>00) Krasnoyarsk
 North Asia Standard Time
  
-(UTC+07:00) Novosibirsk
+(UTC+07<span>:</span>00) Novosibirsk
 N. Central Asia Standard Time
  
-(UTC+07:00) Tomsk
+(UTC+07<span>:</span>00) Tomsk
 Tomsk Standard Time
  
-(UTC+08:00) Beijing, Chongqing, Hong Kong, Urumqi
+(UTC+08<span>:</span>00) Beijing, Chongqing, Hong Kong, Urumqi
 China Standard Time
  
-(UTC+08:00) Irkutsk
+(UTC+08<span>:</span>00) Irkutsk
 North Asia East Standard Time
  
-(UTC+08:00) Kuala Lumpur, Singapore
+(UTC+08<span>:</span>00) Kuala Lumpur, Singapore
 Singapore Standard Time
  
-(UTC+08:00) Perth
+(UTC+08<span>:</span>00) Perth
 W. Australia Standard Time
  
-(UTC+08:00) Taipei
+(UTC+08<span>:</span>00) Taipei
 Taipei Standard Time
  
-(UTC+08:00) Ulaanbaatar
+(UTC+08<span>:</span>00) Ulaanbaatar
 Ulaanbaatar Standard Time
  
-(UTC+08:30) Pyongyang
+(UTC+08<span>:</span>30) Pyongyang
 North Korea Standard Time
  
-(UTC+08:45) Eucla
+(UTC+08<span>:</span>45) Eucla
 Aus Central W. Standard Time
  
-(UTC+09:00) Chita
+(UTC+09<span>:</span>00) Chita
 Transbaikal Standard Time
  
-(UTC+09:00) Osaka, Sapporo, Tokyo
+(UTC+09<span>:</span>00) Osaka, Sapporo, Tokyo
 Tokyo Standard Time
  
-(UTC+09:00) Seoul
+(UTC+09<span>:</span>00) Seoul
 Korea Standard Time
  
-(UTC+09:00) Yakutsk
+(UTC+09<span>:</span>00) Yakutsk
 Yakutsk Standard Time
  
-(UTC+09:30) Adelaide
+(UTC+09<span>:</span>30) Adelaide
 Cen. Australia Standard Time
  
-(UTC+09:30) Darwin
+(UTC+09<span>:</span>30) Darwin
 AUS Central Standard Time
  
-(UTC+10:00) Brisbane
+(UTC+10<span>:</span>00) Brisbane
 E. Australia Standard Time
  
-(UTC+10:00) Canberra, Melbourne, Sydney
+(UTC+10<span>:</span>00) Canberra, Melbourne, Sydney
 AUS Eastern Standard Time
  
-(UTC+10:00) Guam, Port Moresby
+(UTC+10<span>:</span>00) Guam, Port Moresby
 West Pacific Standard Time
  
-(UTC+10:00) Hobart
+(UTC+10<span>:</span>00) Hobart
 Tasmania Standard Time
  
-(UTC+10:00) Vladivostok
+(UTC+10<span>:</span>00) Vladivostok
 Vladivostok Standard Time
  
-(UTC+10:30) Lord Howe Island
+(UTC+10<span>:</span>30) Lord Howe Island
 Lord Howe Standard Time
  
-(UTC+11:00) Bougainville Island
+(UTC+11<span>:</span>00) Bougainville Island
 Bougainville Standard Time
  
-(UTC+11:00) Chokurdakh
+(UTC+11<span>:</span>00) Chokurdakh
 Russia Time Zone 10
  
-(UTC+11:00) Magadan
+(UTC+11<span>:</span>00) Magadan
 Magadan Standard Time
  
-(UTC+11:00) Norfolk Island
+(UTC+11<span>:</span>00) Norfolk Island
 Norfolk Standard Time
  
-(UTC+11:00) Sakhalin
+(UTC+11<span>:</span>00) Sakhalin
 Sakhalin Standard Time
  
-(UTC+11:00) Solomon Is., New Caledonia
+(UTC+11<span>:</span>00) Solomon Is., New Caledonia
 Central Pacific Standard Time
  
-(UTC+12:00) Anadyr, Petropavlovsk-Kamchatsky
+(UTC+12<span>:</span>00) Anadyr, Petropavlovsk-Kamchatsky
 Russia Time Zone 11
  
-(UTC+12:00) Auckland, Wellington
+(UTC+12<span>:</span>00) Auckland, Wellington
 New Zealand Standard Time
  
-(UTC+12:00) Coordinated Universal Time+12
+(UTC+12<span>:</span>00) Coordinated Universal Time+12
 UTC+12
  
-(UTC+12:00) Fiji
+(UTC+12<span>:</span>00) Fiji
 Fiji Standard Time
  
-(UTC+12:45) Chatham Islands
+(UTC+12<span>:</span>45) Chatham Islands
 Chatham Islands Standard Time
  
-(UTC+13:00) Coordinated Universal Time+13
+(UTC+13<span>:</span>00) Coordinated Universal Time+13
 UTC+13
  
-(UTC+13:00) Nuku'alofa
+(UTC+13<span>:</span>00) Nuku<span>&#39;</span>alofa
 Tonga Standard Time
  
-(UTC+13:00) Samoa
+(UTC+13<span>:</span>00) Samoa
 Samoa Standard Time
-</code></pre></article><ul class=tags__list><li class=tag__item><a class=tag__link href=https://segraef.github.io/graef.io/tags/powershell/>powershell</a></li><li class=tag__item><a class=tag__link href=https://segraef.github.io/graef.io/tags/get-wmiobject/>get-wmiobject</a></li><li class=tag__item><a class=tag__link href=https://segraef.github.io/graef.io/tags/invoke-command/>invoke-command</a></li><li class=tag__item><a class=tag__link href=https://segraef.github.io/graef.io/tags/winrm/>WinRM</a></li><li class=tag__item><a class=tag__link href=https://segraef.github.io/graef.io/tags/wmi/>wmi</a></li></ul><div class=pagination><a class=pagination__item href=https://segraef.github.io/graef.io/archive/fc/><span class=pagination__label>Next Post</span>
-<span class=pagination__title>How to adjust Windows Failover Cluster 'Response to Resource Failure' Policy</span></a></div><footer class=post__footer><div class=social-icons><a class=social-icons__link rel=me title=Twitter href=https://twitter.com/segraef target=_blank rel=noopener><div class=social-icons__icon style=background-image:url(https://segraef.github.io/graef.io/svg/twitter.svg)></div></a><a class=social-icons__link rel=me title=GitHub href=https://github.com/segraef target=_blank rel=noopener><div class=social-icons__icon style=background-image:url(https://segraef.github.io/graef.io/svg/github.svg)></div></a><a class=social-icons__link rel=me title=LinkedIn href=https://linkedin.com/in/sgraef target=_blank rel=noopener><div class=social-icons__icon style=background-image:url(https://segraef.github.io/graef.io/svg/linkedin.svg)></div></a><a class=social-icons__link rel=me title=Email href=mailto:sebastian@graef.io target=_blank rel=noopener><div class=social-icons__icon style=background-image:url(https://segraef.github.io/graef.io/svg/email.svg)></div></a></div><p>© 2021</p></footer></div></div></div></main><script src=/graef.io/js/index.min.575dda8d49ee02639942c63564273e6da972ab531dda26a08800bdcb477cbd7f.js integrity="sha256-V13ajUnuAmOZQsY1ZCc+balyq1Md2iagiAC9y0d8vX8=" crossorigin=anonymous></script><script src=https://unpkg.com/prismjs@1.20.0/components/prism-core.min.js></script><script src=https://unpkg.com/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js data-autoloader-path=https://unpkg.com/prismjs@1.20.0/components/></script></body></html>
+</code></pre></div>
+</article>
+</section>
+</div>
+<footer class=footer>
+<section class=container>
+©
+2009 -
+2021
+</section>
+</footer>
+</main>
+<script src=/graef.io/js/coder.min.03b17769f4f91ae35667e1f2a1ca8c16f50562576cf90ff32b3179926914daa5.js integrity="sha256-A7F3afT5GuNWZ+HyocqMFvUFYlds+Q/zKzF5kmkU2qU="></script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-99599711-2','auto'),ga('send','pageview'))</script>
+</body>
+</html>

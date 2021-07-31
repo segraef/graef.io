@@ -1,11 +1,136 @@
-<!doctype html><html lang=en-us><head><title>Wordpress Basic Settings in config.php | graef.io</title><meta charset=utf-8><meta name=language content="en"><meta name=description content><meta name=keywords content="wordpress"><meta name=viewport content="width=device-width,initial-scale=1"><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=twitter:card content="summary"><meta name=twitter:title content="Wordpress Basic Settings in config.php"><meta name=twitter:description content><meta name=twitter:site content="https://twitter.com/segraef"><meta name=twitter:creator content="https://twitter.com/segraef"><link rel="shortcut icon" type=image/png href=/favicon.ico><link type=text/css rel=stylesheet href=/graef.io/css/post.min.a4712d0376acf8c0491ef2b98baf2f9287629f027a654e15b0ca42433957f47d.css integrity="sha256-pHEtA3as+MBJHvK5i68vkodinwJ6ZU4VsMpCQzlX9H0="><link type=text/css rel=stylesheet href=/graef.io/css/custom.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css integrity="sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="><script type=application/ld+json>{"@context":"http://schema.org","@type":"WebSite","url":"https:\/\/segraef.github.io\/graef.io\/archive\/wordpress-basic-settings-in-configphp\/","name":"Wordpress Basic Settings in config.php","author":{"@type":"Person","name":""},"description":""}</script></head><body><div class=burger__container><div class=burger aria-controls=navigation aria-label=Menu><div class="burger__meat burger__meat--1"></div><div class="burger__meat burger__meat--2"></div><div class="burger__meat burger__meat--3"></div></div></div><nav class=nav id=navigation><ul class=nav__list><li><a href=/graef.io/>about</a></li><li><a class=active href=/graef.io/archive>archive</a></li><li><a href=/graef.io/blog>blog</a></li></ul></nav><main><div class=flex-wrapper><div class=post__container><div class=post><header class=post__header><h1 id=post__title>Wordpress Basic Settings in config.php</h1><time datetime="2021-02-21 21:09:10 +0800 +0800" class=post__date>Feb 21 2021</time></header><article class=post__content><p>The main configuration of WordPress is handled by wp-config.php which is responsible for database access, language, API keys, security and more. Anything changed in this file takes direct influence to your site’s settings and appearance.
-Settings set in wp-config.php are considered as global and overwrite all parameters in your admin panel.</p><h3 id=general>General<a class=anchor href=#general>#</a></h3><pre><code>define('WP_HOME', 'https://www.graef.io'); // Main URL
-define('WP_SITEURL', 'https://www.graef.io'); // Site URL
-</code></pre><h3 id=deactivate-automatic-updates>Deactivate Automatic Updates<a class=anchor href=#deactivate-automatic-updates>#</a></h3><pre><code>define( 'AUTOMATIC_UPDATER_DISABLED', true );
-</code></pre><h3 id=disable-filter-for-uploads>Disable Filter for Uploads<a class=anchor href=#disable-filter-for-uploads>#</a></h3><pre><code>define( 'ALLOW_UNFILTERED_UPLOADS', true );
-</code></pre><h3 id=automatically-empty-recycle-bin>Automatically Empty Recycle Bin&lt;<a class=anchor href=#automatically-empty-recycle-bin>#</a></h3><pre><code>define ('EMPTY_TRASH_DAYS', 7);
-define ('EMPTY_TRASH_DAYS', 0);
-</code></pre><h3 id=deactivate-editor-for-themes-and-plugins>Deactivate Editor for Themes and Plugins<a class=anchor href=#deactivate-editor-for-themes-and-plugins>#</a></h3><pre><code>define( 'DISALLOW_FILE_EDIT', true );
-</code></pre><h3 id=set-default-theme-for-wordpress>Set Default Theme for WordPress<a class=anchor href=#set-default-theme-for-wordpress>#</a></h3><pre><code>define( 'WP_DEFAULT_THEME', 'default-theme-folder-name' );
-</code></pre></article><ul class=tags__list><li class=tag__item><a class=tag__link href=https://segraef.github.io/graef.io/tags/wordpress/>wordpress</a></li></ul><div class=pagination><a class=pagination__item href=https://segraef.github.io/graef.io/archive/lock-workstation/><span class=pagination__label>Previous Post</span>
-<span class=pagination__title>Function Lock-Workstation locally and remotely</span></a></div><footer class=post__footer><div class=social-icons><a class=social-icons__link rel=me title=Twitter href=https://twitter.com/segraef target=_blank rel=noopener><div class=social-icons__icon style=background-image:url(https://segraef.github.io/graef.io/svg/twitter.svg)></div></a><a class=social-icons__link rel=me title=GitHub href=https://github.com/segraef target=_blank rel=noopener><div class=social-icons__icon style=background-image:url(https://segraef.github.io/graef.io/svg/github.svg)></div></a><a class=social-icons__link rel=me title=LinkedIn href=https://linkedin.com/in/sgraef target=_blank rel=noopener><div class=social-icons__icon style=background-image:url(https://segraef.github.io/graef.io/svg/linkedin.svg)></div></a><a class=social-icons__link rel=me title=Email href=mailto:sebastian@graef.io target=_blank rel=noopener><div class=social-icons__icon style=background-image:url(https://segraef.github.io/graef.io/svg/email.svg)></div></a></div><p>© 2021</p></footer></div></div></div></main><script src=/graef.io/js/index.min.575dda8d49ee02639942c63564273e6da972ab531dda26a08800bdcb477cbd7f.js integrity="sha256-V13ajUnuAmOZQsY1ZCc+balyq1Md2iagiAC9y0d8vX8=" crossorigin=anonymous></script><script src=https://unpkg.com/prismjs@1.20.0/components/prism-core.min.js></script><script src=https://unpkg.com/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js data-autoloader-path=https://unpkg.com/prismjs@1.20.0/components/></script></body></html>
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta http-equiv=content-language content="en">
+<meta name=color-scheme content="light dark">
+<meta http-equiv=content-security-policy content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self'; img-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; prefetch-src 'self'; connect-src 'self' https://www.google-analytics.com;">
+<meta name=description content="The main configuration of WordPress is handled by wp-config.php which is responsible for database access, language, API keys, security and more. Anything changed in this file takes direct influence to your site’s settings and appearance. Settings set in wp-config.php are considered as global and overwrite all parameters in your admin panel.
+General    define('WP_HOME', 'https://www.graef.io'); // Main URL define('WP_SITEURL', 'https://www.graef.io'); // Site URL Deactivate Automatic Updates    define( 'AUTOMATIC_UPDATER_DISABLED', true ); Disable Filter for Uploads    define( 'ALLOW_UNFILTERED_UPLOADS', true ); Automatically Empty Recycle Bin<    define ('EMPTY_TRASH_DAYS', 7); define ('EMPTY_TRASH_DAYS', 0); Deactivate Editor for Themes and Plugins    define( 'DISALLOW_FILE_EDIT', true ); Set Default Theme for WordPress    define( 'WP_DEFAULT_THEME', 'default-theme-folder-name' ); ">
+<meta name=keywords content="wordpress">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Wordpress Basic Settings in config.php">
+<meta name=twitter:description content="The main configuration of WordPress is handled by wp-config.php which is responsible for database access, language, API keys, security and more. Anything changed in this file takes direct influence to your site’s settings and appearance. Settings set in wp-config.php are considered as global and overwrite all parameters in your admin panel.
+General    define('WP_HOME', 'https://www.graef.io'); // Main URL define('WP_SITEURL', 'https://www.graef.io'); // Site URL Deactivate Automatic Updates    define( 'AUTOMATIC_UPDATER_DISABLED', true ); Disable Filter for Uploads    define( 'ALLOW_UNFILTERED_UPLOADS', true ); Automatically Empty Recycle Bin<    define ('EMPTY_TRASH_DAYS', 7); define ('EMPTY_TRASH_DAYS', 0); Deactivate Editor for Themes and Plugins    define( 'DISALLOW_FILE_EDIT', true ); Set Default Theme for WordPress    define( 'WP_DEFAULT_THEME', 'default-theme-folder-name' ); ">
+<meta property="og:title" content="Wordpress Basic Settings in config.php">
+<meta property="og:description" content="The main configuration of WordPress is handled by wp-config.php which is responsible for database access, language, API keys, security and more. Anything changed in this file takes direct influence to your site’s settings and appearance. Settings set in wp-config.php are considered as global and overwrite all parameters in your admin panel.
+General    define('WP_HOME', 'https://www.graef.io'); // Main URL define('WP_SITEURL', 'https://www.graef.io'); // Site URL Deactivate Automatic Updates    define( 'AUTOMATIC_UPDATER_DISABLED', true ); Disable Filter for Uploads    define( 'ALLOW_UNFILTERED_UPLOADS', true ); Automatically Empty Recycle Bin<    define ('EMPTY_TRASH_DAYS', 7); define ('EMPTY_TRASH_DAYS', 0); Deactivate Editor for Themes and Plugins    define( 'DISALLOW_FILE_EDIT', true ); Set Default Theme for WordPress    define( 'WP_DEFAULT_THEME', 'default-theme-folder-name' ); ">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://segraef.github.io/graef.io/archive/wordpress-basic-settings-in-configphp/"><meta property="article:section" content="archive">
+<meta property="article:published_time" content="2021-02-21T21:09:10+08:00">
+<meta property="article:modified_time" content="2021-02-21T21:09:10+08:00">
+<title>
+Wordpress Basic Settings in config.php · graef.io
+</title>
+<link rel=canonical href=https://segraef.github.io/graef.io/archive/wordpress-basic-settings-in-configphp/>
+<link rel=preload href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as=font type=font/woff2 crossorigin>
+<link rel=stylesheet href=/graef.io/css/coder.min.708686f8ab8176e91d44fcbe488a0fe0333b94f405cf18a52383d67ba22f0ccb.css integrity="sha256-cIaG+KuBdukdRPy+SIoP4DM7lPQFzxilI4PWe6IvDMs=" crossorigin=anonymous media=screen>
+<link rel=stylesheet href=/graef.io/css/coder-dark.min.aa883b9ce35a8ff4a2a5008619005175e842bb18a8a9f9cc2bbcf44dab2d91fa.css integrity="sha256-qog7nONaj/SipQCGGQBRdehCuxioqfnMK7z0Tastkfo=" crossorigin=anonymous media=screen>
+<link rel=icon type=image/png href=/graef.io/img/favicon-32x32.png sizes=32x32>
+<link rel=icon type=image/png href=/graef.io/img/favicon-16x16.png sizes=16x16>
+<link rel=apple-touch-icon href=/graef.io/images/apple-touch-icon.png>
+<link rel=apple-touch-icon sizes=180x180 href=/graef.io/images/apple-touch-icon.png>
+<script defer src=https://twemoji.maxcdn.com/v/13.0.2/twemoji.min.js integrity=sha384-wyB/MspSJ/r2bT2kCj44qtsYRYlpzO2oAPhRj5myrWD63dt6qWv4x8AZe7Fl3K3b crossorigin=anonymous></script>
+<meta name=generator content="Hugo 0.86.1">
+</head>
+<body class="preload-transitions colorscheme-auto" onload=twemoji.parse(document.body)>
+<div class=float-container>
+<a id=dark-mode-toggle class=colorscheme-toggle>
+<i class="fa fa-adjust fa-fw" aria-hidden=true></i>
+</a>
+</div>
+<main class=wrapper>
+<nav class=navigation>
+<section class=container>
+<a class=navigation-title href=/graef.io>
+graef.io
+</a>
+<input type=checkbox id=menu-toggle>
+<label class="menu-button float-right" for=menu-toggle>
+<i class="fa fa-bars fa-fw" aria-hidden=true></i>
+</label>
+<ul class=navigation-list>
+<li class=navigation-item>
+<a class=navigation-link href=/graef.io/posts/>Blog</a>
+</li>
+<li class=navigation-item>
+<a class=navigation-link href=https://www.linkedin.com/in/sgraef/>About</a>
+</li>
+<li class=navigation-item>
+<a class=navigation-link href=/graef.io/archive/>Archive</a>
+</li>
+</ul>
+</section>
+</nav>
+<div class=content>
+<section class="container page">
+<article>
+<header>
+<h1 class=title>
+<a class=title-link href=https://segraef.github.io/graef.io/archive/wordpress-basic-settings-in-configphp/>
+Wordpress Basic Settings in config.php
+</a>
+</h1>
+</header>
+<p>The main configuration of WordPress is handled by wp-config.php which is responsible for database access, language, API keys, security and more. Anything changed in this file takes direct influence to your site’s settings and appearance.
+Settings set in wp-config.php are considered as global and overwrite all parameters in your admin panel.</p>
+<h4 id=general>
+General
+<a class=heading-link href=#general>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h4>
+<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>define(&#39;WP_HOME&#39;, &#39;https://www.graef.io&#39;); // Main URL
+define(&#39;WP_SITEURL&#39;, &#39;https://www.graef.io&#39;); // Site URL
+</code></pre></div><h4 id=deactivate-automatic-updates>
+Deactivate Automatic Updates
+<a class=heading-link href=#deactivate-automatic-updates>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h4>
+<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>define( &#39;AUTOMATIC_UPDATER_DISABLED&#39;, true );
+</code></pre></div><h4 id=disable-filter-for-uploads>
+Disable Filter for Uploads
+<a class=heading-link href=#disable-filter-for-uploads>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h4>
+<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>define( &#39;ALLOW_UNFILTERED_UPLOADS&#39;, true );
+</code></pre></div><h4 id=automatically-empty-recycle-bin>
+Automatically Empty Recycle Bin&lt;
+<a class=heading-link href=#automatically-empty-recycle-bin>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h4>
+<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>define (&#39;EMPTY_TRASH_DAYS&#39;, 7);
+define (&#39;EMPTY_TRASH_DAYS&#39;, 0);
+</code></pre></div><h4 id=deactivate-editor-for-themes-and-plugins>
+Deactivate Editor for Themes and Plugins
+<a class=heading-link href=#deactivate-editor-for-themes-and-plugins>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h4>
+<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>define( &#39;DISALLOW_FILE_EDIT&#39;, true );
+</code></pre></div><h4 id=set-default-theme-for-wordpress>
+Set Default Theme for WordPress
+<a class=heading-link href=#set-default-theme-for-wordpress>
+<i class="fa fa-link" aria-hidden=true></i>
+</a>
+</h4>
+<div class=highlight><pre tabindex=0 style=background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>define( &#39;WP_DEFAULT_THEME&#39;, &#39;default-theme-folder-name&#39; );
+</code></pre></div>
+</article>
+</section>
+</div>
+<footer class=footer>
+<section class=container>
+©
+2009 -
+2021
+</section>
+</footer>
+</main>
+<script src=/graef.io/js/coder.min.03b17769f4f91ae35667e1f2a1ca8c16f50562576cf90ff32b3179926914daa5.js integrity="sha256-A7F3afT5GuNWZ+HyocqMFvUFYlds+Q/zKzF5kmkU2qU="></script>
+<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-99599711-2','auto'),ga('send','pageview'))</script>
+</body>
+</html>
