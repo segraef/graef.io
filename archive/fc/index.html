@@ -4,7 +4,6 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta http-equiv=content-language content="en">
 <meta name=color-scheme content="light dark">
-<meta http-equiv=content-security-policy content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self'; img-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; prefetch-src 'self'; connect-src 'self' https://www.google-analytics.com;">
 <meta name=description content="The purpose of this article is to show how to adjust Windows Failover Cluster “Response to resource failure” policy.
 If a Cluster Core Resource like File Share Witness or Disk Quorum is in a failing state and offline, the cluster runs into jeopardy and will fail once the active node gets rebooted as no vote can be set to the quorum. To avoid this you should decrease the value of time your cluster core resource attempts to restart.">
 <meta name=keywords content="blog,devops,automation">
@@ -75,7 +74,9 @@ How to adjust Windows Failover Cluster 'Response to Resource Failure' Policy
 <p>The purpose of this article is to show how to adjust Windows Failover Cluster “Response to resource failure” policy.</p>
 <p>If a Cluster Core Resource like File Share Witness or Disk Quorum is in a failing state and offline, the cluster runs into jeopardy and will fail once the active node gets rebooted as no vote can be set to the quorum. To avoid this you should decrease the value of time your cluster core resource attempts to restart. The lower the value the higher the amount of retries your resource has to restart itself.
 To increase restart attempts for the Cluster Core Resource you need to adjust the “Response to resource failure” policy from one hour to 15 minutes.</p>
-<p><img src=img/2017-06-01_12-31-03.png alt=123></p>
+<p><img src=/images/2017-06-01_12-31-03.png alt=123>
+<img src=/avatar.png alt=123></p>
+<p><a href=https://gist.github.com/segraef/d5a84dabdecded5a98d6e0422bb04a8b>https://gist.github.com/segraef/d5a84dabdecded5a98d6e0422bb04a8b</a></p>
 <p>So with a given period for restarts of 15 minutes, maximum restarts in the specified period of 1 and “If all the restart attempts fail, begin restarting again after the specified period of period” of 15 minutes. The resource will try restarting itself again every 15 minutes instead every hour until it’s brought back up online.</p>
 </article>
 </section>
