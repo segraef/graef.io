@@ -6,6 +6,8 @@ This is a snippet from a RunBook which iterates also through each subscription b
 
 I took the advantage of using Get-AzVMUsage.
 
+### Snippet
+
 ```powershell
 $AzureLocations = Get-AzLocation | Select-Object DisplayName
 $Result = @()
@@ -20,6 +22,8 @@ ForEach ($AzureLocation in $AzureLocations) {
 }
 $Result
 ```
+
+### Output
 
 ![](2021-02-21-14-30-27.png)
 
