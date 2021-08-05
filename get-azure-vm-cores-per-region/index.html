@@ -11,7 +11,7 @@ I took the advantage of using Get-AzVMUsage.
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://segraef.github.io/graef.io/get-azure-vm-cores-per-region/"><meta property="og:image" content="https://segraef.github.io/graef.io/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-02-21T00:00:00+00:00">
-<meta property="article:modified_time" content="2021-02-21T00:00:00+00:00">
+<meta property="article:modified_time" content="2021-02-22T00:00:00+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://segraef.github.io/graef.io/logo.png">
 <meta name=twitter:title content="Get Azure VM Cores (vCPUs) per Region">
@@ -21,7 +21,7 @@ I took the advantage of using Get-AzVMUsage.
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=apple-touch-icon.png><link rel=mask-icon href=safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://segraef.github.io/graef.io/get-azure-vm-cores-per-region/><link rel=prev href=https://segraef.github.io/graef.io/markdown-syntax-guide/><link rel=next href=https://segraef.github.io/graef.io/get-local-account-memberships/><link rel=stylesheet href=/graef.io/lib/normalize/normalize.min.css><link rel=stylesheet href=/graef.io/css/style.min.css><link rel=stylesheet href=/graef.io/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/graef.io/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Get Azure VM Cores (vCPUs) per Region","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/segraef.github.io\/graef.io\/get-azure-vm-cores-per-region\/"},"genre":"posts","keywords":"automation, powershell, azure","wordcount":115,"url":"https:\/\/segraef.github.io\/graef.io\/get-azure-vm-cores-per-region\/","datePublished":"2021-02-21T00:00:00+00:00","dateModified":"2021-02-21T00:00:00+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Sebastian Gräf"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=apple-touch-icon.png><link rel=mask-icon href=safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://segraef.github.io/graef.io/get-azure-vm-cores-per-region/><link rel=prev href=https://segraef.github.io/graef.io/get-local-account-memberships/><link rel=next href=https://segraef.github.io/graef.io/function-lock-workstation-locally-and-remotely/><link rel=stylesheet href=/graef.io/lib/normalize/normalize.min.css><link rel=stylesheet href=/graef.io/css/style.min.css><link rel=stylesheet href=/graef.io/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/graef.io/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Get Azure VM Cores (vCPUs) per Region","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/segraef.github.io\/graef.io\/get-azure-vm-cores-per-region\/"},"genre":"posts","keywords":"automation, powershell, azure, iaas, vm, vcpu, azureregion","wordcount":115,"url":"https:\/\/segraef.github.io\/graef.io\/get-azure-vm-cores-per-region\/","datePublished":"2021-02-21T00:00:00+00:00","dateModified":"2021-02-22T00:00:00+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Sebastian Gräf"},"description":""}</script></head>
 <body header-desktop=auto header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -88,7 +88,7 @@ Cancel
 <h2 class=toc-title>Contents</h2>
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">Get Azure VM Cores (vCPUs) per Region</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=https://graef.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Sebastian Gräf</a></span></div>
+<div class=post-meta-line><span class=post-author><a href=https://graef.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Sebastian Gräf</a></span>&nbsp;<span class=post-category>included in <a href=/graef.io/categories/azure/><i class="far fa-folder fa-fw"></i>Azure</a>&nbsp;<a href=/graef.io/categories/iaas/><i class="far fa-folder fa-fw"></i>IaaS</a>&nbsp;<a href=/graef.io/categories/scripts/><i class="far fa-folder fa-fw"></i>Scripts</a></span></div>
 <div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-02-21>2021-02-21</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;115 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
 </div><div class="details toc" id=toc-static kept>
@@ -135,7 +135,7 @@ This is a snippet from a RunBook which iterates also through each subscription b
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2021-02-21</span>
+<span>Updated on 2021-02-22</span>
 </div>
 <div class=post-info-license></div>
 </div>
@@ -144,18 +144,18 @@ This is a snippet from a RunBook which iterates also through each subscription b
 <a class=link-to-markdown href=/graef.io/get-azure-vm-cores-per-region/index.md target=_blank>Read Markdown</a>
 </span></div>
 <div class=post-info-share>
-<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://segraef.github.io/graef.io/get-azure-vm-cores-per-region/ data-title="Get Azure VM Cores (vCPUs) per Region" data-via=segraef data-hashtags=automation,powershell,azure><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://segraef.github.io/graef.io/get-azure-vm-cores-per-region/ data-hashtag=automation><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://segraef.github.io/graef.io/get-azure-vm-cores-per-region/><i class="fab fa-linkedin fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://segraef.github.io/graef.io/get-azure-vm-cores-per-region/ data-title="Get Azure VM Cores (vCPUs) per Region" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=https://segraef.github.io/graef.io/get-azure-vm-cores-per-region/><i class="fab fa-reddit fa-fw"></i></a></span>
+<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://segraef.github.io/graef.io/get-azure-vm-cores-per-region/ data-title="Get Azure VM Cores (vCPUs) per Region" data-via=segraef data-hashtags=automation,powershell,azure,iaas,vm,vcpu,azureregion><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://segraef.github.io/graef.io/get-azure-vm-cores-per-region/ data-hashtag=automation><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://segraef.github.io/graef.io/get-azure-vm-cores-per-region/><i class="fab fa-linkedin fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://segraef.github.io/graef.io/get-azure-vm-cores-per-region/ data-title="Get Azure VM Cores (vCPUs) per Region" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=https://segraef.github.io/graef.io/get-azure-vm-cores-per-region/><i class="fab fa-reddit fa-fw"></i></a></span>
 </div>
 </div>
 </div>
 <div class=post-info-more>
-<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/graef.io/tags/automation/>automation</a>,&nbsp;<a href=/graef.io/tags/powershell/>powershell</a>,&nbsp;<a href=/graef.io/tags/azure/>azure</a></section>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/graef.io/tags/automation/>automation</a>,&nbsp;<a href=/graef.io/tags/powershell/>powershell</a>,&nbsp;<a href=/graef.io/tags/azure/>azure</a>,&nbsp;<a href=/graef.io/tags/iaas/>iaas</a>,&nbsp;<a href=/graef.io/tags/vm/>vm</a>,&nbsp;<a href=/graef.io/tags/vcpu/>vcpu</a>,&nbsp;<a href=/graef.io/tags/azureregion/>azureregion</a></section>
 <section>
 <span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/graef.io/>Home</a></span>
 </section>
 </div>
-<div class=post-nav><a href=/graef.io/markdown-syntax-guide/ class=prev rel=prev title="Markdown Syntax Guide"><i class="fas fa-angle-left fa-fw"></i>Markdown Syntax Guide</a>
-<a href=/graef.io/get-local-account-memberships/ class=next rel=next title="Get Local Account Memberships">Get Local Account Memberships<i class="fas fa-angle-right fa-fw"></i></a></div>
+<div class=post-nav><a href=/graef.io/get-local-account-memberships/ class=prev rel=prev title="Get Local Account Memberships"><i class="fas fa-angle-left fa-fw"></i>Get Local Account Memberships</a>
+<a href=/graef.io/function-lock-workstation-locally-and-remotely/ class=next rel=next title="Function Lock-Workstation locally and remotely">Function Lock-Workstation locally and remotely<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id=comments></div></article></div>
 </main><footer class=footer>

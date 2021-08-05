@@ -10,7 +10,7 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://segraef.github.io/graef.io/get-and-set-timezones-via-powershell-remotely/"><meta property="og:image" content="https://segraef.github.io/graef.io/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2018-06-28T00:00:00+00:00">
-<meta property="article:modified_time" content="2018-06-28T00:00:00+00:00">
+<meta property="article:modified_time" content="2021-02-22T00:00:00+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://segraef.github.io/graef.io/logo.png">
 <meta name=twitter:title content="Get and Set Timezones via PowerShell remotely">
@@ -19,7 +19,7 @@
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=apple-touch-icon.png><link rel=mask-icon href=safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://segraef.github.io/graef.io/get-and-set-timezones-via-powershell-remotely/><link rel=prev href=https://segraef.github.io/graef.io/how-to-adjust-windows-failover-cluster-response-to-resource-failure-policy/><link rel=next href=https://segraef.github.io/graef.io/get-aad-tenant-id-and-subscription-id/><link rel=stylesheet href=/graef.io/lib/normalize/normalize.min.css><link rel=stylesheet href=/graef.io/css/style.min.css><link rel=stylesheet href=/graef.io/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/graef.io/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Get and Set Timezones via PowerShell remotely","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/segraef.github.io\/graef.io\/get-and-set-timezones-via-powershell-remotely\/"},"genre":"posts","wordcount":2263,"url":"https:\/\/segraef.github.io\/graef.io\/get-and-set-timezones-via-powershell-remotely\/","datePublished":"2018-06-28T00:00:00+00:00","dateModified":"2018-06-28T00:00:00+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Sebastian Gräf"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=apple-touch-icon.png><link rel=mask-icon href=safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://segraef.github.io/graef.io/get-and-set-timezones-via-powershell-remotely/><link rel=prev href=https://segraef.github.io/graef.io/how-to-adjust-windows-failover-cluster-response-to-resource-failure-policy/><link rel=next href=https://segraef.github.io/graef.io/get-aad-tenant-id-and-subscription-id/><link rel=stylesheet href=/graef.io/lib/normalize/normalize.min.css><link rel=stylesheet href=/graef.io/css/style.min.css><link rel=stylesheet href=/graef.io/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/graef.io/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Get and Set Timezones via PowerShell remotely","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/segraef.github.io\/graef.io\/get-and-set-timezones-via-powershell-remotely\/"},"genre":"posts","keywords":"timezone, powershell, posh, remote","wordcount":2263,"url":"https:\/\/segraef.github.io\/graef.io\/get-and-set-timezones-via-powershell-remotely\/","datePublished":"2018-06-28T00:00:00+00:00","dateModified":"2021-02-22T00:00:00+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Sebastian Gräf"},"description":""}</script></head>
 <body header-desktop=auto header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -86,7 +86,7 @@ Cancel
 <h2 class=toc-title>Contents</h2>
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">Get and Set Timezones via PowerShell remotely</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=https://graef.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Sebastian Gräf</a></span></div>
+<div class=post-meta-line><span class=post-author><a href=https://graef.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Sebastian Gräf</a></span>&nbsp;<span class=post-category>included in <a href=/graef.io/categories/scripts/><i class="far fa-folder fa-fw"></i>Scripts</a></span></div>
 <div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2018-06-28>2018-06-28</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2263 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;11 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept>
@@ -1300,7 +1300,7 @@ Cancel
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2018-06-28</span>
+<span>Updated on 2021-02-22</span>
 </div>
 <div class=post-info-license></div>
 </div>
@@ -1309,12 +1309,12 @@ Cancel
 <a class=link-to-markdown href=/graef.io/get-and-set-timezones-via-powershell-remotely/index.md target=_blank>Read Markdown</a>
 </span></div>
 <div class=post-info-share>
-<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://segraef.github.io/graef.io/get-and-set-timezones-via-powershell-remotely/ data-title="Get and Set Timezones via PowerShell remotely" data-via=segraef><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://segraef.github.io/graef.io/get-and-set-timezones-via-powershell-remotely/><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://segraef.github.io/graef.io/get-and-set-timezones-via-powershell-remotely/><i class="fab fa-linkedin fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://segraef.github.io/graef.io/get-and-set-timezones-via-powershell-remotely/ data-title="Get and Set Timezones via PowerShell remotely" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=https://segraef.github.io/graef.io/get-and-set-timezones-via-powershell-remotely/><i class="fab fa-reddit fa-fw"></i></a></span>
+<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://segraef.github.io/graef.io/get-and-set-timezones-via-powershell-remotely/ data-title="Get and Set Timezones via PowerShell remotely" data-via=segraef data-hashtags=timezone,powershell,posh,remote><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://segraef.github.io/graef.io/get-and-set-timezones-via-powershell-remotely/ data-hashtag=timezone><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://segraef.github.io/graef.io/get-and-set-timezones-via-powershell-remotely/><i class="fab fa-linkedin fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://segraef.github.io/graef.io/get-and-set-timezones-via-powershell-remotely/ data-title="Get and Set Timezones via PowerShell remotely" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=https://segraef.github.io/graef.io/get-and-set-timezones-via-powershell-remotely/><i class="fab fa-reddit fa-fw"></i></a></span>
 </div>
 </div>
 </div>
 <div class=post-info-more>
-<section class=post-tags></section>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/graef.io/tags/timezone/>timezone</a>,&nbsp;<a href=/graef.io/tags/powershell/>powershell</a>,&nbsp;<a href=/graef.io/tags/posh/>posh</a>,&nbsp;<a href=/graef.io/tags/remote/>remote</a></section>
 <section>
 <span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/graef.io/>Home</a></span>
 </section>

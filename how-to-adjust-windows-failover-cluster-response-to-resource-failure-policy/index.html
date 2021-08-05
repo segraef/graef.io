@@ -10,7 +10,7 @@ If a Cluster Core Resource like File Share Witness or Disk Quorum is in a failin
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://segraef.github.io/graef.io/how-to-adjust-windows-failover-cluster-response-to-resource-failure-policy/"><meta property="og:image" content="https://segraef.github.io/graef.io/logo.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2018-01-01T00:00:00+00:00">
-<meta property="article:modified_time" content="2018-01-01T00:00:00+00:00">
+<meta property="article:modified_time" content="2021-02-22T00:00:00+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://segraef.github.io/graef.io/logo.png">
 <meta name=twitter:title content="How to adjust Windows Failover Cluster 'Response to Resource Failure' Policy">
@@ -19,7 +19,7 @@ If a Cluster Core Resource like File Share Witness or Disk Quorum is in a failin
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=apple-touch-icon.png><link rel=mask-icon href=safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://segraef.github.io/graef.io/how-to-adjust-windows-failover-cluster-response-to-resource-failure-policy/><link rel=next href=https://segraef.github.io/graef.io/get-and-set-timezones-via-powershell-remotely/><link rel=stylesheet href=/graef.io/lib/normalize/normalize.min.css><link rel=stylesheet href=/graef.io/css/style.min.css><link rel=stylesheet href=/graef.io/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/graef.io/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"How to adjust Windows Failover Cluster 'Response to Resource Failure' Policy","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/segraef.github.io\/graef.io\/how-to-adjust-windows-failover-cluster-response-to-resource-failure-policy\/"},"genre":"posts","wordcount":175,"url":"https:\/\/segraef.github.io\/graef.io\/how-to-adjust-windows-failover-cluster-response-to-resource-failure-policy\/","datePublished":"2018-01-01T00:00:00+00:00","dateModified":"2018-01-01T00:00:00+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Sebastian Gräf"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=apple-touch-icon.png><link rel=mask-icon href=safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://segraef.github.io/graef.io/how-to-adjust-windows-failover-cluster-response-to-resource-failure-policy/><link rel=next href=https://segraef.github.io/graef.io/get-and-set-timezones-via-powershell-remotely/><link rel=stylesheet href=/graef.io/lib/normalize/normalize.min.css><link rel=stylesheet href=/graef.io/css/style.min.css><link rel=stylesheet href=/graef.io/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/graef.io/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"How to adjust Windows Failover Cluster 'Response to Resource Failure' Policy","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/segraef.github.io\/graef.io\/how-to-adjust-windows-failover-cluster-response-to-resource-failure-policy\/"},"genre":"posts","keywords":"iaas, wfc, windows, failover, cluster, failovercluster","wordcount":175,"url":"https:\/\/segraef.github.io\/graef.io\/how-to-adjust-windows-failover-cluster-response-to-resource-failure-policy\/","datePublished":"2018-01-01T00:00:00+00:00","dateModified":"2021-02-22T00:00:00+00:00","publisher":{"@type":"Organization","name":""},"author":{"@type":"Person","name":"Sebastian Gräf"},"description":""}</script></head>
 <body header-desktop=auto header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -86,7 +86,7 @@ Cancel
 <h2 class=toc-title>Contents</h2>
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">How to adjust Windows Failover Cluster 'Response to Resource Failure' Policy</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=https://graef.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Sebastian Gräf</a></span></div>
+<div class=post-meta-line><span class=post-author><a href=https://graef.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Sebastian Gräf</a></span>&nbsp;<span class=post-category>included in <a href=/graef.io/categories/iaas/><i class="far fa-folder fa-fw"></i>IaaS</a></span></div>
 <div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2018-01-01>2018-01-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;175 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
 </div><div class="details toc" id=toc-static kept>
@@ -104,7 +104,7 @@ To increase restart attempts for the Cluster Core Resource you need to adjust th
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2018-01-01</span>
+<span>Updated on 2021-02-22</span>
 </div>
 <div class=post-info-license></div>
 </div>
@@ -113,12 +113,12 @@ To increase restart attempts for the Cluster Core Resource you need to adjust th
 <a class=link-to-markdown href=/graef.io/how-to-adjust-windows-failover-cluster-response-to-resource-failure-policy/index.md target=_blank>Read Markdown</a>
 </span></div>
 <div class=post-info-share>
-<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://segraef.github.io/graef.io/how-to-adjust-windows-failover-cluster-response-to-resource-failure-policy/ data-title="How to adjust Windows Failover Cluster 'Response to Resource Failure' Policy" data-via=segraef><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://segraef.github.io/graef.io/how-to-adjust-windows-failover-cluster-response-to-resource-failure-policy/><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://segraef.github.io/graef.io/how-to-adjust-windows-failover-cluster-response-to-resource-failure-policy/><i class="fab fa-linkedin fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://segraef.github.io/graef.io/how-to-adjust-windows-failover-cluster-response-to-resource-failure-policy/ data-title="How to adjust Windows Failover Cluster 'Response to Resource Failure' Policy" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=https://segraef.github.io/graef.io/how-to-adjust-windows-failover-cluster-response-to-resource-failure-policy/><i class="fab fa-reddit fa-fw"></i></a></span>
+<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://segraef.github.io/graef.io/how-to-adjust-windows-failover-cluster-response-to-resource-failure-policy/ data-title="How to adjust Windows Failover Cluster 'Response to Resource Failure' Policy" data-via=segraef data-hashtags=iaas,wfc,windows,failover,cluster,failovercluster><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://segraef.github.io/graef.io/how-to-adjust-windows-failover-cluster-response-to-resource-failure-policy/ data-hashtag=iaas><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://segraef.github.io/graef.io/how-to-adjust-windows-failover-cluster-response-to-resource-failure-policy/><i class="fab fa-linkedin fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://segraef.github.io/graef.io/how-to-adjust-windows-failover-cluster-response-to-resource-failure-policy/ data-title="How to adjust Windows Failover Cluster 'Response to Resource Failure' Policy" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=https://segraef.github.io/graef.io/how-to-adjust-windows-failover-cluster-response-to-resource-failure-policy/><i class="fab fa-reddit fa-fw"></i></a></span>
 </div>
 </div>
 </div>
 <div class=post-info-more>
-<section class=post-tags></section>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/graef.io/tags/iaas/>iaas</a>,&nbsp;<a href=/graef.io/tags/wfc/>wfc</a>,&nbsp;<a href=/graef.io/tags/windows/>windows</a>,&nbsp;<a href=/graef.io/tags/failover/>failover</a>,&nbsp;<a href=/graef.io/tags/cluster/>cluster</a>,&nbsp;<a href=/graef.io/tags/failovercluster/>failovercluster</a></section>
 <section>
 <span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/graef.io/>Home</a></span>
 </section>
