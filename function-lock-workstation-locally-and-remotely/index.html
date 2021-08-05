@@ -9,7 +9,7 @@
 1 2 3  Function Lock-WorkStation { rundll32.exe user32.dll, LockWorkStation }   Reference Locking a Computer">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://segraef.github.io/graef.io/function-lock-workstation-locally-and-remotely/"><meta property="og:image" content="https://segraef.github.io/graef.io/logo.png"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2021-08-04T00:00:00+00:00">
+<meta property="article:published_time" content="2019-08-04T00:00:00+00:00">
 <meta property="article:modified_time" content="2021-02-21T00:00:00+00:00">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://segraef.github.io/graef.io/logo.png">
@@ -19,7 +19,7 @@
 <meta name=application-name content="LoveIt">
 <meta name=apple-mobile-web-app-title content="LoveIt"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=apple-touch-icon.png><link rel=mask-icon href=safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://segraef.github.io/graef.io/function-lock-workstation-locally-and-remotely/><link rel=prev href=https://segraef.github.io/graef.io/get-azure-vm-cores-per-region/><link rel=next href=https://segraef.github.io/graef.io/basic-markdown-syntax/><link rel=stylesheet href=/graef.io/lib/normalize/normalize.min.css><link rel=stylesheet href=/graef.io/css/style.min.css><link rel=stylesheet href=/graef.io/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/graef.io/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Function Lock-Workstation locally and remotely","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/segraef.github.io\/graef.io\/function-lock-workstation-locally-and-remotely\/"},"genre":"posts","keywords":"default, powershell, posh, remote","wordcount":54,"url":"https:\/\/segraef.github.io\/graef.io\/function-lock-workstation-locally-and-remotely\/","datePublished":"2021-08-04T00:00:00+00:00","dateModified":"2021-02-21T00:00:00+00:00","publisher":{"@type":"Organization","name":"","logo":"https:\/\/segraef.github.io\/graef.io\/logo.png"},"author":{"@type":"Person","name":"Sebastian Gräf"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=apple-touch-icon.png><link rel=mask-icon href=safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://segraef.github.io/graef.io/function-lock-workstation-locally-and-remotely/><link rel=prev href=https://segraef.github.io/graef.io/get-azure-vm-cores-per-region/><link rel=next href=https://segraef.github.io/graef.io/markdown-syntax-guide/><link rel=stylesheet href=/graef.io/lib/normalize/normalize.min.css><link rel=stylesheet href=/graef.io/css/style.min.css><link rel=stylesheet href=/graef.io/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/graef.io/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Function Lock-Workstation locally and remotely","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/segraef.github.io\/graef.io\/function-lock-workstation-locally-and-remotely\/"},"genre":"posts","keywords":"default, powershell, posh, remote","wordcount":54,"url":"https:\/\/segraef.github.io\/graef.io\/function-lock-workstation-locally-and-remotely\/","datePublished":"2019-08-04T00:00:00+00:00","dateModified":"2021-02-21T00:00:00+00:00","publisher":{"@type":"Organization","name":"","logo":"https:\/\/segraef.github.io\/graef.io\/logo.png"},"author":{"@type":"Person","name":"Sebastian Gräf"},"description":""}</script></head>
 <body header-desktop=auto header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -27,7 +27,7 @@
 <a href=/graef.io/ title="Automate everything "></a>
 </div>
 <div class=menu>
-<div class=menu-inner><a class=menu-item href=/graef.io/posts/> Posts </a><a class=menu-item href=/graef.io/tags/> Tags </a><a class=menu-item href=/graef.io/categories/> Categories </a><a class=menu-item href=/graef.io/ title=GitHub><img class="far fa-user -fa-fw"></i> </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<div class=menu-inner><a class=menu-item href=/graef.io/posts/ title=Posts> Posts </a><a class=menu-item href=/graef.io/til/ title="Today I learned"> TIL </a><a class=menu-item href=/graef.io/tags/ title=Tags> Tags </a><a class=menu-item href=/graef.io/categories/ title=Categories> Categories </a><a class=menu-item href=/graef.io/ title=Home><img src=/graef.io/logo-62x62.png width=22 height=22 style=vertical-align:middle;margin:0> </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
 <input type=text placeholder="Search titles or contents..." id=search-input-desktop>
 <a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search>
 <i class="fas fa-search fa-fw"></i>
@@ -70,7 +70,7 @@
 <a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
 Cancel
 </a>
-</div><a class=menu-item href=/graef.io/posts/ title>Posts</a><a class=menu-item href=/graef.io/tags/ title>Tags</a><a class=menu-item href=/graef.io/categories/ title>Categories</a><a class=menu-item href=/graef.io/ title=GitHub><img class="far fa-user -fa-fw"></i></a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+</div><a class=menu-item href=/graef.io/posts/ title=Posts>Posts</a><a class=menu-item href=/graef.io/til/ title="Today I learned">TIL</a><a class=menu-item href=/graef.io/tags/ title=Tags>Tags</a><a class=menu-item href=/graef.io/categories/ title=Categories>Categories</a><a class=menu-item href=/graef.io/ title=Home><img src=/graef.io/logo-62x62.png width=22 height=22 style=vertical-align:middle;margin:0></a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
 <i class="fas fa-adjust fa-fw"></i>
 </a></div>
 </div>
@@ -87,7 +87,7 @@ Cancel
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">Function Lock-Workstation locally and remotely</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=https://graef.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Sebastian Gräf</a></span>&nbsp;<span class=post-category>included in <a href=/graef.io/categories/scripts/><i class="far fa-folder fa-fw"></i>Scripts</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime=2021-08-04>2021-08-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;54 words&nbsp;
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Sunday, Aug 4, 2019">Sunday, Aug 4, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;54 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
 </div><div class="details toc" id=toc-static kept>
 <div class="details-summary toc-title">
@@ -118,7 +118,7 @@ Cancel
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on 2021-02-21</span>
+<span>Updated on Sunday, Feb 21, 2021</span>
 </div>
 <div class=post-info-license></div>
 </div>
@@ -138,7 +138,7 @@ Cancel
 </section>
 </div>
 <div class=post-nav><a href=/graef.io/get-azure-vm-cores-per-region/ class=prev rel=prev title="Get Azure VM Cores (vCPUs) per Region"><i class="fas fa-angle-left fa-fw"></i>Get Azure VM Cores (vCPUs) per Region</a>
-<a href=/graef.io/basic-markdown-syntax/ class=next rel=next title="Basic Markdown Syntax">Basic Markdown Syntax<i class="fas fa-angle-right fa-fw"></i></a></div>
+<a href=/graef.io/markdown-syntax-guide/ class=next rel=next title="Markdown Syntax Guide">Markdown Syntax Guide<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id=comments></div></article></div>
 </main><footer class=footer>
