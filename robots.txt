@@ -61,4 +61,4 @@ Disallow: /
 User-agent: ZoominfoBot
 Disallow: /
 
-Sitemap: https://segraef.github.io/sitemap.xml
+Sitemap: https://graef.io/sitemap.xml
