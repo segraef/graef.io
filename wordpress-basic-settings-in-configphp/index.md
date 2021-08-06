@@ -41,3 +41,4 @@ define( 'DISALLOW_FILE_EDIT', true );
 ```phph
 define( 'WP_DEFAULT_THEME', 'default-theme-folder-name' );
 ```
+

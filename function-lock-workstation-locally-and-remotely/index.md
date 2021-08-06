@@ -9,7 +9,7 @@ Function Lock-WorkStation {
 }
 ```
 
-## Reference
-
-[Locking a Computer](https://docs.microsoft.com/en-us/powershell/scripting/samples/changing-computer-state?view=powershell-7.1#locking-a-computer)
+{{< admonition info References >}}
+- [Locking a Computer](https://docs.microsoft.com/en-us/powershell/scripting/samples/changing-computer-state?view=powershell-7.1#locking-a-computer)
+{{< /admonition >}}
 

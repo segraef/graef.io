@@ -11,3 +11,4 @@ Under Addition Settings you can see a field called Enable full-height editor and
 ![](2017-05-19_15-07-57.png)
 
 Untick it and be happy!
+

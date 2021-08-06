@@ -36,12 +36,9 @@ Get-Aztenant
 
 which gets tenants that are authorized for your current user.
 
-## References
-
-[Install Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure/install-az-ps)
-
-[Connect-AzAccount](https://docs.microsoft.com/en-us/powershell/module/az.accounts/connect-azaccount?view=azps-5.5.0)
-
-[Get-AzContext](https://docs.microsoft.com/en-us/powershell/module/az.accounts/get-azcontext?view=azps-5.5.0)
-
-[Get-AzTenant](https://docs.microsoft.com/en-us/powershell/module/az.accounts/get-aztenant?view=azps-5.5.0)
+{{< admonition info References >}}
+- [Install Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure/install-az-ps)
+- [Connect-AzAccount](https://docs.microsoft.com/en-us/powershell/module/az.accounts/connect-azaccount?view=azps-5.5.0)
+- [Get-AzContext](https://docs.microsoft.com/en-us/powershell/module/az.accounts/get-azcontext?view=azps-5.5.0)
+- [Get-AzTenant](https://docs.microsoft.com/en-us/powershell/module/az.accounts/get-aztenant?view=azps-5.5.0)
+{{< /admonition >}}

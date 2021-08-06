@@ -1,7 +1,6 @@
 # Expired Azure Credentials
 
 
-
 In case you get this error below, this error is mostly due to outdated Modules or at least in this case the AzureRM module.
 
 Your Azure credentials have not been set up or have expired, please run Login-AzureRMAccount to set up your Azure credentials.

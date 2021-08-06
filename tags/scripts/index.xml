@@ -1,0 +1,8 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>scripts - Tag - Automate everything</title><link>https://graef.io/tags/scripts/</link><description>scripts - Tag - Automate everything</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>sebastian@graef.io (Sebastian Gräf)</managingEditor><webMaster>sebastian@graef.io (Sebastian Gräf)</webMaster><lastBuildDate>Thu, 06 Aug 2020 09:33:25 +0800</lastBuildDate><atom:link href="https://graef.io/tags/scripts/" rel="self" type="application/rss+xml"/><item><title>How to get a list of PowerShell Aliases</title><link>https://graef.io/til/get-powershell-aliases/</link><pubDate>Thu, 06 Aug 2020 09:33:25 +0800</pubDate><author>Author</author><guid>https://graef.io/til/get-powershell-aliases/</guid><description><![CDATA[<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>Today I learned<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">How to get a list of PowerShell Aliases.</div>
+        </div>
+    </div>]]></description></item></channel></rss>

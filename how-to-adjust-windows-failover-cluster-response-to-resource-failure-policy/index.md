@@ -9,3 +9,4 @@ To increase restart attempts for the Cluster Core Resource you need to adjust th
 ![](2017-06-01_12-31-03.png)
 
 So with a given period for restarts of 15 minutes, maximum restarts in the specified period of 1 and “If all the restart attempts fail, begin restarting again after the specified period of period” of 15 minutes. The resource will try restarting itself again every 15 minutes instead every hour until it’s brought back up online.
+
