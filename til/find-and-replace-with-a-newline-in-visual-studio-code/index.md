@@ -1,4 +1,4 @@
-# Find and replace with a newline in Visual Studi Code
+# Find and replace with a newline in Visual Studio Code
 
 
 {{< admonition tip "Today I learned" >}}
