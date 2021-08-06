@@ -1,15 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tils on Automate everything</title><link>https://graef.io/til/</link><description>Recent content in Tils on Automate everything</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>sebastian@graef.io (Sebastian Gräf)</managingEditor><webMaster>sebastian@graef.io (Sebastian Gräf)</webMaster><lastBuildDate>Thu, 06 Aug 2020 09:33:25 +0800</lastBuildDate><atom:link href="https://graef.io/til/index.xml" rel="self" type="application/rss+xml"/><item><title>How to get a list of PowerShell Aliases</title><link>https://graef.io/til/get-powershell-aliases/</link><pubDate>Thu, 06 Aug 2020 09:33:25 +0800</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author><guid>https://graef.io/til/get-powershell-aliases/</guid><description>&lt;div class="details admonition info open">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tils on Automate everything</title><link>https://graef.io/til/</link><description>Recent content in Tils on Automate everything</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>sebastian@graef.io (Sebastian Gräf)</managingEditor><webMaster>sebastian@graef.io (Sebastian Gräf)</webMaster><lastBuildDate>Fri, 06 Aug 2021 15:16:19 +0800</lastBuildDate><atom:link href="https://graef.io/til/index.xml" rel="self" type="application/rss+xml"/><item><title>Find and replace with a newline in Visual Studi Code</title><link>https://graef.io/til/find-and-replace-with-a-newline-in-visual-studio-code/</link><pubDate>Fri, 06 Aug 2021 15:16:19 +0800</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author><guid>https://graef.io/til/find-and-replace-with-a-newline-in-visual-studio-code/</guid><description>&lt;div class="details admonition tip open">
+&lt;div class="details-summary admonition-title">
+&lt;i class="icon fas fa-lightbulb fa-fw">&lt;/i>Today I learned&lt;i class="details-icon fas fa-angle-right fa-fw">&lt;/i>
+&lt;/div>
+&lt;div class="details-content">
+&lt;div class="admonition-content">How to find and replace with a newline in Visual Studio Code.&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>Visual Studio Code Keyboard Shortcuts</title><link>https://graef.io/til/visual-studio-code-keyboard-shortcuts/</link><pubDate>Mon, 02 Aug 2021 15:30:25 +0800</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author><guid>https://graef.io/til/visual-studio-code-keyboard-shortcuts/</guid><description>&lt;div class="details admonition tip open">
+&lt;div class="details-summary admonition-title">
+&lt;i class="icon fas fa-lightbulb fa-fw">&lt;/i>Today I learned&lt;i class="details-icon fas fa-angle-right fa-fw">&lt;/i>
+&lt;/div>
+&lt;div class="details-content">
+&lt;div class="admonition-content">Visual Studio Code Keyboard Shortcuts&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>How to get a list of PowerShell Aliases</title><link>https://graef.io/til/get-powershell-aliases/</link><pubDate>Sun, 01 Aug 2021 09:33:25 +0800</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author><guid>https://graef.io/til/get-powershell-aliases/</guid><description>&lt;div class="details admonition info open">
 &lt;div class="details-summary admonition-title">
 &lt;i class="icon fas fa-info-circle fa-fw">&lt;/i>Today I learned&lt;i class="details-icon fas fa-angle-right fa-fw">&lt;/i>
 &lt;/div>
 &lt;div class="details-content">
 &lt;div class="admonition-content">How to get a list of PowerShell Aliases.&lt;/div>
 &lt;/div>
-&lt;/div></description></item><item><title>Today I learned ...</title><link>https://graef.io/til/default/</link><pubDate>Fri, 06 Mar 2020 00:00:00 +0000</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author><guid>https://graef.io/til/default/</guid><description>Basic configuration previewBasic configuration preview
-" Basic configuration preview
-2 Avataravatar
-" Avatar
-3 4 Note This article is a shameful copy of the great Grav original page.
-If you want to know about the extented Markdown syntax of LoveIt theme, please read extended Markdown syntax page.
-John Gruber, the author of Markdown, puts it like this:
-The overriding design goal for Markdown’s formatting syntax is to make it as readable as possible.</description></item></channel></rss>
+&lt;/div></description></item></channel></rss>
