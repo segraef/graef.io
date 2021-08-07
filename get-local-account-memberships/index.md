@@ -101,5 +101,5 @@ Once digested and imported with Import-Clixml you get the same output as before.
 
 So why are we doing it this way?
 
-Consider that, you’re going to execute a Custom Script Extension on your VM without having remote access to it, yes you don’t have access to it BUT you know you can use the Azure VMAgent which is by default installed on every VM in Azure. With having a Custom Script Extension executed including any of your script, e.g. “Get-LocalAccountMemberships” you can grab details from your machine without accessing it at all.
+Consider that, you’re going to execute a Custom Script Extension on your VM without having remote access to it, yes you don’t have access to it BUT you know you can use the Azure VMAgent which is by default installed on every VM in Azure. With having a Custom Script Extension executed including any of your script, e.g. "Get-LocalAccountMemberships” you can grab details from your machine without accessing it at all.
 

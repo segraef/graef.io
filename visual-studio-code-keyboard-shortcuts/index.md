@@ -1,9 +1,7 @@
 # Visual Studio Code Keyboard Shortcuts
 
 
-{{< admonition tip "Today I learned" >}}
-Visual Studio Code Keyboard Shortcuts for Windows, macOs and Linux
-{{< /admonition >}}
+> **Today I learned** Visual Studio Code Keyboard Shortcuts for Windows, macOs and Linux.
 
 <!--more-->
 

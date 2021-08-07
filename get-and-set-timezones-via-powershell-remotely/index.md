@@ -215,7 +215,7 @@ This will give you following output:
 ![](2021-02-21-15-30-27.png)
 
 
-To get a full list of all timezone IDs type “tzutil /l” and you will get following list:
+To get a full list of all timezone IDs type "tzutil /l” and you will get following list:
 
 ```powershell
 UTC-12:00) International Date Line West

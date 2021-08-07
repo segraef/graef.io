@@ -18,7 +18,7 @@ Following PowerShell Cmdlet aliases were used
 - ***start** = [Start-Process](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Utility/Start-Process?view=powershell-7.1)
 - ***rm** = [Invoke-WebRequest](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Utility/Invoke-WebRequest?view=powershell-7.1)
 
-For more details on aliases see [How to get a list of PowerShell Aliases](../til/get-powershell-aliases/)
+For more details on aliases see [How to get a list of PowerShell Aliases](../get-powershell-aliases/)
 
 {{< admonition tip >}}
 

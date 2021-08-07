@@ -5,23 +5,19 @@
 <meta name=robots content="noodp">
 <meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
 <title>Expired Azure Credentials - Automate everything </title><meta name=Description content="Automate everything "><meta property="og:title" content="Expired Azure Credentials">
-<meta property="og:description" content="In case you get this error below, this error is mostly due to outdated Modules or at least in this case the AzureRM module.
-Your Azure credentials have not been set up or have expired, please run Login-AzureRMAccount to set up your Azure credentials.
-Easily go ahead and update your PowerShell or Azure PowerShell Modules to the latest version 4.4.0 and it should be gone. You can do this while easily using Update-Module or just go ahead and use Install-Module AzureRm -Force">
+<meta property="og:description" content="In case you get this error below, this error is mostly due to outdated Modules or at least in this case the AzureRM module.">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://graef.io/expired-azure-credentials/"><meta property="og:image" content="https://graef.io/logo.png"><meta property="article:section" content="posts">
+<meta property="og:url" content="https://graef.io/expired-azure-credentials/"><meta property="og:image" content="https://graef.io/expired-azure-credentials/2017-10-26_13-06-21.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2017-10-26T15:00:50+08:00">
 <meta property="article:modified_time" content="2021-02-13T15:00:50+08:00">
 <meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="https://graef.io/logo.png">
+<meta name=twitter:image content="https://graef.io/expired-azure-credentials/2017-10-26_13-06-21.png">
 <meta name=twitter:title content="Expired Azure Credentials">
-<meta name=twitter:description content="In case you get this error below, this error is mostly due to outdated Modules or at least in this case the AzureRM module.
-Your Azure credentials have not been set up or have expired, please run Login-AzureRMAccount to set up your Azure credentials.
-Easily go ahead and update your PowerShell or Azure PowerShell Modules to the latest version 4.4.0 and it should be gone. You can do this while easily using Update-Module or just go ahead and use Install-Module AzureRm -Force">
+<meta name=twitter:description content="In case you get this error below, this error is mostly due to outdated Modules or at least in this case the AzureRM module.">
 <meta name=application-name content="graef.io">
-<meta name=apple-mobile-web-app-title content="graef.io"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=favicon.ico>
-<link rel=icon type=image/png sizes=32x32 href=favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=apple-touch-icon.png><link rel=mask-icon href=safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://graef.io/expired-azure-credentials/><link rel=prev href=https://graef.io/wordpress-editor-jump-fix/><link rel=next href=https://graef.io/how-to-adjust-windows-failover-cluster-response-to-resource-failure-policy/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Expired Azure Credentials","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/graef.io\/expired-azure-credentials\/"},"genre":"posts","keywords":"automation, credentials, az","wordcount":82,"url":"https:\/\/graef.io\/expired-azure-credentials\/","datePublished":"2017-10-26T15:00:50+08:00","dateModified":"2021-02-13T15:00:50+08:00","publisher":{"@type":"Organization","name":"","logo":"https:\/\/graef.io\/logo.png"},"author":{"@type":"Person","name":"Sebastian Gräf"},"description":""}</script></head>
+<meta name=apple-mobile-web-app-title content="graef.io"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://graef.io/expired-azure-credentials/><link rel=prev href=https://graef.io/wordpress-editor-jump-fix/><link rel=next href=https://graef.io/how-to-adjust-windows-failover-cluster-response-to-resource-failure-policy/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Expired Azure Credentials","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/graef.io\/expired-azure-credentials\/"},"image":[{"@type":"ImageObject","url":"https:\/\/graef.io\/expired-azure-credentials\/2017-10-26_13-06-21.png","width":1024,"height":95}],"genre":"posts","keywords":"automation, credentials, az, azure, powershell, azurerm","wordcount":82,"url":"https:\/\/graef.io\/expired-azure-credentials\/","datePublished":"2017-10-26T15:00:50+08:00","dateModified":"2021-02-13T15:00:50+08:00","publisher":{"@type":"Organization","name":"","logo":"https:\/\/graef.io\/logo.png"},"author":{"@type":"Person","name":"Sebastian Gräf"},"description":""}</script></head>
 <body header-desktop=auto header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -29,7 +25,7 @@ Easily go ahead and update your PowerShell or Azure PowerShell Modules to the la
 <a href=/ title="Automate everything "></a>
 </div>
 <div class=menu>
-<div class=menu-inner><a class=menu-item href=/posts/ title=Posts> Posts </a><a class=menu-item href=/categories/projects/ title=Projects> Projects </a><a class=menu-item href=/categories/til/ title="Today I learned"> TIL </a><a class=menu-item href=/tags/ title=Tags> Tags </a><a class=menu-item href=/categories/ title=Categories> Categories </a><a class=menu-item href=/ title=Home><img src=/logo-62x62.png width=22 height=22 style=vertical-align:middle;margin:0> </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<div class=menu-inner><a class=menu-item href=/posts/ title=Posts> Posts </a><a class=menu-item href=/categories/til/ title="Today I learned"> TIL </a><a class=menu-item href=/tags/ title=Tags> Tags </a><a class=menu-item href=/categories/ title=Categories> Categories </a><a class=menu-item href=/ title=Home><img src=/logo-62x62.png width=22 height=22 style=vertical-align:middle;margin:0> </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
 <input type=text placeholder="Search titles or contents..." id=search-input-desktop>
 <a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search>
 <i class="fas fa-search fa-fw"></i>
@@ -72,7 +68,7 @@ Easily go ahead and update your PowerShell or Azure PowerShell Modules to the la
 <a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
 Cancel
 </a>
-</div><a class=menu-item href=/posts/ title=Posts>Posts</a><a class=menu-item href=/categories/projects/ title=Projects>Projects</a><a class=menu-item href=/categories/til/ title="Today I learned">TIL</a><a class=menu-item href=/tags/ title=Tags>Tags</a><a class=menu-item href=/categories/ title=Categories>Categories</a><a class=menu-item href=/ title=Home><img src=/logo-62x62.png width=22 height=22 style=vertical-align:middle;margin:0></a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+</div><a class=menu-item href=/posts/ title=Posts>Posts</a><a class=menu-item href=/categories/til/ title="Today I learned">TIL</a><a class=menu-item href=/tags/ title=Tags>Tags</a><a class=menu-item href=/categories/ title=Categories>Categories</a><a class=menu-item href=/ title=Home><img src=/logo-62x62.png width=22 height=22 style=vertical-align:middle;margin:0></a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
 <i class="fas fa-adjust fa-fw"></i>
 </a></div>
 </div>
@@ -84,25 +80,15 @@ Cancel
 <div id=search-dropdown-mobile></div>
 </div>
 <main class=main>
-<div class=container><div class=toc id=toc-auto>
-<h2 class=toc-title>Contents</h2>
-<div class=toc-content id=toc-content-auto></div>
-</div><article class="page single"><h1 class="single-title animated flipInX">Expired Azure Credentials</h1><div class=post-meta>
+<div class=container><article class="page single"><h1 class="single-title animated flipInX">Expired Azure Credentials</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=https://graef.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Sebastian Gräf</a></span>&nbsp;<span class=post-category>included in <a href=/categories/azure/><i class="far fa-folder fa-fw"></i>Azure</a>&nbsp;<a href=/categories/troubleshooting/><i class="far fa-folder fa-fw"></i>Troubleshooting</a></span></div>
 <div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Thursday, Oct 26, 2017">Thursday, Oct 26, 2017</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;82 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
-</div><div class="details toc" id=toc-static kept>
-<div class="details-summary toc-title">
-<span>Contents</span>
-<span><i class="details-icon fas fa-angle-right"></i></span>
-</div>
-<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents></nav></div>
 </div><div class=content id=content><p>In case you get this error below, this error is mostly due to outdated Modules or at least in this case the AzureRM module.</p>
 <p>Your Azure credentials have not been set up or have expired, please run Login-AzureRMAccount to set up your Azure credentials.</p>
-<p><img class=lazyload src=/svg/loading.min.svg data-src=2017-10-26_13-06-21.png data-srcset="/expired-azure-credentials/2017-10-26_13-06-21.png, 2017-10-26_13-06-21.png 1.5x, /expired-azure-credentials/2017-10-26_13-06-21.png 2x" data-sizes=auto alt=/expired-azure-credentials/2017-10-26_13-06-21.png title=/expired-azure-credentials/2017-10-26_13-06-21.png></p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=2017-10-26_13-06-21.png data-srcset="2017-10-26_13-06-21.png, 2017-10-26_13-06-21.png 1.5x, 2017-10-26_13-06-21.png 2x" data-sizes=auto alt=2017-10-26_13-06-21.png title=2017-10-26_13-06-21.png></p>
 <p>Easily go ahead and update your PowerShell or Azure PowerShell Modules to the latest version 4.4.0 and it should be gone.
-You can do this while easily using Update-Module or just go ahead and use Install-Module AzureRm -Force</p>
-</div><div class=post-footer id=post-footer>
+You can do this while easily using Update-Module or just go ahead and use Install-Module AzureRm -Force</p></div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
@@ -115,12 +101,12 @@ You can do this while easily using Update-Module or just go ahead and use Instal
 <a class=link-to-markdown href=/expired-azure-credentials/index.md target=_blank>Read Markdown</a>
 </span></div>
 <div class=post-info-share>
-<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://graef.io/expired-azure-credentials/ data-title="Expired Azure Credentials" data-via=segraef data-hashtags=automation,credentials,az><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://graef.io/expired-azure-credentials/ data-hashtag=automation><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://graef.io/expired-azure-credentials/><i class="fab fa-linkedin fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://graef.io/expired-azure-credentials/ data-title="Expired Azure Credentials" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=https://graef.io/expired-azure-credentials/><i class="fab fa-reddit fa-fw"></i></a></span>
+<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://graef.io/expired-azure-credentials/ data-title="Expired Azure Credentials" data-via=segraef data-hashtags=automation,credentials,az,azure,powershell,azurerm><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://graef.io/expired-azure-credentials/ data-hashtag=automation><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://graef.io/expired-azure-credentials/><i class="fab fa-linkedin fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://graef.io/expired-azure-credentials/ data-title="Expired Azure Credentials" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=https://graef.io/expired-azure-credentials/><i class="fab fa-reddit fa-fw"></i></a></span>
 </div>
 </div>
 </div>
 <div class=post-info-more>
-<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/automation/>automation</a>,&nbsp;<a href=/tags/credentials/>credentials</a>,&nbsp;<a href=/tags/az/>az</a></section>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/automation/>automation</a>,&nbsp;<a href=/tags/credentials/>credentials</a>,&nbsp;<a href=/tags/az/>az</a>,&nbsp;<a href=/tags/azure/>azure</a>,&nbsp;<a href=/tags/powershell/>powershell</a>,&nbsp;<a href=/tags/azurerm/>azurerm</a></section>
 <section>
 <span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span>
 </section>

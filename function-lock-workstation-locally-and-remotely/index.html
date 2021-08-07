@@ -5,21 +5,19 @@
 <meta name=robots content="noodp">
 <meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
 <title>Function Lock-Workstation locally and remotely - Automate everything </title><meta name=Description content="Automate everything "><meta property="og:title" content="Function Lock-Workstation locally and remotely">
-<meta property="og:description" content="You can do everything with PowerShell, as well as locking your workstation with one simple function call. Just call the LockWorkstation() function in user32.dll and that&rsquo;s it! The fine thing is, it works on a local and a remote session.
-1 2 3  Function Lock-WorkStation { rundll32.exe user32.dll, LockWorkStation }   References   Locking a Computer     ">
+<meta property="og:description" content="You can do everything with PowerShell, as well as locking your workstation with one simple function call.">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://graef.io/function-lock-workstation-locally-and-remotely/"><meta property="og:image" content="https://graef.io/logo.png"><meta property="article:section" content="posts">
+<meta property="og:url" content="https://graef.io/function-lock-workstation-locally-and-remotely/"><meta property="og:image" content="https://graef.io/function-lock-workstation-locally-and-remotely/lock.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2019-08-04T00:00:00+00:00">
 <meta property="article:modified_time" content="2021-02-21T00:00:00+00:00">
 <meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="https://graef.io/logo.png">
+<meta name=twitter:image content="https://graef.io/function-lock-workstation-locally-and-remotely/lock.png">
 <meta name=twitter:title content="Function Lock-Workstation locally and remotely">
-<meta name=twitter:description content="You can do everything with PowerShell, as well as locking your workstation with one simple function call. Just call the LockWorkstation() function in user32.dll and that&rsquo;s it! The fine thing is, it works on a local and a remote session.
-1 2 3  Function Lock-WorkStation { rundll32.exe user32.dll, LockWorkStation }   References   Locking a Computer     ">
+<meta name=twitter:description content="You can do everything with PowerShell, as well as locking your workstation with one simple function call.">
 <meta name=application-name content="graef.io">
-<meta name=apple-mobile-web-app-title content="graef.io"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=favicon.ico>
-<link rel=icon type=image/png sizes=32x32 href=favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=apple-touch-icon.png><link rel=mask-icon href=safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://graef.io/function-lock-workstation-locally-and-remotely/><link rel=prev href=https://graef.io/get-azure-vm-cores-per-region/><link rel=next href=https://graef.io/programmatically-create-azure-pipelines/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Function Lock-Workstation locally and remotely","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/graef.io\/function-lock-workstation-locally-and-remotely\/"},"genre":"posts","keywords":"default, powershell, posh, remote","wordcount":54,"url":"https:\/\/graef.io\/function-lock-workstation-locally-and-remotely\/","datePublished":"2019-08-04T00:00:00+00:00","dateModified":"2021-02-21T00:00:00+00:00","publisher":{"@type":"Organization","name":"","logo":"https:\/\/graef.io\/logo.png"},"author":{"@type":"Person","name":"Sebastian Gräf"},"description":""}</script></head>
+<meta name=apple-mobile-web-app-title content="graef.io"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://graef.io/function-lock-workstation-locally-and-remotely/><link rel=prev href=https://graef.io/get-azure-vm-cores-per-region/><link rel=next href=https://graef.io/programmatically-create-azure-pipelines/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Function Lock-Workstation locally and remotely","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/graef.io\/function-lock-workstation-locally-and-remotely\/"},"image":[{"@type":"ImageObject","url":"https:\/\/graef.io\/function-lock-workstation-locally-and-remotely\/lock.png","width":430,"height":255}],"genre":"posts","keywords":"lock workstation, powershell, posh, remote","wordcount":54,"url":"https:\/\/graef.io\/function-lock-workstation-locally-and-remotely\/","datePublished":"2019-08-04T00:00:00+00:00","dateModified":"2021-02-21T00:00:00+00:00","publisher":{"@type":"Organization","name":"","logo":"https:\/\/graef.io\/logo.png"},"author":{"@type":"Person","name":"Sebastian Gräf"},"description":""}</script></head>
 <body header-desktop=auto header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -27,7 +25,7 @@
 <a href=/ title="Automate everything "></a>
 </div>
 <div class=menu>
-<div class=menu-inner><a class=menu-item href=/posts/ title=Posts> Posts </a><a class=menu-item href=/categories/projects/ title=Projects> Projects </a><a class=menu-item href=/categories/til/ title="Today I learned"> TIL </a><a class=menu-item href=/tags/ title=Tags> Tags </a><a class=menu-item href=/categories/ title=Categories> Categories </a><a class=menu-item href=/ title=Home><img src=/logo-62x62.png width=22 height=22 style=vertical-align:middle;margin:0> </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<div class=menu-inner><a class=menu-item href=/posts/ title=Posts> Posts </a><a class=menu-item href=/categories/til/ title="Today I learned"> TIL </a><a class=menu-item href=/tags/ title=Tags> Tags </a><a class=menu-item href=/categories/ title=Categories> Categories </a><a class=menu-item href=/ title=Home><img src=/logo-62x62.png width=22 height=22 style=vertical-align:middle;margin:0> </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
 <input type=text placeholder="Search titles or contents..." id=search-input-desktop>
 <a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search>
 <i class="fas fa-search fa-fw"></i>
@@ -70,7 +68,7 @@
 <a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
 Cancel
 </a>
-</div><a class=menu-item href=/posts/ title=Posts>Posts</a><a class=menu-item href=/categories/projects/ title=Projects>Projects</a><a class=menu-item href=/categories/til/ title="Today I learned">TIL</a><a class=menu-item href=/tags/ title=Tags>Tags</a><a class=menu-item href=/categories/ title=Categories>Categories</a><a class=menu-item href=/ title=Home><img src=/logo-62x62.png width=22 height=22 style=vertical-align:middle;margin:0></a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+</div><a class=menu-item href=/posts/ title=Posts>Posts</a><a class=menu-item href=/categories/til/ title="Today I learned">TIL</a><a class=menu-item href=/tags/ title=Tags>Tags</a><a class=menu-item href=/categories/ title=Categories>Categories</a><a class=menu-item href=/ title=Home><img src=/logo-62x62.png width=22 height=22 style=vertical-align:middle;margin:0></a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
 <i class="fas fa-adjust fa-fw"></i>
 </a></div>
 </div>
@@ -89,13 +87,14 @@ Cancel
 <div class=post-meta-line><span class=post-author><a href=https://graef.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Sebastian Gräf</a></span>&nbsp;<span class=post-category>included in <a href=/categories/scripts/><i class="far fa-folder fa-fw"></i>Scripts</a></span></div>
 <div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Sunday, Aug 4, 2019">Sunday, Aug 4, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;54 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
-</div><div class="details toc" id=toc-static kept>
+</div><div class=featured-image><img class=lazyload src=/svg/loading.min.svg data-src=/function-lock-workstation-locally-and-remotely/lock.png data-srcset="/function-lock-workstation-locally-and-remotely/lock.png, /function-lock-workstation-locally-and-remotely/lock.png 1.5x, /function-lock-workstation-locally-and-remotely/lock.png 2x" data-sizes=auto alt=/function-lock-workstation-locally-and-remotely/lock.png title=/function-lock-workstation-locally-and-remotely/lock.png></div><div class="details toc" id=toc-static kept>
 <div class="details-summary toc-title">
 <span>Contents</span>
 <span><i class="details-icon fas fa-angle-right"></i></span>
 </div>
 <div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents></nav></div>
-</div><div class=content id=content><p>You can do everything with PowerShell, as well as locking your workstation with one simple function call. Just call the <code>LockWorkstation()</code> function in user32.dll and that&rsquo;s it! The fine thing is, it works on a local and a remote session.</p>
+</div><div class=content id=content><p>You can do everything with PowerShell, as well as locking your workstation with one simple function call.</p>
+<p>Just call the <code>LockWorkstation()</code> function in user32.dll and that&rsquo;s it! The fine thing is, it works on a local and a remote session.</p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
@@ -118,8 +117,7 @@ Cancel
 </ul>
 </div>
 </div>
-</div>
-</div><div class=post-footer id=post-footer>
+</div></div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
@@ -132,12 +130,12 @@ Cancel
 <a class=link-to-markdown href=/function-lock-workstation-locally-and-remotely/index.md target=_blank>Read Markdown</a>
 </span></div>
 <div class=post-info-share>
-<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://graef.io/function-lock-workstation-locally-and-remotely/ data-title="Function Lock-Workstation locally and remotely" data-via=segraef data-hashtags=default,powershell,posh,remote><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://graef.io/function-lock-workstation-locally-and-remotely/ data-hashtag=default><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://graef.io/function-lock-workstation-locally-and-remotely/><i class="fab fa-linkedin fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://graef.io/function-lock-workstation-locally-and-remotely/ data-title="Function Lock-Workstation locally and remotely" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=https://graef.io/function-lock-workstation-locally-and-remotely/><i class="fab fa-reddit fa-fw"></i></a></span>
+<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://graef.io/function-lock-workstation-locally-and-remotely/ data-title="Function Lock-Workstation locally and remotely" data-via=segraef data-hashtags="lock workstation,powershell,posh,remote"><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://graef.io/function-lock-workstation-locally-and-remotely/ data-hashtag="lock workstation"><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://graef.io/function-lock-workstation-locally-and-remotely/><i class="fab fa-linkedin fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://graef.io/function-lock-workstation-locally-and-remotely/ data-title="Function Lock-Workstation locally and remotely" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=https://graef.io/function-lock-workstation-locally-and-remotely/><i class="fab fa-reddit fa-fw"></i></a></span>
 </div>
 </div>
 </div>
 <div class=post-info-more>
-<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/default/>default</a>,&nbsp;<a href=/tags/powershell/>powershell</a>,&nbsp;<a href=/tags/posh/>posh</a>,&nbsp;<a href=/tags/remote/>remote</a></section>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/lock-workstation/>lock workstation</a>,&nbsp;<a href=/tags/powershell/>powershell</a>,&nbsp;<a href=/tags/posh/>posh</a>,&nbsp;<a href=/tags/remote/>remote</a></section>
 <section>
 <span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span>
 </section>

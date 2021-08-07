@@ -5,10 +5,7 @@
 <meta name=robots content="noodp">
 <meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
 <title>Programmatically Create Azure Pipelines - Automate everything </title><meta name=Description content="Automate everything "><meta property="og:title" content="Programmatically Create Azure Pipelines">
-<meta property="og:description" content="This script New-AzPipeline lets you programmatically create Azure Pipelines based on your folder structure.
-It browses through your folder structure for pipeline.yml files and creates corresponding Azure Pipelines in Azure DevOps.
-It has several features like creating pipelines based on a specific folder/module version, latest version or just creates all.
-It also compares against existing Pipelines and skips these.">
+<meta property="og:description" content="This script New-AzPipeline lets you programmatically create Azure Pipelines based on your folder structure.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://graef.io/programmatically-create-azure-pipelines/"><meta property="og:image" content="https://graef.io/programmatically-create-azure-pipelines/featured-image.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2020-03-07T13:10:29+08:00">
@@ -16,14 +13,11 @@ It also compares against existing Pipelines and skips these.">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://graef.io/programmatically-create-azure-pipelines/featured-image.png">
 <meta name=twitter:title content="Programmatically Create Azure Pipelines">
-<meta name=twitter:description content="This script New-AzPipeline lets you programmatically create Azure Pipelines based on your folder structure.
-It browses through your folder structure for pipeline.yml files and creates corresponding Azure Pipelines in Azure DevOps.
-It has several features like creating pipelines based on a specific folder/module version, latest version or just creates all.
-It also compares against existing Pipelines and skips these.">
+<meta name=twitter:description content="This script New-AzPipeline lets you programmatically create Azure Pipelines based on your folder structure.">
 <meta name=application-name content="graef.io">
-<meta name=apple-mobile-web-app-title content="graef.io"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=favicon.ico>
-<link rel=icon type=image/png sizes=32x32 href=favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=apple-touch-icon.png><link rel=mask-icon href=safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://graef.io/programmatically-create-azure-pipelines/><link rel=prev href=https://graef.io/function-lock-workstation-locally-and-remotely/><link rel=next href=https://graef.io/markdown-syntax-guide/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Programmatically Create Azure Pipelines","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/graef.io\/programmatically-create-azure-pipelines\/"},"image":[{"@type":"ImageObject","url":"https:\/\/graef.io\/programmatically-create-azure-pipelines\/featured-image.png","width":1403,"height":389}],"genre":"posts","keywords":"azure, pipeline, cicd, automation, azure-pipeline, new-azpipeline, powershell, devops, azure-devops, ado, scripts","wordcount":299,"url":"https:\/\/graef.io\/programmatically-create-azure-pipelines\/","datePublished":"2020-03-07T13:10:29+08:00","dateModified":"2020-03-07T13:10:29+08:00","publisher":{"@type":"Organization","name":"","logo":"https:\/\/graef.io\/logo.png"},"author":{"@type":"Person","name":"Sebastian Gräf"},"description":""}</script></head>
+<meta name=apple-mobile-web-app-title content="graef.io"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://graef.io/programmatically-create-azure-pipelines/><link rel=prev href=https://graef.io/function-lock-workstation-locally-and-remotely/><link rel=next href=https://graef.io/markdown-syntax-guide/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Programmatically Create Azure Pipelines","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/graef.io\/programmatically-create-azure-pipelines\/"},"image":[{"@type":"ImageObject","url":"https:\/\/graef.io\/programmatically-create-azure-pipelines\/featured-image.png","width":1403,"height":389}],"genre":"posts","keywords":"azure, pipeline, cicd, automation, powershell, devops, ado, scripts","wordcount":299,"url":"https:\/\/graef.io\/programmatically-create-azure-pipelines\/","datePublished":"2020-03-07T13:10:29+08:00","dateModified":"2020-03-07T13:10:29+08:00","publisher":{"@type":"Organization","name":"","logo":"https:\/\/graef.io\/logo.png"},"author":{"@type":"Person","name":"Sebastian Gräf"},"description":""}</script></head>
 <body header-desktop=auto header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -31,7 +25,7 @@ It also compares against existing Pipelines and skips these.">
 <a href=/ title="Automate everything "></a>
 </div>
 <div class=menu>
-<div class=menu-inner><a class=menu-item href=/posts/ title=Posts> Posts </a><a class=menu-item href=/categories/projects/ title=Projects> Projects </a><a class=menu-item href=/categories/til/ title="Today I learned"> TIL </a><a class=menu-item href=/tags/ title=Tags> Tags </a><a class=menu-item href=/categories/ title=Categories> Categories </a><a class=menu-item href=/ title=Home><img src=/logo-62x62.png width=22 height=22 style=vertical-align:middle;margin:0> </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<div class=menu-inner><a class=menu-item href=/posts/ title=Posts> Posts </a><a class=menu-item href=/categories/til/ title="Today I learned"> TIL </a><a class=menu-item href=/tags/ title=Tags> Tags </a><a class=menu-item href=/categories/ title=Categories> Categories </a><a class=menu-item href=/ title=Home><img src=/logo-62x62.png width=22 height=22 style=vertical-align:middle;margin:0> </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
 <input type=text placeholder="Search titles or contents..." id=search-input-desktop>
 <a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search>
 <i class="fas fa-search fa-fw"></i>
@@ -74,7 +68,7 @@ It also compares against existing Pipelines and skips these.">
 <a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
 Cancel
 </a>
-</div><a class=menu-item href=/posts/ title=Posts>Posts</a><a class=menu-item href=/categories/projects/ title=Projects>Projects</a><a class=menu-item href=/categories/til/ title="Today I learned">TIL</a><a class=menu-item href=/tags/ title=Tags>Tags</a><a class=menu-item href=/categories/ title=Categories>Categories</a><a class=menu-item href=/ title=Home><img src=/logo-62x62.png width=22 height=22 style=vertical-align:middle;margin:0></a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+</div><a class=menu-item href=/posts/ title=Posts>Posts</a><a class=menu-item href=/categories/til/ title="Today I learned">TIL</a><a class=menu-item href=/tags/ title=Tags>Tags</a><a class=menu-item href=/categories/ title=Categories>Categories</a><a class=menu-item href=/ title=Home><img src=/logo-62x62.png width=22 height=22 style=vertical-align:middle;margin:0></a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
 <i class="fas fa-adjust fa-fw"></i>
 </a></div>
 </div>
@@ -110,8 +104,8 @@ Cancel
 <li><a href=#contributions>Contributions</a></li>
 </ul>
 </nav></div>
-</div><div class=content id=content><p>This script <a href=https://github.com/segraef/New-AzPipeline target=_blank rel="noopener noreffer">New-AzPipeline</a> lets you programmatically create Azure Pipelines based on your folder structure.
-It browses through your folder structure for pipeline.yml files and creates corresponding Azure Pipelines in Azure DevOps.
+</div><div class=content id=content><p>This script <a href=https://github.com/segraef/New-AzPipeline target=_blank rel="noopener noreffer">New-AzPipeline</a> lets you programmatically create Azure Pipelines based on your folder structure.</p>
+<p>It browses through your folder structure for pipeline.yml files and creates corresponding Azure Pipelines in Azure DevOps.
 It has several features like creating pipelines based on a specific folder/module version, latest version or just creates all.
 It also compares against existing Pipelines and skips these.</p>
 <h2 id=script>Script</h2>
@@ -209,7 +203,7 @@ It also compares against existing Pipelines and skips these.</p>
 <div class=admonition-content>
 <ul>
 <li><a href=https://example.com target=_blank rel="noopener noreffer">Scripts Repository</a></li>
-<li><a href=https://github.com/segraef/New-AzPipeline target=_blank rel="noopener noreffer">New-AzPileline.ps1</a></li>
+<li><a href=https://github.com/segraef/New-AzPipeline target=_blank rel="noopener noreffer">New-AzPipeline.ps1</a></li>
 </ul>
 </div>
 </div>
@@ -226,12 +220,12 @@ It also compares against existing Pipelines and skips these.</p>
 <a class=link-to-markdown href=/programmatically-create-azure-pipelines/index.md target=_blank>Read Markdown</a>
 </span></div>
 <div class=post-info-share>
-<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://graef.io/programmatically-create-azure-pipelines/ data-title="Programmatically Create Azure Pipelines" data-via=segraef data-hashtags=azure,pipeline,cicd,automation,azure-pipeline,new-azpipeline,powershell,devops,azure-devops,ado,scripts><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://graef.io/programmatically-create-azure-pipelines/ data-hashtag=azure><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://graef.io/programmatically-create-azure-pipelines/><i class="fab fa-linkedin fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://graef.io/programmatically-create-azure-pipelines/ data-title="Programmatically Create Azure Pipelines" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=https://graef.io/programmatically-create-azure-pipelines/><i class="fab fa-reddit fa-fw"></i></a></span>
+<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://graef.io/programmatically-create-azure-pipelines/ data-title="Programmatically Create Azure Pipelines" data-via=segraef data-hashtags=azure,pipeline,cicd,automation,powershell,devops,ado,scripts><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://graef.io/programmatically-create-azure-pipelines/ data-hashtag=azure><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://graef.io/programmatically-create-azure-pipelines/><i class="fab fa-linkedin fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://graef.io/programmatically-create-azure-pipelines/ data-title="Programmatically Create Azure Pipelines" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=https://graef.io/programmatically-create-azure-pipelines/><i class="fab fa-reddit fa-fw"></i></a></span>
 </div>
 </div>
 </div>
 <div class=post-info-more>
-<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/azure/>azure</a>,&nbsp;<a href=/tags/pipeline/>pipeline</a>,&nbsp;<a href=/tags/cicd/>cicd</a>,&nbsp;<a href=/tags/automation/>automation</a>,&nbsp;<a href=/tags/azure-pipeline/>azure-pipeline</a>,&nbsp;<a href=/tags/new-azpipeline/>new-azpipeline</a>,&nbsp;<a href=/tags/powershell/>powershell</a>,&nbsp;<a href=/tags/devops/>devops</a>,&nbsp;<a href=/tags/azure-devops/>azure-devops</a>,&nbsp;<a href=/tags/ado/>ado</a>,&nbsp;<a href=/tags/scripts/>scripts</a></section>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/azure/>azure</a>,&nbsp;<a href=/tags/pipeline/>pipeline</a>,&nbsp;<a href=/tags/cicd/>cicd</a>,&nbsp;<a href=/tags/automation/>automation</a>,&nbsp;<a href=/tags/powershell/>powershell</a>,&nbsp;<a href=/tags/devops/>devops</a>,&nbsp;<a href=/tags/ado/>ado</a>,&nbsp;<a href=/tags/scripts/>scripts</a></section>
 <section>
 <span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span>
 </section>

@@ -1,9 +1,7 @@
 # How to get a list of PowerShell Aliases
 
 
-{{< admonition info "Today I learned" >}}
-How to get a list of PowerShell Aliases.
-{{< /admonition >}}
+> **Today I learned** How to get a list of PowerShell Aliases.
 
 <!--more-->
 

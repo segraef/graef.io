@@ -1,9 +1,7 @@
 # Find and replace with a newline in Visual Studio Code
 
 
-{{< admonition tip "Today I learned" >}}
-How to ***find and replace*** with a newline in Visual Studio Code.
-{{< /admonition >}}
+> **Today I learned** How to ***find and replace*** with a newline in Visual Studio Code.
 
 <!--more-->
 

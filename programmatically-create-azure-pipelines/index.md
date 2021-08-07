@@ -2,11 +2,12 @@
 
 
 This script [New-AzPipeline](https://github.com/segraef/New-AzPipeline) lets you programmatically create Azure Pipelines based on your folder structure.
+
+<!--more-->
+
 It browses through your folder structure for pipeline.yml files and creates corresponding Azure Pipelines in Azure DevOps.
 It has several features like creating pipelines based on a specific folder/module version, latest version or just creates all.
 It also compares against existing Pipelines and skips these.
-
-<!--more-->
 
 ## Script
 
@@ -88,6 +89,6 @@ Based on this structure `New-AzPipeline.ps1` recognizes
 :(far fa-bookmark fa-fw): Bookmark this page for easy future reference!
 --->
 - [Scripts Repository](https://example.com)
-- [New-AzPileline.ps1](https://github.com/segraef/New-AzPipeline)
+- [New-AzPipeline.ps1](https://github.com/segraef/New-AzPipeline)
 {{< /admonition >}}
 

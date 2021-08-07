@@ -5,21 +5,19 @@
 <meta name=robots content="noodp">
 <meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
 <title>Wordpress Basic Settings in config.php - Automate everything </title><meta name=Description content="Automate everything "><meta property="og:title" content="Wordpress Basic Settings in config.php">
-<meta property="og:description" content="The main configuration of WordPress is handled by wp-config.php which is responsible for database access, language, API keys, security and more. Anything changed in this file takes direct influence to your site’s settings and appearance. Settings set in wp-config.php are considered as global and overwrite all parameters in your admin panel.
-General 1 2  define('WP_HOME', 'https://www.graef.io'); // Main URL define('WP_SITEURL', 'https://www.graef.io'); // Site URL   Deactivate Automatic Updates 1  define( 'AUTOMATIC_UPDATER_DISABLED', true );   Disable Filter for Uploads 1  define( 'ALLOW_UNFILTERED_UPLOADS', true );   Automatically Empty Recycle Bin 1 2  define ('EMPTY_TRASH_DAYS', 7); define ('EMPTY_TRASH_DAYS', 0);   Deactivate Editor for Themes and Plugins 1  define( 'DISALLOW_FILE_EDIT', true );   Set Default Theme for WordPress 1  define( 'WP_DEFAULT_THEME', 'default-theme-folder-name' );   ">
+<meta property="og:description" content="1">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://graef.io/wordpress-basic-settings-in-configphp/"><meta property="og:image" content="https://graef.io/logo.png"><meta property="article:section" content="posts">
+<meta property="og:url" content="https://graef.io/wordpress-basic-settings-in-configphp/"><meta property="og:image" content="https://graef.io/wordpress-basic-settings-in-configphp/WordPress-logotype-standard.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2019-02-21T00:00:00+00:00">
 <meta property="article:modified_time" content="2021-02-22T00:00:00+00:00">
 <meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="https://graef.io/logo.png">
+<meta name=twitter:image content="https://graef.io/wordpress-basic-settings-in-configphp/WordPress-logotype-standard.png">
 <meta name=twitter:title content="Wordpress Basic Settings in config.php">
-<meta name=twitter:description content="The main configuration of WordPress is handled by wp-config.php which is responsible for database access, language, API keys, security and more. Anything changed in this file takes direct influence to your site’s settings and appearance. Settings set in wp-config.php are considered as global and overwrite all parameters in your admin panel.
-General 1 2  define('WP_HOME', 'https://www.graef.io'); // Main URL define('WP_SITEURL', 'https://www.graef.io'); // Site URL   Deactivate Automatic Updates 1  define( 'AUTOMATIC_UPDATER_DISABLED', true );   Disable Filter for Uploads 1  define( 'ALLOW_UNFILTERED_UPLOADS', true );   Automatically Empty Recycle Bin 1 2  define ('EMPTY_TRASH_DAYS', 7); define ('EMPTY_TRASH_DAYS', 0);   Deactivate Editor for Themes and Plugins 1  define( 'DISALLOW_FILE_EDIT', true );   Set Default Theme for WordPress 1  define( 'WP_DEFAULT_THEME', 'default-theme-folder-name' );   ">
+<meta name=twitter:description content="1">
 <meta name=application-name content="graef.io">
-<meta name=apple-mobile-web-app-title content="graef.io"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=favicon.ico>
-<link rel=icon type=image/png sizes=32x32 href=favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=apple-touch-icon.png><link rel=mask-icon href=safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://graef.io/wordpress-basic-settings-in-configphp/><link rel=prev href=https://graef.io/get-aad-tenant-id-and-subscription-id/><link rel=next href=https://graef.io/get-local-account-memberships/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Wordpress Basic Settings in config.php","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/graef.io\/wordpress-basic-settings-in-configphp\/"},"genre":"posts","keywords":"wordpress, wp-config, php","wordcount":114,"url":"https:\/\/graef.io\/wordpress-basic-settings-in-configphp\/","datePublished":"2019-02-21T00:00:00+00:00","dateModified":"2021-02-22T00:00:00+00:00","publisher":{"@type":"Organization","name":"","logo":"https:\/\/graef.io\/logo.png"},"author":{"@type":"Person","name":"Sebastian Gräf"},"description":""}</script></head>
+<meta name=apple-mobile-web-app-title content="graef.io"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://graef.io/wordpress-basic-settings-in-configphp/><link rel=prev href=https://graef.io/get-aad-tenant-id-and-subscription-id/><link rel=next href=https://graef.io/get-local-account-memberships/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Wordpress Basic Settings in config.php","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/graef.io\/wordpress-basic-settings-in-configphp\/"},"image":[{"@type":"ImageObject","url":"https:\/\/graef.io\/wordpress-basic-settings-in-configphp\/WordPress-logotype-standard.png","width":2e3,"height":680}],"genre":"posts","keywords":"wordpress, wp-config, php","wordcount":115,"url":"https:\/\/graef.io\/wordpress-basic-settings-in-configphp\/","datePublished":"2019-02-21T00:00:00+00:00","dateModified":"2021-02-22T00:00:00+00:00","publisher":{"@type":"Organization","name":"","logo":"https:\/\/graef.io\/logo.png"},"author":{"@type":"Person","name":"Sebastian Gräf"},"description":""}</script></head>
 <body header-desktop=auto header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -27,7 +25,7 @@ General 1 2  define('WP_HOME', 'https://www.graef.io'); // Main URL define('WP_S
 <a href=/ title="Automate everything "></a>
 </div>
 <div class=menu>
-<div class=menu-inner><a class=menu-item href=/posts/ title=Posts> Posts </a><a class=menu-item href=/categories/projects/ title=Projects> Projects </a><a class=menu-item href=/categories/til/ title="Today I learned"> TIL </a><a class=menu-item href=/tags/ title=Tags> Tags </a><a class=menu-item href=/categories/ title=Categories> Categories </a><a class=menu-item href=/ title=Home><img src=/logo-62x62.png width=22 height=22 style=vertical-align:middle;margin:0> </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<div class=menu-inner><a class=menu-item href=/posts/ title=Posts> Posts </a><a class=menu-item href=/categories/til/ title="Today I learned"> TIL </a><a class=menu-item href=/tags/ title=Tags> Tags </a><a class=menu-item href=/categories/ title=Categories> Categories </a><a class=menu-item href=/ title=Home><img src=/logo-62x62.png width=22 height=22 style=vertical-align:middle;margin:0> </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
 <input type=text placeholder="Search titles or contents..." id=search-input-desktop>
 <a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search>
 <i class="fas fa-search fa-fw"></i>
@@ -70,7 +68,7 @@ General 1 2  define('WP_HOME', 'https://www.graef.io'); // Main URL define('WP_S
 <a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
 Cancel
 </a>
-</div><a class=menu-item href=/posts/ title=Posts>Posts</a><a class=menu-item href=/categories/projects/ title=Projects>Projects</a><a class=menu-item href=/categories/til/ title="Today I learned">TIL</a><a class=menu-item href=/tags/ title=Tags>Tags</a><a class=menu-item href=/categories/ title=Categories>Categories</a><a class=menu-item href=/ title=Home><img src=/logo-62x62.png width=22 height=22 style=vertical-align:middle;margin:0></a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+</div><a class=menu-item href=/posts/ title=Posts>Posts</a><a class=menu-item href=/categories/til/ title="Today I learned">TIL</a><a class=menu-item href=/tags/ title=Tags>Tags</a><a class=menu-item href=/categories/ title=Categories>Categories</a><a class=menu-item href=/ title=Home><img src=/logo-62x62.png width=22 height=22 style=vertical-align:middle;margin:0></a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
 <i class="fas fa-adjust fa-fw"></i>
 </a></div>
 </div>
@@ -82,37 +80,12 @@ Cancel
 <div id=search-dropdown-mobile></div>
 </div>
 <main class=main>
-<div class=container><div class=toc id=toc-auto>
-<h2 class=toc-title>Contents</h2>
-<div class=toc-content id=toc-content-auto></div>
-</div><article class="page single"><h1 class="single-title animated flipInX">Wordpress Basic Settings in config.php</h1><div class=post-meta>
+<div class=container><article class="page single"><h1 class="single-title animated flipInX">Wordpress Basic Settings in config.php</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=https://graef.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Sebastian Gräf</a></span>&nbsp;<span class=post-category>included in <a href=/categories/wordpress/><i class="far fa-folder fa-fw"></i>WordPress</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Thursday, Feb 21, 2019">Thursday, Feb 21, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;114 words&nbsp;
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Thursday, Feb 21, 2019">Thursday, Feb 21, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;115 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
-</div><div class="details toc" id=toc-static kept>
-<div class="details-summary toc-title">
-<span>Contents</span>
-<span><i class="details-icon fas fa-angle-right"></i></span>
-</div>
-<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
-<ul>
-<li>
-<ul>
-<li>
-<ul>
-<li><a href=#general>General</a></li>
-<li><a href=#deactivate-automatic-updates>Deactivate Automatic Updates</a></li>
-<li><a href=#disable-filter-for-uploads>Disable Filter for Uploads</a></li>
-<li><a href=#automatically-empty-recycle-bin>Automatically Empty Recycle Bin</a></li>
-<li><a href=#deactivate-editor-for-themes-and-plugins>Deactivate Editor for Themes and Plugins</a></li>
-<li><a href=#set-default-theme-for-wordpress>Set Default Theme for WordPress</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</nav></div>
-</div><div class=content id=content><p>The main configuration of WordPress is handled by wp-config.php which is responsible for database access, language, API keys, security and more. Anything changed in this file takes direct influence to your site’s settings and appearance.
+</div><div class=featured-image><img class=lazyload src=/svg/loading.min.svg data-src=/wordpress-basic-settings-in-configphp/WordPress-logotype-standard.png data-srcset="/wordpress-basic-settings-in-configphp/WordPress-logotype-standard.png, /wordpress-basic-settings-in-configphp/WordPress-logotype-standard.png 1.5x, /wordpress-basic-settings-in-configphp/WordPress-logotype-standard.png 2x" data-sizes=auto alt=/wordpress-basic-settings-in-configphp/WordPress-logotype-standard.png title=/wordpress-basic-settings-in-configphp/WordPress-logotype-standard.png></div><div class=content id=content><p>1</p>
+<p>The main configuration of WordPress is handled by wp-config.php which is responsible for database access, language, API keys, security and more. Anything changed in this file takes direct influence to your site’s settings and appearance.
 Settings set in wp-config.php are considered as global and overwrite all parameters in your admin panel.</p>
 <h4 id=general>General</h4>
 <div class=highlight><div class=chroma>
