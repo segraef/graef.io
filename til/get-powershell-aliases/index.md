@@ -22,7 +22,7 @@ Get-Alias | select Name, Definition
 
 Which gives you the following Outputs
 
-![](featured-image.png)
+{{< figure src="featured-image.png" >}}
 
 ```powershell
 Name               Definition

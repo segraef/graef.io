@@ -3,14 +3,14 @@
             <i class="icon fas fa-lightbulb fa-fw"></i>Today I learned<i class="details-icon fas fa-angle-right fa-fw"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content">How to find and replace with a newline in Visual Studio Code.</div>
+            <div class="admonition-content">How to <em><strong>find and replace</strong></em> with a newline in Visual Studio Code.</div>
         </div>
     </div>]]></description></item><item><title>Visual Studio Code Keyboard Shortcuts</title><link>https://graef.io/til/visual-studio-code-keyboard-shortcuts/</link><pubDate>Mon, 02 Aug 2021 15:30:25 +0800</pubDate><author>Author</author><guid>https://graef.io/til/visual-studio-code-keyboard-shortcuts/</guid><description><![CDATA[<div class="details admonition tip open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-lightbulb fa-fw"></i>Today I learned<i class="details-icon fas fa-angle-right fa-fw"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content">Visual Studio Code Keyboard Shortcuts</div>
+            <div class="admonition-content">Visual Studio Code Keyboard Shortcuts for Windows, macOs and Linux</div>
         </div>
     </div>]]></description></item><item><title>How to get a list of PowerShell Aliases</title><link>https://graef.io/til/get-powershell-aliases/</link><pubDate>Sun, 01 Aug 2021 09:33:25 +0800</pubDate><author>Author</author><guid>https://graef.io/til/get-powershell-aliases/</guid><description><![CDATA[<div class="details admonition info open">
         <div class="details-summary admonition-title">
@@ -19,4 +19,4 @@
         <div class="details-content">
             <div class="admonition-content">How to get a list of PowerShell Aliases.</div>
         </div>
-    </div>]]></description></item></channel></rss>
+    </div>]]></description></item><item><title>How to install Azure CLI</title><link>https://graef.io/how-to-install-azure-cli/</link><pubDate>Sat, 06 Mar 2021 00:00:00 +0000</pubDate><author>Author</author><guid>https://graef.io/how-to-install-azure-cli/</guid><description><![CDATA[<p>Let&rsquo;s keep it easy with these one-liner&rsquo;s you can use for Windows as well as Linux to install or update Azure CLI.</p>]]></description></item></channel></rss>

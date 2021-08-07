@@ -1,0 +1,2441 @@
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noodp">
+<meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
+<title>Design, construction and evaluation of a Raspberry Pi Cluster - Automate everything </title><meta name=Description content="Automate everything "><meta property="og:title" content="Design, construction and evaluation of a Raspberry Pi Cluster">
+<meta property="og:description" content="Introduction Raspberry Pis are revolutionizing the computer industry. Originally developed to provide low-cost computers to schools, they are expanding far beyond their intended use. This inexpensive technology can be used to accomplish previously unexplored tasks. One such technology is a cluster computer that can run parallel jobs. Many systems built for parallel computing tasks are either expensive or unavailable outside of academia. Supercomputers are expensive to purchase as well as to use, power, and maintain.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://graef.io/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/"><meta property="og:image" content="https://graef.io/logo.png"><meta property="article:section" content="projects">
+<meta property="article:published_time" content="2021-08-06T15:16:19+08:00">
+<meta property="article:modified_time" content="2021-08-06T15:16:19+08:00">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://graef.io/logo.png">
+<meta name=twitter:title content="Design, construction and evaluation of a Raspberry Pi Cluster">
+<meta name=twitter:description content="Introduction Raspberry Pis are revolutionizing the computer industry. Originally developed to provide low-cost computers to schools, they are expanding far beyond their intended use. This inexpensive technology can be used to accomplish previously unexplored tasks. One such technology is a cluster computer that can run parallel jobs. Many systems built for parallel computing tasks are either expensive or unavailable outside of academia. Supercomputers are expensive to purchase as well as to use, power, and maintain.">
+<meta name=application-name content="graef.io">
+<meta name=apple-mobile-web-app-title content="graef.io"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=favicon.ico>
+<link rel=icon type=image/png sizes=32x32 href=favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=apple-touch-icon.png><link rel=mask-icon href=safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://graef.io/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Design, construction and evaluation of a Raspberry Pi Cluster","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/graef.io\/projects\/conception-construction-and-evaluation-of-a-raspberry-pi-cluster\/"},"genre":"projects","keywords":"pi","wordcount":17215,"url":"https:\/\/graef.io\/projects\/conception-construction-and-evaluation-of-a-raspberry-pi-cluster\/","datePublished":"2021-08-06T15:16:19+08:00","dateModified":"2021-08-06T15:16:19+08:00","publisher":{"@type":"Organization","name":"","logo":"https:\/\/graef.io\/logo.png"},"author":{"@type":"Person","name":"Sebastian Gräf"},"description":""}</script></head>
+<body header-desktop=auto header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'auto'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'auto'==='dark')&&document.body.setAttribute('theme','dark')</script>
+<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title="Automate everything "></a>
+</div>
+<div class=menu>
+<div class=menu-inner><a class=menu-item href=/posts/ title=Posts> Posts </a><a class=menu-item href=/posts/ title=Projects> Projects </a><a class=menu-item href=/til/ title="Today I learned"> TIL </a><a class=menu-item href=/tags/ title=Tags> Tags </a><a class=menu-item href=/categories/ title=Categories> Categories </a><a class=menu-item href=/ title=Home><img src=/logo-62x62.png width=22 height=22 style=vertical-align:middle;margin:0> </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<input type=text placeholder="Search titles or contents..." id=search-input-desktop>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-desktop>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i>
+</a>
+</div>
+</div>
+</div>
+</header><header class=mobile id=header-mobile>
+<div class=header-container>
+<div class=header-wrapper>
+<div class=header-title>
+<a href=/ title="Automate everything "></a>
+</div>
+<div class=menu-toggle id=menu-toggle-mobile>
+<span></span><span></span><span></span>
+</div>
+</div>
+<div class=menu id=menu-mobile><div class=search-wrapper>
+<div class="search mobile" id=search-mobile>
+<input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search>
+<i class="fas fa-search fa-fw"></i>
+</a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear>
+<i class="fas fa-times-circle fa-fw"></i>
+</a>
+<span class="search-button search-loading" id=search-loading-mobile>
+<i class="fas fa-spinner fa-fw fa-spin"></i>
+</span>
+</div>
+<a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
+Cancel
+</a>
+</div><a class=menu-item href=/posts/ title=Posts>Posts</a><a class=menu-item href=/posts/ title=Projects>Projects</a><a class=menu-item href=/til/ title="Today I learned">TIL</a><a class=menu-item href=/tags/ title=Tags>Tags</a><a class=menu-item href=/categories/ title=Categories>Categories</a><a class=menu-item href=/ title=Home><img src=/logo-62x62.png width=22 height=22 style=vertical-align:middle;margin:0></a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i>
+</a></div>
+</div>
+</header>
+<div class="search-dropdown desktop">
+<div id=search-dropdown-desktop></div>
+</div>
+<div class="search-dropdown mobile">
+<div id=search-dropdown-mobile></div>
+</div>
+<main class=main>
+<div class=container><div class="page single special"><h1 class="single-title animated pulse faster">Design, construction and evaluation of a Raspberry Pi Cluster</h1><div class=content id=content><h3 id=introduction>Introduction</h3>
+<p>Raspberry Pis are revolutionizing the computer industry. Originally
+developed to provide low-cost computers to schools, they are expanding
+far beyond their intended use. This inexpensive technology can be used
+to accomplish previously unexplored tasks. One such technology is a
+cluster computer that can run parallel jobs. Many systems built for
+parallel computing tasks are either expensive or unavailable outside of
+academia. Supercomputers are expensive to purchase as well as to use,
+power, and maintain. Although average desktop computers have come down
+in price, the cost can still become quite high if they require a larger
+amount of computing power. In today's world of information technology
+(IT ), it is not new to be confronted daily with new technologies such
+as cloud computing, cluster computing or high-performance computing. All
+these terms are approaches that are intended to simplify people's work
+and lives. Cloud providers such as Microsoft or Amazon make these types
+of technologies available to customers in the form of services for a
+fee. Users thus have the opportunity to use the computing power of these
+technologies without having to buy them at a high price. The advantage
+here is the almost unlimited scaling of resources. Distributed
+computing, an infrastructure technology and basis for the provision of
+cluster computers via the Internet, is used to meet increasing resource
+demands. By interconnecting and adding remote systems, computing power
+and performance can be dynamically scaled and provided in theoretically
+unlimited quantities.</p>
+<h3 id=motivation-and-objective-of-the-work>Motivation and objective of the work</h3>
+<p>Unlimited computing power implies the solution approach to be able to
+solve seemingly unsolvable and complex problems, such as the simulation
+of black holes or the calculation of the Milky Way. Expensive
+supercomputers are oversized when it comes to testing new applications
+for high-performance computers or solving complex problems. In this
+work, we address the question of whether we can create an independent
+and comparable but also less expensive system with few resources, which
+allows us to solve complex problems in the same way. 24 years ago,
+Donald Becker and Thomas Sterling started the Beowulf project to create
+a low-cost alternative but also a powerful alternative to
+supercomputers. Based on this example, the idea has arisen to pursue the
+same principle on a smaller scale. The goal of this work is to create an
+affordable, energy efficient and portable mini-supercomputer. Ideally, a
+cluster computer with little or no carbon footprint, individual elements
+that are inexpensive to replace, and a portable system that can be
+easily disassembled and reassembled. A Raspberry Pi is ideal for this
+purpose because of its low price, low power consumption, and small size.
+At the same time, it still offers decent performance, especially when
+you consider the computing power offered per watt.</p>
+<h3 id=procedure>Procedure</h3>
+<p>This paper is divided into 5 parts. The first part is dedicated to the
+terminological clarification of background information on all
+technologies involved and how they are related to the cluster. Based on
+this, the second part clarifies the conceptualization, design, and
+requirements placed on the system. The main part deals with the
+construction of the Raspberry Pi cluster and thus forms the practical
+component, in which design decisions are illustrated and the
+construction is explained. Following this, important factors such as
+scalability, performance, cost and energy efficiency are discussed and
+evaluated. Different use cases are addressed and the technical
+possibilities are considered. Finally, evaluated evaluations are
+summarized, limitations are pointed out and future extensions are
+presented.</p>
+<h3 id=background>Background</h3>
+<p>This chapter covers the basic technologies that form the basis of
+parallel and distributed systems. These technologies build on each
+other, as in a layer system, and are dependent on each other.
+Architectures and techniques based on this, such as virtualization or
+cluster computing, in turn provide the basic framework for container
+virtualization and its management systems.</p>
+<h3 id=parallel-and-distributed-systems>Parallel and distributed systems</h3>
+<p>Until computers evolved into distributed computing systems, there have
+been fundamental changes in various computing technologies over the past
+decades, which we will briefly discuss in order to make the basic
+framework of parallel and distributed systems more understandable.</p>
+<h3 id=amdahls-and-gustafsons-law>Amdahl's and Gustafson's law</h3>
+<p>At the beginning of this work, the theoretically unlimited increase of
+computing power was mentioned. Amdahl's law (named in 1967 after Gene
+Amdahl) deals exactly with this question, namely whether an unlimited
+increase in speed can be achieved with an increasing number of
+processors. It describes, how the parallelization of a software affects
+the acceleration of this. One divides thereby the software into not
+parallel, thus sequentially executable and parallel executable portions.
+Sequential parts are process initializations, communication and the
+memory management. These parts are necessary for the synchronization of
+the parallel parts. They form dependencies among themselves and are
+therefore not able to be executed in parallel. Parallel executable parts
+are the processors, which are used for computation. It is very important
+to estimate how much performance gain is achieved by adding a certain
+number of processing units in parallel working system. Sometimes it
+happens that adding a larger number of computing units does not
+necessarily improve the performance, because the expected performance
+tends to decrease or oversaturate if we blindly add more computing
+resources. Therefore, it is very important to have a rough estimate of
+the optimized number of resources to use. Suppose a hypothetical system
+has only one processor with a normalized runtime of $1$. Now we consider
+how much time the program needs in the parallelizable portion and denote
+this portion by $P$. The runtime of the sequential part is thus
+$(1 - P)$.</p>
+<p>The runtime of the sequential part does not change, but the
+parallelizable part is optimally distributed to all processors and
+therefore runs N times as fast. This results in the following runtime
+formula: <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup></p>
+<p>$$\underset{\text{sequentiell}}{\overset{(1 - P)}{︸}} + \underset{\text{parallel}}{\overset{\frac{P}{N}}{︸}}$$</p>
+<p>This is where the time gain comes from:</p>
+<p>$$Zeitgewinn\ nach\ Amdahl\ = \ \frac{ursprüngliche\ Laufzeit}{\text{neue\ Laufzeit}}\ = \frac{1}{(1 - P) + \frac{P}{N}}$$</p>
+<p>Here N is the number of processors and P the runtime portion of the
+parallelizable program. Gene Amdahl called the time or also speed gain
+Speedup. With the help of a massive parallelism the time of the
+parallelizable portion can be reduced arbitrarily, the sequential
+portion remains unaffected thereby however. As the number of processors
+increases, the communication overhead between the processors also
+increases, so that above a certain number, they tend to be busy
+communicating rather than processing the problem. This reduces the
+performance and refers to this as an overhead in the task distribution.
+A program cannot be completely parallelized, so that all processors are
+always busy with work at the same time. No matter how many processor
+units are used and the proportion of applications that cannot be
+parallelized is, for example, one percent, the speedup can be a maximum
+of 100. Gene Amdahl thus concluded that it makes no sense to keep
+increasing the computing units in order to generate unlimited computing
+power. <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup></p>
+<p>Amdahl's model remains valid until the total number of computing
+operations remains the same while the number of computing units
+continues to increase. However, if in our hypothetical simulation the
+job size increases while the number of computational units continues to
+increase, then Gustafson's law must be invoked. John Gustafson
+established this law in 1988, which states that as long as the problem
+being addressed is large enough it can be efficiently parallelized.
+Unlike Amdahl, Gustafson shows that massive parallelization is
+nevertheless worthwhile. A parallel system cannot become arbitrarily
+fast, but it can solve arbitrarily large problems in the same amount of
+time. <sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup></p>
+<h3 id=client-server-model>Client-server model</h3>
+<p>Client-server models are the basic techniques for operating distributed
+systems. They describe the principle of how tasks and services, such as
+sending e-mail or providing web applications, are distributed within a
+network. The corresponding service is centralized on a specific
+computer, called a server, and the other machines (clients) can use this
+service. <sup id=fnref:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup></p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=image226.png data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image226.png, image226.png 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image226.png 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image226.png title=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image226.png>{width=&ldquo;3.3645833333333335in&rdquo;
+height=&ldquo;3.084465223097113in&rdquo;}</p>
+<p>Source: Own representation based on (Schill & Springer, 2007, p. 31) .</p>
+<p>[]{#_Ref505193493 .anchor}<strong>Figure</strong> <strong>1</strong> : <em>Illustration of the
+client-server model.</em></p>
+<p>Operating systems (OS) such as Red Hat Enterprise Linux or Windows
+Server use the above concept and thus provide a client-server system.
+This is done by establishing the connection to the server on the client
+side and providing access to services and resources on the server side.
+Within these operating systems servers are simple programs, which are
+usually started automatically and run passively in the background. In
+the Linux environment these programs are called "daemon", under
+Windows Server they are called "service". In practice, however,
+different types of these server services are usually encountered.
+Examples of this are: <sup id=fnref:5><a href=#fn:5 class=footnote-ref role=doc-noteref>5</a></sup></p>
+<ul>
+<li>
+<p><strong>Mail server</strong>: Communication service for electronic mail (e-mail).</p>
+</li>
+<li>
+<p><strong>Web server</strong>: Transmitting web pages to clients.</p>
+</li>
+<li>
+<p><strong>File server</strong>: A file server makes files available on a network.</p>
+</li>
+</ul>
+<h3 id=peer-to-peer>Peer-to-peer</h3>
+<p>Peer-to-peer (P2P) systems are the opposite of client-server systems. In
+client-server networks, a server is not necessarily a specific computer.
+Server and client are referred to as roles in this context, since a
+computer can also act as a server and a client at the same time. In a
+P2P system, this distribution of roles does not exist; all computers
+have equal rights. A computer in a network is a peer because it can be a
+client and a server at the same time. It can both use and provide
+services. The functionality, the provision of a service, is therefore
+provided decentrally in a P2P system. <sup id=fnref:6><a href=#fn:6 class=footnote-ref role=doc-noteref>6</a></sup></p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=image37.png data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image37.png, image37.png 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image37.png 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image37.png title=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image37.png>{width=&ldquo;3.1168832020997375in&rdquo;
+height=&ldquo;2.9405872703412075in&rdquo;}</p>
+<p>Source: Own representation based on (Schill & Springer, 2007, p. 31) .</p>
+<p>[]{#_Toc505443036 .anchor}<strong>Figure</strong> <strong>2</strong>: <em>Illustration of the
+peer-to-peer model.</em></p>
+<p>In contrast to the client-server concept, parallel and distributed
+systems are not based on P2P systems, but they have been part of the
+development process of grid and distributed computing and are therefore
+worth mentioning. <sup id=fnref:7><a href=#fn:7 class=footnote-ref role=doc-noteref>7</a></sup></p>
+<h3 id=grid-computing>Grid Computing</h3>
+<p>The volume of data records in databases is increasing and will continue
+to increase in the coming years. Cluster systems (see 2.2) were
+developed to handle the complex processing involved and have since
+become established. However, the demand for computing power and storage
+capacity is becoming ever greater, especially in scientific areas such
+as medicine and research or in commercial areas such as e-commerce or
+financial management. Due to global networking of scientific working
+methods and international cooperation, more and more information
+technologies and infrastructures are being interconnected to create
+collaborative working environments. <sup id=fnref:8><a href=#fn:8 class=footnote-ref role=doc-noteref>8</a></sup></p>
+<p>Grid computing is a distributed computing technique that aims to connect
+loosely coupled computers and clusters and combine the computing power
+of all distributed resources into a virtual supercomputer. The basis for
+integrating these location-independent, cross-institutional, and
+autonomous resources is the use of existing network infrastructures such
+as the Internet. The major advantage over cluster systems is the
+aggregation and sharing of resources such as computers or databases
+across geographical boundaries. <sup id=fnref:9><a href=#fn:9 class=footnote-ref role=doc-noteref>9</a></sup></p>
+<p>Grid computing can be divided into the following classifications:</p>
+<ul>
+<li>
+<p><strong>Computing Grid</strong>: access to distributed computing resources.</p>
+</li>
+<li>
+<p><strong>Data Grid</strong>: Access to distributed data volumes and storage
+capacity.</p>
+</li>
+<li>
+<p><strong>Service Grid</strong>: Access to distributed applications and services.</p>
+</li>
+</ul>
+<p>A computing grid is comparable to a power grid. For the consumer,
+everything that happens behind a socket is hidden, but he can
+conveniently use the power offered, the electricity. A computing grid is
+similar in comparison, it connects to the computing network and uses the
+computing power offered. High costs or lack of financial resources pose
+solving complex problems as a difficulty for scientific and economic
+institutions. But due to the possibility like, the bundling of resources
+of different organizations, it is possible to solve computationally
+intensive problems cost-efficiently. <sup id=fnref:10><a href=#fn:10 class=footnote-ref role=doc-noteref>10</a></sup></p>
+<h3 id=public-resource-computing>Public Resource Computing</h3>
+<p>As an analogous counterpart to grid computing, public resource computing
+(PRC ) and volunteer computing have emerged to harness hidden computing
+power using distributed computing.</p>
+<p>The idea and background of this type of distributed computing are that
+the use of supercomputers is very cost-intensive, on the other hand
+processors of many computers, such as those of personal computers (PC ),
+servers or smartphones are not fully utilized. Many users work on their
+PCs with programs that use only part of the total processor power. To
+make these unused computing resources usable, a corresponding software
+client is installed on the respective PCs or servers, which establishes
+the connection to a computing grid, takes over task distribution and
+makes unused computing power available. <sup id=fnref:11><a href=#fn:11 class=footnote-ref role=doc-noteref>11</a></sup></p>
+<p>The software platform Berkeley Open Infrastructure for Network Computing
+(BOINC ) enables the use of this unused computing power of thousands of
+computers. Examples of computationally intensive PRC projects and
+complex problems include creating an accurate three-dimensional (3D)
+model of the Milky Way, searching for extraterrestrial radio waves, and
+calculating gravitational waves. An example of a special research
+project that exploits the benefits of grid computing, and can only be
+realized using it, is grid-based computer simulations of gravitational
+waves generated by the merger of two singularities (black holes) (see
+Figure3). <sup id=fnref:12><a href=#fn:12 class=footnote-ref role=doc-noteref>12</a></sup></p>
+<p>Other well-known RPC projects using BOINC are: <sup id=fnref:13><a href=#fn:13 class=footnote-ref role=doc-noteref>13</a></sup></p>
+<ul>
+<li>
+<p><strong>SETI</strong> <strong>@home</strong> (Search for Extra-Terrestrial Intelligence at
+home): study of radio signal data from the Arecibo Observatory radio
+telescope in Puerto Rico used as evidence of extraterrestrial
+technology.</p>
+</li>
+<li>
+<p><strong>MilkyWay@home</strong>: research in modeling and determining the
+evolution of the Milky Way Galaxy.</p>
+</li>
+<li>
+<p><strong>Einstein@home</strong>: The project examines data collected by the LIGO
+and GEO600 gravitational wave detectors for evidence of periodic
+sources, such as rapidly rotating neutron stars, which are the
+gravitational equivalent of pulsars (pulsating radio sources).</p>
+</li>
+</ul>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=image46.jpeg data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image46.jpeg, image46.jpeg 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image46.jpeg 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image46.jpeg title="Bildergebnis für grid computing black
+holes">{width=&ldquo;4.757228783902012in&rdquo;
+height=&ldquo;3.09375in&rdquo;}</p>
+<p>Source: (Kroeker, 2011, p. 15) .</p>
+<p>[]{#_Ref505271426 .anchor}<strong>Figure</strong> <strong>3</strong> : <em>Grid-based simulation of
+gravitational waves generated by the merger of two black holes.</em></p>
+<p>It is worth mentioning the successes and cost savings achieved through
+the use of public resource or volunteer computing. Certainly it is
+possible to solve complex problems through high performance and
+supercomputers but not with such a small part of costs. For example, the
+University of Westminster, based in London, has been able to show
+savings of around £500,000 by using a BOINC supercomputer. <sup id=fnref:14><a href=#fn:14 class=footnote-ref role=doc-noteref>14</a></sup></p>
+<h3 id=distributed-computing>Distributed Computing</h3>
+<p>Distributed computing or distributed systems, as defined by Andrew S.
+Tanenbaum, is a collection of independent computers that appear to their
+users as a single unified system. Distributed computing resource
+processing deals with the coordination of these distributed computers.
+In contrast to cluster systems, most computers have different hardware
+and operating systems. In some cases, resources and programming
+languages vary greatly. The basic requirement for these machines to work
+together and exchange data is that they are connected via a network.
+<sup id=fnref:15><a href=#fn:15 class=footnote-ref role=doc-noteref>15</a></sup></p>
+<p>The computing technologies mentioned so far fall under the umbrella term
+distributed computing. Figure4 shows how these technologies are
+classified collectively into distributed computing and, among others,
+into client-server computing and peer-to-peer.</p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=image5.png data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image5.png, image5.png 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image5.png 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image5.png title=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image5.png>{width=&ldquo;5.535256999125109in&rdquo;
+height=&ldquo;3.0in&rdquo;}</p>
+<p>Source: Own representation based on</p>
+<p>(Bengel, Baun, Kunze, & Stucky, 2008, p. 4). .</p>
+<p>[]{#_Ref505271519 .anchor}<strong>Figure</strong> <strong>4</strong> : <em>Schematic representation
+of computing technologies.</em></p>
+<p>Communication networks such as the Internet form the basis for
+distributed systems and give the opportunity to connect geographically
+distant computers. The following prerequisites must be observed to
+prevent problems: <sup id=fnref:16><a href=#fn:16 class=footnote-ref role=doc-noteref>16</a></sup></p>
+<ul>
+<li>
+<p><strong>Concurrency</strong>: Concurrency in the execution of programs must be
+ensured. As soon as services and applications are executed in a
+network of computers, this usually happens at different times and
+independently of other computers. To ensure this concurrency of
+applications, it must be possible to scale the system, which means
+that additional computers can be added to the network as the demand
+for resources increases.</p>
+</li>
+<li>
+<p><strong>Time synchronization</strong>: As soon as systems act together, messages
+must be exchanged so that appropriate coordination is possible.
+Messages such as "System A is performing this action" and "System
+B is performing this action". For proper coordination of these
+messages, timestamps are needed to enable proper sequencing of these
+messages within the distributed system. One method of synchronizing
+system time is to synchronize with external atomic clocks outside of
+distributed systems or to use a shared time server that uses the
+Network Time Protocol (NTP ), a standard protocol for synchronizing
+clocks on the Internet.</p>
+</li>
+<li>
+<p><strong>Partial failure</strong>: Any system, no matter how well secured, can
+fail, even if it has an availability of 99.9%. The probability of a
+failure is still 0.1%, which is already a very large amount for a
+high number of systems. Care must therefore be taken to ensure that
+there is no single point of failure (SPOF ), the failure of which
+would result in the failure of the entire system.</p>
+</li>
+</ul>
+<p>Other prerequisites, especially in terms of security, that must be taken
+into account are the use of firewalls and virtual private networks
+(VPNs). As soon as sensitive data and information are transferred from
+services on the Internet via distributed resources, these can fall
+victim to network attacks. Without appropriate security mechanisms,
+information can be stolen or even falsified. With the help of firewalls,
+only certain resources can be granted access by means of defined
+security policies. Using a VPN, entire segments of distributed systems
+can be isolated and compartmentalized by encrypting the entire network
+data transmission. <sup id=fnref:17><a href=#fn:17 class=footnote-ref role=doc-noteref>17</a></sup></p>
+<h3 id=cloud-computing>Cloud computing</h3>
+<p>Cloud computing is used as a term to represent this vision of computing
+as a service. A cloud is defined as a set of Internet-based application
+and computing services so that local data storage and application
+software can be largely or completely dispensed with. From a technical
+perspective, cloud computing describes the approach of making IT
+infrastructures, such as physical or virtual hardware, available via a
+computer network without the user or cloud user having to install
+anything on their own computer. Cloud providers such as Microsoft or
+Amazon make these types of technologies available to customers in the
+form of services for a fee. Users thus have the option of using the
+computing power of these technologies without having to buy them at a
+high price. By providing and managing the cloud infrastructure through
+the provider, the overall costs are reduced and optimized to a minimum.</p>
+<p>The main advantages of using cloud computing are the almost unlimited
+scaling of resources, such as computing units or storage capacities. If,
+for example, a user wants to use a very large quantity of cloud
+services, it is only a question of cost. The higher a service scales,
+the higher the costs borne by the customer. <sup id=fnref:18><a href=#fn:18 class=footnote-ref role=doc-noteref>18</a></sup></p>
+<p>Grid computing is seen as the forerunner of cloud computing, although
+the focus is more on scientific projects and the system is
+decentralized, i.e. shared. In contrast to grid computing, cloud
+computing is, from a first perspective, a centralized solution. From a
+technical point of view, however, and depending on how a cloud service
+is used by the user, cloud resources can be globally distributed and
+must communicate with each other in a network for this purpose. This in
+turn is similar to the approach of grid computing, since a corresponding
+coordination of these distributed resources is necessary. The most
+important providers of cloud computing services are currently Amazon Web
+Services (AWS ), Microsoft with its Azure cloud platform, and Rackspace.
+<sup id=fnref:19><a href=#fn:19 class=footnote-ref role=doc-noteref>19</a></sup></p>
+<p>In practice, the following three abstraction or business models have
+become established for the provision of cloud services: <sup id=fnref:20><a href=#fn:20 class=footnote-ref role=doc-noteref>20</a></sup></p>
+<ul>
+<li>
+<p><strong>On-premise</strong>: On-premise means on the customer's own premises or
+locally on site. The customer is responsible for managing its own IT
+infrastructure, which it usually administers in its own data center
+and on its own hardware.</p>
+</li>
+<li>
+<p><strong>PaaS</strong> <strong>- Platform as a Service</strong>: The maintenance and management
+of hardware, operating systems and runtime environments for computer
+programs is taken over by the cloud provider. The user focuses only
+on his applications. A typical example of PaaS is scalable SQL
+databases (structured query language).</p>
+</li>
+<li>
+<p><strong>IaaS</strong> <strong>- Infrastructure as a Service</strong>: The entire
+infrastructure consisting of network, storage, server hardware and
+virtualization layer (see 2.4) is provided by the cloud provider.
+The user assumes responsibility for the upper layers such as the
+operating system and applications.</p>
+</li>
+<li>
+<p><strong>SaaS</strong> <strong>- Software as a Service:</strong> In this model, the entire
+hardware and software infrastructure is offered and managed. The
+user thus has the option of directly using software services, such
+as web servers or e-mail, without any effort.</p>
+</li>
+</ul>
+<p>The figure below shows a breakdown of the business models mentioned.
+Here, blue denotes the company's own share of the administration
+effort. Neutral stands for the segments which the cloud provider manages
+and administers.</p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=image614.png data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image614.png, image614.png 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image614.png 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image614.png title=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image614.png>{width=&ldquo;5.885959098862642in&rdquo;
+height=&ldquo;3.5104166666666665in&rdquo;}</p>
+<p>Source: Own representation based on (Technet, 2018) .</p>
+<p>[]{#_Toc505443039 .anchor}<strong>Figure</strong> <strong>5</strong>: <em>Comparison of the different
+cloud computing models.</em></p>
+<p>As soon as the term cloud is mentioned, it predominantly refers to a
+specific usage model of cloud computing. The various types of these
+usage models are defined below: <sup id=fnref:21><a href=#fn:21 class=footnote-ref role=doc-noteref>21</a></sup></p>
+<ul>
+<li>
+<p><strong>Private cloud</strong>: The English term "private" translates into
+German as "privat" and, in the context of cloud, stands for "not
+for the public". A company uses a private cloud in a secure
+environment such as its own internal network. This does not
+necessarily mean that the IT infrastructure used is the property of
+the company, as it can also be provided by third parties. Private
+merely clarifies that a company is the sole user of this model. This
+has the advantage that it retains control in terms of data
+protection, even if third-party providers such as Amazon or
+Microsoft manage private cloud environments.</p>
+</li>
+<li>
+<p><strong>Public cloud</strong>: A public cloud provides access to abstracted IT
+infrastructures and services for a large number of users. Customers
+can use services and infrastructures via the Internet. Examples are
+file hosting services such as Google Drive from Google Inc. or
+Dropbox from Dropbox Inc.</p>
+</li>
+<li>
+<p><strong>Hybrid cloud</strong>: A hybrid form of the two variants mentioned above
+is the hybrid cloud. Users are offered the option of processing
+business-critical data with a focus on data protection in private
+cloud environments. Non-sensitive data is made available in the
+public cloud using cloud services such as IaaS or PaaS on the
+Internet. Hybrid clouds offer a further advantage in that
+performance peaks occurring at short notice are compensated for by
+shifting services from the private to the public cloud. Hybrid
+clouds enable the gradual merging of public and private cloud
+services in order to be able to utilize existing infrastructure
+hardware for as long as possible.</p>
+</li>
+</ul>
+<p>Figure6 shows an overview of private, public and hybrid cloud
+environments and illustrates the relationship between a private and
+public network. For example, a private network is a VPN, while the
+Internet belongs to the public network segment.</p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=image727.png data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image727.png, image727.png 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image727.png 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image727.png title=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image727.png>{width=&ldquo;5.2973337707786525in&rdquo;
+height=&ldquo;2.8541666666666665in&rdquo;}</p>
+<p>Source: Own representation based on (Bedner, 2012, p. 37) ; (Matros,
+2012, p. 67) .</p>
+<p>[]{#_Ref505271795 .anchor}<strong>Figure</strong> <strong>6</strong> : <em>Relationship between
+public, private and hybrid cloud models.</em></p>
+<p>Other noteworthy business models in which cloud computing is subdivided
+are community cloud, virtual private cloud and multi-cloud, which we
+will not discuss in detail in this paper.</p>
+<h3 id=cluster>Cluster</h3>
+<p>A cluster is a computer network and usually refers to a group of at
+least 2-n servers, also called nodes. All nodes are connected to each
+other via a local area network (LAN) and form a logical unit of a
+supercomputer. Gregory Pfister defines a cluster as follows: <sup id=fnref:22><a href=#fn:22 class=footnote-ref role=doc-noteref>22</a></sup></p>
+<p><em>"A cluster is a type of parallel system that consists of
+interconnected whole computers and is used as a single, unified
+resource. &ldquo;</em> <sup id=fnref:23><a href=#fn:23 class=footnote-ref role=doc-noteref>23</a></sup></p>
+<p>Clusters are the approach to achieving high performance, high
+reliability, or high throughput by using a collection of interconnected
+computer systems. Depending on the type of setup, either all nodes are
+active at the same time to increase computing power, or at least 1-n
+node is passive so that it can stand in for a failed node in case of
+failure. For data transmission, all servers are connected to each other
+via at least two network connections to a network switch. Two network
+connections are typical, since on the one hand the switch is excluded as
+SPOF, and on the other hand to be able to realize a higher data
+transfer. <sup id=fnref:24><a href=#fn:24 class=footnote-ref role=doc-noteref>24</a></sup></p>
+<p>With reference to the current Top 500 list of the world's fastest
+computers, the term supercomputer is absolutely appropriate. It is clear
+that several cluster systems are among the ten fastest computers in the
+world. Computer clusters are used for three different tasks: providing
+high availability, high performance computing and load balancing. <sup id=fnref:25><a href=#fn:25 class=footnote-ref role=doc-noteref>25</a></sup></p>
+<h2 id=shared-and-distributed-storage>Shared and distributed storage</h2>
+<p>According to the von Neumann architecture, a computer has a shared
+memory that contains both computer program instructions and data.
+Parallel computers are divided into two variants in this respect,
+systems with shared or distributed memory. Regardless of which variant
+is used, all processors must always be able to exchange data and
+instructions with each other. The memory access takes place via a
+so-called interconnect, a connection network for the transfer of data
+and commands. The interconnect in clusters is an important component for
+exchanging and communicating data between management and load
+distribution processes. <sup id=fnref:26><a href=#fn:26 class=footnote-ref role=doc-noteref>26</a></sup></p>
+<p>In systems with shared memory, all processors share a memory. The memory
+is divided into fixed memory modules that form a uniform address space
+that can be accessed by all processors. The von Neumann bottleneck comes
+into play here, which means that the interconnect, in this case the data
+and instruction bus, becomes the bottleneck between memory and
+processor. Due to the sequential or step-by-step processing of program
+instructions, only as many actions can be performed as the bus is
+capable of. As soon as the speed of the bus is significantly lower than
+the speed of the processors, the processors repeatedly have to wait. In
+practice, the waiting time is circumvented by the use of buffer memories
+(cache), which is located between the processor and the memory. This
+ensures that program commands are available to the processor quickly and
+directly. <sup id=fnref:27><a href=#fn:27 class=footnote-ref role=doc-noteref>27</a></sup></p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=image86.png data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image86.png, image86.png 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image86.png 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image86.png title=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image86.png>{width=&ldquo;4.895389326334208in&rdquo;
+height=&ldquo;2.939129483814523in&rdquo;}</p>
+<p>Source: Own representation based on (Bauke & Mertens, 2006, p. 22) ; Cf.
+(Christl, Riedel, & Zelend, 2007, p. 5) .</p>
+<p>[]{#_Ref505271697 .anchor}<strong>Figure</strong> <strong>7</strong> : <em>Parallel computers with
+shared memory connected via the data and instruction bus.</em></p>
+<p>Figure7 shows the representation of memory (M) and processors (P)
+connected via the interconnect.</p>
+<p>Computer systems with distributed memory, on the other hand, have a
+separate memory for each processor. In this case, a connection network
+is required. As soon as a shared memory is dispensed with, the number of
+processors can be increased without any problems. By using a distributed
+memory, each processor gains the upper hand over its address space,
+since it is allocated its own local memory. Similar to distributed
+memory, communication takes place via an interconnect, which in this
+case is a local network. The advantage of computer systems with
+distributed memory is the increase in the number of processors, but the
+disadvantage lies in the disproportion between computing and
+communication performance, since the transport of data between CPU
+(Central Processing Unit) and memory is much slower. The bottleneck is
+not in the bus as with distributed memory, but in the local network.
+<sup id=fnref:28><a href=#fn:28 class=footnote-ref role=doc-noteref>28</a></sup></p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=image915.png data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image915.png, image915.png 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image915.png 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image915.png title=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image915.png>{width=&ldquo;4.59375in&rdquo;
+height=&ldquo;2.6052919947506563in&rdquo;}</p>
+<p>Source: Own representation based on. (Bauke & Mertens, 2006, p. 23) ;
+(Christl, Riedel, & Zelend, 2007, p. 5) .</p>
+<p>[]{#_Toc505443042 .anchor}<strong>Figure</strong> <strong>8</strong>: <em>Parallel computers with
+distributed memory, connected via a local area</em> network.</p>
+<p>As soon as processor systems are operated with shared memory, through
+the use of multi-core processors, the complexity and expense of the
+electronics to be implemented increases. This consequently entails
+higher costs. A single system with, for example, 128 multicore
+processors is very expensive and is therefore out of the question for
+massively parallel applications. It is far more cost-effective to
+operate 128 PCs, for example, with the same hardware, each with one
+processor and distributed memory.</p>
+<h3 id=message-passing-interface>Message Passing Interface</h3>
+<p>Message Passing Interfaces (MPI ) is a standardized and portable message
+passing standard for message transmission between cluster nodes with
+distributed memory (see <strong>Figure9</strong>). This concept was developed by a
+group of researchers from academia and industry to enable the
+development of a variety of parallel computing architectures. The
+standard defines syntax and semantics that are useful to a wide variety
+of users. It is not a standardized protocol, but acts as a programming
+interface for serial code used by the C and Fortran programming
+languages. MPI is the most widely used model for parallel and concurrent
+programming today. Currently used MPI implementations are MPI/Pro and
+Local Area Multiprocessor (LAM ) MPI. Both implementations are now fixed
+components of Linux distributions. Another message-based model is the
+Parallel Virtual Machine (PVM ) platform. This allows several computers
+with a Windows or Linux operating system to be combined to form a
+parallel system with distributed memory. <sup id=fnref:29><a href=#fn:29 class=footnote-ref role=doc-noteref>29</a></sup></p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=image1031.png data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image1031.png, image1031.png 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image1031.png 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image1031.png title=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image1031.png>{width=&ldquo;5.329817366579178in&rdquo;
+height=&ldquo;4.229166666666667in&rdquo;}</p>
+<p>Source: Own representation based on (Bauke & Mertens, 2006, p. 45) .</p>
+<p>[]{#_Ref505272051 .anchor}<strong>Figure</strong> <strong>9</strong> : <em>Message transmission
+between cluster nodes via the interconnect.</em></p>
+<h3 id=high-availibility-cluster>High-Availibility Cluster</h3>
+<p>There are many different application scenarios for clusters. The most
+popular uses are high-availability (HA), high-performance computing
+(HPC) and load balancing (LB). These types of computer networks are
+subdivided as follows in the diagram below.</p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=image118.png data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image118.png, image118.png 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image118.png 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image118.png title=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image118.png>{width=&ldquo;5.3125in&rdquo;
+height=&ldquo;2.375in&rdquo;}</p>
+<p>Source: Own representation based on. (Networked Computing: Fundamentals
+and Applications, 2018) .</p>
+<p>[]{#_Toc505443044 .anchor}<strong>Figure</strong> <strong>10</strong>: <em>Subordination of the
+different cluster types.</em></p>
+<p>High availability cluster or failover cluster pursues the goal of
+avoiding one or more single points of failure. In a cluster, a specific
+system component is defined as SPOF as soon as it is designed as
+non-redundant. A failover cluster is a group of servers configured so
+that if one or more servers fail, another server automatically takes
+over their service and continues processing. Each server in the cluster
+has at least one other teammate, which functions as a so-called standby
+server or partner server. The simplest variant of an HA cluster is
+usually found in the 2-node solution, which is either symmetrically or
+asymmetrically structured, depending on the architecture. An
+asymmetrically structured cluster is an active/passive cluster, i.e. as
+soon as one of the nodes has a fault, its passive partner node steps in
+and takes over its services and function. A symmetrical active/active
+cluster, on the other hand, keeps both server nodes active. In this
+case, various services are shared between the two nodes for load
+balancing. In this case, high availability and load balancing are
+provided at the same time.</p>
+<p>If one of the nodes fails, the active partner takes over its services
+and the cluster remains available, not highly available but still in a
+running mode. <sup id=fnref:30><a href=#fn:30 class=footnote-ref role=doc-noteref>30</a></sup></p>
+<p>For a standby server to be able to step in as an active server at all,
+it must use a certain technique to determine that its active partner
+server is no longer functioning. This is usually done by a so-called
+heartbeat mechanism. This typically runs as a service on both server
+nodes. The communication between the services runs over a local,
+dedicated as well as redundant network. They communicate with each other
+and check each other for signs of life - their heartbeat. As soon as
+there are more than 2 nodes in a cluster, they also monitor each other
+using various heartbeat techniques. Using push heartbeat, active servers
+send signals to their respective standby servers at a fixed interval. If
+one of the standby servers no longer receives a signal, it assumes that
+its partner has failed and takes over the active role. Based on a pull
+heartbeat, the standby server sends a certain number of requests to its
+active partner. If the limit of these requests is reached without a
+valid response from its partner, the partner takes over its services and
+thus assumes the active part. <sup id=fnref:31><a href=#fn:31 class=footnote-ref role=doc-noteref>31</a></sup></p>
+<h3 id=high-performance-computing-cluster>High-Performance Computing Cluster</h3>
+<p>The goal of HPC clusters is to process complex computing tasks or
+simulation applications, in parallel on all cluster nodes. The
+combination of all cluster nodes thus results in immensely high
+computing power. All nodes must consist of homogeneous or similar
+hardware components in order to simplify the administration effort and
+maintenance and to be able to handle error sources more easily.
+Furthermore, all nodes are connected to each other via a local network
+and usually access a common data storage. As soon as an application
+falls into one of the following categories, increased requirements are
+placed on memory, network and processors:</p>
+<ul>
+<li>
+<p>computing-intensive applications</p>
+</li>
+<li>
+<p>memory-intensive applications</p>
+</li>
+<li>
+<p>communication-intensive applications</p>
+</li>
+</ul>
+<p>Because of this, these types of clusters must provide high resilience,
+high availability, and high redundancy.</p>
+<p>The use of high-performance clusters, takes place in particularly
+computationally intensive applications, which are often used in the
+scientific field. <sup id=fnref:32><a href=#fn:32 class=footnote-ref role=doc-noteref>32</a></sup></p>
+<p>Figure11 shows a typical architecture of an HPC cluster. All compute
+nodes, also called working nodes, are connected via a local network by
+means of a switch. In addition, there is a so-called shared storage.
+This should not be confused with shared memory, which is only used in
+processor systems (see 2.2.1). Shared storage is used for the joint and
+simultaneous access and exchange or intermediate storage of data, such
+as specially required application data or databases. Master nodes or
+front-end nodes form the central work platform for users, on which they
+can log in via a console terminal and interact with the cluster.
+Computing jobs are initiated and applications installed via this
+platform. <sup id=fnref:33><a href=#fn:33 class=footnote-ref role=doc-noteref>33</a></sup></p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=image1220.png data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image1220.png, image1220.png 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image1220.png 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image1220.png title=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image1220.png>{width=&ldquo;5.513170384951881in&rdquo;
+height=&ldquo;1.8958333333333333in&rdquo;}</p>
+<p>Source: Own representation based on (Bauke & Mertens, 2006, p. 52) .</p>
+<p>[]{#_Ref505273269 .anchor}<strong>Figure</strong> <strong>11</strong> : <em>Typical construct of an
+HPC cluster.</em></p>
+<p>The first multiprocessor clusters trimmed to high-performance computing,
+such as the VAX-11/780, came onto the market in 1977 under the name
+VAXCluster or VMSCluster. The technology pioneer at that time was
+Hewlett-Packard (HP ), then under the company name Digital Equipment
+Corporation (DEC ). VAX stands for Virtual Address eXtension and, in
+conjunction with the OpenVMS(virtual memory system) operating system
+specially developed for this purpose, was a powerful tool in terms of
+security, stability and low downtimes. Another notable example of an HPC
+cluster that focuses more on low-cost high-performance computing is a
+Beowulf cluster, which we will discuss in more detail in Section 2.2.4.
+<sup id=fnref:34><a href=#fn:34 class=footnote-ref role=doc-noteref>34</a></sup></p>
+<h3 id=load-balanced-cluster>Load-Balanced Cluster</h3>
+<p>Processing large amounts of data can lead to high loads on individual
+nodes and must be managed. Server nodes have limited CPU, memory or
+network capacity and cannot handle all loads on their own. Furthermore,
+certain applications can only use or rely on a certain number of
+processors. A load-balanced cluster is a computer network optimized for
+load distribution. By distributing the data volumes over several
+identical computers, the system is protected against total failures.
+Likewise, the function of uniform performance availability is maintained
+as capacity or computational requirements change during operation.
+Figure 12 shows a cluster-internal load balancer that distributes client
+requests evenly across all servers. <sup id=fnref:35><a href=#fn:35 class=footnote-ref role=doc-noteref>35</a></sup></p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=image132.png data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image132.png, image132.png 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image132.png 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image132.png title=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image132.png>{width=&ldquo;3.9450306211723536in&rdquo;
+height=&ldquo;2.6493503937007876in&rdquo;}</p>
+<p>Source: Own representation based on (Load-Balanced Cluster, 2018) .</p>
+<p>[]{#_Toc505443046 .anchor}<strong>Figure</strong> <strong>12</strong>: <em>A cluster-internal load
+balancer distributes client requests evenly to all servers.</em></p>
+<p>Management for intelligent distribution of data streams is handled by
+these various distribution algorithms:</p>
+<ul>
+<li>
+<p><strong>Round-Robin algorithm</strong>: All computational requests and loads are
+distributed evenly to each server, regardless of the current number
+of connections or response times. Round-robin is best suited when
+the servers in the cluster have equal processing capabilities based
+on hardware. Otherwise, some servers will receive more requests than
+they can handle, while others will consume only a portion of their
+resources.</p>
+</li>
+<li>
+<p><strong>Weighted Round-Robin</strong>: A weighted round-robin algorithm takes
+into account the different processing capabilities of each server.
+Users manually assign a performance weight to each server, and a
+scheduling sequence is automatically generated depending on the
+server weight. Requests are then routed to the different servers
+according to a round-robin scheduling sequence. This algorithm makes
+sense as soon as one or more servers have different performance
+strengths and maintain a performance equilibrium according to their
+weightings.</p>
+</li>
+<li>
+<p><strong>Least-Connection Algorithm</strong>: Only requests are sent to the server
+in a cluster based on which currently serves the fewest connections.</p>
+</li>
+<li>
+<p><strong>Load-Based Algorithm</strong>: Similar to Least-Connection, only certain
+requests are sent to the cluster; in a load-balanced algorithm, only
+requests are sent to servers that currently have the lowest load.</p>
+</li>
+</ul>
+<h3 id=beowulf-cluster>Beowulf Cluster</h3>
+<p>A Beowulf Cluster is a computer design that provides parallel processing
+across multiple computers to create a low-cost, high-performance
+supercomputer. The name Beowulf, translated into German, means werewolf
+and, in this context, comes from an Old English heroic poem and has
+since stood as a meaningful emblem of the power such a cluster can
+deliver. The first clusters of this type were developed in 1994 by
+scientists Thomas Sterling, Donald Becker and Phil Merkey to support the
+Earth and Space Sciences Project (ESS ) at the National Aeronautics and
+Space Administration (NASA ). <sup id=fnref:36><a href=#fn:36 class=footnote-ref role=doc-noteref>36</a></sup></p>
+<p>A Beowulf Cluster in practice is typically a collection of generic
+computers, either commodity PCs or larger server systems, that are
+independently procured, assembled, and connected via an internal
+network. A Beowulf cluster consists of two types of computers, a main
+(master) computer and multiple computer nodes. When a complex problem or
+large data set is given to a Beowulf cluster, the master computer first
+runs a program that breaks the problem into small pieces and sends one
+piece at a time to each node to compute. When the nodes finish their
+tasks, the master continuously sends more pieces to them until the
+entire problem is solved. <sup id=fnref:37><a href=#fn:37 class=footnote-ref role=doc-noteref>37</a></sup></p>
+<p>When Thomas Sterling and Donald J. Becker started up their cluster in
+1994, it consisted of sixteen Linux PCs, each with 100 MHz Intel DX4
+processors. The individual computers were connected via Ethernet for the
+required data exchange. Several benchmark tests were performed, which
+test the performance of computers by measuring the number of floating
+point number calculations possible per second. The measurement is given
+in Floating Point Operations Per Second (FLOPS ). The results of the
+tests were surprising with 4.5 MegaFLOPS per node and 60 MegaFLOPS in
+total. This corresponds to a speedup of 13.33 or an efficiency of 83%.
+These results are impressive for the reason that this performance was
+comparable to the supercomputers from IBM and Co. at the time. The
+remarkable thing, however, is that this cluster was operated at only a
+fraction of the cost of supercomputers. <sup id=fnref:38><a href=#fn:38 class=footnote-ref role=doc-noteref>38</a></sup></p>
+<p>The following figure shows a Beowulf cluster with 64 PC nodes, which was
+developed by Phil Merkey at Michigan Technological University, also for
+the ESS project.</p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=image143.jpeg data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image143.jpeg, image143.jpeg 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image143.jpeg 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image143.jpeg title=http://www.cs.mtu.edu/beowulf/misc/cluster.jpg>{width=&ldquo;5.636363735783027in&rdquo;
+height=&ldquo;4.224455380577428in&rdquo;}</p>
+<p>Source: Own representation based on (Beowulf Cluster Computing, 2018) .</p>
+<p>[]{#_Toc505443047 .anchor}<strong>Figure</strong> <strong>13</strong>: <em>A 64-node Beowulf cluster
+from Michigan Technological University.</em></p>
+<h3 id=virtualization>Virtualization</h3>
+<p>Before we delve a little deeper into the chapter Container Management
+Systems (see 2.4), we will look at the basic technology of
+virtualization. This foundational technology is necessary for the
+operation of container technologies like Docker. In computer science,
+virtualization refers to the creation of a virtual, rather than actual,
+version of something, such as an operating system, server, storage
+device, or network resources. Virtualization refers to a technology in
+which an application or an entire operating system is abstracted from
+the actual underlying hardware. In connection with container
+technologies, a well-known type of virtualization, we distinguish here
+between two techniques of virtualization, hypervisor-based and
+container-based virtualization. <sup id=fnref:39><a href=#fn:39 class=footnote-ref role=doc-noteref>39</a></sup></p>
+<h4 id=hypervisor-based-virtualization>Hypervisor-based virtualization</h4>
+<p>A key application of virtualization technology is server virtualization,
+which uses a software layer called a hypervisor to emulate hardware such
+as memory, CPU, and networking. The guest OS, which normally interacts
+with real hardware, implements this with a software emulation of that
+hardware, and often the guest OS has no idea it is running on
+virtualized hardware. The hypervisor decides which guest OS gets how
+much memory, processor time and other resources from the host machine.
+In this case, the host machine runs the host OS and the hypervisor. This
+means each OS appears to have direct access to the processor and memory,
+but the hypervisor actually controls the host processor and resources by
+allocating what is needed by each OS. While the performance of this
+virtual machine does not match the performance of the OS running on real
+hardware, the concept of hypervisor-based virtualization works quite
+well because most OSes and applications do not require full use of the
+underlying hardware. This allows for greater flexibility, control and
+isolation by eliminating dependency on a specific hardware platform.
+Originally intended for server virtualization, the concept of
+virtualization has expanded to applications, which is implemented using
+isolated containers. <sup id=fnref:40><a href=#fn:40 class=footnote-ref role=doc-noteref>40</a></sup></p>
+<h4 id=container-based-virtualization>Container-based virtualization</h4>
+<p>Container virtualization or container-based virtualization is a method
+of virtualizing applications but also entire operating systems.
+Containers in this sense are isolated partitions that are integrated
+into the kernel of a host machine. In these isolated partitions,
+multiple instances of applications can run without the need for an OS.
+This means that the OS is virtualized, while the containers that run
+inside the system have processes that have their own identity and are
+thus isolated from another process in another container. Software
+running in containers communicates directly with the host kernel and
+must be executable on the operating system and CPU architecture on which
+the host is running. By not emulating hardware and booting a complete
+operating system, containers can be started in a few milliseconds and
+are more efficient than traditional virtual machines. Container images
+are typically smaller than virtual machine images because container
+images do not need to contain device drivers or a core to run an
+operating system. Because of the compactness of these application
+containers, they find their predominant use in software development.
+Developers do not have to set up their development machines by hand;
+instead, they use pre-built container images. These images are memory
+maps of entire application structures that can be arbitrarily moved back
+and forth between different host machines, also called shipping. This is
+one of the reasons why container-based virtualization has become
+increasingly popular in recent years. <sup id=fnref:41><a href=#fn:41 class=footnote-ref role=doc-noteref>41</a></sup></p>
+<p>Examples of container platforms are Docker from Docker Inc. and rkt from
+the developers of the CoreOS operating system, with Docker enjoying
+increasing popularity in recent years. Compared to virtual machines,
+Docker represents a simplified solution to virtualization. <sup id=fnref:42><a href=#fn:42 class=footnote-ref role=doc-noteref>42</a></sup></p>
+<p>Figure 14 shows the key difference between container-based and
+hypervisor-based virtualization.</p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=image1528.png data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image1528.png, image1528.png 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image1528.png 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image1528.png title=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image1528.png>{width=&ldquo;5.905555555555556in&rdquo;
+height=&ldquo;3.2381944444444444in&rdquo;}</p>
+<p>Source: Own representation based on (Containers vs. virtual machines,</p>
+<ol>
+<li>.</li>
+</ol>
+<p>[]{#_Toc505443048 .anchor}<strong>Figure</strong> <strong>14</strong>: <em>Comparison between
+hypervisor and container.</em></p>
+<h4 id=container-management-systems>Container Management Systems</h4>
+<p>As soon as several containers are to be distributed and run on a
+parallel system such as a cluster, it is necessary to use a container
+management system. Such a system manages, scales and automates the
+deployment of application containers. Well-known open source systems are
+Kubernetes from Google or Docker Swarm. Another very well-known
+container manager worth mentioning is the OpenShift software from
+Redhat, but we will not discuss it further in this paper. These cluster
+management tools play an important role as soon as a cluster has to take
+care of tasks such as load balancing and scaling. In the following, we
+will introduce the first two container managers mentioned and explain
+their structure and use with containers.</p>
+<h4 id=docker-swarm>Docker Swarm</h4>
+<p>Docker is an open standards platform for developing, packaging, and
+running portable distributed applications. With Docker, developers and
+system administrators can create, deliver, and run applications on any
+platform, such as a PC, the cloud, or a virtual machine. Obtaining all
+the necessary dependencies for a software application, including code,
+runtime libraries, and system tools and libraries, is often a challenge
+when developing and running an application.</p>
+<p>Docker simplifies application development and execution by consolidating
+all the required software for an application, including dependencies,
+into a single software unit called a Docker image that can run on any
+platform and environment. The Docker software, based on the Docker image
+runs in an isolated environment called a Docker container, which
+contains its own file system and environment variables. Docker
+containers are isolated from each other and from the underlying
+operating system. <sup id=fnref:43><a href=#fn:43 class=footnote-ref role=doc-noteref>43</a></sup></p>
+<p>One solution already integrated into Docker is Docker Swarm Mode. Docker
+Swarm is a cluster manager for Docker containers. Swarm allows
+administrators and developers to set up and manage a cluster consisting
+of multiple Docker nodes as a single virtual system. Swarm mode is based
+on Docker Engine, the layer between the operating system and container
+images. Clustering is an important feature for container technology
+because it creates a cooperative group of systems that provides
+redundancy and enables failover when one or more nodes experience a
+failure. A Docker Swarm Cluster provides users and developers the
+ability to add or remove containers as compute requirements change. A
+user or administrator controls a swarm through a swarm manager, which
+orchestrates and deploys containers. Figure15 shows the schematic
+structure and relationship between instances. <sup id=fnref:44><a href=#fn:44 class=footnote-ref role=doc-noteref>44</a></sup></p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=image169.png data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image169.png, image169.png 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image169.png 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image169.png title=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image169.png>{width=&ldquo;5.9422954943132105in&rdquo;
+height=&ldquo;2.5833333333333335in&rdquo;}</p>
+<p>Source: Own representation based on</p>
+<p>[]{#_Ref505275338 .anchor}<strong>Figure</strong> <strong>15</strong> : <em>Structure and
+communication of the manager and worker instances.</em></p>
+<p>The Swarm Manager allows a user to create a primary manager instance and
+multiple replica instances in case the primary instance fails, similar
+to an active/passive cluster. In Docker Engine's swarm mode, the user
+can provision so-called master nodes and worker nodes at runtime. <sup id=fnref:45><a href=#fn:45 class=footnote-ref role=doc-noteref>45</a></sup></p>
+<h3 id=google-kubernetes>Google Kubernetes</h3>
+<p>The name Kubernetes comes from the Greek and means helmsman or pilot.
+Kubernetes is known in specialist circles by the acronym K8s. K8s is an
+acronym where the eight letters "ubernete" are replaced by "8".
+Kubernetes provides a platform for scaling, automatically deploying and
+managing container applications on distributed machines. It is an
+orchestration tool and supports container tools such as Apache Mesos,
+Packer, and including Docker. <sup id=fnref:46><a href=#fn:46 class=footnote-ref role=doc-noteref>46</a></sup></p>
+<p>A Kubernetes system consists of master and worker nodes, the same system
+principle as Docker Engine, with manager instances named master. The
+smallest unit in a Kubernetes cluster is a pod and runs in the worker
+nodes. This pod consists of at least one or more containers. A worker
+node can in turn run multiple pods. A pod is a worker process that
+shares virtual resources such as network and volume among its
+containers. <sup id=fnref:47><a href=#fn:47 class=footnote-ref role=doc-noteref>47</a></sup></p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=image1721.png data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image1721.png, image1721.png 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image1721.png 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image1721.png title=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image1721.png>{width=&ldquo;4.344828302712161in&rdquo;
+height=&ldquo;3.1758508311461067in&rdquo;}</p>
+<p>Source: Own representation based on (Pods and Nodes, 2018) .</p>
+<p>[]{#_Toc505443050 .anchor}<strong>Figure</strong> <strong>16</strong>: <em>Granular representation of
+node, pod and container.</em></p>
+<p>The following services run on the individual worker nodes: <sup id=fnref:48><a href=#fn:48 class=footnote-ref role=doc-noteref>48</a></sup></p>
+<ul>
+<li>
+<p><strong>Docker</strong>: providing the container engine.</p>
+</li>
+<li>
+<p><strong>kubelet</strong>: Agent, which takes over the management of the
+containers.</p>
+</li>
+<li>
+<p><strong>kube-proxy</strong>: Service that handles network management and port
+forwarding to and from containers.</p>
+</li>
+</ul>
+<p>The main nodes take care of the management and controlling of all nodes.
+The following services are divided here: <sup id=fnref:49><a href=#fn:49 class=footnote-ref role=doc-noteref>49</a></sup></p>
+<ul>
+<li>
+<p><strong>kube-apiserver</strong>: User interface to the nodes.</p>
+</li>
+<li>
+<p><strong>etcd</strong>: Storage location of the cluster configurations, the
+so-called key-value store.</p>
+</li>
+<li>
+<p><strong>kube-scheduler</strong>: The scheduler determines, depending on the
+available resources, which worker nodes are assigned which pods.</p>
+</li>
+<li>
+<p><strong>kube-controller-manager</strong>: This manager service takes over the
+controlling functions and monitors if all nodes are working, which
+pods are assigned to which service and manages port forwarding.</p>
+</li>
+</ul>
+<h3 id=raspberry-pi>Raspberry Pi</h3>
+<p>Credit-card-sized single-board computers (SBCs) such as the Raspberry
+Pi, developed in the UK by the Raspberry Pi Foundation, were originally
+intended to promote computer science education in schools. Acronyms like
+"RPi" or the abbreviation "RasPi" or "Pi" for the Raspberry Pi are
+mostly common here. Like smartphones, single-board computers are
+equipped with ARM processors (Advanced RISC Machines). Before the
+development of ARM in 1983, there were mainly CISC and RISC processors
+on the market. CISC stands for Complex Instruction Set Computer.
+Processors with this architecture are characterized by extremely complex
+instruction sets. Processors with RISC (Reduced Instruction Set
+Computer) architectures, on the other hand, have a restricted
+instruction set and therefore also operate with low power requirements.
+The Pi's board is equipped with a system-on-a-chip (SoC, i.e.
+single-chip system), which has the identifier BCM2837 from Broadcom. The
+SoC consists of a 1.2 GHz ARM Cortex-A53 Quad Core CPU, a VideoCore IV
+GPU (Graphics Processing Unit) and 512 MB of RAM. It does not include a
+built-in hard drive, but uses an SD card for booting and permanent data
+storage. It has an Ethernet port based on the RJ45 standard for
+connecting to a network, an HDMI port for connecting to a monitor or TV,
+USB (Universal Serial Bus) ports for connecting a keyboard and mouse,
+and a 3.5 mm jack for audio and video output. <sup id=fnref:50><a href=#fn:50 class=footnote-ref role=doc-noteref>50</a></sup></p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=image1833.png data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image1833.png, image1833.png 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image1833.png 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image1833.png title=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image1833.png>{width=&ldquo;4.247311898512686in&rdquo;
+height=&ldquo;2.8467213473315836in&rdquo;}</p>
+<p>Source: Own representation based on (Merkert, 2017, p. 12) .</p>
+<p>[]{#_Ref505275506 .anchor}<strong>Figure</strong> <strong>17</strong> : <em>Illustration of a
+Raspberry Pi 3 Model B and its components.&mldr;</em></p>
+<p>An average of 35 Euros is the price one pays for a Raspberry Pi, which
+makes it economically suitable for use and integration into a cluster
+system, since the unit costs for individual nodes are low. <sup id=fnref:51><a href=#fn:51 class=footnote-ref role=doc-noteref>51</a></sup></p>
+<p>General Purpose Input Output (GPIO ) is the name for programmable inputs
+and outputs for general purposes. A Raspberry Pi has a total of 40 GPIO
+pins, twelve of which are for power supply and 28 of which serve as an
+interface to other systems in order to communicate with or control them.
+GPIO pins 3 and 5 (see Figure18) enable devices such as an LCD display
+to be addressed by means of an Inter-Integrated Circuit (I2C), a serial
+data bus.</p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=image1910.png data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image1910.png, image1910.png 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image1910.png 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image1910.png title=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image1910.png>{width=&ldquo;4.541666666666667in&rdquo;
+height=&ldquo;4.2243055555555555in&rdquo;}</p>
+<p>Source: Own representation based on (Raspberry Pi 3 GPIO Pin Chart with
+Pi, 2018) .</p>
+<p>[]{#_Ref505441873 .anchor}<strong>Figure</strong> <strong>18</strong> : Illustration of the
+different <em>GPIO pins of the Raspberry Pi.</em></p>
+<h3 id=conception-and-design>Conception and design</h3>
+<p>In this chapter, we will go into the basic concept of creating a cluster
+using Raspberry Pi single-board computers. Here, these mini-computers
+form the basis for constructing a cost-effective and energy-efficient
+cluster system. Inspired by Joshua Kiepert and his 32-node RPiCluster or
+Nick Smith and his first design of a 5-node Raspberry Pi cluster, the
+idea of further developing and improving certain components has emerged,
+such as increasing the cooling performance by means of an optimized
+airflow supply, adding and logically arranging further connection
+possibilities and considering a modular expandability of the cluster.
+<sup id=fnref:52><a href=#fn:52 class=footnote-ref role=doc-noteref>52</a></sup></p>
+<h4 id=requirements>Requirements</h4>
+<p>The main focus in the design of this Raspberry Pi cluster is on the
+following requirement criteria:</p>
+<ul>
+<li>
+<p>Cost Efficiency.</p>
+</li>
+<li>
+<p>Energy efficiency.</p>
+</li>
+<li>
+<p>Scalability.</p>
+</li>
+<li>
+<p>Resilience.</p>
+</li>
+</ul>
+<p>Further criteria are a visual and easy-to-read status and information
+display of current system values, ideal cooling and optimization of the
+airflow for the best possible removal of heat. Furthermore, the entire
+design concept is fundamentally based on certain design requirements,
+which we will discuss in more detail in the design decisions (see 3.2).</p>
+<h4 id=cost-and-energy-efficiency>Cost and energy efficiency</h4>
+<p>The factors of cost and energy efficiency are paramount and
+predominantly influence the conception and design. In order to keep the
+acquisition costs as low as possible but still be able to offer
+efficient computing power, Raspberry Pi single-board computers in
+version 3 are to be installed. The use of unnecessary cable lengths or
+heavy and expensive materials such as sheet steel or aluminum for the
+housing should be avoided. In addition, a weight and further cost saving
+is to be achieved by using plastic instead of steel screws.</p>
+<p>The system should be reproducible at low cost and consume as little
+power as possible. Energy consumption of less than 60 kilowatts per hour
+is planned, which is comparatively equivalent to the average power
+consumption of a commercially available light source such as an
+incandescent lamp. Such low power consumption implies the portability
+factor, which means that it should also be possible to use this cluster
+on a mobile basis.</p>
+<h4 id=scaling-and-resilience>Scaling and resilience</h4>
+<p>Scaling is to be considered in this system in two respects. On the one
+hand, the user should be given the option of connecting the entire
+system with other clusters in order to be able to scale cluster-wise at
+this level. Here we also speak of horizontal scaling. On the other hand,
+it should be possible to scale vertically or node by node within a
+cluster by adding or removing individual nodes. This is done either
+automatically using cluster software or by physically adding or removing
+further single-board computers. Due to the modular structure of the
+cluster, the primary goal is to expand individual entire clusters, i.e.
+vertical scaling.</p>
+<p>In parallel to scaling, failover is an important player when it comes to
+keeping the cluster alive. As soon as the cluster system scales on the
+software side, all peripheral components must be designed and optimized
+accordingly so as not to reach their physical limits, such as maximum
+storage capacity or computing power. This also applies to components
+such as the network distributor and the power supply unit. With the help
+of organizational measures and the creation of technical redundancies,
+this fail-safety is to be guaranteed. This is also referred to as system
+availability.</p>
+<h4 id=status-and-information-display>Status and information display</h4>
+<p>For a direct perception of current system values such as host name,
+system time, processor and case temperature, a visual information
+display should be available in the form of a display. These important
+and system-critical values should be immediately and directly readable
+without the help of technical means, such as a keyboard or the
+connection of an external monitor. Furthermore, this display should have
+a backlight to be readable even in dark rooms or with little to no
+light.</p>
+<h4 id=cooling>Cooling</h4>
+<p>Passive cooling and optimized case ventilation are important points that
+have to be considered in the design. The advantage of passive cooling
+should be used to save energy on the one hand and costs on the other.
+Active cooling is nevertheless necessary to ensure the supply of cold
+air and the removal of warm air. Likewise, a basic law of physics, the
+so-called chimney effect, must not be lost sight of during further
+planning. This states: warm air rises, cold air remains on the ground.</p>
+<h4 id=air-flow-and-heat-dissipation>Air flow and heat dissipation</h4>
+<p>The processors of the individual nodes and integrated circuit modules
+(IC ) or internal circuit modules of the individual peripheral
+components develop a certain amount of heat during operation. For a
+correspondingly good removal of this warm air and to avoid heat
+accumulation inside the case, this should be done in several stages and
+can only be ensured with the help of an active case fan:</p>
+<ol>
+<li>
+<p>Absorption of cold outside air at the front and transport to the
+passive cooling elements inside the housing.</p>
+</li>
+<li>
+<p>Dissipation of heat from the surface of the components (CPU, IC)</p>
+</li>
+<li>
+<p>Removal of heated air from the rear of the housing.</p>
+</li>
+</ol>
+<p>The design of the case should be adapted accordingly so that the
+supplied air flow can optimally flow into the case, include all
+components in its air channel as far as possible and discharge warm air
+from the passive cooling elements out of the case again at a suitable
+point.</p>
+<h4 id=connections>Connections</h4>
+<p>Due to the compact design of the housing, planning and accommodating all
+necessary connections poses a certain challenge. It is important to
+avoid unnecessary cable lengths within the housing, to save space and to
+ensure sufficient room for suitable air circulation. Connections should
+therefore be located in the immediate vicinity of the components, as
+should the connections of internal components such as power, network or
+control cables. In addition, the following connections should be
+available externally on the housing:</p>
+<ul>
+<li>
+<p>1x current</p>
+</li>
+<li>
+<p>2x network</p>
+</li>
+<li>
+<p>1x HDMI</p>
+</li>
+<li>
+<p>2x USB</p>
+</li>
+</ul>
+<p>Modularity</p>
+<p>The building block principle, also called modularity, is related to
+future extensions or the connection of further cluster systems on a
+modular basis. This means that it should be possible to combine several
+cluster systems of the same type to form a larger cluster complex. The
+prerequisite for this are interfaces. In this case, a second network
+connection (see 3.1.6). Modularity is also a prerequisite for the
+planned scalability of the overall system and is therefore considered an
+important point.</p>
+<p>Design decisions</p>
+<p>The basic characteristics of this Raspberry Pi cluster are minimalism,
+transparency and simplicity. Minimalism in architecture, be it in
+building or model construction, is characterized by the reduction to
+simple cubic forms. The goal is the formation of geometric and pure
+forms, which is made possible with the help of transparent building
+materials such as glass. Whereupon we come to the property transparency.
+On the software side, transparency means that the user of this system
+knows exactly how the cluster system works, how it scales or what
+software is used. On the hardware side, it is clear which physical
+components such as cables, network distributors or connectors are
+connected to each other or whether systems emit visual signals.
+Simplicity, on the other hand, stands for easy understanding of the
+system. It should, at first glance, imply the usefulness of this system,
+from the point of view of an ignorant as well as affine user.</p>
+<p>Minimalism and transparency: cube</p>
+<p>We decide on a compact and portable design in the form of a cube and
+christen the system with the name PiCube. The Pi, as in Rasperry Pi,
+stands for Python Interpreter and signals that this system supports the
+Python programming language or is generally supported by all common
+operating systems like Raspbian or CoreOS. Python convinces with its
+minimalistic and easily understandable programming style and also
+contributes to the overall concept of this system. The English word Cube
+means cube. Another idea for the naming is PiKube, where Kube stands for
+the cluster management system used and at the same time comes from
+Kubus, the ancient Greek kybos or the Latin cubus for cube. However,
+since the design of the cube case does not have exactly equal faces, we
+decide to use PiCube, since a cube is a regular hexahedron. A hexahedron
+has six faces of equal size.</p>
+<p>Simplicity: Elastic Clip Concept</p>
+<p>In order to allow easy assembly and reassembly, without the use of
+additional tools or fastening screws of any kind, the Elastic Clip
+concept by Patrick Fenner was used. This concept allows to create a slim
+and elegant design. For this purpose, we use acrylic glass, which is
+transparent, light and flexible, as the construction material for the
+housing. The clips give the possibility to connect the single acrylic
+glass sides of the cube in a 90 degree angle. The real highlight here is
+the automatic snap-in of the clip connections in the insertion openings
+provided for this purpose. Removal or dismantling of the cube walls is
+done by bending the clip, so that the connections can be released. <sup id=fnref:53><a href=#fn:53 class=footnote-ref role=doc-noteref>53</a></sup></p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=image2023.png data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image2023.png, image2023.png 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image2023.png 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image2023.png title="Tapered Clip
+Dimensions">{width=&ldquo;2.5454549431321083in&rdquo;
+height=&ldquo;2.3142563429571306in&rdquo;}</p>
+<p>Source: Own representation based on (Laser-Cut Elastic-Clips, 2017) .</p>
+<p>[]{#_Toc505443053 .anchor}<strong>Figure</strong> <strong>19</strong>: <em>Illustration of clip
+dimensions with and without force application.</em></p>
+<p>$F$ stands for the force applied to the clip. The clip dimensions are:</p>
+<p>$a$ = 4mm, $b$ = 2m, $d$ = 2mm, $l$ = 25mm</p>
+<p>Depending on the nature, flexibility and material of the acrylic glass
+used, the clip may break if too much force is applied. The problem is
+that the maximum force is applied to the upper right $F$ on the upper
+right end of the clip, which will break if it is too short. $l$ the clip
+breaks if it is bent too much or subjected to too much load. To
+counteract this, there is a simple way to distribute the load on the
+clip at maximum force by widening the cut. This reduces the risk of the
+clip breaking. <sup id=fnref:54><a href=#fn:54 class=footnote-ref role=doc-noteref>54</a></sup></p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=image213.png data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image213.png, image213.png 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image213.png 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image213.png title=https://www.deferredprocrastination.co.uk/blog/uploads/2013/02/extra_cut.png>{width=&ldquo;2.0909087926509184in&rdquo;
+height=&ldquo;1.4468755468066492in&rdquo;}</p>
+<p>Source: Own representation based on (Laser-Cut Elastic-Clips, 2017) .</p>
+<p>[]{#_Toc505443054 .anchor}<strong>Figure</strong> <strong>20</strong>: <em>Widening the incision site
+increases durability.</em></p>
+<p>Due to the material nature and flexibility of acrylic glass, the use of
+this elastic clip concept is most suitable. If other materials such as
+medium-density fiberboard (MDF ) or simple wood are considered, it must
+be noted here that due to the unidirectional or one-sided wood fibers,
+much weaker resistance and thus less flexibility is offered to bend the
+clip elastically. Use in conjunction with MDF is an alternative, but the
+clip will inevitably break under too much load.</p>
+<p>PiCube</p>
+<p>2D model and logo</p>
+<p>Inkscape is a professional software for editing two-dimensional (2D)
+vector graphics. With the help of this software we create a 2D graphic
+of the housing plates. Prior to manufacturing the enclosure, we sketch
+and produce a two-dimensional template to determine the exact dimensions
+for connections, fasteners, and required air slots. Likewise, we are
+able to determine the exact cutting dimensions and positioning for the
+elastic clips (see 3.2) to the millimeter. <sup id=fnref:55><a href=#fn:55 class=footnote-ref role=doc-noteref>55</a></sup></p>
+<p>In the following figure, all six sides are shown and marked accordingly.
+L for left side, R for right side, F for front, T for top, G for bottom,
+and B for back. The back contains the connectors for HDMI, network and
+power, as well as the ventilation grilles and mounting holes for the
+case fan.</p>
+<p>The front has inlets for the double USB socket and the LCD display.
+Ventilation grilles are also broadly sketched here. All other sides,
+except the top, also have mounting holes for the rest of the components
+like the switch, USB charger and the additional side air intakes.</p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=image2216.png data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image2216.png, image2216.png 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image2216.png 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image2216.png title=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image2216.png>{width=&ldquo;5.889437882764654in&rdquo;
+height=&ldquo;4.291666666666667in&rdquo;}</p>
+<p>Source: Own representation.</p>
+<p>[]{#_Toc505443055 .anchor}<strong>Figure</strong> <strong>21</strong>: <em>2D model design of the
+housing including all connections.</em></p>
+<p>3D model and connections</p>
+<p>To ensure that all the required connections (see 3.1.6) can be correctly
+attached to the housing, we use the Rhinoceros 3D program to create
+three-dimensional graphics. A 3D model helps to better visualize and
+represent the housing to be constructed. Physical components can be
+inserted, rotated or scaled in size. Due to the exact specification of
+the dimensions of the individual components, a correspondingly realistic
+model is created before it is manufactured. The rendered graphics (see
+Figures 22 and 23) show the overall design with all the individual
+components installed, marked in different colors for better
+representation. Blue marks the USB components and light gray the case
+fan. The color dark gray represents network components and red the HDMI
+port.</p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=image238.jpeg data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image238.jpeg, image238.jpeg 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image238.jpeg 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image238.jpeg title=C:\Users\Sebastian\AppData\Local\Microsoft\Windows\INetCache\Content.Outlook\V88K6DU3\01.jpg>{width=&ldquo;3.6263331146106736in&rdquo;
+height=&ldquo;3.6145833333333335in&rdquo;}</p>
+<p>Source: Own representation.</p>
+<p>[]{#_Toc505443056 .anchor}<strong>Figure</strong> <strong>22</strong>: <em>3D model design including
+components with a view of the front of the housing.</em></p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=image242.jpeg data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image242.jpeg, image242.jpeg 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image242.jpeg 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image242.jpeg title="C:\Users\Sebastian\AppData\Local\Microsoft\Windows\INetCache\Content.Outlook\V88K6DU3\05
+(00000003).jpg">{width=&ldquo;3.53125in&rdquo;
+height=&ldquo;3.915106080489939in&rdquo;}</p>
+<p>Source: Own representation:</p>
+<p>[]{#_Toc505443057 .anchor}<strong>Figure</strong> <strong>23</strong>: <em>3D model design including
+components with view of the back of the housing.</em></p>
+<p>Components and costs</p>
+<p>For the construction of this prototype, the individual components are
+obtained from various suppliers or mail-order companies such as Amazon
+and eBay. The acrylic glass plates are milled in collaboration with
+Andreas Gregori from MAD Modelle Architektur Design. For the production
+of the case we do not use laser cutting, but normal milling. This has
+the advantage that we avoid traces of smoke or sclerosis, which occur
+during laser cutting due to high temperatures. Milling has another
+advantage and that is the possibility of surface milling. Thus, we are
+able to engrave the PiCube logo (see Figure 21 and 24) into the upper
+and front cube surface.</p>
+<p>The five Raspberry Pis and the matching 8 GB SD cards make up the
+largest part of the costs, amounting to 246.75 Euros. The middle part of
+the costs, which ranges between 13.75 and 22.99 Euros, is taken up by
+the Gigabit switch, the USB charger and the USB cables. The rest of the
+hardware, such as the LCD display, cables and plastic screws, are in the
+price range of 0.65 to 9.80 Euros.</p>
+<hr>
+<p><strong>Piece</strong> <strong>Component</strong> <strong>Unit price</strong></p>
+<hr>
+<p>5 Raspberry Pi 3 Model B 42,70 Euro</p>
+<p>5 SanDisk Ultra 8 GB microSDHCUHS -I Class 10 6,65 Euro</p>
+<p>1 Edimax ES-5800G V2 Gigabit Switch (8-Port) 22,99 Euro</p>
+<p>1 Anear 60 Watt USB Charger (6-Port) 18,99 Euro</p>
+<p>5 Micro USB cable (15 cm) 2,75 Euro</p>
+<p>5 Transparent power cord (15 cm) 0,79 Euro</p>
+<p>2 RJ45 jack (female-male) 2,74 Euro</p>
+<p>1 Dual USB 2.0-A female-male connector 4,53 Euro</p>
+<p>1 LCD display module 1602 HD44780 with 4,45 Euro
+TWIcontroller</p>
+<p>1 AC 250V 2.5A IEC320 C7 socket 1,39 Euro</p>
+<p>1 C7 power cable 90 degree angled (1 meter) 3,26 Euro</p>
+<p>1 Cable jumpers (female-female, 40 wires, 20 cm) 0,65 Euro</p>
+<p>56 M3 Nylon Hex Spacer Nuts and Bolts White 0,05 Euro</p>
+<p>1 Antec TRICOOL 92mm 4-pin case fan 9,80 Euro</p>
+<p>1 Milling cut of the acrylic sheets 20 Euro</p>
+<pre><code>          **Total price incl. VAT** **.**                  **358,79 Euro**
+</code></pre>
+<hr>
+<p>[]{#_Ref505276160 .anchor}<strong>Table</strong> <strong>1</strong> : <em>Listing of individual and
+total price of all components.</em></p>
+<p>Enclosed is a list of all purchased components with price status as of
+November 30, 2017 (see Table1). According to the list, the price of all
+required components for the cluster amounts to a total of 358.79 euros.</p>
+<p>Construction</p>
+<p>The practical part of the work, the construction, follows the
+step-by-step explanation of how to assemble, install and configure the
+Raspberry Pi cluster. The installation instructions and scripts used in
+the following are either available from the sources mentioned or from
+the GitHub repository <a href=http://github.com/seb2k/PiCube target=_blank rel="noopener noreffer">http://github.com/seb2k/PiCube</a>. All installation
+and configuration steps are easy to follow, so that it is easy to build
+the cluster on your own.</p>
+<p>Mounting and wiring</p>
+<p>Elastic clips (see 3.2.2) allow the individual case sides to be easily
+plugged together without the use of screws. The pre-milled holes for the
+switch, USB charger and LCD display allow the individual components to
+be attached using the plastic nuts and screws. Pre-milled holes for the
+LCD display, network ports, HDMI port, and power connector provide the
+proper slots for the cables to be subsequently connected outside of the
+case. The assembly is done according to the steps mentioned below:</p>
+<ol>
+<li>
+<p>Connecting the single board computers together using hex spacers.</p>
+</li>
+<li>
+<p>Screw on the attached Raspberry Pis on the left inner side.</p>
+</li>
+<li>
+<p>Attachment of the switch to the base plate.</p>
+</li>
+<li>
+<p>Attaching the LCD display and USB sockets to the front panel.</p>
+</li>
+<li>
+<p>Screwing the USB charger to the right side plate.</p>
+</li>
+<li>
+<p>Mounting the case fan, HDMI and network jacks.</p>
+</li>
+</ol>
+<p>After the entire interior has been assembled, the side panels are
+clipped in step by step. To do this, start with the base plate, onto
+which the left and right side plates are clipped and clipped together.
+Before assembling the front panel, we wire the individual components.
+LCD displays only work by being powered and controlled. A total of 4
+cable jumpers are used for this purpose. Two of them are for power and
+the other two are for control and transmission signals which we connect
+to GPIO pins 2, 3, 5 and 6 of one of the Raspberry Pis which acts as a
+master node. All mini computers are connected to the switch using RJ45
+network cables. Likewise, we connect the cables of the network jacks to
+the switch, which serve as network port extensions. Micro-USB cables are
+typically used for data transfer, in this scenario they are only used
+for powering the individual single-board computers.</p>
+<p>We connect the network switch and all Raspberry Pis to the USB charger
+using the USB cables. We connect the case fan with its 3-pin connector
+to the GPIO ports 2 and 6 of one of the Raspberry Pis to supply it with
+power. After all the necessary cables and components are connected, we
+move on to the cluster installation. The following two images show the
+PiCube in a partially and fully wired state.</p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=image257.jpeg data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image257.jpeg, image257.jpeg 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image257.jpeg 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image257.jpeg title="C:\Users\Sebastian\OneDrive\Dokumente\Studium\Wirtschaftsinformatik\Bachelor
+Thesis\PiCube\IMG_3786.jpg">{width=&ldquo;3.1918536745406825in&rdquo;
+height=&ldquo;2.7395833333333335in&rdquo;}</p>
+<p>Source: Own representation.</p>
+<p>[]{#_Toc505443058 .anchor}<strong>Figure</strong> <strong>24</strong>: <em>Partially wired PiCube
+without front and bottom panels.</em></p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=image26.jpeg data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image26.jpeg, image26.jpeg 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image26.jpeg 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image26.jpeg title=C:\Users\desgrae2\Downloads\PiCube-3.jpg>{width=&ldquo;3.16922353455818in&rdquo;
+height=&ldquo;3.6868088363954508in&rdquo;}</p>
+<p>Source: Own representation.</p>
+<p>[]{#_Toc505443059 .anchor}<strong>Figure</strong> <strong>25</strong>: <em>Fully wired and closed
+PiCube.</em></p>
+<p>Installation</p>
+<p>Operating system</p>
+<p>To provide a suitable developer system and, to meet all requirements, we
+use the HypriotOS operating system as the base system for the cluster.
+The OS provides a Docker-optimized Linux kernel and is therefore ideally
+suited for this cluster. It already includes all the required modules
+such as Docker Engine, Docker Machine and Docker Compose. HypriotOS is
+an operating system specially developed for Raspbery Pi, which is based
+on the Linux distribution Debian. Important prerequisites for the
+successful operation of a cluster system are identical and redundantly
+designed hardware (see 2.2) and the cluster software that can run on it.
+Among other things, this concerns the same software and driver versions
+for all participating nodes. To ensure that the cluster system maintains
+a homogeneous operating system and version structure on all nodes, we
+use operating system images. <sup id=fnref:56><a href=#fn:56 class=footnote-ref role=doc-noteref>56</a></sup></p>
+<p>Imaging and provisioning</p>
+<p>For the installation of Raspberry Pi operating systems, memory images
+are used. Images are disk images in a compressed file that contains
+files, file system structures, and boot sectors. Simply put, an image
+contains an exact disk copy of an operating system. The advantage of
+using images is that an operating system does not have to be installed.
+In order for this exact disk copy to be deployed in our nodes, we copy
+the contents to SD cards and deploy them in our cluster nodes. Using the
+Hypriot flash tool, the hostname is passed to the image and is thus
+hardcoded for the first boot of the Raspberry Pi. Hardcoded means that
+values, such as the hostname in this case, are passed into the startup
+configuration of the operating system and are called and used when the
+system starts. The following code snippet (see Listing1) shows the
+command that sets the hostname rpi1 for the image package
+hypriotos-rpi1-v1.6.0.img.zip after downloading the HypriotOS image from
+the address
+<a href=https://github.com/hypriot/image-builder-rpi/releases/download/v1.6.0/ target=_blank rel="noopener noreffer">https://github.com/hypriot/image-builder-rpi/releases/download/v1.6.0/</a>.
+<sup id=fnref:57><a href=#fn:57 class=footnote-ref role=doc-noteref>57</a></sup></p>
+<p>flash --hostname rpi1
+<a href=https://github.com/hypriot/image-builder-rpi/releases/download/v1.6.0/hypriotos-rpi-v1.6.0.img.zip target=_blank rel="noopener noreffer">https://github.com/hypriot/image-builder-rpi/releases/download/v1.6.0/hypriotos-rpi-v1.6.0.img.zip</a></p>
+<p>[]{#_Ref505277209 .anchor}<strong>Listing</strong> <strong>1</strong> : <em>The HypriotOS image is
+downloaded and copied to the SD card using flash.</em></p>
+<p>YAML Ain't Markup Language (YAML ) is a markup language and gives us
+the possibility to create customized parameters for a startup
+configuration. Thus, it is very easy to pass values into a configuration
+which will be initialized and applied when each node is started for the
+first time. Examples for start parameters, which can be preconfigured:</p>
+<ul>
+<li>
+<p>Hostname</p>
+</li>
+<li>
+<p>WLAN -SSID</p>
+</li>
+<li>
+<p>WLAN password</p>
+</li>
+<li>
+<p>Static or dynamic IPaddress</p>
+</li>
+</ul>
+<p>The YAML files for our nodes look like this, with the hostname for the
+respective Raspberry Pi adjusted accordingly:</p>
+<p>hostname: "rpi</p>
+<p>wifi:</p>
+<p>interfaces:</p>
+<p>wlan0:</p>
+<p>ssid: "WLAN</p>
+<p>password: "2345251344834395"</p>
+<p>[]{#_Toc505443076 .anchor}<strong>Listing</strong> <strong>2</strong>: <em>Example of a YAML
+configuration.</em></p>
+<p>Fixed WLAN parameters lets individual nodes connect to an existing
+wireless network. We copy this configuration to the image in the /boot/
+directory. The following code snippet shows setting the YAML
+configuration using flash. This accesses /boot/device-init.yaml on
+initial startup and copies the appropriate parameters to the operating
+system's startup configuration:</p>
+<p>flash --config
+<a href=https://github.com/hypriot/image-builder-rpi/releases/download/v1.6.0/hypriotos-rpi-v1.6.0.img.zip target=_blank rel="noopener noreffer">https://github.com/hypriot/image-builder-rpi/releases/download/v1.6.0/hypriotos-rpi-v1.6.0.img.zip</a></p>
+<p>[]{#_Toc505443077 .anchor}<strong>Listing</strong> <strong>3</strong>: <em>The HypriotOS image is
+downloaded, copied to the SD card using flash and a given YAML
+configuration.</em></p>
+<p>Time is precious and, in order to save it, we prepare the respective
+image for each individual Raspberry Pi and thus take advantage of the
+automatic provisioning. Due to the use of a total of 5 cluster nodes,
+the manual installation, configuration and maintenance of each
+individual node would be very time-consuming. Therefore, we provision
+every single operating system in advance, which means we use a master
+image that already contains current driver versions and software
+packages. We modify this system image for each individual node by means
+of a YAML configuration, so that only the host name has to be entered
+and is thus hard-coded or hard-configured. As soon as the system starts,
+it takes the hardcoded hostname value from its startup configuration and
+boots with it. Flash is used to provision the remaining 4 nodes with the
+host names rpi2, rpi3, rpi4 and rpi5 respectively.</p>
+<p>Commissioning of the cluster</p>
+<p>After all SD cards are prefabricated and inserted into the individual
+Raspberry Pis, the cluster is put into operation and the system is
+connected to the power. After all systems get power, the LCD display and
+the individual LED s of the Raspberry Pis light up one after the other,
+signaling their operation (see Figure26). The startup process of the
+single-board computers happens quite quickly and the systems are ready
+for the next step, the actual configuration of the cluster, after about
+30 seconds.</p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=image274.jpeg data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image274.jpeg, image274.jpeg 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image274.jpeg 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image274.jpeg title="D:\Sebastian\Google Drive
+3.01.2018\PiCube\IMG_3839.JPG">{width=&ldquo;3.567094269466317in&rdquo;
+height=&ldquo;2.961220472440945in&rdquo;}</p>
+<p>Source: Own representation.</p>
+<p>[]{#_Ref505277289 .anchor}<strong>Figure</strong> <strong>26</strong> : <em>All systems signal their
+readiness for operation.</em></p>
+<p>Cluster configuration</p>
+<p>Installing and configuring Kubernetes</p>
+<p>All five nodes are now configured in the same way as described below,
+the order is not decisive here. The connection to the individual
+Raspberry Pis is established via Secure Shell (SSH). In order to
+establish this secure connection over the network, the terminal program
+putty is used. As soon as the connection is established, a "sudo
+update" is performed to update the current package installation lists
+to the latest version. Afterwards, "sudo upgrade" is used to update
+all the correspondingly required software packages for Docker. The next
+step is to install Kubernetes using the following command:</p>
+<p>curl -s <a href=https://packages.cloud.google.com/apt/doc/apt-key.gpg target=_blank rel="noopener noreffer">https://packages.cloud.google.com/apt/doc/apt-key.gpg</a> | sudo
+apt-key add - && echo "deb <a href=http://apt.kubernetes.io/ target=_blank rel="noopener noreffer">http://apt.kubernetes.io/</a> kubernetes-xenial
+main" | sudo tee /etc/apt/sources.list.d/kubernetes.list && sudo
+apt-get update -q && sudo apt-get install -qy kubeadm</p>
+<p>[]{#_Toc505443078 .anchor}<strong>Listing</strong> <strong>4</strong>: <em>Command to install
+Kubernetes.</em></p>
+<p>Here, the corresponding Kubernetes installation package is downloaded
+and installed. Now the node rpi1 is selected and the command "sudo
+kubedm init" is executed to initialize the cluster. Thus, the cluster
+is created and rpi1 is set as the master node. All other hosts are added
+to the cluster as worker nodes using the "kubeadm join" command. After
+the last node is successfully added, the command "kubectl get nodes"
+is used to check whether all nodes are ready and added to the computer
+cluster (see Figure27).</p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=image2829.png data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image2829.png, image2829.png 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image2829.png 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image2829.png title=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image2829.png>{width=&ldquo;4.093238188976378in&rdquo;
+height=&ldquo;1.1352744969378827in&rdquo;}</p>
+<p>Source: Own representation.</p>
+<p>[]{#_Ref505277689 .anchor}<strong>Figure</strong> <strong>27</strong> : <em>Status query in the
+terminal of all nodes.</em></p>
+<p>The Kubernetes cluster now has an active master node. If this node ever
+fails, the kube-controller-manager (see 2.4.2) detects this and decides
+which of the worker nodes will step in as the new active master.</p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=image294.png data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image294.png, image294.png 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image294.png 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image294.png title=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image294.png>{width=&ldquo;5.4375in&rdquo;
+height=&ldquo;3.1113451443569553in&rdquo;}</p>
+<p>Source: Own representation.</p>
+<p>[]{#_Toc505443062 .anchor}<strong>Figure</strong> <strong>28</strong>: <em>Schematic structure of
+Kubernetes on the PiCube cluster.</em></p>
+<p>Configuration LCD display</p>
+<p>In order for the LCD display to show the corresponding values IP
+addresses, system time, temperature and status information, a
+corresponding Python script is used. This script is executed
+automatically at every startup and delivers status values to the LCD
+display via I2C. <sup id=fnref:58><a href=#fn:58 class=footnote-ref role=doc-noteref>58</a></sup></p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=image305.jpeg data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image305.jpeg, image305.jpeg 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image305.jpeg 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image305.jpeg title=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image305.jpeg>{width=&ldquo;2.7291666666666665in&rdquo;
+height=&ldquo;1.2362106299212599in&rdquo;}<img class=lazyload src=/svg/loading.min.svg data-src=image319.jpeg data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image319.jpeg, image319.jpeg 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image319.jpeg 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image319.jpeg title=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image319.jpeg>{width=&ldquo;2.8509328521434822in&rdquo;
+height=&ldquo;1.236220472440945in&rdquo;}</p>
+<p>Source: Own representation.</p>
+<p>[]{#_Toc505443063 .anchor}<strong>Figure</strong> <strong>29</strong>: Display of temperature,
+voltage and load on the LCD display.</p>
+<p>Evaluation</p>
+<p>After the cluster has been configured and Kubernetes is ready for use,
+the entire system is evaluated. The requirements set in advance (see
+3.1) are critically reviewed, target and actual values are evaluated,
+and various comparisons are made. This prototype is ideally suited to
+illustrate and substantiate the research question addressed in this
+thesis. Section 5.5 deals with a use case that provides information
+about the extent to which and the purpose for which this custom cluster
+construction can contribute to scientific research.</p>
+<p>Scalability</p>
+<p>Kubernetes enables easy scaling of applications or pods and the
+applications within them. Enabled autoscaling scales pods according to
+their required resources up to a specified limit. In the following
+example, we test the autoscaling of our cluster using a simple web
+application and verify the automatic scalability of the system: <sup id=fnref:59><a href=#fn:59 class=footnote-ref role=doc-noteref>59</a></sup></p>
+<p>For this purpose, a Docker image based on a simple web server
+application is used. This Docker image contains a single web page, which
+causes a maximum CPU load by simulated users when called. The Docker
+image is launched, causing a web server to run with the corresponding
+web page as a pod. Kubernetes' autoscaler is enabled with the following
+configuration: <sup id=fnref:60><a href=#fn:60 class=footnote-ref role=doc-noteref>60</a></sup></p>
+<ul>
+<li>
+<p>KUBE_AUTOSCALER_MIN_NODES <strong>= 1</strong>: The minimum number of nodes to be
+used is one.</p>
+</li>
+<li>
+<p><strong>KUBE_AUTOSCALER_MAX_NODES = 4</strong>: The maximum number of nodes to be
+used is four. The fifth node thus retains the function as master.</p>
+</li>
+<li>
+<p><strong>KUBE_ENABLE_CLUSTER_AUTOSCALER = true</strong>: Activation of the
+autoscaler.</p>
+</li>
+</ul>
+<p>The pod with the web server container is started with the following
+properties:</p>
+<ul>
+<li>
+<p><strong>CPU-PERCENT = 50</strong>: This configuration value specifies the value
+that is maintained to keep all pods at an average CPU load of 50
+percent.</p>
+</li>
+<li>
+<p>As soon as a pod requires more than half of its available computing
+power, another pod instance is automatically replicated or an exact
+copy of the running pod is created.</p>
+</li>
+<li>
+<p><strong>MIN = 1</strong>: At least one Pod is used for scaling.</p>
+</li>
+<li>
+<p><strong>MAX = 10</strong>: A maximum of ten replicas of a pod can be used for
+scaling.</p>
+</li>
+</ul>
+<p>After the pod is started and user load is simulated, an increase in CPU
+load to 250 percent is observed and that seven pods have already been
+swapped out or scaled:</p>
+<p>$ kubectl get hpa</p>
+<p>NAME REFERENCE TARGET CURRENT MINPODS MAXPODS AGE</p>
+<p>php-apache deployment/php-apache/scale 50% 250% 1 10 2m</p>
+<p>$ kubectl get deployment php-apache</p>
+<p>NAME DESIRED CURRENT UP-TO-DATE AVAILABLE AGE</p>
+<p>php-apache 7 7 3 4m</p>
+<p>$ kubectl get pods</p>
+<p>NAME RUNNING STATUS AVAILABLE AGE</p>
+<p>php-apache-3046963998-3ewo6 0/1 Pending 0 1m</p>
+<p>php-apache-3046963998-8m03k 1/1 Running 0 1m</p>
+<p>php-apache-3046963998-ddpgp 1/1 Running 0 5m</p>
+<p>php-apache-3046963998-lrik6 1/1 Running 0 1m</p>
+<p>php-apache-3046963998-nj465 0/1 Pending 0 1m</p>
+<p>php-apache-3046963998-tmwg1 1/1 Running 0 1m</p>
+<p>php-apache-3046963998-xkbw1 0/1 Pending 0 1m</p>
+<p>[]{#_Toc505443079 .anchor}<strong>Listing</strong> <strong>5</strong>: <em>Observing CPU utilization
+increase to 250% while pods are swapped out to provide resources.</em></p>
+<p>Two minutes after the user load simulation stops, the CPU utilization
+drops back to zero and the drop from seven to one pod can be seen.</p>
+<p>$ kubectl get hpa</p>
+<p>NAME REFERENCE TARGET CURRENT MINPODS MAXPODS AGE</p>
+<p>php-apache deployment/php-apache/scale 50% 0% 1 10 7m</p>
+<p>$ kubectl get deployment php-apache</p>
+<p>NAME DESIRED CURRENT UP-TO-DATE AVAILABLE AGE</p>
+<p>php-apache 1 1 1 9m</p>
+<p>$ kubectl get pods</p>
+<p>NAME RUNNING STATUS AVAILABLE AGE</p>
+<p>php-apache-3046963998-ddpgp 1/1 Running 0 9m</p>
+<p>[]{#_Toc505443080 .anchor}<strong>Listing</strong> <strong>6</strong>: <em>Watching CPU utilization
+drop to zero percent and drop to one pod.</em></p>
+<p>As can be seen (see <strong>Listing1</strong>), it is very easy to dynamically adjust
+the number of pods to the load, by enabling the cluster autoscaler.</p>
+<p>Automatic and dynamic scaling can also be very helpful when there are
+irregularities in cluster utilization. For example, development-related
+clusters or continuous computing operations can be run on weekends or at
+night. Compute-intensive applications can be better scheduled so that a
+cluster is optimally utilized. In all cases, the cluster can be used
+optimally. Either reduce the number of unused nodes to save energy or
+scale to the limit to provide enough computing power. Depending on which
+case occurs, a dynamically scaling cluster ensures that at high or low
+utilization, all tasks are solved in the most efficient way.</p>
+<p>Fail-safe</p>
+<p>As with each element of our cluster, we ensure that more than one
+instance of each component is running simultaneously. Setting the number
+to five physical nodes per enclosure is one reason for creating the
+possibility of optimal scaling and appropriate resilience. The greater
+the number of nodes, the less likely there is to be a total failure or
+bottleneck in scaling capabilities. Load balancing and availability are
+closely related to cluster resilience. One way to ensure that a master
+node is highly available is to allow a worker node to step in as master.
+Kubernetes already inherently brings the function that as soon as a
+master node fails, a worker takes its place. The active/passive design
+is already in use. Second, this failover implementation is active for
+all worker nodes. Figure 28 shows how load balancing and failover work
+together to keep this cluster alive in the event of a master as well as
+worker node failure. The actors here are the cluster components etcd,
+kube-apiserver, kube-controller and kube-scheduler (see 2.4.2). The
+Kubernetes API server, controller, and scheduler all run inside
+Kubernetes as pods. This means that in the event of a failure, each of
+these pods will be moved to a different node, thus preserving the core
+services of the cluster. Here, one considers potential failure
+scenarios:</p>
+<ul>
+<li>
+<p><strong>Loss of the master node</strong>: If not configured for HA, loss of the
+master node or its services will have a severe impact on the
+application. The cluster will not be able to respond to commands or
+deploy nodes. Each service in the master node is critical and is
+configured appropriately for HA, so a worker node automatically
+steps in as the master.</p>
+</li>
+<li>
+<p><strong>Loss of worker nodes</strong>: Kubernetes is able to automatically detect
+and repair pods. Depending on how the services are balanced, there
+may be an impact on the end users of the application. If any pods on
+a node are not responding, kubelet detects this and informs the
+master to use a different pod.</p>
+</li>
+<li>
+<p><strong>Network failure</strong>: The master and worker nodes in a Kubernetes
+cluster can become unreachable due to network failures. In some
+cases, they are treated as node failures. In this case, other nodes
+are used accordingly to replace the respective node that is
+unreachable.</p>
+</li>
+</ul>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=image3211.png data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image3211.png, image3211.png 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image3211.png 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image3211.png title=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image3211.png>{width=&ldquo;4.552083333333333in&rdquo;
+height=&ldquo;3.975577427821522in&rdquo;}</p>
+<p>Source: Own representation.</p>
+<p>[]{#_Toc505443064 .anchor}<strong>Figure</strong> <strong>30</strong>: <em>Failure and takeover
+scenario of the master node rpi1 and the worker node rpi3.</em></p>
+<p>Kubernetes is configured to be highly available to tolerate the failure
+of one or more master nodes and up to four worker nodes. This is
+critical for running development or production environments in
+Kubernetes. An odd number of nodes is chosen so that it is possible to
+keep the cluster alive even with only one node. A cluster node can
+continue to operate in the last instance once a node is only acting as a
+master and worker. In this state, the cluster is neither highly
+available, fail-safe, nor completely resilient, but it survives.</p>
+<p>Cost efficiency and performance</p>
+<p>Looking at the costs, there are two sides to the story. With the total
+acquisition costs, minus the contributed effort to assemble, install and
+configure the cluster, the value of the investment is exactly 358.79
+Euros. This construct is contrasted with a simple Linux cluster for
+comparison. This Linux cluster consists of commercially available PCs
+with comparable core data to that of the Raspberry Pi nodes.</p>
+<p>+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+
+| | <strong>Raspberry Pi 3 | <strong>Linux PC</strong> |
+| | Model B</strong> | |
++======================+=======================+======================+
+| <strong>CPU</strong> | Cortex-A53 1.2 GHz | Intel Celeron J1900 |
+| | | 2 GHz Quadcore |
+| | Quadcore | |
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+
+| <strong>RAM</strong> | 1024 MB | 4 GB RAM |
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+
+| <strong>Network</strong> | 100 Mbps | 1000 Mbps |
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+
+| <strong>Current | max. 4 Watt / h | max. 10 Watt / h |
+| consumption</strong> | | |
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+
+| <strong>Price per | approx. 35 € | approx. 95 € |
+| computer</strong> | | |
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+
+| <strong>Total price</strong> | approx. 175 € | approx. 475 € |
++&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-+</p>
+<p>[]{#_Toc505443070 .anchor}<strong>Table</strong> <strong>2</strong>: <em>Cost comparison of the core
+components of Raspberry Pi and Linux PC.</em></p>
+<p>If we now compare the core data, we can see that the comparison system
+is definitely associated with higher acquisition costs. It is important
+to mention that this comparison primarily focuses on the costs and not
+the performance of the individual systems. It is obvious that a Linux
+PC, based on a CISC processor architecture, definitely achieves higher
+FLOPS than an ordinary ARM processor. Nevertheless, it becomes clear in
+the first approach that, despite the lower performance, there is a
+significant difference in terms of cost. Especially when performance per
+watt is calculated. Due to the compact design of the Raspberry Pi and
+the accommodation of all components, such as the integrated power supply
+and GPU, it is a competitive partner for the Linux PC.</p>
+<p>In relation to the costs, the question arises how the comparison systems
+perform in terms of performance. For this, a performance test is
+performed with the help of sysbench. Sysbench is a benchmark application
+that quickly gives an impression of the system performance. For this
+purpose, a CPU benchmark is run on both systems, which calculates all
+prime numbers up to 20000, and the results are shown in Table 3 and
+Figure31.</p>
+<hr>
+<pre><code>                      **Raspberry Pi 3 Model  **Linux PC**
+                      B**
+</code></pre>
+<hr>
+<p><strong>CPU benchmark</strong> Prime number Prime number
+calculation calculation</p>
+<p><strong>Threads (process 4 4
+parts)</strong></p>
+<p><strong>Limit</strong> 20000 20000</p>
+<h2 id=calculation-time----1151536-seconds--------112800-seconds><strong>Calculation time</strong> 115.1536 seconds 11.2800 seconds</h2>
+<p>[]{#_Toc505443071 .anchor}<strong>Table</strong> <strong>3</strong>: <em>Comparison times of the
+prime number calculation up to 20000.</em></p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=image3324.png data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image3324.png, image3324.png 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image3324.png 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image3324.png title=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image3324.png>{width=&ldquo;5.905555555555556in&rdquo;
+height=&ldquo;4.366666666666666in&rdquo;}</p>
+<p>Source: Own representation.</p>
+<p>[]{#_Ref505193565 .anchor}<strong>Figure</strong> <strong>31</strong> : <em>Results of the sysbench
+benchmark run on node rpi2.</em></p>
+<p>The difference in the calculation time is clearly visible. There is a
+difference of 104 seconds. According to the visible comparisons and as
+already mentioned in the cost comparison, there is no question that a
+Linux PC based on the CISC architecture has a higher CPU performance
+than the Raspberry Pi with an ARM architecture.</p>
+<p>Energy efficiencyand cooling</p>
+<p>ARM processors, such as those installed on the Raspberry Pi, have a high
+energy efficiency with a clock frequency of 1.2 GHz and a power
+consumption of max. 4 watts. The average power consumption is about 2
+watts in idle mode. The switch consumes 2.4 watts at 0.2 amps of current
+and 12 volts. The total wattage output of the USB charger is made up of
+all components and sits at the end of the power chain. Summarizing with
+all installed components, you get a total power consumption of 13.75
+watts in idle and 34 watts at maximum load (see Table4).</p>
+<hr>
+<pre><code>                                          **Power
+                                          consumption**
+</code></pre>
+<hr>
+<p><strong>Component</strong> <strong>Idle</strong> <strong>maximum</strong></p>
+<p>Raspberry Pi 3 Model B 2 Watt 4 Watt</p>
+<p>Edimax ES-5800G V2 Gigabit Switch (8-Port) 2.4 watt 2.4 watt</p>
+<p>LCD display module 1602 HD44780 with 0.1 watt 0.1 watt
+TWIcontroller</p>
+<p>Antec TRICOOL 92mm 4-pin case fan 1.25 watt 1.25 watt</p>
+<p>Anear 60 Watt USB Charger (6-Port) - -</p>
+<h2 id=watt><strong>Total power consumption</strong> <strong>13,75 Watt</strong> <strong>23,75
+Watt</strong></h2>
+<p>[]{#_Ref505193596 .anchor}<strong>Table</strong> <strong>4</strong> : <em>Total power consumption of
+the PiCube in idle mode and maximum CPU load of 100%.</em></p>
+<p>In the following test, CPU load is generated using the Sysbench prime
+calculation program and advantages and disadvantages are shown by using
+active cooling and passive cooling elements. We read system values such
+as temperature, clock frequency and voltage using the following commands
+in each case: <sup id=fnref:61><a href=#fn:61 class=footnote-ref role=doc-noteref>61</a></sup></p>
+<p>vcgencmd measure_temp</p>
+<p>vcgencmd scaling_cur_freq</p>
+<p>vcgencmd measure_volts core</p>
+<p>[]{#_Toc505443081 .anchor}<strong>Listing</strong> <strong>7</strong>: <em>Commands for querying
+temperature, clock frequency and voltage.</em></p>
+<p>In the following, we look at three temperature curves in the case. The
+CPU clock frequency is 1.2 GHz and the CPU voltage is 1.325 volts over a
+period of 5 minutes:</p>
+<ul>
+<li>
+<p><strong>Temp1</strong>: In case, without heatsink on SoC, without active cooling.</p>
+</li>
+<li>
+<p><strong>Temp2</strong>: In case, with heatsink on SoC, without active cooling.</p>
+</li>
+<li>
+<p><strong>Temp3</strong>: In case, with heatsink on SoC, with active cooling.</p>
+</li>
+</ul>
+<hr>
+<p>CPU utilization Temp1 (°C) Temp2 (°C) Temp3 (°C)
+(%)</p>
+<hr>
+<p>0 39 39 44</p>
+<h2 id=100---------------77----------------77----------------82>100 77 77 82</h2>
+<p>[]{#_Toc505443073 .anchor}<strong>Table</strong> <strong>5</strong>: <em>Measured values of heat
+generation without active cooling.</em></p>
+<p>Next, we look at three temperature profiles of a Raspberry Pi processor.
+The CPU clock frequency is 1.2 GHz and the CPU voltage is 1.325 volts
+over a period of 10 minutes:</p>
+<ul>
+<li>
+<p><strong>Temp1</strong>: CPU, without heat sink on SoC, without active cooling.</p>
+</li>
+<li>
+<p><strong>Temp2</strong>: CPU, with heat sink on SoC, without active cooling.</p>
+</li>
+<li>
+<p><strong>Temp3</strong>: CPU, with heat sink on SoC, with active cooling.</p>
+</li>
+</ul>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=image345.png data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image345.png, image345.png 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image345.png 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image345.png title=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image345.png>{width=&ldquo;5.041036745406824in&rdquo;
+height=&ldquo;0.9165518372703412in&rdquo;}</p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=image3517.png data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image3517.png, image3517.png 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image3517.png 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image3517.png title=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image3517.png>{width=&ldquo;5.0618667979002625in&rdquo;
+height=&ldquo;0.8540594925634296in&rdquo;}</p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=image3630.png data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image3630.png, image3630.png 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image3630.png 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image3630.png title=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image3630.png>{width=&ldquo;5.093113517060368in&rdquo;
+height=&ldquo;0.9582130358705162in&rdquo;}</p>
+<hr>
+<p>CPU utilization Temp1 (°C) Temp2 (°C) Temp3 (°C)
+(%)</p>
+<hr>
+<p>0 44 31,2 27,8</p>
+<h2 id=100---------------833--------------833--------------698>100 83,3 83,3 69,8</h2>
+<p>[]{#_Toc505443074 .anchor}<strong>Table</strong> <strong>6</strong>: <em>Measured values</em></p>
+<p>The heat development of the circuit boards of each individual computer
+is also taken into account. Although this is low, it increases
+constantly with the number of nodes installed in the case. The heat
+development is about 35 degrees Celsius with an average load of a single
+board. With 5 nodes, this is already around 38 degrees, which
+corresponds to a factor of around 1.08 per node. If all 5 nodes are
+overclocked by increasing the processor's clock frequency, this factor
+increases to 1.1. Temperature differences of 10 degrees in the case and
+the processor prove that the maximum performance of all hardware nodes
+cannot be exploited without appropriate cooling. Passive heat sinks and
+an already implemented active cooling with the help of a case fan can
+help here. There is no question that the optimized airflow inside the
+case also contributes to the improved cooling performance.</p>
+<p>Applicationfall SETI@home</p>
+<p>After evaluating the cluster, we turn to a use case from the scientific
+domain. A current PRC project of BOINC is SETI@home, a scientific
+experiment run by the University of California at Berkeley that uses
+computers connected to the Internet in the search for extraterrestrial
+intelligence. One participates by running a free client program on a
+computer that downloads and analyzes radio telescope data. This project
+relies on the concept of grid computing. Data sets to be processed are
+divided into smaller data sets and distributed to all participating
+clients, who compute and communicate the results to the distributor,
+which reassembles the computations into an overall data set. The current
+computing power of the entire BOINC grid is 20600 PetaFLOPS, distributed
+over nearly 0.9 million computers. SETI@home has a share of about 19.1%
+of this. <sup id=fnref:62><a href=#fn:62 class=footnote-ref role=doc-noteref>62</a></sup></p>
+<p>In the following, container virtualization is exploited and pre-built
+BOINC client images of Docker are used. These images are prefabricated
+containers, which are started as scalable pods on the PiCube and scale
+automatically in order to utilize the entire computing power of the
+cluster. To do this, you register with the SETI@home project and create
+an account. Using this account data, you generate a container
+application called k8s-boinc-demo and start it on the cluster with a
+scaling limit of 10 pod instances. In Figure32, you can see from the
+Kubernetes dashboard how the pods are distributed evenly or according to
+workload across worker nodes rpi2 to rpi5 after launch. <sup id=fnref:63><a href=#fn:63 class=footnote-ref role=doc-noteref>63</a></sup></p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=image3712.png data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image3712.png, image3712.png 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image3712.png 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image3712.png title=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image3712.png>{width=&ldquo;5.905555555555556in&rdquo;
+height=&ldquo;5.123611111111111in&rdquo;}</p>
+<p>Source: Own representation.</p>
+<p>[]{#_Ref505437319 .anchor}<strong>Figure</strong> <strong>32</strong> : <em>Overview of the
+utilization, status and distribution of the pods on the nodes rpi2 to
+rpi5.</em></p>
+<p>Within the SETI@home account, we define how the individual clients or
+pods are utilized. The CPU utilization is left at the default value of
+100% and after about 5 minutes you can see how the CPU utilization of
+all cluster nodes increases to 100% and remains constant at this value
+(see Figure33). The cluster now computes data of the SETI@home project.</p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=image3822.png data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image3822.png, image3822.png 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image3822.png 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image3822.png title=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image3822.png>{width=&ldquo;5.905555555555556in&rdquo;
+height=&ldquo;4.076388888888889in&rdquo;}</p>
+<p>Source: Own representation.</p>
+<p>[]{#_Ref505278101 .anchor}<strong>Figure</strong> <strong>33</strong> : <em>The CPU utilization of
+node rpi3 at 100%.</em></p>
+<p>Figure33 shows the computers currently logged in to the grid with our
+account information. Each pod is identified here as a single client. If
+we now assume that the number of PiCube clusters increases to ten, the
+number of pods would multiply by the same factor. With 10 pod instances
+per cluster, this means 100 active SETI@home clients, which could make
+their computing power available to the BOINC grid.</p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=image3932.png data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image3932.png, image3932.png 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image3932.png 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image3932.png title=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image3932.png>{width=&ldquo;5.905555555555556in&rdquo;
+height=&ldquo;6.027777777777778in&rdquo;}</p>
+<p>Source: (SETI@home - Your Computers, 2018)</p>
+<p>[]{#_Toc505443068 .anchor}<strong>Figure</strong> <strong>34</strong>: <em>Listing of all logged-in
+clients or pods in our cluster.</em></p>
+<p>As this use case shows, it can be inferred that the scientific utility
+of this cluster is without question. Using dynamic pod scaling, it is
+demonstrated that even when individual nodes have low performance, they
+can achieve high computing performance when combined as a swarm.
+BOINC's computing grid is a typical example of how computers,
+distributed around the world and connected via the Internet, can solve
+problems together.</p>
+<p>Conclusion and outlook</p>
+<p>It is possible to construct a comparable system of a supercomputer with
+low costs. It is obvious that the performance of an ARM processor cannot
+currently keep up with commercially available CISC processors, as
+described in 5.3. However, the use case and illustration of dynamic
+scaling show that once distributed systems are interconnected, they
+develop very high parallel computing power. The Raspberry Pi cluster
+provides an interesting approach to perform tests or use cases in
+research, education, and academia. ARM architectures are evolving
+rapidly in terms of performance and efficiency over the next few years,
+with power consumption always in mind. The requirements set at the
+beginning of this thesis, such as energy efficiency, resilience and
+modularity, have been met and sensibly implemented in the construct.
+There is no question that this PiCube cluster is not a real competitor
+to massively parallelized supercomputers, but the decisive approach lies
+in the benefit of a computing grid.</p>
+<p>There are several ways to use this system in the future. On the one
+hand, its simplicity means it can be used for cluster computing to
+provide a small, full-featured, low-cost, energy-efficient development
+platform. This includes understanding its limitations in terms of
+performance, usability and maintainability. On the other hand, it can
+act as a mobile and self-sufficient "cloud in a box" system by adding
+components such as solar cells and mobile connectivity. Either way, it
+will remain a fascinating project that offers developers many
+possibilities and gives a "think-out-of-the-box" approach.</p>
+<p>Bibliography</p>
+<p>(January 24, 2018). Retrieved from Rhinoceros 3D:
+<a href=https://www.rhino3d.com/de/Adams, target=_blank rel="noopener noreffer">https://www.rhino3d.com/de/Adams,</a> J. (September 2017). SFT Guide 14/17 -
+Raspberry Pi Tips, Tricks & Hacks (No. 1). <em>Third generation: The
+innovations of the Raspberry Pi 3</em>, p. 159.Baier, J. (2017). <em>Getting
+Started with Kubernetes - Harness the power of Kubernetes to manage
+Docker deployments with ease.</em> Birmingham: Packt Publishing.Bauke, H., &
+Mertens, S. (2006). <em>Cluster computing - Practical introduction to high
+performance computing on Linux clusters.</em> Heidelberg: Springer.Bedner,
+M. (2012). <em>Cloud computing - technology, security and legal design.</em>
+Kassel: kassel university press.Bengel, G., Baun, C., Kunze, M., &
+Stucky, K.-U. (2008). <em>Master course parallel and distributed systems -
+fundamentals and programming of multicore processors, multiprocessors,
+clusters and grids.</em> Wiesbaden: Vieweg+Teubner.<em>Beowulf Cluster
+Computing</em>. (January 12, 2018). Retrieved from MichiganTech - Beowulf
+Cluster Computing: <a href=http://www.cs.mtu.edu/beowulf/ target=_blank rel="noopener noreffer">http://www.cs.mtu.edu/beowulf/</a><em>Beowulf Scalable Mass
+Storage (T-Racks)</em>. (January 12, 2018). Retrieved from ESS Project:
+<a href=https://www.hq.nasa.gov/hpcc/reports/annrpt97/accomps/ess/WW80.html target=_blank rel="noopener noreffer">https://www.hq.nasa.gov/hpcc/reports/annrpt97/accomps/ess/WW80.html</a>*BOINC</p>
+<ul>
+<li>Active Projects Statistics*. (January 31, 2018). Retrieved from
+Free-DC - Distributed Computing Stats System:
+<a href="http://stats.free-dc.org/stats.php?page=userbycpid&cpid=cfbdd0ffc5596f8c5fed01bbe619679d" target=_blank rel="noopener noreffer">http://stats.free-dc.org/stats.php?page=userbycpid&cpid=cfbdd0ffc5596f8c5fed01bbe619679d</a>*Cache*.
+(January 14, 2018). Retrieved from Electronics Compendium:
+<a href=https://www.elektronik-kompendium.de/sites/com/0309291.htmChristl, target=_blank rel="noopener noreffer">https://www.elektronik-kompendium.de/sites/com/0309291.htmChristl,</a> D.,
+Riedel, M., & Zelend, M. (2007). *Communication systems / computer
+networks - Research of tools for the control of a massively parallel
+cluster computer in the computer center of the West Saxon University of
+Applied Sciences Zwickau.* Zwickau: Westsächsichen Hochschule
+Zwickau.*CISC and RISC*. (January 28, 2018). Retrieved from Electronics
+Compendium:
+<a href=https://www.elektronik-kompendium.de/sites/com/0412281.htm target=_blank rel="noopener noreffer">https://www.elektronik-kompendium.de/sites/com/0412281.htm</a>*Containers
+vs. virtual machines*. (December 13, 2017). Retrieved from NetApp Blog:
+<a href=https://blog.netapp.com/blogs/containers-vs-vms/Coulouris, target=_blank rel="noopener noreffer">https://blog.netapp.com/blogs/containers-vs-vms/Coulouris,</a> G.,
+Dollimore, J., Kindberg, T., & Blair, G. (2012). *Distributed systems -
+concepts and design.* Boston: Pearson.Dennis, A. K. (2013). *Raspberry
+Pi super cluster.* Birmingham: Packt Publishing.*The science behind
+SETI@home*. (January 30, 2018). Retrieved from SETI@home:
+<a href=https://setiathome.berkeley.edu/sah_about.php target=_blank rel="noopener noreffer">https://setiathome.berkeley.edu/sah_about.php</a>*Docker on the Raspberry Pi
+with HypriotOS*. (January 24, 2018). Retrieved from Raspberry Pi Geek:
+<a href=http://www.raspberry-pi-geek.de/Magazin/2017/12/Docker-auf-dem-Raspberry-Pi-mit-HypriotOSEder, target=_blank rel="noopener noreffer">http://www.raspberry-pi-geek.de/Magazin/2017/12/Docker-auf-dem-Raspberry-Pi-mit-HypriotOSEder,</a>
+M. (2016). *Hypervisor- vs. container-based virtualization.* Munich:
+Technical University of Munich.*Einstein@Home on Android devices*.
+(January 23, 2018). Retrieved from GEO600:
+<a href=http://www.geo600.org/1282133/Einstein_Home_on_Android_devices target=_blank rel="noopener noreffer">http://www.geo600.org/1282133/Einstein_Home_on_Android_devices</a>*Enable
+I2C Interface on the Raspberry Pi*. (January 28, 2018). Retrieved from
+Raspberry Pi Spy:
+<a href=https://www.raspberrypi-spy.co.uk/2014/11/enabling-the-i2c-interface-on-the-raspberry-pi/ target=_blank rel="noopener noreffer">https://www.raspberrypi-spy.co.uk/2014/11/enabling-the-i2c-interface-on-the-raspberry-pi/</a>*Encyclopedia</li>
+<li>VAX*. (January 20, 2018). Retrieved from PCmag:
+<a href=https://www.pcmag.com/encyclopedia/term/53678/vax target=_blank rel="noopener noreffer">https://www.pcmag.com/encyclopedia/term/53678/vax</a>*Failover Cluster*.
+(January 20, 2018). Retrieved from Microsoft Developer Network:
+<a href=https://msdn.microsoft.com/en-us/library/ff650328.aspxFenner, target=_blank rel="noopener noreffer">https://msdn.microsoft.com/en-us/library/ff650328.aspxFenner,</a> P. (10. 12
+2017). *So What's a Practical Laser-Cut Clip Size?* Retrieved from
+DefProc Engineering:
+<a href=https://www.deferredprocrastination.co.uk/blog/2013/so-whats-a-practical-laser-cut-clip-size/Fey, target=_blank rel="noopener noreffer">https://www.deferredprocrastination.co.uk/blog/2013/so-whats-a-practical-laser-cut-clip-size/Fey,</a>
+D. (2010). *Grid computing - An enabling technology for computational
+science.* Heidelberg: Springer.*GitHub - flash*. (January 24, 2018).
+Retrieved from hypriot / flash:
+<a href=https://github.com/hypriot/flashGoasguen, target=_blank rel="noopener noreffer">https://github.com/hypriot/flashGoasguen,</a> S. (2015). *Docker Cookbook -
+Solutions and Examples for Building Dsitributed Applications.*
+Sebastopol: O'Reilly.Grabsch, V., & Radunz, Y. (2008). *Seminar
+presentation - Amdahl's and Gustafson's law.* o.O.: Creative
+Commons.Herminghaus, V., & Scriba, A. (2006). *Veritas Storage
+Foundation - High End Computing for UNIX Design and Implementation of
+High Availability Solutions with VxVM and VCS.* Heidelberg:
+Springer.*Horizontal Pod Autoscaling*. (January 29, 2018). Retrieved
+from GitHub:
+<a href=https://github.com/kubernetes/kubernetes/blob/8caeec429ee1d2a9df7b7a41b21c626346b456fb/docs/user-guide/horizontal-pod-autoscaling/image/index.php target=_blank rel="noopener noreffer">https://github.com/kubernetes/kubernetes/blob/8caeec429ee1d2a9df7b7a41b21c626346b456fb/docs/user-guide/horizontal-pod-autoscaling/image/index.php</a>*How
+nodes work*. (January 27, 2018). Retrieved from docker docs:
+<a href=https://docs.docker.com/engine/swarm/how-swarm-mode-works/nodes/ target=_blank rel="noopener noreffer">https://docs.docker.com/engine/swarm/how-swarm-mode-works/nodes/</a>*How to
+setup an I2C LCD on the Raspberry Pi*. (January 28, 2018). Retrieved
+from Circuit Basics:
+<a href=http://www.circuitbasics.com/raspberry-pi-i2c-lcd-set-up-and-programming/ target=_blank rel="noopener noreffer">http://www.circuitbasics.com/raspberry-pi-i2c-lcd-set-up-and-programming/</a>*If
+we want to Find Aliens, We Need to Save the Arecibo Telescope*. (January
+23, 2018). Retrieved from vice:
+<a href=https://www.vice.com/en_us/article/wdbq74/find-aliens-arecibo-telescope target=_blank rel="noopener noreffer">https://www.vice.com/en_us/article/wdbq74/find-aliens-arecibo-telescope</a>*Inkscape</li>
+<li>Overview*. (January 24, 2018). Retrieved from Inkscape:
+<a href=https://inkscape.org/de/ueber/uebersicht/Kaiser, target=_blank rel="noopener noreffer">https://inkscape.org/de/ueber/uebersicht/Kaiser,</a> R. (2009).
+*Virtualization of multiprocessor systems with real-time applications.*
+Koblenz-Landau.Kersken, S. (2015). *IT handbook for IT specialists.*
+Bonn: Rheinwerk Verlag GmbH.Kroeker, K. L. (March 2011). Grid
+computing's future. *Communications of the ACM*, pp. 15-17.*Kubernetes
+Components*. (January 10, 2018). Retrieved from kubernetes:
+<a href=https://kubernetes.io/docs/concepts/overview/components/ target=_blank rel="noopener noreffer">https://kubernetes.io/docs/concepts/overview/components/</a>*Kubernetes vs
+Docker Swarm*. (January 10, 2018). Retrieved from Platform9:
+<a href=https://platform9.com/blog/kubernetes-docker-swarm-compared/ target=_blank rel="noopener noreffer">https://platform9.com/blog/kubernetes-docker-swarm-compared/</a>*Laser-Cut
+Elastic-Clipped Comb-Joints*. (December 1, 2018). Retrieved from DefProc
+Engineering:
+<a href=https://www.deferredprocrastination.co.uk/blog/2013/laser-cut-elastic-clipped-comb-joints/ target=_blank rel="noopener noreffer">https://www.deferredprocrastination.co.uk/blog/2013/laser-cut-elastic-clipped-comb-joints/</a>*Laser-Cut
+Elastic Clips*. (December 1, 2017). Retrieved from Thingiverse:
+<a href=https://www.thingiverse.com/thing:53032Lee, target=_blank rel="noopener noreffer">https://www.thingiverse.com/thing:53032Lee,</a> C. (2014). *Cloud database
+development and management.* Boca Raton: CRC Press.Liebel, O. (2011).
+*Linux high availability - deployment scenarios and practical
+solutions.* Bonn: Galileo Press.*Load-Balanced Cluster*. (January 20,
+2018). Retrieved from Microsoft Developer Network:
+<a href=https://msdn.microsoft.com/en-us/library/ff648960.aspxLobel, target=_blank rel="noopener noreffer">https://msdn.microsoft.com/en-us/library/ff648960.aspxLobel,</a> L. G., &
+Boyd, E. D.. (2014). *Microsoft Azure SQL Database step by step.*
+Redmond: Microsoft Press.*MAD - Andreas Gregori*. (January 24, 2018).
+Retrieved from MAD Models Architecture Design:
+<a href=http://mad-modelle.de/kontakt/Mandl, target=_blank rel="noopener noreffer">http://mad-modelle.de/kontakt/Mandl,</a> P. (2010). *Basic course operating
+systems - architectures, resource management, synchronization, process
+communication.* Wiesbaden: VIeweg + Teubner.Matros, R. (2012). *The
+impact of cloud computing on IT service providers - A case study-based
+investigation of critical influencing variables.* Bayreuth: Springer
+Gabler.Merkert, J. (16 October 2017). c't Raspberry Pi - Raspi
+projects. *Risc OS*, p. 151.Miell, I., & Sayers, A. H. (2016). *Docker
+in practice.* New York: Manning Publications.*Networked computing:
+fundamentals and applications*. (January 20, 2018). Retrieved from
+techchannel:
+<a href=https://www.tecchannel.de/a/networked-computing-grundlagen-und-anwendungen,439222,5Neuenschwander, target=_blank rel="noopener noreffer">https://www.tecchannel.de/a/networked-computing-grundlagen-und-anwendungen,439222,5Neuenschwander,</a>
+E. P. (2014). *Cloud computing - A legal thundercloud?* Zurich:
+University of Zurich.*New DIY supercomputer saves £1,000s*. (January 8,
+2018). Retrieved from University of Westminster:
+<a href=https://www.westminster.ac.uk/news-and-events/news/2011/new-diy-supercomputer-saves-%C2%A31000sNickoloff, target=_blank rel="noopener noreffer">https://www.westminster.ac.uk/news-and-events/news/2011/new-diy-supercomputer-saves-%C2%A31000sNickoloff,</a>
+J. (2016). *Docker in action.* New York: Manning Publications.*Nodes*.
+(January 10, 2018). Retrieved from kubernetes:
+<a href=https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/ target=_blank rel="noopener noreffer">https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/</a>*Overview
+of Microsoft HPC Pack and SOA in Failover Cluster*. (January 21, 2018).
+Retrieved from Microsoft TechNet:
+<a href="https://technet.microsoft.com/en-us/library/gg142067%28v=ws.11%29.aspx" target=_blank rel="noopener noreffer">https://technet.microsoft.com/en-us/library/gg142067(v=ws.11).aspx</a>*PaaS
+or IaaS*. (January 13, 2018). Retrieved from Microsoft Azure:
+<a href=https://docs.microsoft.com/de-de/azure/sql-database/sql-database-paas-vs-sql-server-iaas target=_blank rel="noopener noreffer">https://docs.microsoft.com/de-de/azure/sql-database/sql-database-paas-vs-sql-server-iaas</a>*Parallel
+Linux Operating System - Beowulf Gigaflop/s Workstation Project*.
+(January 12, 2018). Retrieved from ESS Project:
+<a href=https://www.hq.nasa.gov/hpcc/reports/annrpt97/accomps/ess/WW49.htmlPfister, target=_blank rel="noopener noreffer">https://www.hq.nasa.gov/hpcc/reports/annrpt97/accomps/ess/WW49.htmlPfister,</a>
+G. (1997). *In Search of Clusters - The ongoing Battle in lowly Parallel
+Computing.* New Jersey: Prentice Hall.*Pods*. (January 10, 2018).
+Retrieved from kubernetes:
+<a href=https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/ target=_blank rel="noopener noreffer">https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/</a>*Pods
+and Nodes*. (January 10, 2018). Retrieved from kubernetes Bootcamp:
+<a href=https://kubernetesbootcamp.github.io/kubernetes-bootcamp/3-1.html target=_blank rel="noopener noreffer">https://kubernetesbootcamp.github.io/kubernetes-bootcamp/3-1.html</a>*Project
+list*. (January 8, 2018). Retrieved from BOINC:
+<a href=http://boinc.berkeley.edu/wiki/Project_list target=_blank rel="noopener noreffer">http://boinc.berkeley.edu/wiki/Project_list</a>*Project to setup Boinc
+client in Docker for the RaspberryPi*. (January 30, 2018). Retrieved
+from Docker Hub: <a href=https://hub.docker.com/r/bunchc/rpi-boinc/ target=_blank rel="noopener noreffer">https://hub.docker.com/r/bunchc/rpi-boinc/</a>*projects*.
+(November 30, 2017). Retrieved from Climbers.net:
+<a href=http://climbers.net/sbc/diy-raspberry-pi-3-cluster/RPiCluster4b.png target=_blank rel="noopener noreffer">http://climbers.net/sbc/diy-raspberry-pi-3-cluster/RPiCluster4b.png</a>*Raspberry
+Pi 3 - self-heating.* (Dec 20, 2017). Retrieved from
+mikrocontroller.net:
+<a href=https://www.mikrocontroller.net/topic/393898 target=_blank rel="noopener noreffer">https://www.mikrocontroller.net/topic/393898</a>*Raspberry Pi 3 GPIO Pin
+Chart with Pi*. (January 23, 2018). Retrieved from openclipart:
+<a href=https://openclipart.org/detail/280972/raspberry-pi-3-gpio-pin-chart-with-pi target=_blank rel="noopener noreffer">https://openclipart.org/detail/280972/raspberry-pi-3-gpio-pin-chart-with-pi</a>*Raspberry
+Pi 3: Power consumption and CoreMark comparison*. (January 31, 2018).
+Retrieved from heise online:
+<a href=https://www.heise.de/ct/artikel/Raspberry-Pi-3-Leistungsaufnahme-und-CoreMark-Vergleich-3121139.htmlRies, target=_blank rel="noopener noreffer">https://www.heise.de/ct/artikel/Raspberry-Pi-3-Leistungsaufnahme-und-CoreMark-Vergleich-3121139.htmlRies,</a>
+C. B. (2012). *BOINC - high performance computing with Berkeley Open
+Infrastructure for Network Computing.* Heidelberg: Springer Vieweg.*rkt</li>
+<li>A security-minded, standards-based container engine*. (January 27,
+2018). Retrieved from CoreOS: <a href=https://coreos.com/rkt/ target=_blank rel="noopener noreffer">https://coreos.com/rkt/</a>*RPiCluster -
+Overview*. (January 23, 2018). Retrieved from RPiCluster:
+<a href=https://bitbucket.org/jkiepert/rpiclusterSchill, target=_blank rel="noopener noreffer">https://bitbucket.org/jkiepert/rpiclusterSchill,</a> A., & Springer, T.
+(2007). *Distributed systems - fundamentals and enabling technologies.*
+Heidelberg: Springer.*SETI@home - Your Computers*. (January 31, 2018).
+Retrieved from SETI@home:
+<a href=https://setiathome.berkeley.edu/hosts_user.phpSmith, target=_blank rel="noopener noreffer">https://setiathome.berkeley.edu/hosts_user.phpSmith,</a> N. (28. 11 2017).
+*Climbers.net*. Retrieved from DIY 5 Node Cluster of Raspberry Pi 3s:
+<a href=http://climbers.net/sbc/diy-raspberry-pi-3-cluster/ target=_blank rel="noopener noreffer">http://climbers.net/sbc/diy-raspberry-pi-3-cluster/</a>*Swarm mode key
+concepts*. (January 27, 2018). Retrieved from docker docs:
+<a href=https://docs.docker.com/engine/swarm/key-concepts/Tanenbaum, target=_blank rel="noopener noreffer">https://docs.docker.com/engine/swarm/key-concepts/Tanenbaum,</a> A. S.
+(2007). *Distributed systems - principles and paradigms.* New Jersey:
+Pearson Prentice Hall.*Technet*. (January 13, 2018). Retrieved from
+Microsoft:
+<a href=https://blogs.technet.microsoft.com/kevinremde/2011/04/03/saas-paas-and-iaas-oh-my-cloudy-april-part-3/ target=_blank rel="noopener noreffer">https://blogs.technet.microsoft.com/kevinremde/2011/04/03/saas-paas-and-iaas-oh-my-cloudy-april-part-3/</a>*Top500
+List*. (January 8, 2018). Retrieved from Top 500 The List:
+<a href=https://www.top500.org/list/2017/11/Ulmann, target=_blank rel="noopener noreffer">https://www.top500.org/list/2017/11/Ulmann,</a> B. (February 6, 2014). *IT
+basics.* FOM.*Our home galaxy - the Milky Way*. (January 23, 2018).
+Retrieved from planet wissen:
+<a href=https://www.planet-wissen.de/technik/weltraumforschung/astronomie/pwieunsereheimatgalaxiediemilchstrasse100.html target=_blank rel="noopener noreffer">https://www.planet-wissen.de/technik/weltraumforschung/astronomie/pwieunsereheimatgalaxiediemilchstrasse100.html</a>*VMS
+Software, Inc. Named Exclusive Developer of Future Versions of OpenVMS
+Operating System.* (January 20, 2018). Retrieved from BusinessWire:
+<a href=https://www.businesswire.com/news/home/20140731006118/en/VMS-Software-Named-Exclusive-Developer-Future-Versions target=_blank rel="noopener noreffer">https://www.businesswire.com/news/home/20140731006118/en/VMS-Software-Named-Exclusive-Developer-Future-Versions</a>*What
+is Kubernetes?* (January 10, 2018). Retrieved from kubernetes:
+<a href=https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/ target=_blank rel="noopener noreffer">https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/</a></li>
+</ul>
+<p>Appendix A - Script: Installing Kubernetes</p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=image4013.png data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image4013.png, image4013.png 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image4013.png 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image4013.png title=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image4013.png>{width=&ldquo;6.162790901137358in&rdquo;
+height=&ldquo;5.90625in&rdquo;}</p>
+<p>Appendix B - Script: LCD display</p>
+<p><img class=lazyload src=/svg/loading.min.svg data-src=image4125.png data-srcset="/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image4125.png, image4125.png 1.5x, /projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image4125.png 2x" data-sizes=auto alt=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image4125.png title=/projects/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/image4125.png>{width=&ldquo;5.905555555555556in&rdquo;
+height=&ldquo;6.670833333333333in&rdquo;}</p>
+<p>Appendix C - Script: Docker Autoscaling</p>
+<p>Dockerfile:</p>
+<p>FROM php:5-apache</p>
+<p>ADD index.php /var/www/html/index.php</p>
+<p>RUN chmod a+rx index.php</p>
+<p>index.php:</p>
+<p>&lt;?php</p>
+<p>$x = 0.0001;</p>
+<p>for ($i = 0; $i &lt; = 1000000; $i++) {</p>
+<p>$x += sqrt($x);</p>
+<p>}</p>
+<p>echo "OK!";</p>
+<p>?></p>
+<p><strong>Declaration on honour</strong></p>
+<hr>
+<p>Name: <strong>Count</strong> First name: <strong>Sebastian</strong></p>
+<hr>
+<p>Matriculation No.: Course of studies: <strong>Business
+<strong>338226</strong> informatics</strong></p>
+<hr>
+<p>I hereby certify that the present work has been prepared by me
+independently and without unauthorized assistance, and in particular
+that I have marked as such by citation all passages taken verbatim or
+approximately verbatim from publications. I also assure that the written
+version submitted by me is identical with the digital version.
+Furthermore, I declare that the work has not been submitted in the same
+or similar form to any other examination authority. I agree that the
+work may be made available to the public. I agree that the digital
+version of this thesis may be uploaded to the servers of external
+providers for the purpose of plagiarism checking. The plagiarism check
+does not constitute making the work available to the public.</p>
+<p>Place, date Signature</p>
+<section class=footnotes role=doc-endnotes>
+<hr>
+<ol>
+<li id=fn:1 role=doc-endnote>
+<p>Cf. (Grabsch & Radunz, 2008, p. 2ff) ; (Kaiser, 2009, p. 16f) .&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:2 role=doc-endnote>
+<p>Cf. (Bengel, Baun, Kunze, & Stucky, 2008, p. 319f) ; (Grabsch &
+Radunz, 2008, pp. 7-11)&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:3 role=doc-endnote>
+<p>Cf. ibid.&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:4 role=doc-endnote>
+<p>Cf. (Kersken, 2015, p. 197) .&#160;<a href=#fnref:4 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:5 role=doc-endnote>
+<p>Cf. (Bengel, Baun, Kunze, & Stucky, 2008, p. 2) ; (Kersken, 2015,
+p. 198ff) .&#160;<a href=#fnref:5 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:6 role=doc-endnote>
+<p>Cf. (Bengel, Baun, Kunze, & Stucky, 2008, p. 2f) ; (Schill &
+Springer, 2007, p. 31) .&#160;<a href=#fnref:6 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:7 role=doc-endnote>
+<p>Cf. ibid.&#160;<a href=#fnref:7 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:8 role=doc-endnote>
+<p>Cf. (Bengel, Baun, Kunze, & Stucky, 2008, p. 435) ; (Fey, 2010, p.
+5) ; (Tanenbaum, 2007, p. 18f) .&#160;<a href=#fnref:8 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:9 role=doc-endnote>
+<p>Cf. (Liebel, 2011, p. 171) ; (Bengel, Baun, Kunze, & Stucky, 2008,
+pp. 3, 435) ; Cf. (Fey, 2010, p. 5) .&#160;<a href=#fnref:9 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:10 role=doc-endnote>
+<p>Cf. (Schill & Springer, 2007, p. 26f). .&#160;<a href=#fnref:10 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:11 role=doc-endnote>
+<p>Cf. (Ries, 2012, p. 17) .&#160;<a href=#fnref:11 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:12 role=doc-endnote>
+<p>Cf. ibid; (Kroeker, 2011, p. 15) .&#160;<a href=#fnref:12 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:13 role=doc-endnote>
+<p>Cf. (Project list, 2018) ; (Bauke & Mertens, 2006, pp. 32-34) ;
+(Our home galaxy - the Milky Way, 2018) ; (If we want to Find
+Aliens, We Need to Save the Arecibo Telescope, 2018) ;
+(Einstein@Home on Android Devices, 2018) .&#160;<a href=#fnref:13 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:14 role=doc-endnote>
+<p>Cf. (New DIY supercomputer saves £1,000s, 2018) .&#160;<a href=#fnref:14 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:15 role=doc-endnote>
+<p>Cf. (Tanenbaum, 2007, p. 2) ; (Bengel, Baun, Kunze, & Stucky,
+2008, p. 26) .&#160;<a href=#fnref:15 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:16 role=doc-endnote>
+<p>Cf. (Coulouris, Dollimore, Kindberg, & Blair, 2012, p. 2) ;
+(Tanenbaum, 2007, p. 9) ; (Coulouris, Dollimore, Kindberg, & Blair,
+2012, pp. 2, 598f, 603f) ; (Tanenbaum, 2007, pp. 232, 240) .&#160;<a href=#fnref:16 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:17 role=doc-endnote>
+<p>Cf. (Coulouris, Dollimore, Kindberg, & Blair, 2012, pp. 125, 128,
+464).&#160;<a href=#fnref:17 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:18 role=doc-endnote>
+<p>Cf. (Bedner, 2012, p. 6f, 22f)&#160;<a href=#fnref:18 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:19 role=doc-endnote>
+<p>Cf. (Coulouris, Dollimore, Kindberg, & Blair, 2012, p. 13f). .&#160;<a href=#fnref:19 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:20 role=doc-endnote>
+<p>Cf. (Matros, 2012, p. 139) ; (Lee, 2014, p. 8ff) ; (Lobel & Boyd,
+2014, p. 3f) .&#160;<a href=#fnref:20 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:21 role=doc-endnote>
+<p>Cf. (Neuenschwander, 2014, p. 4) ; (Bedner, 2012, p. 32ff) ;
+(PaaS or IaaS, 2018) .&#160;<a href=#fnref:21 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:22 role=doc-endnote>
+<p>Cf. (Bauke & Mertens, 2006, p. 51) .&#160;<a href=#fnref:22 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:23 role=doc-endnote>
+<p>(Pfister, 1997, p. 98) .&#160;<a href=#fnref:23 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:24 role=doc-endnote>
+<p>Cf. (Liebel, 2011, p. 169ff) ; (Schill & Springer, 2007, p. 24ff)
+; (Bengel, Baun, Kunze, & Stucky, 2008, p. 415) .&#160;<a href=#fnref:24 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:25 role=doc-endnote>
+<p>Cf. (Top500 List, 2018) ; (Liebel, 2011, p. 169ff) ; (Schill &
+Springer, 2007, p. 24ff) .&#160;<a href=#fnref:25 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:26 role=doc-endnote>
+<p>Cf. (Ulmann, 2014, p. 51f) ; (Bauke & Mertens, 2006, p. 21) .&#160;<a href=#fnref:26 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:27 role=doc-endnote>
+<p>Cf. (Cache, 2018) ; (Bauke & Mertens, 2006, p. 21f) ; (Christl,
+Riedel, & Zelend, 2007, p. 5) .&#160;<a href=#fnref:27 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:28 role=doc-endnote>
+<p>Cf. (Bauke & Mertens, 2006, p. 22ff) ; (Christl, Riedel, &
+Zelend, 2007, p. 5) .&#160;<a href=#fnref:28 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:29 role=doc-endnote>
+<p>Cf. (Ries, 2012, p. 11) ; (Bengel, Baun, Kunze, & Stucky, 2008,
+pp. 190f, 205) ; (Dennis, 2013, p. 41f) ; (Bauke & Mertens, 2006,
+pp. 143ff, 45) .&#160;<a href=#fnref:29 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:30 role=doc-endnote>
+<p>Cf. (Liebel, 2011, p. 170f) ; (Failover Cluster, 2018) .&#160;<a href=#fnref:30 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:31 role=doc-endnote>
+<p>Cf. (Failover Cluster, 2018) ; (Liebel, 2011, p. 185f) .&#160;<a href=#fnref:31 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:32 role=doc-endnote>
+<p>Cf. (Christl, Riedel, & Zelend, 2007) ; (Bauke & Mertens, 2006,
+p. 52f) .&#160;<a href=#fnref:32 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:33 role=doc-endnote>
+<p>Cf. (Bauke & Mertens, 2006, p. 51f) ; (Christl, Riedel, & Zelend,
+2007, p. 4) ; (Overview of Microsoft HPC Pack and SOA in Failover
+Cluster, 2018) .&#160;<a href=#fnref:33 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:34 role=doc-endnote>
+<p>Cf. (VMS Software, Inc. Named Exclusive Developer of Future
+Versions of OpenVMS Operating System., 2018) ; (Encyclopedia - VAX,
+2018) .&#160;<a href=#fnref:34 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:35 role=doc-endnote>
+<p>Cf. (Load-Balanced Cluster, 2018) .&#160;<a href=#fnref:35 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:36 role=doc-endnote>
+<p>Cf. (Beowulf Cluster Computing, 2018) ; (Parallel Linux Operating
+System - Beowulf Gigaflop/s Workstation Project, 2018) ; (Beowulf
+Scalable Mass Storage (T-Racks), 2018) .&#160;<a href=#fnref:36 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:37 role=doc-endnote>
+<p>Cf. (Christl, Riedel, & Zelend, 2007, p. 9f). .&#160;<a href=#fnref:37 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:38 role=doc-endnote>
+<p>Cf. (Bauke & Mertens, 2006, p. 9, 27f) ; (Kersken, 2015, p. 126)
+.&#160;<a href=#fnref:38 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:39 role=doc-endnote>
+<p>Cf. (Coulouris, Dollimore, Kindberg, & Blair, 2012, p. 318f). .&#160;<a href=#fnref:39 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:40 role=doc-endnote>
+<p>Cf. (Kaiser, 2009, p. 41, 43) ; (Mandl, 2010, p. 28f) ; (Eder,
+2016, p. 1f) .&#160;<a href=#fnref:40 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:41 role=doc-endnote>
+<p>Cf. (Eder, 2016, p. 1ff) .&#160;<a href=#fnref:41 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:42 role=doc-endnote>
+<p>Cf. (rkt - A security-minded, standards-based container engine,
+2018) .&#160;<a href=#fnref:42 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:43 role=doc-endnote>
+<p>Cf. (Nickoloff, 2016, p. 4f) ; (Goasguen, 2015, p. 1) ; (Miell &
+Sayers, 2016, p. 5f) ; (How nodes work, 2018)&#160;<a href=#fnref:43 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:44 role=doc-endnote>
+<p>Cf. (Nickoloff, 2016, p. 255) ; (Goasguen, 2015, p. 199) ; (Swarm
+mode key concepts, 2018)&#160;<a href=#fnref:44 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:45 role=doc-endnote>
+<p>Cf. (Nickoloff, 2016, p. 255) ; (Goasguen, 2015, p. 199) ; (Swarm
+mode key concepts, 2018) .&#160;<a href=#fnref:45 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:46 role=doc-endnote>
+<p>Cf. (What is Kubernetes?, 2018) .&#160;<a href=#fnref:46 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:47 role=doc-endnote>
+<p>Cf. (Nodes, 2018) ; (Pods, 2018) .&#160;<a href=#fnref:47 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:48 role=doc-endnote>
+<p>Cf. (Kubernetes Components, 2018) .&#160;<a href=#fnref:48 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:49 role=doc-endnote>
+<p>Cf. ibid.&#160;<a href=#fnref:49 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:50 role=doc-endnote>
+<p>Cf. (CISC and RISC, 2018) ; (Ulmann, 2014, p. 71) ; (Merkert,
+2017, p. 20) ; (Adams, 2017, p. 8) .&#160;<a href=#fnref:50 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:51 role=doc-endnote>
+<p>Cf. (Adams, 2017, p. 7) .&#160;<a href=#fnref:51 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:52 role=doc-endnote>
+<p>Cf. (Smith, 2017) ; (RPiCluster - Overview, 2018) .&#160;<a href=#fnref:52 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:53 role=doc-endnote>
+<p>Cf. (Laser-Cut Elastic-Clipped Comb-Joints, 2018) .&#160;<a href=#fnref:53 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:54 role=doc-endnote>
+<p>Cf. (Fenner, 2017) .&#160;<a href=#fnref:54 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:55 role=doc-endnote>
+<p>(Inkscape - Overview, 2018)&#160;<a href=#fnref:55 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:56 role=doc-endnote>
+<p>Cf. (Docker on the Raspberry Pi with HypriotOS, 2018). .&#160;<a href=#fnref:56 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:57 role=doc-endnote>
+<p>Cf. (GitHub - flash, 2018) .&#160;<a href=#fnref:57 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:58 role=doc-endnote>
+<p>Cf. (Enable I2C Interface on the Raspberry Pi, 2018) ; (How to
+setup an I2C LCD on the Raspberry Pi, 2018) .&#160;<a href=#fnref:58 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:59 role=doc-endnote>
+<p>Cf. (Horizontal Pod Autoscaling, 2018) .&#160;<a href=#fnref:59 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:60 role=doc-endnote>
+<p>Cf. (Baier, 2017, p. 117) .&#160;<a href=#fnref:60 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:61 role=doc-endnote>
+<p>Cf. (Raspberry Pi 3: Power consumption and CoreMark comparison,
+2018). .&#160;<a href=#fnref:61 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:62 role=doc-endnote>
+<p>Cf. (The Science Behind SETI@home, 2018) ; Cf. (BOINC - Active
+Projects Statistics, 2018)&#160;<a href=#fnref:62 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+<li id=fn:63 role=doc-endnote>
+<p>Cf. (Project to setup Boinc client in Docker for the RaspberryPi,
+2018).&#160;<a href=#fnref:63 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+</div><div id=comments></div></div></div>
+</main><footer class=footer>
+<div class=footer-container><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://graef.io target=_blank>Sebastian Gräf</a></span></div>
+</div>
+</footer></div>
+<div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top">
+<i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title="View Comments">
+<i class="fas fa-comment fa-fw"></i>
+</a>
+</div><link rel=stylesheet href=/lib/lightgallery/lightgallery.min.css><link rel=stylesheet href=/lib/katex/katex.min.css><link rel=stylesheet href=/lib/katex/copy-tex.min.css><script type=text/javascript src=/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/lunr/lunr.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/lightgallery/lightgallery.min.js></script><script type=text/javascript src=/lib/lightgallery/lg-thumbnail.min.js></script><script type=text/javascript src=/lib/lightgallery/lg-zoom.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/sharer/sharer.min.js></script><script type=text/javascript src=/lib/katex/katex.min.js></script><script type=text/javascript src=/lib/katex/auto-render.min.js></script><script type=text/javascript src=/lib/katex/copy-tex.min.js></script><script type=text/javascript src=/lib/katex/mhchem.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:10},comment:{},lightGallery:{actualSize:!1,exThumbImage:"data-thumbnail",hideBarsDelay:2e3,selector:".lightgallery",speed:400,thumbContHeight:80,thumbWidth:80,thumbnail:!0},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=/js/theme.min.js></script></body>
+</html>

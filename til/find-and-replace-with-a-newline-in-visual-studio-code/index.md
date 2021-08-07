@@ -2,7 +2,7 @@
 
 
 {{< admonition tip "Today I learned" >}}
-How to find and replace with a newline in Visual Studio Code.
+How to ***find and replace*** with a newline in Visual Studio Code.
 {{< /admonition >}}
 
 <!--more-->
@@ -25,5 +25,6 @@ If you want to search for multilines by the character literal, remember to check
 --->
 
 - [Visual Studio Code Keyboard Shortcuts](../visual-studio-code-keyboard-shortcuts/)
+- [Download Visual Studio Code (Mac, Linux, Windows)](https://code.visualstudio.com/download)
 {{< /admonition >}}
 
