@@ -1,18 +1,18 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>til - Tag - Automate everything</title><link>https://graef.io/tags/til/</link><description>til - Tag - Automate everything</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>sebastian@graef.io (Sebastian Gräf)</managingEditor><webMaster>sebastian@graef.io (Sebastian Gräf)</webMaster><lastBuildDate>Fri, 06 Aug 2021 15:16:19 +0800</lastBuildDate><atom:link href="https://graef.io/tags/til/" rel="self" type="application/rss+xml"/><item><title>Find and replace with a newline in Visual Studio Code</title><link>https://graef.io/til/find-and-replace-with-a-newline-in-visual-studio-code/</link><pubDate>Fri, 06 Aug 2021 15:16:19 +0800</pubDate><author>Author</author><guid>https://graef.io/til/find-and-replace-with-a-newline-in-visual-studio-code/</guid><description><![CDATA[<div class="details admonition tip open">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>til - Tag - Automate everything</title><link>https://graef.io/tags/til/</link><description>til - Tag - Automate everything</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>sebastian@graef.io (Sebastian Gräf)</managingEditor><webMaster>sebastian@graef.io (Sebastian Gräf)</webMaster><lastBuildDate>Fri, 06 Aug 2021 15:16:19 +0800</lastBuildDate><atom:link href="https://graef.io/tags/til/" rel="self" type="application/rss+xml"/><item><title>Find and replace with a newline in Visual Studio Code</title><link>https://graef.io/find-and-replace-with-a-newline-in-visual-studio-code/</link><pubDate>Fri, 06 Aug 2021 15:16:19 +0800</pubDate><author>Author</author><guid>https://graef.io/find-and-replace-with-a-newline-in-visual-studio-code/</guid><description><![CDATA[<div class="details admonition tip open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-lightbulb fa-fw"></i>Today I learned<i class="details-icon fas fa-angle-right fa-fw"></i>
         </div>
         <div class="details-content">
             <div class="admonition-content">How to <em><strong>find and replace</strong></em> with a newline in Visual Studio Code.</div>
         </div>
-    </div>]]></description></item><item><title>Visual Studio Code Keyboard Shortcuts</title><link>https://graef.io/til/visual-studio-code-keyboard-shortcuts/</link><pubDate>Mon, 02 Aug 2021 15:30:25 +0800</pubDate><author>Author</author><guid>https://graef.io/til/visual-studio-code-keyboard-shortcuts/</guid><description><![CDATA[<div class="details admonition tip open">
+    </div>]]></description></item><item><title>Visual Studio Code Keyboard Shortcuts</title><link>https://graef.io/visual-studio-code-keyboard-shortcuts/</link><pubDate>Mon, 02 Aug 2021 15:30:25 +0800</pubDate><author>Author</author><guid>https://graef.io/visual-studio-code-keyboard-shortcuts/</guid><description><![CDATA[<div class="details admonition tip open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-lightbulb fa-fw"></i>Today I learned<i class="details-icon fas fa-angle-right fa-fw"></i>
         </div>
         <div class="details-content">
             <div class="admonition-content">Visual Studio Code Keyboard Shortcuts for Windows, macOs and Linux</div>
         </div>
-    </div>]]></description></item><item><title>How to get a list of PowerShell Aliases</title><link>https://graef.io/til/get-powershell-aliases/</link><pubDate>Sun, 01 Aug 2021 09:33:25 +0800</pubDate><author>Author</author><guid>https://graef.io/til/get-powershell-aliases/</guid><description><![CDATA[<div class="details admonition info open">
+    </div>]]></description></item><item><title>How to get a list of PowerShell Aliases</title><link>https://graef.io/get-powershell-aliases/</link><pubDate>Sun, 01 Aug 2021 09:33:25 +0800</pubDate><author>Author</author><guid>https://graef.io/get-powershell-aliases/</guid><description><![CDATA[<div class="details admonition info open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-info-circle fa-fw"></i>Today I learned<i class="details-icon fas fa-angle-right fa-fw"></i>
         </div>
