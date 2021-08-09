@@ -37,7 +37,9 @@ $$\underset{\text{sequential}}{\overset{(1 - P)}{︸}} + \underset{\text{paralle
 
 This is where the time gain comes from:
 
-$$Time\ gain\ according\ to\ Amdahl\  = \ \frac{original\ duration}{\text{new\ duration}}\  = \frac{1}{(1 - P) + \frac{P}{N}}$$
+$$Time\ gain\ according\ to\ Amdahl\$$
+$$= \ \frac{original\ duration}{\text{new\ duration}}\$$
+$$= \frac{1}{(1 - P) + \frac{P}{N}}$$
 
 Here N is the number of processors and P the runtime portion of the parallelizable program. Gene Amdahl called the time or also speed gain Speedup. With the help of a massive parallelism the time of the parallelizable portion can be reduced arbitrarily, the sequential portion remains unaffected thereby however. As the number of processors increases, the communication overhead between the processors also increases, so that above a certain number, they tend to be busy communicating rather than processing the problem. This reduces the performance and refers to this as an overhead in the task distribution. A program cannot be completely parallelized, so that all processors are always busy with work at the same time. No matter how many processor units are used and the proportion of applications that cannot be parallelized is, for example, one percent, the speedup can be a maximum of 100. Gene Amdahl thus concluded that it makes no sense to keep increasing the computing units in order to generate unlimited computing
 power. [^2]
