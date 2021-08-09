@@ -7,11 +7,11 @@ I’m not quite sure why WordPress does this but it seems to happen after some m
 
 Nevertheless if you want ot have it disbaled easily go to Screen Options at the upper right corner of your screen and toggle it.
 
-![](2017-05-19_15-06-35.png)
+{{< image src="2017-05-19_15-06-35.png" caption="(Screen options)" >}}
 
 Under Addition Settings you can see a field called Enable full-height editor and distraction-free functionality.
 
-![](2017-05-19_15-07-57.png)
+{{< image src="2017-05-19_15-07-57.png" caption="(Additional settings)" >}}
 
 Untick it and be happy!
 
