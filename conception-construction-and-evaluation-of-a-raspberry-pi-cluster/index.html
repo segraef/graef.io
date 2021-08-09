@@ -17,7 +17,7 @@
 <meta name=application-name content="graef.io - Sebastian Gräf">
 <meta name=apple-mobile-web-app-title content="graef.io - Sebastian Gräf"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://graef.io/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/><link rel=prev href=https://graef.io/find-and-replace-with-a-newline-in-visual-studio-code/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><meta name=google-site-verification content="google-site-verification=081I19l1P1J3FFLaw1uKtAtY5KcJx_Z9ywiKt60VGP4"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Conception, Construction and Evaluation of a Raspberry Pi Cluster","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/graef.io\/conception-construction-and-evaluation-of-a-raspberry-pi-cluster\/"},"image":["https:\/\/graef.io\/logo.png"],"genre":"posts","keywords":"thesis, raspberry, pi","wordcount":17445,"url":"https:\/\/graef.io\/conception-construction-and-evaluation-of-a-raspberry-pi-cluster\/","datePublished":"2021-08-09T00:00:00+00:00","dateModified":"2021-08-09T00:00:00+00:00","publisher":{"@type":"Organization","name":"","logo":"https:\/\/graef.io\/logo.png"},"author":{"@type":"Person","name":"Sebastian Gräf"},"description":"In this article I publish my Bachelor Thesis which I finished in 2018 during my evening studies in the subject Business Informatics at the FOM University of Applied Sciences for Economics and Management in Frankfurt, Germany."}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://graef.io/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/><link rel=prev href=https://graef.io/find-and-replace-with-a-newline-in-visual-studio-code/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><meta name=google-site-verification content="google-site-verification=081I19l1P1J3FFLaw1uKtAtY5KcJx_Z9ywiKt60VGP4"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Conception, Construction and Evaluation of a Raspberry Pi Cluster","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/graef.io\/conception-construction-and-evaluation-of-a-raspberry-pi-cluster\/"},"image":["https:\/\/graef.io\/logo.png"],"genre":"posts","keywords":"thesis, raspberry, pi","wordcount":17429,"url":"https:\/\/graef.io\/conception-construction-and-evaluation-of-a-raspberry-pi-cluster\/","datePublished":"2021-08-09T00:00:00+00:00","dateModified":"2021-08-09T00:00:00+00:00","publisher":{"@type":"Organization","name":"","logo":"https:\/\/graef.io\/logo.png"},"author":{"@type":"Person","name":"Sebastian Gräf"},"description":"In this article I publish my Bachelor Thesis which I finished in 2018 during my evening studies in the subject Business Informatics at the FOM University of Applied Sciences for Economics and Management in Frankfurt, Germany."}</script></head>
 <body header-desktop=auto header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'light'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'light'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -85,7 +85,7 @@ Cancel
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">Conception, Construction and Evaluation of a Raspberry Pi Cluster</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=https://graef.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Sebastian Gräf</a></span>&nbsp;<span class=post-category>included in <a href=/categories/projects/><i class="far fa-folder fa-fw"></i>Projects</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Monday, Aug 9, 2021">Monday, Aug 9, 2021</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;17445 words&nbsp;
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Monday, Aug 9, 2021">Monday, Aug 9, 2021</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;17429 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;82 minutes&nbsp;</div>
 </div><div class=featured-image><img class=lazyload src=/svg/loading.min.svg data-src=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/media/picube1.jpg data-srcset="/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/media/picube1.jpg, /conception-construction-and-evaluation-of-a-raspberry-pi-cluster/media/picube1.jpg 1.5x, /conception-construction-and-evaluation-of-a-raspberry-pi-cluster/media/picube1.jpg 2x" data-sizes=auto alt=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/media/picube1.jpg title="In this article I publish my Bachelor Thesis which I finished in 2018 during my evening studies in the subject Business Informatics at the FOM University of Applied Sciences for Economics and Management in Frankfurt, Germany."></div><div class="details toc" id=toc-static kept>
 <div class="details-summary toc-title">
@@ -251,9 +251,9 @@ time. <sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></s
 </ul>
 <p>A computing grid is comparable to a power grid. For the consumer, everything that happens behind a socket is hidden, but he can conveniently use the power offered, the electricity. A computing grid is similar in comparison, it connects to the computing network and uses the computing power offered. High costs or lack of financial resources pose solving complex problems as a difficulty for scientific and economic institutions. But due to the possibility like, the bundling of resources of different organizations, it is possible to solve computationally intensive problems cost-efficiently. <sup id=fnref:10><a href=#fn:10 class=footnote-ref role=doc-noteref>10</a></sup></p>
 <h4 id=public-resource-computing>Public Resource Computing</h4>
-<p>As an analogous counterpart to grid computing, public resource computing (PRC ) and volunteer computing have emerged to harness hidden computing power using distributed computing.</p>
+<p>As an analogous counterpart to grid computing, public resource computing (PRC) and volunteer computing have emerged to harness hidden computing power using distributed computing.</p>
 <p>The idea and background of this type of distributed computing are that the use of supercomputers is very cost-intensive, on the other hand processors of many computers, such as those of personal computers (PC), servers or smartphones are not fully utilized. Many users work on their PCs with programs that use only part of the total processor power. To make these unused computing resources usable, a corresponding software client is installed on the respective PCs or servers, which establishes the connection to a computing grid, takes over task distribution and makes unused computing power available. <sup id=fnref:11><a href=#fn:11 class=footnote-ref role=doc-noteref>11</a></sup></p>
-<p>The software platform Berkeley Open Infrastructure for Network Computing (BOINC ) enables the use of this unused computing power of thousands of computers. Examples of computationally intensive PRC projects and complex problems include creating an accurate three-dimensional (3D) model of the Milky Way, searching for extraterrestrial radio waves, and calculating gravitational waves. An example of a special research project that exploits the benefits of grid computing, and can only be realized using it, is grid-based computer simulations of gravitational waves generated by the merger of two singularities (black holes) (see
+<p>The software platform Berkeley Open Infrastructure for Network Computing (BOINC) enables the use of this unused computing power of thousands of computers. Examples of computationally intensive PRC projects and complex problems include creating an accurate three-dimensional (3D) model of the Milky Way, searching for extraterrestrial radio waves, and calculating gravitational waves. An example of a special research project that exploits the benefits of grid computing, and can only be realized using it, is grid-based computer simulations of gravitational waves generated by the merger of two singularities (black holes) (see
 Figure3). <sup id=fnref:12><a href=#fn:12 class=footnote-ref role=doc-noteref>12</a></sup></p>
 <p>Other well-known RPC projects using BOINC are: <sup id=fnref:13><a href=#fn:13 class=footnote-ref role=doc-noteref>13</a></sup></p>
 <ul>
@@ -277,12 +277,12 @@ Figure3). <sup id=fnref:12><a href=#fn:12 class=footnote-ref role=doc-noteref>12
 <ul>
 <li><strong>Concurrency</strong>: Concurrency in the execution of programs must be ensured. As soon as services and applications are executed in a network of computers, this usually happens at different times and independently of other computers. To ensure this concurrency of applications, it must be possible to scale the system, which means that additional computers can be added to the network as the demand for resources increases.</li>
 <li><strong>Time synchronization</strong>: As soon as systems act together, messages must be exchanged so that appropriate coordination is possible. Messages such as "System A is performing this action" and "System B is performing this action". For proper coordination of these messages, timestamps are needed to enable proper sequencing of these messages within the distributed system. One method of synchronizing system time is to synchronize with external atomic clocks outside of distributed systems or to use a shared time server that uses the Network Time Protocol (NTP), a standard protocol for synchronizing clocks on the Internet.</li>
-<li><strong>Partial failure</strong>: Any system, no matter how well secured, can fail, even if it has an availability of 99.9%. The probability of a failure is still 0.1%, which is already a very large amount for a high number of systems. Care must therefore be taken to ensure that there is no single point of failure (SPOF ), the failure of which would result in the failure of the entire system. Other prerequisites, especially in terms of security, that must be taken into account are the use of firewalls and virtual private networks (VPNs). As soon as sensitive data and information are transferred from services on the Internet via distributed resources, these can fall victim to network attacks. Without appropriate security mechanisms, information can be stolen or even falsified. With the help of firewalls, only certain resources can be granted access by means of defined security policies. Using a VPN, entire segments of distributed systems can be isolated and compartmentalized by encrypting the entire network data transmission. <sup id=fnref:17><a href=#fn:17 class=footnote-ref role=doc-noteref>17</a></sup></li>
+<li><strong>Partial failure</strong>: Any system, no matter how well secured, can fail, even if it has an availability of 99.9%. The probability of a failure is still 0.1%, which is already a very large amount for a high number of systems. Care must therefore be taken to ensure that there is no single point of failure (SPOF), the failure of which would result in the failure of the entire system. Other prerequisites, especially in terms of security, that must be taken into account are the use of firewalls and virtual private networks (VPNs). As soon as sensitive data and information are transferred from services on the Internet via distributed resources, these can fall victim to network attacks. Without appropriate security mechanisms, information can be stolen or even falsified. With the help of firewalls, only certain resources can be granted access by means of defined security policies. Using a VPN, entire segments of distributed systems can be isolated and compartmentalized by encrypting the entire network data transmission. <sup id=fnref:17><a href=#fn:17 class=footnote-ref role=doc-noteref>17</a></sup></li>
 </ul>
 <h4 id=cloud-computing>Cloud computing</h4>
 <p>Cloud computing is used as a term to represent this vision of computing as a service. A cloud is defined as a set of Internet-based application and computing services so that local data storage and application software can be largely or completely dispensed with. From a technical perspective, cloud computing describes the approach of making IT infrastructures, such as physical or virtual hardware, available via a computer network without the user or cloud user having to install anything on their own computer. Cloud providers such as Microsoft or Amazon make these types of technologies available to customers in the form of services for a fee. Users thus have the option of using the computing power of these technologies without having to buy them at a high price. By providing and managing the cloud infrastructure through the provider, the overall costs are reduced and optimized to a minimum.</p>
 <p>The main advantages of using cloud computing are the almost unlimited scaling of resources, such as computing units or storage capacities. If, for example, a user wants to use a very large quantity of cloud services, it is only a question of cost. The higher a service scales, the higher the costs borne by the customer. <sup id=fnref:18><a href=#fn:18 class=footnote-ref role=doc-noteref>18</a></sup></p>
-<p>Grid computing is seen as the forerunner of cloud computing, although the focus is more on scientific projects and the system is decentralized, i.e. shared. In contrast to grid computing, cloud computing is, from a first perspective, a centralized solution. From a technical point of view, however, and depending on how a cloud service is used by the user, cloud resources can be globally distributed and must communicate with each other in a network for this purpose. This in turn is similar to the approach of grid computing, since a corresponding coordination of these distributed resources is necessary. The most important providers of cloud computing services are currently Amazon Web Services (AWS ), Microsoft with its Azure cloud platform, and Rackspace. <sup id=fnref:19><a href=#fn:19 class=footnote-ref role=doc-noteref>19</a></sup></p>
+<p>Grid computing is seen as the forerunner of cloud computing, although the focus is more on scientific projects and the system is decentralized, i.e. shared. In contrast to grid computing, cloud computing is, from a first perspective, a centralized solution. From a technical point of view, however, and depending on how a cloud service is used by the user, cloud resources can be globally distributed and must communicate with each other in a network for this purpose. This in turn is similar to the approach of grid computing, since a corresponding coordination of these distributed resources is necessary. The most important providers of cloud computing services are currently Amazon Web Services (AWS), Microsoft with its Azure cloud platform, and Rackspace. <sup id=fnref:19><a href=#fn:19 class=footnote-ref role=doc-noteref>19</a></sup></p>
 <p>In practice, the following three abstraction or business models have become established for the provision of cloud services: <sup id=fnref:20><a href=#fn:20 class=footnote-ref role=doc-noteref>20</a></sup></p>
 <ul>
 <li><strong>On-premise</strong>: On-premise means on the customer's own premises or locally on site. The customer is responsible for managing its own IT infrastructure, which it usually administers in its own data center and on its own hardware.</li>
@@ -421,7 +421,7 @@ massively parallel applications. It is far more cost-effective to
 operate 128 PCs, for example, with the same hardware, each with one
 processor and distributed memory.</p>
 <h4 id=message-passing-interface>Message Passing Interface</h4>
-<p>Message Passing Interfaces (MPI ) is a standardized and portable message
+<p>Message Passing Interfaces (MPI) is a standardized and portable message
 passing standard for message transmission between cluster nodes with
 distributed memory (see <strong>Figure 9</strong>). This concept was developed by a
 group of researchers from academia and industry to enable the
@@ -431,9 +431,9 @@ of users. It is not a standardized protocol, but acts as a programming
 interface for serial code used by the C and Fortran programming
 languages. MPI is the most widely used model for parallel and concurrent
 programming today. Currently used MPI implementations are MPI/Pro and
-Local Area Multiprocessor (LAM ) MPI. Both implementations are now fixed
+Local Area Multiprocessor (LAM) MPI. Both implementations are now fixed
 components of Linux distributions. Another message-based model is the
-Parallel Virtual Machine (PVM ) platform. This allows several computers
+Parallel Virtual Machine (PVM) platform. This allows several computers
 with a Windows or Linux operating system to be combined to form a
 parallel system with distributed memory. <sup id=fnref:29><a href=#fn:29 class=footnote-ref role=doc-noteref>29</a></sup></p>
 <figure><a class=lightgallery href=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/media/image1031.png title=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/media/image1031.png data-thumbnail=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/media/image1031.png data-sub-html="<h2>Source: Own representation based on (Bauke & Mertens, 2006, p. 45)  Figure 9: Message transmission between cluster nodes via the interconnect.</h2>">
@@ -530,8 +530,8 @@ platform. <sup id=fnref:33><a href=#fn:33 class=footnote-ref role=doc-noteref>33
 <p>The first multiprocessor clusters trimmed to high-performance computing,
 such as the VAX-11/780, came onto the market in 1977 under the name
 VAXCluster or VMSCluster. The technology pioneer at that time was
-Hewlett-Packard (HP ), then under the company name Digital Equipment
-Corporation (DEC ). VAX stands for Virtual Address eXtension and, in
+Hewlett-Packard (HP), then under the company name Digital Equipment
+Corporation (DEC). VAX stands for Virtual Address eXtension and, in
 conjunction with the OpenVMS(virtual memory system) operating system
 specially developed for this purpose, was a powerful tool in terms of
 security, stability and low downtimes. Another notable example of an HPC
@@ -595,8 +595,8 @@ and, in this context, comes from an Old English heroic poem and has
 since stood as a meaningful emblem of the power such a cluster can
 deliver. The first clusters of this type were developed in 1994 by
 scientists Thomas Sterling, Donald Becker and Phil Merkey to support the
-Earth and Space Sciences Project (ESS ) at the National Aeronautics and
-Space Administration (NASA ). <sup id=fnref:36><a href=#fn:36 class=footnote-ref role=doc-noteref>36</a></sup></p>
+Earth and Space Sciences Project (ESS) at the National Aeronautics and
+Space Administration (NASA). <sup id=fnref:36><a href=#fn:36 class=footnote-ref role=doc-noteref>36</a></sup></p>
 <p>A Beowulf Cluster in practice is typically a collection of generic
 computers, either commodity PCs or larger server systems, that are
 independently procured, assembled, and connected via an internal
@@ -613,7 +613,7 @@ processors. The individual computers were connected via Ethernet for the
 required data exchange. Several benchmark tests were performed, which
 test the performance of computers by measuring the number of floating
 point number calculations possible per second. The measurement is given
-in Floating Point Operations Per Second (FLOPS ). The results of the
+in Floating Point Operations Per Second (FLOPS). The results of the
 tests were surprising with 4.5 MegaFLOPS per node and 60 MegaFLOPS in
 total. This corresponds to a speedup of 13.33 or an efficiency of 83%.
 These results are impressive for the reason that this performance was
@@ -812,7 +812,7 @@ and a 3.5 mm jack for audio and video output. <sup id=fnref:50><a href=#fn:50 cl
 <p>An average of 35 Euros is the price one pays for a Raspberry Pi, which
 makes it economically suitable for use and integration into a cluster
 system, since the unit costs for individual nodes are low. <sup id=fnref:51><a href=#fn:51 class=footnote-ref role=doc-noteref>51</a></sup></p>
-<p>General Purpose Input Output (GPIO ) is the name for programmable inputs
+<p>General Purpose Input Output (GPIO) is the name for programmable inputs
 and outputs for general purposes. A Raspberry Pi has a total of 40 GPIO
 pins, twelve of which are for power supply and 28 of which serve as an
 interface to other systems in order to communicate with or control them.
@@ -903,7 +903,7 @@ so-called chimney effect, must not be lost sight of during further
 planning. This states: warm air rises, cold air remains on the ground.</p>
 <h4 id=air-flow-and-heat-dissipation>Air flow and heat dissipation</h4>
 <p>The processors of the individual nodes and integrated circuit modules
-(IC ) or internal circuit modules of the individual peripheral
+(IC) or internal circuit modules of the individual peripheral
 components develop a certain amount of heat during operation. For a
 correspondingly good removal of this warm air and to avoid heat
 accumulation inside the case, this should be done in several stages and
@@ -1009,7 +1009,7 @@ clip breaking. <sup id=fnref:54><a href=#fn:54 class=footnote-ref role=doc-noter
 </figure>
 <p>Due to the material nature and flexibility of acrylic glass, the use of
 this elastic clip concept is most suitable. If other materials such as
-medium-density fiberboard (MDF ) or simple wood are considered, it must
+medium-density fiberboard (MDF) or simple wood are considered, it must
 be noted here that due to the unidirectional or one-sided wood fibers,
 much weaker resistance and thus less flexibility is offered to bend the
 clip elastically. Use in conjunction with MDF is an alternative, but the
@@ -1049,12 +1049,12 @@ components installed, marked in different colors for better
 representation. Blue marks the USB components and light gray the case
 fan. The color dark gray represents network components and red the HDMI
 port.</p>
-<figure><a class=lightgallery href=media/picube2.jpeg title=media/picube2.jpeg data-thumbnail=media/picube2.jpeg data-sub-html="<h2>Source: Own representation.  Figure 22: 3D model design including components with a view of the front of the housing.</h2>">
-<img class=lazyload src=/svg/loading.min.svg data-src=media/picube2.jpeg data-srcset="media/picube2.jpeg, media/picube2.jpeg 1.5x, media/picube2.jpeg 2x" data-sizes=auto alt=media/picube2.jpeg>
+<figure><a class=lightgallery href=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/media/picube2.jpg title=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/media/picube2.jpg data-thumbnail=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/media/picube2.jpg data-sub-html="<h2>Source: Own representation.  Figure 22: 3D model design including components with a view of the front of the housing.</h2>">
+<img class=lazyload src=/svg/loading.min.svg data-src=media/picube2.jpg data-srcset="/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/media/picube2.jpg, media/picube2.jpg 1.5x, /conception-construction-and-evaluation-of-a-raspberry-pi-cluster/media/picube2.jpg 2x" data-sizes=auto alt=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/media/picube2.jpg>
 </a><figcaption class=image-caption>Source: Own representation. <br> <strong>Figure 22</strong>: <em>3D model design including components with a view of the front of the housing.</em></figcaption>
 </figure>
-<figure><a class=lightgallery href=media/picube3.jpeg title=media/picube3.jpeg data-thumbnail=media/picube3.jpeg data-sub-html="<h2>Source: Own representation.  Figure 23: *3D model design including components with view of the back of the housing.*y</h2>">
-<img class=lazyload src=/svg/loading.min.svg data-src=media/picube3.jpeg data-srcset="media/picube3.jpeg, media/picube3.jpeg 1.5x, media/picube3.jpeg 2x" data-sizes=auto alt=media/picube3.jpeg>
+<figure><a class=lightgallery href=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/media/picube3.jpg title=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/media/picube3.jpg data-thumbnail=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/media/picube3.jpg data-sub-html="<h2>Source: Own representation.  Figure 23: *3D model design including components with view of the back of the housing.*y</h2>">
+<img class=lazyload src=/svg/loading.min.svg data-src=media/picube3.jpg data-srcset="/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/media/picube3.jpg, media/picube3.jpg 1.5x, /conception-construction-and-evaluation-of-a-raspberry-pi-cluster/media/picube3.jpg 2x" data-sizes=auto alt=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/media/picube3.jpg>
 </a><figcaption class=image-caption>Source: Own representation. <br> <strong>Figure 23</strong>: *3D model design including components with view of the back of the housing.*y</figcaption>
 </figure>
 <h4 id=components-and-costs>Components and costs</h4>
@@ -1262,7 +1262,7 @@ the address
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>Listing 1</strong>: <em>The HypriotOS image is downloaded and copied to the SD card using flash.</em></p>
-<p>YAML Ain't Markup Language (YAML ) is a markup language and gives us
+<p>YAML Ain't Markup Language (YAML) is a markup language and gives us
 the possibility to create customized parameters for a startup
 configuration. Thus, it is very easy to pass values into a configuration
 which will be initialized and applied when each node is started for the
@@ -1285,12 +1285,12 @@ respective Raspberry Pi adjusted accordingly:</p>
 </span><span class=lnt>6
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>hostname: \&#34;rpi
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>hostname: &#34;rpi&#34;
 wifi:
-interfaces:
-wlan0:
-ssid: \&#34;WLAN
-password: \&#34;2345251344834395\&#34;
+    interfaces:
+        wlan0:
+        ssid: &#34;WLAN&#34;
+        password: &#34;2345251344834395&#34;
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>Listing 2</strong>: <em>Example of a YAML configuration.</em></p>
