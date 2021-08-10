@@ -9,11 +9,11 @@
 I took the advantage of using Get-AzVMUsage.
 Snippet 1 2 3 4 5 6 7 8 9 10 11 12  $AzureLocations = Get-AzLocation | Select-Object DisplayName $Result = @() ForEach ($AzureLocation in $AzureLocations) { $CoreAmount = Get-AzVMUsage -Location $AzureLocation.">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://graef.io/get-azure-vm-cores-per-region/"><meta property="og:image" content="https://graef.io/logo.png"><meta property="article:section" content="posts">
+<meta property="og:url" content="https://graef.io/get-azure-vm-cores-per-region/"><meta property="og:image" content="https://graef.io/get-azure-vm-cores-per-region/featured-image.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2019-02-21T00:00:00+00:00">
 <meta property="article:modified_time" content="2021-02-22T00:00:00+00:00">
 <meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="https://graef.io/logo.png">
+<meta name=twitter:image content="https://graef.io/get-azure-vm-cores-per-region/featured-image.png">
 <meta name=twitter:title content="Get Azure VM Cores (vCPUs) per Region">
 <meta name=twitter:description content="If you need a script which outputs you the overall VMCore amount per region, there you go. This is a snippet from a RunBook which iterates also through each subscription before, so you would get all amount of used cores per subscription as well as per region.
 I took the advantage of using Get-AzVMUsage.
@@ -91,7 +91,7 @@ Cancel
 <div class=post-meta-line><span class=post-author><a href=https://graef.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Sebastian Gräf</a></span>&nbsp;<span class=post-category>included in <a href=/categories/azure/><i class="far fa-folder fa-fw"></i>Azure</a>&nbsp;<a href=/categories/iaas/><i class="far fa-folder fa-fw"></i>IaaS</a>&nbsp;<a href=/categories/scripts/><i class="far fa-folder fa-fw"></i>Scripts</a></span></div>
 <div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Thursday, Feb 21, 2019">Thursday, Feb 21, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;117 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
-</div><div class="details toc" id=toc-static kept>
+</div><div class=featured-image><img class=lazyload src=/svg/loading.min.svg data-src=/get-azure-vm-cores-per-region/featured-image.png data-srcset="/get-azure-vm-cores-per-region/featured-image.png, /get-azure-vm-cores-per-region/featured-image.png 1.5x, /get-azure-vm-cores-per-region/featured-image.png 2x" data-sizes=auto alt=/get-azure-vm-cores-per-region/featured-image.png title=/get-azure-vm-cores-per-region/featured-image.png></div><div class="details toc" id=toc-static kept>
 <div class="details-summary toc-title">
 <span>Contents</span>
 <span><i class="details-icon fas fa-angle-right"></i></span>

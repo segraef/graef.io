@@ -1,4 +1,4 @@
-# Expired Azure Credentials
+# Expired Azure credentials
 
 
 In case you get this error below, this error is mostly due to outdated Modules or at least in this case the AzureRM module.

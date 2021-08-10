@@ -69,7 +69,7 @@ gc output.xml
 
 A simple output of Get-LocalAccountMemberships looks like this
 
-![1](2021-02-21-20-55-28.png)
+![1](featured-image-preview.png)
 
 
 So, while exporting your output with the help of Export-Clixml and showing the output of your XML file again in the console output as a readable xml structure.
