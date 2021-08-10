@@ -1,9 +1,7 @@
 # Conception, Construction and Evaluation of a Raspberry Pi Cluster
 
 
-Complex and highly available failover clusters have always fascinated me. On top of that, I'm a real Raspberry Pi fanatic and just enjoy developing interesting use cases that connect the digital with the real world. In this article I publish my Bachelor Thesis which I finished in 2018 during my evening studies in the subject Business Informatics at the FOM University of Applied Sciences for Economics and Management in Frankfurt, Germany.
-
-My mentor and examiner at that time was [Prof. Dr. Bernd Ulmann](https://www.linkedin.com/in/dulmann/), to whom I owe the inspiration during my studies and motivation for this work of which I am still very proud of.
+The goal of this work is to create an affordable, energy efficient and portable mini-supercomputer. Ideally, a cluster computer with little or no carbon footprint, individual elements that are inexpensive to replace, and a portable system that can be easily disassembled and reassembled.
 
 <!--more-->
 
@@ -134,45 +132,15 @@ The figure below shows a breakdown of the business models mentioned. Here, blue 
 
 As soon as the term cloud is mentioned, it predominantly refers to a specific usage model of cloud computing. The various types of these usage models are defined below: [^21]
 
--   **Private cloud**: The English term \"private\" translates into
-    German as \"privat\" and, in the context of cloud, stands for \"not
-    for the public\". A company uses a private cloud in a secure
-    environment such as its own internal network. This does not
-    necessarily mean that the IT infrastructure used is the property of
-    the company, as it can also be provided by third parties. Private
-    merely clarifies that a company is the sole user of this model. This
-    has the advantage that it retains control in terms of data
-    protection, even if third-party providers such as Amazon or
-    Microsoft manage private cloud environments.
+- **Private cloud**: The English term \"private\" translates into German as \"privat\" and, in the context of cloud, stands for \"not for the public\". A company uses a private cloud in a secure environment such as its own internal network. This does not necessarily mean that the IT infrastructure used is the property of the company, as it can also be provided by third parties. Private merely clarifies that a company is the sole user of this model. This has the advantage that it retains control in terms of data protection, even if third-party providers such as Amazon or Microsoft manage private cloud environments.
+- **Public cloud**: A public cloud provides access to abstracted IT infrastructures and services for a large number of users. Customers can use services and infrastructures via the Internet. Examples are file hosting services such as Google Drive from Google Inc. or Dropbox from Dropbox Inc.
+- **Hybrid cloud**: A hybrid form of the two variants mentioned above is the hybrid cloud. Users are offered the option of processing business-critical data with a focus on data protection in private cloud environments. Non-sensitive data is made available in the public cloud using cloud services such as IaaS or PaaS on the Internet. Hybrid clouds offer a further advantage in that performance peaks occurring at short notice are compensated for by shifting services from the private to the public cloud. Hybrid clouds enable the gradual merging of public and private cloud services in order to be able to utilize existing infrastructure hardware for as long as possible.
 
--   **Public cloud**: A public cloud provides access to abstracted IT
-    infrastructures and services for a large number of users. Customers
-    can use services and infrastructures via the Internet. Examples are
-    file hosting services such as Google Drive from Google Inc. or
-    Dropbox from Dropbox Inc.
-
--   **Hybrid cloud**: A hybrid form of the two variants mentioned above
-    is the hybrid cloud. Users are offered the option of processing
-    business-critical data with a focus on data protection in private
-    cloud environments. Non-sensitive data is made available in the
-    public cloud using cloud services such as IaaS or PaaS on the
-    Internet. Hybrid clouds offer a further advantage in that
-    performance peaks occurring at short notice are compensated for by
-    shifting services from the private to the public cloud. Hybrid
-    clouds enable the gradual merging of public and private cloud
-    services in order to be able to utilize existing infrastructure
-    hardware for as long as possible.
-
-** Figure 6** shows an overview of private, public and hybrid cloud
-environments and illustrates the relationship between a private and
-public network. For example, a private network is a VPN, while the
-Internet belongs to the public network segment.
+**Figure 6** shows an overview of private, public and hybrid cloud environments and illustrates the relationship between a private and public network. For example, a private network is a VPN, while the Internet belongs to the public network segment.
 
 {{< image src="media/image727.png" caption="Source: Own representation based on (Bedner, 2012, p. 37); (Matros, 2012, p. 67) <br> **Figure 6**: *Relationship between public, private and hybrid cloud models.*" >}}
 
-Other noteworthy business models in which cloud computing is subdivided
-are community cloud, virtual private cloud and multi-cloud, which we
-will not discuss in detail in this paper.
+Other noteworthy business models in which cloud computing is subdivided are community cloud, virtual private cloud and multi-cloud, which we will not discuss in detail in this paper.
 
 ### Cluster
 
@@ -343,9 +311,7 @@ falls into one of the following categories, increased requirements are
 placed on memory, network and processors:
 
 -   computing-intensive applications
-
 -   memory-intensive applications
-
 -   communication-intensive applications
 
 Because of this, these types of clusters must provide high resilience,
@@ -529,8 +495,7 @@ the developers of the CoreOS operating system, with Docker enjoying
 increasing popularity in recent years. Compared to virtual machines,
 Docker represents a simplified solution to virtualization. [^42]
 
-**Figure 14** shows the key difference between container-based and
-hypervisor-based virtualization.
+**Figure 14** shows the key difference between container-based and hypervisor-based virtualization.
 
 {{< image src="media/image1528.png" caption="Source: Own representation based on (Containers vs. virtual machines) <br> **Figure 14**: *Comparison between hypervisor and container.*" >}}
 
@@ -678,8 +643,7 @@ Nick Smith and his first design of a 5-node Raspberry Pi cluster, the
 idea of further developing and improving certain components has emerged,
 such as increasing the cooling performance by means of an optimized
 airflow supply, adding and logically arranging further connection
-possibilities and considering a modular expandability of the cluster.
-[^52]
+possibilities and considering a modular expandability of the cluster. [^52]
 
 ### Requirements
 
@@ -945,24 +909,24 @@ the Gigabit switch, the USB charger and the USB cables. The rest of the
 hardware, such as the LCD display, cables and plastic screws, are in the
 price range of 0.65 to 9.80 EUR.
 
-| **Unit(s)** | **Component** | **Unit price** |
-|:------:| :-----------| :-----------|
-| 5 | Raspberry Pi 3 Model B | 42.70 Euro |
-| 5 | SanDisk Ultra 8 GB microSDHCUHS -I Class 10 | 6.65 Euro |
-| 1 | Edimax ES-5800G V2 Gigabit Switch (8-Port)  | 22.99 Euro |
-| 1 | Anear 60 Watt USB Charger (6-Port) | 18.99 Euro |
-| 5 | Micro USB cable (15 cm)   | 2.75 Euro |
-| 5 | Transparent power cord (15 cm) | 0.79 Euro |
-| 2 | RJ45 jack (female-male)  | 2.74 Euro |
-| 1 | Dual USB 2.0-A female-male connector  | 4.53 Euro |
-| 1 | LCD display module 1602 HD44780 with TWI controller | 4.45 Euro |
-| 1 | AC 250V 2.5A IEC320 C7 socket | 1.39 Euro |
-| 1 | C7 power cable 90 degree angled (1 meter) | 3.26 Euro |
-| 1 | Cable jumpers (female-female. 40 wires. 20 cm) | 0.65 Euro |
-| 56 | M3 Nylon Hex Spacer Nuts and Bolts White | 0.05 Euro |
-| 1 | Antec TRICOOL 92mm 4-pin case fan | 9.80 Euro |
-| 1 | Milling cut of the acrylic sheets | 20 Euro |
-|   | **Total price incl. VAT** | **358.79 Euro** |
+| **Unit(s)** | **Component**                                       | **Unit price**  |
+| :---------: | :-------------------------------------------------- | :-------------- |
+|      5      | Raspberry Pi 3 Model B                              | 42.70 Euro      |
+|      5      | SanDisk Ultra 8 GB microSDHCUHS -I Class 10         | 6.65 Euro       |
+|      1      | Edimax ES-5800G V2 Gigabit Switch (8-Port)          | 22.99 Euro      |
+|      1      | Anear 60 Watt USB Charger (6-Port)                  | 18.99 Euro      |
+|      5      | Micro USB cable (15 cm)                             | 2.75 Euro       |
+|      5      | Transparent power cord (15 cm)                      | 0.79 Euro       |
+|      2      | RJ45 jack (female-male)                             | 2.74 Euro       |
+|      1      | Dual USB 2.0-A female-male connector                | 4.53 Euro       |
+|      1      | LCD display module 1602 HD44780 with TWI controller | 4.45 Euro       |
+|      1      | AC 250V 2.5A IEC320 C7 socket                       | 1.39 Euro       |
+|      1      | C7 power cable 90 degree angled (1 meter)           | 3.26 Euro       |
+|      1      | Cable jumpers (female-female. 40 wires. 20 cm)      | 0.65 Euro       |
+|     56      | M3 Nylon Hex Spacer Nuts and Bolts White            | 0.05 Euro       |
+|      1      | Antec TRICOOL 92mm 4-pin case fan                   | 9.80 Euro       |
+|      1      | Milling cut of the acrylic sheets                   | 20 Euro         |
+|             | **Total price incl. VAT**                           | **358.79 Euro** |
 
 **Table** **1**: *Listing of individual and total price of all components.*
 
@@ -1056,9 +1020,7 @@ configuration of the operating system and are called and used when the
 system starts. The following code snippet (see **Listing 1**) shows the
 command that sets the hostname rpi1 for the image package
 hypriotos-rpi1-v1.6.0.img.zip after downloading the HypriotOS image from
-the address
-https://github.com/hypriot/image-builder-rpi/releases/download/v1.6.0/.
-[^57]
+the address https://github.com/hypriot/image-builder-rpi/releases/download/v1.6.0/. [^57]
 
 ```
 flash \--hostname rpi1 https://github.com/hypriot/image-builder-rpi/releases/download/v1.6.0/hypriotos-rpi-v1.6.0.img.zip
@@ -1152,14 +1114,7 @@ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
 **Listing 4**: *Command to install
 Kubernetes.*
 
-Here, the corresponding Kubernetes installation package is downloaded
-and installed. Now the node rpi1 is selected and the command \"sudo
-kubedm init\" is executed to initialize the cluster. Thus, the cluster
-is created and rpi1 is set as the master node. All other hosts are added
-to the cluster as worker nodes using the \"kubeadm join\" command. After
-the last node is successfully added, the command \"kubectl get nodes\"
-is used to check whether all nodes are ready and added to the computer
-cluster (see **Figure 27**).
+Here, the corresponding Kubernetes installation package is downloaded and installed. Now the node rpi1 is selected and the command `sudo kubedm init` is executed to initialize the cluster. Thus, the cluster is created and rpi1 is set as the master node. All other hosts are added to the cluster as worker nodes using the `kubeadm join` command. After the last node is successfully added, the command `kubectl get nodes` is used to check whether all nodes are ready and added to the computer cluster (see **Figure 27**).
 
 {{< image src="media/image2829.png" caption="Source: Own representation. <br> **Figure 27**: *Status query in the terminal of all nodes.*" >}}
 
@@ -1351,8 +1306,8 @@ EUR. This construct is contrasted with a simple Linux cluster for
 comparison. This Linux cluster consists of commercially available PCs
 with comparable core data to that of the Raspberry Pi nodes.
 
-|  | **Raspberry Pi 3 Model B** | **Linux PC** |
-|:------| :----------- | :----------- |
+|                         | **Raspberry Pi 3 Model B**  | **Linux PC**                       |
+| :---------------------- | :-------------------------- | :--------------------------------- |
 | **CPU**                 | Cortex-A53 1.2 GHz Quadcore | Intel Celeron J1900 2 GHz Quadcore |
 | **RAM**                 | 1024 MB                     | 4 GB RAM                           |
 | **Network**             | 100 Mbps                    | 1000 Mbps                          |
@@ -1380,25 +1335,15 @@ performed with the help of sysbench. Sysbench is a benchmark application
 that quickly gives an impression of the system performance. For this
 purpose, a CPU benchmark is run on both systems, which calculates all
 prime numbers up to 20000, and the results are shown in **Table 3** and **Figure 31**.
-<!--
-  -----------------------------------------------------------------------
-                          **Raspberry Pi 3 Model  **Linux PC**
-                          B**
-  ----------------------- ----------------------- -----------------------
-  **CPU benchmark**       Prime number            Prime number
-                          calculation             calculation
 
-  **Threads (process      4                       4
-  parts)**
+|                             | **Raspberry Pi 3 Model B** | **Linux PC**             |
+| :-------------------------- | :------------------------- | :----------------------- |
+| **CPU benchmark**           | Prime number calulation    | Prime number calculation |
+| **Threads (process parts)** | 4                          | 4                        |
+| **Limit**                   | 20000                      | 20000                    |
+| **Calculation time**        | 115.1536 seconds           | 11.2800 seconds          |
 
-  **Limit**               20000                   20000
-
-  **Calculation time**    115.1536 seconds        11.2800 seconds
-  -----------------------------------------------------------------------
-  -->
-
-[]{#_Toc505443071 .anchor}**Table** **3**: *Comparison times of the
-prime number calculation up to 20000.*
+**Table** **3**: *Comparison times of the prime number calculation up to 20000.*
 
 {{< image src="media/image3324.png" caption="Source: Own representation. <br> **Figure 31**: *Results of the sysbench benchmark run on node rpi2.*" >}}
 
@@ -1419,32 +1364,17 @@ all components and sits at the end of the power chain. Summarizing with
 all installed components, you get a total power consumption of 13.75
 watts in idle and 34 watts at maximum load (see **Table 4**).
 
-<!--
-  -------------------------------------------------------------------------
-                                              **Power
-                                              consumption**
-  ------------------------------------------- --------------- -------------
-  **Component**                               **Idle**        **maximum**
+|                                                     | **Power consumption** |                |
+| :-------------------------------------------------- | :-------------------- | :------------- |
+| **Component**                                       | **Idle**              | **maximum**    |
+| Raspberry Pi 3 Model B                              | 2 Watt                | 4 Watt         |
+| Edimax ES-5800G V2 Gigabit Switch (8-Port)          | 2.4 watt              | 2.4 watt       |
+| LCD display module 1602 HD44780 with TWI controller | 0.1 watt              | 0.1 watt       |
+| Antec TRICOOL 92mm 4-pin case fan                   | 1.25 watt             | 1.25 watt      |
+| Anear 60 Watt USB Charger (6-Port)                  | \-                    | \-             |
+| **Total power consumption**                         | **13,75 Watt**        | **23,75 Watt** |
 
-  Raspberry Pi 3 Model B                      2 Watt          4 Watt
-
-  Edimax ES-5800G V2 Gigabit Switch (8-Port)  2.4 watt        2.4 watt
-
-  LCD display module 1602 HD44780 with        0.1 watt        0.1 watt
-  TWIcontroller
-
-  Antec TRICOOL 92mm 4-pin case fan           1.25 watt       1.25 watt
-
-  Anear 60 Watt USB Charger (6-Port)          \-              \-
-
-  **Total power consumption**                 **13,75 Watt**  **23,75
-                                                              Watt**
-  -------------------------------------------------------------------------
-
-[]{#_Ref505193596 .anchor}**Table** **4**: *Total power consumption of
-the PiCube in idle mode and maximum CPU load of 100%.*
-
--->
+**Table** **4**: *Total power consumption of the PiCube in idle mode and maximum CPU load of 100%.*
 
 In the following test, CPU load is generated using the Sysbench prime
 calculation program and advantages and disadvantages are shown by using
@@ -1468,19 +1398,12 @@ period of 5 minutes:
 -   **Temp2**: In case, with heatsink on SoC, without active cooling.
 -   **Temp3**: In case, with heatsink on SoC, with active cooling.
 
-<!--
-  -----------------------------------------------------------------------
-  CPU utilization   Temp1 (°C)        Temp2 (°C)        Temp3 (°C)
-  (%)
-  ----------------- ----------------- ----------------- -----------------
-  0                 39                39                44
+| **CPU utilization (%) | Temp1 (°C) | Temp2 (°C) | Temp3 (°C) |
+| :-------------------- | :--------- | :--------- | :--------- |
+| 0                     | 39         | 39         | 44         |
+| 100                   | 77         | 77         | 82         |
 
-  100               77                77                82
-  -----------------------------------------------------------------------
-
-[]{#_Toc505443073 .anchor}**Table** **5**: *Measured values of heat
-generation without active cooling.*
--->
+**Table** **5**: *Measured values of heat generation without active cooling.*
 
 Next, we look at three temperature profiles of a Raspberry Pi processor.
 The CPU clock frequency is 1.2 GHz and the CPU voltage is 1.325 volts
@@ -1497,18 +1420,13 @@ over a period of 10 minutes:
 
 {{< figure src="media/image3630.png" >}}
 
-<!--
-  -----------------------------------------------------------------------
-  CPU utilization   Temp1 (°C)        Temp2 (°C)        Temp3 (°C)
-  (%)
-  ----------------- ----------------- ----------------- -----------------
-  0                 44                31,2              27,8
 
-  100               83,3              83,3              69,8
-  -----------------------------------------------------------------------
+| **CPU utilization (%) | Temp1 (°C) | Temp2 (°C) | Temp3 (°C) |
+| :-------------------- | :--------- | :--------- | :--------- |
+| 0                     | 44         | 32,2       | 27,8       |
+| 100                   | 83,3       | 83,3       | 69,8       |
 
-[]{#_Toc505443074 .anchor}**Table** **6**: *Measured values*
--->
+**Table** **6**: *Measured values*
 
 The heat development of the circuit boards of each individual computer
 is also taken into account. Although this is low, it increases
@@ -1601,10 +1519,10 @@ hand, its simplicity means it can be used for cluster computing to
 provide a small, full-featured, low-cost, energy-efficient development
 platform. This includes understanding its limitations in terms of
 performance, usability and maintainability. On the other hand, it can
-act as a mobile and self-sufficient \"cloud in a box\" system by adding
+act as a mobile and self-sufficient **cloud in a box** system by adding
 components such as solar cells and mobile connectivity. Either way, it
 will remain a fascinating project that offers developers many
-possibilities and gives a \"think-out-of-the-box\" approach.
+possibilities and gives a **think-out-of-the-box** approach.
 
 ## Bibliography
 
@@ -1612,245 +1530,159 @@ Adams, J. (September 2017). SFT Guide 14/17 - Raspberry Pi Tips, Tricks & Hacks 
 
 Baier, J. (2017). *Getting Started with Kubernetes - Harness the power of Kubernetes to manage Docker deployments with ease.* Birmingham: Packt Publishing.
 
-Bauke, H., & Mertens, S. (2006). *Cluster computing - Practical introduction to high
-performance computing on Linux clusters.* Heidelberg: Springer.
-Bedner,
-M. (2012). *Cloud computing - technology, security and legal design.*
-Kassel: kassel university press.
+Bauke, H., & Mertens, S. (2006). *Cluster computing - Practical introduction to high performance computing on Linux clusters.* Heidelberg: Springer.
 
-Bengel, G., Baun, C., Kunze, M., &
-Stucky, K.-U. (2008). *Master course parallel and distributed systems -
-fundamentals and programming of multicore processors, multiprocessors,
-clusters and grids.* Wiesbaden: Vieweg+Teubner.
+Bedner, M. (2012). *Cloud computing - technology, security and legal design.* Kassel: kassel university press.
 
-*Beowulf Cluster Computing*. (January 12, 2018). Retrieved from MichiganTech - Beowulf
-Cluster Computing: http://www.cs.mtu.edu/beowulf/
+Bengel, G., Baun, C., Kunze, M., & Stucky, K.-U. (2008). *Master course parallel and distributed systems - fundamentals and programming of multicore processors, multiprocessors, clusters and grids.* Wiesbaden: Vieweg+Teubner.
 
-*Beowulf Scalable Mass Storage (T-Racks)*. (January 12, 2018). Retrieved from ESS Project:
-https://www.hq.nasa.gov/hpcc/reports/annrpt97/accomps/ess/WW80.html
+*Beowulf Cluster Computing*. (January 12, 2018). Retrieved from MichiganTech - Beowulf Cluster Computing: http://www.cs.mtu.edu/beowulf/
 
-*BOINC - Active Projects Statistics*. (January 31, 2018). Retrieved from
-Free-DC - Distributed Computing Stats System:
-http://stats.free-dc.org/stats.php?page=userbycpid&cpid=cfbdd0ffc5596f8c5fed01bbe619679d
+*Beowulf Scalable Mass Storage (T-Racks)*. (January 12, 2018). Retrieved from ESS Project: https://www.hq.nasa.gov/hpcc/reports/annrpt97/accomps/ess/WW80.html
 
-*Cache*.(January 14, 2018). Retrieved from Electronics Compendium:
-https://www.elektronik-kompendium.de/sites/com/0309291.htm
+*BOINC - Active Projects Statistics*. (January 31, 2018). Retrieved from Free-DC - Distributed Computing Stats System: http://stats.free-dc.org/stats.php?page=userbycpid&cpid=cfbdd0ffc5596f8c5fed01bbe619679d
 
-Christl, D.,Riedel, M., & Zelend, M. (2007). *Communication systems / computer networks - Research of tools for the control of a massively parallel cluster  computer in the computer center of the West Saxon University of Applied Sciences Zwickau.* Zwickau: Westsächsichen Hochschule Zwickau.
+*Cache*.(January 14, 2018). Retrieved from Electronics Compendium: https://www.elektronik-kompendium.de/sites/com/0309291.htm
 
-*CISC and RISC*. (January 28, 2018). Retrieved from Electronics
-Compendium:
-https://www.elektronik-kompendium.de/sites/com/0412281.htm
+Christl, D.,Riedel, M., & Zelend, M. (2007). *Communication systems / computer networks - Research of tools for the control of a massively parallel cluster computer in the computer center of the West Saxon University of Applied Sciences Zwickau.* Zwickau: Westsächsichen Hochschule Zwickau.
 
-*Containersvs. virtual machines*. (December 13, 2017). Retrieved from NetApp Blog:
-https://blog.netapp.com/blogs/containers-vs-vms/
+*CISC and RISC*. (January 28, 2018). Retrieved from Electronics Compendium: https://www.elektronik-kompendium.de/sites/com/0412281.htm
+
+*Containersvs. virtual machines*. (December 13, 2017). Retrieved from NetApp Blog: https://blog.netapp.com/blogs/containers-vs-vms/
 
 Coulouris, G.,Dollimore, J., Kindberg, T., & Blair, G. (2012). *Distributed systems - concepts and design.* Boston: Pearson.
 
 Dennis, A. K. (2013). *Raspberry Pi super cluster.* Birmingham: Packt Publishing.
 
-*The science behind SETI\@home*. (January 30, 2018). Retrieved from SETI\@home:
-https://setiathome.berkeley.edu/sah_about.php
+*The science behind SETI\@home*. (January 30, 2018). Retrieved from SETI\@home: https://setiathome.berkeley.edu/sah_about.php
 
-*Docker on the Raspberry Pi with HypriotOS*. (January 24, 2018). Retrieved from Raspberry Pi Geek:
-http://www.raspberry-pi-geek.de/Magazin/2017/12/Docker-auf-dem-Raspberry-Pi-mit-HypriotOS
+*Docker on the Raspberry Pi with HypriotOS*. (January 24, 2018). Retrieved from Raspberry Pi Geek: http://www.raspberry-pi-geek.de/Magazin/2017/12/Docker-auf-dem-Raspberry-Pi-mit-HypriotOS
 
-Eder,M. (2016). *Hypervisor- vs. container-based virtualization.* Munich:
-Technical University of Munich.
+Eder,M. (2016). *Hypervisor- vs. container-based virtualization.* Munich: Technical University of Munich.
 
-*Einstein\@Home on Android devices*.
-(January 23, 2018). Retrieved from GEO600:
-http://www.geo600.org/1282133/Einstein_Home_on_Android_devices
+*Einstein\@Home on Android devices*. (January 23, 2018). Retrieved from GEO600: http://www.geo600.org/1282133/Einstein_Home_on_Android_devices
 
-*Enable I2C Interface on the Raspberry Pi*. (January 28, 2018). Retrieved from
-Raspberry Pi Spy:
-https://www.raspberrypi-spy.co.uk/2014/11/enabling-the-i2c-interface-on-the-raspberry-pi/
+*Enable I2C Interface on the Raspberry Pi*. (January 28, 2018). Retrieved from Raspberry Pi Spy: https://www.raspberrypi-spy.co.uk/2014/11/enabling-the-i2c-interface-on-the-raspberry-pi/
 
-*Encyclopedia - VAX*. (January 20, 2018). Retrieved from PCmag:
-https://www.pcmag.com/encyclopedia/term/53678/vax
-*Failover Cluster*. (January 20, 2018). Retrieved from Microsoft Developer Network:
-https://msdn.microsoft.com/en-us/library/ff650328.aspx
+*Encyclopedia - VAX*. (January 20, 2018). Retrieved from PCmag: https://www.pcmag.com/encyclopedia/term/53678/vax
 
-Fenner, P. (10. 12 2017). *So What\'s a Practical Laser-Cut Clip Size?* Retrieved from
-DefProc Engineering: https://www.deferredprocrastination.co.uk/blog/2013/so-whats-a-practical-laser-cut-clip-size/Fey,
-D. (2010). *Grid computing - An enabling technology for computational
-science.* Heidelberg: Springer.
+*Failover Cluster*. (January 20, 2018). Retrieved from Microsoft Developer Network: https://msdn.microsoft.com/en-us/library/ff650328.aspx
 
-*GitHub - flash*. (January 24, 2018).
-Retrieved from hypriot / flash:
-https://github.com/hypriot/flash
+Fenner, P. (10. 12 2017). *So What\'s a Practical Laser-Cut Clip Size?* Retrieved from DefProc Engineering: https://www.deferredprocrastination.co.uk/blog/2013/so-whats-a-practical-laser-cut-clip-size/Fey, D. (2010).
+
+*Grid computing - An enabling technology for computational science.* Heidelberg: Springer.
+
+*GitHub - flash*. (January 24, 2018). Retrieved from hypriot / flash: https://github.com/hypriot/flash
 
 Goasguen, S. (2015). *Docker Cookbook - Solutions and Examples for Building Dsitributed Applications.* Sebastopol: O\'Reilly.
 
-Grabsch, V., & Radunz, Y. (2008). *Seminar
-presentation - Amdahl\'s and Gustafson\'s law.* o.O.: Creative
-Commons.
+Grabsch, V., & Radunz, Y. (2008). *Seminar presentation - Amdahl\'s and Gustafson\'s law.* o.O.: Creative Commons.
 
-Herminghaus, V., & Scriba, A. (2006). *Veritas Storage
-Foundation - High End Computing for UNIX Design and Implementation of
-High Availability Solutions with VxVM and VCS.* Heidelberg:
-Springer.
+Herminghaus, V., & Scriba, A. (2006). *Veritas Storage Foundation - High End Computing for UNIX Design and Implementation of High Availability Solutions with VxVM and VCS.* Heidelberg: Springer.
 
-*Horizontal Pod Autoscaling*. (January 29, 2018). Retrieved
-from GitHub:
-https://github.com/kubernetes/kubernetes/blob/8caeec429ee1d2a9df7b7a41b21c626346b456fb/docs/user-guide/horizontal-pod-autoscaling/image/index.php
+*Horizontal Pod Autoscaling*. (January 29, 2018). Retrieved from GitHub: https://github.com/kubernetes/kubernetes/blob/8caeec429ee1d2a9df7b7a41b21c626346b456fb/docs/user-guide/horizontal-pod-autoscaling/image/index.php
 
-*How nodes work*. (January 27, 2018). Retrieved from docker docs:
-https://docs.docker.com/engine/swarm/how-swarm-mode-works/nodes/
+*How nodes work*. (January 27, 2018). Retrieved from docker docs: https://docs.docker.com/engine/swarm/how-swarm-mode-works/nodes/
 
-*How to setup an I2C LCD on the Raspberry Pi*. (January 28, 2018). Retrieved
-from Circuit Basics:
-http://www.circuitbasics.com/raspberry-pi-i2c-lcd-set-up-and-programming/
+*How to setup an I2C LCD on the Raspberry Pi*. (January 28, 2018). Retrieved from Circuit Basics: http://www.circuitbasics.com/raspberry-pi-i2c-lcd-set-up-and-programming/
 
-*If we want to Find Aliens, We Need to Save the Arecibo Telescope*. (January
-23, 2018). Retrieved from vice:
-https://www.vice.com/en_us/article/wdbq74/find-aliens-arecibo-telescope
+*If we want to Find Aliens, We Need to Save the Arecibo Telescope*. (January 23, 2018). Retrieved from vice: https://www.vice.com/en_us/article/wdbq74/find-aliens-arecibo-telescope
 
-*Inkscape - Overview*. (January 24, 2018). Retrieved from Inkscape:
-https://inkscape.org/de/ueber/uebersicht/
+*Inkscape - Overview*. (January 24, 2018). Retrieved from Inkscape: https://inkscape.org/de/ueber/uebersicht/
 
-Kaiser, R. (2009). *Virtualization of multiprocessor systems with real-time applications.*
-Koblenz-Landau.Kersken, S. (2015). *IT handbook for IT specialists.*
-Bonn: Rheinwerk Verlag GmbH.
+Kaiser, R. (2009). *Virtualization of multiprocessor systems with real-time applications.* Koblenz-Landau.Kersken, S. (2015).
 
-Kroeker, K. L. (March 2011). Grid
-computing\'s future. *Communications of the ACM*, pp. 15-17.
+*IT handbook for IT specialists.* Bonn: Rheinwerk Verlag GmbH.
 
-*Kubernetes Components*. (January 10, 2018). Retrieved from kubernetes:
-https://kubernetes.io/docs/concepts/overview/components/
+Kroeker, K. L. (March 2011). Grid computing\'s future. *Communications of the ACM*, pp. 15-17.
 
-*Kubernetes vs Docker Swarm*. (January 10, 2018). Retrieved from Platform9:
-https://platform9.com/blog/kubernetes-docker-swarm-compared/
+*Kubernetes Components*. (January 10, 2018). Retrieved from kubernetes: https://kubernetes.io/docs/concepts/overview/components/
 
-*Laser-Cut Elastic-Clipped Comb-Joints*. (December 1, 2018). Retrieved from DefProc
-Engineering:
-https://www.deferredprocrastination.co.uk/blog/2013/laser-cut-elastic-clipped-comb-joints/
+*Kubernetes vs Docker Swarm*. (January 10, 2018). Retrieved from Platform9: https://platform9.com/blog/kubernetes-docker-swarm-compared/
 
-*Laser-Cut Elastic Clips*. (December 1, 2017). Retrieved from Thingiverse:
-https://www.thingiverse.com/thing:53032
+*Laser-Cut Elastic-Clipped Comb-Joints*. (December 1, 2018). Retrieved from DefProc Engineering: https://www.deferredprocrastination.co.uk/blog/2013/laser-cut-elastic-clipped-comb-joints/
 
-Lee, C. (2014). *Cloud database development and management.* Boca Raton: CRC Press.Liebel, O. (2011).
-*Linux high availability - deployment scenarios and practical
-solutions.* Bonn: Galileo Press.
+*Laser-Cut Elastic Clips*. (December 1, 2017). Retrieved from Thingiverse: https://www.thingiverse.com/thing:53032
 
-*Load-Balanced Cluster*. (January 20,
-2018). Retrieved from Microsoft Developer Network:
-https://msdn.microsoft.com/en-us/library/ff648960.aspx
+Lee, C. (2014). *Cloud database development and management.* Boca Raton: CRC Press.
 
-Lobel, L. G., & Boyd, E. D.. (2014). *Microsoft Azure SQL Database step by step.*
-Redmond: Microsoft Press.
+Liebel, O. (2011). *Linux high availability - deployment scenarios and practical solutions.* Bonn: Galileo Press.
 
-*MAD - Andreas Gregori*. (January 24, 2018).
-Retrieved from MAD Models Architecture Design:
-http://mad-modelle.de/kontakt/Mandl, P. (2010). *Basic course operating
-systems - architectures, resource management, synchronization, process
-communication.* Wiesbaden: VIeweg + Teubner.
+*Load-Balanced Cluster*. (January 20, 2018). Retrieved from Microsoft Developer Network: https://msdn.microsoft.com/en-us/library/ff648960.aspx
+
+Lobel, L. G., & Boyd, E. D.. (2014). *Microsoft Azure SQL Database step by step.* Redmond: Microsoft Press.
+
+*MAD - Andreas Gregori*. (January 24, 2018). Retrieved from MAD Models Architecture Design: http://mad-modelle.de/kontakt/
+
+Mandl, P. (2010). *Basic course operating systems - architectures, resource management, synchronization, process communication.* Wiesbaden: VIeweg + Teubner.
 
 Matros, R. (2012). *The impact of cloud computing on IT service providers - A case study-based investigation of critical influencing variables.* Bayreuth: Springer
-Gabler.Merkert, J. (16 October 2017). c\'t Raspberry Pi - Raspi
-projects. *Risc OS*, p. 151.Miell, I., & Sayers, A. H. (2016). *Docker
-in practice.* New York: Manning Publications.
 
-*Networked computing: fundamentals and applications*. (January 20, 2018). Retrieved from
-techchannel:
-https://www.tecchannel.de/a/networked-computing-grundlagen-und-anwendungen,439222,5
+Gabler.Merkert, J. (16 October 2017). c\'t Raspberry Pi - Raspi projects. *Risc OS*, p. 151.
 
-Neuenschwander,
-E. P. (2014). *Cloud computing - A legal thundercloud?* Zurich:
-University of Zurich.
+Miell, I., & Sayers, A. H. (2016). *Docker in practice.* New York: Manning Publications.
 
-*New DIY supercomputer saves £1,000s*. (January 8,
-2018). Retrieved from University of Westminster:
-https://www.westminster.ac.uk/news-and-events/news/2011/new-diy-supercomputer-saves-%C2%A31000s
+*Networked computing: fundamentals and applications*. (January 20, 2018). Retrieved from techchannel: https://www.tecchannel.de/a/networked-computing-grundlagen-und-anwendungen,439222,5
+
+Neuenschwander, E. P. (2014). *Cloud computing - A legal thundercloud?* Zurich: University of Zurich.
+
+*New DIY supercomputer saves £1,000s*. (January 8, 2018). Retrieved from University of Westminster: https://www.westminster.ac.uk/news-and-events/news/2011/new-diy-supercomputer-saves-%C2%A31000s
 
 Nickoloff, J. (2016). *Docker in action.* New York: Manning Publications.
 
-*Nodes*. (January 10, 2018). Retrieved from kubernetes:
-https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/
+*Nodes*. (January 10, 2018). Retrieved from kubernetes: https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/
 
-*Overview of Microsoft HPC Pack and SOA in Failover Cluster*. (January 21, 2018).
-Retrieved from Microsoft TechNet:
-https://technet.microsoft.com/en-us/library/gg142067(v=ws.11).aspx
+*Overview of Microsoft HPC Pack and SOA in Failover Cluster*. (January 21, 2018). Retrieved from Microsoft TechNet: https://technet.microsoft.com/en-us/library/gg142067(v=ws.11).aspx
 
-*PaaS or IaaS*. (January 13, 2018). Retrieved from Microsoft Azure:
-https://docs.microsoft.com/de-de/azure/sql-database/sql-database-paas-vs-sql-server-iaas
+*PaaS or IaaS*. (January 13, 2018). Retrieved from Microsoft Azure: https://docs.microsoft.com/de-de/azure/sql-database/sql-database-paas-vs-sql-server-iaas
 
-*Parallel Linux Operating System - Beowulf Gigaflop/s Workstation Project*.
-(January 12, 2018). Retrieved from ESS Project:
-https://www.hq.nasa.gov/hpcc/reports/annrpt97/accomps/ess/WW49.html
+*Parallel Linux Operating System - Beowulf Gigaflop/s Workstation Project*. (January 12, 2018). Retrieved from ESS Project: https://www.hq.nasa.gov/hpcc/reports/annrpt97/accomps/ess/WW49.html
 
-Pfister, G. (1997). *In Search of Clusters - The ongoing Battle in lowly Parallel
-Computing.* New Jersey: Prentice Hall.
+Pfister, G. (1997). *In Search of Clusters - The ongoing Battle in lowly Parallel Computing.* New Jersey: Prentice Hall.
 
-*Pods*. (January 10, 2018).
-Retrieved from kubernetes:
-https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/
+*Pods*. (January 10, 2018). Retrieved from kubernetes: https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/
 
-*Pods and Nodes*. (January 10, 2018). Retrieved from kubernetes Bootcamp:
-https://kubernetesbootcamp.github.io/kubernetes-bootcamp/3-1.html
+*Pods and Nodes*. (January 10, 2018). Retrieved from kubernetes Bootcamp: https://kubernetesbootcamp.github.io/kubernetes-bootcamp/3-1.html
 
-*Project list*. (January 8, 2018). Retrieved from BOINC:
-http://boinc.berkeley.edu/wiki/Project_list
+*Project list*. (January 8, 2018). Retrieved from BOINC: http://boinc.berkeley.edu/wiki/Project_list
 
-*Project to setup Boinc client in Docker for the RaspberryPi*. (January 30, 2018). Retrieved
-from Docker Hub: https://hub.docker.com/r/bunchc/rpi-boinc/
+*Project to setup Boinc client in Docker for the RaspberryPi*. (January 30, 2018). Retrieved from Docker Hub: https://hub.docker.com/r/bunchc/rpi-boinc/
 
-*projects*. (November 30, 2017). Retrieved from Climbers.net:
-http://climbers.net/sbc/diy-raspberry-pi-3-cluster/RPiCluster4b.png*Raspberry
-Pi 3 - self-heating.* (Dec 20, 2017). Retrieved from
-mikrocontroller.net:
-https://www.mikrocontroller.net/topic/393898
+*projects*. (November 30, 2017). Retrieved from Climbers.net: http://climbers.net/sbc/diy-raspberry-pi-3-cluster/RPiCluster4b.png
 
-*Raspberry Pi 3 GPIO Pin Chart with Pi*. (January 23, 2018). Retrieved from openclipart:
-https://openclipart.org/detail/280972/raspberry-pi-3-gpio-pin-chart-with-pi
+*Raspberry Pi 3 - self-heating.* (Dec 20, 2017). Retrieved from mikrocontroller.net: https://www.mikrocontroller.net/topic/393898
 
-*Raspberry Pi 3: Power consumption and CoreMark comparison*. (January 31, 2018).
-Retrieved from heise online:
-https://www.heise.de/ct/artikel/Raspberry-Pi-3-Leistungsaufnahme-und-CoreMark-Vergleich-3121139.html
+*Raspberry Pi 3 GPIO Pin Chart with Pi*. (January 23, 2018). Retrieved from openclipart: https://openclipart.org/detail/280972/raspberry-pi-3-gpio-pin-chart-with-pi
 
-Ries, C. B. (2012). *BOINC - high performance computing with Berkeley Open
-Infrastructure for Network Computing.* Heidelberg: Springer Vieweg.
+*Raspberry Pi 3: Power consumption and CoreMark comparison*. (January 31, 2018). Retrieved from heise online: https://www.heise.de/ct/artikel/Raspberry-Pi-3-Leistungsaufnahme-und-CoreMark-Vergleich-3121139.html
 
-*rkt - A security-minded, standards-based container engine*. (January 27,
-2018). Retrieved from CoreOS: https://coreos.com/rkt/
+Ries, C. B. (2012). *BOINC - high performance computing with Berkeley Open Infrastructure for Network Computing.* Heidelberg: Springer Vieweg.
 
-*RPiCluster - Overview*. (January 23, 2018). Retrieved from RPiCluster:
-https://bitbucket.org/jkiepert/rpiclusterSchill, A., & Springer, T.
-(2007). *Distributed systems - fundamentals and enabling technologies.*
-Heidelberg: Springer.
+*rkt - A security-minded, standards-based container engine*. (January 27, 2018). Retrieved from CoreOS: https://coreos.com/rkt/
 
-*SETI\@home - Your Computers*. (January 31, 2018).
-Retrieved from SETI\@home:
-https://setiathome.berkeley.edu/hosts_user.php
+*RPiCluster - Overview*. (January 23, 2018). Retrieved from RPiCluster: https://bitbucket.org/jkiepert/rpicluster
 
-Smith, N. (28. 11 2017). *Climbers.net*. Retrieved from DIY 5 Node Cluster of Raspberry Pi 3s:
-http://climbers.net/sbc/diy-raspberry-pi-3-cluster/
+Schill, A., & Springer, T. (2007). *Distributed systems - fundamentals and enabling technologies.* Heidelberg: Springer.
 
-*Swarm mode key concepts*. (January 27, 2018). Retrieved from docker docs:
-https://docs.docker.com/engine/swarm/key-concepts/
+*SETI\@home - Your Computers*. (January 31, 2018). Retrieved from SETI\@home: https://setiathome.berkeley.edu/hosts_user.php
 
-Tanenbaum, A. S. (2007). *Distributed systems - principles and paradigms.* New Jersey:
-Pearson Prentice Hall.
+Smith, N. (28. 11 2017). *Climbers.net*. Retrieved from DIY 5 Node Cluster of Raspberry Pi 3s: http://climbers.net/sbc/diy-raspberry-pi-3-cluster/
 
-*Technet*. (January 13, 2018). Retrieved from Microsoft:
-https://blogs.technet.microsoft.com/kevinremde/2011/04/03/saas-paas-and-iaas-oh-my-cloudy-april-part-3/
+*Swarm mode key concepts*. (January 27, 2018). Retrieved from docker docs: https://docs.docker.com/engine/swarm/key-concepts/
 
-*Top500 List*. (January 8, 2018). Retrieved from Top 500 The List:
-https://www.top500.org/list/2017/11/
+Tanenbaum, A. S. (2007). *Distributed systems - principles and paradigms.* New Jersey: Pearson Prentice Hall.
 
-Ulmann, B. (February 6, 2014). *IT
-basics.* FOM.
+*Technet*. (January 13, 2018). Retrieved from Microsoft: https://blogs.technet.microsoft.com/kevinremde/2011/04/03/saas-paas-and-iaas-oh-my-cloudy-april-part-3/
 
-*Our home galaxy - the Milky Way*. (January 23, 2018).
-Retrieved from planet wissen:
-https://www.planet-wissen.de/technik/weltraumforschung/astronomie/pwieunsereheimatgalaxiediemilchstrasse100.html
+*Top500 List*. (January 8, 2018). Retrieved from Top 500 The List: https://www.top500.org/list/2017/11/
 
-*VMS Software, Inc. Named Exclusive Developer of Future Versions of OpenVMS
-Operating System.* (January 20, 2018). Retrieved from BusinessWire:
-https://www.businesswire.com/news/home/20140731006118/en/VMS-Software-Named-Exclusive-Developer-Future-Versions
+Ulmann, B. (February 6, 2014). *IT basics.* FOM.
 
-*What is Kubernetes?* (January 10, 2018). Retrieved from kubernetes:
-https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/
+*Our home galaxy - the Milky Way*. (January 23, 2018). Retrieved from planet wissen: https://www.planet-wissen.de/technik/weltraumforschung/astronomie/pwieunsereheimatgalaxiediemilchstrasse100.html
+
+*VMS Software, Inc. Named Exclusive Developer of Future Versions of OpenVMS Operating System.* (January 20, 2018). Retrieved from BusinessWire: https://www.businesswire.com/news/home/20140731006118/en/VMS-Software-Named-Exclusive-Developer-Future-Versions
+
+*What is Kubernetes?* (January 10, 2018). Retrieved from kubernetes: https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/
 
 ## Appendix A - Script: Installing Kubernetes
 
