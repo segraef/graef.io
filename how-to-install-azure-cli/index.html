@@ -17,12 +17,12 @@
 <meta name=application-name content="graef.io - Sebastian Gräf">
 <meta name=apple-mobile-web-app-title content="graef.io - Sebastian Gräf"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://graef.io/how-to-install-azure-cli/><link rel=prev href=https://graef.io/basic-markdown-syntax/><link rel=next href=https://graef.io/how-to-install-powershell-7/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><meta name=google-site-verification content="google-site-verification=081I19l1P1J3FFLaw1uKtAtY5KcJx_Z9ywiKt60VGP4"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"How to install Azure CLI","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/graef.io\/how-to-install-azure-cli\/"},"image":["https:\/\/graef.io\/logo.png"],"genre":"posts","keywords":"til, cli, azure, az cli, bash","wordcount":166,"url":"https:\/\/graef.io\/how-to-install-azure-cli\/","datePublished":"2021-03-06T00:00:00+00:00","dateModified":"2021-03-06T00:00:00+00:00","publisher":{"@type":"Organization","name":"","logo":"https:\/\/graef.io\/logo.png"},"author":{"@type":"Person","name":"Sebastian Gräf"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://graef.io/how-to-install-azure-cli/><link rel=prev href=https://graef.io/basic-markdown-syntax/><link rel=next href=https://graef.io/how-to-install-powershell-7/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><meta name=google-site-verification content="google-site-verification=081I19l1P1J3FFLaw1uKtAtY5KcJx_Z9ywiKt60VGP4"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"How to install Azure CLI","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/graef.io\/how-to-install-azure-cli\/"},"image":["https:\/\/graef.io\/logo.png"],"genre":"posts","keywords":"TIL, CLI, Azure, az cli, Bash","wordcount":172,"url":"https:\/\/graef.io\/how-to-install-azure-cli\/","datePublished":"2021-03-06T00:00:00+00:00","dateModified":"2021-03-06T00:00:00+00:00","publisher":{"@type":"Organization","name":"","logo":"https:\/\/graef.io\/logo.png"},"author":{"@type":"Person","name":"Sebastian Gräf"},"description":""}</script></head>
 <body header-desktop=auto header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'light'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'light'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
 <div class=header-title>
-<a href=/ title="Automate everything "></a>
+<a href=/ title="Automate everything "><img class="lazyload logo" src=/svg/loading.min.svg data-src=/logo.png data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x" data-sizes=auto alt=/logo.png title=/logo.png></a>
 </div>
 <div class=menu>
 <div class=menu-inner><a class=menu-item href=/posts/ title=Posts> Posts </a><a class=menu-item href=/categories/projects/ title=Projects> Projects </a><a class=menu-item href=/categories/til/ title="Today I learned"> TIL </a><a class=menu-item href=/tags/ title=Tags> Tags </a><a class=menu-item href=/categories/ title=Categories> Categories </a><a class=menu-item href=/ title=Home><img src=/logo-62x62.png width=22 height=22 style=vertical-align:middle;margin:0> </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
@@ -46,7 +46,7 @@
 <div class=header-container>
 <div class=header-wrapper>
 <div class=header-title>
-<a href=/ title="Automate everything "></a>
+<a href=/ title="Automate everything "><img class="lazyload logo" src=/svg/loading.min.svg data-src=/logo.png data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x" data-sizes=auto alt=/logo.png title=/logo.png></a>
 </div>
 <div class=menu-toggle id=menu-toggle-mobile>
 <span></span><span></span><span></span>
@@ -85,7 +85,7 @@ Cancel
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">How to install Azure CLI</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=https://graef.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Sebastian Gräf</a></span>&nbsp;<span class=post-category>included in <a href=/categories/til/><i class="far fa-folder fa-fw"></i>Today I learned (TIL)</a>&nbsp;<a href=/categories/azure/><i class="far fa-folder fa-fw"></i>Azure</a>&nbsp;<a href=/categories/scripts/><i class="far fa-folder fa-fw"></i>Scripts</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Saturday, Mar 6, 2021">Saturday, Mar 6, 2021</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;166 words&nbsp;
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Saturday, Mar 6, 2021">Saturday, Mar 6, 2021</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;172 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
 </div><div class="details toc" id=toc-static kept>
 <div class="details-summary toc-title">
@@ -114,7 +114,9 @@ Cancel
 <span class=nb>iwr </span><span class=n>https</span><span class=err>:</span><span class=p>//</span><span class=n>aka</span><span class=p>.</span><span class=n>ms</span><span class=p>/</span><span class=n>installazurecliwindows</span> <span class=n>-OutFile</span> <span class=p>.\</span><span class=n>AzureCLI</span><span class=p>.</span><span class=n>msi</span><span class=p>;</span> <span class=nb>start </span><span class=n>msiexec</span><span class=p>.</span><span class=n>exe</span> <span class=n>-Wait</span> <span class=n>-ArgumentList</span> <span class=s1>&#39;/I AzureCLI.msi /quiet&#39;</span><span class=p>;</span> <span class=nb>rm </span><span class=p>.\</span><span class=n>AzureCLI</span><span class=p>.</span><span class=n>msi</span>
 </code></pre></td></tr></table>
 </div>
-</div><figure><img src=2021-08-07_111616.png>
+</div><figure><a class=lightgallery href=/how-to-install-azure-cli/2021-08-07_111616.png title=/how-to-install-azure-cli/2021-08-07_111616.png data-thumbnail=/how-to-install-azure-cli/2021-08-07_111616.png data-sub-html="<h2>.</h2>">
+<img class=lazyload src=/svg/loading.min.svg data-src=2021-08-07_111616.png data-srcset="/how-to-install-azure-cli/2021-08-07_111616.png, 2021-08-07_111616.png 1.5x, /how-to-install-azure-cli/2021-08-07_111616.png 2x" data-sizes=auto alt=/how-to-install-azure-cli/2021-08-07_111616.png>
+</a><figcaption class=image-caption>.</figcaption>
 </figure>
 <p>Following PowerShell Cmdlet aliases were used</p>
 <ul>
@@ -131,7 +133,9 @@ Cancel
 <div class=admonition-content>You can verify your Azure CLI version with <code>az --version</code></div>
 </div>
 </div>
-<figure><img src=2021-08-07_111617.png>
+<figure><a class=lightgallery href=2021-08-07_111617.png title=2021-08-07_111617.png data-thumbnail=2021-08-07_111617.png data-sub-html="<h2>.</h2>">
+<img class=lazyload src=/svg/loading.min.svg data-src=2021-08-07_111617.png data-srcset="2021-08-07_111617.png, 2021-08-07_111617.png 1.5x, 2021-08-07_111617.png 2x" data-sizes=auto alt=2021-08-07_111617.png>
+</a><figcaption class=image-caption>.</figcaption>
 </figure>
 <h3 id=one-liner-to-install-or-update-azure-cli-on-linux>One-liner to install or update Azure CLI on Linux</h3>
 <div class=highlight><div class=chroma>
@@ -144,7 +148,9 @@ Cancel
 curl -L https://aka.ms/InstallAzureCli <span class=p>|</span> bash
 </code></pre></td></tr></table>
 </div>
-</div><figure><img src=2021-08-07_111615.png>
+</div><figure><a class=lightgallery href=/how-to-install-azure-cli/2021-08-07_111615.png title=/how-to-install-azure-cli/2021-08-07_111615.png data-thumbnail=/how-to-install-azure-cli/2021-08-07_111615.png data-sub-html="<h2>.</h2>">
+<img class=lazyload src=/svg/loading.min.svg data-src=2021-08-07_111615.png data-srcset="/how-to-install-azure-cli/2021-08-07_111615.png, 2021-08-07_111615.png 1.5x, /how-to-install-azure-cli/2021-08-07_111615.png 2x" data-sizes=auto alt=/how-to-install-azure-cli/2021-08-07_111615.png>
+</a><figcaption class=image-caption>.</figcaption>
 </figure>
 <div class="details admonition tip open">
 <div class="details-summary admonition-title">
@@ -179,12 +185,12 @@ You may have to restart your shell in order for changes to take effect.</div>
 <div class=post-info-line>
 <div class=post-info-md></div>
 <div class=post-info-share>
-<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://graef.io/how-to-install-azure-cli/ data-title="How to install Azure CLI" data-via=segraef data-hashtags="til,cli,azure,az cli,bash"><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://graef.io/how-to-install-azure-cli/ data-hashtag=til><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://graef.io/how-to-install-azure-cli/><i class="fab fa-linkedin fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://graef.io/how-to-install-azure-cli/ data-title="How to install Azure CLI" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=https://graef.io/how-to-install-azure-cli/><i class="fab fa-reddit fa-fw"></i></a></span>
+<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://graef.io/how-to-install-azure-cli/ data-title="How to install Azure CLI" data-via=segraef data-hashtags="TIL,CLI,Azure,az cli,Bash"><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://graef.io/how-to-install-azure-cli/ data-hashtag=TIL><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://graef.io/how-to-install-azure-cli/><i class="fab fa-linkedin fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://graef.io/how-to-install-azure-cli/ data-title="How to install Azure CLI" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=https://graef.io/how-to-install-azure-cli/><i class="fab fa-reddit fa-fw"></i></a></span>
 </div>
 </div>
 </div>
 <div class=post-info-more>
-<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/til/>til</a>,&nbsp;<a href=/tags/cli/>cli</a>,&nbsp;<a href=/tags/azure/>azure</a>,&nbsp;<a href=/tags/az-cli/>az cli</a>,&nbsp;<a href=/tags/bash/>bash</a></section>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/til/>TIL</a>,&nbsp;<a href=/tags/cli/>CLI</a>,&nbsp;<a href=/tags/azure/>Azure</a>,&nbsp;<a href=/tags/az-cli/>az cli</a>,&nbsp;<a href=/tags/bash/>Bash</a></section>
 <section>
 <span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span>
 </section>

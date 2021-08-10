@@ -17,12 +17,12 @@
 <meta name=application-name content="graef.io - Sebastian Gräf">
 <meta name=apple-mobile-web-app-title content="graef.io - Sebastian Gräf"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://graef.io/how-to-install-powershell-7/><link rel=prev href=https://graef.io/how-to-install-azure-cli/><link rel=next href=https://graef.io/get-powershell-aliases/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><meta name=google-site-verification content="google-site-verification=081I19l1P1J3FFLaw1uKtAtY5KcJx_Z9ywiKt60VGP4"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"How to install and update Azure PowerShell 7","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/graef.io\/how-to-install-powershell-7\/"},"image":["https:\/\/graef.io\/logo.png"],"genre":"posts","keywords":"til","wordcount":112,"url":"https:\/\/graef.io\/how-to-install-powershell-7\/","datePublished":"2021-03-06T00:00:00+00:00","dateModified":"2021-03-06T00:00:00+00:00","publisher":{"@type":"Organization","name":"","logo":"https:\/\/graef.io\/logo.png"},"author":{"@type":"Person","name":"Sebastian Gräf"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://graef.io/how-to-install-powershell-7/><link rel=prev href=https://graef.io/how-to-install-azure-cli/><link rel=next href=https://graef.io/get-powershell-aliases/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><meta name=google-site-verification content="google-site-verification=081I19l1P1J3FFLaw1uKtAtY5KcJx_Z9ywiKt60VGP4"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"How to install and update Azure PowerShell 7","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/graef.io\/how-to-install-powershell-7\/"},"image":["https:\/\/graef.io\/logo.png"],"genre":"posts","keywords":"TIL, Azure, PowerShell, posh, pwsh, winget","wordcount":120,"url":"https:\/\/graef.io\/how-to-install-powershell-7\/","datePublished":"2021-03-06T00:00:00+00:00","dateModified":"2021-03-06T00:00:00+00:00","publisher":{"@type":"Organization","name":"","logo":"https:\/\/graef.io\/logo.png"},"author":{"@type":"Person","name":"Sebastian Gräf"},"description":""}</script></head>
 <body header-desktop=auto header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'light'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'light'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
 <div class=header-title>
-<a href=/ title="Automate everything "></a>
+<a href=/ title="Automate everything "><img class="lazyload logo" src=/svg/loading.min.svg data-src=/logo.png data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x" data-sizes=auto alt=/logo.png title=/logo.png></a>
 </div>
 <div class=menu>
 <div class=menu-inner><a class=menu-item href=/posts/ title=Posts> Posts </a><a class=menu-item href=/categories/projects/ title=Projects> Projects </a><a class=menu-item href=/categories/til/ title="Today I learned"> TIL </a><a class=menu-item href=/tags/ title=Tags> Tags </a><a class=menu-item href=/categories/ title=Categories> Categories </a><a class=menu-item href=/ title=Home><img src=/logo-62x62.png width=22 height=22 style=vertical-align:middle;margin:0> </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
@@ -46,7 +46,7 @@
 <div class=header-container>
 <div class=header-wrapper>
 <div class=header-title>
-<a href=/ title="Automate everything "></a>
+<a href=/ title="Automate everything "><img class="lazyload logo" src=/svg/loading.min.svg data-src=/logo.png data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x" data-sizes=auto alt=/logo.png title=/logo.png></a>
 </div>
 <div class=menu-toggle id=menu-toggle-mobile>
 <span></span><span></span><span></span>
@@ -84,8 +84,8 @@ Cancel
 <h2 class=toc-title>Contents</h2>
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">How to install and update Azure PowerShell 7</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=https://graef.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Sebastian Gräf</a></span>&nbsp;<span class=post-category>included in <a href=/categories/til/><i class="far fa-folder fa-fw"></i>Today I learned (TIL)</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Saturday, Mar 6, 2021">Saturday, Mar 6, 2021</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;112 words&nbsp;
+<div class=post-meta-line><span class=post-author><a href=https://graef.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Sebastian Gräf</a></span>&nbsp;<span class=post-category>included in <a href=/categories/til/><i class="far fa-folder fa-fw"></i>Today I learned (TIL)</a>&nbsp;<a href=/categories/azure/><i class="far fa-folder fa-fw"></i>Azure</a></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Saturday, Mar 6, 2021">Saturday, Mar 6, 2021</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;120 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
 </div><div class="details toc" id=toc-static kept>
 <div class="details-summary toc-title">
@@ -117,9 +117,13 @@ Cancel
 <span class=nb>iex </span><span class=s2>&#34;&amp; { </span><span class=p>$(</span><span class=nb>irm </span><span class=n>https</span><span class=err>:</span><span class=p>//</span><span class=n>aka</span><span class=p>.</span><span class=n>ms</span><span class=p>/</span><span class=nb>install-powershell</span><span class=p>.</span><span class=n>ps1</span><span class=p>)</span><span class=s2> } -UseMSI&#34;</span>
 </code></pre></td></tr></table>
 </div>
-</div><figure><img src=2021-08-07_111612.png>
+</div><figure><a class=lightgallery href=/how-to-install-powershell-7/2021-08-07_111612.png title=/how-to-install-powershell-7/2021-08-07_111612.png data-thumbnail=/how-to-install-powershell-7/2021-08-07_111612.png data-sub-html="<h2>.</h2>">
+<img class=lazyload src=/svg/loading.min.svg data-src=2021-08-07_111612.png data-srcset="/how-to-install-powershell-7/2021-08-07_111612.png, 2021-08-07_111612.png 1.5x, /how-to-install-powershell-7/2021-08-07_111612.png 2x" data-sizes=auto alt=/how-to-install-powershell-7/2021-08-07_111612.png>
+</a><figcaption class=image-caption>.</figcaption>
 </figure>
-<figure><img src=2021-08-07_111613.png>
+<figure><a class=lightgallery href=/how-to-install-powershell-7/2021-08-07_111613.png title=/how-to-install-powershell-7/2021-08-07_111613.png data-thumbnail=/how-to-install-powershell-7/2021-08-07_111613.png data-sub-html="<h2>.</h2>">
+<img class=lazyload src=/svg/loading.min.svg data-src=2021-08-07_111613.png data-srcset="/how-to-install-powershell-7/2021-08-07_111613.png, 2021-08-07_111613.png 1.5x, /how-to-install-powershell-7/2021-08-07_111613.png 2x" data-sizes=auto alt=/how-to-install-powershell-7/2021-08-07_111613.png>
+</a><figcaption class=image-caption>.</figcaption>
 </figure>
 <h3 id=one-liner-to-install-or-update-powershell-7-on-linux>One-liner to install or update PowerShell 7 on Linux</h3>
 <div class=highlight><div class=chroma>
@@ -132,7 +136,9 @@ Cancel
 <span class=nb>wget </span><span class=n>https</span><span class=err>:</span><span class=p>//</span><span class=n>aka</span><span class=p>.</span><span class=n>ms</span><span class=p>/</span><span class=nb>install-powershell</span><span class=p>.</span><span class=n>sh</span><span class=p>;</span> <span class=n>sudo</span> <span class=n>bash</span> <span class=nb>install-powershell</span><span class=p>.</span><span class=n>sh</span><span class=p>;</span> <span class=nb>rm install-powershell</span><span class=p>.</span><span class=n>sh</span>
 </code></pre></td></tr></table>
 </div>
-</div><figure><img src=2021-08-07_111614.png>
+</div><figure><a class=lightgallery href=/how-to-install-powershell-7/2021-08-07_111614.png title=/how-to-install-powershell-7/2021-08-07_111614.png data-thumbnail=/how-to-install-powershell-7/2021-08-07_111614.png data-sub-html="<h2>.</h2>">
+<img class=lazyload src=/svg/loading.min.svg data-src=2021-08-07_111614.png data-srcset="/how-to-install-powershell-7/2021-08-07_111614.png, 2021-08-07_111614.png 1.5x, /how-to-install-powershell-7/2021-08-07_111614.png 2x" data-sizes=auto alt=/how-to-install-powershell-7/2021-08-07_111614.png>
+</a><figcaption class=image-caption>.</figcaption>
 </figure>
 <h3 id=install-powershell-7-using-winget>Install PowerShell 7 using winget</h3>
 <div class=highlight><div class=chroma>
@@ -153,7 +159,9 @@ Cancel
 <div class=admonition-content>You can start your PowerShell 7 session with <code>pwsh</code></div>
 </div>
 </div>
-<figure><img src=2021-08-07_111615.png>
+<figure><a class=lightgallery href=2021-08-07_111615.png title=2021-08-07_111615.png data-thumbnail=2021-08-07_111615.png data-sub-html="<h2>.</h2>">
+<img class=lazyload src=/svg/loading.min.svg data-src=2021-08-07_111615.png data-srcset="2021-08-07_111615.png, 2021-08-07_111615.png 1.5x, 2021-08-07_111615.png 2x" data-sizes=auto alt=2021-08-07_111615.png>
+</a><figcaption class=image-caption>.</figcaption>
 </figure>
 <div class="details admonition list open">
 <div class="details-summary admonition-title">
@@ -177,12 +185,12 @@ Cancel
 <div class=post-info-line>
 <div class=post-info-md></div>
 <div class=post-info-share>
-<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://graef.io/how-to-install-powershell-7/ data-title="How to install and update Azure PowerShell 7" data-via=segraef data-hashtags=til><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://graef.io/how-to-install-powershell-7/ data-hashtag=til><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://graef.io/how-to-install-powershell-7/><i class="fab fa-linkedin fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://graef.io/how-to-install-powershell-7/ data-title="How to install and update Azure PowerShell 7" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=https://graef.io/how-to-install-powershell-7/><i class="fab fa-reddit fa-fw"></i></a></span>
+<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://graef.io/how-to-install-powershell-7/ data-title="How to install and update Azure PowerShell 7" data-via=segraef data-hashtags=TIL,Azure,PowerShell,posh,pwsh,winget><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://graef.io/how-to-install-powershell-7/ data-hashtag=TIL><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://graef.io/how-to-install-powershell-7/><i class="fab fa-linkedin fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://graef.io/how-to-install-powershell-7/ data-title="How to install and update Azure PowerShell 7" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=https://graef.io/how-to-install-powershell-7/><i class="fab fa-reddit fa-fw"></i></a></span>
 </div>
 </div>
 </div>
 <div class=post-info-more>
-<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/til/>til</a></section>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/til/>TIL</a>,&nbsp;<a href=/tags/azure/>Azure</a>,&nbsp;<a href=/tags/powershell/>PowerShell</a>,&nbsp;<a href=/tags/posh/>posh</a>,&nbsp;<a href=/tags/pwsh/>pwsh</a>,&nbsp;<a href=/tags/winget/>winget</a></section>
 <section>
 <span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span>
 </section>

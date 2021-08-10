@@ -3,9 +3,9 @@
 
 > **Today I learned** How to get a list of PowerShell Aliases.
 
-<!--more-->
-
 An alias is an alternate name for a cmdlet, function, executable file, including scripts. PowerShell includes a set of built-in aliases. You can add your own aliases to the current session and to your PowerShell profile.
+
+<!--more-->
 
 ```powershell
 # Cmdlet
@@ -20,7 +20,7 @@ Get-Alias | select Name, Definition
 
 Which gives you the following Outputs
 
-{{< figure src="featured-image-preview.png" >}}
+{{< image src="featured-image-preview.png" caption="Output" >}}
 
 ```powershell
 Name               Definition

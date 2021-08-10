@@ -3,19 +3,19 @@
 
 > **Today I learned** How to ***find and replace*** with a newline in Visual Studio Code.
 
-<!--more-->
-
 In the local searchbox (<kbd>Ctrl</kbd> + <kbd>F</kbd>) you can insert newlines by pressing <kbd>Ctrl</kbd> + <kbd>Enter</kbd>.
 
-{{< figure src="multiple-line-support.gif" >}}
+<!--more-->
+
+{{< image src="multiple-line-support.gif" >}}
 
 If you use the global search (<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd>) you can insert newlines by pressing <kbd>Shift</kbd> + <kbd>Enter</kbd>.
 
-{{< figure src="2021-08-06_15-23-51.png" >}}
+{{< image src="2021-08-06_15-23-51.png" caption="." >}}
 
 If you want to search for multilines by the character literal, remember to check the rightmost regex icon.
 
-{{< figure src="regex.png" >}}
+{{< image src="regex.png" caption="." >}}
 
 {{< admonition info References >}}
 <!---

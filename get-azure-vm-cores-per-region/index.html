@@ -5,9 +5,7 @@
 <meta name=robots content="noodp">
 <meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
 <title>Get Azure VM Cores (vCPUs) per Region - Automate everything </title><meta name=Description content="Automate everything - Sebastian Gräf"><meta property="og:title" content="Get Azure VM Cores (vCPUs) per Region">
-<meta property="og:description" content="If you need a script which outputs you the overall VMCore amount per region, there you go. This is a snippet from a RunBook which iterates also through each subscription before, so you would get all amount of used cores per subscription as well as per region.
-I took the advantage of using Get-AzVMUsage.
-Snippet 1 2 3 4 5 6 7 8 9 10 11 12  $AzureLocations = Get-AzLocation | Select-Object DisplayName $Result = @() ForEach ($AzureLocation in $AzureLocations) { $CoreAmount = Get-AzVMUsage -Location $AzureLocation.">
+<meta property="og:description" content="If you need a script which outputs you the overall VMCore amount per region, there you go.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://graef.io/get-azure-vm-cores-per-region/"><meta property="og:image" content="https://graef.io/get-azure-vm-cores-per-region/featured-image.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2019-02-21T00:00:00+00:00">
@@ -15,18 +13,16 @@ Snippet 1 2 3 4 5 6 7 8 9 10 11 12  $AzureLocations = Get-AzLocation | Select-Ob
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://graef.io/get-azure-vm-cores-per-region/featured-image.png">
 <meta name=twitter:title content="Get Azure VM Cores (vCPUs) per Region">
-<meta name=twitter:description content="If you need a script which outputs you the overall VMCore amount per region, there you go. This is a snippet from a RunBook which iterates also through each subscription before, so you would get all amount of used cores per subscription as well as per region.
-I took the advantage of using Get-AzVMUsage.
-Snippet 1 2 3 4 5 6 7 8 9 10 11 12  $AzureLocations = Get-AzLocation | Select-Object DisplayName $Result = @() ForEach ($AzureLocation in $AzureLocations) { $CoreAmount = Get-AzVMUsage -Location $AzureLocation.">
+<meta name=twitter:description content="If you need a script which outputs you the overall VMCore amount per region, there you go.">
 <meta name=application-name content="graef.io - Sebastian Gräf">
 <meta name=apple-mobile-web-app-title content="graef.io - Sebastian Gräf"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://graef.io/get-azure-vm-cores-per-region/><link rel=prev href=https://graef.io/get-local-account-memberships/><link rel=next href=https://graef.io/function-lock-workstation-locally-and-remotely/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><meta name=google-site-verification content="google-site-verification=081I19l1P1J3FFLaw1uKtAtY5KcJx_Z9ywiKt60VGP4"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Get Azure VM Cores (vCPUs) per Region","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/graef.io\/get-azure-vm-cores-per-region\/"},"image":["https:\/\/graef.io\/logo.png"],"genre":"posts","keywords":"automation, powershell, azure, iaas, vm, vcpu, azureregion","wordcount":117,"url":"https:\/\/graef.io\/get-azure-vm-cores-per-region\/","datePublished":"2019-02-21T00:00:00+00:00","dateModified":"2021-02-22T00:00:00+00:00","publisher":{"@type":"Organization","name":"","logo":"https:\/\/graef.io\/logo.png"},"author":{"@type":"Person","name":"Sebastian Gräf"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://graef.io/get-azure-vm-cores-per-region/><link rel=prev href=https://graef.io/get-local-account-memberships/><link rel=next href=https://graef.io/function-lock-workstation-locally-and-remotely/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><meta name=google-site-verification content="google-site-verification=081I19l1P1J3FFLaw1uKtAtY5KcJx_Z9ywiKt60VGP4"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Get Azure VM Cores (vCPUs) per Region","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/graef.io\/get-azure-vm-cores-per-region\/"},"image":["https:\/\/graef.io\/logo.png"],"genre":"posts","keywords":"Automation, PowerShell, Azure, iaas, VM, vCPU, azureregion","wordcount":119,"url":"https:\/\/graef.io\/get-azure-vm-cores-per-region\/","datePublished":"2019-02-21T00:00:00+00:00","dateModified":"2021-02-22T00:00:00+00:00","publisher":{"@type":"Organization","name":"","logo":"https:\/\/graef.io\/logo.png"},"author":{"@type":"Person","name":"Sebastian Gräf"},"description":""}</script></head>
 <body header-desktop=auto header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'light'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'light'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
 <div class=header-title>
-<a href=/ title="Automate everything "></a>
+<a href=/ title="Automate everything "><img class="lazyload logo" src=/svg/loading.min.svg data-src=/logo.png data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x" data-sizes=auto alt=/logo.png title=/logo.png></a>
 </div>
 <div class=menu>
 <div class=menu-inner><a class=menu-item href=/posts/ title=Posts> Posts </a><a class=menu-item href=/categories/projects/ title=Projects> Projects </a><a class=menu-item href=/categories/til/ title="Today I learned"> TIL </a><a class=menu-item href=/tags/ title=Tags> Tags </a><a class=menu-item href=/categories/ title=Categories> Categories </a><a class=menu-item href=/ title=Home><img src=/logo-62x62.png width=22 height=22 style=vertical-align:middle;margin:0> </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
@@ -50,7 +46,7 @@ Snippet 1 2 3 4 5 6 7 8 9 10 11 12  $AzureLocations = Get-AzLocation | Select-Ob
 <div class=header-container>
 <div class=header-wrapper>
 <div class=header-title>
-<a href=/ title="Automate everything "></a>
+<a href=/ title="Automate everything "><img class="lazyload logo" src=/svg/loading.min.svg data-src=/logo.png data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x" data-sizes=auto alt=/logo.png title=/logo.png></a>
 </div>
 <div class=menu-toggle id=menu-toggle-mobile>
 <span></span><span></span><span></span>
@@ -88,8 +84,8 @@ Cancel
 <h2 class=toc-title>Contents</h2>
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">Get Azure VM Cores (vCPUs) per Region</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=https://graef.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Sebastian Gräf</a></span>&nbsp;<span class=post-category>included in <a href=/categories/azure/><i class="far fa-folder fa-fw"></i>Azure</a>&nbsp;<a href=/categories/iaas/><i class="far fa-folder fa-fw"></i>IaaS</a>&nbsp;<a href=/categories/scripts/><i class="far fa-folder fa-fw"></i>Scripts</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Thursday, Feb 21, 2019">Thursday, Feb 21, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;117 words&nbsp;
+<div class=post-meta-line><span class=post-author><a href=https://graef.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Sebastian Gräf</a></span>&nbsp;<span class=post-category>included in <a href=/categories/azure/><i class="far fa-folder fa-fw"></i>Azure</a>&nbsp;<a href=/categories/scripts/><i class="far fa-folder fa-fw"></i>Scripts</a></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Thursday, Feb 21, 2019">Thursday, Feb 21, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;119 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
 </div><div class=featured-image><img class=lazyload src=/svg/loading.min.svg data-src=/get-azure-vm-cores-per-region/featured-image.png data-srcset="/get-azure-vm-cores-per-region/featured-image.png, /get-azure-vm-cores-per-region/featured-image.png 1.5x, /get-azure-vm-cores-per-region/featured-image.png 2x" data-sizes=auto alt=/get-azure-vm-cores-per-region/featured-image.png title=/get-azure-vm-cores-per-region/featured-image.png></div><div class="details toc" id=toc-static kept>
 <div class="details-summary toc-title">
@@ -106,8 +102,8 @@ Cancel
 </li>
 </ul>
 </nav></div>
-</div><div class=content id=content><p>If you need a script which outputs you the overall VMCore amount per region, there you go.
-This is a snippet from a RunBook which iterates also through each subscription before, so you would get all amount of used cores per subscription as well as per region.</p>
+</div><div class=content id=content><p>If you need a script which outputs you the overall VMCore amount per region, there you go.</p>
+<p>This is a snippet from a RunBook which iterates also through each subscription before, so you would get all amount of used cores per subscription as well as per region.</p>
 <p>I took the advantage of using Get-AzVMUsage.</p>
 <h3 id=snippet>Snippet</h3>
 <div class=highlight><div class=chroma>
@@ -141,8 +137,10 @@ This is a snippet from a RunBook which iterates also through each subscription b
 </code></pre></td></tr></table>
 </div>
 </div><h3 id=output>Output</h3>
-<p><img class=lazyload src=/svg/loading.min.svg data-src=2021-02-21-14-30-27.png data-srcset="/get-azure-vm-cores-per-region/2021-02-21-14-30-27.png, 2021-02-21-14-30-27.png 1.5x, /get-azure-vm-cores-per-region/2021-02-21-14-30-27.png 2x" data-sizes=auto alt=/get-azure-vm-cores-per-region/2021-02-21-14-30-27.png title=/get-azure-vm-cores-per-region/2021-02-21-14-30-27.png></p>
-</div><div class=post-footer id=post-footer>
+<figure><a class=lightgallery href=/get-azure-vm-cores-per-region/2021-02-21-14-30-27.png title=/get-azure-vm-cores-per-region/2021-02-21-14-30-27.png data-thumbnail=/get-azure-vm-cores-per-region/2021-02-21-14-30-27.png data-sub-html="<h2>.</h2>">
+<img class=lazyload src=/svg/loading.min.svg data-src=2021-02-21-14-30-27.png data-srcset="/get-azure-vm-cores-per-region/2021-02-21-14-30-27.png, 2021-02-21-14-30-27.png 1.5x, /get-azure-vm-cores-per-region/2021-02-21-14-30-27.png 2x" data-sizes=auto alt=/get-azure-vm-cores-per-region/2021-02-21-14-30-27.png>
+</a><figcaption class=image-caption>.</figcaption>
+</figure></div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
@@ -153,12 +151,12 @@ This is a snippet from a RunBook which iterates also through each subscription b
 <div class=post-info-line>
 <div class=post-info-md></div>
 <div class=post-info-share>
-<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://graef.io/get-azure-vm-cores-per-region/ data-title="Get Azure VM Cores (vCPUs) per Region" data-via=segraef data-hashtags=automation,powershell,azure,iaas,vm,vcpu,azureregion><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://graef.io/get-azure-vm-cores-per-region/ data-hashtag=automation><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://graef.io/get-azure-vm-cores-per-region/><i class="fab fa-linkedin fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://graef.io/get-azure-vm-cores-per-region/ data-title="Get Azure VM Cores (vCPUs) per Region" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=https://graef.io/get-azure-vm-cores-per-region/><i class="fab fa-reddit fa-fw"></i></a></span>
+<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://graef.io/get-azure-vm-cores-per-region/ data-title="Get Azure VM Cores (vCPUs) per Region" data-via=segraef data-hashtags=Automation,PowerShell,Azure,iaas,VM,vCPU,azureregion><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://graef.io/get-azure-vm-cores-per-region/ data-hashtag=Automation><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://graef.io/get-azure-vm-cores-per-region/><i class="fab fa-linkedin fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://graef.io/get-azure-vm-cores-per-region/ data-title="Get Azure VM Cores (vCPUs) per Region" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=https://graef.io/get-azure-vm-cores-per-region/><i class="fab fa-reddit fa-fw"></i></a></span>
 </div>
 </div>
 </div>
 <div class=post-info-more>
-<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/automation/>automation</a>,&nbsp;<a href=/tags/powershell/>powershell</a>,&nbsp;<a href=/tags/azure/>azure</a>,&nbsp;<a href=/tags/iaas/>iaas</a>,&nbsp;<a href=/tags/vm/>vm</a>,&nbsp;<a href=/tags/vcpu/>vcpu</a>,&nbsp;<a href=/tags/azureregion/>azureregion</a></section>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/automation/>Automation</a>,&nbsp;<a href=/tags/powershell/>PowerShell</a>,&nbsp;<a href=/tags/azure/>Azure</a>,&nbsp;<a href=/tags/iaas/>iaas</a>,&nbsp;<a href=/tags/vm/>VM</a>,&nbsp;<a href=/tags/vcpu/>vCPU</a>,&nbsp;<a href=/tags/azureregion/>azureregion</a></section>
 <section>
 <span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span>
 </section>

@@ -1,7 +1,7 @@
 # Get and Set Timezones via PowerShell remotely
 
 
-As published in my Technet Gallery Script Center [here](https://gallery.technet.microsoft.com/scriptcenter/Get-Timezones-PowerShell-24781869), you can get current timezones remotely via PowerShell with Get-Timezones. Get-Timezones is using WMI to communicate with your servers.
+As published in my Technet Gallery Script Center [here](https://gallery.technet.microsoft.com/scriptcenter/Get-Timezones-PowerShell-24781869), you can get current timezones remotely via PowerShell with Get-Timezones. Get-Timezones is using `WMI` to communicate with your servers.
 
 ```powershell
 Function Get-Timezones {
@@ -90,7 +90,7 @@ Function Get-Timezones {
 This will give you following output:
 
 
-![](2021-02-21-15-32-21.png)
+{{< image src="2021-02-21-15-32-21.png" caption="." >}}
 
 
 With Set-Timezone you can set timezones remotely. If you need to disable automatic daylight saving time you can add the additional parameter DSTOff.
@@ -212,7 +212,7 @@ Function Set-Timezones {
 
 This will give you following output:
 
-![](2021-02-21-15-30-27.png)
+{{< image src="2021-02-21-15-30-27.png" caption="." >}}
 
 
 To get a full list of all timezone IDs type "tzutil /l” and you will get following list:

@@ -75,10 +75,10 @@ Based on this structure `New-AzPipeline.ps1` recognizes
 
 ## Impressions
 
-![](2020-05-28-16-50-18.png)
-![](2020-05-28-16-53-31.png)
-![](2020-05-28-16-27-23.png)
-![](2020-05-28-16-48-26.png)
+{{< image src="2020-05-28-16-50-18.png" caption="." >}}
+{{< image src="2020-05-28-16-53-31.png" caption="." >}}
+{{< image src="2020-05-28-16-27-23.png" caption="." >}}
+{{< image src="2020-05-28-16-48-26.png" caption="." >}}
 
 ## Contributions
 

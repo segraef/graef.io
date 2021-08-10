@@ -12,9 +12,9 @@ Let's keep it easy with these one-liner's you can use for Windows as well as Lin
 
 iex "& { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI"
 ```
-{{< figure src="2021-08-07_111612.png" >}}
+{{< image src="2021-08-07_111612.png" caption="." >}}
 
-{{< figure src="2021-08-07_111613.png" >}}
+{{< image src="2021-08-07_111613.png" caption="." >}}
 
 ### One-liner to install or update PowerShell 7 on Linux
 
@@ -23,7 +23,7 @@ iex "& { $(irm https://aka.ms/install-powershell.ps1) } -UseMSI"
 wget https://aka.ms/install-powershell.sh; sudo bash install-powershell.sh; rm install-powershell.sh
 ```
 
-{{< figure src="2021-08-07_111614.png" >}}
+{{< image src="2021-08-07_111614.png" caption="." >}}
 
 ### Install PowerShell 7 using winget
 
@@ -37,7 +37,7 @@ You can start your PowerShell 7 session with `pwsh`
 
 {{< /admonition >}}
 
-{{< figure src="2021-08-07_111615.png" >}}
+{{< image src="2021-08-07_111615.png" caption="." >}}
 
 {{< admonition list References >}}
 

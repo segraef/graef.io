@@ -9,7 +9,7 @@ If a Cluster Core Resource like File Share Witness or Disk Quorum is in a failin
 
 To increase restart attempts for the Cluster Core Resource you need to adjust the "Response to resource failure” policy from one hour to 15 minutes.
 
-![](2017-06-01_12-31-03.png)
+{{< image src="2017-06-01_12-31-03.png" caption="." >}}
 
 So with a given period for restarts of 15 minutes, maximum restarts in the specified period of 1 and "If all the restart attempts fail, begin restarting again after the specified period of period” of 15 minutes. The resource will try restarting itself again every 15 minutes instead every hour until it’s brought back up online.
 

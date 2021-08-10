@@ -7,7 +7,8 @@
 <title>How to get a list of PowerShell Aliases - Automate everything </title><meta name=Description content="Automate everything - Sebastian Gräf"><meta property="og:title" content="How to get a list of PowerShell Aliases">
 <meta property="og:description" content="
 Today I learned How to get a list of PowerShell Aliases.
-">
+
+An alias is an alternate name for a cmdlet, function, executable file, including scripts. PowerShell includes a set of built-in aliases. You can add your own aliases to the current session and to your PowerShell profile.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://graef.io/get-powershell-aliases/"><meta property="og:image" content="https://graef.io/get-powershell-aliases/featured-image-preview.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-08-01T09:33:25+08:00">
@@ -17,16 +18,17 @@ Today I learned How to get a list of PowerShell Aliases.
 <meta name=twitter:title content="How to get a list of PowerShell Aliases">
 <meta name=twitter:description content="
 Today I learned How to get a list of PowerShell Aliases.
-">
+
+An alias is an alternate name for a cmdlet, function, executable file, including scripts. PowerShell includes a set of built-in aliases. You can add your own aliases to the current session and to your PowerShell profile.">
 <meta name=application-name content="graef.io - Sebastian Gräf">
 <meta name=apple-mobile-web-app-title content="graef.io - Sebastian Gräf"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://graef.io/get-powershell-aliases/><link rel=prev href=https://graef.io/how-to-install-powershell-7/><link rel=next href=https://graef.io/visual-studio-code-keyboard-shortcuts/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><meta name=google-site-verification content="google-site-verification=081I19l1P1J3FFLaw1uKtAtY5KcJx_Z9ywiKt60VGP4"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"How to get a list of PowerShell Aliases","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/graef.io\/get-powershell-aliases\/"},"image":["https:\/\/graef.io\/logo.png"],"genre":"posts","keywords":"til, powershell, scripts, get-alias, alias","wordcount":509,"url":"https:\/\/graef.io\/get-powershell-aliases\/","datePublished":"2021-08-01T09:33:25+08:00","dateModified":"2021-08-01T09:33:25+08:00","publisher":{"@type":"Organization","name":"","logo":"https:\/\/graef.io\/logo.png"},"author":{"@type":"Person","name":"Sebastian Gräf"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://graef.io/get-powershell-aliases/><link rel=prev href=https://graef.io/how-to-install-powershell-7/><link rel=next href=https://graef.io/visual-studio-code-keyboard-shortcuts/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><meta name=google-site-verification content="google-site-verification=081I19l1P1J3FFLaw1uKtAtY5KcJx_Z9ywiKt60VGP4"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"How to get a list of PowerShell Aliases","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/graef.io\/get-powershell-aliases\/"},"image":["https:\/\/graef.io\/logo.png"],"genre":"posts","keywords":"TIL, PowerShell, scripts, get-alias, alias","wordcount":511,"url":"https:\/\/graef.io\/get-powershell-aliases\/","datePublished":"2021-08-01T09:33:25+08:00","dateModified":"2021-08-01T09:33:25+08:00","publisher":{"@type":"Organization","name":"","logo":"https:\/\/graef.io\/logo.png"},"author":{"@type":"Person","name":"Sebastian Gräf"},"description":""}</script></head>
 <body header-desktop=auto header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'light'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'light'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
 <div class=header-title>
-<a href=/ title="Automate everything "></a>
+<a href=/ title="Automate everything "><img class="lazyload logo" src=/svg/loading.min.svg data-src=/logo.png data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x" data-sizes=auto alt=/logo.png title=/logo.png></a>
 </div>
 <div class=menu>
 <div class=menu-inner><a class=menu-item href=/posts/ title=Posts> Posts </a><a class=menu-item href=/categories/projects/ title=Projects> Projects </a><a class=menu-item href=/categories/til/ title="Today I learned"> TIL </a><a class=menu-item href=/tags/ title=Tags> Tags </a><a class=menu-item href=/categories/ title=Categories> Categories </a><a class=menu-item href=/ title=Home><img src=/logo-62x62.png width=22 height=22 style=vertical-align:middle;margin:0> </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
@@ -50,7 +52,7 @@ Today I learned How to get a list of PowerShell Aliases.
 <div class=header-container>
 <div class=header-wrapper>
 <div class=header-title>
-<a href=/ title="Automate everything "></a>
+<a href=/ title="Automate everything "><img class="lazyload logo" src=/svg/loading.min.svg data-src=/logo.png data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x" data-sizes=auto alt=/logo.png title=/logo.png></a>
 </div>
 <div class=menu-toggle id=menu-toggle-mobile>
 <span></span><span></span><span></span>
@@ -86,7 +88,7 @@ Cancel
 <main class=main>
 <div class=container><article class="page single"><h1 class="single-title animated flipInX">How to get a list of PowerShell Aliases</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=https://graef.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Sebastian Gräf</a></span>&nbsp;<span class=post-category>included in <a href=/categories/til/><i class="far fa-folder fa-fw"></i>Today I learned (TIL)</a>&nbsp;<a href=/categories/powershell/><i class="far fa-folder fa-fw"></i>PowerShell</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Sunday, Aug 1, 2021">Sunday, Aug 1, 2021</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;509 words&nbsp;
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Sunday, Aug 1, 2021">Sunday, Aug 1, 2021</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;511 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
 </div><div class=content id=content><blockquote>
 <p><strong>Today I learned</strong> How to get a list of PowerShell Aliases.</p>
@@ -115,7 +117,9 @@ Cancel
 </code></pre></td></tr></table>
 </div>
 </div><p>Which gives you the following Outputs</p>
-<figure><img src=featured-image-preview.png>
+<figure><a class=lightgallery href=featured-image-preview.png title=featured-image-preview.png data-thumbnail=featured-image-preview.png data-sub-html="<h2>Output</h2>">
+<img class=lazyload src=/svg/loading.min.svg data-src=featured-image-preview.png data-srcset="featured-image-preview.png, featured-image-preview.png 1.5x, featured-image-preview.png 2x" data-sizes=auto alt=featured-image-preview.png>
+</a><figcaption class=image-caption>Output</figcaption>
 </figure>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
@@ -430,12 +434,12 @@ Cancel
 <div class=post-info-line>
 <div class=post-info-md></div>
 <div class=post-info-share>
-<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://graef.io/get-powershell-aliases/ data-title="How to get a list of PowerShell Aliases" data-via=segraef data-hashtags=til,powershell,scripts,get-alias,alias><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://graef.io/get-powershell-aliases/ data-hashtag=til><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://graef.io/get-powershell-aliases/><i class="fab fa-linkedin fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://graef.io/get-powershell-aliases/ data-title="How to get a list of PowerShell Aliases" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=https://graef.io/get-powershell-aliases/><i class="fab fa-reddit fa-fw"></i></a></span>
+<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://graef.io/get-powershell-aliases/ data-title="How to get a list of PowerShell Aliases" data-via=segraef data-hashtags=TIL,PowerShell,scripts,get-alias,alias><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://graef.io/get-powershell-aliases/ data-hashtag=TIL><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://graef.io/get-powershell-aliases/><i class="fab fa-linkedin fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://graef.io/get-powershell-aliases/ data-title="How to get a list of PowerShell Aliases" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=https://graef.io/get-powershell-aliases/><i class="fab fa-reddit fa-fw"></i></a></span>
 </div>
 </div>
 </div>
 <div class=post-info-more>
-<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/til/>til</a>,&nbsp;<a href=/tags/powershell/>powershell</a>,&nbsp;<a href=/tags/scripts/>scripts</a>,&nbsp;<a href=/tags/get-alias/>get-alias</a>,&nbsp;<a href=/tags/alias/>alias</a></section>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/til/>TIL</a>,&nbsp;<a href=/tags/powershell/>PowerShell</a>,&nbsp;<a href=/tags/scripts/>scripts</a>,&nbsp;<a href=/tags/get-alias/>get-alias</a>,&nbsp;<a href=/tags/alias/>alias</a></section>
 <section>
 <span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span>
 </section>

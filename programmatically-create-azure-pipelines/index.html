@@ -17,12 +17,12 @@
 <meta name=application-name content="graef.io - Sebastian Gräf">
 <meta name=apple-mobile-web-app-title content="graef.io - Sebastian Gräf"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://graef.io/programmatically-create-azure-pipelines/><link rel=prev href=https://graef.io/function-lock-workstation-locally-and-remotely/><link rel=next href=https://graef.io/markdown-syntax-guide/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><meta name=google-site-verification content="google-site-verification=081I19l1P1J3FFLaw1uKtAtY5KcJx_Z9ywiKt60VGP4"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Programmatically Create Azure Pipelines","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/graef.io\/programmatically-create-azure-pipelines\/"},"image":["https:\/\/graef.io\/logo.png"],"genre":"posts","keywords":"azure, pipeline, cicd, automation, powershell, devops, ado, scripts","wordcount":299,"url":"https:\/\/graef.io\/programmatically-create-azure-pipelines\/","datePublished":"2020-03-07T13:10:29+08:00","dateModified":"2020-03-07T13:10:29+08:00","publisher":{"@type":"Organization","name":"","logo":"https:\/\/graef.io\/logo.png"},"author":{"@type":"Person","name":"Sebastian Gräf"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://graef.io/programmatically-create-azure-pipelines/><link rel=prev href=https://graef.io/function-lock-workstation-locally-and-remotely/><link rel=next href=https://graef.io/azure-pipelines-container-agents-for-azure-devops/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><meta name=google-site-verification content="google-site-verification=081I19l1P1J3FFLaw1uKtAtY5KcJx_Z9ywiKt60VGP4"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Programmatically Create Azure Pipelines","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/graef.io\/programmatically-create-azure-pipelines\/"},"image":["https:\/\/graef.io\/logo.png"],"genre":"posts","keywords":"Azure, pipeline, CICD, Automation, PowerShell, DevOps, ADO, scripts, CICD, iac","wordcount":307,"url":"https:\/\/graef.io\/programmatically-create-azure-pipelines\/","datePublished":"2020-03-07T13:10:29+08:00","dateModified":"2020-03-07T13:10:29+08:00","publisher":{"@type":"Organization","name":"","logo":"https:\/\/graef.io\/logo.png"},"author":{"@type":"Person","name":"Sebastian Gräf"},"description":""}</script></head>
 <body header-desktop=auto header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'light'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'light'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
 <div class=header-title>
-<a href=/ title="Automate everything "></a>
+<a href=/ title="Automate everything "><img class="lazyload logo" src=/svg/loading.min.svg data-src=/logo.png data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x" data-sizes=auto alt=/logo.png title=/logo.png></a>
 </div>
 <div class=menu>
 <div class=menu-inner><a class=menu-item href=/posts/ title=Posts> Posts </a><a class=menu-item href=/categories/projects/ title=Projects> Projects </a><a class=menu-item href=/categories/til/ title="Today I learned"> TIL </a><a class=menu-item href=/tags/ title=Tags> Tags </a><a class=menu-item href=/categories/ title=Categories> Categories </a><a class=menu-item href=/ title=Home><img src=/logo-62x62.png width=22 height=22 style=vertical-align:middle;margin:0> </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
@@ -46,7 +46,7 @@
 <div class=header-container>
 <div class=header-wrapper>
 <div class=header-title>
-<a href=/ title="Automate everything "></a>
+<a href=/ title="Automate everything "><img class="lazyload logo" src=/svg/loading.min.svg data-src=/logo.png data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x" data-sizes=auto alt=/logo.png title=/logo.png></a>
 </div>
 <div class=menu-toggle id=menu-toggle-mobile>
 <span></span><span></span><span></span>
@@ -80,31 +80,11 @@ Cancel
 <div id=search-dropdown-mobile></div>
 </div>
 <main class=main>
-<div class=container><div class=toc id=toc-auto>
-<h2 class=toc-title>Contents</h2>
-<div class=toc-content id=toc-content-auto></div>
-</div><article class="page single"><h1 class="single-title animated flipInX">Programmatically Create Azure Pipelines</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=https://graef.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Sebastian Gräf</a></span>&nbsp;<span class=post-category>included in <a href=/categories/powershell/><i class="far fa-folder fa-fw"></i>PowerShell</a>&nbsp;<a href=/categories/azure/><i class="far fa-folder fa-fw"></i>Azure</a>&nbsp;<a href=/categories/scripts/><i class="far fa-folder fa-fw"></i>Scripts</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Saturday, Mar 7, 2020">Saturday, Mar 7, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;299 words&nbsp;
+<div class=container><article class="page single"><h1 class="single-title animated flipInX">Programmatically Create Azure Pipelines</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=https://graef.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Sebastian Gräf</a></span>&nbsp;<span class=post-category>included in <a href=/categories/powershell/><i class="far fa-folder fa-fw"></i>PowerShell</a>&nbsp;<a href=/categories/azure/><i class="far fa-folder fa-fw"></i>Azure</a>&nbsp;<a href=/categories/scripts/><i class="far fa-folder fa-fw"></i>Scripts</a>&nbsp;<a href=/categories/devops/><i class="far fa-folder fa-fw"></i>DevOps</a></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Saturday, Mar 7, 2020">Saturday, Mar 7, 2020</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;307 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
-</div><div class=featured-image><img class=lazyload src=/svg/loading.min.svg data-src=/programmatically-create-azure-pipelines/featured-image.png data-srcset="/programmatically-create-azure-pipelines/featured-image.png, /programmatically-create-azure-pipelines/featured-image.png 1.5x, /programmatically-create-azure-pipelines/featured-image.png 2x" data-sizes=auto alt=/programmatically-create-azure-pipelines/featured-image.png title=/programmatically-create-azure-pipelines/featured-image.png></div><div class="details toc" id=toc-static kept>
-<div class="details-summary toc-title">
-<span>Contents</span>
-<span><i class="details-icon fas fa-angle-right"></i></span>
-</div>
-<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
-<ul>
-<li><a href=#script>Script</a></li>
-<li><a href=#parameters>Parameters</a></li>
-<li><a href=#usage>Usage</a></li>
-<li><a href=#requirements>Requirements</a></li>
-<li><a href=#permissions>Permissions</a></li>
-<li><a href=#base-folder-structure>Base Folder Structure</a></li>
-<li><a href=#impressions>Impressions</a></li>
-<li><a href=#contributions>Contributions</a></li>
-</ul>
-</nav></div>
-</div><div class=content id=content><p>This script <a href=https://github.com/segraef/New-AzPipeline target=_blank rel="noopener noreffer">New-AzPipeline</a> lets you programmatically create Azure Pipelines based on your folder structure.</p>
+</div><div class=featured-image><img class=lazyload src=/svg/loading.min.svg data-src=/programmatically-create-azure-pipelines/featured-image.png data-srcset="/programmatically-create-azure-pipelines/featured-image.png, /programmatically-create-azure-pipelines/featured-image.png 1.5x, /programmatically-create-azure-pipelines/featured-image.png 2x" data-sizes=auto alt=/programmatically-create-azure-pipelines/featured-image.png title=/programmatically-create-azure-pipelines/featured-image.png></div><div class=content id=content><p>This script <a href=https://github.com/segraef/New-AzPipeline target=_blank rel="noopener noreffer">New-AzPipeline</a> lets you programmatically create Azure Pipelines based on your folder structure.</p>
 <p>It browses through your folder structure for pipeline.yml files and creates corresponding Azure Pipelines in Azure DevOps.
 It has several features like creating pipelines based on a specific folder/module version, latest version or just creates all.
 It also compares against existing Pipelines and skips these.</p>
@@ -189,10 +169,22 @@ It also compares against existing Pipelines and skips these.</p>
 <li>Azure Pipelines based on <code>pipeline.yml</code></li>
 </ul>
 <h2 id=impressions>Impressions</h2>
-<p><img class=lazyload src=/svg/loading.min.svg data-src=2020-05-28-16-50-18.png data-srcset="/programmatically-create-azure-pipelines/2020-05-28-16-50-18.png, 2020-05-28-16-50-18.png 1.5x, /programmatically-create-azure-pipelines/2020-05-28-16-50-18.png 2x" data-sizes=auto alt=/programmatically-create-azure-pipelines/2020-05-28-16-50-18.png title=/programmatically-create-azure-pipelines/2020-05-28-16-50-18.png>
-<img class=lazyload src=/svg/loading.min.svg data-src=2020-05-28-16-53-31.png data-srcset="/programmatically-create-azure-pipelines/2020-05-28-16-53-31.png, 2020-05-28-16-53-31.png 1.5x, /programmatically-create-azure-pipelines/2020-05-28-16-53-31.png 2x" data-sizes=auto alt=/programmatically-create-azure-pipelines/2020-05-28-16-53-31.png title=/programmatically-create-azure-pipelines/2020-05-28-16-53-31.png>
-<img class=lazyload src=/svg/loading.min.svg data-src=2020-05-28-16-27-23.png data-srcset="/programmatically-create-azure-pipelines/2020-05-28-16-27-23.png, 2020-05-28-16-27-23.png 1.5x, /programmatically-create-azure-pipelines/2020-05-28-16-27-23.png 2x" data-sizes=auto alt=/programmatically-create-azure-pipelines/2020-05-28-16-27-23.png title=/programmatically-create-azure-pipelines/2020-05-28-16-27-23.png>
-<img class=lazyload src=/svg/loading.min.svg data-src=2020-05-28-16-48-26.png data-srcset="/programmatically-create-azure-pipelines/2020-05-28-16-48-26.png, 2020-05-28-16-48-26.png 1.5x, /programmatically-create-azure-pipelines/2020-05-28-16-48-26.png 2x" data-sizes=auto alt=/programmatically-create-azure-pipelines/2020-05-28-16-48-26.png title=/programmatically-create-azure-pipelines/2020-05-28-16-48-26.png></p>
+<p><figure><a class=lightgallery href=/programmatically-create-azure-pipelines/2020-05-28-16-50-18.png title=/programmatically-create-azure-pipelines/2020-05-28-16-50-18.png data-thumbnail=/programmatically-create-azure-pipelines/2020-05-28-16-50-18.png data-sub-html="<h2>.</h2>">
+<img class=lazyload src=/svg/loading.min.svg data-src=2020-05-28-16-50-18.png data-srcset="/programmatically-create-azure-pipelines/2020-05-28-16-50-18.png, 2020-05-28-16-50-18.png 1.5x, /programmatically-create-azure-pipelines/2020-05-28-16-50-18.png 2x" data-sizes=auto alt=/programmatically-create-azure-pipelines/2020-05-28-16-50-18.png>
+</a><figcaption class=image-caption>.</figcaption>
+</figure>
+<figure><a class=lightgallery href=/programmatically-create-azure-pipelines/2020-05-28-16-53-31.png title=/programmatically-create-azure-pipelines/2020-05-28-16-53-31.png data-thumbnail=/programmatically-create-azure-pipelines/2020-05-28-16-53-31.png data-sub-html="<h2>.</h2>">
+<img class=lazyload src=/svg/loading.min.svg data-src=2020-05-28-16-53-31.png data-srcset="/programmatically-create-azure-pipelines/2020-05-28-16-53-31.png, 2020-05-28-16-53-31.png 1.5x, /programmatically-create-azure-pipelines/2020-05-28-16-53-31.png 2x" data-sizes=auto alt=/programmatically-create-azure-pipelines/2020-05-28-16-53-31.png>
+</a><figcaption class=image-caption>.</figcaption>
+</figure>
+<figure><a class=lightgallery href=/programmatically-create-azure-pipelines/2020-05-28-16-27-23.png title=/programmatically-create-azure-pipelines/2020-05-28-16-27-23.png data-thumbnail=/programmatically-create-azure-pipelines/2020-05-28-16-27-23.png data-sub-html="<h2>.</h2>">
+<img class=lazyload src=/svg/loading.min.svg data-src=2020-05-28-16-27-23.png data-srcset="/programmatically-create-azure-pipelines/2020-05-28-16-27-23.png, 2020-05-28-16-27-23.png 1.5x, /programmatically-create-azure-pipelines/2020-05-28-16-27-23.png 2x" data-sizes=auto alt=/programmatically-create-azure-pipelines/2020-05-28-16-27-23.png>
+</a><figcaption class=image-caption>.</figcaption>
+</figure>
+<figure><a class=lightgallery href=/programmatically-create-azure-pipelines/2020-05-28-16-48-26.png title=/programmatically-create-azure-pipelines/2020-05-28-16-48-26.png data-thumbnail=/programmatically-create-azure-pipelines/2020-05-28-16-48-26.png data-sub-html="<h2>.</h2>">
+<img class=lazyload src=/svg/loading.min.svg data-src=2020-05-28-16-48-26.png data-srcset="/programmatically-create-azure-pipelines/2020-05-28-16-48-26.png, 2020-05-28-16-48-26.png 1.5x, /programmatically-create-azure-pipelines/2020-05-28-16-48-26.png 2x" data-sizes=auto alt=/programmatically-create-azure-pipelines/2020-05-28-16-48-26.png>
+</a><figcaption class=image-caption>.</figcaption>
+</figure></p>
 <h2 id=contributions>Contributions</h2>
 <p>Thanks to <a href=https://github.com/simonbms target=_blank rel="noopener noreffer">@simonbms</a> for helping me out with the object comparions in order to have only the latest folders picked for the <code>-Latest</code> switch.</p>
 <div class="details admonition info open">
@@ -218,18 +210,18 @@ It also compares against existing Pipelines and skips these.</p>
 <div class=post-info-line>
 <div class=post-info-md></div>
 <div class=post-info-share>
-<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://graef.io/programmatically-create-azure-pipelines/ data-title="Programmatically Create Azure Pipelines" data-via=segraef data-hashtags=azure,pipeline,cicd,automation,powershell,devops,ado,scripts><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://graef.io/programmatically-create-azure-pipelines/ data-hashtag=azure><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://graef.io/programmatically-create-azure-pipelines/><i class="fab fa-linkedin fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://graef.io/programmatically-create-azure-pipelines/ data-title="Programmatically Create Azure Pipelines" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=https://graef.io/programmatically-create-azure-pipelines/><i class="fab fa-reddit fa-fw"></i></a></span>
+<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://graef.io/programmatically-create-azure-pipelines/ data-title="Programmatically Create Azure Pipelines" data-via=segraef data-hashtags=Azure,pipeline,CICD,Automation,PowerShell,DevOps,ADO,scripts,CICD,iac><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://graef.io/programmatically-create-azure-pipelines/ data-hashtag=Azure><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://graef.io/programmatically-create-azure-pipelines/><i class="fab fa-linkedin fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://graef.io/programmatically-create-azure-pipelines/ data-title="Programmatically Create Azure Pipelines" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=https://graef.io/programmatically-create-azure-pipelines/><i class="fab fa-reddit fa-fw"></i></a></span>
 </div>
 </div>
 </div>
 <div class=post-info-more>
-<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/azure/>azure</a>,&nbsp;<a href=/tags/pipeline/>pipeline</a>,&nbsp;<a href=/tags/cicd/>cicd</a>,&nbsp;<a href=/tags/automation/>automation</a>,&nbsp;<a href=/tags/powershell/>powershell</a>,&nbsp;<a href=/tags/devops/>devops</a>,&nbsp;<a href=/tags/ado/>ado</a>,&nbsp;<a href=/tags/scripts/>scripts</a></section>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/azure/>Azure</a>,&nbsp;<a href=/tags/pipeline/>pipeline</a>,&nbsp;<a href=/tags/cicd/>CICD</a>,&nbsp;<a href=/tags/automation/>Automation</a>,&nbsp;<a href=/tags/powershell/>PowerShell</a>,&nbsp;<a href=/tags/devops/>DevOps</a>,&nbsp;<a href=/tags/ado/>ADO</a>,&nbsp;<a href=/tags/scripts/>scripts</a>,&nbsp;<a href=/tags/cicd/>CICD</a>,&nbsp;<a href=/tags/iac/>iac</a></section>
 <section>
 <span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span>
 </section>
 </div>
 <div class=post-nav><a href=/function-lock-workstation-locally-and-remotely/ class=prev rel=prev title="Function Lock-Workstation locally and remotely"><i class="fas fa-angle-left fa-fw"></i>Function Lock-Workstation locally and remotely</a>
-<a href=/markdown-syntax-guide/ class=next rel=next title="Markdown Syntax Guide">Markdown Syntax Guide<i class="fas fa-angle-right fa-fw"></i></a></div>
+<a href=/azure-pipelines-container-agents-for-azure-devops/ class=next rel=next title="Azure Pipelines Container Agents for Azure Devops">Azure Pipelines Container Agents for Azure Devops<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id=comments><div id=utterances></div><noscript>
 Please enable JavaScript to view the comments powered by <a href=https://utteranc.es/>Utterances</a>.

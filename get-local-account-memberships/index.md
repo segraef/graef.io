@@ -1,7 +1,11 @@
 # Get Local Account Memberships
 
 
-Okay, yeah there are plenty of scripts out which give you local accounts via WMI or ADSI and yes scripts exist also which give you all local groups but there is not one which gives you both (of course there are also some) but what if you’re looking to implement this as a CustomScriptExtension to your Azure VM? Especially if the Custom Script Extension Output is limited to only 4096 characters? Did you know that? This script was developed to minimize the output of local accounts and their group memberships and gives you a meaningful expression of user accounts sitting on your VM. Check this out:
+Okay, yeah there are plenty of scripts out which give you local accounts via `WMI` or `ADSI` and yes scripts exist also which give you all local groups but there is not one which gives you both (of course there are also some) but what if you’re looking to implement this as a CustomScriptExtension to your Azure VM?
+
+<!--more-->
+
+Especially if the Custom Script Extension Output is limited to only 4096 characters? Did you know that? This script was developed to minimize the output of local accounts and their group memberships and gives you a meaningful expression of user accounts sitting on your VM. Check this out:
 
 ```powershell
 Function Get-LocalAccountMemberships {
@@ -69,18 +73,18 @@ gc output.xml
 
 A simple output of Get-LocalAccountMemberships looks like this
 
-![1](featured-image-preview.png)
+![1](featured-image-preview.png" caption="." >}}
 
 
 So, while exporting your output with the help of Export-Clixml and showing the output of your XML file again in the console output as a readable xml structure.
 
 
-![2](2021-02-21-20-56-04.png)
+![2](2021-02-21-20-56-04.png" caption="." >}}
 
 Once a script was being run on a VM the common output of the Custom Script Extensions looks like this:
 
 
-![3](2021-02-21-20-56-27.png)
+![3](2021-02-21-20-56-27.png" caption="." >}}
 
 You can grab this output of your CustomScriptExtension on your VM with the help of that:
 
@@ -96,7 +100,7 @@ The trick here is to get the output message from your CustomScriptExtension with
 Once digested and imported with Import-Clixml you get the same output as before.
 
 
-![](2021-02-21-20-56-53.png)
+{{< image src="2021-02-21-20-56-53.png" caption="." >}}
 
 
 So why are we doing it this way?

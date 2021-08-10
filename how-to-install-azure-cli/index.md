@@ -11,7 +11,7 @@ Let's keep it easy with these one-liner's you can use for Windows as well as Lin
 iwr https://aka.ms/installazurecliwindows -OutFile .\AzureCLI.msi; start msiexec.exe -Wait -ArgumentList '/I AzureCLI.msi /quiet'; rm .\AzureCLI.msi
 ```
 
-{{< figure src="2021-08-07_111616.png" >}}
+{{< image src="2021-08-07_111616.png" caption="." >}}
 
 Following PowerShell Cmdlet aliases were used
 - ***iwr** = [Invoke-WebRequest](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Utility/Invoke-WebRequest?view=powershell-7.1)
@@ -26,7 +26,7 @@ You can verify your Azure CLI version with `az --version`
 
 {{< /admonition >}}
 
-{{< figure src="2021-08-07_111617.png" >}}
+{{< image src="2021-08-07_111617.png" caption="." >}}
 
 ### One-liner to install or update Azure CLI on Linux
 ```bash
@@ -34,7 +34,7 @@ You can verify your Azure CLI version with `az --version`
 curl -L https://aka.ms/InstallAzureCli | bash
 ```
 
-{{< figure src="2021-08-07_111615.png" >}}
+{{< image src="2021-08-07_111615.png" caption="." >}}
 
 {{< admonition tip >}}
 The script can also be downloaded and run locally. <br>

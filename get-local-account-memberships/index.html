@@ -5,7 +5,7 @@
 <meta name=robots content="noodp">
 <meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
 <title>Get Local Account Memberships - Automate everything </title><meta name=Description content="Automate everything - Sebastian Gräf"><meta property="og:title" content="Get Local Account Memberships">
-<meta property="og:description" content="Okay, yeah there are plenty of scripts out which give you local accounts via WMI or ADSI and yes scripts exist also which give you all local groups but there is not one which gives you both (of course there are also some) but what if you’re looking to implement this as a CustomScriptExtension to your Azure VM? Especially if the Custom Script Extension Output is limited to only 4096 characters?">
+<meta property="og:description" content="Okay, yeah there are plenty of scripts out which give you local accounts via WMI or ADSI and yes scripts exist also which give you all local groups but there is not one which gives you both (of course there are also some) but what if you’re looking to implement this as a CustomScriptExtension to your Azure VM?">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://graef.io/get-local-account-memberships/"><meta property="og:image" content="https://graef.io/get-local-account-memberships/featured-image-preview.png"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2019-02-21T00:00:00+00:00">
@@ -13,16 +13,16 @@
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://graef.io/get-local-account-memberships/featured-image-preview.png">
 <meta name=twitter:title content="Get Local Account Memberships">
-<meta name=twitter:description content="Okay, yeah there are plenty of scripts out which give you local accounts via WMI or ADSI and yes scripts exist also which give you all local groups but there is not one which gives you both (of course there are also some) but what if you’re looking to implement this as a CustomScriptExtension to your Azure VM? Especially if the Custom Script Extension Output is limited to only 4096 characters?">
+<meta name=twitter:description content="Okay, yeah there are plenty of scripts out which give you local accounts via WMI or ADSI and yes scripts exist also which give you all local groups but there is not one which gives you both (of course there are also some) but what if you’re looking to implement this as a CustomScriptExtension to your Azure VM?">
 <meta name=application-name content="graef.io - Sebastian Gräf">
 <meta name=apple-mobile-web-app-title content="graef.io - Sebastian Gräf"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://graef.io/get-local-account-memberships/><link rel=prev href=https://graef.io/wordpress-basic-settings-in-configphp/><link rel=next href=https://graef.io/get-azure-vm-cores-per-region/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><meta name=google-site-verification content="google-site-verification=081I19l1P1J3FFLaw1uKtAtY5KcJx_Z9ywiKt60VGP4"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Get Local Account Memberships","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/graef.io\/get-local-account-memberships\/"},"image":["https:\/\/graef.io\/logo.png"],"genre":"posts","keywords":"windows, powershell, posh, remote","wordcount":603,"url":"https:\/\/graef.io\/get-local-account-memberships\/","datePublished":"2019-02-21T00:00:00+00:00","dateModified":"2021-02-22T00:00:00+00:00","publisher":{"@type":"Organization","name":"","logo":"https:\/\/graef.io\/logo.png"},"author":{"@type":"Person","name":"Sebastian Gräf"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://graef.io/get-local-account-memberships/><link rel=prev href=https://graef.io/wordpress-basic-settings-in-configphp/><link rel=next href=https://graef.io/get-azure-vm-cores-per-region/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><meta name=google-site-verification content="google-site-verification=081I19l1P1J3FFLaw1uKtAtY5KcJx_Z9ywiKt60VGP4"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Get Local Account Memberships","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/graef.io\/get-local-account-memberships\/"},"image":["https:\/\/graef.io\/logo.png"],"genre":"posts","keywords":"Windows, PowerShell, posh, remote","wordcount":614,"url":"https:\/\/graef.io\/get-local-account-memberships\/","datePublished":"2019-02-21T00:00:00+00:00","dateModified":"2021-02-22T00:00:00+00:00","publisher":{"@type":"Organization","name":"","logo":"https:\/\/graef.io\/logo.png"},"author":{"@type":"Person","name":"Sebastian Gräf"},"description":""}</script></head>
 <body header-desktop=auto header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'light'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'light'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
 <div class=header-title>
-<a href=/ title="Automate everything "></a>
+<a href=/ title="Automate everything "><img class="lazyload logo" src=/svg/loading.min.svg data-src=/logo.png data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x" data-sizes=auto alt=/logo.png title=/logo.png></a>
 </div>
 <div class=menu>
 <div class=menu-inner><a class=menu-item href=/posts/ title=Posts> Posts </a><a class=menu-item href=/categories/projects/ title=Projects> Projects </a><a class=menu-item href=/categories/til/ title="Today I learned"> TIL </a><a class=menu-item href=/tags/ title=Tags> Tags </a><a class=menu-item href=/categories/ title=Categories> Categories </a><a class=menu-item href=/ title=Home><img src=/logo-62x62.png width=22 height=22 style=vertical-align:middle;margin:0> </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
@@ -46,7 +46,7 @@
 <div class=header-container>
 <div class=header-wrapper>
 <div class=header-title>
-<a href=/ title="Automate everything "></a>
+<a href=/ title="Automate everything "><img class="lazyload logo" src=/svg/loading.min.svg data-src=/logo.png data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x" data-sizes=auto alt=/logo.png title=/logo.png></a>
 </div>
 <div class=menu-toggle id=menu-toggle-mobile>
 <span></span><span></span><span></span>
@@ -80,20 +80,12 @@ Cancel
 <div id=search-dropdown-mobile></div>
 </div>
 <main class=main>
-<div class=container><div class=toc id=toc-auto>
-<h2 class=toc-title>Contents</h2>
-<div class=toc-content id=toc-content-auto></div>
-</div><article class="page single"><h1 class="single-title animated flipInX">Get Local Account Memberships</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=https://graef.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Sebastian Gräf</a></span>&nbsp;<span class=post-category>included in <a href=/categories/azure/><i class="far fa-folder fa-fw"></i>Azure</a>&nbsp;<a href=/categories/iaas/><i class="far fa-folder fa-fw"></i>IaaS</a>&nbsp;<a href=/categories/scripts/><i class="far fa-folder fa-fw"></i>Scripts</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Thursday, Feb 21, 2019">Thursday, Feb 21, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;603 words&nbsp;
+<div class=container><article class="page single"><h1 class="single-title animated flipInX">Get Local Account Memberships</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=https://graef.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Sebastian Gräf</a></span>&nbsp;<span class=post-category>included in <a href=/categories/azure/><i class="far fa-folder fa-fw"></i>Azure</a>&nbsp;<a href=/categories/windows/><i class="far fa-folder fa-fw"></i>Windows</a>&nbsp;<a href=/categories/windows-server/><i class="far fa-folder fa-fw"></i>Windows Server</a>&nbsp;<a href=/categories/scripts/><i class="far fa-folder fa-fw"></i>Scripts</a></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Thursday, Feb 21, 2019">Thursday, Feb 21, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;614 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
-</div><div class="details toc" id=toc-static kept>
-<div class="details-summary toc-title">
-<span>Contents</span>
-<span><i class="details-icon fas fa-angle-right"></i></span>
-</div>
-<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents></nav></div>
-</div><div class=content id=content><p>Okay, yeah there are plenty of scripts out which give you local accounts via WMI or ADSI and yes scripts exist also which give you all local groups but there is not one which gives you both (of course there are also some) but what if you’re looking to implement this as a CustomScriptExtension to your Azure VM? Especially if the Custom Script Extension Output is limited to only 4096 characters? Did you know that? This script was developed to minimize the output of local accounts and their group memberships and gives you a meaningful expression of user accounts sitting on your VM. Check this out:</p>
+</div><div class=content id=content><p>Okay, yeah there are plenty of scripts out which give you local accounts via <code>WMI</code> or <code>ADSI</code> and yes scripts exist also which give you all local groups but there is not one which gives you both (of course there are also some) but what if you’re looking to implement this as a CustomScriptExtension to your Azure VM?</p>
+<p>Especially if the Custom Script Extension Output is limited to only 4096 characters? Did you know that? This script was developed to minimize the output of local accounts and their group memberships and gives you a meaningful expression of user accounts sitting on your VM. Check this out:</p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt> 1
@@ -223,11 +215,11 @@ Cancel
 </code></pre></td></tr></table>
 </div>
 </div><p>A simple output of Get-LocalAccountMemberships looks like this</p>
-<p><img class=lazyload src=/svg/loading.min.svg data-src=featured-image-preview.png data-srcset="featured-image-preview.png, featured-image-preview.png 1.5x, featured-image-preview.png 2x" data-sizes=auto alt=featured-image-preview.png title=1></p>
+<p>![1](featured-image-preview.png" caption="." >}}</p>
 <p>So, while exporting your output with the help of Export-Clixml and showing the output of your XML file again in the console output as a readable xml structure.</p>
-<p><img class=lazyload src=/svg/loading.min.svg data-src=2021-02-21-20-56-04.png data-srcset="/get-local-account-memberships/2021-02-21-20-56-04.png, 2021-02-21-20-56-04.png 1.5x, /get-local-account-memberships/2021-02-21-20-56-04.png 2x" data-sizes=auto alt=/get-local-account-memberships/2021-02-21-20-56-04.png title=2></p>
+<p>![2](2021-02-21-20-56-04.png" caption="." >}}</p>
 <p>Once a script was being run on a VM the common output of the Custom Script Extensions looks like this:</p>
-<p><img class=lazyload src=/svg/loading.min.svg data-src=2021-02-21-20-56-27.png data-srcset="/get-local-account-memberships/2021-02-21-20-56-27.png, 2021-02-21-20-56-27.png 1.5x, /get-local-account-memberships/2021-02-21-20-56-27.png 2x" data-sizes=auto alt=/get-local-account-memberships/2021-02-21-20-56-27.png title=3></p>
+<p>![3](2021-02-21-20-56-27.png" caption="." >}}</p>
 <p>You can grab this output of your CustomScriptExtension on your VM with the help of that:</p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
@@ -245,10 +237,12 @@ Cancel
 </div>
 </div><p>The trick here is to get the output message from your CustomScriptExtension with <code>$output.SubStatuses[0].Message</code>, removing every <code>\n</code>, save it and import it as a readable xml structure.</p>
 <p>Once digested and imported with Import-Clixml you get the same output as before.</p>
-<p><img class=lazyload src=/svg/loading.min.svg data-src=2021-02-21-20-56-53.png data-srcset="/get-local-account-memberships/2021-02-21-20-56-53.png, 2021-02-21-20-56-53.png 1.5x, /get-local-account-memberships/2021-02-21-20-56-53.png 2x" data-sizes=auto alt=/get-local-account-memberships/2021-02-21-20-56-53.png title=/get-local-account-memberships/2021-02-21-20-56-53.png></p>
+<figure><a class=lightgallery href=/get-local-account-memberships/2021-02-21-20-56-53.png title=/get-local-account-memberships/2021-02-21-20-56-53.png data-thumbnail=/get-local-account-memberships/2021-02-21-20-56-53.png data-sub-html="<h2>.</h2>">
+<img class=lazyload src=/svg/loading.min.svg data-src=2021-02-21-20-56-53.png data-srcset="/get-local-account-memberships/2021-02-21-20-56-53.png, 2021-02-21-20-56-53.png 1.5x, /get-local-account-memberships/2021-02-21-20-56-53.png 2x" data-sizes=auto alt=/get-local-account-memberships/2021-02-21-20-56-53.png>
+</a><figcaption class=image-caption>.</figcaption>
+</figure>
 <p>So why are we doing it this way?</p>
-<p>Consider that, you’re going to execute a Custom Script Extension on your VM without having remote access to it, yes you don’t have access to it BUT you know you can use the Azure VMAgent which is by default installed on every VM in Azure. With having a Custom Script Extension executed including any of your script, e.g. &ldquo;Get-LocalAccountMemberships” you can grab details from your machine without accessing it at all.</p>
-</div><div class=post-footer id=post-footer>
+<p>Consider that, you’re going to execute a Custom Script Extension on your VM without having remote access to it, yes you don’t have access to it BUT you know you can use the Azure VMAgent which is by default installed on every VM in Azure. With having a Custom Script Extension executed including any of your script, e.g. &ldquo;Get-LocalAccountMemberships” you can grab details from your machine without accessing it at all.</p></div><div class=post-footer id=post-footer>
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
@@ -259,12 +253,12 @@ Cancel
 <div class=post-info-line>
 <div class=post-info-md></div>
 <div class=post-info-share>
-<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://graef.io/get-local-account-memberships/ data-title="Get Local Account Memberships" data-via=segraef data-hashtags=windows,powershell,posh,remote><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://graef.io/get-local-account-memberships/ data-hashtag=windows><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://graef.io/get-local-account-memberships/><i class="fab fa-linkedin fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://graef.io/get-local-account-memberships/ data-title="Get Local Account Memberships" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=https://graef.io/get-local-account-memberships/><i class="fab fa-reddit fa-fw"></i></a></span>
+<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://graef.io/get-local-account-memberships/ data-title="Get Local Account Memberships" data-via=segraef data-hashtags=Windows,PowerShell,posh,remote><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://graef.io/get-local-account-memberships/ data-hashtag=Windows><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://graef.io/get-local-account-memberships/><i class="fab fa-linkedin fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://graef.io/get-local-account-memberships/ data-title="Get Local Account Memberships" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=https://graef.io/get-local-account-memberships/><i class="fab fa-reddit fa-fw"></i></a></span>
 </div>
 </div>
 </div>
 <div class=post-info-more>
-<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/windows/>windows</a>,&nbsp;<a href=/tags/powershell/>powershell</a>,&nbsp;<a href=/tags/posh/>posh</a>,&nbsp;<a href=/tags/remote/>remote</a></section>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/windows/>Windows</a>,&nbsp;<a href=/tags/powershell/>PowerShell</a>,&nbsp;<a href=/tags/posh/>posh</a>,&nbsp;<a href=/tags/remote/>remote</a></section>
 <section>
 <span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span>
 </section>
