@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "style.min.css",
-	"sourceRoot": "/home/runner/work/graef.io/graef.io",
+	"sourceRoot": "/home/runner/work/draft/draft",
 	"sources": [
 		"themes/loveit/assets/css/style.scss",
 		"themes/loveit/assets/css/_variables.scss",
