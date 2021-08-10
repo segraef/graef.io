@@ -7,15 +7,15 @@ In the local searchbox (<kbd>Ctrl</kbd> + <kbd>F</kbd>) you can insert newlines 
 
 <!--more-->
 
-{{< image src="multiple-line-support.gif" caption="." >}}
+{{< image src="multiple-line-support.gif" caption="(Local searchbox)" >}}
 
 If you use the global search (<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd>) you can insert newlines by pressing <kbd>Shift</kbd> + <kbd>Enter</kbd>.
 
-{{< image src="2021-08-06_15-23-51.png" caption="." >}}
+{{< image src="2021-08-06_15-23-51.png" caption="(Global search)" >}}
 
 If you want to search for multilines by the character literal, remember to check the rightmost regex icon.
 
-{{< image src="regex.png" caption="." >}}
+{{< image src="regex.png" caption="(Regex)" >}}
 
 {{< admonition info References >}}
 <!---
