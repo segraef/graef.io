@@ -155,14 +155,14 @@ with which you can then run Azure CLI or Azure PowerShell scripts to create and 
 </div>
 </div><p>Once you’ve created your credentials go ahead and add them as secret <code>AZURE_CREDENTIALS</code> to your GitHub repository.</p>
 <h2 id=dependencies-on-other-github-actions>Dependencies on other GitHub Actions</h2>
-<p>If you’re looking for a way to use managed identities, you can also use my GitHub action (<code>[segraef/azlogin](https://github.com/segraef/azlogin)</code>) which I’ve equipped with the ability to use managed identities. Remember, <a href=https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview target=_blank rel="noopener noreffer">Managed Identities</a> can only be used in conjunction with Self-Hosted Runners.</p>
+<p>If you’re looking for a way to use managed identities, you can also use my GitHub action (<a href=https://github.com/segraef/azlogin target=_blank rel="noopener noreffer"><code>segraef/azlogin</code></a>) which I’ve equipped with the ability to use managed identities. Remember, <a href=https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview target=_blank rel="noopener noreffer">Managed Identities</a> can only be used in conjunction with Self-Hosted Runners.</p>
 <p>Once login is done, Azure PowerShell action will use the same session to run the script.</p>
 <h2 id=sample-workflow-to-run-inlinescript-using-azure-powershell>Sample workflow to run inlinescript using Azure PowerShell</h2>
 <p>The following sample workflow can be found <a href=https://github.com/segraef/aga/blob/master/.github/workflows/example.yml target=_blank rel="noopener noreffer">here</a>.</p>
 <script type=application/javascript src="https://gist.github.com/segraef/59017bb1e3d6bee82025697e10827bc9.js?file=example.yml"></script>
 <p>Place this workflow file in your in your <code>.github</code> directory, for instance <code>.github/workflows/example.yml</code>. Once you commit and push your code the Workflow starts to run and executes your Actions.</p>
-<figure><a class=lightgallery href=2021-08-12-17-57-22.png title=2021-08-12-17-57-22.png data-thumbnail=2021-08-12-17-57-22.png data-sub-html="<h2>Representation of the actual GitHub Workflow run.</h2>">
-<img class=lazyload src=/svg/loading.min.svg data-src=2021-08-12-17-57-22.png data-srcset="2021-08-12-17-57-22.png, 2021-08-12-17-57-22.png 1.5x, 2021-08-12-17-57-22.png 2x" data-sizes=auto alt=2021-08-12-17-57-22.png>
+<figure><a class=lightgallery href=/azure-github-actions-and-workflows/2021-08-13-07-17-25.png title=/azure-github-actions-and-workflows/2021-08-13-07-17-25.png data-thumbnail=/azure-github-actions-and-workflows/2021-08-13-07-17-25.png data-sub-html="<h2>Representation of the actual GitHub Workflow run.</h2>">
+<img class=lazyload src=/svg/loading.min.svg data-src=2021-08-13-07-17-25.png data-srcset="/azure-github-actions-and-workflows/2021-08-13-07-17-25.png, 2021-08-13-07-17-25.png 1.5x, /azure-github-actions-and-workflows/2021-08-13-07-17-25.png 2x" data-sizes=auto alt=/azure-github-actions-and-workflows/2021-08-13-07-17-25.png>
 </a><figcaption class=image-caption>Representation of the actual GitHub Workflow run.</figcaption>
 </figure>
 <blockquote>

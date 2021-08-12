@@ -75,7 +75,7 @@ Once you’ve created your credentials go ahead and add them as secret `AZURE_CR
 
 ## Dependencies on other GitHub Actions
 
-If you’re looking for a way to use managed identities, you can also use my GitHub action (`[segraef/azlogin](https://github.com/segraef/azlogin)`) which I’ve equipped with the ability to use managed identities. Remember, [Managed Identities](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview) can only be used in conjunction with Self-Hosted Runners.
+If you’re looking for a way to use managed identities, you can also use my GitHub action ([`segraef/azlogin`](https://github.com/segraef/azlogin)) which I’ve equipped with the ability to use managed identities. Remember, [Managed Identities](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview) can only be used in conjunction with Self-Hosted Runners.
 
 Once login is done, Azure PowerShell action will use the same session to run the script.
 
@@ -87,7 +87,7 @@ The following sample workflow can be found [here](https://github.com/segraef/aga
 
 Place this workflow file in your in your `.github` directory, for instance `.github/workflows/example.yml`. Once you commit and push your code the Workflow starts to run and executes your Actions.
 
-{{< image src="2021-08-12-17-57-22.png" caption="Representation of the actual GitHub Workflow run." >}}
+{{< image src="2021-08-13-07-17-25.png" caption="Representation of the actual GitHub Workflow run." >}}
 
 > Congratulations you just created and started your first GitHub Workflow!
 
