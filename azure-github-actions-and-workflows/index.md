@@ -70,15 +70,12 @@ az ad sp create-for-rbac --name "<spName>" --role contributor --scopes /subscrip
 
 Once you’ve created your credentials go ahead and add them as secret `AZURE_CREDENTIALS` to your GitHub repository.
 
-{{< image src="2021-08-12-17-57-22.png" caption="Finished example deployment of a storage account in Azure defined in main.bicep." >}}
+<!--{{< image src="2021-08-12-17-57-22.png" caption="Finished example deployment of a storage account in Azure defined in main.bicep." >}}-->
 
 
 ## Dependencies on other GitHub Actions
 
-{{< image src="2021-08-12-17-57-22.png" caption="Finished example deployment of a storage account in Azure defined in main.bicep." >}}
-
-
-f you’re looking for a way to use managed identities, you can also use my GitHub action (`segraef/azlogin`) which I’ve equipped with the ability to use managed identities. Remember, [Managed Identities](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview) can only be used in conjunction with Self-Hosted Runners.
+If you’re looking for a way to use managed identities, you can also use my GitHub action (`[segraef/azlogin](https://github.com/segraef/azlogin)`) which I’ve equipped with the ability to use managed identities. Remember, [Managed Identities](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview) can only be used in conjunction with Self-Hosted Runners.
 
 Once login is done, Azure PowerShell action will use the same session to run the script.
 
