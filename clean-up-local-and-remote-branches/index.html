@@ -4,20 +4,20 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=robots content="noodp">
 <meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
-<title>Clean Up and Sync Your Git Fork - Automate everything </title><meta name=Description content="Automate everything - Sebastian Gräf"><meta property="og:title" content="Clean Up and Sync Your Git Fork">
-<meta property="og:description" content="If you want to start with your fork from scratch while remaining the current upstream/main as your base use this.">
+<title>Automatically clean up local once remote branch is deleted - Automate everything </title><meta name=Description content="Automate everything - Sebastian Gräf"><meta property="og:title" content="Automatically clean up local once remote branch is deleted">
+<meta property="og:description" content="Use this nice PowerShell one-liner to automatically clean up (delete) your local branches once your remote branches is deleted (merged).">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://graef.io/clean-up-and-sync-your-git-fork/"><meta property="og:image" content="https://graef.io/clean-up-and-sync-your-git-fork/featured-image.png"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2021-09-09T13:16:50+08:00">
-<meta property="article:modified_time" content="2021-09-09T13:16:50+08:00">
+<meta property="og:url" content="https://graef.io/clean-up-local-and-remote-branches/"><meta property="og:image" content="https://graef.io/clean-up-local-and-remote-branches/featured-image.png"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-09-20T12:14:02+08:00">
+<meta property="article:modified_time" content="2021-09-20T12:14:02+08:00">
 <meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="https://graef.io/clean-up-and-sync-your-git-fork/featured-image.png">
-<meta name=twitter:title content="Clean Up and Sync Your Git Fork">
-<meta name=twitter:description content="If you want to start with your fork from scratch while remaining the current upstream/main as your base use this.">
+<meta name=twitter:image content="https://graef.io/clean-up-local-and-remote-branches/featured-image.png">
+<meta name=twitter:title content="Automatically clean up local once remote branch is deleted">
+<meta name=twitter:description content="Use this nice PowerShell one-liner to automatically clean up (delete) your local branches once your remote branches is deleted (merged).">
 <meta name=application-name content="graef.io - Sebastian Gräf">
 <meta name=apple-mobile-web-app-title content="graef.io - Sebastian Gräf"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://graef.io/clean-up-and-sync-your-git-fork/><link rel=prev href=https://graef.io/find-and-replace-with-a-newline-in-visual-studio-code/><link rel=next href=https://graef.io/clean-up-local-and-remote-branches/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><meta name=google-site-verification content="google-site-verification=081I19l1P1J3FFLaw1uKtAtY5KcJx_Z9ywiKt60VGP4"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Clean Up and Sync Your Git Fork","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/graef.io\/clean-up-and-sync-your-git-fork\/"},"image":["https:\/\/graef.io\/logo.png"],"genre":"posts","keywords":"git, github, fork, upstream, git push, git remote","wordcount":137,"url":"https:\/\/graef.io\/clean-up-and-sync-your-git-fork\/","datePublished":"2021-09-09T13:16:50+08:00","dateModified":"2021-09-09T13:16:50+08:00","publisher":{"@type":"Organization","name":"","logo":"https:\/\/graef.io\/logo.png"},"author":{"@type":"Person","name":"Sebastian Gräf"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://graef.io/clean-up-local-and-remote-branches/><link rel=prev href=https://graef.io/clean-up-and-sync-your-git-fork/><link rel=next href=https://graef.io/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><meta name=google-site-verification content="google-site-verification=081I19l1P1J3FFLaw1uKtAtY5KcJx_Z9ywiKt60VGP4"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Automatically clean up local once remote branch is deleted","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/graef.io\/clean-up-local-and-remote-branches\/"},"image":["https:\/\/graef.io\/logo.png"],"genre":"posts","keywords":"git, fetch, prune, branch, powershell","wordcount":93,"url":"https:\/\/graef.io\/clean-up-local-and-remote-branches\/","datePublished":"2021-09-20T12:14:02+08:00","dateModified":"2021-09-20T12:14:02+08:00","publisher":{"@type":"Organization","name":"","logo":"https:\/\/graef.io\/logo.png"},"author":{"@type":"Person","name":"Sebastian Gräf"},"description":""}</script></head>
 <body header-desktop=auto header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'light'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'light'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -83,47 +83,26 @@ Cancel
 <div class=container><div class=toc id=toc-auto>
 <h2 class=toc-title>Contents</h2>
 <div class=toc-content id=toc-content-auto></div>
-</div><article class="page single"><h1 class="single-title animated flipInX">Clean Up and Sync Your Git Fork</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=https://graef.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Sebastian Gräf</a></span>&nbsp;<span class=post-category>included in <a href=/categories/til/><i class="far fa-folder fa-fw"></i>Today I learned (TIL)</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Thursday, Sep 9, 2021">Thursday, Sep 9, 2021</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;137 words&nbsp;
+</div><article class="page single"><h1 class="single-title animated flipInX">Automatically clean up local once remote branch is deleted</h1><div class=post-meta>
+<div class=post-meta-line><span class=post-author><a href=https://graef.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Sebastian Gräf</a></span>&nbsp;<span class=post-category>included in <a href=/categories/til/><i class="far fa-folder fa-fw"></i>Today I learned (TIL)</a>&nbsp;<a href=/categories/github/><i class="far fa-folder fa-fw"></i>GitHub</a></span></div>
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Monday, Sep 20, 2021">Monday, Sep 20, 2021</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;93 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
-</div><div class=featured-image><img class=lazyload src=/svg/loading.min.svg data-src=/clean-up-and-sync-your-git-fork/featured-image.png data-srcset="/clean-up-and-sync-your-git-fork/featured-image.png, /clean-up-and-sync-your-git-fork/featured-image.png 1.5x, /clean-up-and-sync-your-git-fork/featured-image.png 2x" data-sizes=auto alt=/clean-up-and-sync-your-git-fork/featured-image.png title=/clean-up-and-sync-your-git-fork/featured-image.png></div><div class="details toc" id=toc-static kept>
+</div><div class=featured-image><img class=lazyload src=/svg/loading.min.svg data-src=/clean-up-local-and-remote-branches/featured-image.png data-srcset="/clean-up-local-and-remote-branches/featured-image.png, /clean-up-local-and-remote-branches/featured-image.png 1.5x, /clean-up-local-and-remote-branches/featured-image.png 2x" data-sizes=auto alt=/clean-up-local-and-remote-branches/featured-image.png title=/clean-up-local-and-remote-branches/featured-image.png></div><div class="details toc" id=toc-static kept>
 <div class="details-summary toc-title">
 <span>Contents</span>
 <span><i class="details-icon fas fa-angle-right"></i></span>
 </div>
-<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
-<ul>
-<li><a href=#clean-up-your-fork-from-the-command-line>Clean up your fork from the command line</a></li>
-<li><a href=#syncing-a-fork-from-the-command-line>Syncing a fork from the command line</a></li>
-</ul>
-</nav></div>
-</div><div class=content id=content><p>If you want to start with your fork from scratch while remaining the current upstream/main as your base use this.</p>
-<blockquote>
-<p>There is a difference between <em>Syncing a fork</em> and <em>Cleaning up a fork</em>.</p>
-</blockquote>
-<h2 id=clean-up-your-fork-from-the-command-line>Clean up your fork from the command line</h2>
+<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents></nav></div>
+</div><div class=content id=content><p>Use this nice PowerShell one-liner to automatically clean up (delete) your local branches once your remote branches is deleted (merged).</p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span><span class=lnt>5
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>git remote add upstream /url/to/original/repo
-git fetch upstream
-git checkout main
-git reset --hard upstream/main
-git push -f
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>git checkout main; git pull; git remote update origin --prune; git branch -vv | Select-String -Pattern &#34;: gone]&#34; | % { $_.toString().Trim().Split(&#34; &#34;)[0]} | % { git branch -D $_ }
 </code></pre></td></tr></table>
 </div>
-</div><blockquote>
-<p>You can also just delete your fork on the web UI and create a new fork.</p>
-</blockquote>
-<h2 id=syncing-a-fork-from-the-command-line>Syncing a fork from the command line</h2>
-<div class=highlight><div class=chroma>
+</div><div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
@@ -131,22 +110,21 @@ git push -f
 </span><span class=lnt>4
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>git remote add upstream /url/to/original/repo
-git fetch upstream
-git checkout main
-git merge upstream/main
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>git checkout main
+git pull
+git remote update origin --prune
+git branch -vv | Select-String -Pattern &#34;: gone]&#34; | % { $_.toString().Trim().Split(&#34; &#34;)[0]} | % { git branch -D $_ }
 </code></pre></td></tr></table>
 </div>
-</div><p>GitHub You gives you also the opportunity to <a href=https://docs.github.com/en/github/collaborating-with-pull-requests/working-with-forks/syncing-a-fork#syncing-a-fork-from-the-web-ui target=_blank rel="noopener noreffer">sync a fork from the web UI</a>.</p>
-<div class="details admonition info open">
+</div><div class="details admonition info open">
 <div class="details-summary admonition-title">
 <i class="icon fas fa-info-circle fa-fw"></i>References<i class="details-icon fas fa-angle-right fa-fw"></i>
 </div>
 <div class=details-content>
 <div class=admonition-content><ul>
-<li><a href=https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes target=_blank rel="noopener noreffer">Git Basics - Working with Remotes</a></li>
-<li><a href=https://docs.github.com/en/github/collaborating-with-pull-requests/working-with-forks/syncing-a-fork target=_blank rel="noopener noreffer">Syncing a fork</a></li>
-<li><a href=https://docs.github.com/en/github/collaborating-with-pull-requests/working-with-forks/syncing-a-fork#syncing-a-fork-from-the-web-ui target=_blank rel="noopener noreffer">Syncing a fork from the web UI</a></li>
+<li><a href=https://git-scm.com/docs/git-fetch target=_blank rel="noopener noreffer">git-fetch</a></li>
+<li><a href=https://git-scm.com/docs/git-prune target=_blank rel="noopener noreffer">git prune</a></li>
+<li><a href=https://git-scm.com/docs/git-checkout target=_blank rel="noopener noreffer">git checkout</a></li>
 </ul>
 </div>
 </div>
@@ -154,25 +132,25 @@ git merge upstream/main
 <div class=post-info>
 <div class=post-info-line>
 <div class=post-info-mod>
-<span>Updated on Thursday, Sep 9, 2021</span>
+<span>Updated on Monday, Sep 20, 2021</span>
 </div>
 <div class=post-info-license></div>
 </div>
 <div class=post-info-line>
 <div class=post-info-md></div>
 <div class=post-info-share>
-<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://graef.io/clean-up-and-sync-your-git-fork/ data-title="Clean Up and Sync Your Git Fork" data-via=segraef data-hashtags="git,github,fork,upstream,git push,git remote"><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://graef.io/clean-up-and-sync-your-git-fork/ data-hashtag=git><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://graef.io/clean-up-and-sync-your-git-fork/><i class="fab fa-linkedin fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://graef.io/clean-up-and-sync-your-git-fork/ data-title="Clean Up and Sync Your Git Fork" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=https://graef.io/clean-up-and-sync-your-git-fork/><i class="fab fa-reddit fa-fw"></i></a></span>
+<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://graef.io/clean-up-local-and-remote-branches/ data-title="Automatically clean up local once remote branch is deleted" data-via=segraef data-hashtags=git,fetch,prune,branch,powershell><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://graef.io/clean-up-local-and-remote-branches/ data-hashtag=git><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://graef.io/clean-up-local-and-remote-branches/><i class="fab fa-linkedin fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://graef.io/clean-up-local-and-remote-branches/ data-title="Automatically clean up local once remote branch is deleted" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=https://graef.io/clean-up-local-and-remote-branches/><i class="fab fa-reddit fa-fw"></i></a></span>
 </div>
 </div>
 </div>
 <div class=post-info-more>
-<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/git/>git</a>,&nbsp;<a href=/tags/github/>github</a>,&nbsp;<a href=/tags/fork/>fork</a>,&nbsp;<a href=/tags/upstream/>upstream</a>,&nbsp;<a href=/tags/git-push/>git push</a>,&nbsp;<a href=/tags/git-remote/>git remote</a></section>
+<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/git/>git</a>,&nbsp;<a href=/tags/fetch/>fetch</a>,&nbsp;<a href=/tags/prune/>prune</a>,&nbsp;<a href=/tags/branch/>branch</a>,&nbsp;<a href=/tags/powershell/>PowerShell</a></section>
 <section>
 <span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span>
 </section>
 </div>
-<div class=post-nav><a href=/find-and-replace-with-a-newline-in-visual-studio-code/ class=prev rel=prev title="Find and replace with a newline in Visual Studio Code"><i class="fas fa-angle-left fa-fw"></i>Find and replace with a newline in Visual Studio Code</a>
-<a href=/clean-up-local-and-remote-branches/ class=next rel=next title="Automatically clean up local once remote branch is deleted">Automatically clean up local once remote branch is deleted<i class="fas fa-angle-right fa-fw"></i></a></div>
+<div class=post-nav><a href=/clean-up-and-sync-your-git-fork/ class=prev rel=prev title="Clean Up and Sync Your Git Fork"><i class="fas fa-angle-left fa-fw"></i>Clean Up and Sync Your Git Fork</a>
+<a href=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/ class=next rel=next title="Conception, Construction and Evaluation of a Raspberry Pi Cluster">Conception, Construction and Evaluation of a Raspberry Pi Cluster<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id=comments><div id=utterances></div><noscript>
 Please enable JavaScript to view the comments powered by <a href=https://utteranc.es/>Utterances</a>.
