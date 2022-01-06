@@ -41,6 +41,8 @@ If you want to know how to create a secure wallet address, check out my post [Cr
 
 {{< admonition info References >}}
 - [Create a secure and anonymous Crypto Wallet](../create-a-secure-and-anonymous-wallet-address/)
+- [Hot and Cold Crypto Wallet (Address)](../hot-and-cold-wallet-address/)
+- [Crypto Token, Coins and Mnemonics](../crypto-token-coins-and-mnemonics/)
 - [Generate Bitcoin Address](https://bitaddress.org)
 - [Generate Ethereum Address](https://myetherwallet.com)
 - [How Jason Bourne Stores His Bitcoin](http://maxtaco.github.io/bitcoin/2014/01/16/how-jason-bourne-stores-his-bitcoin/)

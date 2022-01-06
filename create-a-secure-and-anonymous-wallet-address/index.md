@@ -107,6 +107,8 @@ Before you start, remember to disconnect any LAN cables from your computer/lapto
 
 {{< admonition info References >}}
 - [Cold Crypto Wallets and MITM Attacks](../cold-crypto-wallets-and-mitm-attacks/)
+- [Hot and Cold Crypto Wallet (Address)](../hot-and-cold-wallet-address/)
+- [Crypto Token, Coins and Mnemonics](../crypto-token-coins-and-mnemonics/)
 - [BIP39 wordlist](https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt)
 - [Why Storing Bitcoin in a Single Wallet is a Bad Idea](https://www.investopedia.com/news/why-storing-bitcoin-single-wallet-bad-idea/)
 - [Extract Private Key from Ledger Mnemonic](https://dune.network/ledger_extract/)
