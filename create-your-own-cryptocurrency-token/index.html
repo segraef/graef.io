@@ -17,7 +17,7 @@
 <meta name=application-name content="graef.io - Sebastian Gräf">
 <meta name=apple-mobile-web-app-title content="graef.io - Sebastian Gräf"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
 <link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://graef.io/create-your-own-cryptocurrency-token/><link rel=prev href=https://graef.io/how-to-reload-vscode-window/><link rel=next href=https://graef.io/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><meta name=google-site-verification content="google-site-verification=081I19l1P1J3FFLaw1uKtAtY5KcJx_Z9ywiKt60VGP4"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Create your own Cryptocurrency Token (Solana)","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/graef.io\/create-your-own-cryptocurrency-token\/"},"image":["https:\/\/graef.io\/logo.png"],"genre":"posts","keywords":"crypto, wallet, solana, token, mint, blockchain","wordcount":1003,"url":"https:\/\/graef.io\/create-your-own-cryptocurrency-token\/","datePublished":"2022-01-09T08:23:15+08:00","dateModified":"2022-01-09T08:23:15+08:00","publisher":{"@type":"Organization","name":"","logo":"https:\/\/graef.io\/logo.png"},"author":{"@type":"Person","name":"Sebastian Gräf"},"description":""}</script></head>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://graef.io/create-your-own-cryptocurrency-token/><link rel=prev href=https://graef.io/how-to-reload-vscode-window/><link rel=next href=https://graef.io/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><meta name=google-site-verification content="google-site-verification=081I19l1P1J3FFLaw1uKtAtY5KcJx_Z9ywiKt60VGP4"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Create your own Cryptocurrency Token (Solana)","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/graef.io\/create-your-own-cryptocurrency-token\/"},"image":["https:\/\/graef.io\/logo.png"],"genre":"posts","keywords":"crypto, wallet, solana, token, mint, blockchain","wordcount":1009,"url":"https:\/\/graef.io\/create-your-own-cryptocurrency-token\/","datePublished":"2022-01-09T08:23:15+08:00","dateModified":"2022-01-09T08:23:15+08:00","publisher":{"@type":"Organization","name":"","logo":"https:\/\/graef.io\/logo.png"},"author":{"@type":"Person","name":"Sebastian Gräf"},"description":""}</script></head>
 <body header-desktop=auto header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'light'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'light'==='dark')&&document.body.setAttribute('theme','dark')</script>
 <div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
 <div class=header-wrapper>
@@ -85,7 +85,7 @@ Cancel
 <div class=toc-content id=toc-content-auto></div>
 </div><article class="page single"><h1 class="single-title animated flipInX">Create your own Cryptocurrency Token (Solana)</h1><div class=post-meta>
 <div class=post-meta-line><span class=post-author><a href=https://graef.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Sebastian Gräf</a></span>&nbsp;<span class=post-category>included in <a href=/categories/crypto/><i class="far fa-folder fa-fw"></i>Crypto</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Sunday, Jan 9, 2022">Sunday, Jan 9, 2022</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1003 words&nbsp;
+<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Sunday, Jan 9, 2022">Sunday, Jan 9, 2022</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1009 words&nbsp;
 <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
 </div><div class="details toc" id=toc-static kept>
 <div class="details-summary toc-title">
@@ -112,7 +112,7 @@ Cancel
 </ul>
 </li>
 <li><a href=#top-up-your-wallet>Top up your wallet</a></li>
-<li><a href=#create-token-address-account-and-mint-it>Create Token Address, Account and mint it</a>
+<li><a href=#create-token>Create Token</a>
 <ul>
 <li><a href=#create-token-and-token-account>Create Token and Token Account</a></li>
 <li><a href=#mint-token-account>Mint Token Account</a></li>
@@ -121,8 +121,8 @@ Cancel
 </li>
 <li><a href=#limit-token-supply>Limit Token Supply</a></li>
 <li><a href=#transfer-token-to-a-browser-wallet>Transfer token to a browser wallet</a></li>
+<li><a href=#register-your-token>Register your Token</a></li>
 <li><a href=#summary>Summary</a></li>
-<li><a href=#bonus-register-your-token>Bonus: Register your Token</a></li>
 </ul>
 </nav></div>
 </div><div class=content id=content><p>I created my own crypto Token and I want to show you how to create your own - It only takes about 15-30 minutes.</p>
@@ -239,11 +239,11 @@ public_key_bytes = [240,23,238,206,118,215,154,238,229,96,11,37,156,123,51,223,5
 <i class="icon fas fa-exclamation-triangle fa-fw"></i>Remember<i class="details-icon fas fa-angle-right fa-fw"></i>
 </div>
 <div class=details-content>
-<div class=admonition-content>Your <code>keypair.json</code> file is unencrypted. Do not share this file with others.</div>
+<div class=admonition-content>Your <code>keypair.json</code> file is <strong>unencrypted</strong>. Do <strong>not</strong> share this file with others.</div>
 </div>
 </div>
 <p>Remember, and as we learned in <a href=../hot-and-cold-wallet-address/ rel>Hot and cold Crypto Wallet (Address)</a>, a wallet address like shown in the output above, is just a <em>Base58Check Encoded</em> Public Key Hash.</p>
-<p>That&rsquo;s why your wallet address <code>8mNvt36N7bW3vuWJ3pFDTSWFp2i7fD1MF8bv6mTFMj8f</code> looks different than your public key bytes.</p>
+<p>That&rsquo;s why your wallet address <code>8mNvt36N7bW3vuWJ3pFDTSWFp2i7fD1MF8bv6mTFMj8f</code> looks different than your <code>public_key_bytes</code>.</p>
 <h3 id=set-solana-config>Set Solana Config</h3>
 <p>By default your <code>RPC URL</code> should be set to <a href=https://api.mainnet-beta.solana.com target=_blank rel="noopener noreffer">https://api.mainnet-beta.solana.com</a> already but here is the command to verify it:</p>
 <div class=highlight><div class=chroma>
@@ -254,14 +254,14 @@ public_key_bytes = [240,23,238,206,118,215,154,238,229,96,11,37,156,123,51,223,5
 <pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>solana config get
 </code></pre></td></tr></table>
 </div>
-</div><p>If not you can set it with this command:</p>
+</div><p>If it&rsquo;s not set to the Mainnet not you can set it with this command:</p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span></code></pre></td>
 <td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>Solana config set --url https://api.mainnet-beta.solana.com
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>solana config set --url https://api.mainnet-beta.solana.com
 solana config set --keypair keypair.json
 </code></pre></td></tr></table>
 </div>
@@ -285,14 +285,13 @@ solana config set --keypair keypair.json
 <img class=lazyload src=/svg/loading.min.svg data-src=import-wallet.png data-srcset="/create-your-own-cryptocurrency-token/import-wallet.png, import-wallet.png 1.5x, /create-your-own-cryptocurrency-token/import-wallet.png 2x" data-sizes=auto alt=/create-your-own-cryptocurrency-token/import-wallet.png>
 </a><figcaption class=image-caption><strong>Import into your Phantom Wallet.</strong></figcaption>
 </figure>
-<p>You can also use your seed phrase for import.</p>
 <h2 id=top-up-your-wallet>Top up your wallet</h2>
 <p>Let&rsquo;s top up your wallet address you just created with some <code>$SOL</code>to cover the transaction fees.</p>
 <figure><a class=lightgallery href=/create-your-own-cryptocurrency-token/topup.png title=/create-your-own-cryptocurrency-token/topup.png data-thumbnail=/create-your-own-cryptocurrency-token/topup.png data-sub-html="<h2>Top up your Wallet.</h2>">
 <img class=lazyload src=/svg/loading.min.svg data-src=topup.png data-srcset="/create-your-own-cryptocurrency-token/topup.png, topup.png 1.5x, /create-your-own-cryptocurrency-token/topup.png 2x" data-sizes=auto alt=/create-your-own-cryptocurrency-token/topup.png>
 </a><figcaption class=image-caption><strong>Top up your Wallet.</strong></figcaption>
 </figure>
-<p>If you imported your wallet address into Phantom you can check the balance there or you can use <code>solana balance</code> to check</p>
+<p>If you imported your wallet address into Phantom you can check the balance there or you can use <code>solana balance</code> to check:</p>
 <div class=highlight><div class=chroma>
 <table class=lntable><tr><td class=lntd>
 <pre tabindex=0 class=chroma><code><span class=lnt>1
@@ -305,7 +304,7 @@ solana config set --keypair keypair.json
 <img class=lazyload src=/svg/loading.min.svg data-src=balance.png data-srcset="/create-your-own-cryptocurrency-token/balance.png, balance.png 1.5x, /create-your-own-cryptocurrency-token/balance.png 2x" data-sizes=auto alt=/create-your-own-cryptocurrency-token/balance.png>
 </a><figcaption class=image-caption><strong>Check your balance.</strong></figcaption>
 </figure>
-<h2 id=create-token-address-account-and-mint-it>Create Token Address, Account and mint it</h2>
+<h2 id=create-token>Create Token</h2>
 <p>Now that we have sent some <code>$SOL</code> to our wallet address we can start creating our actual <strong>Token Address</strong>, which we will later use to mint fresh Tokens and send them to our <strong>Token Account</strong> which we will also create in the same process.</p>
 <h3 id=create-token-and-token-account>Create Token and Token Account</h3>
 <div class=highlight><div class=chroma>
@@ -392,13 +391,7 @@ solana config set --keypair keypair.json
 <pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>spl-token transfer --fund-recipient 2LTQripZZZXekBg5311zu4zdzKr7VwiQ81RzVL62S72q 1000000 F7tHkHNUkM2R3w2A6fyVDK29m9y8oNx851nhYoa4SuRp
 </code></pre></td></tr></table>
 </div>
-</div><h2 id=summary>Summary</h2>
-<p>Okay, let&rsquo;s summarize the whole thing again and show what we have done. We have created the following:</p>
-<ol>
-<li>We created a Wallet Address: <code>8mNvt36N7bW3vuWJ3pFDTSWFp2i7fD1MF8bv6mTFMj8f</code> to be used as a so called Authority to fund the creation but also to mint our Token.</li>
-<li>We created a Token (Address): <code>2LTQripZZZXekBg5311zu4zdzKr7VwiQ81RzVL62S72q</code> which is then associated to our Token Account: <code>CB7WEx4wtFiy6ftJWbaSvBfw1pbxe3wq65DjEbWmGRve</code>.</li>
-</ol>
-<h2 id=bonus-register-your-token>Bonus: Register your Token</h2>
+</div><h2 id=register-your-token>Register your Token</h2>
 <p>To actually finish the creation of your Token we want to have it officially listed on the Solana Registry.</p>
 <p>I am not going into details here, so feel free to check out my <a href=https://github.com/solana-labs/token-list/pull/12779 target=_blank rel="noopener noreffer">pull request</a> at <a href=https://github.com/solana-labs/token-list/ target=_blank rel="noopener noreffer">github.com/solana-labs/token-list</a> for reference.</p>
 <p>But basically the only details you need for your PR are:</p>
@@ -421,6 +414,13 @@ solana config set --keypair keypair.json
 <img class=lazyload src=/svg/loading.min.svg data-src=token-listing.png data-srcset="token-listing.png, token-listing.png 1.5x, token-listing.png 2x" data-sizes=auto alt=token-listing.png>
 </a><figcaption class=image-caption><strong>Token Listing</strong></figcaption>
 </figure>
+<h2 id=summary>Summary</h2>
+<p>Okay, let&rsquo;s summarize the whole thing again and show what we have done. We have created the following:</p>
+<ol>
+<li>We created a Wallet Address: <code>8mNvt36N7bW3vuWJ3pFDTSWFp2i7fD1MF8bv6mTFMj8f</code> to be used as a so called Authority to fund the creation but also to mint our Token.</li>
+<li>We created a Token (Address): <code>2LTQripZZZXekBg5311zu4zdzKr7VwiQ81RzVL62S72q</code> which is then associated to our Token Account: <code>CB7WEx4wtFiy6ftJWbaSvBfw1pbxe3wq65DjEbWmGRve</code>.</li>
+<li>In the end we registered our Token <code>2LTQripZZZXekBg5311zu4zdzKr7VwiQ81RzVL62S72q</code> on the Solana Token Registry to make it available.</li>
+</ol>
 <p>If you want to know how to create a secure wallet address, check out my post <a href=../create-a-secure-and-anonymous-wallet-address/ rel>Create a secure and anonymous Crypto Wallet</a>.</p>
 <div class="details admonition info open">
 <div class="details-summary admonition-title">

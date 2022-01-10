@@ -103,12 +103,12 @@ public_key_bytes = [240,23,238,206,118,215,154,238,229,96,11,37,156,123,51,223,5
 
 
 {{< admonition warning Remember >}}
-Your `keypair.json` file is unencrypted. Do not share this file with others.
+Your `keypair.json` file is **unencrypted**. Do **not** share this file with others.
 {{< /admonition >}}
 
 Remember, and as we learned in [Hot and cold Crypto Wallet (Address)](../hot-and-cold-wallet-address/), a wallet address like shown in the output above, is just a _Base58Check Encoded_ Public Key Hash.
 
-That's why your wallet address `8mNvt36N7bW3vuWJ3pFDTSWFp2i7fD1MF8bv6mTFMj8f` looks different than your public key bytes.
+That's why your wallet address `8mNvt36N7bW3vuWJ3pFDTSWFp2i7fD1MF8bv6mTFMj8f` looks different than your `public_key_bytes`.
 
 ### Set Solana Config
 
@@ -119,10 +119,10 @@ solana config get
 ```
 
 
-If not you can set it with this command:
+If it's not set to the Mainnet not you can set it with this command:
 
 ```
-Solana config set --url https://api.mainnet-beta.solana.com
+solana config set --url https://api.mainnet-beta.solana.com
 solana config set --keypair keypair.json
 ```
 
@@ -143,15 +143,13 @@ Copy the contents of your `keypair.json` and hit import on your Phantom Wallet.
 
 {{< image src="import-wallet.png" caption="**Import into your Phantom Wallet.**" >}}
 
-You can also use your seed phrase for import.
-
 ## Top up your wallet
 
 Let's top up your wallet address you just created with some `$SOL`to cover the transaction fees.
 
 {{< image src="topup.png" caption="**Top up your Wallet.**" >}}
 
-If you imported your wallet address into Phantom you can check the balance there or you can use `solana balance` to check
+If you imported your wallet address into Phantom you can check the balance there or you can use `solana balance` to check:
 
 ```
 solana balance
@@ -160,7 +158,7 @@ solana balance
 {{< image src="balance.png" caption="**Check your balance.**" >}}
 
 
-## Create Token Address, Account and mint it
+## Create Token
 
 Now that we have sent some `$SOL` to our wallet address we can start creating our actual **Token Address**, which we will later use to mint fresh Tokens and send them to our **Token Account** which we will also create in the same process.
 
@@ -221,14 +219,7 @@ spl-token transfer --fund-recipient tokenAddress transferAmount recipientAddress
 spl-token transfer --fund-recipient 2LTQripZZZXekBg5311zu4zdzKr7VwiQ81RzVL62S72q 1000000 F7tHkHNUkM2R3w2A6fyVDK29m9y8oNx851nhYoa4SuRp
 ```
 
-## Summary
-
-Okay, let's summarize the whole thing again and show what we have done. We have created the following:
-
-1. We created a Wallet Address: `8mNvt36N7bW3vuWJ3pFDTSWFp2i7fD1MF8bv6mTFMj8f` to be used as a so called Authority to fund the creation but also to mint our Token.
-2. We created a Token (Address): `2LTQripZZZXekBg5311zu4zdzKr7VwiQ81RzVL62S72q` which is then associated to our Token Account: `CB7WEx4wtFiy6ftJWbaSvBfw1pbxe3wq65DjEbWmGRve`.
-
-## Bonus: Register your Token
+## Register your Token
 
 To actually finish the creation of your Token we want to have it officially listed on the Solana Registry.
 
@@ -246,6 +237,14 @@ But basically the only details you need for your PR are:
 Once your PR was merged you can see your token officiall listed on your Phantom wallet and the official solana.com registry (see [solscan.io](https://solscan.io/token/EmU2juRehuHHn3p2qwMbrPiupXdc3JrZdTD1aP5zyhrW) or [Solana Explorer](https://explorer.solana.com/address/EmU2juRehuHHn3p2qwMbrPiupXdc3JrZdTD1aP5zyhrW))
 
 {{< image src="token-listing.png" caption="**Token Listing**" >}}
+
+## Summary
+
+Okay, let's summarize the whole thing again and show what we have done. We have created the following:
+
+1. We created a Wallet Address: `8mNvt36N7bW3vuWJ3pFDTSWFp2i7fD1MF8bv6mTFMj8f` to be used as a so called Authority to fund the creation but also to mint our Token.
+2. We created a Token (Address): `2LTQripZZZXekBg5311zu4zdzKr7VwiQ81RzVL62S72q` which is then associated to our Token Account: `CB7WEx4wtFiy6ftJWbaSvBfw1pbxe3wq65DjEbWmGRve`.
+3. In the end we registered our Token `2LTQripZZZXekBg5311zu4zdzKr7VwiQ81RzVL62S72q` on the Solana Token Registry to make it available.
 
 If you want to know how to create a secure wallet address, check out my post [Create a secure and anonymous Crypto Wallet](../create-a-secure-and-anonymous-wallet-address/).
 
