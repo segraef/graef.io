@@ -1,7 +1,7 @@
 # Create your own Cryptocurrency Token (Solana)
 
 
-I created my own crypto Token and I want to show you how to create your own!
+I created my own crypto Token and I want to show you how to create your own - It only takes about 15-30 minutes.
 
 <!--more-->
 
@@ -10,7 +10,7 @@ First of all, we are **NOT** going to create a **cryptocurrency**.<br>
 We are going to create a cryptocurrency **Token**.
 {{< /admonition >}}
 
-If you want to learn more about it then check out my other post about basic [Crypto Tokenomics](https://www.graef.io/crypto-token-coins-and-mnemonics/).
+If you want to learn more about the differences please check out my other post about basic [Crypto Tokenomics](https://www.graef.io/crypto-token-coins-and-mnemonics/).
 
 ## Why should you create your own Token?
 
@@ -30,14 +30,12 @@ But the reason we're creating it is simply to better understand the process behi
 
 ## Workflow
 
-Here is a short overview of what we're going to do and to give you the bigger picture
+Here is a short overview of what we're going to do and to give you the bigger picture:
 
 
 {{< mermaid >}}
 stateDiagram
-    [*] --> PhantomWallet
-    PhantomWallet --> TopUp
-    TopUp --> CreateWallet
+    [*] --> CreateWallet
     CreateWallet --> TokenAddress
     TokenAddress --> TokenAccount
     TokenAddress --> Mint
@@ -45,8 +43,7 @@ stateDiagram
     Mint --> TokenAddress
     TokenAccount --> LimitSupply
     LimitSupply --> RegisterToken
-    RegisterToken --> Token
-    Token --> [*]
+    RegisterToken --> [*]
 {{< /mermaid >}}
 
 ## Set up your Solana Wallet
@@ -72,6 +69,11 @@ Open PowerShell or a Command Prompt (cmd.exe) as an Administrator and copy and p
 ```
 curl https://release.solana.com/v1.9.3/solana-install-init-x86_64-pc-windows-msvc.exe --output C:\temp\solana-install-init.exe --create-dirs
 ```
+
+{{< admonition info "Release" >}}
+Feel free to replace `v1.9.3` with the release tag matching your desired release version, or just use any of the symbolic channel names: _stable_, _beta_, or _edge_.
+{{< /admonition >}}
+
 Confirm you have the desired version of `solana` installed by entering:
 
 ```
@@ -98,6 +100,11 @@ private_key_bytes = [53,182,131,247,119,117,227,207,112,73,170,126,222,197,244,9
 
 public_key_bytes = [240,23,238,206,118,215,154,238,229,96,11,37,156,123,51,223,5,231,17,117,86,136,103,14,75,95,175,132,148,54,1,13]
 ```
+
+
+{{< admonition warning Remember >}}
+Your `keypair.json` file is unencrypted. Do not share this file with others.
+{{< /admonition >}}
 
 Remember, and as we learned in [Hot and cold Crypto Wallet (Address)](../hot-and-cold-wallet-address/), a wallet address like shown in the output above, is just a _Base58Check Encoded_ Public Key Hash.
 
@@ -135,6 +142,8 @@ solana-keygen verify 8mNvt36N7bW3vuWJ3pFDTSWFp2i7fD1MF8bv6mTFMj8f .\keypair.json
 Copy the contents of your `keypair.json` and hit import on your Phantom Wallet.
 
 {{< image src="import-wallet.png" caption="**Import into your Phantom Wallet.**" >}}
+
+You can also use your seed phrase for import.
 
 ## Top up your wallet
 
@@ -174,7 +183,7 @@ Token Account: `CB7WEx4wtFiy6ftJWbaSvBfw1pbxe3wq65DjEbWmGRve`
 {{< image src="create-token-account.png" caption="**Create your Token Account.**" >}}
 
 {{< admonition note Note >}}
-Your Token Account is bound to your Token Address.
+Your Token Account is associated with your Token Address.
 {{< /admonition >}}
 
 ### Mint Token Account
@@ -212,11 +221,29 @@ spl-token transfer --fund-recipient tokenAddress transferAmount recipientAddress
 spl-token transfer --fund-recipient 2LTQripZZZXekBg5311zu4zdzKr7VwiQ81RzVL62S72q 1000000 F7tHkHNUkM2R3w2A6fyVDK29m9y8oNx851nhYoa4SuRp
 ```
 
-## Register your Token
+## Summary
 
-I am not going into details here, so feel free to check out my [pull request](https://github.com/solana-labs/token-list/pull/12779) at https://github.com/solana-labs/token-list/ for reference.
+Okay, let's summarize the whole thing again and show what we have done. We have created the following:
 
-Once your PR was merged you can see your token officiall listed on your wallet and solana.com (see [solscan.io](https://solscan.io/token/EmU2juRehuHHn3p2qwMbrPiupXdc3JrZdTD1aP5zyhrW) or [Solana Explorer](https://explorer.solana.com/address/EmU2juRehuHHn3p2qwMbrPiupXdc3JrZdTD1aP5zyhrW))
+1. We created a Wallet Address: `8mNvt36N7bW3vuWJ3pFDTSWFp2i7fD1MF8bv6mTFMj8f` to be used as a so called Authority to fund the creation but also to mint our Token.
+2. We created a Token (Address): `2LTQripZZZXekBg5311zu4zdzKr7VwiQ81RzVL62S72q` which is then associated to our Token Account: `CB7WEx4wtFiy6ftJWbaSvBfw1pbxe3wq65DjEbWmGRve`.
+
+## Bonus: Register your Token
+
+To actually finish the creation of your Token we want to have it officially listed on the Solana Registry.
+
+I am not going into details here, so feel free to check out my [pull request](https://github.com/solana-labs/token-list/pull/12779) at [github.com/solana-labs/token-list](https://github.com/solana-labs/token-list/) for reference.
+
+But basically the only details you need for your PR are:
+
+```json
+"address": "2LTQripZZZXekBg5311zu4zdzKr7VwiQ81RzVL62S72q",
+"symbol": "<yourTokenSymbol>",
+"name": "<yourTokenName>",
+"logoURI": "https://raw.githubusercontent.com/<yourLogoURI>.png",
+```
+
+Once your PR was merged you can see your token officiall listed on your Phantom wallet and the official solana.com registry (see [solscan.io](https://solscan.io/token/EmU2juRehuHHn3p2qwMbrPiupXdc3JrZdTD1aP5zyhrW) or [Solana Explorer](https://explorer.solana.com/address/EmU2juRehuHHn3p2qwMbrPiupXdc3JrZdTD1aP5zyhrW))
 
 {{< image src="token-listing.png" caption="**Token Listing**" >}}
 
@@ -224,7 +251,7 @@ If you want to know how to create a secure wallet address, check out my post [Cr
 
 
 {{< admonition info References >}}
-
+- [Solana Token Program](https://spl.solana.com/token)
 - [Create a secure and anonymous Crypto Wallet](../create-a-secure-and-anonymous-wallet-address/)
 - [Hot and Cold Crypto Wallet (Address)](../hot-and-cold-wallet-address/)
 - [Crypto Token, Coins and Mnemonics](../crypto-token-coins-and-mnemonics/)
