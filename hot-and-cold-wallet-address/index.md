@@ -38,6 +38,7 @@ A hot wallet is a tool that allows to receive and send tokens/coins. Compared to
 A cold wallet is not connected to the internet and therefore stands a far lesser risk of being compromised. Cold wallets can also be referred to as offline (paper) wallets or hardware (USB) wallets.
 
 {{< admonition info References >}}
+
 - [Create a secure and anonymous Crypto Wallet](../create-a-secure-and-anonymous-wallet-address/)
 - [Cold Crypto Wallets and MITM Attacks](../cold-crypto-wallets-and-mitm-attacks/)
 - [Crypto Token, Coins and Mnemonics](../crypto-token-coins-and-mnemonics/)
