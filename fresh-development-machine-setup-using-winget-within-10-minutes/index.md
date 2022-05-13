@@ -14,6 +14,9 @@ Windows 11 (If Windows 10 then [install winget via App Installer](https://docs.m
 # Commands
 
 ```pwsh
+# Visual Studio Code
+winget install Microsoft.VisualStudioCode
+
 # Azure Tools
 winget install Microsoft.AzureStorageExplorer
 winget install Microsoft.Bicep
