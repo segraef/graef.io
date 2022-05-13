@@ -91,6 +91,5 @@ code --install-extension msazurermtools.azurerm-vscode-tools
 --->
 {{< admonition info References >}}
 - [Install winget via App Installer](https://docs.microsoft.com/en-us/windows/package-manager/winget/#install-winget)
-- [](https://example.com)
 {{< /admonition >}}
 
