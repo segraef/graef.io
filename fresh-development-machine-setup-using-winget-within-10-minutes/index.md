@@ -37,7 +37,8 @@ Install-Module Az
 
 # Visual Code Extensions
 
-code --install-extension eamodio.gitlens 
+code --install-extension eamodio.gitlens
+code --install-extension telesoho.vscode-markdown-paste-image
 code --install-extension ms-azuretools.vscode-bicep
 code --install-extension ms-azuretools.vscode-docker
 code --install-extension ms-vscode-remote.remote-containers
