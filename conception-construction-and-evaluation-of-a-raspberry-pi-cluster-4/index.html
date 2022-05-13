@@ -1,178 +1,42 @@
-<!doctype html><html lang=en>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=robots content="noodp">
-<meta http-equiv=x-ua-compatible content="IE=edge, chrome=1">
-<title>Conception, Construction and Evaluation of a Raspberry Pi Cluster (4/4) - Automate everything </title><meta name=Description content="Automate everything - Sebastian Gräf"><meta property="og:title" content="Conception, Construction and Evaluation of a Raspberry Pi Cluster (4/4)">
-<meta property="og:description" content="The goal of this work is to create an affordable, energy efficient and portable mini-supercomputer. Ideally, a cluster computer with little or no carbon footprint, individual elements that are inexpensive to replace, and a portable system that can be easily disassembled and reassembled.">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://graef.io/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/"><meta property="og:image" content="https://graef.io/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/picube5.jpg"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2021-07-23T00:00:00+00:00">
-<meta property="article:modified_time" content="2021-07-23T00:00:00+00:00">
-<meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="https://graef.io/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/picube5.jpg">
-<meta name=twitter:title content="Conception, Construction and Evaluation of a Raspberry Pi Cluster (4/4)">
-<meta name=twitter:description content="The goal of this work is to create an affordable, energy efficient and portable mini-supercomputer. Ideally, a cluster computer with little or no carbon footprint, individual elements that are inexpensive to replace, and a portable system that can be easily disassembled and reassembled.">
-<meta name=application-name content="graef.io - Sebastian Gräf">
-<meta name=apple-mobile-web-app-title content="graef.io - Sebastian Gräf"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
-<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://graef.io/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/><link rel=prev href=https://graef.io/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-3/><link rel=next href=https://graef.io/get-powershell-aliases/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><meta name=google-site-verification content="google-site-verification=081I19l1P1J3FFLaw1uKtAtY5KcJx_Z9ywiKt60VGP4"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Conception, Construction and Evaluation of a Raspberry Pi Cluster (4/4)","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/graef.io\/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4\/"},"image":["https:\/\/graef.io\/logo.png"],"genre":"posts","keywords":"Raspberry, Pi, cluster, failover, Kubernetes, k8s, docker, HypriotOS, PiCube, GPIO, YAML, Bash","wordcount":4377,"url":"https:\/\/graef.io\/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4\/","datePublished":"2021-07-23T00:00:00+00:00","dateModified":"2021-07-23T00:00:00+00:00","publisher":{"@type":"Organization","name":"","logo":"https:\/\/graef.io\/logo.png"},"author":{"@type":"Person","name":"Sebastian Gräf"},"description":""}</script></head>
-<body header-desktop=auto header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem('theme')?localStorage.getItem('theme')==='dark':'light'==='auto'?window.matchMedia('(prefers-color-scheme: dark)').matches:'light'==='dark')&&document.body.setAttribute('theme','dark')</script>
-<div id=mask></div><div class=wrapper><header class=desktop id=header-desktop>
-<div class=header-wrapper>
-<div class=header-title>
-<a href=/ title="Automate everything "><img class="lazyload logo" src=/svg/loading.min.svg data-src=/logo.png data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x" data-sizes=auto alt=/logo.png title=/logo.png></a>
-</div>
-<div class=menu>
-<div class=menu-inner><a class=menu-item href=/posts/ title=Posts> Posts </a><a class=menu-item href=/categories/projects/ title=Projects> Projects </a><a class=menu-item href=/categories/til/ title="Today I learned"> TIL </a><a class=menu-item href=/tags/ title=Tags> Tags </a><a class=menu-item href=/categories/ title=Categories> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
+<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=x-ua-compatible content="IE=edge, chrome=1"><title>Conception, Construction and Evaluation of a Raspberry Pi Cluster (4/4) - Automate everything</title><meta name=Description content="Automate everything - Sebastian Gräf"><meta property="og:title" content="Conception, Construction and Evaluation of a Raspberry Pi Cluster (4/4)"><meta property="og:description" content="The goal of this work is to create an affordable, energy efficient and portable mini-supercomputer. Ideally, a cluster computer with little or no carbon footprint, individual elements that are inexpensive to replace, and a portable system that can be easily disassembled and reassembled."><meta property="og:type" content="article"><meta property="og:url" content="https://graef.io/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/"><meta property="og:image" content="https://graef.io/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/picube5.jpg"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-07-23T00:00:00+00:00"><meta property="article:modified_time" content="2021-07-23T00:00:00+00:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://graef.io/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/picube5.jpg"><meta name=twitter:title content="Conception, Construction and Evaluation of a Raspberry Pi Cluster (4/4)"><meta name=twitter:description content="The goal of this work is to create an affordable, energy efficient and portable mini-supercomputer. Ideally, a cluster computer with little or no carbon footprint, individual elements that are inexpensive to replace, and a portable system that can be easily disassembled and reassembled."><meta name=application-name content="graef.io - Sebastian Gräf"><meta name=apple-mobile-web-app-title content="graef.io - Sebastian Gräf"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://graef.io/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/><link rel=prev href=https://graef.io/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-3/><link rel=next href=https://graef.io/get-powershell-aliases/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><meta name=google-site-verification content="google-site-verification=081I19l1P1J3FFLaw1uKtAtY5KcJx_Z9ywiKt60VGP4"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Conception, Construction and Evaluation of a Raspberry Pi Cluster (4/4)","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/graef.io\/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4\/"},"image":["https:\/\/graef.io\/logo.png"],"genre":"posts","keywords":"Raspberry, Pi, cluster, failover, Kubernetes, k8s, docker, HypriotOS, PiCube, GPIO, YAML, Bash","wordcount":4377,"url":"https:\/\/graef.io\/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4\/","datePublished":"2021-07-23T00:00:00+00:00","dateModified":"2021-07-23T00:00:00+00:00","publisher":{"@type":"Organization","name":"","logo":"https:\/\/graef.io\/logo.png"},"author":{"@type":"Person","name":"Sebastian Gräf"},"description":""}</script></head><body header-desktop=auto header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"light"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"light"==="dark")&&document.body.setAttribute("theme","dark")</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title="Automate everything "><img class="lazyload logo" src=/svg/loading.min.svg data-src=/logo.png data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x" data-sizes=auto alt=/logo.png title=/logo.png></a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/ title=Posts>Posts </a><a class=menu-item href=/categories/projects/ title=Projects>Projects </a><a class=menu-item href=/categories/til/ title="Today I learned">TIL </a><a class=menu-item href=/tags/ title=Tags>Tags </a><a class=menu-item href=/categories/ title=Categories>Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
 <input type=text placeholder="Search titles or contents..." id=search-input-desktop>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search>
-<i class="fas fa-search fa-fw"></i>
-</a>
-<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear>
-<i class="fas fa-times-circle fa-fw"></i>
-</a>
-<span class="search-button search-loading" id=search-loading-desktop>
-<i class="fas fa-spinner fa-fw fa-spin"></i>
-</span>
-</span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
-<i class="fas fa-adjust fa-fw"></i>
-</a>
-</div>
-</div>
-</div>
-</header><header class=mobile id=header-mobile>
-<div class=header-container>
-<div class=header-wrapper>
-<div class=header-title>
-<a href=/ title="Automate everything "><img class="lazyload logo" src=/svg/loading.min.svg data-src=/logo.png data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x" data-sizes=auto alt=/logo.png title=/logo.png></a>
-</div>
-<div class=menu-toggle id=menu-toggle-mobile>
-<span></span><span></span><span></span>
-</div>
-</div>
-<div class=menu id=menu-mobile><div class=search-wrapper>
-<div class="search mobile" id=search-mobile>
-<input type=text placeholder="Search titles or contents..." id=search-input-mobile>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search>
-<i class="fas fa-search fa-fw"></i>
-</a>
-<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear>
-<i class="fas fa-times-circle fa-fw"></i>
-</a>
-<span class="search-button search-loading" id=search-loading-mobile>
-<i class="fas fa-spinner fa-fw fa-spin"></i>
-</span>
-</div>
-<a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>
-Cancel
-</a>
-</div><a class=menu-item href=/posts/ title=Posts>Posts</a><a class=menu-item href=/categories/projects/ title=Projects>Projects</a><a class=menu-item href=/categories/til/ title="Today I learned">TIL</a><a class=menu-item href=/tags/ title=Tags>Tags</a><a class=menu-item href=/categories/ title=Categories>Categories</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
-<i class="fas fa-adjust fa-fw"></i>
-</a></div>
-</div>
-</header>
-<div class="search-dropdown desktop">
-<div id=search-dropdown-desktop></div>
-</div>
-<div class="search-dropdown mobile">
-<div id=search-dropdown-mobile></div>
-</div>
-<main class=main>
-<div class=container><div class=toc id=toc-auto>
-<h2 class=toc-title>Contents</h2>
-<div class=toc-content id=toc-content-auto></div>
-</div><article class="page single"><h1 class="single-title animated flipInX">Conception, Construction and Evaluation of a Raspberry Pi Cluster (4/4)</h1><div class=post-meta>
-<div class=post-meta-line><span class=post-author><a href=https://graef.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Sebastian Gräf</a></span>&nbsp;<span class=post-category>included in <a href=/categories/projects/><i class="far fa-folder fa-fw"></i>Projects</a></span></div>
-<div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Friday, Jul 23, 2021">Friday, Jul 23, 2021</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;4377 words&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;21 minutes&nbsp;</div>
-</div><div class=featured-image><img class=lazyload src=/svg/loading.min.svg data-src=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/picube5.jpg data-srcset="/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/picube5.jpg, /conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/picube5.jpg 1.5x, /conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/picube5.jpg 2x" data-sizes=auto alt=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/picube5.jpg title=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/picube5.jpg></div><div class="details toc" id=toc-static kept>
-<div class="details-summary toc-title">
-<span>Contents</span>
-<span><i class="details-icon fas fa-angle-right"></i></span>
-</div>
-<div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents>
-<ul>
-<li><a href=#evaluation>Evaluation</a>
-<ul>
-<li><a href=#scalability>Scalability</a></li>
-<li><a href=#fail-safe>Fail-safe</a></li>
-<li><a href=#cost-efficiency-and-performance>Cost efficiency and performance</a></li>
-<li><a href=#energy-efficiency-and-cooling>Energy efficiency and cooling</a></li>
-<li><a href=#use-case-setihome>Use Case SETI@home</a></li>
-</ul>
-</li>
-<li><a href=#conclusion-and-outlook>Conclusion and outlook</a></li>
-<li><a href=#bibliography>Bibliography</a></li>
-<li><a href=#appendix-a---script-installing-kubernetes>Appendix A - Script: Installing Kubernetes</a></li>
-<li><a href=#appendix-b---script-lcd-display>Appendix B - Script: LCD display</a></li>
-<li><a href=#appendix-c---script-docker-autoscaling>Appendix C - Script: Docker Autoscaling</a></li>
-</ul>
-</nav></div>
-</div><div class=content id=content><p>The goal of this work is to create an affordable, energy efficient and portable mini-supercomputer. Ideally, a cluster computer with little or no carbon footprint, individual elements that are inexpensive to replace, and a portable system that can be easily disassembled and reassembled.</p>
-<h2 id=evaluation>Evaluation</h2>
-<p>After the cluster has been configured and Kubernetes is ready for use,
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw"></i></a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i></span>
+</span><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme"><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title="Automate everything "><img class="lazyload logo" src=/svg/loading.min.svg data-src=/logo.png data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x" data-sizes=auto alt=/logo.png title=/logo.png></a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
+<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw"></i></a>
+<a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw"></i></a>
+<span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=/posts/ title=Posts>Posts</a><a class=menu-item href=/categories/projects/ title=Projects>Projects</a><a class=menu-item href=/categories/til/ title="Today I learned">TIL</a><a class=menu-item href=/tags/ title=Tags>Tags</a><a class=menu-item href=/categories/ title=Categories>Categories</a><a href=javascript:void(0); class="menu-item theme-switch" title="Switch Theme">
+<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Conception, Construction and Evaluation of a Raspberry Pi Cluster (4/4)</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=https://graef.io title=Author target=_blank rel="noopener noreffer author" class=author><i class="fas fa-user-circle fa-fw"></i>Sebastian Gräf</a></span>&nbsp;<span class=post-category>included in <a href=/categories/projects/><i class="far fa-folder fa-fw"></i>Projects</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Friday, Jul 23, 2021">Friday, Jul 23, 2021</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;4377 words&nbsp;
+<i class="far fa-clock fa-fw"></i>&nbsp;21 minutes&nbsp;</div></div><div class=featured-image><img class=lazyload src=/svg/loading.min.svg data-src=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/picube5.jpg data-srcset="/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/picube5.jpg, /conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/picube5.jpg 1.5x, /conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/picube5.jpg 2x" data-sizes=auto alt=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/picube5.jpg title=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/picube5.jpg></div><div class="details toc" id=toc-static kept><div class="details-summary toc-title"><span>Contents</span>
+<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#evaluation>Evaluation</a><ul><li><a href=#scalability>Scalability</a></li><li><a href=#fail-safe>Fail-safe</a></li><li><a href=#cost-efficiency-and-performance>Cost efficiency and performance</a></li><li><a href=#energy-efficiency-and-cooling>Energy efficiency and cooling</a></li><li><a href=#use-case-setihome>Use Case SETI@home</a></li></ul></li><li><a href=#conclusion-and-outlook>Conclusion and outlook</a></li><li><a href=#bibliography>Bibliography</a></li><li><a href=#appendix-a---script-installing-kubernetes>Appendix A - Script: Installing Kubernetes</a></li><li><a href=#appendix-b---script-lcd-display>Appendix B - Script: LCD display</a></li><li><a href=#appendix-c---script-docker-autoscaling>Appendix C - Script: Docker Autoscaling</a></li></ul></nav></div></div><div class=content id=content><p>The goal of this work is to create an affordable, energy efficient and portable mini-supercomputer. Ideally, a cluster computer with little or no carbon footprint, individual elements that are inexpensive to replace, and a portable system that can be easily disassembled and reassembled.</p><h2 id=evaluation>Evaluation</h2><p>After the cluster has been configured and Kubernetes is ready for use,
 the entire system is evaluated. The requirements set in advance (see
 <a href=#requirements rel>Requirements</a>) are critically reviewed, target and actual values are evaluated,
 and various comparisons are made. This prototype is ideally suited to
 illustrate and substantiate the research question addressed in this
 thesis. Section <a href=#use-case-setihome rel>Use case SETI@home</a> deals with a use case that provides information
 about the extent to which and the purpose for which this custom cluster
-construction can contribute to scientific research.</p>
-<h3 id=scalability>Scalability</h3>
-<p>Kubernetes enables easy scaling of applications or pods and the
+construction can contribute to scientific research.</p><h3 id=scalability>Scalability</h3><p>Kubernetes enables easy scaling of applications or pods and the
 applications within them. Enabled autoscaling scales pods according to
 their required resources up to a specified limit. In the following
 example, we test the autoscaling of our cluster using a simple web
-application and verify the automatic scalability of the system: <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup></p>
-<p>For this purpose, a Docker image based on a simple web server
+application and verify the automatic scalability of the system: <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup></p><p>For this purpose, a Docker image based on a simple web server
 application is used. This Docker image contains a single web page, which
 causes a maximum CPU load by simulated users when called. The Docker
 image is launched, causing a web server to run with the corresponding
 web page as a pod. Kubernetes' autoscaler is enabled with the following
-configuration: <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup></p>
-<ul>
-<li>
-<p><strong>KUBE_AUTOSCALER_MIN_NODES = 1</strong>: The minimum number of nodes to be
-used is one.</p>
-</li>
-<li>
-<p><strong>KUBE_AUTOSCALER_MAX_NODES = 4</strong>: The maximum number of nodes to be
-used is four. The fifth node thus retains the function as master.</p>
-</li>
-<li>
-<p><strong>KUBE_ENABLE_CLUSTER_AUTOSCALER = true</strong>: Activation of the
-autoscaler.</p>
-</li>
-</ul>
-<p>The pod with the web server container is started with the following
-properties:</p>
-<ul>
-<li>
-<p><strong>CPU-PERCENT = 50</strong>: This configuration value specifies the value
+configuration: <sup id=fnref:2><a href=#fn:2 class=footnote-ref role=doc-noteref>2</a></sup></p><ul><li><p><strong>KUBE_AUTOSCALER_MIN_NODES = 1</strong>: The minimum number of nodes to be
+used is one.</p></li><li><p><strong>KUBE_AUTOSCALER_MAX_NODES = 4</strong>: The maximum number of nodes to be
+used is four. The fifth node thus retains the function as master.</p></li><li><p><strong>KUBE_ENABLE_CLUSTER_AUTOSCALER = true</strong>: Activation of the
+autoscaler.</p></li></ul><p>The pod with the web server container is started with the following
+properties:</p><ul><li><p><strong>CPU-PERCENT = 50</strong>: This configuration value specifies the value
 that is maintained to keep all pods at an average CPU load of 50
-percent.</p>
-</li>
-<li>
-<p>As soon as a pod requires more than half of its available computing
+percent.</p></li><li><p>As soon as a pod requires more than half of its available computing
 power, another pod instance is automatically replicated or an exact
-copy of the running pod is created.</p>
-</li>
-<li>
-<p><strong>MIN = 1</strong>: At least one Pod is used for scaling.</p>
-</li>
-<li>
-<p><strong>MAX = 10</strong>: A maximum of ten replicas of a pod can be used for
-scaling.</p>
-</li>
-</ul>
-<p>After the pod is started and user load is simulated, an increase in CPU
+copy of the running pod is created.</p></li><li><p><strong>MIN = 1</strong>: At least one Pod is used for scaling.</p></li><li><p><strong>MAX = 10</strong>: A maximum of ten replicas of a pod can be used for
+scaling.</p></li></ul><p>After the pod is started and user load is simulated, an increase in CPU
 load to 250 percent is observed and that seven pods have already been
-swapped out or scaled:</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt> 1
+swapped out or scaled:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -189,33 +53,25 @@ swapped out or scaled:</p>
 </span><span class=lnt>15
 </span><span class=lnt>16
 </span><span class=lnt>17
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>$ kubectl get hpa
-NAME REFERENCE TARGET CURRENT MINPODS MAXPODS AGE
-php-apache deployment/php-apache/scale 50% 250% 1 10 2m
-
-$ kubectl get deployment php-apache
-NAME DESIRED CURRENT UP-TO-DATE AVAILABLE AGE
-php-apache 7 7 3 4m
-
-$ kubectl get pods
-NAME RUNNING STATUS AVAILABLE AGE
-php-apache-3046963998-3ewo6 0/1 Pending 0 1m
-php-apache-3046963998-8m03k 1/1 Running 0 1m
-php-apache-3046963998-ddpgp 1/1 Running 0 5m
-php-apache-3046963998-lrik6 1/1 Running 0 1m
-php-apache-3046963998-nj465 0/1 Pending 0 1m
-php-apache-3046963998-tmwg1 1/1 Running 0 1m
-php-apache-3046963998-xkbw1 0/1 Pending 0 1m
-</code></pre></td></tr></table>
-</div>
-</div><p><strong>Listing 5</strong>: <em>Observing CPU utilization increase to 250% while pods are swapped out to provide resources.</em></p>
-<p>Two minutes after the user load simulation stops, the CPU utilization
-drops back to zero and the drop from seven to one pod can be seen.</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>$ kubectl get hpa
+</span></span><span class=line><span class=cl>NAME REFERENCE TARGET CURRENT MINPODS MAXPODS AGE
+</span></span><span class=line><span class=cl>php-apache deployment/php-apache/scale 50% 250% 1 10 2m
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>$ kubectl get deployment php-apache
+</span></span><span class=line><span class=cl>NAME DESIRED CURRENT UP-TO-DATE AVAILABLE AGE
+</span></span><span class=line><span class=cl>php-apache 7 7 3 4m
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>$ kubectl get pods
+</span></span><span class=line><span class=cl>NAME RUNNING STATUS AVAILABLE AGE
+</span></span><span class=line><span class=cl>php-apache-3046963998-3ewo6 0/1 Pending 0 1m
+</span></span><span class=line><span class=cl>php-apache-3046963998-8m03k 1/1 Running 0 1m
+</span></span><span class=line><span class=cl>php-apache-3046963998-ddpgp 1/1 Running 0 5m
+</span></span><span class=line><span class=cl>php-apache-3046963998-lrik6 1/1 Running 0 1m
+</span></span><span class=line><span class=cl>php-apache-3046963998-nj465 0/1 Pending 0 1m
+</span></span><span class=line><span class=cl>php-apache-3046963998-tmwg1 1/1 Running 0 1m
+</span></span><span class=line><span class=cl>php-apache-3046963998-xkbw1 0/1 Pending 0 1m
+</span></span></code></pre></td></tr></table></div></div><p><strong>Listing 5</strong>: <em>Observing CPU utilization increase to 250% while pods are swapped out to provide resources.</em></p><p>Two minutes after the user load simulation stops, the CPU utilization
+drops back to zero and the drop from seven to one pod can be seen.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
 </span><span class=lnt> 4
@@ -226,25 +82,19 @@ drops back to zero and the drop from seven to one pod can be seen.</p>
 </span><span class=lnt> 9
 </span><span class=lnt>10
 </span><span class=lnt>11
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>$ kubectl get hpa
-NAME REFERENCE TARGET CURRENT MINPODS MAXPODS AGE
-php-apache deployment/php-apache/scale 50% 0% 1 10 7m
-
-$ kubectl get deployment php-apache
-NAME DESIRED CURRENT UP-TO-DATE AVAILABLE AGE
-php-apache 1 1 1 9m
-
-$ kubectl get pods
-NAME RUNNING STATUS AVAILABLE AGE
-php-apache-3046963998-ddpgp 1/1 Running 0 9m
-</code></pre></td></tr></table>
-</div>
-</div><p><strong>Listing 6</strong>: <em>Watching CPU utilization drop to zero percent and drop to one pod.</em></p>
-<p>As can be seen (see <strong>Listing 1</strong>), it is very easy to dynamically adjust
-the number of pods to the load, by enabling the cluster autoscaler.</p>
-<p>Automatic and dynamic scaling can also be very helpful when there are
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>$ kubectl get hpa
+</span></span><span class=line><span class=cl>NAME REFERENCE TARGET CURRENT MINPODS MAXPODS AGE
+</span></span><span class=line><span class=cl>php-apache deployment/php-apache/scale 50% 0% 1 10 7m
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>$ kubectl get deployment php-apache
+</span></span><span class=line><span class=cl>NAME DESIRED CURRENT UP-TO-DATE AVAILABLE AGE
+</span></span><span class=line><span class=cl>php-apache 1 1 1 9m
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl>$ kubectl get pods
+</span></span><span class=line><span class=cl>NAME RUNNING STATUS AVAILABLE AGE
+</span></span><span class=line><span class=cl>php-apache-3046963998-ddpgp 1/1 Running 0 9m
+</span></span></code></pre></td></tr></table></div></div><p><strong>Listing 6</strong>: <em>Watching CPU utilization drop to zero percent and drop to one pod.</em></p><p>As can be seen (see <strong>Listing 1</strong>), it is very easy to dynamically adjust
+the number of pods to the load, by enabling the cluster autoscaler.</p><p>Automatic and dynamic scaling can also be very helpful when there are
 irregularities in cluster utilization. For example, development-related
 clusters or continuous computing operations can be run on weekends or at
 night. Compute-intensive applications can be better scheduled so that a
@@ -252,9 +102,7 @@ cluster is optimally utilized. In all cases, the cluster can be used
 optimally. Either reduce the number of unused nodes to save energy or
 scale to the limit to provide enough computing power. Depending on which
 case occurs, a dynamically scaling cluster ensures that at high or low
-utilization, all tasks are solved in the most efficient way.</p>
-<h3 id=fail-safe>Fail-safe</h3>
-<p>As with each element of our cluster, we ensure that more than one
+utilization, all tasks are solved in the most efficient way.</p><h3 id=fail-safe>Fail-safe</h3><p>As with each element of our cluster, we ensure that more than one
 instance of each component is running simultaneously. Setting the number
 to five physical nodes per enclosure is one reason for creating the
 possibility of optimal scaling and appropriate resilience. The greater
@@ -273,93 +121,32 @@ Kubernetes API server, controller, and scheduler all run inside
 Kubernetes as pods. This means that in the event of a failure, each of
 these pods will be moved to a different node, thus preserving the core
 services of the cluster. Here, one considers potential failure
-scenarios:</p>
-<ul>
-<li>
-<p><strong>Loss of the master node</strong>: If not configured for HA, loss of the
+scenarios:</p><ul><li><p><strong>Loss of the master node</strong>: If not configured for HA, loss of the
 master node or its services will have a severe impact on the
 application. The cluster will not be able to respond to commands or
 deploy nodes. Each service in the master node is critical and is
 configured appropriately for HA, so a worker node automatically
-steps in as the master.</p>
-</li>
-<li>
-<p><strong>Loss of worker nodes</strong>: Kubernetes is able to automatically detect
+steps in as the master.</p></li><li><p><strong>Loss of worker nodes</strong>: Kubernetes is able to automatically detect
 and repair pods. Depending on how the services are balanced, there
 may be an impact on the end users of the application. If any pods on
 a node are not responding, kubelet detects this and informs the
-master to use a different pod.</p>
-</li>
-<li>
-<p><strong>Network failure</strong>: The master and worker nodes in a Kubernetes
+master to use a different pod.</p></li><li><p><strong>Network failure</strong>: The master and worker nodes in a Kubernetes
 cluster can become unreachable due to network failures. In some
 cases, they are treated as node failures. In this case, other nodes
 are used accordingly to replace the respective node that is
-unreachable.</p>
-</li>
-</ul>
-<figure><a class=lightgallery href=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3211.png title=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3211.png data-thumbnail=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3211.png data-sub-html="<h2>Source: Own representation.  Figure 30: Failure and takeoverscenario of the master node rpi1 and the worker node rpi3.</h2>">
-<img class=lazyload src=/svg/loading.min.svg data-src=media/image3211.png data-srcset="/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3211.png, media/image3211.png 1.5x, /conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3211.png 2x" data-sizes=auto alt=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3211.png>
-</a><figcaption class=image-caption>Source: Own representation. <br> <strong>Figure 30</strong>: <em>Failure and takeoverscenario of the master node rpi1 and the worker node rpi3.</em></figcaption>
-</figure>
-<p>Kubernetes is configured to be highly available to tolerate the failure
+unreachable.</p></li></ul><figure><a class=lightgallery href=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3211.png title=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3211.png data-thumbnail=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3211.png data-sub-html="<h2>Source: Own representation.  Figure 30: Failure and takeoverscenario of the master node rpi1 and the worker node rpi3.</h2>"><img class=lazyload src=/svg/loading.min.svg data-src=media/image3211.png data-srcset="/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3211.png, media/image3211.png 1.5x, /conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3211.png 2x" data-sizes=auto alt=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3211.png></a><figcaption class=image-caption>Source: Own representation.<br><strong>Figure 30</strong>: <em>Failure and takeoverscenario of the master node rpi1 and the worker node rpi3.</em></figcaption></figure><p>Kubernetes is configured to be highly available to tolerate the failure
 of one or more master nodes and up to four worker nodes. This is
 critical for running development or production environments in
 Kubernetes. An odd number of nodes is chosen so that it is possible to
 keep the cluster alive even with only one node. A cluster node can
 continue to operate in the last instance once a node is only acting as a
 master and worker. In this state, the cluster is neither highly
-available, fail-safe, nor completely resilient, but it survives.</p>
-<h3 id=cost-efficiency-and-performance>Cost efficiency and performance</h3>
-<p>Looking at the costs, there are two sides to the story. With the total
+available, fail-safe, nor completely resilient, but it survives.</p><h3 id=cost-efficiency-and-performance>Cost efficiency and performance</h3><p>Looking at the costs, there are two sides to the story. With the total
 acquisition costs, minus the contributed effort to assemble, install and
 configure the cluster, the value of the investment is exactly 358.79
 EUR. This construct is contrasted with a simple Linux cluster for
 comparison. This Linux cluster consists of commercially available PCs
-with comparable core data to that of the Raspberry Pi nodes.</p>
-<table>
-<thead>
-<tr>
-<th style=text-align:left></th>
-<th style=text-align:left><strong>Raspberry Pi 3 Model B</strong></th>
-<th style=text-align:left><strong>Linux PC</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style=text-align:left><strong>CPU</strong></td>
-<td style=text-align:left>Cortex-A53 1.2 GHz Quadcore</td>
-<td style=text-align:left>Intel Celeron J1900 2 GHz Quadcore</td>
-</tr>
-<tr>
-<td style=text-align:left><strong>RAM</strong></td>
-<td style=text-align:left>1024 MB</td>
-<td style=text-align:left>4 GB RAM</td>
-</tr>
-<tr>
-<td style=text-align:left><strong>Network</strong></td>
-<td style=text-align:left>100 Mbps</td>
-<td style=text-align:left>1000 Mbps</td>
-</tr>
-<tr>
-<td style=text-align:left><strong>Current Consumption</strong></td>
-<td style=text-align:left>max. 4 Watt / h</td>
-<td style=text-align:left>max. 10 Watt / h</td>
-</tr>
-<tr>
-<td style=text-align:left><strong>Price per computer</strong></td>
-<td style=text-align:left>approx. 35 €</td>
-<td style=text-align:left>approx. 95 €</td>
-</tr>
-<tr>
-<td style=text-align:left><strong>Total price</strong></td>
-<td style=text-align:left>approx. 175 €</td>
-<td style=text-align:left>approx. 475 €</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Table 2</strong>: <em>Cost comparison of the core components of Raspberry Pi and Linux PC.</em></p>
-<p>If we now compare the core data, we can see that the comparison system
+with comparable core data to that of the Raspberry Pi nodes.</p><table><thead><tr><th style=text-align:left></th><th style=text-align:left><strong>Raspberry Pi 3 Model B</strong></th><th style=text-align:left><strong>Linux PC</strong></th></tr></thead><tbody><tr><td style=text-align:left><strong>CPU</strong></td><td style=text-align:left>Cortex-A53 1.2 GHz Quadcore</td><td style=text-align:left>Intel Celeron J1900 2 GHz Quadcore</td></tr><tr><td style=text-align:left><strong>RAM</strong></td><td style=text-align:left>1024 MB</td><td style=text-align:left>4 GB RAM</td></tr><tr><td style=text-align:left><strong>Network</strong></td><td style=text-align:left>100 Mbps</td><td style=text-align:left>1000 Mbps</td></tr><tr><td style=text-align:left><strong>Current Consumption</strong></td><td style=text-align:left>max. 4 Watt / h</td><td style=text-align:left>max. 10 Watt / h</td></tr><tr><td style=text-align:left><strong>Price per computer</strong></td><td style=text-align:left>approx. 35 €</td><td style=text-align:left>approx. 95 €</td></tr><tr><td style=text-align:left><strong>Total price</strong></td><td style=text-align:left>approx. 175 €</td><td style=text-align:left>approx. 475 €</td></tr></tbody></table><p><strong>Table 2</strong>: <em>Cost comparison of the core components of Raspberry Pi and Linux PC.</em></p><p>If we now compare the core data, we can see that the comparison system
 is definitely associated with higher acquisition costs. It is important
 to mention that this comparison primarily focuses on the costs and not
 the performance of the individual systems. It is obvious that a Linux
@@ -369,202 +156,37 @@ the first approach that, despite the lower performance, there is a
 significant difference in terms of cost. Especially when performance per
 watt is calculated. Due to the compact design of the Raspberry Pi and
 the accommodation of all components, such as the integrated power supply
-and GPU, it is a competitive partner for the Linux PC.</p>
-<p>In relation to the costs, the question arises how the comparison systems
+and GPU, it is a competitive partner for the Linux PC.</p><p>In relation to the costs, the question arises how the comparison systems
 perform in terms of performance. For this, a performance test is
 performed with the help of sysbench. Sysbench is a benchmark application
 that quickly gives an impression of the system performance. For this
 purpose, a CPU benchmark is run on both systems, which calculates all
-prime numbers up to 20000, and the results are shown in <strong>Table 3</strong> and <strong>Figure 31</strong>.</p>
-<table>
-<thead>
-<tr>
-<th style=text-align:left></th>
-<th style=text-align:left><strong>Raspberry Pi 3 Model B</strong></th>
-<th style=text-align:left><strong>Linux PC</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style=text-align:left><strong>CPU benchmark</strong></td>
-<td style=text-align:left>Prime number calulation</td>
-<td style=text-align:left>Prime number calculation</td>
-</tr>
-<tr>
-<td style=text-align:left><strong>Threads (process parts)</strong></td>
-<td style=text-align:left>4</td>
-<td style=text-align:left>4</td>
-</tr>
-<tr>
-<td style=text-align:left><strong>Limit</strong></td>
-<td style=text-align:left>20000</td>
-<td style=text-align:left>20000</td>
-</tr>
-<tr>
-<td style=text-align:left><strong>Calculation time</strong></td>
-<td style=text-align:left>115.1536 seconds</td>
-<td style=text-align:left>11.2800 seconds</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Table</strong> <strong>3</strong>: <em>Comparison times of the prime number calculation up to 20000.</em></p>
-<figure><a class=lightgallery href=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3324.png title=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3324.png data-thumbnail=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3324.png data-sub-html="<h2>Source: Own representation.  Figure 31: Results of the sysbench benchmark run on node rpi2.</h2>">
-<img class=lazyload src=/svg/loading.min.svg data-src=media/image3324.png data-srcset="/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3324.png, media/image3324.png 1.5x, /conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3324.png 2x" data-sizes=auto alt=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3324.png>
-</a><figcaption class=image-caption>Source: Own representation. <br> <strong>Figure 31</strong>: <em>Results of the sysbench benchmark run on node rpi2.</em></figcaption>
-</figure>
-<p>The difference in the calculation time is clearly visible. There is a
+prime numbers up to 20000, and the results are shown in <strong>Table 3</strong> and <strong>Figure 31</strong>.</p><table><thead><tr><th style=text-align:left></th><th style=text-align:left><strong>Raspberry Pi 3 Model B</strong></th><th style=text-align:left><strong>Linux PC</strong></th></tr></thead><tbody><tr><td style=text-align:left><strong>CPU benchmark</strong></td><td style=text-align:left>Prime number calulation</td><td style=text-align:left>Prime number calculation</td></tr><tr><td style=text-align:left><strong>Threads (process parts)</strong></td><td style=text-align:left>4</td><td style=text-align:left>4</td></tr><tr><td style=text-align:left><strong>Limit</strong></td><td style=text-align:left>20000</td><td style=text-align:left>20000</td></tr><tr><td style=text-align:left><strong>Calculation time</strong></td><td style=text-align:left>115.1536 seconds</td><td style=text-align:left>11.2800 seconds</td></tr></tbody></table><p><strong>Table</strong> <strong>3</strong>: <em>Comparison times of the prime number calculation up to 20000.</em></p><figure><a class=lightgallery href=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3324.png title=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3324.png data-thumbnail=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3324.png data-sub-html="<h2>Source: Own representation.  Figure 31: Results of the sysbench benchmark run on node rpi2.</h2>"><img class=lazyload src=/svg/loading.min.svg data-src=media/image3324.png data-srcset="/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3324.png, media/image3324.png 1.5x, /conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3324.png 2x" data-sizes=auto alt=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3324.png></a><figcaption class=image-caption>Source: Own representation.<br><strong>Figure 31</strong>: <em>Results of the sysbench benchmark run on node rpi2.</em></figcaption></figure><p>The difference in the calculation time is clearly visible. There is a
 difference of 104 seconds. According to the visible comparisons and as
 already mentioned in the cost comparison, there is no question that a
 Linux PC based on the CISC architecture has a higher CPU performance
-than the Raspberry Pi with an ARM architecture.</p>
-<h3 id=energy-efficiency-and-cooling>Energy efficiency and cooling</h3>
-<p>ARM processors, such as those installed on the Raspberry Pi, have a high
+than the Raspberry Pi with an ARM architecture.</p><h3 id=energy-efficiency-and-cooling>Energy efficiency and cooling</h3><p>ARM processors, such as those installed on the Raspberry Pi, have a high
 energy efficiency with a clock frequency of 1.2 GHz and a power
 consumption of max. 4 watts. The average power consumption is about 2
 watts in idle mode. The switch consumes 2.4 watts at 0.2 amps of current
 and 12 volts. The total wattage output of the USB charger is made up of
 all components and sits at the end of the power chain. Summarizing with
 all installed components, you get a total power consumption of 13.75
-watts in idle and 34 watts at maximum load (see <strong>Table 4</strong>).</p>
-<table>
-<thead>
-<tr>
-<th style=text-align:left></th>
-<th style=text-align:left><strong>Power consumption</strong></th>
-<th style=text-align:left></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style=text-align:left><strong>Component</strong></td>
-<td style=text-align:left><strong>Idle</strong></td>
-<td style=text-align:left><strong>maximum</strong></td>
-</tr>
-<tr>
-<td style=text-align:left>Raspberry Pi 3 Model B</td>
-<td style=text-align:left>2 Watt</td>
-<td style=text-align:left>4 Watt</td>
-</tr>
-<tr>
-<td style=text-align:left>Edimax ES-5800G V2 Gigabit Switch (8-Port)</td>
-<td style=text-align:left>2.4 watt</td>
-<td style=text-align:left>2.4 watt</td>
-</tr>
-<tr>
-<td style=text-align:left>LCD display module 1602 HD44780 with TWI controller</td>
-<td style=text-align:left>0.1 watt</td>
-<td style=text-align:left>0.1 watt</td>
-</tr>
-<tr>
-<td style=text-align:left>Antec TRICOOL 92mm 4-pin case fan</td>
-<td style=text-align:left>1.25 watt</td>
-<td style=text-align:left>1.25 watt</td>
-</tr>
-<tr>
-<td style=text-align:left>Anear 60 Watt USB Charger (6-Port)</td>
-<td style=text-align:left>-</td>
-<td style=text-align:left>-</td>
-</tr>
-<tr>
-<td style=text-align:left><strong>Total power consumption</strong></td>
-<td style=text-align:left><strong>13,75 Watt</strong></td>
-<td style=text-align:left><strong>23,75 Watt</strong></td>
-</tr>
-</tbody>
-</table>
-<p><strong>Table</strong> <strong>4</strong>: <em>Total power consumption of the PiCube in idle mode and maximum CPU load of 100%.</em></p>
-<p>In the following test, CPU load is generated using the Sysbench prime
+watts in idle and 34 watts at maximum load (see <strong>Table 4</strong>).</p><table><thead><tr><th style=text-align:left></th><th style=text-align:left><strong>Power consumption</strong></th><th style=text-align:left></th></tr></thead><tbody><tr><td style=text-align:left><strong>Component</strong></td><td style=text-align:left><strong>Idle</strong></td><td style=text-align:left><strong>maximum</strong></td></tr><tr><td style=text-align:left>Raspberry Pi 3 Model B</td><td style=text-align:left>2 Watt</td><td style=text-align:left>4 Watt</td></tr><tr><td style=text-align:left>Edimax ES-5800G V2 Gigabit Switch (8-Port)</td><td style=text-align:left>2.4 watt</td><td style=text-align:left>2.4 watt</td></tr><tr><td style=text-align:left>LCD display module 1602 HD44780 with TWI controller</td><td style=text-align:left>0.1 watt</td><td style=text-align:left>0.1 watt</td></tr><tr><td style=text-align:left>Antec TRICOOL 92mm 4-pin case fan</td><td style=text-align:left>1.25 watt</td><td style=text-align:left>1.25 watt</td></tr><tr><td style=text-align:left>Anear 60 Watt USB Charger (6-Port)</td><td style=text-align:left>-</td><td style=text-align:left>-</td></tr><tr><td style=text-align:left><strong>Total power consumption</strong></td><td style=text-align:left><strong>13,75 Watt</strong></td><td style=text-align:left><strong>23,75 Watt</strong></td></tr></tbody></table><p><strong>Table</strong> <strong>4</strong>: <em>Total power consumption of the PiCube in idle mode and maximum CPU load of 100%.</em></p><p>In the following test, CPU load is generated using the Sysbench prime
 calculation program and advantages and disadvantages are shown by using
 active cooling and passive cooling elements. We read system values such
 as temperature, clock frequency and voltage using the following commands
-in each case: <sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup></p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+in each case: <sup id=fnref:3><a href=#fn:3 class=footnote-ref role=doc-noteref>3</a></sup></p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>vcgencmd measure_temp
-vcgencmd scaling_cur_freq
-vcgencmd measure_volts core
-</code></pre></td></tr></table>
-</div>
-</div><p><strong>Listing 7</strong>: <em>Commands for querying temperature, clock frequency and voltage.</em></p>
-<p>In the following, we look at three temperature curves in the case. The
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>vcgencmd measure_temp
+</span></span><span class=line><span class=cl>vcgencmd scaling_cur_freq
+</span></span><span class=line><span class=cl>vcgencmd measure_volts core
+</span></span></code></pre></td></tr></table></div></div><p><strong>Listing 7</strong>: <em>Commands for querying temperature, clock frequency and voltage.</em></p><p>In the following, we look at three temperature curves in the case. The
 CPU clock frequency is 1.2 GHz and the CPU voltage is 1.325 volts over a
-period of 5 minutes:</p>
-<ul>
-<li><strong>Temp1</strong>: In case, without heatsink on SoC, without active cooling.</li>
-<li><strong>Temp2</strong>: In case, with heatsink on SoC, without active cooling.</li>
-<li><strong>Temp3</strong>: In case, with heatsink on SoC, with active cooling.</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style=text-align:left>**CPU utilization (%)</th>
-<th style=text-align:left>Temp1 (°C)</th>
-<th style=text-align:left>Temp2 (°C)</th>
-<th style=text-align:left>Temp3 (°C)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style=text-align:left>0</td>
-<td style=text-align:left>39</td>
-<td style=text-align:left>39</td>
-<td style=text-align:left>44</td>
-</tr>
-<tr>
-<td style=text-align:left>100</td>
-<td style=text-align:left>77</td>
-<td style=text-align:left>77</td>
-<td style=text-align:left>82</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Table</strong> <strong>5</strong>: <em>Measured values of heat generation without active cooling.</em></p>
-<p>Next, we look at three temperature profiles of a Raspberry Pi processor.
+period of 5 minutes:</p><ul><li><strong>Temp1</strong>: In case, without heatsink on SoC, without active cooling.</li><li><strong>Temp2</strong>: In case, with heatsink on SoC, without active cooling.</li><li><strong>Temp3</strong>: In case, with heatsink on SoC, with active cooling.</li></ul><table><thead><tr><th style=text-align:left>**CPU utilization (%)</th><th style=text-align:left>Temp1 (°C)</th><th style=text-align:left>Temp2 (°C)</th><th style=text-align:left>Temp3 (°C)</th></tr></thead><tbody><tr><td style=text-align:left>0</td><td style=text-align:left>39</td><td style=text-align:left>39</td><td style=text-align:left>44</td></tr><tr><td style=text-align:left>100</td><td style=text-align:left>77</td><td style=text-align:left>77</td><td style=text-align:left>82</td></tr></tbody></table><p><strong>Table</strong> <strong>5</strong>: <em>Measured values of heat generation without active cooling.</em></p><p>Next, we look at three temperature profiles of a Raspberry Pi processor.
 The CPU clock frequency is 1.2 GHz and the CPU voltage is 1.325 volts
-over a period of 10 minutes:</p>
-<ul>
-<li><strong>Temp1</strong>: CPU, without heat sink on SoC, without active cooling.</li>
-<li><strong>Temp2</strong>: CPU, with heat sink on SoC, without active cooling.</li>
-<li><strong>Temp3</strong>: CPU, with heat sink on SoC, with active cooling.</li>
-</ul>
-<br>
-<figure><img src=media/image345.png>
-</figure>
-<figure><img src=media/image3517.png>
-</figure>
-<figure><img src=media/image3630.png>
-</figure>
-<table>
-<thead>
-<tr>
-<th style=text-align:left>**CPU utilization (%)</th>
-<th style=text-align:left>Temp1 (°C)</th>
-<th style=text-align:left>Temp2 (°C)</th>
-<th style=text-align:left>Temp3 (°C)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style=text-align:left>0</td>
-<td style=text-align:left>44</td>
-<td style=text-align:left>32,2</td>
-<td style=text-align:left>27,8</td>
-</tr>
-<tr>
-<td style=text-align:left>100</td>
-<td style=text-align:left>83,3</td>
-<td style=text-align:left>83,3</td>
-<td style=text-align:left>69,8</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Table</strong> <strong>6</strong>: <em>Measured values</em></p>
-<p>The heat development of the circuit boards of each individual computer
+over a period of 10 minutes:</p><ul><li><strong>Temp1</strong>: CPU, without heat sink on SoC, without active cooling.</li><li><strong>Temp2</strong>: CPU, with heat sink on SoC, without active cooling.</li><li><strong>Temp3</strong>: CPU, with heat sink on SoC, with active cooling.</li></ul><br><figure><img src=media/image345.png></figure><figure><img src=media/image3517.png></figure><figure><img src=media/image3630.png></figure><table><thead><tr><th style=text-align:left>**CPU utilization (%)</th><th style=text-align:left>Temp1 (°C)</th><th style=text-align:left>Temp2 (°C)</th><th style=text-align:left>Temp3 (°C)</th></tr></thead><tbody><tr><td style=text-align:left>0</td><td style=text-align:left>44</td><td style=text-align:left>32,2</td><td style=text-align:left>27,8</td></tr><tr><td style=text-align:left>100</td><td style=text-align:left>83,3</td><td style=text-align:left>83,3</td><td style=text-align:left>69,8</td></tr></tbody></table><p><strong>Table</strong> <strong>6</strong>: <em>Measured values</em></p><p>The heat development of the circuit boards of each individual computer
 is also taken into account. Although this is low, it increases
 constantly with the number of nodes installed in the case. The heat
 development is about 35 degrees Celsius with an average load of a single
@@ -576,9 +198,7 @@ the processor prove that the maximum performance of all hardware nodes
 cannot be exploited without appropriate cooling. Passive heat sinks and
 an already implemented active cooling with the help of a case fan can
 help here. There is no question that the optimized airflow inside the
-case also contributes to the improved cooling performance.</p>
-<h3 id=use-case-setihome>Use Case SETI@home</h3>
-<p>After evaluating the cluster, we turn to a use case from the scientific
+case also contributes to the improved cooling performance.</p><h3 id=use-case-setihome>Use Case SETI@home</h3><p>After evaluating the cluster, we turn to a use case from the scientific
 domain. A current PRC project of BOINC is SETI@home, a scientific
 experiment run by the University of California at Berkeley that uses
 computers connected to the Internet in the search for extraterrestrial
@@ -590,8 +210,7 @@ clients, who compute and communicate the results to the distributor,
 which reassembles the computations into an overall data set. The current
 computing power of the entire BOINC grid is 20600 PetaFLOPS, distributed
 over nearly 0.9 million computers. SETI@home has a share of about 19.1%
-of this. <sup id=fnref:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup></p>
-<p>In the following, container virtualization is exploited and pre-built
+of this. <sup id=fnref:4><a href=#fn:4 class=footnote-ref role=doc-noteref>4</a></sup></p><p>In the following, container virtualization is exploited and pre-built
 BOINC client images of Docker are used. These images are prefabricated
 containers, which are started as scalable pods on the PiCube and scale
 automatically in order to utilize the entire computing power of the
@@ -600,39 +219,22 @@ an account. Using this account data, you generate a container
 application called k8s-boinc-demo and start it on the cluster with a
 scaling limit of 10 pod instances. In <strong>Figure 32</strong>, you can see from the
 Kubernetes dashboard how the pods are distributed evenly or according to
-workload across worker nodes rpi2 to rpi5 after launch. <sup id=fnref:5><a href=#fn:5 class=footnote-ref role=doc-noteref>5</a></sup></p>
-<figure><a class=lightgallery href=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3712.png title=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3712.png data-thumbnail=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3712.png data-sub-html="<h2>Source: Own representation.  Figure 32: Overview of the utilization, status and distribution of the pods on the nodes rpi2 to rpi5.</h2>">
-<img class=lazyload src=/svg/loading.min.svg data-src=media/image3712.png data-srcset="/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3712.png, media/image3712.png 1.5x, /conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3712.png 2x" data-sizes=auto alt=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3712.png>
-</a><figcaption class=image-caption>Source: Own representation. <br> <strong>Figure 32</strong>: <em>Overview of the utilization, status and distribution of the pods on the nodes rpi2 to rpi5.</em></figcaption>
-</figure>
-<p>Within the SETI@home account, we define how the individual clients or
+workload across worker nodes rpi2 to rpi5 after launch. <sup id=fnref:5><a href=#fn:5 class=footnote-ref role=doc-noteref>5</a></sup></p><figure><a class=lightgallery href=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3712.png title=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3712.png data-thumbnail=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3712.png data-sub-html="<h2>Source: Own representation.  Figure 32: Overview of the utilization, status and distribution of the pods on the nodes rpi2 to rpi5.</h2>"><img class=lazyload src=/svg/loading.min.svg data-src=media/image3712.png data-srcset="/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3712.png, media/image3712.png 1.5x, /conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3712.png 2x" data-sizes=auto alt=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3712.png></a><figcaption class=image-caption>Source: Own representation.<br><strong>Figure 32</strong>: <em>Overview of the utilization, status and distribution of the pods on the nodes rpi2 to rpi5.</em></figcaption></figure><p>Within the SETI@home account, we define how the individual clients or
 pods are utilized. The CPU utilization is left at the default value of
 100% and after about 5 minutes you can see how the CPU utilization of
 all cluster nodes increases to 100% and remains constant at this value
-(see <strong>Figure 33</strong>). The cluster now computes data of the SETI@home project.</p>
-<figure><a class=lightgallery href=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3822.png title=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3822.png data-thumbnail=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3822.png data-sub-html="<h2>Source: Own representation.  Figure 33: The CPU utilization of node rpi3 at 100%.</h2>">
-<img class=lazyload src=/svg/loading.min.svg data-src=media/image3822.png data-srcset="/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3822.png, media/image3822.png 1.5x, /conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3822.png 2x" data-sizes=auto alt=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3822.png>
-</a><figcaption class=image-caption>Source: Own representation. <br> <strong>Figure 33</strong>: <em>The CPU utilization of node rpi3 at 100%.</em></figcaption>
-</figure>
-<p><strong>Figure 33</strong> shows the computers currently logged in to the grid with our
+(see <strong>Figure 33</strong>). The cluster now computes data of the SETI@home project.</p><figure><a class=lightgallery href=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3822.png title=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3822.png data-thumbnail=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3822.png data-sub-html="<h2>Source: Own representation.  Figure 33: The CPU utilization of node rpi3 at 100%.</h2>"><img class=lazyload src=/svg/loading.min.svg data-src=media/image3822.png data-srcset="/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3822.png, media/image3822.png 1.5x, /conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3822.png 2x" data-sizes=auto alt=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3822.png></a><figcaption class=image-caption>Source: Own representation.<br><strong>Figure 33</strong>: <em>The CPU utilization of node rpi3 at 100%.</em></figcaption></figure><p><strong>Figure 33</strong> shows the computers currently logged in to the grid with our
 account information. Each pod is identified here as a single client. If
 we now assume that the number of PiCube clusters increases to ten, the
 number of pods would multiply by the same factor. With 10 pod instances
 per cluster, this means 100 active SETI@home clients, which could make
-their computing power available to the BOINC grid.</p>
-<figure><a class=lightgallery href=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3932.png title=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3932.png data-thumbnail=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3932.png data-sub-html="<h2>Source: (SETI@home - Your Computers, 2018).   Figure 34: Listing of all logged-in clients or pods in our cluster.</h2>">
-<img class=lazyload src=/svg/loading.min.svg data-src=media/image3932.png data-srcset="/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3932.png, media/image3932.png 1.5x, /conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3932.png 2x" data-sizes=auto alt=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3932.png>
-</a><figcaption class=image-caption>Source: (SETI@home - Your Computers, 2018). <br> <strong>Figure 34</strong>: <em>Listing of all logged-in clients or pods in our cluster.</em></figcaption>
-</figure>
-<p>As this use case shows, it can be inferred that the scientific utility
+their computing power available to the BOINC grid.</p><figure><a class=lightgallery href=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3932.png title=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3932.png data-thumbnail=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3932.png data-sub-html="<h2>Source: (SETI@home - Your Computers, 2018).   Figure 34: Listing of all logged-in clients or pods in our cluster.</h2>"><img class=lazyload src=/svg/loading.min.svg data-src=media/image3932.png data-srcset="/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3932.png, media/image3932.png 1.5x, /conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3932.png 2x" data-sizes=auto alt=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3932.png></a><figcaption class=image-caption>Source: (SETI@home - Your Computers, 2018).<br><strong>Figure 34</strong>: <em>Listing of all logged-in clients or pods in our cluster.</em></figcaption></figure><p>As this use case shows, it can be inferred that the scientific utility
 of this cluster is without question. Using dynamic pod scaling, it is
 demonstrated that even when individual nodes have low performance, they
 can achieve high computing performance when combined as a swarm.
 BOINC's computing grid is a typical example of how computers,
 distributed around the world and connected via the Internet, can solve
-problems together.</p>
-<h2 id=conclusion-and-outlook>Conclusion and outlook</h2>
-<p>It is possible to construct a comparable system of a supercomputer with
+problems together.</p><h2 id=conclusion-and-outlook>Conclusion and outlook</h2><p>It is possible to construct a comparable system of a supercomputer with
 low costs. It is obvious that the performance of an ARM processor cannot
 currently keep up with commercially available CISC processors, as
 described in <a href=#cost-efficiency-and-performance rel>Cost efficiency and performance</a>. However, the use case and illustration of dynamic
@@ -646,8 +248,7 @@ beginning of this thesis, such as energy efficiency, resilience and
 modularity, have been met and sensibly implemented in the construct.
 There is no question that this PiCube cluster is not a real competitor
 to massively parallelized supercomputers, but the decisive approach lies
-in the benefit of a computing grid.</p>
-<p>There are several ways to use this system in the future. On the one
+in the benefit of a computing grid.</p><p>There are several ways to use this system in the future. On the one
 hand, its simplicity means it can be used for cluster computing to
 provide a small, full-featured, low-cost, energy-efficient development
 platform. This includes understanding its limitations in terms of
@@ -655,191 +256,29 @@ performance, usability and maintainability. On the other hand, it can
 act as a mobile and self-sufficient <strong>cloud in a box</strong> system by adding
 components such as solar cells and mobile connectivity. Either way, it
 will remain a fascinating project that offers developers many
-possibilities and gives a <strong>think-out-of-the-box</strong> approach.</p>
-<p>Check out the full project</p>
-<ul>
-<li><a href=../conception-construction-and-evaluation-of-a-raspberry-pi-cluster-3/ rel>Conception, Construction and Evaluation of a Reaspberry Pi Cluster (1/4)</a></li>
-<li><a href=../conception-construction-and-evaluation-of-a-raspberry-pi-cluster-3/ rel>Conception, Construction and Evaluation of a Reaspberry Pi Cluster (2/4)</a></li>
-</ul>
-<p>Full project see <a href=../conception-construction-and-evaluation-of-a-raspberry-pi-cluster/ rel>Conception, Construction and Evaluation of a Reaspberry Pi Cluster</a></p>
-<h2 id=bibliography>Bibliography</h2>
-<p>Adams, J. (September 2017). SFT Guide 14/17 - Raspberry Pi Tips, Tricks & Hacks (No. 1). <em>Third generation: The innovations of the Raspberry Pi 3</em>, p. 159.</p>
-<p>Baier, J. (2017). <em>Getting Started with Kubernetes - Harness the power of Kubernetes to manage Docker deployments with ease.</em> Birmingham: Packt Publishing.</p>
-<p>Bauke, H., & Mertens, S. (2006). <em>Cluster computing - Practical introduction to high performance computing on Linux clusters.</em> Heidelberg: Springer.</p>
-<p>Bedner, M. (2012). <em>Cloud computing - technology, security and legal design.</em> Kassel: kassel university press.</p>
-<p>Bengel, G., Baun, C., Kunze, M., & Stucky, K.-U. (2008). <em>Master course parallel and distributed systems - fundamentals and programming of multicore processors, multiprocessors, clusters and grids.</em> Wiesbaden: Vieweg+Teubner.</p>
-<p><em>Beowulf Cluster Computing</em>. (January 12, 2018). Retrieved from MichiganTech - Beowulf Cluster Computing: <a href=http://www.cs.mtu.edu/beowulf/ target=_blank rel="noopener noreffer">http://www.cs.mtu.edu/beowulf/</a></p>
-<p><em>Beowulf Scalable Mass Storage (T-Racks)</em>. (January 12, 2018). Retrieved from ESS Project: <a href=https://www.hq.nasa.gov/hpcc/reports/annrpt97/accomps/ess/WW80.html target=_blank rel="noopener noreffer">https://www.hq.nasa.gov/hpcc/reports/annrpt97/accomps/ess/WW80.html</a></p>
-<p><em>BOINC - Active Projects Statistics</em>. (January 31, 2018). Retrieved from Free-DC - Distributed Computing Stats System: <a href="http://stats.free-dc.org/stats.php?page=userbycpid&cpid=cfbdd0ffc5596f8c5fed01bbe619679d" target=_blank rel="noopener noreffer">http://stats.free-dc.org/stats.php?page=userbycpid&cpid=cfbdd0ffc5596f8c5fed01bbe619679d</a></p>
-<p><em>Cache</em>.(January 14, 2018). Retrieved from Electronics Compendium: <a href=https://www.elektronik-kompendium.de/sites/com/0309291.htm target=_blank rel="noopener noreffer">https://www.elektronik-kompendium.de/sites/com/0309291.htm</a></p>
-<p>Christl, D.,Riedel, M., & Zelend, M. (2007). <em>Communication systems / computer networks - Research of tools for the control of a massively parallel cluster computer in the computer center of the West Saxon University of Applied Sciences Zwickau.</em> Zwickau: Westsächsichen Hochschule Zwickau.</p>
-<p><em>CISC and RISC</em>. (January 28, 2018). Retrieved from Electronics Compendium: <a href=https://www.elektronik-kompendium.de/sites/com/0412281.htm target=_blank rel="noopener noreffer">https://www.elektronik-kompendium.de/sites/com/0412281.htm</a></p>
-<p><em>Containersvs. virtual machines</em>. (December 13, 2017). Retrieved from NetApp Blog: <a href=https://blog.netapp.com/blogs/containers-vs-vms/ target=_blank rel="noopener noreffer">https://blog.netapp.com/blogs/containers-vs-vms/</a></p>
-<p>Coulouris, G.,Dollimore, J., Kindberg, T., & Blair, G. (2012). <em>Distributed systems - concepts and design.</em> Boston: Pearson.</p>
-<p>Dennis, A. K. (2013). <em>Raspberry Pi super cluster.</em> Birmingham: Packt Publishing.</p>
-<p><em>The science behind SETI@home</em>. (January 30, 2018). Retrieved from SETI@home: <a href=https://setiathome.berkeley.edu/sah_about.php target=_blank rel="noopener noreffer">https://setiathome.berkeley.edu/sah_about.php</a></p>
-<p><em>Docker on the Raspberry Pi with HypriotOS</em>. (January 24, 2018). Retrieved from Raspberry Pi Geek: <a href=http://www.raspberry-pi-geek.de/Magazin/2017/12/Docker-auf-dem-Raspberry-Pi-mit-HypriotOS target=_blank rel="noopener noreffer">http://www.raspberry-pi-geek.de/Magazin/2017/12/Docker-auf-dem-Raspberry-Pi-mit-HypriotOS</a></p>
-<p>Eder,M. (2016). <em>Hypervisor- vs. container-based virtualization.</em> Munich: Technical University of Munich.</p>
-<p><em>Einstein@Home on Android devices</em>. (January 23, 2018). Retrieved from GEO600: <a href=http://www.geo600.org/1282133/Einstein_Home_on_Android_devices target=_blank rel="noopener noreffer">http://www.geo600.org/1282133/Einstein_Home_on_Android_devices</a></p>
-<p><em>Enable I2C Interface on the Raspberry Pi</em>. (January 28, 2018). Retrieved from Raspberry Pi Spy: <a href=https://www.raspberrypi-spy.co.uk/2014/11/enabling-the-i2c-interface-on-the-raspberry-pi/ target=_blank rel="noopener noreffer">https://www.raspberrypi-spy.co.uk/2014/11/enabling-the-i2c-interface-on-the-raspberry-pi/</a></p>
-<p><em>Encyclopedia - VAX</em>. (January 20, 2018). Retrieved from PCmag: <a href=https://www.pcmag.com/encyclopedia/term/53678/vax target=_blank rel="noopener noreffer">https://www.pcmag.com/encyclopedia/term/53678/vax</a></p>
-<p><em>Failover Cluster</em>. (January 20, 2018). Retrieved from Microsoft Developer Network: <a href=https://msdn.microsoft.com/en-us/library/ff650328.aspx target=_blank rel="noopener noreffer">https://msdn.microsoft.com/en-us/library/ff650328.aspx</a></p>
-<p>Fenner, P. (10. 12 2017). <em>So What's a Practical Laser-Cut Clip Size?</em> Retrieved from DefProc Engineering: <a href=https://www.deferredprocrastination.co.uk/blog/2013/so-whats-a-practical-laser-cut-clip-size/Fey target=_blank rel="noopener noreffer">https://www.deferredprocrastination.co.uk/blog/2013/so-whats-a-practical-laser-cut-clip-size/Fey</a>, D. (2010).</p>
-<p><em>Grid computing - An enabling technology for computational science.</em> Heidelberg: Springer.</p>
-<p><em>GitHub - flash</em>. (January 24, 2018). Retrieved from hypriot / flash: <a href=https://github.com/hypriot/flash target=_blank rel="noopener noreffer">https://github.com/hypriot/flash</a></p>
-<p>Goasguen, S. (2015). <em>Docker Cookbook - Solutions and Examples for Building Dsitributed Applications.</em> Sebastopol: O'Reilly.</p>
-<p>Grabsch, V., & Radunz, Y. (2008). <em>Seminar presentation - Amdahl's and Gustafson's law.</em> o.O.: Creative Commons.</p>
-<p>Herminghaus, V., & Scriba, A. (2006). <em>Veritas Storage Foundation - High End Computing for UNIX Design and Implementation of High Availability Solutions with VxVM and VCS.</em> Heidelberg: Springer.</p>
-<p><em>Horizontal Pod Autoscaling</em>. (January 29, 2018). Retrieved from GitHub: <a href=https://github.com/kubernetes/kubernetes/blob/8caeec429ee1d2a9df7b7a41b21c626346b456fb/docs/user-guide/horizontal-pod-autoscaling/image/index.php target=_blank rel="noopener noreffer">https://github.com/kubernetes/kubernetes/blob/8caeec429ee1d2a9df7b7a41b21c626346b456fb/docs/user-guide/horizontal-pod-autoscaling/image/index.php</a></p>
-<p><em>How nodes work</em>. (January 27, 2018). Retrieved from docker docs: <a href=https://docs.docker.com/engine/swarm/how-swarm-mode-works/nodes/ target=_blank rel="noopener noreffer">https://docs.docker.com/engine/swarm/how-swarm-mode-works/nodes/</a></p>
-<p><em>How to setup an I2C LCD on the Raspberry Pi</em>. (January 28, 2018). Retrieved from Circuit Basics: <a href=http://www.circuitbasics.com/raspberry-pi-i2c-lcd-set-up-and-programming/ target=_blank rel="noopener noreffer">http://www.circuitbasics.com/raspberry-pi-i2c-lcd-set-up-and-programming/</a></p>
-<p><em>If we want to Find Aliens, We Need to Save the Arecibo Telescope</em>. (January 23, 2018). Retrieved from vice: <a href=https://www.vice.com/en_us/article/wdbq74/find-aliens-arecibo-telescope target=_blank rel="noopener noreffer">https://www.vice.com/en_us/article/wdbq74/find-aliens-arecibo-telescope</a></p>
-<p><em>Inkscape - Overview</em>. (January 24, 2018). Retrieved from Inkscape: <a href=https://inkscape.org/de/ueber/uebersicht/ target=_blank rel="noopener noreffer">https://inkscape.org/de/ueber/uebersicht/</a></p>
-<p>Kaiser, R. (2009). <em>Virtualization of multiprocessor systems with real-time applications.</em> Koblenz-Landau.Kersken, S. (2015).</p>
-<p><em>IT handbook for IT specialists.</em> Bonn: Rheinwerk Verlag GmbH.</p>
-<p>Kroeker, K. L. (March 2011). Grid computing's future. <em>Communications of the ACM</em>, pp. 15-17.</p>
-<p><em>Kubernetes Components</em>. (January 10, 2018). Retrieved from kubernetes: <a href=https://kubernetes.io/docs/concepts/overview/components/ target=_blank rel="noopener noreffer">https://kubernetes.io/docs/concepts/overview/components/</a></p>
-<p><em>Kubernetes vs Docker Swarm</em>. (January 10, 2018). Retrieved from Platform9: <a href=https://platform9.com/blog/kubernetes-docker-swarm-compared/ target=_blank rel="noopener noreffer">https://platform9.com/blog/kubernetes-docker-swarm-compared/</a></p>
-<p><em>Laser-Cut Elastic-Clipped Comb-Joints</em>. (December 1, 2018). Retrieved from DefProc Engineering: <a href=https://www.deferredprocrastination.co.uk/blog/2013/laser-cut-elastic-clipped-comb-joints/ target=_blank rel="noopener noreffer">https://www.deferredprocrastination.co.uk/blog/2013/laser-cut-elastic-clipped-comb-joints/</a></p>
-<p><em>Laser-Cut Elastic Clips</em>. (December 1, 2017). Retrieved from Thingiverse: <a href=https://www.thingiverse.com/thing:53032 target=_blank rel="noopener noreffer">https://www.thingiverse.com/thing:53032</a></p>
-<p>Lee, C. (2014). <em>Cloud database development and management.</em> Boca Raton: CRC Press.</p>
-<p>Liebel, O. (2011). <em>Linux high availability - deployment scenarios and practical solutions.</em> Bonn: Galileo Press.</p>
-<p><em>Load-Balanced Cluster</em>. (January 20, 2018). Retrieved from Microsoft Developer Network: <a href=https://msdn.microsoft.com/en-us/library/ff648960.aspx target=_blank rel="noopener noreffer">https://msdn.microsoft.com/en-us/library/ff648960.aspx</a></p>
-<p>Lobel, L. G., & Boyd, E. D.. (2014). <em>Microsoft Azure SQL Database step by step.</em> Redmond: Microsoft Press.</p>
-<p><em>MAD - Andreas Gregori</em>. (January 24, 2018). Retrieved from MAD Models Architecture Design: <a href=http://mad-modelle.de/kontakt/ target=_blank rel="noopener noreffer">http://mad-modelle.de/kontakt/</a></p>
-<p>Mandl, P. (2010). <em>Basic course operating systems - architectures, resource management, synchronization, process communication.</em> Wiesbaden: VIeweg + Teubner.</p>
-<p>Matros, R. (2012). <em>The impact of cloud computing on IT service providers - A case study-based investigation of critical influencing variables.</em> Bayreuth: Springer</p>
-<p>Gabler.Merkert, J. (16 October 2017). c't Raspberry Pi - Raspi projects. <em>Risc OS</em>, p. 151.</p>
-<p>Miell, I., & Sayers, A. H. (2016). <em>Docker in practice.</em> New York: Manning Publications.</p>
-<p><em>Networked computing: fundamentals and applications</em>. (January 20, 2018). Retrieved from techchannel: <a href=https://www.tecchannel.de/a/networked-computing-grundlagen-und-anwendungen,439222,5 target=_blank rel="noopener noreffer">https://www.tecchannel.de/a/networked-computing-grundlagen-und-anwendungen,439222,5</a></p>
-<p>Neuenschwander, E. P. (2014). <em>Cloud computing - A legal thundercloud?</em> Zurich: University of Zurich.</p>
-<p><em>New DIY supercomputer saves £1,000s</em>. (January 8, 2018). Retrieved from University of Westminster: <a href=https://www.westminster.ac.uk/news-and-events/news/2011/new-diy-supercomputer-saves-%C2%A31000s target=_blank rel="noopener noreffer">https://www.westminster.ac.uk/news-and-events/news/2011/new-diy-supercomputer-saves-%C2%A31000s</a></p>
-<p>Nickoloff, J. (2016). <em>Docker in action.</em> New York: Manning Publications.</p>
-<p><em>Nodes</em>. (January 10, 2018). Retrieved from kubernetes: <a href=https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/ target=_blank rel="noopener noreffer">https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/</a></p>
-<p><em>Overview of Microsoft HPC Pack and SOA in Failover Cluster</em>. (January 21, 2018). Retrieved from Microsoft TechNet: <a href="https://technet.microsoft.com/en-us/library/gg142067%28v=ws.11%29.aspx" target=_blank rel="noopener noreffer">https://technet.microsoft.com/en-us/library/gg142067(v=ws.11).aspx</a></p>
-<p><em>PaaS or IaaS</em>. (January 13, 2018). Retrieved from Microsoft Azure: <a href=https://docs.microsoft.com/de-de/azure/sql-database/sql-database-paas-vs-sql-server-iaas target=_blank rel="noopener noreffer">https://docs.microsoft.com/de-de/azure/sql-database/sql-database-paas-vs-sql-server-iaas</a></p>
-<p><em>Parallel Linux Operating System - Beowulf Gigaflop/s Workstation Project</em>. (January 12, 2018). Retrieved from ESS Project: <a href=https://www.hq.nasa.gov/hpcc/reports/annrpt97/accomps/ess/WW49.html target=_blank rel="noopener noreffer">https://www.hq.nasa.gov/hpcc/reports/annrpt97/accomps/ess/WW49.html</a></p>
-<p>Pfister, G. (1997). <em>In Search of Clusters - The ongoing Battle in lowly Parallel Computing.</em> New Jersey: Prentice Hall.</p>
-<p><em>Pods</em>. (January 10, 2018). Retrieved from kubernetes: <a href=https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/ target=_blank rel="noopener noreffer">https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/</a></p>
-<p><em>Pods and Nodes</em>. (January 10, 2018). Retrieved from kubernetes Bootcamp: <a href=https://kubernetesbootcamp.github.io/kubernetes-bootcamp/3-1.html target=_blank rel="noopener noreffer">https://kubernetesbootcamp.github.io/kubernetes-bootcamp/3-1.html</a></p>
-<p><em>Project list</em>. (January 8, 2018). Retrieved from BOINC: <a href=http://boinc.berkeley.edu/wiki/Project_list target=_blank rel="noopener noreffer">http://boinc.berkeley.edu/wiki/Project_list</a></p>
-<p><em>Project to setup Boinc client in Docker for the RaspberryPi</em>. (January 30, 2018). Retrieved from Docker Hub: <a href=https://hub.docker.com/r/bunchc/rpi-boinc/ target=_blank rel="noopener noreffer">https://hub.docker.com/r/bunchc/rpi-boinc/</a></p>
-<p><em>projects</em>. (November 30, 2017). Retrieved from Climbers.net: <a href=http://climbers.net/sbc/diy-raspberry-pi-3-cluster/RPiCluster4b.png target=_blank rel="noopener noreffer">http://climbers.net/sbc/diy-raspberry-pi-3-cluster/RPiCluster4b.png</a></p>
-<p><em>Raspberry Pi 3 - self-heating.</em> (Dec 20, 2017). Retrieved from mikrocontroller.net: <a href=https://www.mikrocontroller.net/topic/393898 target=_blank rel="noopener noreffer">https://www.mikrocontroller.net/topic/393898</a></p>
-<p><em>Raspberry Pi 3 GPIO Pin Chart with Pi</em>. (January 23, 2018). Retrieved from openclipart: <a href=https://openclipart.org/detail/280972/raspberry-pi-3-gpio-pin-chart-with-pi target=_blank rel="noopener noreffer">https://openclipart.org/detail/280972/raspberry-pi-3-gpio-pin-chart-with-pi</a></p>
-<p><em>Raspberry Pi 3: Power consumption and CoreMark comparison</em>. (January 31, 2018). Retrieved from heise online: <a href=https://www.heise.de/ct/artikel/Raspberry-Pi-3-Leistungsaufnahme-und-CoreMark-Vergleich-3121139.html target=_blank rel="noopener noreffer">https://www.heise.de/ct/artikel/Raspberry-Pi-3-Leistungsaufnahme-und-CoreMark-Vergleich-3121139.html</a></p>
-<p>Ries, C. B. (2012). <em>BOINC - high performance computing with Berkeley Open Infrastructure for Network Computing.</em> Heidelberg: Springer Vieweg.</p>
-<p><em>rkt - A security-minded, standards-based container engine</em>. (January 27, 2018). Retrieved from CoreOS: <a href=https://coreos.com/rkt/ target=_blank rel="noopener noreffer">https://coreos.com/rkt/</a></p>
-<p><em>RPiCluster - Overview</em>. (January 23, 2018). Retrieved from RPiCluster: <a href=https://bitbucket.org/jkiepert/rpicluster target=_blank rel="noopener noreffer">https://bitbucket.org/jkiepert/rpicluster</a></p>
-<p>Schill, A., & Springer, T. (2007). <em>Distributed systems - fundamentals and enabling technologies.</em> Heidelberg: Springer.</p>
-<p><em>SETI@home - Your Computers</em>. (January 31, 2018). Retrieved from SETI@home: <a href=https://setiathome.berkeley.edu/hosts_user.php target=_blank rel="noopener noreffer">https://setiathome.berkeley.edu/hosts_user.php</a></p>
-<p>Smith, N. (28. 11 2017). <em>Climbers.net</em>. Retrieved from DIY 5 Node Cluster of Raspberry Pi 3s: <a href=http://climbers.net/sbc/diy-raspberry-pi-3-cluster/ target=_blank rel="noopener noreffer">http://climbers.net/sbc/diy-raspberry-pi-3-cluster/</a></p>
-<p><em>Swarm mode key concepts</em>. (January 27, 2018). Retrieved from docker docs: <a href=https://docs.docker.com/engine/swarm/key-concepts/ target=_blank rel="noopener noreffer">https://docs.docker.com/engine/swarm/key-concepts/</a></p>
-<p>Tanenbaum, A. S. (2007). <em>Distributed systems - principles and paradigms.</em> New Jersey: Pearson Prentice Hall.</p>
-<p><em>Technet</em>. (January 13, 2018). Retrieved from Microsoft: <a href=https://blogs.technet.microsoft.com/kevinremde/2011/04/03/saas-paas-and-iaas-oh-my-cloudy-april-part-3/ target=_blank rel="noopener noreffer">https://blogs.technet.microsoft.com/kevinremde/2011/04/03/saas-paas-and-iaas-oh-my-cloudy-april-part-3/</a></p>
-<p><em>Top500 List</em>. (January 8, 2018). Retrieved from Top 500 The List: <a href=https://www.top500.org/list/2017/11/ target=_blank rel="noopener noreffer">https://www.top500.org/list/2017/11/</a></p>
-<p>Ulmann, B. (February 6, 2014). <em>IT basics.</em> FOM.</p>
-<p><em>Our home galaxy - the Milky Way</em>. (January 23, 2018). Retrieved from planet wissen: <a href=https://www.planet-wissen.de/technik/weltraumforschung/astronomie/pwieunsereheimatgalaxiediemilchstrasse100.html target=_blank rel="noopener noreffer">https://www.planet-wissen.de/technik/weltraumforschung/astronomie/pwieunsereheimatgalaxiediemilchstrasse100.html</a></p>
-<p><em>VMS Software, Inc. Named Exclusive Developer of Future Versions of OpenVMS Operating System.</em> (January 20, 2018). Retrieved from BusinessWire: <a href=https://www.businesswire.com/news/home/20140731006118/en/VMS-Software-Named-Exclusive-Developer-Future-Versions target=_blank rel="noopener noreffer">https://www.businesswire.com/news/home/20140731006118/en/VMS-Software-Named-Exclusive-Developer-Future-Versions</a></p>
-<p><em>What is Kubernetes?</em> (January 10, 2018). Retrieved from kubernetes: <a href=https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/ target=_blank rel="noopener noreffer">https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/</a></p>
-<h2 id=appendix-a---script-installing-kubernetes>Appendix A - Script: Installing Kubernetes</h2>
-<figure><img src=media/image4013.png>
-</figure>
-<h2 id=appendix-b---script-lcd-display>Appendix B - Script: LCD display</h2>
-<figure><img src=media/image4125.png>
-</figure>
-<h2 id=appendix-c---script-docker-autoscaling>Appendix C - Script: Docker Autoscaling</h2>
-<p>Dockerfile:</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+possibilities and gives a <strong>think-out-of-the-box</strong> approach.</p><p>Check out the full project</p><ul><li><a href=../conception-construction-and-evaluation-of-a-raspberry-pi-cluster-3/ rel>Conception, Construction and Evaluation of a Reaspberry Pi Cluster (1/4)</a></li><li><a href=../conception-construction-and-evaluation-of-a-raspberry-pi-cluster-3/ rel>Conception, Construction and Evaluation of a Reaspberry Pi Cluster (2/4)</a></li></ul><p>Full project see <a href=../conception-construction-and-evaluation-of-a-raspberry-pi-cluster/ rel>Conception, Construction and Evaluation of a Reaspberry Pi Cluster</a></p><h2 id=bibliography>Bibliography</h2><p>Adams, J. (September 2017). SFT Guide 14/17 - Raspberry Pi Tips, Tricks & Hacks (No. 1). <em>Third generation: The innovations of the Raspberry Pi 3</em>, p. 159.</p><p>Baier, J. (2017). <em>Getting Started with Kubernetes - Harness the power of Kubernetes to manage Docker deployments with ease.</em> Birmingham: Packt Publishing.</p><p>Bauke, H., & Mertens, S. (2006). <em>Cluster computing - Practical introduction to high performance computing on Linux clusters.</em> Heidelberg: Springer.</p><p>Bedner, M. (2012). <em>Cloud computing - technology, security and legal design.</em> Kassel: kassel university press.</p><p>Bengel, G., Baun, C., Kunze, M., & Stucky, K.-U. (2008). <em>Master course parallel and distributed systems - fundamentals and programming of multicore processors, multiprocessors, clusters and grids.</em> Wiesbaden: Vieweg+Teubner.</p><p><em>Beowulf Cluster Computing</em>. (January 12, 2018). Retrieved from MichiganTech - Beowulf Cluster Computing: <a href=http://www.cs.mtu.edu/beowulf/ target=_blank rel="noopener noreffer">http://www.cs.mtu.edu/beowulf/</a></p><p><em>Beowulf Scalable Mass Storage (T-Racks)</em>. (January 12, 2018). Retrieved from ESS Project: <a href=https://www.hq.nasa.gov/hpcc/reports/annrpt97/accomps/ess/WW80.html target=_blank rel="noopener noreffer">https://www.hq.nasa.gov/hpcc/reports/annrpt97/accomps/ess/WW80.html</a></p><p><em>BOINC - Active Projects Statistics</em>. (January 31, 2018). Retrieved from Free-DC - Distributed Computing Stats System: <a href="http://stats.free-dc.org/stats.php?page=userbycpid&cpid=cfbdd0ffc5596f8c5fed01bbe619679d" target=_blank rel="noopener noreffer">http://stats.free-dc.org/stats.php?page=userbycpid&cpid=cfbdd0ffc5596f8c5fed01bbe619679d</a></p><p><em>Cache</em>.(January 14, 2018). Retrieved from Electronics Compendium: <a href=https://www.elektronik-kompendium.de/sites/com/0309291.htm target=_blank rel="noopener noreffer">https://www.elektronik-kompendium.de/sites/com/0309291.htm</a></p><p>Christl, D.,Riedel, M., & Zelend, M. (2007). <em>Communication systems / computer networks - Research of tools for the control of a massively parallel cluster computer in the computer center of the West Saxon University of Applied Sciences Zwickau.</em> Zwickau: Westsächsichen Hochschule Zwickau.</p><p><em>CISC and RISC</em>. (January 28, 2018). Retrieved from Electronics Compendium: <a href=https://www.elektronik-kompendium.de/sites/com/0412281.htm target=_blank rel="noopener noreffer">https://www.elektronik-kompendium.de/sites/com/0412281.htm</a></p><p><em>Containersvs. virtual machines</em>. (December 13, 2017). Retrieved from NetApp Blog: <a href=https://blog.netapp.com/blogs/containers-vs-vms/ target=_blank rel="noopener noreffer">https://blog.netapp.com/blogs/containers-vs-vms/</a></p><p>Coulouris, G.,Dollimore, J., Kindberg, T., & Blair, G. (2012). <em>Distributed systems - concepts and design.</em> Boston: Pearson.</p><p>Dennis, A. K. (2013). <em>Raspberry Pi super cluster.</em> Birmingham: Packt Publishing.</p><p><em>The science behind SETI@home</em>. (January 30, 2018). Retrieved from SETI@home: <a href=https://setiathome.berkeley.edu/sah_about.php target=_blank rel="noopener noreffer">https://setiathome.berkeley.edu/sah_about.php</a></p><p><em>Docker on the Raspberry Pi with HypriotOS</em>. (January 24, 2018). Retrieved from Raspberry Pi Geek: <a href=http://www.raspberry-pi-geek.de/Magazin/2017/12/Docker-auf-dem-Raspberry-Pi-mit-HypriotOS target=_blank rel="noopener noreffer">http://www.raspberry-pi-geek.de/Magazin/2017/12/Docker-auf-dem-Raspberry-Pi-mit-HypriotOS</a></p><p>Eder,M. (2016). <em>Hypervisor- vs. container-based virtualization.</em> Munich: Technical University of Munich.</p><p><em>Einstein@Home on Android devices</em>. (January 23, 2018). Retrieved from GEO600: <a href=http://www.geo600.org/1282133/Einstein_Home_on_Android_devices target=_blank rel="noopener noreffer">http://www.geo600.org/1282133/Einstein_Home_on_Android_devices</a></p><p><em>Enable I2C Interface on the Raspberry Pi</em>. (January 28, 2018). Retrieved from Raspberry Pi Spy: <a href=https://www.raspberrypi-spy.co.uk/2014/11/enabling-the-i2c-interface-on-the-raspberry-pi/ target=_blank rel="noopener noreffer">https://www.raspberrypi-spy.co.uk/2014/11/enabling-the-i2c-interface-on-the-raspberry-pi/</a></p><p><em>Encyclopedia - VAX</em>. (January 20, 2018). Retrieved from PCmag: <a href=https://www.pcmag.com/encyclopedia/term/53678/vax target=_blank rel="noopener noreffer">https://www.pcmag.com/encyclopedia/term/53678/vax</a></p><p><em>Failover Cluster</em>. (January 20, 2018). Retrieved from Microsoft Developer Network: <a href=https://msdn.microsoft.com/en-us/library/ff650328.aspx target=_blank rel="noopener noreffer">https://msdn.microsoft.com/en-us/library/ff650328.aspx</a></p><p>Fenner, P. (10. 12 2017). <em>So What's a Practical Laser-Cut Clip Size?</em> Retrieved from DefProc Engineering: <a href=https://www.deferredprocrastination.co.uk/blog/2013/so-whats-a-practical-laser-cut-clip-size/Fey target=_blank rel="noopener noreffer">https://www.deferredprocrastination.co.uk/blog/2013/so-whats-a-practical-laser-cut-clip-size/Fey</a>, D. (2010).</p><p><em>Grid computing - An enabling technology for computational science.</em> Heidelberg: Springer.</p><p><em>GitHub - flash</em>. (January 24, 2018). Retrieved from hypriot / flash: <a href=https://github.com/hypriot/flash target=_blank rel="noopener noreffer">https://github.com/hypriot/flash</a></p><p>Goasguen, S. (2015). <em>Docker Cookbook - Solutions and Examples for Building Dsitributed Applications.</em> Sebastopol: O'Reilly.</p><p>Grabsch, V., & Radunz, Y. (2008). <em>Seminar presentation - Amdahl's and Gustafson's law.</em> o.O.: Creative Commons.</p><p>Herminghaus, V., & Scriba, A. (2006). <em>Veritas Storage Foundation - High End Computing for UNIX Design and Implementation of High Availability Solutions with VxVM and VCS.</em> Heidelberg: Springer.</p><p><em>Horizontal Pod Autoscaling</em>. (January 29, 2018). Retrieved from GitHub: <a href=https://github.com/kubernetes/kubernetes/blob/8caeec429ee1d2a9df7b7a41b21c626346b456fb/docs/user-guide/horizontal-pod-autoscaling/image/index.php target=_blank rel="noopener noreffer">https://github.com/kubernetes/kubernetes/blob/8caeec429ee1d2a9df7b7a41b21c626346b456fb/docs/user-guide/horizontal-pod-autoscaling/image/index.php</a></p><p><em>How nodes work</em>. (January 27, 2018). Retrieved from docker docs: <a href=https://docs.docker.com/engine/swarm/how-swarm-mode-works/nodes/ target=_blank rel="noopener noreffer">https://docs.docker.com/engine/swarm/how-swarm-mode-works/nodes/</a></p><p><em>How to setup an I2C LCD on the Raspberry Pi</em>. (January 28, 2018). Retrieved from Circuit Basics: <a href=http://www.circuitbasics.com/raspberry-pi-i2c-lcd-set-up-and-programming/ target=_blank rel="noopener noreffer">http://www.circuitbasics.com/raspberry-pi-i2c-lcd-set-up-and-programming/</a></p><p><em>If we want to Find Aliens, We Need to Save the Arecibo Telescope</em>. (January 23, 2018). Retrieved from vice: <a href=https://www.vice.com/en_us/article/wdbq74/find-aliens-arecibo-telescope target=_blank rel="noopener noreffer">https://www.vice.com/en_us/article/wdbq74/find-aliens-arecibo-telescope</a></p><p><em>Inkscape - Overview</em>. (January 24, 2018). Retrieved from Inkscape: <a href=https://inkscape.org/de/ueber/uebersicht/ target=_blank rel="noopener noreffer">https://inkscape.org/de/ueber/uebersicht/</a></p><p>Kaiser, R. (2009). <em>Virtualization of multiprocessor systems with real-time applications.</em> Koblenz-Landau.Kersken, S. (2015).</p><p><em>IT handbook for IT specialists.</em> Bonn: Rheinwerk Verlag GmbH.</p><p>Kroeker, K. L. (March 2011). Grid computing's future. <em>Communications of the ACM</em>, pp. 15-17.</p><p><em>Kubernetes Components</em>. (January 10, 2018). Retrieved from kubernetes: <a href=https://kubernetes.io/docs/concepts/overview/components/ target=_blank rel="noopener noreffer">https://kubernetes.io/docs/concepts/overview/components/</a></p><p><em>Kubernetes vs Docker Swarm</em>. (January 10, 2018). Retrieved from Platform9: <a href=https://platform9.com/blog/kubernetes-docker-swarm-compared/ target=_blank rel="noopener noreffer">https://platform9.com/blog/kubernetes-docker-swarm-compared/</a></p><p><em>Laser-Cut Elastic-Clipped Comb-Joints</em>. (December 1, 2018). Retrieved from DefProc Engineering: <a href=https://www.deferredprocrastination.co.uk/blog/2013/laser-cut-elastic-clipped-comb-joints/ target=_blank rel="noopener noreffer">https://www.deferredprocrastination.co.uk/blog/2013/laser-cut-elastic-clipped-comb-joints/</a></p><p><em>Laser-Cut Elastic Clips</em>. (December 1, 2017). Retrieved from Thingiverse: <a href=https://www.thingiverse.com/thing:53032 target=_blank rel="noopener noreffer">https://www.thingiverse.com/thing:53032</a></p><p>Lee, C. (2014). <em>Cloud database development and management.</em> Boca Raton: CRC Press.</p><p>Liebel, O. (2011). <em>Linux high availability - deployment scenarios and practical solutions.</em> Bonn: Galileo Press.</p><p><em>Load-Balanced Cluster</em>. (January 20, 2018). Retrieved from Microsoft Developer Network: <a href=https://msdn.microsoft.com/en-us/library/ff648960.aspx target=_blank rel="noopener noreffer">https://msdn.microsoft.com/en-us/library/ff648960.aspx</a></p><p>Lobel, L. G., & Boyd, E. D.. (2014). <em>Microsoft Azure SQL Database step by step.</em> Redmond: Microsoft Press.</p><p><em>MAD - Andreas Gregori</em>. (January 24, 2018). Retrieved from MAD Models Architecture Design: <a href=http://mad-modelle.de/kontakt/ target=_blank rel="noopener noreffer">http://mad-modelle.de/kontakt/</a></p><p>Mandl, P. (2010). <em>Basic course operating systems - architectures, resource management, synchronization, process communication.</em> Wiesbaden: VIeweg + Teubner.</p><p>Matros, R. (2012). <em>The impact of cloud computing on IT service providers - A case study-based investigation of critical influencing variables.</em> Bayreuth: Springer</p><p>Gabler.Merkert, J. (16 October 2017). c't Raspberry Pi - Raspi projects. <em>Risc OS</em>, p. 151.</p><p>Miell, I., & Sayers, A. H. (2016). <em>Docker in practice.</em> New York: Manning Publications.</p><p><em>Networked computing: fundamentals and applications</em>. (January 20, 2018). Retrieved from techchannel: <a href=https://www.tecchannel.de/a/networked-computing-grundlagen-und-anwendungen,439222,5 target=_blank rel="noopener noreffer">https://www.tecchannel.de/a/networked-computing-grundlagen-und-anwendungen,439222,5</a></p><p>Neuenschwander, E. P. (2014). <em>Cloud computing - A legal thundercloud?</em> Zurich: University of Zurich.</p><p><em>New DIY supercomputer saves £1,000s</em>. (January 8, 2018). Retrieved from University of Westminster: <a href=https://www.westminster.ac.uk/news-and-events/news/2011/new-diy-supercomputer-saves-%C2%A31000s target=_blank rel="noopener noreffer">https://www.westminster.ac.uk/news-and-events/news/2011/new-diy-supercomputer-saves-%C2%A31000s</a></p><p>Nickoloff, J. (2016). <em>Docker in action.</em> New York: Manning Publications.</p><p><em>Nodes</em>. (January 10, 2018). Retrieved from kubernetes: <a href=https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/ target=_blank rel="noopener noreffer">https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/</a></p><p><em>Overview of Microsoft HPC Pack and SOA in Failover Cluster</em>. (January 21, 2018). Retrieved from Microsoft TechNet: <a href="https://technet.microsoft.com/en-us/library/gg142067%28v=ws.11%29.aspx" target=_blank rel="noopener noreffer">https://technet.microsoft.com/en-us/library/gg142067(v=ws.11).aspx</a></p><p><em>PaaS or IaaS</em>. (January 13, 2018). Retrieved from Microsoft Azure: <a href=https://docs.microsoft.com/de-de/azure/sql-database/sql-database-paas-vs-sql-server-iaas target=_blank rel="noopener noreffer">https://docs.microsoft.com/de-de/azure/sql-database/sql-database-paas-vs-sql-server-iaas</a></p><p><em>Parallel Linux Operating System - Beowulf Gigaflop/s Workstation Project</em>. (January 12, 2018). Retrieved from ESS Project: <a href=https://www.hq.nasa.gov/hpcc/reports/annrpt97/accomps/ess/WW49.html target=_blank rel="noopener noreffer">https://www.hq.nasa.gov/hpcc/reports/annrpt97/accomps/ess/WW49.html</a></p><p>Pfister, G. (1997). <em>In Search of Clusters - The ongoing Battle in lowly Parallel Computing.</em> New Jersey: Prentice Hall.</p><p><em>Pods</em>. (January 10, 2018). Retrieved from kubernetes: <a href=https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/ target=_blank rel="noopener noreffer">https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/</a></p><p><em>Pods and Nodes</em>. (January 10, 2018). Retrieved from kubernetes Bootcamp: <a href=https://kubernetesbootcamp.github.io/kubernetes-bootcamp/3-1.html target=_blank rel="noopener noreffer">https://kubernetesbootcamp.github.io/kubernetes-bootcamp/3-1.html</a></p><p><em>Project list</em>. (January 8, 2018). Retrieved from BOINC: <a href=http://boinc.berkeley.edu/wiki/Project_list target=_blank rel="noopener noreffer">http://boinc.berkeley.edu/wiki/Project_list</a></p><p><em>Project to setup Boinc client in Docker for the RaspberryPi</em>. (January 30, 2018). Retrieved from Docker Hub: <a href=https://hub.docker.com/r/bunchc/rpi-boinc/ target=_blank rel="noopener noreffer">https://hub.docker.com/r/bunchc/rpi-boinc/</a></p><p><em>projects</em>. (November 30, 2017). Retrieved from Climbers.net: <a href=http://climbers.net/sbc/diy-raspberry-pi-3-cluster/RPiCluster4b.png target=_blank rel="noopener noreffer">http://climbers.net/sbc/diy-raspberry-pi-3-cluster/RPiCluster4b.png</a></p><p><em>Raspberry Pi 3 - self-heating.</em> (Dec 20, 2017). Retrieved from mikrocontroller.net: <a href=https://www.mikrocontroller.net/topic/393898 target=_blank rel="noopener noreffer">https://www.mikrocontroller.net/topic/393898</a></p><p><em>Raspberry Pi 3 GPIO Pin Chart with Pi</em>. (January 23, 2018). Retrieved from openclipart: <a href=https://openclipart.org/detail/280972/raspberry-pi-3-gpio-pin-chart-with-pi target=_blank rel="noopener noreffer">https://openclipart.org/detail/280972/raspberry-pi-3-gpio-pin-chart-with-pi</a></p><p><em>Raspberry Pi 3: Power consumption and CoreMark comparison</em>. (January 31, 2018). Retrieved from heise online: <a href=https://www.heise.de/ct/artikel/Raspberry-Pi-3-Leistungsaufnahme-und-CoreMark-Vergleich-3121139.html target=_blank rel="noopener noreffer">https://www.heise.de/ct/artikel/Raspberry-Pi-3-Leistungsaufnahme-und-CoreMark-Vergleich-3121139.html</a></p><p>Ries, C. B. (2012). <em>BOINC - high performance computing with Berkeley Open Infrastructure for Network Computing.</em> Heidelberg: Springer Vieweg.</p><p><em>rkt - A security-minded, standards-based container engine</em>. (January 27, 2018). Retrieved from CoreOS: <a href=https://coreos.com/rkt/ target=_blank rel="noopener noreffer">https://coreos.com/rkt/</a></p><p><em>RPiCluster - Overview</em>. (January 23, 2018). Retrieved from RPiCluster: <a href=https://bitbucket.org/jkiepert/rpicluster target=_blank rel="noopener noreffer">https://bitbucket.org/jkiepert/rpicluster</a></p><p>Schill, A., & Springer, T. (2007). <em>Distributed systems - fundamentals and enabling technologies.</em> Heidelberg: Springer.</p><p><em>SETI@home - Your Computers</em>. (January 31, 2018). Retrieved from SETI@home: <a href=https://setiathome.berkeley.edu/hosts_user.php target=_blank rel="noopener noreffer">https://setiathome.berkeley.edu/hosts_user.php</a></p><p>Smith, N. (28. 11 2017). <em>Climbers.net</em>. Retrieved from DIY 5 Node Cluster of Raspberry Pi 3s: <a href=http://climbers.net/sbc/diy-raspberry-pi-3-cluster/ target=_blank rel="noopener noreffer">http://climbers.net/sbc/diy-raspberry-pi-3-cluster/</a></p><p><em>Swarm mode key concepts</em>. (January 27, 2018). Retrieved from docker docs: <a href=https://docs.docker.com/engine/swarm/key-concepts/ target=_blank rel="noopener noreffer">https://docs.docker.com/engine/swarm/key-concepts/</a></p><p>Tanenbaum, A. S. (2007). <em>Distributed systems - principles and paradigms.</em> New Jersey: Pearson Prentice Hall.</p><p><em>Technet</em>. (January 13, 2018). Retrieved from Microsoft: <a href=https://blogs.technet.microsoft.com/kevinremde/2011/04/03/saas-paas-and-iaas-oh-my-cloudy-april-part-3/ target=_blank rel="noopener noreffer">https://blogs.technet.microsoft.com/kevinremde/2011/04/03/saas-paas-and-iaas-oh-my-cloudy-april-part-3/</a></p><p><em>Top500 List</em>. (January 8, 2018). Retrieved from Top 500 The List: <a href=https://www.top500.org/list/2017/11/ target=_blank rel="noopener noreffer">https://www.top500.org/list/2017/11/</a></p><p>Ulmann, B. (February 6, 2014). <em>IT basics.</em> FOM.</p><p><em>Our home galaxy - the Milky Way</em>. (January 23, 2018). Retrieved from planet wissen: <a href=https://www.planet-wissen.de/technik/weltraumforschung/astronomie/pwieunsereheimatgalaxiediemilchstrasse100.html target=_blank rel="noopener noreffer">https://www.planet-wissen.de/technik/weltraumforschung/astronomie/pwieunsereheimatgalaxiediemilchstrasse100.html</a></p><p><em>VMS Software, Inc. Named Exclusive Developer of Future Versions of OpenVMS Operating System.</em> (January 20, 2018). Retrieved from BusinessWire: <a href=https://www.businesswire.com/news/home/20140731006118/en/VMS-Software-Named-Exclusive-Developer-Future-Versions target=_blank rel="noopener noreffer">https://www.businesswire.com/news/home/20140731006118/en/VMS-Software-Named-Exclusive-Developer-Future-Versions</a></p><p><em>What is Kubernetes?</em> (January 10, 2018). Retrieved from kubernetes: <a href=https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/ target=_blank rel="noopener noreffer">https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/</a></p><h2 id=appendix-a---script-installing-kubernetes>Appendix A - Script: Installing Kubernetes</h2><figure><img src=media/image4013.png></figure><h2 id=appendix-b---script-lcd-display>Appendix B - Script: LCD display</h2><figure><img src=media/image4125.png></figure><h2 id=appendix-c---script-docker-autoscaling>Appendix C - Script: Docker Autoscaling</h2><p>Dockerfile:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>FROM php:5-apache
-ADD index.php /var/www/html/index.php
-RUN chmod a+rx index.php
-</code></pre></td></tr></table>
-</div>
-</div><p>index.php:</p>
-<div class=highlight><div class=chroma>
-<table class=lntable><tr><td class=lntd>
-<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>FROM php:5-apache
+</span></span><span class=line><span class=cl>ADD index.php /var/www/html/index.php
+</span></span><span class=line><span class=cl>RUN chmod a+rx index.php
+</span></span></code></pre></td></tr></table></div></div><p>index.php:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
 </span><span class=lnt>4
 </span><span class=lnt>5
 </span><span class=lnt>6
 </span><span class=lnt>7
-</span></code></pre></td>
-<td class=lntd>
-<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>&lt;?php
-$x = 0.0001;
-for ($i = 0; $i &lt; = 1000000; $i++) {
-$x += sqrt(\$x);
-}
-echo &#34;OK!&#34;;
-?&gt;
-</code></pre></td></tr></table>
-</div>
-</div><section class=footnotes role=doc-endnotes>
-<hr>
-<ol>
-<li id=fn:1 role=doc-endnote>
-<p>Cf. (Horizontal Pod Autoscaling, 2018).&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
-</li>
-<li id=fn:2 role=doc-endnote>
-<p>Cf. (Baier, 2017, p. 117).&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
-</li>
-<li id=fn:3 role=doc-endnote>
-<p>Cf. (Raspberry Pi 3: Power consumption and CoreMark comparison,
-2018). .&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
-</li>
-<li id=fn:4 role=doc-endnote>
-<p>Cf. (The Science Behind SETI@home, 2018) ; Cf. (BOINC - Active
-Projects Statistics, 2018)&#160;<a href=#fnref:4 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
-</li>
-<li id=fn:5 role=doc-endnote>
-<p>Cf. (Project to setup Boinc client in Docker for the RaspberryPi,
-2018).&#160;<a href=#fnref:5 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
-</li>
-</ol>
-</section></div><div class=post-footer id=post-footer>
-<div class=post-info>
-<div class=post-info-line>
-<div class=post-info-mod>
-<span>Updated on Friday, Jul 23, 2021</span>
-</div>
-<div class=post-info-license></div>
-</div>
-<div class=post-info-line>
-<div class=post-info-md></div>
-<div class=post-info-share>
-<span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://graef.io/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/ data-title="Conception, Construction and Evaluation of a Raspberry Pi Cluster (4/4)" data-via=segraef data-hashtags=Raspberry,Pi,cluster,failover,Kubernetes,k8s,docker,HypriotOS,PiCube,GPIO,YAML,Bash><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://graef.io/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/ data-hashtag=Raspberry><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://graef.io/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/><i class="fab fa-linkedin fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://graef.io/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/ data-title="Conception, Construction and Evaluation of a Raspberry Pi Cluster (4/4)" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=https://graef.io/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/><i class="fab fa-reddit fa-fw"></i></a></span>
-</div>
-</div>
-</div>
-<div class=post-info-more>
-<section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/raspberry/>Raspberry</a>,&nbsp;<a href=/tags/pi/>Pi</a>,&nbsp;<a href=/tags/cluster/>cluster</a>,&nbsp;<a href=/tags/failover/>failover</a>,&nbsp;<a href=/tags/kubernetes/>Kubernetes</a>,&nbsp;<a href=/tags/k8s/>k8s</a>,&nbsp;<a href=/tags/docker/>docker</a>,&nbsp;<a href=/tags/hypriotos/>HypriotOS</a>,&nbsp;<a href=/tags/picube/>PiCube</a>,&nbsp;<a href=/tags/gpio/>GPIO</a>,&nbsp;<a href=/tags/yaml/>YAML</a>,&nbsp;<a href=/tags/bash/>Bash</a></section>
-<section>
-<span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span>
-</section>
-</div>
-<div class=post-nav><a href=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-3/ class=prev rel=prev title="Conception, Construction and Evaluation of a Raspberry Pi Cluster (3/4)"><i class="fas fa-angle-left fa-fw"></i>Conception, Construction and Evaluation of a Raspberry Pi Cluster (3/4)</a>
-<a href=/get-powershell-aliases/ class=next rel=next title="How to get a list of PowerShell Aliases">How to get a list of PowerShell Aliases<i class="fas fa-angle-right fa-fw"></i></a></div>
-</div>
-<div id=comments><div id=utterances></div><noscript>
-Please enable JavaScript to view the comments powered by <a href=https://utteranc.es/>Utterances</a>.
-</noscript></div></article></div>
-</main><footer class=footer>
-<div class=footer-container><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://graef.io target=_blank>Sebastian Gräf</a></span></div>
-</div>
-</footer></div>
-<div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top">
-<i class="fas fa-arrow-up fa-fw"></i>
-</a><a href=# id=view-comments class=fixed-button title="View Comments">
-<i class="fas fa-comment fa-fw"></i>
-</a>
-</div><link rel=stylesheet href=/lib/lightgallery/lightgallery.min.css><link rel=stylesheet href=/lib/katex/katex.min.css><link rel=stylesheet href=/lib/katex/copy-tex.min.css><script type=text/javascript src=/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/lunr/lunr.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/lightgallery/lightgallery.min.js></script><script type=text/javascript src=/lib/lightgallery/lg-thumbnail.min.js></script><script type=text/javascript src=/lib/lightgallery/lg-zoom.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/sharer/sharer.min.js></script><script type=text/javascript src=/lib/katex/katex.min.js></script><script type=text/javascript src=/lib/katex/auto-render.min.js></script><script type=text/javascript src=/lib/katex/copy-tex.min.js></script><script type=text/javascript src=/lib/katex/mhchem.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:20},comment:{utterances:{darkTheme:"github-dark",issueTerm:"pathname",label:"",lightTheme:"github-light",repo:"segraef/graef.io"}},lightGallery:{actualSize:!1,exThumbImage:"data-thumbnail",hideBarsDelay:2e3,selector:".lightgallery",speed:400,thumbContHeight:80,thumbWidth:80,thumbnail:!0},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=/js/theme.min.js></script><script type=text/javascript>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-99599711-2',{anonymize_ip:!0})</script><script type=text/javascript src="https://www.googletagmanager.com/gtag/js?id=UA-99599711-2" async></script></body>
-</html>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>&lt;?php
+</span></span><span class=line><span class=cl>$x = 0.0001;
+</span></span><span class=line><span class=cl>for ($i = 0; $i &lt; = 1000000; $i++) {
+</span></span><span class=line><span class=cl>$x += sqrt(\$x);
+</span></span><span class=line><span class=cl>}
+</span></span><span class=line><span class=cl>echo &#34;OK!&#34;;
+</span></span><span class=line><span class=cl>?&gt;
+</span></span></code></pre></td></tr></table></div></div><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p>Cf. (Horizontal Pod Autoscaling, 2018).&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:2><p>Cf. (Baier, 2017, p. 117).&#160;<a href=#fnref:2 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:3><p>Cf. (Raspberry Pi 3: Power consumption and CoreMark comparison,
+2018). .&#160;<a href=#fnref:3 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:4><p>Cf. (The Science Behind SETI@home, 2018) ; Cf. (BOINC - Active
+Projects Statistics, 2018)&#160;<a href=#fnref:4 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li><li id=fn:5><p>Cf. (Project to setup Boinc client in Docker for the RaspberryPi,
+2018).&#160;<a href=#fnref:5 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>Updated on Friday, Jul 23, 2021</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md></div><div class=post-info-share><span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://graef.io/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/ data-title="Conception, Construction and Evaluation of a Raspberry Pi Cluster (4/4)" data-via=segraef data-hashtags=Raspberry,Pi,cluster,failover,Kubernetes,k8s,docker,HypriotOS,PiCube,GPIO,YAML,Bash><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://graef.io/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/ data-hashtag=Raspberry><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://graef.io/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/><i class="fab fa-linkedin fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://graef.io/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/ data-title="Conception, Construction and Evaluation of a Raspberry Pi Cluster (4/4)" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=https://graef.io/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/><i class="fab fa-reddit fa-fw"></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/raspberry/>Raspberry</a>,&nbsp;<a href=/tags/pi/>Pi</a>,&nbsp;<a href=/tags/cluster/>cluster</a>,&nbsp;<a href=/tags/failover/>failover</a>,&nbsp;<a href=/tags/kubernetes/>Kubernetes</a>,&nbsp;<a href=/tags/k8s/>k8s</a>,&nbsp;<a href=/tags/docker/>docker</a>,&nbsp;<a href=/tags/hypriotos/>HypriotOS</a>,&nbsp;<a href=/tags/picube/>PiCube</a>,&nbsp;<a href=/tags/gpio/>GPIO</a>,&nbsp;<a href=/tags/yaml/>YAML</a>,&nbsp;<a href=/tags/bash/>Bash</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span></section></div><div class=post-nav><a href=/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-3/ class=prev rel=prev title="Conception, Construction and Evaluation of a Raspberry Pi Cluster (3/4)"><i class="fas fa-angle-left fa-fw"></i>Conception, Construction and Evaluation of a Raspberry Pi Cluster (3/4)</a>
+<a href=/get-powershell-aliases/ class=next rel=next title="How to get a list of PowerShell Aliases">How to get a list of PowerShell Aliases<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=utterances></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://utteranc.es/>Utterances</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://graef.io target=_blank>Sebastian Gräf</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw"></i>
+</a><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment fa-fw"></i></a></div><link rel=stylesheet href=/lib/lightgallery/lightgallery.min.css><link rel=stylesheet href=/lib/katex/katex.min.css><link rel=stylesheet href=/lib/katex/copy-tex.min.css><script type=text/javascript src=/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/lunr/lunr.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/lightgallery/lightgallery.min.js></script><script type=text/javascript src=/lib/lightgallery/lg-thumbnail.min.js></script><script type=text/javascript src=/lib/lightgallery/lg-zoom.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/sharer/sharer.min.js></script><script type=text/javascript src=/lib/katex/katex.min.js></script><script type=text/javascript src=/lib/katex/auto-render.min.js></script><script type=text/javascript src=/lib/katex/copy-tex.min.js></script><script type=text/javascript src=/lib/katex/mhchem.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:20},comment:{utterances:{darkTheme:"github-dark",issueTerm:"pathname",label:"",lightTheme:"github-light",repo:"segraef/graef.io"}},lightGallery:{actualSize:!1,exThumbImage:"data-thumbnail",hideBarsDelay:2e3,selector:".lightgallery",speed:400,thumbContHeight:80,thumbWidth:80,thumbnail:!0},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=/js/theme.min.js></script><script type=text/javascript>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","UA-99599711-2",{anonymize_ip:!0})</script><script type=text/javascript src="https://www.googletagmanager.com/gtag/js?id=UA-99599711-2" async></script></body></html>
