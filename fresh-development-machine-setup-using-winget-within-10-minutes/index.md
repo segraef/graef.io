@@ -9,7 +9,7 @@ I have put together a list of commands you can use to prepare your environment u
 
 # Prerequisites
 
-Windows 11 (If Windows 10 then [install winget via App Installer](https://docs.microsoft.com/en-us/windows/package-manager/winget/#install-winget) first) 
+Windows 11 (If Windows 10 then [install winget via App Installer](https://docs.microsoft.com/en-us/windows/package-manager/winget/#install-winget) first)
 
 # Commands
 
@@ -41,7 +41,7 @@ Install-Module Az
 # Visual Code Extensions
 
 code --install-extension eamodio.gitlens
-code --install-extension telesoho.vscode-markdown-paste-image
+code --install-extension telesoho.vscode-markdown-paste-images
 code --install-extension ms-azuretools.vscode-bicep
 code --install-extension ms-azuretools.vscode-docker
 code --install-extension ms-vscode-remote.remote-containers
@@ -52,7 +52,7 @@ code --install-extension ms-vscode.powershell
 
 ```
 
-# Other Commands 
+# Other Commands
 
 ```pwsh
 # Chocolatey
@@ -85,11 +85,22 @@ code --install-extension ms-vsonline.vsonline
 code --install-extension msazurermtools.azurerm-vscode-tools
 
 ```
+# MacOS
+
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install --cask powershell
+Add-Content -Path $PROFILE.CurrentUserAllHosts -Value '$(/opt/homebrew/bin/brew shellenv) | Invoke-Expression'
+pwsh
+Install-Module Az
+brew install --cask keepassxc
+```
 
 <!---
 :(far fa-bookmark fa-fw): Bookmark this page for easy future reference!
 --->
 {{< admonition info References >}}
 - [Install winget via App Installer](https://docs.microsoft.com/en-us/windows/package-manager/winget/#install-winget)
+- [](https://example.com)
 {{< /admonition >}}
 
