@@ -92,40 +92,40 @@ This all happens with the help of <code>Wscript.Shell</code> for sending a key p
 </span><span class=lnt>81
 </span><span class=lnt>82
 </span><span class=lnt>83
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-powershell data-lang=powershell><span class=line><span class=cl><span class=k>Function</span> <span class=nb>Simulate-Activity</span>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-powershell data-lang=powershell><span class=line><span class=cl><span class=kd>Function</span><span class=w> </span><span class=nb>Simulate-Activity</span>
 </span></span><span class=line><span class=cl><span class=p>{</span>
 </span></span><span class=line><span class=cl><span class=cm>&lt;#
-</span></span></span><span class=line><span class=cl><span class=cm></span><span class=sd>.SYNOPSIS</span><span class=cm>
+</span></span></span><span class=line><span class=cl><span class=cm>.</span><span class=sd>SYNOPSIS</span><span class=cm>
 </span></span></span><span class=line><span class=cl><span class=cm>    Simulates Mouse and Keyboard Activity to avoid Screensaver coming up.
 </span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm></span><span class=sd>.DESCRIPTION</span><span class=cm>
+</span></span></span><span class=line><span class=cl><span class=cm>.</span><span class=sd>DESCRIPTION</span><span class=cm>
 </span></span></span><span class=line><span class=cl><span class=cm>    Simulates Mouse and Keyboard Activity to avoid Screensaver coming up.
 </span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm></span><span class=sd>.PARAMETER</span><span class=cm> Minutes
+</span></span></span><span class=line><span class=cl><span class=cm>.PARAMETER Minutes
 </span></span></span><span class=line><span class=cl><span class=cm>    Commit minutes for simulating activity. If no string given you will be asked.
 </span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm></span><span class=sd>.PARAMETER</span><span class=cm> Verbose
+</span></span></span><span class=line><span class=cl><span class=cm>.PARAMETER Verbose
 </span></span></span><span class=line><span class=cl><span class=cm>    Run in Verbose Mode.
 </span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm></span><span class=sd>.EXAMPLE</span><span class=cm>
+</span></span></span><span class=line><span class=cl><span class=cm>.</span><span class=sd>EXAMPLE</span><span class=cm>
 </span></span></span><span class=line><span class=cl><span class=cm>    PS C:&gt; Simulate-Activity -Minutes 60
 </span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm></span><span class=sd>.LINK</span><span class=cm>
+</span></span></span><span class=line><span class=cl><span class=cm>.</span><span class=sd>LINK</span><span class=cm>
 </span></span></span><span class=line><span class=cl><span class=cm>
 </span></span></span><span class=line><span class=cl><span class=cm>Home
 </span></span></span><span class=line><span class=cl><span class=cm>
 </span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm></span><span class=sd>.NOTES</span><span class=cm>
+</span></span></span><span class=line><span class=cl><span class=cm>.</span><span class=sd>NOTES</span><span class=cm>
 </span></span></span><span class=line><span class=cl><span class=cm>    Author:  Sebastian Gräf
 </span></span></span><span class=line><span class=cl><span class=cm>    Email:   ps@graef.io
 </span></span></span><span class=line><span class=cl><span class=cm>    Date:    September 9, 2017
 </span></span></span><span class=line><span class=cl><span class=cm>    PSVer:   3.0/4.0/5.0
 </span></span></span><span class=line><span class=cl><span class=cm>#&gt;</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=p>[</span><span class=k>Cmdletbinding</span><span class=p>()]</span>
+</span></span><span class=line><span class=cl>	<span class=p>[</span><span class=nb>Cmdletbinding</span><span class=p>()]</span>
 </span></span><span class=line><span class=cl>	<span class=k>Param</span> <span class=p>(</span>
-</span></span><span class=line><span class=cl>		<span class=p>[</span><span class=k>Parameter</span><span class=p>(</span><span class=k>Mandatory</span> <span class=p>=</span> <span class=nv>$false</span><span class=p>)]</span>
-</span></span><span class=line><span class=cl>		<span class=no>[string]</span><span class=nv>$Minutes</span>
+</span></span><span class=line><span class=cl>		<span class=p>[</span><span class=nb>Parameter</span><span class=p>(</span><span class=na>Mandatory</span> <span class=p>=</span> <span class=vm>$false</span><span class=p>)]</span>
+</span></span><span class=line><span class=cl>		<span class=p>[</span><span class=no>string</span><span class=p>]</span><span class=nv>$Minutes</span>
 </span></span><span class=line><span class=cl>	<span class=p>)</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>	<span class=k>Begin</span>
@@ -135,39 +135,39 @@ This all happens with the help of <code>Wscript.Shell</code> for sending a key p
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>	<span class=k>Process</span>
 </span></span><span class=line><span class=cl>	<span class=p>{</span>
-</span></span><span class=line><span class=cl>		<span class=nb>Add-Type</span> <span class=n>-AssemblyName</span> <span class=n>System</span><span class=p>.</span><span class=n>Windows</span><span class=p>.</span><span class=n>Forms</span>
+</span></span><span class=line><span class=cl>		<span class=nb>Add-Type</span> <span class=n>-AssemblyName</span> <span class=n>System</span><span class=p>.</span><span class=py>Windows</span><span class=p>.</span><span class=py>Forms</span>
 </span></span><span class=line><span class=cl>		<span class=nv>$shell</span> <span class=p>=</span> <span class=nb>New-Object</span> <span class=n>-com</span> <span class=s2>&#34;Wscript.Shell&#34;</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>		<span class=nv>$pshost</span> <span class=p>=</span> <span class=nb>Get-Host</span>
-</span></span><span class=line><span class=cl>		<span class=nv>$pswindow</span> <span class=p>=</span> <span class=nv>$pshost</span><span class=p>.</span><span class=n>ui</span><span class=p>.</span><span class=n>rawui</span>
-</span></span><span class=line><span class=cl>		<span class=nv>$pswindow</span><span class=p>.</span><span class=n>windowtitle</span> <span class=p>=</span> <span class=s1>&#39;Activity-Simulator&#39;</span>
+</span></span><span class=line><span class=cl>		<span class=nv>$pswindow</span> <span class=p>=</span> <span class=nv>$pshost</span><span class=p>.</span><span class=py>ui</span><span class=p>.</span><span class=py>rawui</span>
+</span></span><span class=line><span class=cl>		<span class=nv>$pswindow</span><span class=p>.</span><span class=py>windowtitle</span> <span class=p>=</span> <span class=s1>&#39;Activity-Simulator&#39;</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>        <span class=k>if</span><span class=p>(!</span><span class=nv>$minutes</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>        <span class=p>{</span>
 </span></span><span class=line><span class=cl>        <span class=nv>$Minutes</span> <span class=p>=</span> <span class=nb>Read-Host</span> <span class=n>-Prompt</span> <span class=s2>&#34;Enter minutes for simulating activity&#34;</span>
 </span></span><span class=line><span class=cl>        <span class=p>}</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>		<span class=k>for</span> <span class=p>(</span><span class=nv>$i</span> <span class=p>=</span> <span class=n>0</span><span class=p>;</span> <span class=nv>$i</span> <span class=o>-lt</span> <span class=nv>$Minutes</span><span class=p>;</span> <span class=nv>$i</span><span class=p>++)</span>
+</span></span><span class=line><span class=cl>		<span class=k>for</span> <span class=p>(</span><span class=nv>$i</span> <span class=p>=</span> <span class=mf>0</span><span class=p>;</span> <span class=nv>$i</span> <span class=o>-lt</span> <span class=nv>$Minutes</span><span class=p>;</span> <span class=nv>$i</span><span class=p>++)</span>
 </span></span><span class=line><span class=cl>		<span class=p>{</span>
 </span></span><span class=line><span class=cl>			<span class=nb>cls
 </span></span></span><span class=line><span class=cl><span class=nb></span>			<span class=nv>$timeleft</span> <span class=p>=</span> <span class=nv>$Minutes</span> <span class=p>-</span> <span class=nv>$i</span>
 </span></span><span class=line><span class=cl>			<span class=nb>Write-Host</span> <span class=p>(</span><span class=nb>Get-Date</span> <span class=n>-Format</span> <span class=n>HH</span><span class=err>:</span><span class=n>mm</span><span class=err>:</span><span class=n>ss</span><span class=p>)</span> <span class=n>-ForegroundColor</span> <span class=n>Green</span>
 </span></span><span class=line><span class=cl>			<span class=nb>Write-Host</span> <span class=s1>&#39;Time left: &#39;</span> <span class=n>-NoNewline</span>
-</span></span><span class=line><span class=cl>			<span class=nb>Write-Host</span> <span class=s2>&#34;$timeleft&#34;</span> <span class=n>-ForegroundColor</span> <span class=n>Red</span> <span class=n>-NoNewline</span>
+</span></span><span class=line><span class=cl>			<span class=nb>Write-Host</span> <span class=s2>&#34;</span><span class=nv>$timeleft</span><span class=s2>&#34;</span> <span class=n>-ForegroundColor</span> <span class=n>Red</span> <span class=n>-NoNewline</span>
 </span></span><span class=line><span class=cl>			<span class=nb>Write-Host</span> <span class=s1>&#39; Minutes&#39;</span>
-</span></span><span class=line><span class=cl>			<span class=nv>$shell</span><span class=p>.</span><span class=n>sendkeys</span><span class=p>(</span><span class=s1>&#39; &#39;</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>			<span class=k>for</span> <span class=p>(</span><span class=nv>$j</span> <span class=p>=</span> <span class=n>0</span><span class=p>;</span> <span class=nv>$j</span> <span class=o>-lt</span> <span class=n>6</span><span class=p>;</span> <span class=nv>$j</span><span class=p>++)</span>
+</span></span><span class=line><span class=cl>			<span class=nv>$shell</span><span class=p>.</span><span class=py>sendkeys</span><span class=p>(</span><span class=s1>&#39; &#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>			<span class=k>for</span> <span class=p>(</span><span class=nv>$j</span> <span class=p>=</span> <span class=mf>0</span><span class=p>;</span> <span class=nv>$j</span> <span class=o>-lt</span> <span class=mf>6</span><span class=p>;</span> <span class=nv>$j</span><span class=p>++)</span>
 </span></span><span class=line><span class=cl>			<span class=p>{</span>
-</span></span><span class=line><span class=cl>				<span class=k>for</span> <span class=p>(</span><span class=nv>$k</span> <span class=p>=</span> <span class=n>0</span><span class=p>;</span> <span class=nv>$k</span> <span class=o>-lt</span> <span class=n>10</span><span class=p>;</span> <span class=nv>$k</span><span class=p>++)</span>
+</span></span><span class=line><span class=cl>				<span class=k>for</span> <span class=p>(</span><span class=nv>$k</span> <span class=p>=</span> <span class=mf>0</span><span class=p>;</span> <span class=nv>$k</span> <span class=o>-lt</span> <span class=mf>10</span><span class=p>;</span> <span class=nv>$k</span><span class=p>++)</span>
 </span></span><span class=line><span class=cl>				<span class=p>{</span>
-</span></span><span class=line><span class=cl>					<span class=nb>Write-Progress</span> <span class=n>-Activity</span> <span class=s1>&#39;Simulating activity ..&#39;</span> <span class=n>-PercentComplete</span> <span class=p>(</span><span class=nv>$k</span> <span class=p>*</span> <span class=n>10</span><span class=p>)</span> <span class=n>-Status</span> <span class=s2>&#34;Please ... don&#39;t disturb me.&#34;</span>
-</span></span><span class=line><span class=cl>					<span class=nb>Start-Sleep</span> <span class=n>-Seconds</span> <span class=n>1</span>
+</span></span><span class=line><span class=cl>					<span class=nb>Write-Progress</span> <span class=n>-Activity</span> <span class=s1>&#39;Simulating activity ..&#39;</span> <span class=n>-PercentComplete</span> <span class=p>(</span><span class=nv>$k</span> <span class=p>*</span> <span class=mf>10</span><span class=p>)</span> <span class=n>-Status</span> <span class=s2>&#34;Please ... don&#39;t disturb me.&#34;</span>
+</span></span><span class=line><span class=cl>					<span class=nb>Start-Sleep</span> <span class=n>-Seconds</span> <span class=mf>1</span>
 </span></span><span class=line><span class=cl>				<span class=p>}</span>
 </span></span><span class=line><span class=cl>			<span class=p>}</span>
-</span></span><span class=line><span class=cl>			<span class=nv>$Pos</span> <span class=p>=</span> <span class=no>[System.Windows.Forms.Cursor]</span><span class=p>::</span><span class=k>Position</span>
-</span></span><span class=line><span class=cl>			<span class=nv>$x</span> <span class=p>=</span> <span class=p>(</span><span class=nv>$pos</span><span class=p>.</span><span class=n>X</span> <span class=p>%</span> <span class=n>500</span><span class=p>)</span> <span class=p>+</span> <span class=n>1</span>
-</span></span><span class=line><span class=cl>			<span class=nv>$y</span> <span class=p>=</span> <span class=p>(</span><span class=nv>$pos</span><span class=p>.</span><span class=n>Y</span> <span class=p>%</span> <span class=n>500</span><span class=p>)</span> <span class=p>+</span> <span class=n>1</span>
-</span></span><span class=line><span class=cl>			<span class=no>[System.Windows.Forms.Cursor]</span><span class=p>::</span><span class=k>Position</span> <span class=p>=</span> <span class=nb>New-Object</span> <span class=n>System</span><span class=p>.</span><span class=n>Drawing</span><span class=p>.</span><span class=n>Point</span><span class=p>(</span><span class=nv>$x</span><span class=p>,</span> <span class=nv>$y</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>			<span class=nv>$Pos</span> <span class=p>=</span> <span class=p>[</span><span class=no>System.Windows.Forms.Cursor</span><span class=p>]::</span><span class=na>Position</span>
+</span></span><span class=line><span class=cl>			<span class=nv>$x</span> <span class=p>=</span> <span class=p>(</span><span class=nv>$pos</span><span class=p>.</span><span class=py>X</span> <span class=p>%</span> <span class=mf>500</span><span class=p>)</span> <span class=p>+</span> <span class=mf>1</span>
+</span></span><span class=line><span class=cl>			<span class=nv>$y</span> <span class=p>=</span> <span class=p>(</span><span class=nv>$pos</span><span class=p>.</span><span class=py>Y</span> <span class=p>%</span> <span class=mf>500</span><span class=p>)</span> <span class=p>+</span> <span class=mf>1</span>
+</span></span><span class=line><span class=cl>			<span class=p>[</span><span class=no>System.Windows.Forms.Cursor</span><span class=p>]::</span><span class=na>Position</span> <span class=p>=</span> <span class=nb>New-Object</span> <span class=n>System</span><span class=p>.</span><span class=py>Drawing</span><span class=p>.</span><span class=py>Point</span><span class=p>(</span><span class=nv>$x</span><span class=p>,</span> <span class=nv>$y</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>		<span class=p>}</span>
 </span></span><span class=line><span class=cl>	<span class=p>}</span>
 </span></span><span class=line><span class=cl>	<span class=k>End</span>

@@ -106,25 +106,25 @@
 </span><span class=lnt>96
 </span><span class=lnt>97
 </span><span class=lnt>98
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-powershell data-lang=powershell><span class=line><span class=cl><span class=k>Function</span> <span class=nb>Get-PSVersions</span>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-powershell data-lang=powershell><span class=line><span class=cl><span class=kd>Function</span><span class=w> </span><span class=nb>Get-PSVersions</span>
 </span></span><span class=line><span class=cl><span class=p>{</span>
 </span></span><span class=line><span class=cl><span class=cm>&lt;#
-</span></span></span><span class=line><span class=cl><span class=cm></span><span class=sd>.SYNOPSIS</span><span class=cm>
+</span></span></span><span class=line><span class=cl><span class=cm>.</span><span class=sd>SYNOPSIS</span><span class=cm>
 </span></span></span><span class=line><span class=cl><span class=cm>    Gets the PowerShell version on a local or remote computer using Invoke-Command.
 </span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm></span><span class=sd>.DESCRIPTION</span><span class=cm>
+</span></span></span><span class=line><span class=cl><span class=cm>.</span><span class=sd>DESCRIPTION</span><span class=cm>
 </span></span></span><span class=line><span class=cl><span class=cm>    Gets the PowerShell version on a local or remote computer using Invoke-Command.
 </span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm></span><span class=sd>.PARAMETER</span><span class=cm> ComputerName
+</span></span></span><span class=line><span class=cl><span class=cm>.PARAMETER ComputerName
 </span></span></span><span class=line><span class=cl><span class=cm>    A single Computer or an array of computer names. The default is localhost ($env:COMPUTERNAME).
 </span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm></span><span class=sd>.PARAMETER</span><span class=cm> Credentials
+</span></span></span><span class=line><span class=cl><span class=cm>.PARAMETER Credentials
 </span></span></span><span class=line><span class=cl><span class=cm>    Commit PSCredential object or using Get-Credentials.
 </span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm></span><span class=sd>.PARAMETER</span><span class=cm> Verbose
+</span></span></span><span class=line><span class=cl><span class=cm>.PARAMETER Verbose
 </span></span></span><span class=line><span class=cl><span class=cm>    Run in Verbose Mode.
 </span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm></span><span class=sd>.EXAMPLE</span><span class=cm>
+</span></span></span><span class=line><span class=cl><span class=cm>.</span><span class=sd>EXAMPLE</span><span class=cm>
 </span></span></span><span class=line><span class=cl><span class=cm>    PS C:&gt; Get-PSVersions -ComputerName Server01,Server02
 </span></span></span><span class=line><span class=cl><span class=cm>
 </span></span></span><span class=line><span class=cl><span class=cm>    Major  Minor  Build  Revision PSComputerName
@@ -132,46 +132,46 @@
 </span></span></span><span class=line><span class=cl><span class=cm>    5      1      14393  1066     Server01
 </span></span></span><span class=line><span class=cl><span class=cm>    5      1      14393  1066     Server02
 </span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm></span><span class=sd>.EXAMPLE</span><span class=cm>
+</span></span></span><span class=line><span class=cl><span class=cm>.</span><span class=sd>EXAMPLE</span><span class=cm>
 </span></span></span><span class=line><span class=cl><span class=cm>    PS C:&gt; Get-PSVersions -ComputerName Server01,Server02 -Credentials Get-Credentials
 </span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm></span><span class=sd>.EXAMPLE</span><span class=cm>
+</span></span></span><span class=line><span class=cl><span class=cm>.</span><span class=sd>EXAMPLE</span><span class=cm>
 </span></span></span><span class=line><span class=cl><span class=cm>    PS C:&gt; Get-PSVersions -ComputerName (Get-Content C:ServerList.txt)
 </span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm></span><span class=sd>.LINK</span><span class=cm>
+</span></span></span><span class=line><span class=cl><span class=cm>.</span><span class=sd>LINK</span><span class=cm>
 </span></span></span><span class=line><span class=cl><span class=cm>    &lt;blockquote class=&#34;wp-embedded-content&#34; data-secret=&#34;55AoiBUWnd&#34;&gt;&lt;a href=&#34;https://graef.io/&#34;&gt;Home&lt;/a&gt;&lt;/blockquote&gt;&lt;iframe title=&#34;“Home” — Sebastian Gräf&#34; class=&#34;wp-embedded-content&#34; sandbox=&#34;allow-scripts&#34; security=&#34;restricted&#34; style=&#34;position: absolute; clip: rect(1px, 1px, 1px, 1px);&#34; src=&#34;https://graef.io/embed/#?secret=55AoiBUWnd&#34; data-secret=&#34;55AoiBUWnd&#34; width=&#34;600&#34; height=&#34;338&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34;&gt;&lt;/iframe&gt;
 </span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm></span><span class=sd>.NOTES</span><span class=cm>
+</span></span></span><span class=line><span class=cl><span class=cm>.</span><span class=sd>NOTES</span><span class=cm>
 </span></span></span><span class=line><span class=cl><span class=cm>    Author:  Sebastian Gräf
 </span></span></span><span class=line><span class=cl><span class=cm>    Email:   ps@graef.io
 </span></span></span><span class=line><span class=cl><span class=cm>    Date:    September 9, 2017
 </span></span></span><span class=line><span class=cl><span class=cm>    PSVer:   3.0/4.0/5.0
 </span></span></span><span class=line><span class=cl><span class=cm>#&gt;</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=p>[</span><span class=k>Cmdletbinding</span><span class=p>()]</span>
+</span></span><span class=line><span class=cl>    <span class=p>[</span><span class=nb>Cmdletbinding</span><span class=p>()]</span>
 </span></span><span class=line><span class=cl>    <span class=k>Param</span> <span class=p>(</span>
-</span></span><span class=line><span class=cl>        <span class=p>[</span><span class=k>Parameter</span><span class=p>(</span>
-</span></span><span class=line><span class=cl>                   <span class=k>Mandatory</span> <span class=p>=</span> <span class=nv>$false</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>                   <span class=k>ValueFromPipeline</span> <span class=p>=</span> <span class=nv>$true</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>                   <span class=k>ValueFromPipelineByPropertyName</span> <span class=p>=</span> <span class=nv>$true</span><span class=p>)]</span>
-</span></span><span class=line><span class=cl>        <span class=no>[string[]]</span><span class=nv>$ComputerName</span> <span class=p>=</span> <span class=nv>$Env:COMPUTERNAME</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>        <span class=p>[</span><span class=k>Parameter</span><span class=p>(</span>
-</span></span><span class=line><span class=cl>                   <span class=k>ValueFromPipelineByPropertyName</span> <span class=p>=</span> <span class=nv>$true</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>                   <span class=k>Mandatory</span> <span class=p>=</span> <span class=nv>$false</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>                   <span class=k>ValueFromPipeline</span> <span class=p>=</span> <span class=nv>$true</span><span class=p>)]</span>
-</span></span><span class=line><span class=cl>        <span class=p>[</span><span class=k>Alias</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>        <span class=p>[</span><span class=nb>Parameter</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>                   <span class=na>Mandatory</span> <span class=p>=</span> <span class=vm>$false</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                   <span class=na>ValueFromPipeline</span> <span class=p>=</span> <span class=vm>$true</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                   <span class=na>ValueFromPipelineByPropertyName</span> <span class=p>=</span> <span class=vm>$true</span><span class=p>)]</span>
+</span></span><span class=line><span class=cl>        <span class=p>[</span><span class=no>string[]</span><span class=p>]</span><span class=nv>$ComputerName</span> <span class=p>=</span> <span class=nv>$Env:COMPUTERNAME</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=p>[</span><span class=nb>Parameter</span><span class=p>(</span>
+</span></span><span class=line><span class=cl>                   <span class=na>ValueFromPipelineByPropertyName</span> <span class=p>=</span> <span class=vm>$true</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                   <span class=na>Mandatory</span> <span class=p>=</span> <span class=vm>$false</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>                   <span class=na>ValueFromPipeline</span> <span class=p>=</span> <span class=vm>$true</span><span class=p>)]</span>
+</span></span><span class=line><span class=cl>        <span class=p>[</span><span class=nb>Alias</span><span class=p>(</span>
 </span></span><span class=line><span class=cl>               <span class=s1>&#39;PSCredential&#39;</span>
 </span></span><span class=line><span class=cl>               <span class=p>)]</span>
 </span></span><span class=line><span class=cl>        <span class=p>[</span><span class=n>ValidateNotNull</span><span class=p>()]</span>
-</span></span><span class=line><span class=cl>        <span class=no>[System.Management.Automation.PSCredential]</span>
-</span></span><span class=line><span class=cl>        <span class=p>[</span><span class=n>System</span><span class=p>.</span><span class=n>Management</span><span class=p>.</span><span class=n>Automation</span><span class=p>.</span><span class=n>Credential</span><span class=p>()]</span>
-</span></span><span class=line><span class=cl>        <span class=nv>$Credentials</span> <span class=p>=</span> <span class=no>[System.Management.Automation.PSCredential]</span><span class=p>::</span><span class=n>Empty</span>
+</span></span><span class=line><span class=cl>        <span class=p>[</span><span class=no>System.Management.Automation.PSCredential</span><span class=p>]</span>
+</span></span><span class=line><span class=cl>        <span class=p>[</span><span class=n>System</span><span class=p>.</span><span class=py>Management</span><span class=p>.</span><span class=py>Automation</span><span class=p>.</span><span class=py>Credential</span><span class=p>()]</span>
+</span></span><span class=line><span class=cl>        <span class=nv>$Credentials</span> <span class=p>=</span> <span class=p>[</span><span class=no>System.Management.Automation.PSCredential</span><span class=p>]::</span><span class=n>Empty</span>
 </span></span><span class=line><span class=cl>    <span class=p>)</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>    <span class=k>Begin</span>
 </span></span><span class=line><span class=cl>    <span class=p>{</span>
 </span></span><span class=line><span class=cl>        <span class=nb>Write-Verbose</span> <span class=s2>&#34; [</span><span class=p>$(</span><span class=nv>$MyInvocation</span><span class=p>.</span><span class=n>InvocationName</span><span class=p>)</span><span class=s2>] :: Start Process&#34;</span>
-</span></span><span class=line><span class=cl>        <span class=nv>$ProgressCounter</span> <span class=p>=</span> <span class=n>0</span>
+</span></span><span class=line><span class=cl>        <span class=nv>$ProgressCounter</span> <span class=p>=</span> <span class=mf>0</span>
 </span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>    <span class=k>Process</span>
@@ -179,23 +179,23 @@
 </span></span><span class=line><span class=cl>        <span class=k>foreach</span> <span class=p>(</span><span class=nv>$Computer</span> <span class=k>in</span> <span class=nv>$ComputerName</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>        <span class=p>{</span>
 </span></span><span class=line><span class=cl>            <span class=nv>$ProgressCounter</span><span class=p>++</span>
-</span></span><span class=line><span class=cl>            <span class=nb>Write-Progress</span> <span class=n>-activity</span> <span class=s2>&#34;Running on $Computer&#34;</span> <span class=n>-status</span> <span class=s2>&#34;Please wait ...&#34;</span> <span class=n>-PercentComplete</span> <span class=p>((</span><span class=nv>$ProgressCounter</span> <span class=p>/</span> <span class=nv>$ComputerName</span><span class=p>.</span><span class=n>length</span><span class=p>)</span> <span class=p>*</span> <span class=n>100</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>            <span class=nb>Write-Progress</span> <span class=n>-activity</span> <span class=s2>&#34;Running on </span><span class=nv>$Computer</span><span class=s2>&#34;</span> <span class=n>-status</span> <span class=s2>&#34;Please wait ...&#34;</span> <span class=n>-PercentComplete</span> <span class=p>((</span><span class=nv>$ProgressCounter</span> <span class=p>/</span> <span class=nv>$ComputerName</span><span class=p>.</span><span class=n>length</span><span class=p>)</span> <span class=p>*</span> <span class=mf>100</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=p>(</span><span class=nb>Test-Connection</span> <span class=nv>$Computer</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>            <span class=p>{</span>
-</span></span><span class=line><span class=cl>                <span class=nb>Write-Verbose</span> <span class=s2>&#34; [</span><span class=p>$(</span><span class=nv>$MyInvocation</span><span class=p>.</span><span class=n>InvocationName</span><span class=p>)</span><span class=s2>] :: Processing $Computer&#34;</span>
+</span></span><span class=line><span class=cl>                <span class=nb>Write-Verbose</span> <span class=s2>&#34; [</span><span class=p>$(</span><span class=nv>$MyInvocation</span><span class=p>.</span><span class=n>InvocationName</span><span class=p>)</span><span class=s2>] :: Processing </span><span class=nv>$Computer</span><span class=s2>&#34;</span>
 </span></span><span class=line><span class=cl>                <span class=k>try</span>
 </span></span><span class=line><span class=cl>                <span class=p>{</span>
-</span></span><span class=line><span class=cl>                    <span class=nv>$PSVersion</span> <span class=p>=</span> <span class=nb>Invoke-Command</span> <span class=n>-Computername</span> <span class=nv>$Computer</span> <span class=n>-Scriptblock</span> <span class=p>{</span> <span class=nv>$PSVersionTable</span><span class=p>.</span><span class=n>psversion</span> <span class=p>}</span> <span class=n>-Credential</span> <span class=nv>$Credentials</span>
+</span></span><span class=line><span class=cl>                    <span class=nv>$PSVersion</span> <span class=p>=</span> <span class=nb>Invoke-Command</span> <span class=n>-Computername</span> <span class=nv>$Computer</span> <span class=n>-Scriptblock</span> <span class=p>{</span> <span class=nv>$PSVersionTable</span><span class=p>.</span><span class=py>psversion</span> <span class=p>}</span> <span class=n>-Credential</span> <span class=nv>$Credentials</span>
 </span></span><span class=line><span class=cl>                    <span class=nv>$PSVersion</span>
 </span></span><span class=line><span class=cl>                <span class=p>}</span>
 </span></span><span class=line><span class=cl>                <span class=k>catch</span>
 </span></span><span class=line><span class=cl>                <span class=p>{</span>
-</span></span><span class=line><span class=cl>                    <span class=nb>Write-Verbose</span> <span class=s2>&#34; Host [$Computer] Failed with Error: </span><span class=p>$(</span><span class=nv>$Error</span><span class=p>[</span><span class=n>0</span><span class=p>])</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl>                    <span class=nb>Write-Verbose</span> <span class=s2>&#34; Host [</span><span class=nv>$Computer</span><span class=s2>] Failed with Error: </span><span class=p>$(</span><span class=nv>$Error</span><span class=p>[</span><span class=mf>0</span><span class=p>])</span><span class=s2>&#34;</span>
 </span></span><span class=line><span class=cl>                <span class=p>}</span>
 </span></span><span class=line><span class=cl>            <span class=p>}</span>
 </span></span><span class=line><span class=cl>            <span class=k>else</span>
 </span></span><span class=line><span class=cl>            <span class=p>{</span>
-</span></span><span class=line><span class=cl>                <span class=nb>Write-Verbose</span> <span class=s2>&#34; Host [$Computer] Failed Connectivity Test &#34;</span>
+</span></span><span class=line><span class=cl>                <span class=nb>Write-Verbose</span> <span class=s2>&#34; Host [</span><span class=nv>$Computer</span><span class=s2>] Failed Connectivity Test &#34;</span>
 </span></span><span class=line><span class=cl>            <span class=p>}</span>
 </span></span><span class=line><span class=cl>        <span class=p>}</span>
 </span></span><span class=line><span class=cl>    <span class=p>}</span>

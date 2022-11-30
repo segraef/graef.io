@@ -91,24 +91,24 @@
 </span><span class=lnt>79
 </span><span class=lnt>80
 </span><span class=lnt>81
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-powershell data-lang=powershell><span class=line><span class=cl><span class=k>Function</span> <span class=nb>Get-Timezones</span> <span class=p>{</span>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-powershell data-lang=powershell><span class=line><span class=cl><span class=kd>Function</span><span class=w> </span><span class=nb>Get-Timezones</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>    <span class=cm>&lt;#
-</span></span></span><span class=line><span class=cl><span class=cm>    </span><span class=sd>.SYNOPSIS</span><span class=cm>
+</span></span></span><span class=line><span class=cl><span class=cm>    .</span><span class=sd>SYNOPSIS</span><span class=cm>
 </span></span></span><span class=line><span class=cl><span class=cm>    Retrieves timezones of local or remote computers via WMI.
 </span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>    </span><span class=sd>.DESCRIPTION</span><span class=cm>
+</span></span></span><span class=line><span class=cl><span class=cm>    .</span><span class=sd>DESCRIPTION</span><span class=cm>
 </span></span></span><span class=line><span class=cl><span class=cm>    Retrieves timezones of local or remote computers via WMI.
 </span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>    </span><span class=sd>.PARAMETER</span><span class=cm> ComputerName
+</span></span></span><span class=line><span class=cl><span class=cm>    .PARAMETER ComputerName
 </span></span></span><span class=line><span class=cl><span class=cm>    A single Computer or an array of computer names. The default is localhost ($env:COMPUTERNAME).
 </span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>    </span><span class=sd>.PARAMETER</span><span class=cm> Credentials
+</span></span></span><span class=line><span class=cl><span class=cm>    .PARAMETER Credentials
 </span></span></span><span class=line><span class=cl><span class=cm>    Commit Credentials for a different domain.
 </span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>    </span><span class=sd>.PARAMETER</span><span class=cm> Verbose
+</span></span></span><span class=line><span class=cl><span class=cm>    .PARAMETER Verbose
 </span></span></span><span class=line><span class=cl><span class=cm>    Run in Verbose Mode.
 </span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>    </span><span class=sd>.EXAMPLE</span><span class=cm>
+</span></span></span><span class=line><span class=cl><span class=cm>    .</span><span class=sd>EXAMPLE</span><span class=cm>
 </span></span></span><span class=line><span class=cl><span class=cm>    PS C:\&amp;amp;amp;amp;gt; Get-Timezones -ComputerName (gc &#39;C:\computers.txt&#39;) -Credentials Get-Credential
 </span></span></span><span class=line><span class=cl><span class=cm>
 </span></span></span><span class=line><span class=cl><span class=cm>    ComputerName TimezoneName DaylightSaving TimezoneCaption
@@ -116,7 +116,7 @@
 </span></span></span><span class=line><span class=cl><span class=cm>    SERVER01 W. Europe Standard Time yes (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna
 </span></span></span><span class=line><span class=cl><span class=cm>    SERVER02 W. Europe Standard Time yes (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna
 </span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>    </span><span class=sd>.NOTES</span><span class=cm>
+</span></span></span><span class=line><span class=cl><span class=cm>    .</span><span class=sd>NOTES</span><span class=cm>
 </span></span></span><span class=line><span class=cl><span class=cm>    Author: Sebastian Gräf
 </span></span></span><span class=line><span class=cl><span class=cm>    Website: https://graef.io
 </span></span></span><span class=line><span class=cl><span class=cm>    Email: ps@graef.io
@@ -124,51 +124,51 @@
 </span></span></span><span class=line><span class=cl><span class=cm>    PSVer: 3.0/4.0/5.0
 </span></span></span><span class=line><span class=cl><span class=cm>    #&gt;</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=p>[</span><span class=k>Cmdletbinding</span><span class=p>()]</span>
+</span></span><span class=line><span class=cl>    <span class=p>[</span><span class=nb>Cmdletbinding</span><span class=p>()]</span>
 </span></span><span class=line><span class=cl>    <span class=k>Param</span> <span class=p>(</span>
-</span></span><span class=line><span class=cl>        <span class=p>[</span><span class=k>Parameter</span><span class=p>(</span><span class=k>ValueFromPipelineByPropertyName</span> <span class=p>=</span> <span class=nv>$true</span><span class=p>,</span> <span class=k>ValueFromPipeline</span> <span class=p>=</span> <span class=nv>$true</span><span class=p>)]</span>
+</span></span><span class=line><span class=cl>        <span class=p>[</span><span class=nb>Parameter</span><span class=p>(</span><span class=na>ValueFromPipelineByPropertyName</span> <span class=p>=</span> <span class=vm>$true</span><span class=p>,</span> <span class=na>ValueFromPipeline</span> <span class=p>=</span> <span class=vm>$true</span><span class=p>)]</span>
 </span></span><span class=line><span class=cl>        <span class=nv>$ComputerName</span> <span class=p>=</span> <span class=nv>$Env:COMPUTERNAME</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>        <span class=p>[</span><span class=k>Parameter</span><span class=p>(</span><span class=k>ValueFromPipelineByPropertyName</span> <span class=p>=</span> <span class=nv>$true</span><span class=p>,</span> <span class=k>ValueFromPipeline</span> <span class=p>=</span> <span class=nv>$true</span><span class=p>)]</span>
+</span></span><span class=line><span class=cl>        <span class=p>[</span><span class=nb>Parameter</span><span class=p>(</span><span class=na>ValueFromPipelineByPropertyName</span> <span class=p>=</span> <span class=vm>$true</span><span class=p>,</span> <span class=na>ValueFromPipeline</span> <span class=p>=</span> <span class=vm>$true</span><span class=p>)]</span>
 </span></span><span class=line><span class=cl>        <span class=p>[</span><span class=n>ValidateNotNull</span><span class=p>()]</span>
-</span></span><span class=line><span class=cl>        <span class=no>[System.Management.Automation.PSCredential]</span><span class=p>[</span><span class=n>System</span><span class=p>.</span><span class=n>Management</span><span class=p>.</span><span class=n>Automation</span><span class=p>.</span><span class=n>Credential</span><span class=p>()]</span>
-</span></span><span class=line><span class=cl>        <span class=nv>$Credentials</span> <span class=p>=</span> <span class=no>[System.Management.Automation.PSCredential]</span><span class=p>::</span><span class=n>Empty</span>
+</span></span><span class=line><span class=cl>        <span class=p>[</span><span class=no>System.Management.Automation.PSCredential</span><span class=p>][</span><span class=n>System</span><span class=p>.</span><span class=py>Management</span><span class=p>.</span><span class=py>Automation</span><span class=p>.</span><span class=py>Credential</span><span class=p>()]</span>
+</span></span><span class=line><span class=cl>        <span class=nv>$Credentials</span> <span class=p>=</span> <span class=p>[</span><span class=no>System.Management.Automation.PSCredential</span><span class=p>]::</span><span class=n>Empty</span>
 </span></span><span class=line><span class=cl>    <span class=p>)</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>    <span class=k>Begin</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>        <span class=nb>Write-Verbose</span> <span class=s2>&#34; [</span><span class=p>$(</span><span class=nv>$MyInvocation</span><span class=p>.</span><span class=n>InvocationName</span><span class=p>)</span><span class=s2>] :: Start Process&#34;</span>
-</span></span><span class=line><span class=cl>        <span class=nv>$Results</span> <span class=p>=</span> <span class=p>@()</span>
-</span></span><span class=line><span class=cl>        <span class=nv>$ProgressCounter</span> <span class=p>=</span> <span class=n>0</span>
+</span></span><span class=line><span class=cl>        <span class=nv>$Results</span> <span class=p>=</span> <span class=vm>@</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>        <span class=nv>$ProgressCounter</span> <span class=p>=</span> <span class=mf>0</span>
 </span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>    <span class=k>Process</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>        <span class=k>foreach</span> <span class=p>(</span><span class=nv>$Computer</span> <span class=k>in</span> <span class=nv>$ComputerName</span><span class=p>)</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>            <span class=nv>$ProgressCounter</span><span class=p>++</span>
-</span></span><span class=line><span class=cl>            <span class=nb>Write-Progress</span> <span class=n>-activity</span> <span class=s2>&#34;Running on $Computer&#34;</span> <span class=n>-status</span> <span class=s2>&#34;Please wait ...&#34;</span> <span class=n>-PercentComplete</span> <span class=p>((</span><span class=nv>$ProgressCounter</span> <span class=p>/</span> <span class=nv>$ComputerName</span><span class=p>.</span><span class=n>length</span><span class=p>)</span> <span class=p>*</span> <span class=n>100</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=p>(</span><span class=nb>Test-Connection</span> <span class=nv>$Computer</span> <span class=n>-Count</span> <span class=n>1</span> <span class=n>-Quiet</span><span class=p>)</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>                <span class=nb>Write-Verbose</span> <span class=s2>&#34; [</span><span class=p>$(</span><span class=nv>$MyInvocation</span><span class=p>.</span><span class=n>InvocationName</span><span class=p>)</span><span class=s2>] :: Processing $Computer&#34;</span>
+</span></span><span class=line><span class=cl>            <span class=nb>Write-Progress</span> <span class=n>-activity</span> <span class=s2>&#34;Running on </span><span class=nv>$Computer</span><span class=s2>&#34;</span> <span class=n>-status</span> <span class=s2>&#34;Please wait ...&#34;</span> <span class=n>-PercentComplete</span> <span class=p>((</span><span class=nv>$ProgressCounter</span> <span class=p>/</span> <span class=nv>$ComputerName</span><span class=p>.</span><span class=n>length</span><span class=p>)</span> <span class=p>*</span> <span class=mf>100</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=p>(</span><span class=nb>Test-Connection</span> <span class=nv>$Computer</span> <span class=n>-Count</span> <span class=mf>1</span> <span class=n>-Quiet</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=nb>Write-Verbose</span> <span class=s2>&#34; [</span><span class=p>$(</span><span class=nv>$MyInvocation</span><span class=p>.</span><span class=n>InvocationName</span><span class=p>)</span><span class=s2>] :: Processing </span><span class=nv>$Computer</span><span class=s2>&#34;</span>
 </span></span><span class=line><span class=cl>                <span class=k>try</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>                    <span class=nv>$win32_timezone</span> <span class=p>=</span> <span class=nb>Get-WmiObject</span> <span class=n>-Class</span> <span class=n>win32_timezone</span> <span class=n>-ComputerName</span> <span class=nv>$Computer</span> <span class=n>-ErrorAction</span> <span class=n>Stop</span> <span class=n>-Credential</span> <span class=nv>$Credentials</span>
-</span></span><span class=line><span class=cl>                    <span class=k>if</span> <span class=p>(</span><span class=nv>$win32_timezone</span><span class=p>.</span><span class=n>DaylightBias</span> <span class=o>-eq</span> <span class=n>0</span><span class=p>)</span> <span class=p>{</span> <span class=nv>$daylightsaving</span> <span class=p>=</span> <span class=s2>&#34;no&#34;</span> <span class=p>}</span> <span class=k>else</span> <span class=p>{</span> <span class=nv>$daylightsaving</span> <span class=p>=</span> <span class=s2>&#34;yes&#34;</span> <span class=p>}</span>
-</span></span><span class=line><span class=cl>                    <span class=nv>$obj</span> <span class=p>=</span> <span class=nb>New-Object</span> <span class=n>-Type</span> <span class=n>PSCustomObject</span> <span class=n>-Property</span> <span class=p>@{</span>
+</span></span><span class=line><span class=cl>                    <span class=k>if</span> <span class=p>(</span><span class=nv>$win32_timezone</span><span class=p>.</span><span class=py>DaylightBias</span> <span class=o>-eq</span> <span class=mf>0</span><span class=p>)</span> <span class=p>{</span> <span class=nv>$daylightsaving</span> <span class=p>=</span> <span class=s2>&#34;no&#34;</span> <span class=p>}</span> <span class=k>else</span> <span class=p>{</span> <span class=nv>$daylightsaving</span> <span class=p>=</span> <span class=s2>&#34;yes&#34;</span> <span class=p>}</span>
+</span></span><span class=line><span class=cl>                    <span class=nv>$obj</span> <span class=p>=</span> <span class=nb>New-Object</span> <span class=n>-Type</span> <span class=n>PSCustomObject</span> <span class=n>-Property</span> <span class=vm>@</span><span class=p>{</span>
 </span></span><span class=line><span class=cl>                        <span class=n>ComputerName</span>    <span class=p>=</span> <span class=nv>$Computer</span>
-</span></span><span class=line><span class=cl>                        <span class=n>TimezoneCaption</span> <span class=p>=</span> <span class=nv>$win32_timezone</span><span class=p>.</span><span class=n>Caption</span>
-</span></span><span class=line><span class=cl>                        <span class=n>TimezoneName</span>    <span class=p>=</span> <span class=nv>$win32_timezone</span><span class=p>.</span><span class=n>StandardName</span>
+</span></span><span class=line><span class=cl>                        <span class=n>TimezoneCaption</span> <span class=p>=</span> <span class=nv>$win32_timezone</span><span class=p>.</span><span class=py>Caption</span>
+</span></span><span class=line><span class=cl>                        <span class=n>TimezoneName</span>    <span class=p>=</span> <span class=nv>$win32_timezone</span><span class=p>.</span><span class=py>StandardName</span>
 </span></span><span class=line><span class=cl>                        <span class=n>DaylightSaving</span>  <span class=p>=</span> <span class=nv>$daylightsaving</span>
 </span></span><span class=line><span class=cl>                    <span class=p>}</span>
 </span></span><span class=line><span class=cl>                    <span class=nv>$Results</span> <span class=p>+=</span> <span class=nv>$obj</span>
 </span></span><span class=line><span class=cl>                <span class=p>}</span>
 </span></span><span class=line><span class=cl>                <span class=k>catch</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>                    <span class=nb>Write-Verbose</span> <span class=s2>&#34; Host [$Computer] Failed with Error: </span><span class=p>$(</span><span class=nv>$Error</span><span class=p>[</span><span class=n>0</span><span class=p>])</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl>                    <span class=nb>Write-Verbose</span> <span class=s2>&#34; Host [</span><span class=nv>$Computer</span><span class=s2>] Failed with Error: </span><span class=p>$(</span><span class=nv>$Error</span><span class=p>[</span><span class=mf>0</span><span class=p>])</span><span class=s2>&#34;</span>
 </span></span><span class=line><span class=cl>                <span class=p>}</span>
 </span></span><span class=line><span class=cl>            <span class=p>}</span>
 </span></span><span class=line><span class=cl>            <span class=k>else</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>                <span class=nb>Write-Verbose</span> <span class=s2>&#34; Host [$Computer] Failed Connectivity Test&#34;</span>
+</span></span><span class=line><span class=cl>                <span class=nb>Write-Verbose</span> <span class=s2>&#34; Host [</span><span class=nv>$Computer</span><span class=s2>] Failed Connectivity Test&#34;</span>
 </span></span><span class=line><span class=cl>            <span class=p>}</span>
 </span></span><span class=line><span class=cl>        <span class=p>}</span>
 </span></span><span class=line><span class=cl>        <span class=nv>$Results</span> <span class=p>|</span> <span class=nb>select </span><span class=n>ComputerName</span><span class=p>,</span> <span class=n>TimezoneName</span><span class=p>,</span> <span class=n>DaylightSaving</span><span class=p>,</span> <span class=n>TimezoneCaption</span>
 </span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span><span class=line><span class=cl>    <span class=k>End</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>        <span class=nb>Write-Progress</span> <span class=n>-activity</span> <span class=s2>&#34;Running on $Computer&#34;</span> <span class=n>-Status</span> <span class=s2>&#34;Completed.&#34;</span> <span class=n>-Completed</span>
+</span></span><span class=line><span class=cl>        <span class=nb>Write-Progress</span> <span class=n>-activity</span> <span class=s2>&#34;Running on </span><span class=nv>$Computer</span><span class=s2>&#34;</span> <span class=n>-Status</span> <span class=s2>&#34;Completed.&#34;</span> <span class=n>-Completed</span>
 </span></span><span class=line><span class=cl>        <span class=nb>Write-Verbose</span> <span class=s2>&#34; [</span><span class=p>$(</span><span class=nv>$MyInvocation</span><span class=p>.</span><span class=n>InvocationName</span><span class=p>)</span><span class=s2>] :: End Process&#34;</span>
 </span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
@@ -284,13 +284,13 @@
 </span><span class=lnt>110
 </span><span class=lnt>111
 </span><span class=lnt>112
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-powershell data-lang=powershell><span class=line><span class=cl><span class=k>Function</span> <span class=nb>Set-Timezones</span> <span class=p>{</span>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-powershell data-lang=powershell><span class=line><span class=cl><span class=kd>Function</span><span class=w> </span><span class=nb>Set-Timezones</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>    <span class=cm>&lt;#
-</span></span></span><span class=line><span class=cl><span class=cm>    </span><span class=sd>.SYNOPSIS</span><span class=cm>
+</span></span></span><span class=line><span class=cl><span class=cm>    .</span><span class=sd>SYNOPSIS</span><span class=cm>
 </span></span></span><span class=line><span class=cl><span class=cm>    Sets and retries timezones on local or remote computers via WinRM and
 </span></span></span><span class=line><span class=cl><span class=cm>    enables or disables daylight saving.
 </span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>    </span><span class=sd>.DESCRIPTION</span><span class=cm>
+</span></span></span><span class=line><span class=cl><span class=cm>    .</span><span class=sd>DESCRIPTION</span><span class=cm>
 </span></span></span><span class=line><span class=cl><span class=cm>    This PowerShell function sets and retrieves the timezone of a local or remote computer using WinRM (Invoke-Command).
 </span></span></span><span class=line><span class=cl><span class=cm>    It also enables or disables dayligt saving times. The function accepts pipeline input and outputs to
 </span></span></span><span class=line><span class=cl><span class=cm>    the pipeline as well as credentials if you want to run it for a specific domain. If the remote computer
@@ -303,24 +303,24 @@
 </span></span></span><span class=line><span class=cl><span class=cm>    (UTC) Coordinated Universal Time UTC
 </span></span></span><span class=line><span class=cl><span class=cm>    (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna W. Europe Standard Time
 </span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>    </span><span class=sd>.PARAMETER</span><span class=cm> TimezoneID
+</span></span></span><span class=line><span class=cl><span class=cm>    .PARAMETER TimezoneID
 </span></span></span><span class=line><span class=cl><span class=cm>    A single Computer or an array of computer names. The default is localhost ($env:COMPUTERNAME).
 </span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>    </span><span class=sd>.PARAMETER</span><span class=cm> DSTOff
+</span></span></span><span class=line><span class=cl><span class=cm>    .PARAMETER DSTOff
 </span></span></span><span class=line><span class=cl><span class=cm>    Enables or disables Daylight Saving Time adjustments
 </span></span></span><span class=line><span class=cl><span class=cm>    for the time zone (where applicable). Default: ON
 </span></span></span><span class=line><span class=cl><span class=cm>    If switch parameter DST committed as true, Daylight saving Time will be disabled.
 </span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>    </span><span class=sd>.PARAMETER</span><span class=cm> ComputerName
+</span></span></span><span class=line><span class=cl><span class=cm>    .PARAMETER ComputerName
 </span></span></span><span class=line><span class=cl><span class=cm>    A single Computer or an array of computer names. The default is localhost ($env:COMPUTERNAME).
 </span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>    </span><span class=sd>.PARAMETER</span><span class=cm> Credentials
+</span></span></span><span class=line><span class=cl><span class=cm>    .PARAMETER Credentials
 </span></span></span><span class=line><span class=cl><span class=cm>    Commit Credentials for a different domain.
 </span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>    </span><span class=sd>.PARAMETER</span><span class=cm> Verbose
+</span></span></span><span class=line><span class=cl><span class=cm>    .PARAMETER Verbose
 </span></span></span><span class=line><span class=cl><span class=cm>    Run in Verbose Mode.
 </span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>    </span><span class=sd>.EXAMPLE</span><span class=cm>
+</span></span></span><span class=line><span class=cl><span class=cm>    .</span><span class=sd>EXAMPLE</span><span class=cm>
 </span></span></span><span class=line><span class=cl><span class=cm>    PS C:\&amp;amp;amp;amp;gt; Set-Timezones -ComputerName (gc &#39;C:\computers.txt&#39;) -TimezoneID &#34;W. Europe Standard Time&#34; -DSTOff
 </span></span></span><span class=line><span class=cl><span class=cm>
 </span></span></span><span class=line><span class=cl><span class=cm>    ComputerName DaylightSaving TimezoneName
@@ -328,7 +328,7 @@
 </span></span></span><span class=line><span class=cl><span class=cm>    SERVER01 no W. Europe Standard Time_dstoff
 </span></span></span><span class=line><span class=cl><span class=cm>    SERVER02 no W. Europe Standard Time_dstoff
 </span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>    </span><span class=sd>.NOTES</span><span class=cm>
+</span></span></span><span class=line><span class=cl><span class=cm>    .</span><span class=sd>NOTES</span><span class=cm>
 </span></span></span><span class=line><span class=cl><span class=cm>    Author: Sebastian Gräf
 </span></span></span><span class=line><span class=cl><span class=cm>    Website: https://graef.io
 </span></span></span><span class=line><span class=cl><span class=cm>    Email: ps@graef.io
@@ -337,24 +337,24 @@
 </span></span></span><span class=line><span class=cl><span class=cm>
 </span></span></span><span class=line><span class=cl><span class=cm>    #&gt;</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>    <span class=p>[</span><span class=k>Cmdletbinding</span><span class=p>()]</span>
+</span></span><span class=line><span class=cl>    <span class=p>[</span><span class=nb>Cmdletbinding</span><span class=p>()]</span>
 </span></span><span class=line><span class=cl>    <span class=k>Param</span> <span class=p>(</span>
-</span></span><span class=line><span class=cl>        <span class=p>[</span><span class=k>Parameter</span><span class=p>(</span><span class=k>ValueFromPipelineByPropertyName</span> <span class=p>=</span> <span class=nv>$true</span><span class=p>,</span> <span class=k>ValueFromPipeline</span> <span class=p>=</span> <span class=nv>$true</span><span class=p>)]</span>
+</span></span><span class=line><span class=cl>        <span class=p>[</span><span class=nb>Parameter</span><span class=p>(</span><span class=na>ValueFromPipelineByPropertyName</span> <span class=p>=</span> <span class=vm>$true</span><span class=p>,</span> <span class=na>ValueFromPipeline</span> <span class=p>=</span> <span class=vm>$true</span><span class=p>)]</span>
 </span></span><span class=line><span class=cl>        <span class=nv>$ComputerName</span> <span class=p>=</span> <span class=nv>$Env:COMPUTERNAME</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>        <span class=p>[</span><span class=k>Parameter</span><span class=p>(</span><span class=k>ValueFromPipelineByPropertyName</span> <span class=p>=</span> <span class=nv>$true</span><span class=p>,</span> <span class=k>ValueFromPipeline</span> <span class=p>=</span> <span class=nv>$true</span><span class=p>,</span> <span class=k>Mandatory</span> <span class=p>=</span> <span class=nv>$true</span><span class=p>)]</span>
+</span></span><span class=line><span class=cl>        <span class=p>[</span><span class=nb>Parameter</span><span class=p>(</span><span class=na>ValueFromPipelineByPropertyName</span> <span class=p>=</span> <span class=vm>$true</span><span class=p>,</span> <span class=na>ValueFromPipeline</span> <span class=p>=</span> <span class=vm>$true</span><span class=p>,</span> <span class=na>Mandatory</span> <span class=p>=</span> <span class=vm>$true</span><span class=p>)]</span>
 </span></span><span class=line><span class=cl>        <span class=nv>$TimezoneID</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>        <span class=p>[</span><span class=k>Parameter</span><span class=p>(</span><span class=k>ValueFromPipelineByPropertyName</span> <span class=p>=</span> <span class=nv>$true</span><span class=p>,</span> <span class=k>ValueFromPipeline</span> <span class=p>=</span> <span class=nv>$true</span><span class=p>)]</span>
-</span></span><span class=line><span class=cl>        <span class=no>[switch]</span><span class=nv>$DSTOff</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>        <span class=p>[</span><span class=k>Parameter</span><span class=p>(</span><span class=k>ValueFromPipelineByPropertyName</span> <span class=p>=</span> <span class=nv>$true</span><span class=p>,</span> <span class=k>ValueFromPipeline</span> <span class=p>=</span> <span class=nv>$true</span><span class=p>)]</span>
+</span></span><span class=line><span class=cl>        <span class=p>[</span><span class=nb>Parameter</span><span class=p>(</span><span class=na>ValueFromPipelineByPropertyName</span> <span class=p>=</span> <span class=vm>$true</span><span class=p>,</span> <span class=na>ValueFromPipeline</span> <span class=p>=</span> <span class=vm>$true</span><span class=p>)]</span>
+</span></span><span class=line><span class=cl>        <span class=p>[</span><span class=no>switch</span><span class=p>]</span><span class=nv>$DSTOff</span><span class=p>,</span>
+</span></span><span class=line><span class=cl>        <span class=p>[</span><span class=nb>Parameter</span><span class=p>(</span><span class=na>ValueFromPipelineByPropertyName</span> <span class=p>=</span> <span class=vm>$true</span><span class=p>,</span> <span class=na>ValueFromPipeline</span> <span class=p>=</span> <span class=vm>$true</span><span class=p>)]</span>
 </span></span><span class=line><span class=cl>        <span class=p>[</span><span class=n>ValidateNotNull</span><span class=p>()]</span>
-</span></span><span class=line><span class=cl>        <span class=no>[System.Management.Automation.PSCredential]</span><span class=p>[</span><span class=n>System</span><span class=p>.</span><span class=n>Management</span><span class=p>.</span><span class=n>Automation</span><span class=p>.</span><span class=n>Credential</span><span class=p>()]</span>
-</span></span><span class=line><span class=cl>        <span class=nv>$Credentials</span> <span class=p>=</span> <span class=no>[System.Management.Automation.PSCredential]</span><span class=p>::</span><span class=n>Empty</span>
+</span></span><span class=line><span class=cl>        <span class=p>[</span><span class=no>System.Management.Automation.PSCredential</span><span class=p>][</span><span class=n>System</span><span class=p>.</span><span class=py>Management</span><span class=p>.</span><span class=py>Automation</span><span class=p>.</span><span class=py>Credential</span><span class=p>()]</span>
+</span></span><span class=line><span class=cl>        <span class=nv>$Credentials</span> <span class=p>=</span> <span class=p>[</span><span class=no>System.Management.Automation.PSCredential</span><span class=p>]::</span><span class=n>Empty</span>
 </span></span><span class=line><span class=cl>    <span class=p>)</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl>    <span class=k>Begin</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>        <span class=nb>Write-Verbose</span> <span class=s2>&#34; [</span><span class=p>$(</span><span class=nv>$MyInvocation</span><span class=p>.</span><span class=n>InvocationName</span><span class=p>)</span><span class=s2>] :: Start Process&#34;</span>
-</span></span><span class=line><span class=cl>        <span class=nv>$Results</span> <span class=p>=</span> <span class=p>@()</span>
-</span></span><span class=line><span class=cl>        <span class=nv>$ProgressCounter</span> <span class=p>=</span> <span class=n>0</span>
+</span></span><span class=line><span class=cl>        <span class=nv>$Results</span> <span class=p>=</span> <span class=vm>@</span><span class=p>()</span>
+</span></span><span class=line><span class=cl>        <span class=nv>$ProgressCounter</span> <span class=p>=</span> <span class=mf>0</span>
 </span></span><span class=line><span class=cl>        <span class=k>if</span> <span class=p>(!</span><span class=nv>$DSTOff</span><span class=p>)</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>            <span class=nv>$DaylightSaving</span> <span class=p>=</span> <span class=s1>&#39;&#39;</span>
 </span></span><span class=line><span class=cl>        <span class=p>}</span>
@@ -367,14 +367,14 @@
 </span></span><span class=line><span class=cl>    <span class=k>Process</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>        <span class=k>foreach</span> <span class=p>(</span><span class=nv>$Computer</span> <span class=k>in</span> <span class=nv>$ComputerName</span><span class=p>)</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>            <span class=nv>$ProgressCounter</span><span class=p>++</span>
-</span></span><span class=line><span class=cl>            <span class=nb>Write-Progress</span> <span class=n>-activity</span> <span class=s2>&#34;Running on $Computer&#34;</span> <span class=n>-status</span> <span class=s2>&#34;Please wait ...&#34;</span> <span class=n>-PercentComplete</span> <span class=p>((</span><span class=nv>$ProgressCounter</span> <span class=p>/</span> <span class=nv>$ComputerName</span><span class=p>.</span><span class=n>length</span><span class=p>)</span> <span class=p>*</span> <span class=n>100</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=p>(</span><span class=nb>Test-Connection</span> <span class=nv>$Computer</span> <span class=n>-Count</span> <span class=n>1</span> <span class=n>-Quiet</span><span class=p>)</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>                <span class=nb>Write-Verbose</span> <span class=s2>&#34; [</span><span class=p>$(</span><span class=nv>$MyInvocation</span><span class=p>.</span><span class=n>InvocationName</span><span class=p>)</span><span class=s2>] :: Processing $Computer&#34;</span>
+</span></span><span class=line><span class=cl>            <span class=nb>Write-Progress</span> <span class=n>-activity</span> <span class=s2>&#34;Running on </span><span class=nv>$Computer</span><span class=s2>&#34;</span> <span class=n>-status</span> <span class=s2>&#34;Please wait ...&#34;</span> <span class=n>-PercentComplete</span> <span class=p>((</span><span class=nv>$ProgressCounter</span> <span class=p>/</span> <span class=nv>$ComputerName</span><span class=p>.</span><span class=n>length</span><span class=p>)</span> <span class=p>*</span> <span class=mf>100</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>            <span class=k>if</span> <span class=p>(</span><span class=nb>Test-Connection</span> <span class=nv>$Computer</span> <span class=n>-Count</span> <span class=mf>1</span> <span class=n>-Quiet</span><span class=p>)</span> <span class=p>{</span>
+</span></span><span class=line><span class=cl>                <span class=nb>Write-Verbose</span> <span class=s2>&#34; [</span><span class=p>$(</span><span class=nv>$MyInvocation</span><span class=p>.</span><span class=n>InvocationName</span><span class=p>)</span><span class=s2>] :: Processing </span><span class=nv>$Computer</span><span class=s2>&#34;</span>
 </span></span><span class=line><span class=cl>                <span class=k>try</span> <span class=p>{</span>
 </span></span><span class=line><span class=cl>                    <span class=nv>$win32_timezone</span> <span class=p>=</span> <span class=nb>Invoke-Command</span> <span class=n>-ComputerName</span> <span class=nv>$Computer</span> <span class=n>-Command</span> <span class=p>{</span> <span class=k>param</span><span class=p>(</span><span class=nv>$TimezoneID</span><span class=p>);</span> <span class=n>tzutil</span> <span class=p>/</span><span class=n>s</span> <span class=nv>$TimezoneID</span><span class=p>;</span> <span class=n>tzutil</span> <span class=p>/</span><span class=n>g</span> <span class=p>}</span> <span class=n>-ArgumentList</span> <span class=nv>$TimezoneID</span> <span class=n>-Credential</span> <span class=nv>$Credentials</span>
 </span></span><span class=line><span class=cl>                    <span class=nv>$win32_timezone</span> <span class=p>=</span> <span class=nb>Invoke-Command</span> <span class=n>-ComputerName</span> <span class=nv>$Computer</span> <span class=n>-Command</span> <span class=p>{</span> <span class=n>tzutil</span> <span class=p>/</span><span class=n>g</span> <span class=p>}</span> <span class=n>-ArgumentList</span> <span class=nv>$Timezone</span> <span class=n>-Credential</span> <span class=nv>$Credentials</span>
 </span></span><span class=line><span class=cl>                    <span class=k>if</span> <span class=p>(</span><span class=nv>$win32_timezone</span> <span class=o>-like</span> <span class=s2>&#34;*dstoff&#34;</span><span class=p>)</span> <span class=p>{</span> <span class=nv>$DST</span> <span class=p>=</span> <span class=s2>&#34;no&#34;</span> <span class=p>}</span> <span class=k>else</span> <span class=p>{</span> <span class=nv>$DST</span> <span class=p>=</span> <span class=s2>&#34;yes&#34;</span> <span class=p>}</span>
-</span></span><span class=line><span class=cl>                    <span class=nv>$obj</span> <span class=p>=</span> <span class=nb>New-Object</span> <span class=n>-Type</span> <span class=n>PSCustomObject</span> <span class=n>-Property</span> <span class=p>@{</span>
+</span></span><span class=line><span class=cl>                    <span class=nv>$obj</span> <span class=p>=</span> <span class=nb>New-Object</span> <span class=n>-Type</span> <span class=n>PSCustomObject</span> <span class=n>-Property</span> <span class=vm>@</span><span class=p>{</span>
 </span></span><span class=line><span class=cl>                        <span class=n>ComputerName</span>   <span class=p>=</span> <span class=nv>$Computer</span>
 </span></span><span class=line><span class=cl>                        <span class=n>TimezoneName</span>   <span class=p>=</span> <span class=nv>$win32_timezone</span>
 </span></span><span class=line><span class=cl>                        <span class=n>DaylightSaving</span> <span class=p>=</span> <span class=nv>$DST</span>
@@ -382,17 +382,17 @@
 </span></span><span class=line><span class=cl>                    <span class=nv>$Results</span> <span class=p>+=</span> <span class=nv>$obj</span>
 </span></span><span class=line><span class=cl>                <span class=p>}</span>
 </span></span><span class=line><span class=cl>                <span class=k>catch</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>                    <span class=nb>Write-Verbose</span> <span class=s2>&#34; Host [$Computer] Failed with Error: </span><span class=p>$(</span><span class=nv>$Error</span><span class=p>[</span><span class=n>0</span><span class=p>])</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl>                    <span class=nb>Write-Verbose</span> <span class=s2>&#34; Host [</span><span class=nv>$Computer</span><span class=s2>] Failed with Error: </span><span class=p>$(</span><span class=nv>$Error</span><span class=p>[</span><span class=mf>0</span><span class=p>])</span><span class=s2>&#34;</span>
 </span></span><span class=line><span class=cl>                <span class=p>}</span>
 </span></span><span class=line><span class=cl>            <span class=p>}</span>
 </span></span><span class=line><span class=cl>            <span class=k>else</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>                <span class=nb>Write-Verbose</span> <span class=s2>&#34; Host [$Computer] Failed Connectivity Test&#34;</span>
+</span></span><span class=line><span class=cl>                <span class=nb>Write-Verbose</span> <span class=s2>&#34; Host [</span><span class=nv>$Computer</span><span class=s2>] Failed Connectivity Test&#34;</span>
 </span></span><span class=line><span class=cl>            <span class=p>}</span>
 </span></span><span class=line><span class=cl>        <span class=p>}</span>
 </span></span><span class=line><span class=cl>        <span class=nv>$Results</span> <span class=p>|</span> <span class=nb>select </span><span class=n>ComputerName</span><span class=p>,</span> <span class=n>DaylightSaving</span><span class=p>,</span> <span class=n>TimezoneName</span>
 </span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span><span class=line><span class=cl>    <span class=k>End</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>        <span class=nb>Write-Progress</span> <span class=n>-activity</span> <span class=s2>&#34;Running on $Computer&#34;</span> <span class=n>-Status</span> <span class=s2>&#34;Completed.&#34;</span> <span class=n>-Completed</span>
+</span></span><span class=line><span class=cl>        <span class=nb>Write-Progress</span> <span class=n>-activity</span> <span class=s2>&#34;Running on </span><span class=nv>$Computer</span><span class=s2>&#34;</span> <span class=n>-Status</span> <span class=s2>&#34;Completed.&#34;</span> <span class=n>-Completed</span>
 </span></span><span class=line><span class=cl>        <span class=nb>Write-Verbose</span> <span class=s2>&#34; [</span><span class=p>$(</span><span class=nv>$MyInvocation</span><span class=p>.</span><span class=n>InvocationName</span><span class=p>)</span><span class=s2>] :: End Process&#34;</span>
 </span></span><span class=line><span class=cl>    <span class=p>}</span>
 </span></span><span class=line><span class=cl><span class=p>}</span>
@@ -791,400 +791,400 @@
 </span><span class=lnt>393
 </span><span class=lnt>394
 </span><span class=lnt>395
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-powershell data-lang=powershell><span class=line><span class=cl><span class=n>UTC</span><span class=p>-</span><span class=n>12</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>International</span> <span class=n>Date</span> <span class=n>Line</span> <span class=n>West</span>
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-powershell data-lang=powershell><span class=line><span class=cl><span class=n>UTC</span><span class=p>-</span><span class=mf>12</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>International</span> <span class=n>Date</span> <span class=n>Line</span> <span class=n>West</span>
 </span></span><span class=line><span class=cl><span class=n>Dateline</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>11</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Coordinated</span> <span class=n>Universal</span> <span class=n>Time</span><span class=p>-</span><span class=n>11</span>
-</span></span><span class=line><span class=cl><span class=n>UTC</span><span class=p>-</span><span class=n>11</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>11</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Coordinated</span> <span class=n>Universal</span> <span class=n>Time</span><span class=p>-</span><span class=mf>11</span>
+</span></span><span class=line><span class=cl><span class=n>UTC</span><span class=p>-</span><span class=mf>11</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>10</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Aleutian</span> <span class=n>Islands</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>10</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Aleutian</span> <span class=n>Islands</span>
 </span></span><span class=line><span class=cl><span class=n>Aleutian</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>10</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Hawaii</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>10</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Hawaii</span>
 </span></span><span class=line><span class=cl><span class=n>Hawaiian</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>09</span><span class=err>:</span><span class=n>30</span><span class=p>)</span> <span class=n>Marquesas</span> <span class=n>Islands</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>09</span><span class=err>:</span><span class=mf>30</span><span class=p>)</span> <span class=n>Marquesas</span> <span class=n>Islands</span>
 </span></span><span class=line><span class=cl><span class=n>Marquesas</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>09</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Alaska</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>09</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Alaska</span>
 </span></span><span class=line><span class=cl><span class=n>Alaskan</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>09</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Coordinated</span> <span class=n>Universal</span> <span class=n>Time</span><span class=p>-</span><span class=n>09</span>
-</span></span><span class=line><span class=cl><span class=n>UTC</span><span class=p>-</span><span class=n>09</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>09</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Coordinated</span> <span class=n>Universal</span> <span class=n>Time</span><span class=p>-</span><span class=mf>09</span>
+</span></span><span class=line><span class=cl><span class=n>UTC</span><span class=p>-</span><span class=mf>09</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>08</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Baja</span> <span class=n>California</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>08</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Baja</span> <span class=n>California</span>
 </span></span><span class=line><span class=cl><span class=n>Pacific</span> <span class=n>Standard</span> <span class=n>Time</span> <span class=p>(</span><span class=n>Mexico</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>08</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Coordinated</span> <span class=n>Universal</span> <span class=n>Time</span><span class=p>-</span><span class=n>08</span>
-</span></span><span class=line><span class=cl><span class=n>UTC</span><span class=p>-</span><span class=n>08</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>08</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Coordinated</span> <span class=n>Universal</span> <span class=n>Time</span><span class=p>-</span><span class=mf>08</span>
+</span></span><span class=line><span class=cl><span class=n>UTC</span><span class=p>-</span><span class=mf>08</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>08</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Pacific</span> <span class=n>Time</span> <span class=p>(</span><span class=n>US</span> <span class=p>&amp;</span><span class=n>amp</span><span class=p>;</span><span class=n>amp</span><span class=p>;</span><span class=n>amp</span><span class=p>;</span><span class=n>amp</span><span class=p>;</span> <span class=n>Canada</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>08</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Pacific</span> <span class=n>Time</span> <span class=p>(</span><span class=n>US</span> <span class=p>&amp;</span><span class=n>amp</span><span class=p>;</span><span class=n>amp</span><span class=p>;</span><span class=n>amp</span><span class=p>;</span><span class=n>amp</span><span class=p>;</span> <span class=n>Canada</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=n>Pacific</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>07</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Arizona</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>07</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Arizona</span>
 </span></span><span class=line><span class=cl><span class=n>US</span> <span class=n>Mountain</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>07</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Chihuahua</span><span class=p>,</span> <span class=n>La</span> <span class=n>Paz</span><span class=p>,</span> <span class=n>Mazatlan</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>07</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Chihuahua</span><span class=p>,</span> <span class=n>La</span> <span class=n>Paz</span><span class=p>,</span> <span class=n>Mazatlan</span>
 </span></span><span class=line><span class=cl><span class=n>Mountain</span> <span class=n>Standard</span> <span class=n>Time</span> <span class=p>(</span><span class=n>Mexico</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>07</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Mountain</span> <span class=n>Time</span> <span class=p>(</span><span class=n>US</span> <span class=p>&amp;</span><span class=n>amp</span><span class=p>;</span><span class=n>amp</span><span class=p>;</span><span class=n>amp</span><span class=p>;</span><span class=n>amp</span><span class=p>;</span> <span class=n>Canada</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>07</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Mountain</span> <span class=n>Time</span> <span class=p>(</span><span class=n>US</span> <span class=p>&amp;</span><span class=n>amp</span><span class=p>;</span><span class=n>amp</span><span class=p>;</span><span class=n>amp</span><span class=p>;</span><span class=n>amp</span><span class=p>;</span> <span class=n>Canada</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=n>Mountain</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>06</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Central</span> <span class=n>America</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>06</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Central</span> <span class=n>America</span>
 </span></span><span class=line><span class=cl><span class=n>Central</span> <span class=n>America</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>06</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Central</span> <span class=n>Time</span> <span class=p>(</span><span class=n>US</span> <span class=p>&amp;</span><span class=n>amp</span><span class=p>;</span><span class=n>amp</span><span class=p>;</span><span class=n>amp</span><span class=p>;</span><span class=n>amp</span><span class=p>;</span> <span class=n>Canada</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>06</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Central</span> <span class=n>Time</span> <span class=p>(</span><span class=n>US</span> <span class=p>&amp;</span><span class=n>amp</span><span class=p>;</span><span class=n>amp</span><span class=p>;</span><span class=n>amp</span><span class=p>;</span><span class=n>amp</span><span class=p>;</span> <span class=n>Canada</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=n>Central</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>06</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Easter</span> <span class=n>Island</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>06</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Easter</span> <span class=n>Island</span>
 </span></span><span class=line><span class=cl><span class=n>Easter</span> <span class=n>Island</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>06</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Guadalajara</span><span class=p>,</span> <span class=n>Mexico</span> <span class=n>City</span><span class=p>,</span> <span class=n>Monterrey</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>06</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Guadalajara</span><span class=p>,</span> <span class=n>Mexico</span> <span class=n>City</span><span class=p>,</span> <span class=n>Monterrey</span>
 </span></span><span class=line><span class=cl><span class=n>Central</span> <span class=n>Standard</span> <span class=n>Time</span> <span class=p>(</span><span class=n>Mexico</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>06</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Saskatchewan</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>06</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Saskatchewan</span>
 </span></span><span class=line><span class=cl><span class=n>Canada</span> <span class=n>Central</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>05</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Bogota</span><span class=p>,</span> <span class=n>Lima</span><span class=p>,</span> <span class=n>Quito</span><span class=p>,</span> <span class=n>Rio</span> <span class=n>Branco</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>05</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Bogota</span><span class=p>,</span> <span class=n>Lima</span><span class=p>,</span> <span class=n>Quito</span><span class=p>,</span> <span class=n>Rio</span> <span class=n>Branco</span>
 </span></span><span class=line><span class=cl><span class=n>SA</span> <span class=n>Pacific</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>05</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Chetumal</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>05</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Chetumal</span>
 </span></span><span class=line><span class=cl><span class=n>Eastern</span> <span class=n>Standard</span> <span class=n>Time</span> <span class=p>(</span><span class=n>Mexico</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>05</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Eastern</span> <span class=n>Time</span> <span class=p>(</span><span class=n>US</span> <span class=p>&amp;</span><span class=n>amp</span><span class=p>;</span><span class=n>amp</span><span class=p>;</span><span class=n>amp</span><span class=p>;</span><span class=n>amp</span><span class=p>;</span> <span class=n>Canada</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>05</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Eastern</span> <span class=n>Time</span> <span class=p>(</span><span class=n>US</span> <span class=p>&amp;</span><span class=n>amp</span><span class=p>;</span><span class=n>amp</span><span class=p>;</span><span class=n>amp</span><span class=p>;</span><span class=n>amp</span><span class=p>;</span> <span class=n>Canada</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=n>Eastern</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>05</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Haiti</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>05</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Haiti</span>
 </span></span><span class=line><span class=cl><span class=n>Haiti</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>05</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Havana</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>05</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Havana</span>
 </span></span><span class=line><span class=cl><span class=n>Cuba</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>05</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Indiana</span> <span class=p>(</span><span class=n>East</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>05</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Indiana</span> <span class=p>(</span><span class=n>East</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=n>US</span> <span class=n>Eastern</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>04</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Asuncion</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>04</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Asuncion</span>
 </span></span><span class=line><span class=cl><span class=n>Paraguay</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>04</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Atlantic</span> <span class=n>Time</span> <span class=p>(</span><span class=n>Canada</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>04</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Atlantic</span> <span class=n>Time</span> <span class=p>(</span><span class=n>Canada</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=n>Atlantic</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>04</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Caracas</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>04</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Caracas</span>
 </span></span><span class=line><span class=cl><span class=n>Venezuela</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>04</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Cuiaba</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>04</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Cuiaba</span>
 </span></span><span class=line><span class=cl><span class=n>Central</span> <span class=n>Brazilian</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>04</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Georgetown</span><span class=p>,</span> <span class=n>La</span> <span class=n>Paz</span><span class=p>,</span> <span class=n>Manaus</span><span class=p>,</span> <span class=n>San</span> <span class=n>Juan</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>04</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Georgetown</span><span class=p>,</span> <span class=n>La</span> <span class=n>Paz</span><span class=p>,</span> <span class=n>Manaus</span><span class=p>,</span> <span class=n>San</span> <span class=n>Juan</span>
 </span></span><span class=line><span class=cl><span class=n>SA</span> <span class=n>Western</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>04</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Santiago</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>04</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Santiago</span>
 </span></span><span class=line><span class=cl><span class=n>Pacific</span> <span class=n>SA</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>04</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Turks</span> <span class=n>and</span> <span class=n>Caicos</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>04</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Turks</span> <span class=n>and</span> <span class=n>Caicos</span>
 </span></span><span class=line><span class=cl><span class=n>Turks</span> <span class=n>And</span> <span class=n>Caicos</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>03</span><span class=err>:</span><span class=n>30</span><span class=p>)</span> <span class=n>Newfoundland</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>03</span><span class=err>:</span><span class=mf>30</span><span class=p>)</span> <span class=n>Newfoundland</span>
 </span></span><span class=line><span class=cl><span class=n>Newfoundland</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>03</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Araguaina</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>03</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Araguaina</span>
 </span></span><span class=line><span class=cl><span class=n>Tocantins</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>03</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Brasilia</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>03</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Brasilia</span>
 </span></span><span class=line><span class=cl><span class=n>E</span><span class=p>.</span> <span class=n>South</span> <span class=n>America</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>03</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Cayenne</span><span class=p>,</span> <span class=n>Fortaleza</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>03</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Cayenne</span><span class=p>,</span> <span class=n>Fortaleza</span>
 </span></span><span class=line><span class=cl><span class=n>SA</span> <span class=n>Eastern</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>03</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>City</span> <span class=n>of</span> <span class=n>Buenos</span> <span class=n>Aires</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>03</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>City</span> <span class=n>of</span> <span class=n>Buenos</span> <span class=n>Aires</span>
 </span></span><span class=line><span class=cl><span class=n>Argentina</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>03</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Greenland</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>03</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Greenland</span>
 </span></span><span class=line><span class=cl><span class=n>Greenland</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>03</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Montevideo</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>03</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Montevideo</span>
 </span></span><span class=line><span class=cl><span class=n>Montevideo</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>03</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Punta</span> <span class=n>Arenas</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>03</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Punta</span> <span class=n>Arenas</span>
 </span></span><span class=line><span class=cl><span class=n>Magallanes</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>03</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Saint</span> <span class=n>Pierre</span> <span class=n>and</span> <span class=n>Miquelon</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>03</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Saint</span> <span class=n>Pierre</span> <span class=n>and</span> <span class=n>Miquelon</span>
 </span></span><span class=line><span class=cl><span class=n>Saint</span> <span class=n>Pierre</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>03</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Salvador</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>03</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Salvador</span>
 </span></span><span class=line><span class=cl><span class=n>Bahia</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>02</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Coordinated</span> <span class=n>Universal</span> <span class=n>Time</span><span class=p>-</span><span class=n>02</span>
-</span></span><span class=line><span class=cl><span class=n>UTC</span><span class=p>-</span><span class=n>02</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>02</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Coordinated</span> <span class=n>Universal</span> <span class=n>Time</span><span class=p>-</span><span class=mf>02</span>
+</span></span><span class=line><span class=cl><span class=n>UTC</span><span class=p>-</span><span class=mf>02</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>01</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Azores</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>01</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Azores</span>
 </span></span><span class=line><span class=cl><span class=n>Azores</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=n>01</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Cabo</span> <span class=n>Verde</span> <span class=n>Is</span><span class=p>.</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>-</span><span class=mf>01</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Cabo</span> <span class=n>Verde</span> <span class=n>Is</span><span class=p>.</span>
 </span></span><span class=line><span class=cl><span class=n>Cape</span> <span class=n>Verde</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>)</span> <span class=n>Coordinated</span> <span class=n>Universal</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl><span class=n>UTC</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>00</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Casablanca</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>00</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Casablanca</span>
 </span></span><span class=line><span class=cl><span class=n>Morocco</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>00</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Dublin</span><span class=p>,</span> <span class=n>Edinburgh</span><span class=p>,</span> <span class=n>Lisbon</span><span class=p>,</span> <span class=n>London</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>00</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Dublin</span><span class=p>,</span> <span class=n>Edinburgh</span><span class=p>,</span> <span class=n>Lisbon</span><span class=p>,</span> <span class=n>London</span>
 </span></span><span class=line><span class=cl><span class=n>GMT</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>00</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Monrovia</span><span class=p>,</span> <span class=n>Reykjavik</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>00</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Monrovia</span><span class=p>,</span> <span class=n>Reykjavik</span>
 </span></span><span class=line><span class=cl><span class=n>Greenwich</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>01</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Amsterdam</span><span class=p>,</span> <span class=n>Berlin</span><span class=p>,</span> <span class=n>Bern</span><span class=p>,</span> <span class=n>Rome</span><span class=p>,</span> <span class=n>Stockholm</span><span class=p>,</span> <span class=n>Vienna</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>01</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Amsterdam</span><span class=p>,</span> <span class=n>Berlin</span><span class=p>,</span> <span class=n>Bern</span><span class=p>,</span> <span class=n>Rome</span><span class=p>,</span> <span class=n>Stockholm</span><span class=p>,</span> <span class=n>Vienna</span>
 </span></span><span class=line><span class=cl><span class=n>W</span><span class=p>.</span> <span class=n>Europe</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>01</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Belgrade</span><span class=p>,</span> <span class=n>Bratislava</span><span class=p>,</span> <span class=n>Budapest</span><span class=p>,</span> <span class=n>Ljubljana</span><span class=p>,</span> <span class=n>Prague</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>01</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Belgrade</span><span class=p>,</span> <span class=n>Bratislava</span><span class=p>,</span> <span class=n>Budapest</span><span class=p>,</span> <span class=n>Ljubljana</span><span class=p>,</span> <span class=n>Prague</span>
 </span></span><span class=line><span class=cl><span class=n>Central</span> <span class=n>Europe</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>01</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Brussels</span><span class=p>,</span> <span class=n>Copenhagen</span><span class=p>,</span> <span class=n>Madrid</span><span class=p>,</span> <span class=n>Paris</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>01</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Brussels</span><span class=p>,</span> <span class=n>Copenhagen</span><span class=p>,</span> <span class=n>Madrid</span><span class=p>,</span> <span class=n>Paris</span>
 </span></span><span class=line><span class=cl><span class=n>Romance</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>01</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Sarajevo</span><span class=p>,</span> <span class=n>Skopje</span><span class=p>,</span> <span class=n>Warsaw</span><span class=p>,</span> <span class=n>Zagreb</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>01</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Sarajevo</span><span class=p>,</span> <span class=n>Skopje</span><span class=p>,</span> <span class=n>Warsaw</span><span class=p>,</span> <span class=n>Zagreb</span>
 </span></span><span class=line><span class=cl><span class=n>Central</span> <span class=n>European</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>01</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>West</span> <span class=n>Central</span> <span class=n>Africa</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>01</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>West</span> <span class=n>Central</span> <span class=n>Africa</span>
 </span></span><span class=line><span class=cl><span class=n>W</span><span class=p>.</span> <span class=n>Central</span> <span class=n>Africa</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>01</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Windhoek</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>01</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Windhoek</span>
 </span></span><span class=line><span class=cl><span class=n>Namibia</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>02</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Amman</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>02</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Amman</span>
 </span></span><span class=line><span class=cl><span class=n>Jordan</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>02</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Athens</span><span class=p>,</span> <span class=n>Bucharest</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>02</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Athens</span><span class=p>,</span> <span class=n>Bucharest</span>
 </span></span><span class=line><span class=cl><span class=n>GTB</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>02</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Beirut</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>02</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Beirut</span>
 </span></span><span class=line><span class=cl><span class=n>Middle</span> <span class=n>East</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>02</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Cairo</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>02</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Cairo</span>
 </span></span><span class=line><span class=cl><span class=n>Egypt</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>02</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Chisinau</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>02</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Chisinau</span>
 </span></span><span class=line><span class=cl><span class=n>E</span><span class=p>.</span> <span class=n>Europe</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>02</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Damascus</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>02</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Damascus</span>
 </span></span><span class=line><span class=cl><span class=n>Syria</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>02</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Gaza</span><span class=p>,</span> <span class=n>Hebron</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>02</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Gaza</span><span class=p>,</span> <span class=n>Hebron</span>
 </span></span><span class=line><span class=cl><span class=n>West</span> <span class=n>Bank</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>02</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Harare</span><span class=p>,</span> <span class=n>Pretoria</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>02</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Harare</span><span class=p>,</span> <span class=n>Pretoria</span>
 </span></span><span class=line><span class=cl><span class=n>South</span> <span class=n>Africa</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>02</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Helsinki</span><span class=p>,</span> <span class=n>Kyiv</span><span class=p>,</span> <span class=n>Riga</span><span class=p>,</span> <span class=n>Sofia</span><span class=p>,</span> <span class=n>Tallinn</span><span class=p>,</span> <span class=n>Vilnius</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>02</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Helsinki</span><span class=p>,</span> <span class=n>Kyiv</span><span class=p>,</span> <span class=n>Riga</span><span class=p>,</span> <span class=n>Sofia</span><span class=p>,</span> <span class=n>Tallinn</span><span class=p>,</span> <span class=n>Vilnius</span>
 </span></span><span class=line><span class=cl><span class=n>FLE</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>02</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Jerusalem</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>02</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Jerusalem</span>
 </span></span><span class=line><span class=cl><span class=n>Israel</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>02</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Kaliningrad</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>02</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Kaliningrad</span>
 </span></span><span class=line><span class=cl><span class=n>Kaliningrad</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>02</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Tripoli</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>02</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Tripoli</span>
 </span></span><span class=line><span class=cl><span class=n>Libya</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>03</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Baghdad</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>03</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Baghdad</span>
 </span></span><span class=line><span class=cl><span class=n>Arabic</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>03</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Istanbul</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>03</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Istanbul</span>
 </span></span><span class=line><span class=cl><span class=n>Turkey</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>03</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Kuwait</span><span class=p>,</span> <span class=n>Riyadh</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>03</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Kuwait</span><span class=p>,</span> <span class=n>Riyadh</span>
 </span></span><span class=line><span class=cl><span class=n>Arab</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>03</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Minsk</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>03</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Minsk</span>
 </span></span><span class=line><span class=cl><span class=n>Belarus</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>03</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Moscow</span><span class=p>,</span> <span class=n>St</span><span class=p>.</span> <span class=n>Petersburg</span><span class=p>,</span> <span class=n>Volgograd</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>03</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Moscow</span><span class=p>,</span> <span class=n>St</span><span class=p>.</span> <span class=n>Petersburg</span><span class=p>,</span> <span class=n>Volgograd</span>
 </span></span><span class=line><span class=cl><span class=n>Russian</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>03</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Nairobi</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>03</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Nairobi</span>
 </span></span><span class=line><span class=cl><span class=n>E</span><span class=p>.</span> <span class=n>Africa</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>03</span><span class=err>:</span><span class=n>30</span><span class=p>)</span> <span class=n>Tehran</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>03</span><span class=err>:</span><span class=mf>30</span><span class=p>)</span> <span class=n>Tehran</span>
 </span></span><span class=line><span class=cl><span class=n>Iran</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>04</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Abu</span> <span class=n>Dhabi</span><span class=p>,</span> <span class=n>Muscat</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>04</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Abu</span> <span class=n>Dhabi</span><span class=p>,</span> <span class=n>Muscat</span>
 </span></span><span class=line><span class=cl><span class=n>Arabian</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>04</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Astrakhan</span><span class=p>,</span> <span class=n>Ulyanovsk</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>04</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Astrakhan</span><span class=p>,</span> <span class=n>Ulyanovsk</span>
 </span></span><span class=line><span class=cl><span class=n>Astrakhan</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>04</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Baku</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>04</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Baku</span>
 </span></span><span class=line><span class=cl><span class=n>Azerbaijan</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>04</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Izhevsk</span><span class=p>,</span> <span class=n>Samara</span>
-</span></span><span class=line><span class=cl><span class=n>Russia</span> <span class=n>Time</span> <span class=n>Zone</span> <span class=n>3</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>04</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Izhevsk</span><span class=p>,</span> <span class=n>Samara</span>
+</span></span><span class=line><span class=cl><span class=n>Russia</span> <span class=n>Time</span> <span class=n>Zone</span> <span class=mf>3</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>04</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Port</span> <span class=n>Louis</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>04</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Port</span> <span class=n>Louis</span>
 </span></span><span class=line><span class=cl><span class=n>Mauritius</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>04</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Saratov</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>04</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Saratov</span>
 </span></span><span class=line><span class=cl><span class=n>Saratov</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>04</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Tbilisi</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>04</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Tbilisi</span>
 </span></span><span class=line><span class=cl><span class=n>Georgian</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>04</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Yerevan</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>04</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Yerevan</span>
 </span></span><span class=line><span class=cl><span class=n>Caucasus</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>04</span><span class=err>:</span><span class=n>30</span><span class=p>)</span> <span class=n>Kabul</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>04</span><span class=err>:</span><span class=mf>30</span><span class=p>)</span> <span class=n>Kabul</span>
 </span></span><span class=line><span class=cl><span class=n>Afghanistan</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>05</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Ashgabat</span><span class=p>,</span> <span class=n>Tashkent</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>05</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Ashgabat</span><span class=p>,</span> <span class=n>Tashkent</span>
 </span></span><span class=line><span class=cl><span class=n>West</span> <span class=n>Asia</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>05</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Ekaterinburg</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>05</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Ekaterinburg</span>
 </span></span><span class=line><span class=cl><span class=n>Ekaterinburg</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>05</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Islamabad</span><span class=p>,</span> <span class=n>Karachi</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>05</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Islamabad</span><span class=p>,</span> <span class=n>Karachi</span>
 </span></span><span class=line><span class=cl><span class=n>Pakistan</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>05</span><span class=err>:</span><span class=n>30</span><span class=p>)</span> <span class=n>Chennai</span><span class=p>,</span> <span class=n>Kolkata</span><span class=p>,</span> <span class=n>Mumbai</span><span class=p>,</span> <span class=n>New</span> <span class=n>Delhi</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>05</span><span class=err>:</span><span class=mf>30</span><span class=p>)</span> <span class=n>Chennai</span><span class=p>,</span> <span class=n>Kolkata</span><span class=p>,</span> <span class=n>Mumbai</span><span class=p>,</span> <span class=n>New</span> <span class=n>Delhi</span>
 </span></span><span class=line><span class=cl><span class=n>India</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>05</span><span class=err>:</span><span class=n>30</span><span class=p>)</span> <span class=n>Sri</span> <span class=n>Jayawardenepura</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>05</span><span class=err>:</span><span class=mf>30</span><span class=p>)</span> <span class=n>Sri</span> <span class=n>Jayawardenepura</span>
 </span></span><span class=line><span class=cl><span class=n>Sri</span> <span class=n>Lanka</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>05</span><span class=err>:</span><span class=n>45</span><span class=p>)</span> <span class=n>Kathmandu</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>05</span><span class=err>:</span><span class=mf>45</span><span class=p>)</span> <span class=n>Kathmandu</span>
 </span></span><span class=line><span class=cl><span class=n>Nepal</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>06</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Astana</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>06</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Astana</span>
 </span></span><span class=line><span class=cl><span class=n>Central</span> <span class=n>Asia</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>06</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Dhaka</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>06</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Dhaka</span>
 </span></span><span class=line><span class=cl><span class=n>Bangladesh</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>06</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Omsk</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>06</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Omsk</span>
 </span></span><span class=line><span class=cl><span class=n>Omsk</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>06</span><span class=err>:</span><span class=n>30</span><span class=p>)</span> <span class=n>Yangon</span> <span class=p>(</span><span class=n>Rangoon</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>06</span><span class=err>:</span><span class=mf>30</span><span class=p>)</span> <span class=n>Yangon</span> <span class=p>(</span><span class=n>Rangoon</span><span class=p>)</span>
 </span></span><span class=line><span class=cl><span class=n>Myanmar</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>07</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Bangkok</span><span class=p>,</span> <span class=n>Hanoi</span><span class=p>,</span> <span class=n>Jakarta</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>07</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Bangkok</span><span class=p>,</span> <span class=n>Hanoi</span><span class=p>,</span> <span class=n>Jakarta</span>
 </span></span><span class=line><span class=cl><span class=n>SE</span> <span class=n>Asia</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>07</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Barnaul</span><span class=p>,</span> <span class=nb>Gorno-Altaysk</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>07</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Barnaul</span><span class=p>,</span> <span class=nb>Gorno-Altaysk</span>
 </span></span><span class=line><span class=cl><span class=n>Altai</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>07</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Hovd</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>07</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Hovd</span>
 </span></span><span class=line><span class=cl><span class=n>W</span><span class=p>.</span> <span class=n>Mongolia</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>07</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Krasnoyarsk</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>07</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Krasnoyarsk</span>
 </span></span><span class=line><span class=cl><span class=n>North</span> <span class=n>Asia</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>07</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Novosibirsk</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>07</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Novosibirsk</span>
 </span></span><span class=line><span class=cl><span class=n>N</span><span class=p>.</span> <span class=n>Central</span> <span class=n>Asia</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>07</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Tomsk</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>07</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Tomsk</span>
 </span></span><span class=line><span class=cl><span class=n>Tomsk</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>08</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Beijing</span><span class=p>,</span> <span class=n>Chongqing</span><span class=p>,</span> <span class=n>Hong</span> <span class=n>Kong</span><span class=p>,</span> <span class=n>Urumqi</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>08</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Beijing</span><span class=p>,</span> <span class=n>Chongqing</span><span class=p>,</span> <span class=n>Hong</span> <span class=n>Kong</span><span class=p>,</span> <span class=n>Urumqi</span>
 </span></span><span class=line><span class=cl><span class=n>China</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>08</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Irkutsk</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>08</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Irkutsk</span>
 </span></span><span class=line><span class=cl><span class=n>North</span> <span class=n>Asia</span> <span class=n>East</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>08</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Kuala</span> <span class=n>Lumpur</span><span class=p>,</span> <span class=n>Singapore</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>08</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Kuala</span> <span class=n>Lumpur</span><span class=p>,</span> <span class=n>Singapore</span>
 </span></span><span class=line><span class=cl><span class=n>Singapore</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>08</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Perth</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>08</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Perth</span>
 </span></span><span class=line><span class=cl><span class=n>W</span><span class=p>.</span> <span class=n>Australia</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>08</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Taipei</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>08</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Taipei</span>
 </span></span><span class=line><span class=cl><span class=n>Taipei</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>08</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Ulaanbaatar</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>08</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Ulaanbaatar</span>
 </span></span><span class=line><span class=cl><span class=n>Ulaanbaatar</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>08</span><span class=err>:</span><span class=n>30</span><span class=p>)</span> <span class=n>Pyongyang</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>08</span><span class=err>:</span><span class=mf>30</span><span class=p>)</span> <span class=n>Pyongyang</span>
 </span></span><span class=line><span class=cl><span class=n>North</span> <span class=n>Korea</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>08</span><span class=err>:</span><span class=n>45</span><span class=p>)</span> <span class=n>Eucla</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>08</span><span class=err>:</span><span class=mf>45</span><span class=p>)</span> <span class=n>Eucla</span>
 </span></span><span class=line><span class=cl><span class=n>Aus</span> <span class=n>Central</span> <span class=n>W</span><span class=p>.</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>09</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Chita</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>09</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Chita</span>
 </span></span><span class=line><span class=cl><span class=n>Transbaikal</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>09</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Osaka</span><span class=p>,</span> <span class=n>Sapporo</span><span class=p>,</span> <span class=n>Tokyo</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>09</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Osaka</span><span class=p>,</span> <span class=n>Sapporo</span><span class=p>,</span> <span class=n>Tokyo</span>
 </span></span><span class=line><span class=cl><span class=n>Tokyo</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>09</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Seoul</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>09</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Seoul</span>
 </span></span><span class=line><span class=cl><span class=n>Korea</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>09</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Yakutsk</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>09</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Yakutsk</span>
 </span></span><span class=line><span class=cl><span class=n>Yakutsk</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>09</span><span class=err>:</span><span class=n>30</span><span class=p>)</span> <span class=n>Adelaide</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>09</span><span class=err>:</span><span class=mf>30</span><span class=p>)</span> <span class=n>Adelaide</span>
 </span></span><span class=line><span class=cl><span class=n>Cen</span><span class=p>.</span> <span class=n>Australia</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>09</span><span class=err>:</span><span class=n>30</span><span class=p>)</span> <span class=n>Darwin</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>09</span><span class=err>:</span><span class=mf>30</span><span class=p>)</span> <span class=n>Darwin</span>
 </span></span><span class=line><span class=cl><span class=n>AUS</span> <span class=n>Central</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>10</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Brisbane</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>10</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Brisbane</span>
 </span></span><span class=line><span class=cl><span class=n>E</span><span class=p>.</span> <span class=n>Australia</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>10</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Canberra</span><span class=p>,</span> <span class=n>Melbourne</span><span class=p>,</span> <span class=n>Sydney</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>10</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Canberra</span><span class=p>,</span> <span class=n>Melbourne</span><span class=p>,</span> <span class=n>Sydney</span>
 </span></span><span class=line><span class=cl><span class=n>AUS</span> <span class=n>Eastern</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>10</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Guam</span><span class=p>,</span> <span class=n>Port</span> <span class=n>Moresby</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>10</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Guam</span><span class=p>,</span> <span class=n>Port</span> <span class=n>Moresby</span>
 </span></span><span class=line><span class=cl><span class=n>West</span> <span class=n>Pacific</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>10</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Hobart</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>10</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Hobart</span>
 </span></span><span class=line><span class=cl><span class=n>Tasmania</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>10</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Vladivostok</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>10</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Vladivostok</span>
 </span></span><span class=line><span class=cl><span class=n>Vladivostok</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>10</span><span class=err>:</span><span class=n>30</span><span class=p>)</span> <span class=n>Lord</span> <span class=n>Howe</span> <span class=n>Island</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>10</span><span class=err>:</span><span class=mf>30</span><span class=p>)</span> <span class=n>Lord</span> <span class=n>Howe</span> <span class=n>Island</span>
 </span></span><span class=line><span class=cl><span class=n>Lord</span> <span class=n>Howe</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>11</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Bougainville</span> <span class=n>Island</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>11</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Bougainville</span> <span class=n>Island</span>
 </span></span><span class=line><span class=cl><span class=n>Bougainville</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>11</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Chokurdakh</span>
-</span></span><span class=line><span class=cl><span class=n>Russia</span> <span class=n>Time</span> <span class=n>Zone</span> <span class=n>10</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>11</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Chokurdakh</span>
+</span></span><span class=line><span class=cl><span class=n>Russia</span> <span class=n>Time</span> <span class=n>Zone</span> <span class=mf>10</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>11</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Magadan</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>11</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Magadan</span>
 </span></span><span class=line><span class=cl><span class=n>Magadan</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>11</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Norfolk</span> <span class=n>Island</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>11</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Norfolk</span> <span class=n>Island</span>
 </span></span><span class=line><span class=cl><span class=n>Norfolk</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>11</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Sakhalin</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>11</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Sakhalin</span>
 </span></span><span class=line><span class=cl><span class=n>Sakhalin</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>11</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Solomon</span> <span class=n>Is</span><span class=p>.,</span> <span class=n>New</span> <span class=n>Caledonia</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>11</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Solomon</span> <span class=n>Is</span><span class=p>.,</span> <span class=n>New</span> <span class=n>Caledonia</span>
 </span></span><span class=line><span class=cl><span class=n>Central</span> <span class=n>Pacific</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>12</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Anadyr</span><span class=p>,</span> <span class=nb>Petropavlovsk-Kamchatsky</span>
-</span></span><span class=line><span class=cl><span class=n>Russia</span> <span class=n>Time</span> <span class=n>Zone</span> <span class=n>11</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>12</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Anadyr</span><span class=p>,</span> <span class=nb>Petropavlovsk-Kamchatsky</span>
+</span></span><span class=line><span class=cl><span class=n>Russia</span> <span class=n>Time</span> <span class=n>Zone</span> <span class=mf>11</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>12</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Auckland</span><span class=p>,</span> <span class=n>Wellington</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>12</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Auckland</span><span class=p>,</span> <span class=n>Wellington</span>
 </span></span><span class=line><span class=cl><span class=n>New</span> <span class=n>Zealand</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>12</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Coordinated</span> <span class=n>Universal</span> <span class=n>Time</span><span class=p>+</span><span class=n>12</span>
-</span></span><span class=line><span class=cl><span class=n>UTC</span><span class=p>+</span><span class=n>12</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>12</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Coordinated</span> <span class=n>Universal</span> <span class=n>Time</span><span class=p>+</span><span class=mf>12</span>
+</span></span><span class=line><span class=cl><span class=n>UTC</span><span class=p>+</span><span class=mf>12</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>12</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Fiji</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>12</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Fiji</span>
 </span></span><span class=line><span class=cl><span class=n>Fiji</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>12</span><span class=err>:</span><span class=n>45</span><span class=p>)</span> <span class=n>Chatham</span> <span class=n>Islands</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>12</span><span class=err>:</span><span class=mf>45</span><span class=p>)</span> <span class=n>Chatham</span> <span class=n>Islands</span>
 </span></span><span class=line><span class=cl><span class=n>Chatham</span> <span class=n>Islands</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>13</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Coordinated</span> <span class=n>Universal</span> <span class=n>Time</span><span class=p>+</span><span class=n>13</span>
-</span></span><span class=line><span class=cl><span class=n>UTC</span><span class=p>+</span><span class=n>13</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>13</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Coordinated</span> <span class=n>Universal</span> <span class=n>Time</span><span class=p>+</span><span class=mf>13</span>
+</span></span><span class=line><span class=cl><span class=n>UTC</span><span class=p>+</span><span class=mf>13</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>13</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Nuku</span><span class=err>&#39;</span><span class=n>alofa</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>13</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Nuku</span><span class=err>&#39;</span><span class=n>alofa</span>
 </span></span><span class=line><span class=cl><span class=n>Tonga</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=n>13</span><span class=err>:</span><span class=n>00</span><span class=p>)</span> <span class=n>Samoa</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=n>UTC</span><span class=p>+</span><span class=mf>13</span><span class=err>:</span><span class=mf>00</span><span class=p>)</span> <span class=n>Samoa</span>
 </span></span><span class=line><span class=cl><span class=n>Samoa</span> <span class=n>Standard</span> <span class=n>Time</span>
 </span></span></code></pre></td></tr></table></div></div></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>Updated on Monday, Feb 22, 2021</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md></div><div class=post-info-share><span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://graef.io/get-and-set-timezones-via-powershell-remotely/ data-title="Get and Set Timezones via PowerShell remotely" data-via=segraef data-hashtags=timezone,PowerShell,posh,remote><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://graef.io/get-and-set-timezones-via-powershell-remotely/ data-hashtag=timezone><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://graef.io/get-and-set-timezones-via-powershell-remotely/><i class="fab fa-linkedin fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://graef.io/get-and-set-timezones-via-powershell-remotely/ data-title="Get and Set Timezones via PowerShell remotely" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=https://graef.io/get-and-set-timezones-via-powershell-remotely/><i class="fab fa-reddit fa-fw"></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/timezone/>timezone</a>,&nbsp;<a href=/tags/powershell/>PowerShell</a>,&nbsp;<a href=/tags/posh/>posh</a>,&nbsp;<a href=/tags/remote/>remote</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span></section></div><div class=post-nav><a href=/how-to-adjust-windows-failover-cluster-response-to-resource-failure-policy/ class=prev rel=prev title="How to adjust Windows Failover Cluster 'Response to Resource Failure' Policy"><i class="fas fa-angle-left fa-fw"></i>How to adjust Windows Failover Cluster 'Response to Resource Failure' Policy</a>
 <a href=/get-aad-tenant-id-and-subscription-id/ class=next rel=next title="Get Azure Active Directoy Tenant ID and Subscription ID">Get Azure Active Directoy Tenant ID and Subscription ID<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=utterances></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://utteranc.es/>Utterances</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021 - 2022</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=https://graef.io target=_blank>Sebastian Gräf</a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw"></i>

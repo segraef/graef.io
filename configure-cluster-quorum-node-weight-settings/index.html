@@ -20,9 +20,9 @@
 </span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-powershell data-lang=powershell><span class=line><span class=cl><span class=nb>Import-Module</span> <span class=n>FailoverClusters</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=nv>$node</span> <span class=p>=</span> <span class=s1>&#39;AlwaysOnNode1&#39;</span>
-</span></span><span class=line><span class=cl><span class=p>(</span><span class=nb>Get-ClusterNode</span> <span class=nv>$node</span><span class=p>).</span><span class=n>NodeWeight</span> <span class=p>=</span> <span class=n>0</span>
+</span></span><span class=line><span class=cl><span class=p>(</span><span class=nb>Get-ClusterNode</span> <span class=nv>$node</span><span class=p>).</span><span class=py>NodeWeight</span> <span class=p>=</span> <span class=mf>0</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl><span class=nv>$cluster</span> <span class=p>=</span> <span class=p>(</span><span class=nb>Get-ClusterNode</span> <span class=nv>$node</span><span class=p>).</span><span class=n>Cluster</span>
+</span></span><span class=line><span class=cl><span class=nv>$cluster</span> <span class=p>=</span> <span class=p>(</span><span class=nb>Get-ClusterNode</span> <span class=nv>$node</span><span class=p>).</span><span class=py>Cluster</span>
 </span></span><span class=line><span class=cl><span class=nv>$nodes</span> <span class=p>=</span> <span class=nb>Get-ClusterNode</span> <span class=n>-Cluster</span> <span class=nv>$cluster</span>
 </span></span><span class=line><span class=cl>
 </span></span><span class=line><span class=cl><span class=nv>$nodes</span> <span class=p>|</span> <span class=nb>Format-Table</span> <span class=n>-property</span> <span class=n>NodeName</span><span class=p>,</span> <span class=n>State</span><span class=p>,</span> <span class=n>NodeWeight</span>

@@ -46,41 +46,41 @@ I have put together a list of commands you can use to prepare your environment u
 </span><span class=lnt>33
 </span><span class=lnt>34
 </span><span class=lnt>35
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># Visual Studio Code
-</span></span><span class=line><span class=cl>winget install Microsoft.VisualStudioCode
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-pwsh data-lang=pwsh><span class=line><span class=cl><span class=c># Visual Studio Code</span>
+</span></span><span class=line><span class=cl><span class=n>winget</span> <span class=n>install</span> <span class=n>Microsoft</span><span class=p>.</span><span class=py>VisualStudioCode</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl># Azure Tools
-</span></span><span class=line><span class=cl>winget install Microsoft.AzureStorageExplorer
-</span></span><span class=line><span class=cl>winget install Microsoft.Bicep
-</span></span><span class=line><span class=cl>winget install Microsoft.AzureCLI
+</span></span><span class=line><span class=cl><span class=c># Azure Tools</span>
+</span></span><span class=line><span class=cl><span class=n>winget</span> <span class=n>install</span> <span class=n>Microsoft</span><span class=p>.</span><span class=py>AzureStorageExplorer</span>
+</span></span><span class=line><span class=cl><span class=n>winget</span> <span class=n>install</span> <span class=n>Microsoft</span><span class=p>.</span><span class=py>Bicep</span>
+</span></span><span class=line><span class=cl><span class=n>winget</span> <span class=n>install</span> <span class=n>Microsoft</span><span class=p>.</span><span class=py>AzureCLI</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl># PowerShell 7
-</span></span><span class=line><span class=cl>winget install Microsoft.PowerShell
+</span></span><span class=line><span class=cl><span class=c># PowerShell 7</span>
+</span></span><span class=line><span class=cl><span class=n>winget</span> <span class=n>install</span> <span class=n>Microsoft</span><span class=p>.</span><span class=py>PowerShell</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl># Windows Terminal (if on Windows 10)
-</span></span><span class=line><span class=cl>winget install Microsoft.WindowsTerminal
+</span></span><span class=line><span class=cl><span class=c># Windows Terminal (if on Windows 10)</span>
+</span></span><span class=line><span class=cl><span class=n>winget</span> <span class=n>install</span> <span class=n>Microsoft</span><span class=p>.</span><span class=py>WindowsTerminal</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl># Git and GitHub CLI
-</span></span><span class=line><span class=cl>winget install Git.Git
-</span></span><span class=line><span class=cl>winget install GitHub.cli
-</span></span><span class=line><span class=cl>git config --global user.name &#34;John Doe&#34;
-</span></span><span class=line><span class=cl>git config --global user.email johndoe@example.com
+</span></span><span class=line><span class=cl><span class=c># Git and GitHub CLI</span>
+</span></span><span class=line><span class=cl><span class=n>winget</span> <span class=n>install</span> <span class=n>Git</span><span class=p>.</span><span class=py>Git</span>
+</span></span><span class=line><span class=cl><span class=n>winget</span> <span class=n>install</span> <span class=n>GitHub</span><span class=p>.</span><span class=nb>cli
+</span></span></span><span class=line><span class=cl><span class=nb></span><span class=n>git</span> <span class=n>config</span> <span class=p>-</span><span class=n>-global</span> <span class=n>user</span><span class=p>.</span><span class=py>name</span> <span class=s2>&#34;John Doe&#34;</span>
+</span></span><span class=line><span class=cl><span class=n>git</span> <span class=n>config</span> <span class=p>-</span><span class=n>-global</span> <span class=n>user</span><span class=p>.</span><span class=py>email</span> <span class=n>johndoe</span><span class=nv>@example</span><span class=p>.</span><span class=py>com</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl># Azure PowerShell
-</span></span><span class=line><span class=cl>pwsh (Make sure to start your terminal session with PowerShell 7)
-</span></span><span class=line><span class=cl>Install-Module Az
+</span></span><span class=line><span class=cl><span class=c># Azure PowerShell</span>
+</span></span><span class=line><span class=cl><span class=n>pwsh</span> <span class=p>(</span><span class=n>Make</span> <span class=n>sure</span> <span class=n>to</span> <span class=nb>start </span><span class=n>your</span> <span class=n>terminal</span> <span class=n>session</span> <span class=n>with</span> <span class=n>PowerShell</span> <span class=mf>7</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=nb>Install-Module</span> <span class=n>Az</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl># Visual Code Extensions
+</span></span><span class=line><span class=cl><span class=c># Visual Code Extensions</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>code --install-extension eamodio.gitlens
-</span></span><span class=line><span class=cl>code --install-extension telesoho.vscode-markdown-paste-images
-</span></span><span class=line><span class=cl>code --install-extension ms-azuretools.vscode-bicep
-</span></span><span class=line><span class=cl>code --install-extension ms-azuretools.vscode-docker
-</span></span><span class=line><span class=cl>code --install-extension ms-vscode-remote.remote-containers
-</span></span><span class=line><span class=cl>code --install-extension ms-vscode-remote.remote-ssh
-</span></span><span class=line><span class=cl>code --install-extension ms-vscode-remote.remote-wsl
-</span></span><span class=line><span class=cl>code --install-extension ms-vscode.azurecli
-</span></span><span class=line><span class=cl>code --install-extension ms-vscode.powershell
+</span></span><span class=line><span class=cl><span class=n>code</span> <span class=p>-</span><span class=n>-install-extension</span> <span class=n>eamodio</span><span class=p>.</span><span class=py>gitlens</span>
+</span></span><span class=line><span class=cl><span class=n>code</span> <span class=p>-</span><span class=n>-install-extension</span> <span class=n>telesoho</span><span class=p>.</span><span class=nb>vscode-markdown</span><span class=n>-paste-images</span>
+</span></span><span class=line><span class=cl><span class=n>code</span> <span class=p>-</span><span class=n>-install-extension</span> <span class=nb>ms-azuretools</span><span class=p>.</span><span class=nb>vscode-bicep</span>
+</span></span><span class=line><span class=cl><span class=n>code</span> <span class=p>-</span><span class=n>-install-extension</span> <span class=nb>ms-azuretools</span><span class=p>.</span><span class=nb>vscode-docker</span>
+</span></span><span class=line><span class=cl><span class=n>code</span> <span class=p>-</span><span class=n>-install-extension</span> <span class=nb>ms-vscode</span><span class=n>-remote</span><span class=p>.</span><span class=nb>remote-containers</span>
+</span></span><span class=line><span class=cl><span class=n>code</span> <span class=p>-</span><span class=n>-install-extension</span> <span class=nb>ms-vscode</span><span class=n>-remote</span><span class=p>.</span><span class=nb>remote-ssh</span>
+</span></span><span class=line><span class=cl><span class=n>code</span> <span class=p>-</span><span class=n>-install-extension</span> <span class=nb>ms-vscode</span><span class=n>-remote</span><span class=p>.</span><span class=nb>remote-wsl</span>
+</span></span><span class=line><span class=cl><span class=n>code</span> <span class=p>-</span><span class=n>-install-extension</span> <span class=nb>ms-vscode</span><span class=p>.</span><span class=py>azurecli</span>
+</span></span><span class=line><span class=cl><span class=n>code</span> <span class=p>-</span><span class=n>-install-extension</span> <span class=nb>ms-vscode</span><span class=p>.</span><span class=py>powershell</span>
 </span></span></code></pre></td></tr></table></div></div><h1 id=other-commands>Other Commands</h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
 </span><span class=lnt> 2
 </span><span class=lnt> 3
@@ -109,34 +109,34 @@ I have put together a list of commands you can use to prepare your environment u
 </span><span class=lnt>26
 </span><span class=lnt>27
 </span><span class=lnt>28
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl># Chocolatey
-</span></span><span class=line><span class=cl>Invoke-Expression ((New-Object System.Net.WebClient).DownloadString(&#39;https://community.chocolatey.org/install.ps1&#39;))
+</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-pwsh data-lang=pwsh><span class=line><span class=cl><span class=c># Chocolatey</span>
+</span></span><span class=line><span class=cl><span class=nb>Invoke-Expression</span> <span class=p>((</span><span class=nb>New-Object</span> <span class=n>System</span><span class=p>.</span><span class=py>Net</span><span class=p>.</span><span class=n>WebClient</span><span class=p>).</span><span class=py>DownloadString</span><span class=p>(</span><span class=s1>&#39;https://community.chocolatey.org/install.ps1&#39;</span><span class=p>))</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl># Hugo
-</span></span><span class=line><span class=cl>choco install hugo -confirm
+</span></span><span class=line><span class=cl><span class=c># Hugo</span>
+</span></span><span class=line><span class=cl><span class=n>choco</span> <span class=n>install</span> <span class=n>hugo</span> <span class=n>-confirm</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl># AzCopy
-</span></span><span class=line><span class=cl>Invoke-WebRequest -Uri &#34;https://aka.ms/downloadazcopy-v10-windows&#34; -OutFile AzCopy.zip -UseBasicParsing
-</span></span><span class=line><span class=cl>Expand-Archive ./AzCopy.zip ./AzCopy -Force
-</span></span><span class=line><span class=cl>mkdir &#34;$home/AzCopy&#34;
-</span></span><span class=line><span class=cl>Get-ChildItem ./AzCopy/*/azcopy.exe | Move-Item -Destination &#34;$home\AzCopy\AzCopy.exe&#34;
-</span></span><span class=line><span class=cl>$userenv = [System.Environment]::GetEnvironmentVariable(&#34;Path&#34;, &#34;User&#34;)
-</span></span><span class=line><span class=cl>[System.Environment]::SetEnvironmentVariable(&#34;PATH&#34;, $userenv + &#34;;$home\AzCopy&#34;, &#34;User&#34;)
+</span></span><span class=line><span class=cl><span class=c># AzCopy</span>
+</span></span><span class=line><span class=cl><span class=nb>Invoke-WebRequest</span> <span class=n>-Uri</span> <span class=s2>&#34;https://aka.ms/downloadazcopy-v10-windows&#34;</span> <span class=n>-OutFile</span> <span class=n>AzCopy</span><span class=p>.</span><span class=py>zip</span> <span class=n>-UseBasicParsing</span>
+</span></span><span class=line><span class=cl><span class=nb>Expand-Archive</span> <span class=p>./</span><span class=n>AzCopy</span><span class=p>.</span><span class=py>zip</span> <span class=p>./</span><span class=n>AzCopy</span> <span class=n>-Force</span>
+</span></span><span class=line><span class=cl><span class=n>mkdir</span> <span class=s2>&#34;</span><span class=nv>$home</span><span class=s2>/AzCopy&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>Get-ChildItem</span> <span class=p>./</span><span class=n>AzCopy</span><span class=p>/*/</span><span class=n>azcopy</span><span class=p>.</span><span class=py>exe</span> <span class=p>|</span> <span class=nb>Move-Item</span> <span class=n>-Destination</span> <span class=s2>&#34;</span><span class=nv>$home</span><span class=s2>\AzCopy\AzCopy.exe&#34;</span>
+</span></span><span class=line><span class=cl><span class=nv>$userenv</span> <span class=p>=</span> <span class=p>[</span><span class=no>System.Environment</span><span class=p>]::</span><span class=n>GetEnvironmentVariable</span><span class=p>(</span><span class=s2>&#34;Path&#34;</span><span class=p>,</span> <span class=s2>&#34;User&#34;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl><span class=p>[</span><span class=no>System.Environment</span><span class=p>]::</span><span class=n>SetEnvironmentVariable</span><span class=p>(</span><span class=s2>&#34;PATH&#34;</span><span class=p>,</span> <span class=nv>$userenv</span> <span class=p>+</span> <span class=s2>&#34;;</span><span class=nv>$home</span><span class=s2>\AzCopy&#34;</span><span class=p>,</span> <span class=s2>&#34;User&#34;</span><span class=p>)</span>
 </span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl># Other Visual Code Extensions
-</span></span><span class=line><span class=cl>code --install-extension AzurePolicy.azurepolicyextension
-</span></span><span class=line><span class=cl>code --install-extension ms-azuretools.vscode-azureresourcegroups
-</span></span><span class=line><span class=cl>code --install-extension ms-azuretools.vscode-azurestorage
-</span></span><span class=line><span class=cl>code --install-extension ms-azuretools.vscode-azurevirtualmachines
-</span></span><span class=line><span class=cl>code --install-extension ms-dotnettools.vscode-dotnet-runtime
-</span></span><span class=line><span class=cl>code --install-extension ms-vscode-remote.remote-ssh-edit
-</span></span><span class=line><span class=cl>code --install-extension ms-vscode-remote.remote-ssh-explorer
-</span></span><span class=line><span class=cl>code --install-extension ms-vscode-remote.vscode-remote-extensionpack
-</span></span><span class=line><span class=cl>code --install-extension ms-vscode.azure-account
-</span></span><span class=line><span class=cl>code --install-extension ms-vscode.vscode-node-azure-pack
-</span></span><span class=line><span class=cl>code --install-extension ms-vsliveshare.vsliveshare
-</span></span><span class=line><span class=cl>code --install-extension ms-vsonline.vsonline
-</span></span><span class=line><span class=cl>code --install-extension msazurermtools.azurerm-vscode-tools
+</span></span><span class=line><span class=cl><span class=c># Other Visual Code Extensions</span>
+</span></span><span class=line><span class=cl><span class=n>code</span> <span class=p>-</span><span class=n>-install-extension</span> <span class=n>AzurePolicy</span><span class=p>.</span><span class=py>azurepolicyextension</span>
+</span></span><span class=line><span class=cl><span class=n>code</span> <span class=p>-</span><span class=n>-install-extension</span> <span class=nb>ms-azuretools</span><span class=p>.</span><span class=nb>vscode-azureresourcegroups</span>
+</span></span><span class=line><span class=cl><span class=n>code</span> <span class=p>-</span><span class=n>-install-extension</span> <span class=nb>ms-azuretools</span><span class=p>.</span><span class=nb>vscode-azurestorage</span>
+</span></span><span class=line><span class=cl><span class=n>code</span> <span class=p>-</span><span class=n>-install-extension</span> <span class=nb>ms-azuretools</span><span class=p>.</span><span class=nb>vscode-azurevirtualmachines</span>
+</span></span><span class=line><span class=cl><span class=n>code</span> <span class=p>-</span><span class=n>-install-extension</span> <span class=nb>ms-dotnettools</span><span class=p>.</span><span class=nb>vscode-dotnet</span><span class=n>-runtime</span>
+</span></span><span class=line><span class=cl><span class=n>code</span> <span class=p>-</span><span class=n>-install-extension</span> <span class=nb>ms-vscode</span><span class=n>-remote</span><span class=p>.</span><span class=nb>remote-ssh</span><span class=n>-edit</span>
+</span></span><span class=line><span class=cl><span class=n>code</span> <span class=p>-</span><span class=n>-install-extension</span> <span class=nb>ms-vscode</span><span class=n>-remote</span><span class=p>.</span><span class=nb>remote-ssh</span><span class=n>-explorer</span>
+</span></span><span class=line><span class=cl><span class=n>code</span> <span class=p>-</span><span class=n>-install-extension</span> <span class=nb>ms-vscode</span><span class=n>-remote</span><span class=p>.</span><span class=nb>vscode-remote</span><span class=n>-extensionpack</span>
+</span></span><span class=line><span class=cl><span class=n>code</span> <span class=p>-</span><span class=n>-install-extension</span> <span class=nb>ms-vscode</span><span class=p>.</span><span class=nb>azure-account</span>
+</span></span><span class=line><span class=cl><span class=n>code</span> <span class=p>-</span><span class=n>-install-extension</span> <span class=nb>ms-vscode</span><span class=p>.</span><span class=nb>vscode-node</span><span class=n>-azure-pack</span>
+</span></span><span class=line><span class=cl><span class=n>code</span> <span class=p>-</span><span class=n>-install-extension</span> <span class=nb>ms-vsliveshare</span><span class=p>.</span><span class=py>vsliveshare</span>
+</span></span><span class=line><span class=cl><span class=n>code</span> <span class=p>-</span><span class=n>-install-extension</span> <span class=nb>ms-vsonline</span><span class=p>.</span><span class=py>vsonline</span>
+</span></span><span class=line><span class=cl><span class=n>code</span> <span class=p>-</span><span class=n>-install-extension</span> <span class=n>msazurermtools</span><span class=p>.</span><span class=nb>azurerm-vscode</span><span class=n>-tools</span>
 </span></span></code></pre></td></tr></table></div></div><h1 id=macos>MacOS</h1><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
 </span><span class=lnt>2
 </span><span class=lnt>3
