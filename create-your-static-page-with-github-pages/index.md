@@ -3,6 +3,8 @@
 
 You can use GitHub Pages to host a website about yourself, your organization, or your project directly from a repository on GitHub.com. Hugo takes `Markdown`, runs them through a theme template, and spits out HTML files that you can easily deploy online – extremely fast.
 
+<!--more-->
+
 # Why GitHub Pages?
 
 GitHub Pages is a static site hosting service that takes HTML, CSS, and JavaScript files straight from a repository on GitHub, optionally runs the files through a build process, and publishes a website. You can see examples of GitHub Pages sites in the [GitHub Pages examples collection](https://github.com/collections/github-pages-examples).
@@ -69,6 +71,8 @@ Once you've choosen a theme and cloned (or submoduled) it into your `/themes/` d
 
 Hugo will then build your site’s pages and make them available at [`http://localhost:1313/`](http://localhost:1313/).
 
+![](hugo-server.png)
+
 # How to add Posts to your Hugo Site
 
 `hugo new posts/2021/2022-11-12-sample-post.md`
@@ -99,8 +103,8 @@ Details see my blog post [Continously Deploy Your Github Pages Site With Github 
 - [Creating a GitHub Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)
 - [Gatsby vs. Jekyll vs. Hugo](https://www.gatsbyjs.com/features/jamstack/gatsby-vs-jekyll-vs-hugo)
 - [Hugo Templates](https://gohugo.io/templates/)
-- [here](https://github.com/dillonzq/LoveIt)
-- [Coder](https://github.com/luizdepra/hugo-coder)
+- [LoveIt Theme](https://github.com/dillonzq/LoveIt)
+- [Coder Theme](https://github.com/luizdepra/hugo-coder)
 - [Creating a GitHub Pages Site](index.en.mdhttps://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site)
 
 {{< /admonition >}}
