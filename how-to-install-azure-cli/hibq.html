@@ -79,10 +79,10 @@
         fetch('https://api.pwnedpasswords.com/range/' + password.substring(0, 5), {
           "method": "GET",
           "headers": {
-            <!-- "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Headers": "mode",
             "Access-Control-Allow-Methods": "*",
-            "mode": "no-cors", -->
+            "mode": "no-cors",
             "hibp-api-key": key
           }
         })
