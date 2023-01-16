@@ -57,15 +57,16 @@
     resultKey: <p id="resultKey"></p>
     <p>Enter a password to check if it has been compromised in a data breach:</p>
     <form>
-      <input type="password" id="password">
+      <input type="password" id="password" value="12345">
       <button type="button" onclick="checkPassword()">Check Password</button>
     </form>
     resultPassword: <p id="resultPassword"></p>
     <form>
-      <input type="text" id="account">
+      <input type="text" id="account" value="me@seb2k.de">
       <button type="button" onclick="checkAccount()">Check Account</button>
     </form>
     resultAccount: <p id="resultAccount"></p>
+    Log: <p id="log"></p>
     <script>
       function checkPassword() {
         // Get the API key
@@ -76,12 +77,12 @@
 
         // Use the Have I Been Pwned API to check if the password has been compromised
         fetch('https://api.pwnedpasswords.com/range/' + password.substring(0, 5), {
-          // "method": "GET",
+          "method": "GET",
           "headers": {
-            "Access-Control-Allow-Origin": "*",
+            <!-- "Access-Control-Allow-Origin": "*",
             "Access-Control-Allow-Headers": "mode",
             "Access-Control-Allow-Methods": "*",
-            "mode": "no-cors",
+            "mode": "no-cors", -->
             "hibp-api-key": key
           }
         })
@@ -113,9 +114,9 @@
         fetch("https://haveibeenpwned.com/api/v3/breachedaccount/" + account + "?truncateResponse=false", {
           "method": "GET",
           "headers": {
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Headers": "mode",
-            "Access-Control-Allow-Methods": "*",
+            // "Access-Control-Allow-Origin": "*",
+            // "Access-Control-Allow-Headers": "mode",
+            // "Access-Control-Allow-Methods": "*",
             "mode": "no-cors",
             "hibp-api-key": key
           }
@@ -125,6 +126,7 @@
         })
         .catch(err => {
           console.error(err);
+          document.getElementById('log').innerHTML = console.log(response);
         });
       }
     </script>
