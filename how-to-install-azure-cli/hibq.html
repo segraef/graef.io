@@ -90,9 +90,9 @@
           "method": "GET",
           "headers": {
             "Access-Control-Allow-Origin": "https://www.graef.io",
-            "Access-Control-Allow-Headers": "*",
-            "Access-Control-Allow-Methods": "*",
-            "mode": "no-cors",
+            // "Access-Control-Allow-Headers": "*",
+            // "Access-Control-Allow-Methods": "*",
+            // "mode": "no-cors",
             "hibp-api-key": key
           }
         })
@@ -129,9 +129,8 @@
           "method": "GET",
           "headers": {
             "Access-Control-Allow-Origin": "https://www.graef.io",
-            "Access-Control-Allow-Headers": "*",
-            "Access-Control-Allow-Methods": "*",
-            "Access-Control-Allow-Credentials": true,
+            // "Access-Control-Allow-Headers": "*",
+            // "Access-Control-Allow-Methods": "*",
             // "mode": "no-cors",
             "hibp-api-key": key
           }
@@ -153,6 +152,7 @@
         var xhr = new XMLHttpRequest();
         xhr.open("GET", "https://haveibeenpwned.com/api/v3/breachedaccount/" + email + "?truncateResponse=false");
         xhr.setRequestHeader("hibp-api-key", key);
+        xhr.setRequestHeader("Access-Control-Allow-Origin", "https://www.graef.io");
         xhr.onload = function() {
           var resultElement = document.getElementById("result");
           if (xhr.status === 200) {
