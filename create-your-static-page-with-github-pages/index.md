@@ -1,4 +1,4 @@
-# Create Your Static Page With Github Pages and Hugo
+# Create a Static Web Page With Github Pages and Hugo
 
 
 You can use GitHub Pages to host a website about yourself, your organization, or your project directly from a repository on GitHub.com. Hugo takes `Markdown`, runs them through a theme template, and spits out HTML files that you can easily deploy online – extremely fast.
