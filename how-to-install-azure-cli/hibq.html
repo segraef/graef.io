@@ -89,7 +89,7 @@
         fetch('https://api.pwnedpasswords.com/range/' + password.substring(0, 5), {
           "method": "GET",
           "headers": {
-            "Access-Control-Allow-Origin": "https://www.graef.io",
+            "Access-Control-Allow-Origin": "https://www.graef.io/",
             "Access-Control-Allow-Headers": "*",
             "Access-Control-Allow-Methods": "*",
             // "mode": "no-cors",
@@ -128,7 +128,7 @@
         fetch("https://haveibeenpwned.com/api/v3/breachedaccount/" + account + "?truncateResponse=false", {
           "method": "GET",
           "headers": {
-            "Access-Control-Allow-Origin": "https://www.graef.io",
+            "Access-Control-Allow-Origin": "https://www.graef.io/",
             "Access-Control-Allow-Headers": "*",
             "Access-Control-Allow-Methods": "*",
             // "mode": "no-cors",
@@ -152,7 +152,7 @@
         var xhr = new XMLHttpRequest();
         xhr.open("GET", "https://haveibeenpwned.com/api/v3/breachedaccount/" + email + "?truncateResponse=false");
         xhr.setRequestHeader("hibp-api-key", key);
-        xhr.setRequestHeader("Access-Control-Allow-Origin", "https://www.graef.io");
+        xhr.setRequestHeader("Access-Control-Allow-Origin", "https://www.graef.io/");
         xhr.onload = function() {
           var resultElement = document.getElementById("result");
           if (xhr.status === 200) {
