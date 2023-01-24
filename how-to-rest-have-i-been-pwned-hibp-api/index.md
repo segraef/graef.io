@@ -25,7 +25,7 @@ GET {{api}}/breachedaccount/{{account}}
 # API Key
 hibp-api-key: {{key}}
 ```
-
+## Output
 The output looks like this:
 
 ![](20230123163136.png)
@@ -40,5 +40,7 @@ GET {{api}}/breachedaccount/{{account}}?truncateResponse=false
 
 {{< admonition info References >}}
 - [Have I been Pwned?](https://haveibeenpwned.com/)
+- [Understanding and Improving Your Cybersecurity Posture in 2023: The Importance of strong Passwords, 2FA and Awareness of Phishing Scams](https://www.graef.io/understanding-and-improving-your-cybersecurity-posture-the-importance-of-strong-passwords-2fa-and-awareness-of-phishing-scams/)
+- [How to Create Your Own Have I Been Pwned (HIBP) API Request With Python](https://www.graef.io/how-to-create-your-own-have-i-been-pwned-api-request-with-python/)
 {{< /admonition >}}
 

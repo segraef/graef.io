@@ -96,6 +96,8 @@ The output of the script looks like this:
 ![](20230124142340.png)
 
 {{< admonition info References >}}
-- [Have I been Pwned?](https://haveibeenpwned.com/)
+- [Have I been Pwned (HIBP)](https://haveibeenpwned.com/)
+- [Understanding and Improving Your Cybersecurity Posture in 2023: The Importance of strong Passwords, 2FA and Awareness of Phishing Scams](https://www.graef.io/understanding-and-improving-your-cybersecurity-posture-the-importance-of-strong-passwords-2fa-and-awareness-of-phishing-scams/)
+- [How to REST the Have I Been Pwned (HIBP) API](https://www.graef.io/how-to-rest-have-i-been-pwned-hibp-api/)
 {{< /admonition >}}
 
