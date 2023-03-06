@@ -1,4 +1,4 @@
-# From Code to Canvas: A Guide for Prompting Stunning AI Art with MidJourney (1/2)
+# From Code to Canvas: A Guide for Prompting Stunning AI Art with MidJourney (1/3)
 
 
 Unlock your artistic potential and create jaw-dropping AI art with these exclusive cheat codes for Midjourney. These expert hacks will take your art to new heights, no coding skills required!
@@ -105,94 +105,6 @@ Let's say you want to have your character/style look like something you have in 
 
 ### Double Exposure
 {{< image src="20230303131245.png" caption="Prompt: `beautiful woman, vibrant colours and firework, double exposure`" >}}
-
-### 32 Bit Isometric
-{{< image src="20230303131724.png" caption="Prompt: `new york city, 32 bit isometric`" >}}
-
-### Old Photograph
-{{< image src="20230303131815.png" caption="Prompt: `New York City:: old photograph::1`" >}}
-
-### Neon
-{{< image src="20230303132040.png" caption="Prompt: `New York City:: neon::1`" >}}
-
-### Oil Painting
-{{< image src="20230303132257.png" caption="Prompt: `New York City:: oil painting::1`" >}}
-
-### Cyberpunk
-{{< image src="20230303132454.png" caption="Prompt: `New York City:: cyberpunk::1`" >}}
-
-### Retrowave
-{{< image src="20230304170300.png" caption="Prompt: `Portrait of Albert Einstein:: retrowave::1`" >}}
-
-### Retro
-{{< image src="20230304170204.png" caption="Prompt: `Portrait of Albert Einstein:: retro::1`" >}}
-{{< image src="20230305153233.png" caption="Prompt: `Retro neon city background, Neon style 80s`" >}}
-
-### Blueprint Drawing
-{{< image src="20230304170359.png" caption="Prompt: `Porsche:: blueprint drawing::1`" >}}
-{{< image src="20230305153805.png" caption="Prompt: `Bugatti Veyron:: blueprint drawing::1`" >}}
-
-### Pixelart
-{{< image src="20230304170828.png" caption="Prompt: `Elvis Presley:: pixelart::1`" >}}
-{{< image src="20230305153422.png" caption="Prompt: `Elvis Presley:: pixelart::1`" >}}
-
-### Synthwave
-{{< image src="20230305162448.png" caption="Prompt: `Ominous Synthwave Backdrop --ar 3:2`" >}}
-
-### Retro-Futurism
-{{< image src="20230305145353.png" caption="Prompt: `a car driving down the road with palm trees in the background, cyberpunk art, inspired by Mike Winkelmann, lamborghini countach, colorful retrofutur, 80s photo, retro-futuristic, retro-futurism, nice sunset, lamborghini, synthwave`" >}}
-
-### LSD
-{{< image src="20230305162045.png" caption="Prompt: `psychedelic trip:: LSD::1`" >}}
-
-### Ukiyo-e Art
-{{< image src="20230306153549.png" caption="Prompt: `mount fuji, ukiyo-e art`" >}}
-
-### Duotone
-{{< image src="20230306153549.png" caption="Prompt: `duotone portrait of stephen hawking, pinkg and green`" >}}
-
-### Diagramatic Drwaing
-{{< image src="20230306154028.png" caption="Prompt: `Gameboy, diagramatic drawing`" >}}
-
-### Phantasmal Iridescent
-{{< image src="20230306162114.png" caption="Prompt: `Phantasmal Iridescent`" >}}
-
-### Luminescent
-{{< image src="20230306161912.png" caption="Prompt: `luminescent black water`" >}}
-
-### Fluorescence
-{{< image src="20230306162042.png" caption="Prompt: `fluorescent black water`" >}}
-{{< image src="20230306162149.png" caption="Prompt: `fluorescent black water`" >}}
-
-### Carnival Glass
-
-### Artists
-
-> ***Note:*** Aspect ratio was set to 3:2 (Landscape).
->
-{{< image src="xxx.png" caption="Prompt: `City Skyline by Doug Chiang`" >}}
-{{< image src="xxx.png" caption="Prompt: `Sky City by Robert McCall`" >}}
-{{< image src="xxx.png" caption="Prompt: `Illustration by Ian McQue`" >}}
-{{< image src="xxx.png" caption="Prompt: `Landscape by Leonid Afremov`" >}}
-{{< image src="xxx.png" caption="Prompt: `Futuristic city by Martin Deschambault`" >}}
-{{< image src="xxx.png" caption="Prompt: `City Skyline by Kilian Eng`" >}}
-{{< image src="20230306163617.png" caption="Prompt: `City by David A. Hardy`" >}}
-{{< image src="xxx.png" caption="Prompt: `Streets of los angeles by Jeremy Mann`" >}}
-
-### Generate new images based on your own images
-`/imagine https://link-to-your-image.jpg <your prompt>`
-
-| Base Image | Generated Image |
-|---|---|
-| ![](20230306165037.png)      | ![](20230306165221.png)    |
-| Credits: [Suren Manvelyan](https://www.behance.net/paronsuren) | Prompt: `http://graef.io/from-code-to-canvas-a-guide-for-prompting-stunning-ai-art-with-midjourney/20230306165037.png:: Celestial mist superimposed over human eye::5 close up view of eye only ::5` |
-
-## Midjourney Prompt Helper
-
-{{< admonition info Note >}}
-Check out the next part
-- [From Code to Canvas: A Guide for Prompting Stunning AI Art with MidJourney (2/2))](../from-code-to-canvas-a-guide-for-prompting-stunning-ai-art-with-midjourney-2/)
-{{< /admonition >}}
 
 {{< admonition info References >}}
 - [Midjourney Parameters List](https://docs.midjourney.com/docs/parameter-list)
