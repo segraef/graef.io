@@ -106,6 +106,11 @@ Let's say you want to have your character/style look like something you have in 
 ### Double Exposure
 {{< image src="20230303131245.png" caption="Prompt: `beautiful woman, vibrant colours and firework, double exposure`" >}}
 
+{{< admonition info Note >}}
+Check out the next part
+- [From Code to Canvas: A Guide for Prompting Stunning AI Art with MidJourney (2/3)](../from-code-to-canvas-a-guide-for-prompting-stunning-ai-art-with-midjourney-2/)
+{{< /admonition >}}
+
 {{< admonition info References >}}
 - [Midjourney Parameters List](https://docs.midjourney.com/docs/parameter-list)
 - [MidJourney Prompt Helper](https://prompt.noonshot.com/)
