@@ -154,7 +154,7 @@ Want to know what a prompt sits behind a generated image? The [CLIP Interrogator
 
 {{< admonition info Note >}}
 Check out the next part
-- [From Code to Canvas: A Guide for Prompting Stunning AI Art with MidJourney (3/3)](../from-code-to-canvas-a-guide-for-prompting-stunning-ai-art-with-midjourney-3/)
+- [From Code to Canvas: A Guide for Prompting Stunning AI Art with MidJourney (3/3)](../from-code-to-canvas-a-guide-for-prompting-stunning-ai-art-with-midjourney-3/) - ***coming soon***
 {{< /admonition >}}
 
 {{< admonition info References >}}
