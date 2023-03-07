@@ -9,8 +9,6 @@ Unlock your artistic potential and create jaw-dropping AI art with these exclusi
 
 Artificial intelligence (AI) is revolutionizing many industries, including the world of art. I have seen firsthand the incredible potential of artificial intelligence to create stunning and original pieces of art. From computer-generated paintings to AI-generated music, the possibilities are endless. That's why I want to motivate you to explore the world of AI art and create something truly jaw-dropping.
 
-{{< image src="20230302150553.png" caption="Prompt: Close up of a person's eye, shutterstock, beautiful art, uhd, 4k, high contrast colours, beautiful image ever created, focus on iris, artistic illustration" >}}
-
 In this blog post, I'll provide you with sweet and exclusive prompts to get started with creating jaw-dropping AI art. Let's dive in and see how you can use your skills and knowledge to create something truly amazing!
 
 ## Prerequisites
@@ -96,6 +94,10 @@ it adds the suffix `--ar 2:3 --q 2`.
 Okay, enough basics, let's get to the gist and give you some good examples!
 
 > ***Note:*** In some prompts I used multi-prompts as well as weighting to achieve better results.
+
+### Featured Image
+
+{{< image src="20230302150553.png" caption="Prompt: `Close up of a person's eye, shutterstock, beautiful art, uhd, 4k, high contrast colours, beautiful image ever created, focus on iris, artistic illustration`" >}}
 
 ### "as *this* or *that*"
 Let's say you want to have your character/style look like something you have in mind (Disney, Pixar, Superman, ...), just use "`... as Superman`" or "`... as Disney`", or even both.
