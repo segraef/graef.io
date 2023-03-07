@@ -7,7 +7,7 @@ Unlock your artistic potential and create jaw-dropping AI art with these exclusi
 
 ## Introduction
 
-Artificial intelligence (AI) is revolutionizing many industries, including the world of art. I have seen firsthand the incredible potential of artificial intelligence to create stunning and original pieces of art. From computer-generated paintings to AI-generated music, the possibilities are endless. That's why I want to prompt you to explore the world of AI art and create something truly jaw-dropping.
+Artificial intelligence (AI) is revolutionizing many industries, including the world of art. I have seen firsthand the incredible potential of artificial intelligence to create stunning and original pieces of art. From computer-generated paintings to AI-generated music, the possibilities are endless. That's why I want to motivate you to explore the world of AI art and create something truly jaw-dropping.
 
 {{< image src="20230302150553.png" caption="Prompt: Close up of a person's eye, shutterstock, beautiful art, uhd, 4k, high contrast colours, beautiful image ever created, focus on iris, artistic illustration" >}}
 
@@ -15,9 +15,9 @@ In this blog post, I'll provide you with sweet and exclusive prompts to get star
 
 ## Prerequisites
 
-You should already have an account with [www.midjourney.com](https://midjourney.com) and be familiar with how to use `/imagine` prompts.
+You need Discord, should already have an account with [www.midjourney.com](https://midjourney.com) and be familiar with how to use `/imagine` prompts.
 
-## Prompt Commands
+## Basic Prompt Commands
 
 Let's just get straight to the point, we all know the **Basic ommands**:
 
@@ -62,13 +62,19 @@ Since you know me and everything I do is about to ***Automate everything*** you 
 
 - `/prefer` command saves you having to type the options every time that you use the `/imagine` command
 
-I'm usually working with the prefix `/prefer suffix --ar 2:3 --q 2` which always sets my aspect ratio to portrait and uses best quality.
+I'm usually working with the suffix `/prefer suffix --ar 2:3 --q 2` which always sets my aspect ratio to portrait (`--ar 2:3`) and uses best quality (`--q 2`).
 
 {{< image src="20230302143126.png" caption="">}}
-{{< image src="20230302151901.png" caption="">}}
+
+So next time I send a prompt like this
+{{< image src="20230307161643.png" caption="`kintsugi glacial ice::2 oil painting, palette knife texture, thick paint, wide brushstrokes, vibrant vivid colors::2 by Iris Scott, Leonid Afremov and Vincent Van Gogh::1`">}}
+
+it adds the suffix `--ar 2:3 --q 2`.
+
+{{< image src="20230307161842.png" caption="">}}
 
 ## Aspect Ratios
-### 1:1 (Square)
+### 1:1 (Square, default aspect ratio)
 {{< image src="20230302160842.png" caption="Prompt: `An atomic color explosion --ar 1:1`" >}}
 
 ### 2:3 (Portrait)
@@ -84,7 +90,7 @@ I'm usually working with the prefix `/prefer suffix --ar 2:3 --q 2` which always
 {{< image src="20230302154728.png" caption="Prompt: `color chaos --ar 1:2`" >}}
 
 ### 2:1
-{{< image src="20230302153321.png" caption="Prompt: `A Beautiful, Weird and Abstract Painting of a Dark and Colourful Landscape by Thomas Kinkade, Greg Rutkowski, Dan Mumford, Dan Witz, Daarken, James Gurney --ar 2:1`" >}}
+{{< image src="20230302153321.png" caption="Prompt: `Beautiful, weird and abstract painting of a dark and colourful landscape by Thomas Kinkade, Greg Rutkowski, Dan Mumford, Dan Witz, Daarken and James Gurney --ar 2:1`" >}}
 
 ## Cheat Codes
 Okay, enough basics, let's get to the gist and give you some good examples!
@@ -106,6 +112,14 @@ Let's say you want to have your character/style look like something you have in 
 ### Double Exposure
 {{< image src="20230303131245.png" caption="Prompt: `beautiful woman, vibrant colours and firework, double exposure`" >}}
 
+### Generate new images based on your own images
+`/imagine https://link-to-your-image.jpg <your prompt>`
+
+| Base Image | Generated Image |
+|---|---|
+| ![](20230306165037.png)      | ![](20230306165221.png)    |
+| Credits: [Suren Manvelyan](https://www.behance.net/paronsuren) | Prompt: `http://graef.io/from-code-to-canvas-a-guide-for-prompting-stunning-ai-art-with-midjourney/20230306165037.png:: Celestial mist superimposed over human eye::5 close up view of eye only ::5` |
+
 {{< admonition info Note >}}
 Check out the next part
 - [From Code to Canvas: A Guide for Prompting Stunning AI Art with MidJourney (2/3)](../from-code-to-canvas-a-guide-for-prompting-stunning-ai-art-with-midjourney-2/)
@@ -113,7 +127,6 @@ Check out the next part
 
 {{< admonition info References >}}
 - [Midjourney Parameters List](https://docs.midjourney.com/docs/parameter-list)
-- [MidJourney Prompt Helper](https://prompt.noonshot.com/)
 - [Multi Prompts](https://docs.midjourney.com/docs/multi-prompts)
 {{< /admonition >}}
 
