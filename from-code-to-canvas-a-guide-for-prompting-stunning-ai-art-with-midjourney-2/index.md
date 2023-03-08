@@ -61,7 +61,7 @@ Here are more good example prompts!
 {{< image src="20230306153549.png" caption="Prompt: `mount fuji, ukiyo-e art`" >}}
 
 ### Duotone
-{{< image src="20230306153549.png" caption="Prompt: `duotone portrait of stephen hawking, pinkg and green`" >}}
+{{< image src="20230306153639.png" caption="Prompt: `duotone portrait of stephen hawking, pinkg and green`" >}}
 
 ### Diagramatic Drwaing
 {{< image src="20230306154028.png" caption="Prompt: `Gameboy, diagramatic drawing`" >}}
