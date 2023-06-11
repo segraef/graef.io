@@ -1,19 +1,23 @@
 # Build your own GPT-Powered AI Voice Assistant with Azure OpenAI and Cognitive Services
 
 
-Let's build your own AI voice assistant which is better than Amazon's **Alexa** using Azure Cognitive Services (SST and TTS) and OpenAI.
+Let's build your own AI voice assistant which is better than Amazon's **Alexa** using Azure Cognitive Services (SST and TTS) and OpenAI. All you need is a bit of basic Python understanding, an Azure account, a microphone and a speaker. This will take about 15 minutes to set up and you'll be done.
 
 <!--more-->
-> A working version, written under 60 lines of code can be found [here](https://github.com/segraef/PAi/blob/main/start.py).
+> For those who don't have patience and want to get it done immediately: A working version, written in under 80 lines of code can be found [here](https://github.com/segraef/PAi/blob/main/start.py).
 
-By combining the speech recognition and synthesis capabilities of Azure with the power of OpenAI's GPT model, we can create an intelligent and conversational voice assistant. This tutorial will provide step-by-step instructions and code examples to help you get started.
+By combining the speech recognition and synthesis capabilities of Azure with the power of OpenAI's GPT model, we can create an intelligent and conversational voice assistant. Let me provide you step-by-step instructions and code examples to help you get started.
 
 ## Prerequisites
 Before getting started make sure you have the following prerequisites installed on your system:
 
-- Python 3.10.8
+- [Create a Speech resource ](https://portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices) in Azure
+- An Azure OpenAI Service resource with a model deployed. For more information about model deployment, see the [resource deployment guide](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/how-to/create-resource).
+- Python (at least 3.7.1)
 - Azure Cognitive Services Speech SDK
-- Microphone (input) and speaker (output)
+- Python libraries: openai, os, requests, json
+
+> Currently, access to **Azure OpenAI** is granted only by application. You can apply for access to Azure OpenAI by completing the form at https://aka.ms/oai/access.
 
 ```shell
 # Azure Cognitive Services Speech SDK
@@ -25,15 +29,17 @@ pip install openai
 
 ## Workflow
 
-Let me give you the bigger picture upfront for a better understanding:
+Let me give you the bigger picture upfront for a better understanding what we're going to do:
 
 {{< mermaid >}}
-stateDiagram
-    [*] --> SpeechToText
-    SpeechToText --> AzureOpenAI
-    AzureOpenAI --> TextToSpeech
-    TextToSpeech --> [*]
+graph TB
+    SpeechToText("Azure Cognitive Services (STT)") --> AzureOpenAI("Azure OpenAI")
+    AzureOpenAI --> TextToSpeech("Azure Cognitive Services (TTS)")
 {{< /mermaid >}}
+
+1. The Speech-to-Text (STT) `SpeechRecognizer` component from Cognitive Services recognizes your speech and language and converts it into text.
+2. The OpenAI component sits in between which acts as the AI voice assistant component, it takes the input from the `SpeechRecognizer` and generates an intelligent response using a GPT-model.
+3. The repsonse will be synthesized accordingly into Text-To-Speech (TTS) by the `SpeechSynthesizer`.
 
 ## Setting up Azure Cognitive Services
 First, obtain your Azure Cognitive Services subscription key and region.
@@ -126,6 +132,9 @@ We covered the process of building a GPT-powered AI voice assistant using Azure 
 
 
 {{< admonition info References >}}
+- [Create a Speech resource ](https://portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices)
+- [OpenAI resource deployment guide](https://learn.microsoft.com/en-us/azure/cognitive-services/openai/how-to/create-resource).
+- [OpenAI Access Request](https://aka.ms/oai/access)
 - [github.com/PAi](https://github.com/segraef/PAi)
 {{< /admonition >}}
 
