@@ -51,10 +51,6 @@ If you prefer to use Azure Pipelines, you can follow the following steps to crea
 {{< image src="generate-image+vmss-pipeline2.png" caption="Generate image and create the VMSS." >}}
 {{< image src="image-created.png" caption="Generated VM image, ready to use.">}}
 
-### Reference Pipeline
-
-You can have a look at this reference pipeline: [![Azure Pipelines Agent Image Pipeline](https://dev.azure.com/segraef/apai/_apis/build/status%2Fapai?branchName=main)](https://dev.azure.com/segraef/apai/_build/latest?definitionId=42)
-
 ## Create VM Image (GitHub Workflow)
 
 If you prefer to use GitHub Workflows, you can follow the following steps to create your image. For authentication to Azure, a service principal is used and stored as a GitHub Actions repository secret.
