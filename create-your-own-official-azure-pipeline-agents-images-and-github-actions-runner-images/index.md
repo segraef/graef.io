@@ -104,7 +104,7 @@ If you let your VMSS created by the pipeline/workflow, you can use it to create 
 
 {{< admonition info References >}}
 
-- [self-hosted scale-set agents](https://learn.microsoft.com/en-us/azure/devops/pipelines/agents/scale-set-agents?view=azure-devops)
+- [Self-hosted scale-set agents](https://learn.microsoft.com/en-us/azure/devops/pipelines/agents/scale-set-agents?view=azure-devops)
 - [segraef/apai](https://github.com/segraef/apai)
 - [Create a service principal](https://learn.microsoft.com/en-us/azure/developer/github/connect-from-azure?tabs=azure-cli%2Clinux#use-the-azure-login-action-with-a-service-principal-secret)
 - [GitHub-hosted runners](https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners)
