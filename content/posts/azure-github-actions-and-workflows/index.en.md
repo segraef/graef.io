@@ -2,7 +2,7 @@
 title: "Azure Github Actions and Workflows"
 description: ""
 date: 2020-09-03T17:52:07+08:00
-lastmod: 2020-09-03T17:52:07+08:00
+lastmod: 2020-10-03T17:52:07+08:00
 draft: false
 resources:
 - name: "featured-image"
