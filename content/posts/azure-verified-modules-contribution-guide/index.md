@@ -29,7 +29,6 @@ Introduction
    2. Bicep
       1. `@Azure/avm-res-<RP>-<modulename>-module-owners-bicep` with parent team `@Azure/avm-technical-reviewers-bicep`.
       2. `@Azure/avm-res-<RP>-<modulename>-module-contributors-bicep` and parent team `@Azure/avm-module-contributors-bicep`.
-   3.
 4. Create module repostory with [terraform-azuremrm-avm-template](https://github.com/Azure/terraform-azurerm-avm-template) in Azure organization with the following [details](https://dev.azure.com/CSUSolEng/Azure%20Verified%20Modules/_wiki/wikis/AVM%20Internal%20Wiki/333/-TF-Create-repository-in-Github-Azure-org-and-conduct-business-review).
 5. Add the teams with following permissions to the repo:
    1. Admin: `@Azure/avm-core-team`
