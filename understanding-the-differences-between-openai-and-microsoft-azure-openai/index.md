@@ -77,7 +77,7 @@ The Azure OpenAI Service is fully controlled by Microsoft; Microsoft hosts the O
 
 `*` Azure OpenAI does not utilize customer data for enhancement purposes. For more information, see the [Azure OpenAI data, privacy, and security guide](https://learn.microsoft.com/en-us/legal/cognitive-services/openai/data-privacy?context=%2Fazure%2Fai-services%2Fopenai%2Fcontext%2Fcontext).
 
-`**` Various compliance standards/certifications applicable to Azure OpenAI include CSA STAR Attestation, ISO 22301:2019, SOC1,2,3, and Germany C5. For a comprehensive list of [Azure Compliance Offerings](https://azure.microsoft.com/mediahandler/files/resourcefiles/microsoft-azure-compliance-offerings/Microsoft%20Azure%20Compliance%20Offerings%20-%20Jan%202023.pdf). The OpenAI API complies with SOC 2 Type 2 standards and has undergone an audit by an independent third-party auditor based on the 2017 Trust Services Criteria for Security. For more information on [API data usage policies (openai.com)](https://openai.com/policies/api-data-usage-policies).
+`**` Various compliance standards/certifications applicable to Azure OpenAI include CSA STAR Attestation, ISO 22301:2019, SOC1,2,3, and Germany C5. For a comprehensive list of [Azure Compliance Offerings (https://aka.ms/AzureCompliance)](https://aka.ms/AzureCompliance). The OpenAI API complies with SOC 2 Type 2 standards and has undergone an audit by an independent third-party auditor based on the 2017 Trust Services Criteria for Security. For more information on [API data usage policies (openai.com)](https://openai.com/policies/api-data-usage-policies).
 
 ## Integration and Benefits
 
