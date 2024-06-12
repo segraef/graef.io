@@ -1,5 +1,5 @@
 ---
-title: "Understanding the Differences Between OpenAI and Microsoft Azure OpenAI"
+title: "Understanding the differences between OpenAI and Microsoft Azure OpenAI"
 description: ""
 date: 2024-06-12T08:13:11+10:00
 lastmod: 2024-06-12T08:13:11+10:00
@@ -11,11 +11,9 @@ tags: ["openai", "azure", "aoai", "oai"]
 categories: ["Other"]
 ---
 
-# Understanding the Differences Between OpenAI and Microsoft Azure OpenAI
-
-## Overview
-
 When comparing OpenAI and Microsoft Azure OpenAI, it’s important to recognize their unique strengths and collaborative potential. Both entities leverage cutting-edge AI technology, yet they serve different audiences and purposes, offering distinct features and benefits.
+
+<!--more-->
 
 ## OpenAI
 
