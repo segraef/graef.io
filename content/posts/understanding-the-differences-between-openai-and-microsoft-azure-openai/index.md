@@ -3,7 +3,7 @@ title: "Understanding the Differences Between OpenAI and Microsoft Azure OpenAI"
 description: ""
 date: 2024-06-12T08:13:11+10:00
 lastmod: 2024-06-12T08:13:11+10:00
-draft: true
+draft: false
 resources:
 - name: "featured-image"
   src: "20240612115157.png"
