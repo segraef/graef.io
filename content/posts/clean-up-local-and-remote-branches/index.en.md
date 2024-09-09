@@ -37,7 +37,7 @@ git branch -vv | Select-String -Pattern ": gone]" | % { $_.toString().Trim().Spl
 ## One-liner (bash)
 
 ```bash
-git checkout main; git pull; git remote update origin --prune; git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
+git checkout main && git pull && git remote update origin --prune && git branch -vv | grep ": gone]" | awk "{print \$1}" | xargs git branch -D
 ```
 
 That's how it looks like:
@@ -74,8 +74,6 @@ foreach ($repo in $repos) {
 }
 
 ```
-
-Added
 
 {{< admonition info References >}}
 
