@@ -104,7 +104,7 @@ These books cover topics from team dynamics and SRE practices to delivering soft
 
 ## Learning Platforms
 
-Online learning has made acquiring DevOps skills more accessible than ever. Here are some excellent resources to start learning or refine your expertise:
+Here are some excellent resources to start learning or refine your expertise:
 
 - [Microsoft's DevOps Resource Center​](https://learn.microsoft.com/en-us/devops/)
 - [The DevOps Lab​](https://learn.microsoft.com/en-us/shows/devops-lab/)
@@ -137,6 +137,8 @@ Azure Verified Modules focus on **Infrastructure as Code (IaC)** development, **
 ## Conclusion
 
 DevOps is a holistic approach that encompasses culture, practices, tools, and platforms. By focusing on automation, collaboration, and continuous improvement, DevOps enables teams to deliver better software faster. With the right learning resources, tools, and certifications, you can prepare yourself a rewarding journey into the world of DevOps.
+
+Did I forget something? Let me know in the comments below or shoot me a message on [Twitter](https://twitter.com/segraef), [LinkedIn](https://www.linkedin.com/in/segraef/), or mail.
 
 ---
 
