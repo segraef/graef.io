@@ -7,8 +7,7 @@ DevOps is not just a set of tools but a cultural shift towards automation, colla
 
 ## Key Components of DevOps
 
-Let me introduce you to some of the key components of DevOps with I come across in my daily work and I would like to share.
-
+Let me introduce you to some of the key components of DevOps with I come across in my daily work with enterprise customers and I would like to share.
 
 {{< admonition info Info >}}
 At the end of this post you will find a list of references with literature, learning platforms, certification pathways and communities to join to dive deeper into the topic.
@@ -17,6 +16,7 @@ At the end of this post you will find a list of references with literature, lear
 ### Frameworks
 
 Several frameworks provide the foundation for DevOps practices, including:
+- **Scrum**: An agile framework for managing software development.
 - **CALMS**: Culture, Automation, Lean, Measurement, and Sharing. These five pillars form the basis of successful DevOps adoption.
 - **SAFe**: The Scaled Agile Framework, which helps apply agile principles to large enterprises.
 - **ITIL**: IT Infrastructure Library, focusing on IT service management.
