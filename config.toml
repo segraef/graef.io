@@ -24,6 +24,20 @@ theme = "loveit"
   # website images for Open Graph and Twitter Cards
   images = ["/logo.png"]
 
+  # Custom JS
+  customJS = """
+  <!-- Custom JS code-->
+  <script type="text/javascript">
+  if (window.location.hostname!=='localhost') {
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "p0l7yeco82");
+  }
+  </script>
+  """
+
   #  App icon config
   [params.app]
     # optional site title override for the app when added to an iOS home screen or Android launcher
@@ -381,7 +395,7 @@ theme = "loveit"
         # Or
         # someCSS = "https://cdn.example.com/some.css"
       [params.page.library.js]
-        clarity = "clarity.js"
+        # clarity = "clarity.js"
         # located in "assets/"
         # Or
         # someJavascript = "https://cdn.example.com/some.js"
