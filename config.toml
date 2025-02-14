@@ -381,7 +381,7 @@ theme = "loveit"
         # Or
         # someCSS = "https://cdn.example.com/some.css"
       [params.page.library.js]
-        # someJavascript = "some.js"
+        clarity = "clarity.js"
         # located in "assets/"
         # Or
         # someJavascript = "https://cdn.example.com/some.js"
@@ -391,7 +391,7 @@ theme = "loveit"
       images = ["/logo.png"]
       # Publisher info
       [params.page.seo.publisher]
-        name = ""
+        name = "greaf.io"
         logoUrl = "/logo.png"
 
   #  TypeIt config
