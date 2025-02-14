@@ -1,4 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Windows - Category - Automate everything</title><link>https://graef.io/categories/windows/</link><description>Windows - Category - Automate everything</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>sebastian@graef.io (Sebastian Gräf)</managingEditor><webMaster>sebastian@graef.io (Sebastian Gräf)</webMaster><lastBuildDate>Fri, 13 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://graef.io/categories/windows/" rel="self" type="application/rss+xml"/><item><title>Fresh Development Setup within 10 Minutes using Winget</title><link>https://graef.io/fresh-development-machine-setup-using-winget-within-10-minutes/</link><pubDate>Fri, 13 May 2022 00:00:00 +0000</pubDate><author>Author</author><guid>https://graef.io/fresh-development-machine-setup-using-winget-within-10-minutes/</guid><description>&lt;p>Sometimes you have to setup your Laptop/Notebook fresh and also prepare your developer environment and tools you need. I noticed this again today when I rebooted my machine and spent almost 2 hours installing the tools I need to work.&lt;/p>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Windows - Category - Automate everything</title><link>https://graef.io/categories/windows/</link><description>Windows - Category - Automate everything</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 13 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://graef.io/categories/windows/" rel="self" type="application/rss+xml"/><item><title>Fresh Development Setup within 10 Minutes using Winget</title><link>https://graef.io/fresh-development-machine-setup-using-winget-within-10-minutes/</link><pubDate>Fri, 13 May 2022 00:00:00 +0000</pubDate><author>Author</author><guid>https://graef.io/fresh-development-machine-setup-using-winget-within-10-minutes/</guid><description>&lt;p>Sometimes you have to setup your Laptop/Notebook fresh and also prepare your developer environment and tools you need. I noticed this again today when I rebooted my machine and spent almost 2 hours installing the tools I need to work.&lt;/p>
 &lt;p>I have put together a list of commands you can use to prepare your environment using Windows Package Manager (WinGet) for you which gives you a kick start at the next reset and you can continue working directly after 10 minutes.&lt;/p></description></item><item><title>Get Local Account Memberships</title><link>https://graef.io/get-local-account-memberships/</link><pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate><author>Author</author><guid>https://graef.io/get-local-account-memberships/</guid><description><![CDATA[<p>Okay, yeah there are plenty of scripts out which give you local accounts via <code>WMI</code> or <code>ADSI</code> and yes scripts exist also which give you all local groups but there is not one which gives you both (of course there are also some) but what if you’re looking to implement this as a CustomScriptExtension to your Azure VM?</p>]]></description></item><item><title>Get-PSVersions: Retrieve Powershell version remotely</title><link>https://graef.io/get-psversions-retrieve-powershell-version-remotely/</link><pubDate>Fri, 22 Sep 2017 11:51:06 +0800</pubDate><author>Author</author><guid>https://graef.io/get-psversions-retrieve-powershell-version-remotely/</guid><description><![CDATA[<p>Okay at the end it’s a simple <code>$PSVersion</code> wrapped in an <code>Invoke-Command</code> but hey these simple things are needful in case you need to run it against of 100s of servers and not just locally. With the help of <code>Invoke-Command</code> via WinRM and <code>$PSVersionTable.psversion</code> wrapped in a foreach you can retrieve PowerShell version of your remote computers indifferent if you need to use credentials to run it against a different domain than you currently reside. Just use the below function <code>Get-PSVersions</code>, simple but good.</p>]]></description></item><item><title>Resolve-DnsNames: Resolve DNS or IP for multiple Computers</title><link>https://graef.io/resolve-dnsnames-resolve-dns-or-ip-for-multiple-computers/</link><pubDate>Sun, 10 Sep 2017 11:47:24 +0800</pubDate><author>Author</author><guid>https://graef.io/resolve-dnsnames-resolve-dns-or-ip-for-multiple-computers/</guid><description><![CDATA[<p>Respective Microsoft&rsquo;s Technet article regarding <code>Resolve-DnsName</code> I have created a function with the ability to run it against more than only one computer. <code>Resolve-DnsNames</code> performs a DNS name query resolution for the specified name.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -100,7 +100,119 @@
 </span><span class="lnt">96
 </span><span class="lnt">97
 </span><span class="lnt">98
-</span></code></pr]]></description></item><item><title>Get-ScsiDisks: Combine Physicaldisk and Logicaldisk Objects</title><link>https://graef.io/get-scsidisks-combine-physicaldisk-and-logicaldisk-objects/</link><pubDate>Thu, 10 Aug 2017 11:48:24 +0800</pubDate><author>Author</author><guid>https://graef.io/get-scsidisks-combine-physicaldisk-and-logicaldisk-objects/</guid><description><![CDATA[<p>Hi there, following function <code>Get-ScsiDisks</code> retrieves disk details for VMWare Guests or any computer with corresponding SCSI disk details like SCSI ID and SCSI Bus. The function concatenates objects consisting of <code>Win32_DiskDrive</code>, <code>Win32_LogicalDisk</code> and <code>Win32_DiskDriveToDiskPartition</code> using WMI. For WinRM you can use Invoke-Command and inject the script.</p>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="kd">Function</span><span class="w"> </span><span class="nb">Resolve-DnsNames</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="cm">&lt;#
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">SYNOPSIS</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Resolves IP or DNS name for one or more computers.
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">DESCRIPTION</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Resolves IP or DNS name for one or more computers.
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.PARAMETER ComputerName
+</span></span></span><span class="line"><span class="cl"><span class="cm">    A single Computer or an array of computer names. The default is localhost ($env:COMPUTERNAME).
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.PARAMETER IPAddress
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Commit IPAddress to resolve.
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.PARAMETER Verbose
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Run in Verbose Mode.
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">EXAMPLE</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    PS C:&gt; Resolve-DnsNames graef.io
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Name                                           Type   TTL   Section    IPAddress
+</span></span></span><span class="line"><span class="cl"><span class="cm">    ----                                           ----   ---   -------    ---------
+</span></span></span><span class="line"><span class="cl"><span class="cm">    graef.io                                       AAAA   86336 Answer     2a01:488:42:1000:50ed:84e8:ff91:1f91
+</span></span></span><span class="line"><span class="cl"><span class="cm">    graef.io                                       A      86336 Answer     80.237.132.232
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">EXAMPLE</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">	PS C:&gt; Resolve-DnsNames 80.237.132.232
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Name                           Type   TTL   Section    NameHost
+</span></span></span><span class="line"><span class="cl"><span class="cm">    ----                           ----   ---   -------    --------
+</span></span></span><span class="line"><span class="cl"><span class="cm">    232.132.237.80.in-addr.arpa    PTR    40292 Answer     graef.io
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">EXAMPLE</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    PS C:&gt; Resolve-DnsNames -ComputerName (Get-Content C:ServerList.txt)
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">LINK</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">Home
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">NOTES</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Author:  Sebastian Gräf
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Email:   sebastian@graef.io
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Date:    September 10, 2017
+</span></span></span><span class="line"><span class="cl"><span class="cm">    PSVer:   2.0/3.0/4.0/5.0
+</span></span></span><span class="line"><span class="cl"><span class="cm">#&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="p">[</span><span class="nb">Cmdletbinding</span><span class="p">()]</span>
+</span></span><span class="line"><span class="cl">	<span class="k">Param</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">		<span class="p">[</span><span class="nb">Parameter</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">				   <span class="na">Mandatory</span> <span class="p">=</span> <span class="vm">$false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">				   <span class="na">ValueFromPipeline</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">				   <span class="na">ValueFromPipelineByPropertyName</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">		<span class="p">[</span><span class="no">string[]</span><span class="p">]</span><span class="nv">$ComputerName</span> <span class="p">=</span> <span class="nv">$Env:COMPUTERNAME</span>
+</span></span><span class="line"><span class="cl">	<span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">Begin</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nb">Write-Verbose</span> <span class="s2">&#34; [</span><span class="p">$(</span><span class="nv">$MyInvocation</span><span class="p">.</span><span class="n">InvocationName</span><span class="p">)</span><span class="s2">] :: Start Process&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$ProgressCounter</span> <span class="p">=</span> <span class="mf">0</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$array</span><span class="p">=</span><span class="vm">@</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">Process</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$Computer</span> <span class="k">in</span> <span class="nv">$ComputerName</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$ProgressCounter</span><span class="p">++</span>
+</span></span><span class="line"><span class="cl">			<span class="nb">Write-Progress</span> <span class="n">-activity</span> <span class="s2">&#34;Running on </span><span class="nv">$Computer</span><span class="s2">&#34;</span> <span class="n">-status</span> <span class="s2">&#34;Please wait ...&#34;</span> <span class="n">-PercentComplete</span> <span class="p">((</span><span class="nv">$ProgressCounter</span> <span class="p">/</span> <span class="nv">$ComputerName</span><span class="p">.</span><span class="n">length</span><span class="p">)</span> <span class="p">*</span> <span class="mf">100</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">				<span class="nb">Write-Verbose</span> <span class="s2">&#34; [</span><span class="p">$(</span><span class="nv">$MyInvocation</span><span class="p">.</span><span class="n">InvocationName</span><span class="p">)</span><span class="s2">] :: Processing </span><span class="nv">$Computer</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">				<span class="k">try</span>
+</span></span><span class="line"><span class="cl">				<span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="nv">$Resolution</span> <span class="p">=</span> <span class="nb">Resolve-DnsName</span> <span class="nv">$Computer</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span>
+</span></span><span class="line"><span class="cl">                    <span class="nv">$obj</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">PSObject</span>
+</span></span><span class="line"><span class="cl">                    <span class="nv">$obj</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">NoteProperty</span> <span class="n">ComputerName</span> <span class="p">(</span><span class="nv">$Computer</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="nv">$obj</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">NoteProperty</span> <span class="n">Name</span> <span class="p">(</span><span class="nv">$Resolution</span><span class="p">.</span><span class="n">Name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="nv">$obj</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">NoteProperty</span> <span class="nb">Type </span><span class="p">(</span><span class="nv">$Resolution</span><span class="p">.</span><span class="n">Type</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="nv">$obj</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">NoteProperty</span> <span class="n">TTL</span> <span class="p">(</span><span class="nv">$Resolution</span><span class="p">.</span><span class="n">TTL</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="nv">$obj</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">NoteProperty</span> <span class="n">Section</span> <span class="p">(</span><span class="nv">$Resolution</span><span class="p">.</span><span class="n">Section</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="nv">$obj</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">NoteProperty</span> <span class="n">NameHost</span> <span class="p">(</span><span class="nv">$Resolution</span><span class="p">.</span><span class="n">NameHost</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="nv">$obj</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">NoteProperty</span> <span class="n">IPAddress</span> <span class="p">(</span><span class="nv">$Resolution</span><span class="p">.</span><span class="n">IPAddress</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="nv">$array</span> <span class="p">+=</span> <span class="nv">$obj</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">				<span class="p">}</span>
+</span></span><span class="line"><span class="cl">				<span class="k">catch</span>
+</span></span><span class="line"><span class="cl">				<span class="p">{</span>
+</span></span><span class="line"><span class="cl">					<span class="nb">Write-Verbose</span> <span class="s2">&#34; Host [</span><span class="nv">$Computer</span><span class="s2">] Failed with Error: </span><span class="p">$(</span><span class="nv">$Error</span><span class="p">[</span><span class="mf">0</span><span class="p">])</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">				<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$array</span> <span class="p">|</span> <span class="nb">ft
+</span></span></span><span class="line"><span class="cl"><span class="nb"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">End</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nb">Write-Verbose</span> <span class="s2">&#34; [</span><span class="p">$(</span><span class="nv">$MyInvocation</span><span class="p">.</span><span class="n">InvocationName</span><span class="p">)</span><span class="s2">] :: End Process&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>References<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li><a href="https://docs.microsoft.com/en-us/powershell/module/dnsclient/resolve-dnsname?view=windowsserver2019-ps" target="_blank" rel="noopener noreffer">Resolve-DnsName</a></li>
+</ul>
+</div>
+        </div>
+    </div>]]></description></item><item><title>Get-ScsiDisks: Combine Physicaldisk and Logicaldisk Objects</title><link>https://graef.io/get-scsidisks-combine-physicaldisk-and-logicaldisk-objects/</link><pubDate>Thu, 10 Aug 2017 11:48:24 +0800</pubDate><author>Author</author><guid>https://graef.io/get-scsidisks-combine-physicaldisk-and-logicaldisk-objects/</guid><description><![CDATA[<p>Hi there, following function <code>Get-ScsiDisks</code> retrieves disk details for VMWare Guests or any computer with corresponding SCSI disk details like SCSI ID and SCSI Bus. The function concatenates objects consisting of <code>Win32_DiskDrive</code>, <code>Win32_LogicalDisk</code> and <code>Win32_DiskDriveToDiskPartition</code> using WMI. For WinRM you can use Invoke-Command and inject the script.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">  1
@@ -228,4 +340,133 @@
 </span><span class="lnt">123
 </span><span class="lnt">124
 </span><span class="lnt">125
-</span></code></pr]]></description></item><item><title>GhostBuster: Remove all Non-present and hidden devices in Windows</title><link>https://graef.io/ghostbuster-remove-all-non-present-hidden-devices-from-windows/</link><pubDate>Sun, 12 Feb 2017 11:25:02 +0800</pubDate><author>Author</author><guid>https://graef.io/ghostbuster-remove-all-non-present-hidden-devices-from-windows/</guid><description>&lt;p>As described in one of my previous articles &lt;a href="/show-non-present-devices-in-windows-with-device-manager/" rel="">How to show nonpresent devices in Windows with Device Manager&lt;/a> you were able to show nonpresent devices in device manager and delete them one bye one.&lt;/p></description></item></channel></rss>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="kd">Function</span><span class="w"> </span><span class="nb">Get-ScsiDisks</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="cm">&lt;#
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">SYNOPSIS</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Retrieves disk details for VMWare Guests with corresponding SCSI disk details like SCSI ID
+</span></span></span><span class="line"><span class="cl"><span class="cm">    and SCSI Bus.
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">DESCRIPTION</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Retrieves a concatenated object consisting of Win32_DiskDrive, Win32_LogicalDisk and
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Win32_DiskDriveToDiskPartition using WMI. For WinRM you can use Invoke-Command and inject the script.
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.PARAMETER ComputerName
+</span></span></span><span class="line"><span class="cl"><span class="cm">    A single Computer or an array of computer names. The default is localhost ($env:COMPUTERNAME).
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.PARAMETER Credentials
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Commit Credentials for a different domain.
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.PARAMETER Verbose
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Run in Verbose Mode.
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">EXAMPLE</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    PS C:&gt; Get-ScsiDisks
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    ComputerName    Disk               DriveLetter VolumeName  Size FreeSpace DiskModel
+</span></span></span><span class="line"><span class="cl"><span class="cm">    ------------    ----               ----------- ----------  ---- --------- ---------
+</span></span></span><span class="line"><span class="cl"><span class="cm">    SERVER          \.PHYSICALDRIVE1 D:          Data         767       767 VMware Virtual di...
+</span></span></span><span class="line"><span class="cl"><span class="cm">    SERVER          \.PHYSICALDRIVE0 C:          OS            59        39 VMware Virtual di...
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">EXAMPLE</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">	PS C:&gt; Get-ScsiDisks | Out-GridView
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">EXAMPLE</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">	PS C:&gt; Get-ScsiDisks | ft -a
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">EXAMPLE</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">	PS C:&gt; Get-ScsiDisks -ComputerName (gc &#39;C:VMs.txt&#39;) -Credentials Get-Credential
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">LINK</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">Home
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">NOTES</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Author:  Sebastian Gräf
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Email:   ps@graef.io
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Date:    September 12, 2017
+</span></span></span><span class="line"><span class="cl"><span class="cm">    PSVer:   3.0/4.0/5.0
+</span></span></span><span class="line"><span class="cl"><span class="cm">#&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="p">[</span><span class="nb">Cmdletbinding</span><span class="p">()]</span>
+</span></span><span class="line"><span class="cl">	<span class="k">Param</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">		<span class="p">[</span><span class="nb">Parameter</span><span class="p">(</span><span class="na">ValueFromPipelineByPropertyName</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">,</span> <span class="na">ValueFromPipeline</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">		<span class="nv">$ComputerName</span> <span class="p">=</span> <span class="nv">$Env:COMPUTERNAME</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		<span class="p">[</span><span class="nb">Parameter</span><span class="p">(</span><span class="na">ValueFromPipelineByPropertyName</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">,</span> <span class="na">ValueFromPipeline</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">		<span class="p">[</span><span class="n">ValidateNotNull</span><span class="p">()]</span>
+</span></span><span class="line"><span class="cl">		<span class="p">[</span><span class="no">System.Management.Automation.PSCredential</span><span class="p">][</span><span class="n">System</span><span class="p">.</span><span class="py">Management</span><span class="p">.</span><span class="py">Automation</span><span class="p">.</span><span class="py">Credential</span><span class="p">()]</span>
+</span></span><span class="line"><span class="cl">		<span class="nv">$Credentials</span> <span class="p">=</span> <span class="p">[</span><span class="no">System.Management.Automation.PSCredential</span><span class="p">]::</span><span class="n">Empty</span>
+</span></span><span class="line"><span class="cl">	<span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">Begin</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nb">Write-Verbose</span> <span class="s2">&#34; [</span><span class="p">$(</span><span class="nv">$MyInvocation</span><span class="p">.</span><span class="n">InvocationName</span><span class="p">)</span><span class="s2">] :: Start Process&#34;</span>
+</span></span><span class="line"><span class="cl">		<span class="nv">$result</span><span class="p">=</span><span class="vm">@</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">		<span class="nv">$ProgressCounter</span> <span class="p">=</span> <span class="mf">0</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">Process</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">foreach</span> <span class="p">(</span><span class="nv">$Computer</span> <span class="k">in</span> <span class="nv">$ComputerName</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="nv">$ProgressCounter</span><span class="p">++</span>
+</span></span><span class="line"><span class="cl">			<span class="nb">Write-Progress</span> <span class="n">-activity</span> <span class="s2">&#34;Running on </span><span class="nv">$Computer</span><span class="s2">&#34;</span> <span class="n">-status</span> <span class="s2">&#34;Please wait ...&#34;</span> <span class="n">-PercentComplete</span> <span class="p">((</span><span class="nv">$ProgressCounter</span> <span class="p">/</span> <span class="nv">$ComputerName</span><span class="p">.</span><span class="n">length</span><span class="p">)</span> <span class="p">*</span> <span class="mf">100</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="p">(</span><span class="nb">Test-Connection</span> <span class="nv">$Computer</span> <span class="n">-Count</span> <span class="mf">1</span> <span class="n">-Quiet</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="nb">Write-Verbose</span> <span class="s2">&#34; [</span><span class="p">$(</span><span class="nv">$MyInvocation</span><span class="p">.</span><span class="n">InvocationName</span><span class="p">)</span><span class="s2">] :: Processing </span><span class="nv">$Computer</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">				<span class="k">try</span>
+</span></span><span class="line"><span class="cl">				<span class="p">{</span>
+</span></span><span class="line"><span class="cl">					<span class="nb">Get-WmiObject</span> <span class="n">-Class</span> <span class="n">Win32_DiskDrive</span> <span class="n">-ComputerName</span> <span class="nv">$Computer</span> <span class="n">-Credential</span> <span class="nv">$Credentials</span> <span class="p">|</span> <span class="p">%</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">						<span class="nv">$disk</span> <span class="p">=</span> <span class="nv">$_</span>
+</span></span><span class="line"><span class="cl">						<span class="nv">$partitions</span> <span class="p">=</span> <span class="s2">&#34;ASSOCIATORS OF &#34;</span> <span class="p">+</span>
+</span></span><span class="line"><span class="cl">						<span class="s2">&#34;{Win32_DiskDrive.DeviceID=&#39;</span><span class="p">$(</span><span class="nv">$disk</span><span class="p">.</span><span class="n">DeviceID</span><span class="p">)</span><span class="s2">&#39;} &#34;</span> <span class="p">+</span>
+</span></span><span class="line"><span class="cl">						<span class="s2">&#34;WHERE AssocClass = Win32_DiskDriveToDiskPartition&#34;</span>
+</span></span><span class="line"><span class="cl">						<span class="nb">Get-WmiObject</span> <span class="n">-Query</span> <span class="nv">$partitions</span> <span class="n">-ComputerName</span> <span class="nv">$Computer</span> <span class="n">-Credential</span> <span class="nv">$Credentials</span> <span class="p">|</span> <span class="p">%</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">							<span class="nv">$partition</span> <span class="p">=</span> <span class="nv">$_</span>
+</span></span><span class="line"><span class="cl">							<span class="nv">$drives</span> <span class="p">=</span> <span class="s2">&#34;ASSOCIATORS OF &#34;</span> <span class="p">+</span>
+</span></span><span class="line"><span class="cl">							<span class="s2">&#34;{Win32_DiskPartition.DeviceID=&#39;</span><span class="p">$(</span><span class="nv">$partition</span><span class="p">.</span><span class="n">DeviceID</span><span class="p">)</span><span class="s2">&#39;} &#34;</span> <span class="p">+</span>
+</span></span><span class="line"><span class="cl">							<span class="s2">&#34;WHERE AssocClass = Win32_LogicalDiskToPartition&#34;</span>
+</span></span><span class="line"><span class="cl">							<span class="nb">Get-WmiObject</span> <span class="n">-Query</span> <span class="nv">$drives</span> <span class="n">-ComputerName</span> <span class="nv">$Computer</span> <span class="n">-Credential</span> <span class="nv">$Credentials</span> <span class="p">|</span> <span class="p">%</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">								<span class="nv">$obj</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">-Type</span> <span class="n">PSCustomObject</span> <span class="n">-Property</span> <span class="vm">@</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">									<span class="n">ComputerName</span> <span class="p">=</span> <span class="nv">$Computer</span>
+</span></span><span class="line"><span class="cl">									<span class="n">Disk</span> <span class="p">=</span> <span class="nv">$disk</span><span class="p">.</span><span class="py">DeviceID</span>
+</span></span><span class="line"><span class="cl">									<span class="n">DiskSize</span> <span class="p">=</span> <span class="p">[</span><span class="no">math</span><span class="p">]::</span><span class="n">Truncate</span><span class="p">(</span><span class="nv">$disk</span><span class="p">.</span><span class="py">Size</span> <span class="p">/</span> <span class="mf">1</span><span class="p">GB);</span>
+</span></span><span class="line"><span class="cl">									<span class="n">DiskModel</span> <span class="p">=</span> <span class="nv">$disk</span><span class="p">.</span><span class="py">Model</span>
+</span></span><span class="line"><span class="cl">									<span class="n">Partition</span> <span class="p">=</span> <span class="nv">$partition</span><span class="p">.</span><span class="py">Name</span>
+</span></span><span class="line"><span class="cl">									<span class="n">DriveLetter</span> <span class="p">=</span> <span class="nv">$_</span><span class="p">.</span><span class="py">DeviceID</span>
+</span></span><span class="line"><span class="cl">									<span class="n">VolumeName</span> <span class="p">=</span> <span class="nv">$_</span><span class="p">.</span><span class="py">VolumeName</span>
+</span></span><span class="line"><span class="cl">									<span class="n">Size</span> <span class="p">=</span> <span class="p">[</span><span class="no">math</span><span class="p">]::</span><span class="n">Truncate</span><span class="p">(</span><span class="nv">$_</span><span class="p">.</span><span class="py">Size</span> <span class="p">/</span> <span class="mf">1</span><span class="p">GB)</span>
+</span></span><span class="line"><span class="cl">									<span class="n">FreeSpace</span> <span class="p">=</span> <span class="p">[</span><span class="no">math</span><span class="p">]::</span><span class="n">Truncate</span><span class="p">(</span><span class="nv">$_</span><span class="p">.</span><span class="py">FreeSpace</span> <span class="p">/</span> <span class="mf">1</span><span class="p">GB)</span>
+</span></span><span class="line"><span class="cl">									<span class="n">SCSIBus</span> <span class="p">=</span> <span class="nv">$disk</span><span class="p">.</span><span class="py">SCSIBus</span>
+</span></span><span class="line"><span class="cl">									<span class="n">SCSITargetId</span> <span class="p">=</span> <span class="nv">$disk</span><span class="p">.</span><span class="py">SCSITargetId</span>
+</span></span><span class="line"><span class="cl">								<span class="p">}</span>
+</span></span><span class="line"><span class="cl">								<span class="nv">$result</span> <span class="p">+=</span> <span class="nv">$obj</span>
+</span></span><span class="line"><span class="cl">							<span class="p">}</span>
+</span></span><span class="line"><span class="cl">						<span class="p">}</span>
+</span></span><span class="line"><span class="cl">					<span class="p">}</span>
+</span></span><span class="line"><span class="cl">				<span class="p">}</span>
+</span></span><span class="line"><span class="cl">				<span class="k">catch</span>
+</span></span><span class="line"><span class="cl">				<span class="p">{</span>
+</span></span><span class="line"><span class="cl">					<span class="nb">Write-Verbose</span> <span class="s2">&#34; Host [</span><span class="nv">$Computer</span><span class="s2">] Failed with Error: </span><span class="p">$(</span><span class="nv">$Error</span><span class="p">[</span><span class="mf">0</span><span class="p">])</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">				<span class="p">}</span>
+</span></span><span class="line"><span class="cl">			<span class="p">}</span>
+</span></span><span class="line"><span class="cl">			<span class="k">else</span>
+</span></span><span class="line"><span class="cl">			<span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="nb">Write-Verbose</span> <span class="s2">&#34; Host [</span><span class="nv">$Computer</span><span class="s2">] Failed Connectivity Test&#34;</span>
+</span></span><span class="line"><span class="cl">			<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$result</span> <span class="p">|</span> <span class="nb">select </span><span class="n">ComputerName</span><span class="p">,</span><span class="n">Disk</span><span class="p">,</span><span class="n">DriveLetter</span><span class="p">,</span><span class="n">VolumeName</span><span class="p">,</span><span class="n">Size</span><span class="p">,</span><span class="n">FreeSpace</span><span class="p">,</span><span class="n">DiskModel</span><span class="p">,</span><span class="n">Partition</span><span class="p">,</span><span class="n">SCSIBus</span><span class="p">,</span><span class="n">SCSITargetId</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">End</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nb">Write-Progress</span> <span class="n">-activity</span> <span class="s2">&#34;Running on </span><span class="nv">$Computer</span><span class="s2">&#34;</span> <span class="n">-Status</span> <span class="s2">&#34;Completed.&#34;</span> <span class="n">-Completed</span>
+</span></span><span class="line"><span class="cl">		<span class="nb">Write-Verbose</span> <span class="s2">&#34; [</span><span class="p">$(</span><span class="nv">$MyInvocation</span><span class="p">.</span><span class="n">InvocationName</span><span class="p">)</span><span class="s2">] :: End Process&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div>]]></description></item><item><title>GhostBuster: Remove all Non-present and hidden devices in Windows</title><link>https://graef.io/ghostbuster-remove-all-non-present-hidden-devices-from-windows/</link><pubDate>Sun, 12 Feb 2017 11:25:02 +0800</pubDate><author>Author</author><guid>https://graef.io/ghostbuster-remove-all-non-present-hidden-devices-from-windows/</guid><description>&lt;p>As described in one of my previous articles &lt;a href="/show-non-present-devices-in-windows-with-device-manager/" rel="">How to show nonpresent devices in Windows with Device Manager&lt;/a> you were able to show nonpresent devices in device manager and delete them one bye one.&lt;/p></description></item></channel></rss>

@@ -1,4 +1,4 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Dnsreverse - Tag - Automate everything</title><link>https://graef.io/tags/dnsreverse/</link><description>Dnsreverse - Tag - Automate everything</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>sebastian@graef.io (Sebastian Gräf)</managingEditor><webMaster>sebastian@graef.io (Sebastian Gräf)</webMaster><lastBuildDate>Sun, 10 Sep 2017 11:47:24 +0800</lastBuildDate><atom:link href="https://graef.io/tags/dnsreverse/" rel="self" type="application/rss+xml"/><item><title>Resolve-DnsNames: Resolve DNS or IP for multiple Computers</title><link>https://graef.io/resolve-dnsnames-resolve-dns-or-ip-for-multiple-computers/</link><pubDate>Sun, 10 Sep 2017 11:47:24 +0800</pubDate><author>Author</author><guid>https://graef.io/resolve-dnsnames-resolve-dns-or-ip-for-multiple-computers/</guid><description><![CDATA[<p>Respective Microsoft&rsquo;s Technet article regarding <code>Resolve-DnsName</code> I have created a function with the ability to run it against more than only one computer. <code>Resolve-DnsNames</code> performs a DNS name query resolution for the specified name.</p>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Dnsreverse - Tag - Automate everything</title><link>https://graef.io/tags/dnsreverse/</link><description>Dnsreverse - Tag - Automate everything</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 10 Sep 2017 11:47:24 +0800</lastBuildDate><atom:link href="https://graef.io/tags/dnsreverse/" rel="self" type="application/rss+xml"/><item><title>Resolve-DnsNames: Resolve DNS or IP for multiple Computers</title><link>https://graef.io/resolve-dnsnames-resolve-dns-or-ip-for-multiple-computers/</link><pubDate>Sun, 10 Sep 2017 11:47:24 +0800</pubDate><author>Author</author><guid>https://graef.io/resolve-dnsnames-resolve-dns-or-ip-for-multiple-computers/</guid><description><![CDATA[<p>Respective Microsoft&rsquo;s Technet article regarding <code>Resolve-DnsName</code> I have created a function with the ability to run it against more than only one computer. <code>Resolve-DnsNames</code> performs a DNS name query resolution for the specified name.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt"> 1
@@ -99,4 +99,116 @@
 </span><span class="lnt">96
 </span><span class="lnt">97
 </span><span class="lnt">98
-</span></code></pr]]></description></item></channel></rss>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="kd">Function</span><span class="w"> </span><span class="nb">Resolve-DnsNames</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="cm">&lt;#
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">SYNOPSIS</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Resolves IP or DNS name for one or more computers.
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">DESCRIPTION</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Resolves IP or DNS name for one or more computers.
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.PARAMETER ComputerName
+</span></span></span><span class="line"><span class="cl"><span class="cm">    A single Computer or an array of computer names. The default is localhost ($env:COMPUTERNAME).
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.PARAMETER IPAddress
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Commit IPAddress to resolve.
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.PARAMETER Verbose
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Run in Verbose Mode.
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">EXAMPLE</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    PS C:&gt; Resolve-DnsNames graef.io
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Name                                           Type   TTL   Section    IPAddress
+</span></span></span><span class="line"><span class="cl"><span class="cm">    ----                                           ----   ---   -------    ---------
+</span></span></span><span class="line"><span class="cl"><span class="cm">    graef.io                                       AAAA   86336 Answer     2a01:488:42:1000:50ed:84e8:ff91:1f91
+</span></span></span><span class="line"><span class="cl"><span class="cm">    graef.io                                       A      86336 Answer     80.237.132.232
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">EXAMPLE</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">	PS C:&gt; Resolve-DnsNames 80.237.132.232
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Name                           Type   TTL   Section    NameHost
+</span></span></span><span class="line"><span class="cl"><span class="cm">    ----                           ----   ---   -------    --------
+</span></span></span><span class="line"><span class="cl"><span class="cm">    232.132.237.80.in-addr.arpa    PTR    40292 Answer     graef.io
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">EXAMPLE</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    PS C:&gt; Resolve-DnsNames -ComputerName (Get-Content C:ServerList.txt)
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">LINK</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">Home
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">NOTES</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Author:  Sebastian Gräf
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Email:   sebastian@graef.io
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Date:    September 10, 2017
+</span></span></span><span class="line"><span class="cl"><span class="cm">    PSVer:   2.0/3.0/4.0/5.0
+</span></span></span><span class="line"><span class="cl"><span class="cm">#&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="p">[</span><span class="nb">Cmdletbinding</span><span class="p">()]</span>
+</span></span><span class="line"><span class="cl">	<span class="k">Param</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">		<span class="p">[</span><span class="nb">Parameter</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">				   <span class="na">Mandatory</span> <span class="p">=</span> <span class="vm">$false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">				   <span class="na">ValueFromPipeline</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">				   <span class="na">ValueFromPipelineByPropertyName</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">		<span class="p">[</span><span class="no">string[]</span><span class="p">]</span><span class="nv">$ComputerName</span> <span class="p">=</span> <span class="nv">$Env:COMPUTERNAME</span>
+</span></span><span class="line"><span class="cl">	<span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">Begin</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nb">Write-Verbose</span> <span class="s2">&#34; [</span><span class="p">$(</span><span class="nv">$MyInvocation</span><span class="p">.</span><span class="n">InvocationName</span><span class="p">)</span><span class="s2">] :: Start Process&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$ProgressCounter</span> <span class="p">=</span> <span class="mf">0</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$array</span><span class="p">=</span><span class="vm">@</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">Process</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$Computer</span> <span class="k">in</span> <span class="nv">$ComputerName</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$ProgressCounter</span><span class="p">++</span>
+</span></span><span class="line"><span class="cl">			<span class="nb">Write-Progress</span> <span class="n">-activity</span> <span class="s2">&#34;Running on </span><span class="nv">$Computer</span><span class="s2">&#34;</span> <span class="n">-status</span> <span class="s2">&#34;Please wait ...&#34;</span> <span class="n">-PercentComplete</span> <span class="p">((</span><span class="nv">$ProgressCounter</span> <span class="p">/</span> <span class="nv">$ComputerName</span><span class="p">.</span><span class="n">length</span><span class="p">)</span> <span class="p">*</span> <span class="mf">100</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">				<span class="nb">Write-Verbose</span> <span class="s2">&#34; [</span><span class="p">$(</span><span class="nv">$MyInvocation</span><span class="p">.</span><span class="n">InvocationName</span><span class="p">)</span><span class="s2">] :: Processing </span><span class="nv">$Computer</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">				<span class="k">try</span>
+</span></span><span class="line"><span class="cl">				<span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="nv">$Resolution</span> <span class="p">=</span> <span class="nb">Resolve-DnsName</span> <span class="nv">$Computer</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span>
+</span></span><span class="line"><span class="cl">                    <span class="nv">$obj</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">PSObject</span>
+</span></span><span class="line"><span class="cl">                    <span class="nv">$obj</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">NoteProperty</span> <span class="n">ComputerName</span> <span class="p">(</span><span class="nv">$Computer</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="nv">$obj</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">NoteProperty</span> <span class="n">Name</span> <span class="p">(</span><span class="nv">$Resolution</span><span class="p">.</span><span class="n">Name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="nv">$obj</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">NoteProperty</span> <span class="nb">Type </span><span class="p">(</span><span class="nv">$Resolution</span><span class="p">.</span><span class="n">Type</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="nv">$obj</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">NoteProperty</span> <span class="n">TTL</span> <span class="p">(</span><span class="nv">$Resolution</span><span class="p">.</span><span class="n">TTL</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="nv">$obj</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">NoteProperty</span> <span class="n">Section</span> <span class="p">(</span><span class="nv">$Resolution</span><span class="p">.</span><span class="n">Section</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="nv">$obj</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">NoteProperty</span> <span class="n">NameHost</span> <span class="p">(</span><span class="nv">$Resolution</span><span class="p">.</span><span class="n">NameHost</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="nv">$obj</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">NoteProperty</span> <span class="n">IPAddress</span> <span class="p">(</span><span class="nv">$Resolution</span><span class="p">.</span><span class="n">IPAddress</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="nv">$array</span> <span class="p">+=</span> <span class="nv">$obj</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">				<span class="p">}</span>
+</span></span><span class="line"><span class="cl">				<span class="k">catch</span>
+</span></span><span class="line"><span class="cl">				<span class="p">{</span>
+</span></span><span class="line"><span class="cl">					<span class="nb">Write-Verbose</span> <span class="s2">&#34; Host [</span><span class="nv">$Computer</span><span class="s2">] Failed with Error: </span><span class="p">$(</span><span class="nv">$Error</span><span class="p">[</span><span class="mf">0</span><span class="p">])</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">				<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$array</span> <span class="p">|</span> <span class="nb">ft
+</span></span></span><span class="line"><span class="cl"><span class="nb"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">End</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nb">Write-Verbose</span> <span class="s2">&#34; [</span><span class="p">$(</span><span class="nv">$MyInvocation</span><span class="p">.</span><span class="n">InvocationName</span><span class="p">)</span><span class="s2">] :: End Process&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>References<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li><a href="https://docs.microsoft.com/en-us/powershell/module/dnsclient/resolve-dnsname?view=windowsserver2019-ps" target="_blank" rel="noopener noreffer">Resolve-DnsName</a></li>
+</ul>
+</div>
+        </div>
+    </div>]]></description></item></channel></rss>

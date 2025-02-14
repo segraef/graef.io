@@ -1,7 +1,6 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Windows - Tag - Automate everything</title><link>https://graef.io/tags/windows/</link><description>Windows - Tag - Automate everything</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>sebastian@graef.io (Sebastian Gräf)</managingEditor><webMaster>sebastian@graef.io (Sebastian Gräf)</webMaster><lastBuildDate>Mon, 23 Jan 2023 16:12:12 +1000</lastBuildDate><atom:link href="https://graef.io/tags/windows/" rel="self" type="application/rss+xml"/><item><title>How to REST the Have I Been Pwned (HIBP) API</title><link>https://graef.io/how-to-rest-have-i-been-pwned-hibp-api/</link><pubDate>Mon, 23 Jan 2023 16:12:12 +1000</pubDate><author>Author</author><guid>https://graef.io/how-to-rest-have-i-been-pwned-hibp-api/</guid><description>&lt;p>Perform REST API requests to the &lt;a href="https://haveibeenpwned.com/API/v3" target="_blank" rel="noopener noreffer">HIBP API&lt;/a> to verify if your email or password have been involved in a data breach.&lt;/p></description></item><item><title>Understanding and Improving Your Cybersecurity Posture in 2023: The Importance of strong Passwords, 2FA and Awareness of Phishing Scams</title><link>https://graef.io/understanding-and-improving-your-cybersecurity-posture-the-importance-of-strong-passwords-2fa-and-awareness-of-phishing-scams/</link><pubDate>Mon, 23 Jan 2023 15:00:26 +1000</pubDate><author>Author</author><guid>https://graef.io/understanding-and-improving-your-cybersecurity-posture-the-importance-of-strong-passwords-2fa-and-awareness-of-phishing-scams/</guid><description>&lt;p>Cybersecurity is the practice of protecting internet-connected systems, including hardware, software, and data, from attack, damage, or unauthorized access. One aspect of cybersecurity is protecting personal information, such as passwords, account data but also your privacy. In this article, we revisit the basics in cyber security, as there are daily new attacks and ways hackers try to get personal data.&lt;/p></description></item><item><title>Fresh Development Setup within 10 Minutes using Winget</title><link>https://graef.io/fresh-development-machine-setup-using-winget-within-10-minutes/</link><pubDate>Fri, 13 May 2022 00:00:00 +0000</pubDate><author>Author</author><guid>https://graef.io/fresh-development-machine-setup-using-winget-within-10-minutes/</guid><description>&lt;p>Sometimes you have to setup your Laptop/Notebook fresh and also prepare your developer environment and tools you need. I noticed this again today when I rebooted my machine and spent almost 2 hours installing the tools I need to work.&lt;/p>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Windows - Tag - Automate everything</title><link>https://graef.io/tags/windows/</link><description>Windows - Tag - Automate everything</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 23 Jan 2023 16:12:12 +1000</lastBuildDate><atom:link href="https://graef.io/tags/windows/" rel="self" type="application/rss+xml"/><item><title>How to REST the Have I Been Pwned (HIBP) API</title><link>https://graef.io/how-to-rest-have-i-been-pwned-hibp-api/</link><pubDate>Mon, 23 Jan 2023 16:12:12 +1000</pubDate><author>Author</author><guid>https://graef.io/how-to-rest-have-i-been-pwned-hibp-api/</guid><description>&lt;p>Perform REST API requests to the &lt;a href="https://haveibeenpwned.com/API/v3" target="_blank" rel="noopener noreffer">HIBP API&lt;/a> to verify if your email or password have been involved in a data breach.&lt;/p></description></item><item><title>Understanding and Improving Your Cybersecurity Posture in 2023: The Importance of strong Passwords, 2FA and Awareness of Phishing Scams</title><link>https://graef.io/understanding-and-improving-your-cybersecurity-posture-the-importance-of-strong-passwords-2fa-and-awareness-of-phishing-scams/</link><pubDate>Mon, 23 Jan 2023 15:00:26 +1000</pubDate><author>Author</author><guid>https://graef.io/understanding-and-improving-your-cybersecurity-posture-the-importance-of-strong-passwords-2fa-and-awareness-of-phishing-scams/</guid><description>&lt;p>Cybersecurity is the practice of protecting internet-connected systems, including hardware, software, and data, from attack, damage, or unauthorized access. One aspect of cybersecurity is protecting personal information, such as passwords, account data but also your privacy. In this article, we revisit the basics in cyber security, as there are daily new attacks and ways hackers try to get personal data.&lt;/p></description></item><item><title>Fresh Development Setup within 10 Minutes using Winget</title><link>https://graef.io/fresh-development-machine-setup-using-winget-within-10-minutes/</link><pubDate>Fri, 13 May 2022 00:00:00 +0000</pubDate><author>Author</author><guid>https://graef.io/fresh-development-machine-setup-using-winget-within-10-minutes/</guid><description>&lt;p>Sometimes you have to setup your Laptop/Notebook fresh and also prepare your developer environment and tools you need. I noticed this again today when I rebooted my machine and spent almost 2 hours installing the tools I need to work.&lt;/p>
 &lt;p>I have put together a list of commands you can use to prepare your environment using Windows Package Manager (WinGet) for you which gives you a kick start at the next reset and you can continue working directly after 10 minutes.&lt;/p></description></item><item><title>Visual Studio Code Keyboard Shortcuts</title><link>https://graef.io/visual-studio-code-keyboard-shortcuts/</link><pubDate>Mon, 02 Aug 2021 15:30:25 +0800</pubDate><author>Author</author><guid>https://graef.io/visual-studio-code-keyboard-shortcuts/</guid><description><![CDATA[<blockquote>
-<p><strong>Today I learned</strong> Visual Studio Code Keyboard Shortcuts for Windows, macOs and Linux.</p>
-</blockquote>
+<p><strong>Today I learned</strong> Visual Studio Code Keyboard Shortcuts for Windows, macOs and Linux.</p></blockquote>
 <p>Visual Studio Code lets you perform most tasks directly from the keyboard. This page lists out the default bindings (keyboard shortcuts).</p>]]></description></item><item><title>Get Local Account Memberships</title><link>https://graef.io/get-local-account-memberships/</link><pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate><author>Author</author><guid>https://graef.io/get-local-account-memberships/</guid><description><![CDATA[<p>Okay, yeah there are plenty of scripts out which give you local accounts via <code>WMI</code> or <code>ADSI</code> and yes scripts exist also which give you all local groups but there is not one which gives you both (of course there are also some) but what if you’re looking to implement this as a CustomScriptExtension to your Azure VM?</p>]]></description></item><item><title>How to adjust Windows Failover Cluster 'Response to Resource Failure' Policy</title><link>https://graef.io/how-to-adjust-windows-failover-cluster-response-to-resource-failure-policy/</link><pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate><author>Author</author><guid>https://graef.io/how-to-adjust-windows-failover-cluster-response-to-resource-failure-policy/</guid><description><![CDATA[<p>The purpose of this article is to show how to adjust Windows Failover Cluster &ldquo;Response to resource failure&rdquo; policy.</p>]]></description></item><item><title>Set primary IP address order with multiple IP addresses on a NIC</title><link>https://graef.io/set-primary-ip-address-order-with-multiple-ip-addresses-on-a-nic/</link><pubDate>Sun, 26 Nov 2017 11:29:53 +0800</pubDate><author>Author</author><guid>https://graef.io/set-primary-ip-address-order-with-multiple-ip-addresses-on-a-nic/</guid><description>&lt;p>If you’re running a webserver it may be you have to run different services on the same port and need to use multiple IP addresses on the same network interface. This can happen for SMTP or Exchange Servers using several connectors.&lt;/p></description></item><item><title>Get-LogonHistory: Who was logged on to my server?</title><link>https://graef.io/get-logonhistory-who-was-logged-on-to-my-server/</link><pubDate>Thu, 05 Oct 2017 11:26:46 +0800</pubDate><author>Author</author><guid>https://graef.io/get-logonhistory-who-was-logged-on-to-my-server/</guid><description>&lt;p>Every System Administrator comes into a situation where you want to see who and how many users were logged on to your servers either via Remote Desktop or via script.&lt;/p></description></item><item><title>Get-PSVersions: Retrieve Powershell version remotely</title><link>https://graef.io/get-psversions-retrieve-powershell-version-remotely/</link><pubDate>Fri, 22 Sep 2017 11:51:06 +0800</pubDate><author>Author</author><guid>https://graef.io/get-psversions-retrieve-powershell-version-remotely/</guid><description><![CDATA[<p>Okay at the end it’s a simple <code>$PSVersion</code> wrapped in an <code>Invoke-Command</code> but hey these simple things are needful in case you need to run it against of 100s of servers and not just locally. With the help of <code>Invoke-Command</code> via WinRM and <code>$PSVersionTable.psversion</code> wrapped in a foreach you can retrieve PowerShell version of your remote computers indifferent if you need to use credentials to run it against a different domain than you currently reside. Just use the below function <code>Get-PSVersions</code>, simple but good.</p>]]></description></item><item><title>Resolve-DnsNames: Resolve DNS or IP for multiple Computers</title><link>https://graef.io/resolve-dnsnames-resolve-dns-or-ip-for-multiple-computers/</link><pubDate>Sun, 10 Sep 2017 11:47:24 +0800</pubDate><author>Author</author><guid>https://graef.io/resolve-dnsnames-resolve-dns-or-ip-for-multiple-computers/</guid><description><![CDATA[<p>Respective Microsoft&rsquo;s Technet article regarding <code>Resolve-DnsName</code> I have created a function with the ability to run it against more than only one computer. <code>Resolve-DnsNames</code> performs a DNS name query resolution for the specified name.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -103,4 +102,116 @@
 </span><span class="lnt">96
 </span><span class="lnt">97
 </span><span class="lnt">98
-</span></code></pr]]></description></item></channel></rss>
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="kd">Function</span><span class="w"> </span><span class="nb">Resolve-DnsNames</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="cm">&lt;#
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">SYNOPSIS</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Resolves IP or DNS name for one or more computers.
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">DESCRIPTION</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Resolves IP or DNS name for one or more computers.
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.PARAMETER ComputerName
+</span></span></span><span class="line"><span class="cl"><span class="cm">    A single Computer or an array of computer names. The default is localhost ($env:COMPUTERNAME).
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.PARAMETER IPAddress
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Commit IPAddress to resolve.
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.PARAMETER Verbose
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Run in Verbose Mode.
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">EXAMPLE</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    PS C:&gt; Resolve-DnsNames graef.io
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Name                                           Type   TTL   Section    IPAddress
+</span></span></span><span class="line"><span class="cl"><span class="cm">    ----                                           ----   ---   -------    ---------
+</span></span></span><span class="line"><span class="cl"><span class="cm">    graef.io                                       AAAA   86336 Answer     2a01:488:42:1000:50ed:84e8:ff91:1f91
+</span></span></span><span class="line"><span class="cl"><span class="cm">    graef.io                                       A      86336 Answer     80.237.132.232
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">EXAMPLE</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">	PS C:&gt; Resolve-DnsNames 80.237.132.232
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Name                           Type   TTL   Section    NameHost
+</span></span></span><span class="line"><span class="cl"><span class="cm">    ----                           ----   ---   -------    --------
+</span></span></span><span class="line"><span class="cl"><span class="cm">    232.132.237.80.in-addr.arpa    PTR    40292 Answer     graef.io
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">EXAMPLE</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    PS C:&gt; Resolve-DnsNames -ComputerName (Get-Content C:ServerList.txt)
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">LINK</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">Home
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">NOTES</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Author:  Sebastian Gräf
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Email:   sebastian@graef.io
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Date:    September 10, 2017
+</span></span></span><span class="line"><span class="cl"><span class="cm">    PSVer:   2.0/3.0/4.0/5.0
+</span></span></span><span class="line"><span class="cl"><span class="cm">#&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="p">[</span><span class="nb">Cmdletbinding</span><span class="p">()]</span>
+</span></span><span class="line"><span class="cl">	<span class="k">Param</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">		<span class="p">[</span><span class="nb">Parameter</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">				   <span class="na">Mandatory</span> <span class="p">=</span> <span class="vm">$false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">				   <span class="na">ValueFromPipeline</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">				   <span class="na">ValueFromPipelineByPropertyName</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">		<span class="p">[</span><span class="no">string[]</span><span class="p">]</span><span class="nv">$ComputerName</span> <span class="p">=</span> <span class="nv">$Env:COMPUTERNAME</span>
+</span></span><span class="line"><span class="cl">	<span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">Begin</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nb">Write-Verbose</span> <span class="s2">&#34; [</span><span class="p">$(</span><span class="nv">$MyInvocation</span><span class="p">.</span><span class="n">InvocationName</span><span class="p">)</span><span class="s2">] :: Start Process&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$ProgressCounter</span> <span class="p">=</span> <span class="mf">0</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$array</span><span class="p">=</span><span class="vm">@</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">Process</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$Computer</span> <span class="k">in</span> <span class="nv">$ComputerName</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$ProgressCounter</span><span class="p">++</span>
+</span></span><span class="line"><span class="cl">			<span class="nb">Write-Progress</span> <span class="n">-activity</span> <span class="s2">&#34;Running on </span><span class="nv">$Computer</span><span class="s2">&#34;</span> <span class="n">-status</span> <span class="s2">&#34;Please wait ...&#34;</span> <span class="n">-PercentComplete</span> <span class="p">((</span><span class="nv">$ProgressCounter</span> <span class="p">/</span> <span class="nv">$ComputerName</span><span class="p">.</span><span class="n">length</span><span class="p">)</span> <span class="p">*</span> <span class="mf">100</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">				<span class="nb">Write-Verbose</span> <span class="s2">&#34; [</span><span class="p">$(</span><span class="nv">$MyInvocation</span><span class="p">.</span><span class="n">InvocationName</span><span class="p">)</span><span class="s2">] :: Processing </span><span class="nv">$Computer</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">				<span class="k">try</span>
+</span></span><span class="line"><span class="cl">				<span class="p">{</span>
+</span></span><span class="line"><span class="cl">                    <span class="nv">$Resolution</span> <span class="p">=</span> <span class="nb">Resolve-DnsName</span> <span class="nv">$Computer</span> <span class="n">-ErrorAction</span> <span class="n">SilentlyContinue</span>
+</span></span><span class="line"><span class="cl">                    <span class="nv">$obj</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">PSObject</span>
+</span></span><span class="line"><span class="cl">                    <span class="nv">$obj</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">NoteProperty</span> <span class="n">ComputerName</span> <span class="p">(</span><span class="nv">$Computer</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="nv">$obj</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">NoteProperty</span> <span class="n">Name</span> <span class="p">(</span><span class="nv">$Resolution</span><span class="p">.</span><span class="n">Name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="nv">$obj</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">NoteProperty</span> <span class="nb">Type </span><span class="p">(</span><span class="nv">$Resolution</span><span class="p">.</span><span class="n">Type</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="nv">$obj</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">NoteProperty</span> <span class="n">TTL</span> <span class="p">(</span><span class="nv">$Resolution</span><span class="p">.</span><span class="n">TTL</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="nv">$obj</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">NoteProperty</span> <span class="n">Section</span> <span class="p">(</span><span class="nv">$Resolution</span><span class="p">.</span><span class="n">Section</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="nv">$obj</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">NoteProperty</span> <span class="n">NameHost</span> <span class="p">(</span><span class="nv">$Resolution</span><span class="p">.</span><span class="n">NameHost</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="nv">$obj</span> <span class="p">|</span> <span class="nb">Add-Member</span> <span class="n">NoteProperty</span> <span class="n">IPAddress</span> <span class="p">(</span><span class="nv">$Resolution</span><span class="p">.</span><span class="n">IPAddress</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="nv">$array</span> <span class="p">+=</span> <span class="nv">$obj</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">				<span class="p">}</span>
+</span></span><span class="line"><span class="cl">				<span class="k">catch</span>
+</span></span><span class="line"><span class="cl">				<span class="p">{</span>
+</span></span><span class="line"><span class="cl">					<span class="nb">Write-Verbose</span> <span class="s2">&#34; Host [</span><span class="nv">$Computer</span><span class="s2">] Failed with Error: </span><span class="p">$(</span><span class="nv">$Error</span><span class="p">[</span><span class="mf">0</span><span class="p">])</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">				<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$array</span> <span class="p">|</span> <span class="nb">ft
+</span></span></span><span class="line"><span class="cl"><span class="nb"></span>    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">End</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nb">Write-Verbose</span> <span class="s2">&#34; [</span><span class="p">$(</span><span class="nv">$MyInvocation</span><span class="p">.</span><span class="n">InvocationName</span><span class="p">)</span><span class="s2">] :: End Process&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>References<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li><a href="https://docs.microsoft.com/en-us/powershell/module/dnsclient/resolve-dnsname?view=windowsserver2019-ps" target="_blank" rel="noopener noreffer">Resolve-DnsName</a></li>
+</ul>
+</div>
+        </div>
+    </div>]]></description></item></channel></rss>
