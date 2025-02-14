@@ -1,24 +1,24 @@
 {{- $params := .Scratch.Get "params" -}}
 
 {{- with .Site.Params.verification.google -}}
-    <meta name="google-site-verification" content="{{ . }}" />
+<meta name="google-site-verification" content="{{ . }}" />
 {{- end -}}
 {{- with .Site.Params.verification.bing -}}
-    <meta name="msvalidate.01" content="{{ . }}" />
+<meta name="msvalidate.01" content="{{ . }}" />
 {{- end -}}
 {{- with .Site.Params.verification.yandex -}}
-    <meta name="yandex-verification" content="{{ . }}" />
+<meta name="yandex-verification" content="{{ . }}" />
 {{- end -}}
 {{- with .Site.Params.verification.pinterest -}}
-    <meta name="p:domain_verify" content="{{ . }}" />
+<meta name="p:domain_verify" content="{{ . }}" />
 {{- end -}}
 {{- with .Site.Params.verification.baidu -}}
-    <meta name="baidu-site-verification" content="{{ . }}" />
+<meta name="baidu-site-verification" content="{{ . }}" />
 {{- end -}}
 
 {{- /* Home SEO */ -}}
 {{- if .IsHome -}}
-    <script type="application/ld+json">
+<script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "WebSite",
@@ -26,7 +26,7 @@
         {{- with .Site.LanguageCode -}}
             "inLanguage": "{{ . }}",
         {{- end -}}
-        {{- with .Site.Author.name -}}
+        {{- with .Site.Params.Author -}}
             "author": {
                 "@type": "Person",
                 "name": {{ . | safeHTML }}
@@ -64,7 +64,7 @@
 
 {{- /* Page SEO */ -}}
 {{- else if .IsPage -}}
-    <script type="application/ld+json">
+<script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -122,7 +122,7 @@
         {{- with .Site.Copyright -}}
             "license": {{ . | safeHTML }},
         {{- end -}}
-        {{- $publisher := .Params.author | default .Site.Author.name | default (T "author") | dict "name" -}}
+        {{- $publisher := .Params.author | default .Site.Params.Author | default (T "author") | dict "name" -}}
         {{- $publisher = $params.seo.publisher | default dict | merge $publisher -}}
         "publisher": {
             "@type": "Organization",
@@ -141,7 +141,7 @@
                 {{- end -}}
             {{- end -}}
         },
-        {{- with .Params.author | default .Site.Author.name | default (T "author") -}}
+        {{- with .Params.author | default .Site.Params.Author | default (T "author") -}}
             "author": {
                 "@type": "Person",
                 "name": {{ . | safeHTML }}

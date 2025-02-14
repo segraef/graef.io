@@ -726,7 +726,7 @@ Please open the code block below to view the complete sample configuration :(far
   page = ["HTML", "MarkDown"]
   section = ["HTML", "RSS"]
   taxonomy = ["HTML", "RSS"]
-  taxonomyTerm = ["HTML"]
+  taxonomy = ["HTML"]
 ```
 
 {{< admonition >}}
