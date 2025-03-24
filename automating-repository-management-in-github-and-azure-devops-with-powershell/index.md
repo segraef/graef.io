@@ -15,7 +15,7 @@ This script helps automate the process of cloning and updating repositories, mak
 
 This script is just a tiny piece of a broader collection of PowerShell snippets and scripts that I develop, use, and refine during my global engagements. I maintain a whole [Scripts repository](https://github.com/segraef/Scripts/blob/main/PowerShell/) where I collect and publish various automation tools that help streamline workflows in enterprise environments. Feel free to explore and use them!
 
-## **Update-Repos.ps1: A Unified Solution for GitHub & Azure DevOps**
+## A Unified Solution for GitHub & Azure DevOps**
 
 The **Update-Repos.ps1** script is designed to streamline repository management by:
 
@@ -24,17 +24,17 @@ The **Update-Repos.ps1** script is designed to streamline repository management 
 - Updating repositories that are already cloned
 - Ensuring local repositories stay in sync with remote changes
 
-### **Why This is Essential**
+### Why This is Essential
 When working with multiple repositories across teams, keeping everything updated manually is tedious and error-prone. This script allows you to automate the process, ensuring that all your repositories are always up to date, regardless of whether they are hosted on GitHub or Azure DevOps.
 
-### **Key Features**
+### Key Features
 - Supports both GitHub and Azure DevOps repositories
 - Retrieves repository lists dynamically
 - Clones repositories if they don’t exist
 - Updates existing repositories to stay in sync with remote changes
 - Reduces manual effort, allowing teams to focus on development
 
-### **Example Usage:**
+### Example Usage:
 ```powershell
 # Get all Azure Verified Modules Terraform Repos
 $tfrepos = gh repo list azure -L 5000 --json name --jq '.[].name' | Select-String -Pattern "terraform-azurerm-avm"
@@ -52,7 +52,7 @@ This ensures that all repositories from the specified GitHub organization or Azu
 
 ---
 
-## **Why This Script Matters in Enterprise Development**
+## Why This Script Matters in Enterprise Development
 
 Managing multiple repositories is a challenge in enterprise settings, particularly when working across teams and organizations. **Update-Repos.ps1** simplifies this process by:
 
