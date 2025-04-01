@@ -5,6 +5,8 @@ date: 2025-03-22T10:22:10+10:00
 lastmod: 2025-03-22T10:22:10+10:00
 draft: false
 resources:
+- name: "featured-image-preview"
+  src: "image.png"
 - name: "featured-image"
   src: "version-control-yoda.png"
 tags: ["git", "powershell", "github", "azure", "devops", "automation", "scripting", "repository", "management", "workflow", "versioning"]
@@ -52,6 +54,8 @@ $tfrepos = gh repo list azure -L 5000 --json name --jq '.[].name' | Select-Strin
 # Update all GitHub Repos
 Update-Repos -destinationFolder . -organization Azure -repos $tfrepos
 ```
+
+![Clone or Update all 154 AVM Terraform Repos](repos.png)
 
 ```powershell
 # Azure DevOps
