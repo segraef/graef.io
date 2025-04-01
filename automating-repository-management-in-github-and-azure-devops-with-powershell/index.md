@@ -43,6 +43,8 @@ $tfrepos = gh repo list azure -L 5000 --json name --jq '.[].name' | Select-Strin
 Update-Repos -destinationFolder . -organization Azure -repos $tfrepos
 ```
 
+![Clone or Update all 154 AVM Terraform Repos](repos.png)
+
 ```powershell
 # Azure DevOps
 Update-Repos -destinationFolder . -organization "<ADO_ORG>" -pat "<PAT>"
