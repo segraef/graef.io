@@ -27,7 +27,7 @@ This script helps automate the process of cloning and updating repositories, mak
 
 This script is just a tiny piece of a broader collection of PowerShell snippets and scripts that I develop, use, and refine during my global engagements. I maintain a whole [Scripts repository](https://github.com/segraef/Scripts/blob/main/PowerShell/) where I collect and publish various automation tools that help streamline workflows in enterprise environments. Feel free to explore and use them!
 
-## A Unified Solution for GitHub & Azure DevOps**
+## A Unified Solution for GitHub & Azure DevOps
 
 The **Update-Repos.ps1** script is designed to streamline repository management by:
 
