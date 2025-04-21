@@ -1,258 +1,258 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>SCSI - Tag - Automate everything</title><link>https://graef.io/tags/scsi/</link><description>SCSI - Tag - Automate everything</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 10 Aug 2017 11:48:24 +0800</lastBuildDate><atom:link href="https://graef.io/tags/scsi/" rel="self" type="application/rss+xml"/><item><title>Get-ScsiDisks: Combine Physicaldisk and Logicaldisk Objects</title><link>https://graef.io/get-scsidisks-combine-physicaldisk-and-logicaldisk-objects/</link><pubDate>Thu, 10 Aug 2017 11:48:24 +0800</pubDate><author>Author</author><guid>https://graef.io/get-scsidisks-combine-physicaldisk-and-logicaldisk-objects/</guid><description><![CDATA[<p>Hi there, following function <code>Get-ScsiDisks</code> retrieves disk details for VMWare Guests or any computer with corresponding SCSI disk details like SCSI ID and SCSI Bus. The function concatenates objects consisting of <code>Win32_DiskDrive</code>, <code>Win32_LogicalDisk</code> and <code>Win32_DiskDriveToDiskPartition</code> using WMI. For WinRM you can use Invoke-Command and inject the script.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">  1
-</span><span class="lnt">  2
-</span><span class="lnt">  3
-</span><span class="lnt">  4
-</span><span class="lnt">  5
-</span><span class="lnt">  6
-</span><span class="lnt">  7
-</span><span class="lnt">  8
-</span><span class="lnt">  9
-</span><span class="lnt"> 10
-</span><span class="lnt"> 11
-</span><span class="lnt"> 12
-</span><span class="lnt"> 13
-</span><span class="lnt"> 14
-</span><span class="lnt"> 15
-</span><span class="lnt"> 16
-</span><span class="lnt"> 17
-</span><span class="lnt"> 18
-</span><span class="lnt"> 19
-</span><span class="lnt"> 20
-</span><span class="lnt"> 21
-</span><span class="lnt"> 22
-</span><span class="lnt"> 23
-</span><span class="lnt"> 24
-</span><span class="lnt"> 25
-</span><span class="lnt"> 26
-</span><span class="lnt"> 27
-</span><span class="lnt"> 28
-</span><span class="lnt"> 29
-</span><span class="lnt"> 30
-</span><span class="lnt"> 31
-</span><span class="lnt"> 32
-</span><span class="lnt"> 33
-</span><span class="lnt"> 34
-</span><span class="lnt"> 35
-</span><span class="lnt"> 36
-</span><span class="lnt"> 37
-</span><span class="lnt"> 38
-</span><span class="lnt"> 39
-</span><span class="lnt"> 40
-</span><span class="lnt"> 41
-</span><span class="lnt"> 42
-</span><span class="lnt"> 43
-</span><span class="lnt"> 44
-</span><span class="lnt"> 45
-</span><span class="lnt"> 46
-</span><span class="lnt"> 47
-</span><span class="lnt"> 48
-</span><span class="lnt"> 49
-</span><span class="lnt"> 50
-</span><span class="lnt"> 51
-</span><span class="lnt"> 52
-</span><span class="lnt"> 53
-</span><span class="lnt"> 54
-</span><span class="lnt"> 55
-</span><span class="lnt"> 56
-</span><span class="lnt"> 57
-</span><span class="lnt"> 58
-</span><span class="lnt"> 59
-</span><span class="lnt"> 60
-</span><span class="lnt"> 61
-</span><span class="lnt"> 62
-</span><span class="lnt"> 63
-</span><span class="lnt"> 64
-</span><span class="lnt"> 65
-</span><span class="lnt"> 66
-</span><span class="lnt"> 67
-</span><span class="lnt"> 68
-</span><span class="lnt"> 69
-</span><span class="lnt"> 70
-</span><span class="lnt"> 71
-</span><span class="lnt"> 72
-</span><span class="lnt"> 73
-</span><span class="lnt"> 74
-</span><span class="lnt"> 75
-</span><span class="lnt"> 76
-</span><span class="lnt"> 77
-</span><span class="lnt"> 78
-</span><span class="lnt"> 79
-</span><span class="lnt"> 80
-</span><span class="lnt"> 81
-</span><span class="lnt"> 82
-</span><span class="lnt"> 83
-</span><span class="lnt"> 84
-</span><span class="lnt"> 85
-</span><span class="lnt"> 86
-</span><span class="lnt"> 87
-</span><span class="lnt"> 88
-</span><span class="lnt"> 89
-</span><span class="lnt"> 90
-</span><span class="lnt"> 91
-</span><span class="lnt"> 92
-</span><span class="lnt"> 93
-</span><span class="lnt"> 94
-</span><span class="lnt"> 95
-</span><span class="lnt"> 96
-</span><span class="lnt"> 97
-</span><span class="lnt"> 98
-</span><span class="lnt"> 99
-</span><span class="lnt">100
-</span><span class="lnt">101
-</span><span class="lnt">102
-</span><span class="lnt">103
-</span><span class="lnt">104
-</span><span class="lnt">105
-</span><span class="lnt">106
-</span><span class="lnt">107
-</span><span class="lnt">108
-</span><span class="lnt">109
-</span><span class="lnt">110
-</span><span class="lnt">111
-</span><span class="lnt">112
-</span><span class="lnt">113
-</span><span class="lnt">114
-</span><span class="lnt">115
-</span><span class="lnt">116
-</span><span class="lnt">117
-</span><span class="lnt">118
-</span><span class="lnt">119
-</span><span class="lnt">120
-</span><span class="lnt">121
-</span><span class="lnt">122
-</span><span class="lnt">123
-</span><span class="lnt">124
-</span><span class="lnt">125
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="kd">Function</span><span class="w"> </span><span class="nb">Get-ScsiDisks</span>
-</span></span><span class="line"><span class="cl"><span class="p">{</span>
-</span></span><span class="line"><span class="cl"><span class="cm">&lt;#
-</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">SYNOPSIS</span><span class="cm">
-</span></span></span><span class="line"><span class="cl"><span class="cm">    Retrieves disk details for VMWare Guests with corresponding SCSI disk details like SCSI ID
-</span></span></span><span class="line"><span class="cl"><span class="cm">    and SCSI Bus.
-</span></span></span><span class="line"><span class="cl"><span class="cm">
-</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">DESCRIPTION</span><span class="cm">
-</span></span></span><span class="line"><span class="cl"><span class="cm">    Retrieves a concatenated object consisting of Win32_DiskDrive, Win32_LogicalDisk and
-</span></span></span><span class="line"><span class="cl"><span class="cm">    Win32_DiskDriveToDiskPartition using WMI. For WinRM you can use Invoke-Command and inject the script.
-</span></span></span><span class="line"><span class="cl"><span class="cm">
-</span></span></span><span class="line"><span class="cl"><span class="cm">.PARAMETER ComputerName
-</span></span></span><span class="line"><span class="cl"><span class="cm">    A single Computer or an array of computer names. The default is localhost ($env:COMPUTERNAME).
-</span></span></span><span class="line"><span class="cl"><span class="cm">
-</span></span></span><span class="line"><span class="cl"><span class="cm">.PARAMETER Credentials
-</span></span></span><span class="line"><span class="cl"><span class="cm">    Commit Credentials for a different domain.
-</span></span></span><span class="line"><span class="cl"><span class="cm">
-</span></span></span><span class="line"><span class="cl"><span class="cm">.PARAMETER Verbose
-</span></span></span><span class="line"><span class="cl"><span class="cm">    Run in Verbose Mode.
-</span></span></span><span class="line"><span class="cl"><span class="cm">
-</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">EXAMPLE</span><span class="cm">
-</span></span></span><span class="line"><span class="cl"><span class="cm">    PS C:&gt; Get-ScsiDisks
-</span></span></span><span class="line"><span class="cl"><span class="cm">
-</span></span></span><span class="line"><span class="cl"><span class="cm">    ComputerName    Disk               DriveLetter VolumeName  Size FreeSpace DiskModel
-</span></span></span><span class="line"><span class="cl"><span class="cm">    ------------    ----               ----------- ----------  ---- --------- ---------
-</span></span></span><span class="line"><span class="cl"><span class="cm">    SERVER          \.PHYSICALDRIVE1 D:          Data         767       767 VMware Virtual di...
-</span></span></span><span class="line"><span class="cl"><span class="cm">    SERVER          \.PHYSICALDRIVE0 C:          OS            59        39 VMware Virtual di...
-</span></span></span><span class="line"><span class="cl"><span class="cm">
-</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">EXAMPLE</span><span class="cm">
-</span></span></span><span class="line"><span class="cl"><span class="cm">	PS C:&gt; Get-ScsiDisks | Out-GridView
-</span></span></span><span class="line"><span class="cl"><span class="cm">
-</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">EXAMPLE</span><span class="cm">
-</span></span></span><span class="line"><span class="cl"><span class="cm">	PS C:&gt; Get-ScsiDisks | ft -a
-</span></span></span><span class="line"><span class="cl"><span class="cm">
-</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">EXAMPLE</span><span class="cm">
-</span></span></span><span class="line"><span class="cl"><span class="cm">	PS C:&gt; Get-ScsiDisks -ComputerName (gc &#39;C:VMs.txt&#39;) -Credentials Get-Credential
-</span></span></span><span class="line"><span class="cl"><span class="cm">
-</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">LINK</span><span class="cm">
-</span></span></span><span class="line"><span class="cl"><span class="cm">
-</span></span></span><span class="line"><span class="cl"><span class="cm">Home
-</span></span></span><span class="line"><span class="cl"><span class="cm">
-</span></span></span><span class="line"><span class="cl"><span class="cm">
-</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">NOTES</span><span class="cm">
-</span></span></span><span class="line"><span class="cl"><span class="cm">    Author:  Sebastian Gräf
-</span></span></span><span class="line"><span class="cl"><span class="cm">    Email:   ps@graef.io
-</span></span></span><span class="line"><span class="cl"><span class="cm">    Date:    September 12, 2017
-</span></span></span><span class="line"><span class="cl"><span class="cm">    PSVer:   3.0/4.0/5.0
-</span></span></span><span class="line"><span class="cl"><span class="cm">#&gt;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="p">[</span><span class="nb">Cmdletbinding</span><span class="p">()]</span>
-</span></span><span class="line"><span class="cl">	<span class="k">Param</span> <span class="p">(</span>
-</span></span><span class="line"><span class="cl">		<span class="p">[</span><span class="nb">Parameter</span><span class="p">(</span><span class="na">ValueFromPipelineByPropertyName</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">,</span> <span class="na">ValueFromPipeline</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">)]</span>
-</span></span><span class="line"><span class="cl">		<span class="nv">$ComputerName</span> <span class="p">=</span> <span class="nv">$Env:COMPUTERNAME</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">		<span class="p">[</span><span class="nb">Parameter</span><span class="p">(</span><span class="na">ValueFromPipelineByPropertyName</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">,</span> <span class="na">ValueFromPipeline</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">)]</span>
-</span></span><span class="line"><span class="cl">		<span class="p">[</span><span class="n">ValidateNotNull</span><span class="p">()]</span>
-</span></span><span class="line"><span class="cl">		<span class="p">[</span><span class="no">System.Management.Automation.PSCredential</span><span class="p">][</span><span class="n">System</span><span class="p">.</span><span class="py">Management</span><span class="p">.</span><span class="py">Automation</span><span class="p">.</span><span class="py">Credential</span><span class="p">()]</span>
-</span></span><span class="line"><span class="cl">		<span class="nv">$Credentials</span> <span class="p">=</span> <span class="p">[</span><span class="no">System.Management.Automation.PSCredential</span><span class="p">]::</span><span class="n">Empty</span>
-</span></span><span class="line"><span class="cl">	<span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="k">Begin</span>
-</span></span><span class="line"><span class="cl">	<span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="nb">Write-Verbose</span> <span class="s2">&#34; [</span><span class="p">$(</span><span class="nv">$MyInvocation</span><span class="p">.</span><span class="n">InvocationName</span><span class="p">)</span><span class="s2">] :: Start Process&#34;</span>
-</span></span><span class="line"><span class="cl">		<span class="nv">$result</span><span class="p">=</span><span class="vm">@</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">		<span class="nv">$ProgressCounter</span> <span class="p">=</span> <span class="mf">0</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">	<span class="k">Process</span>
-</span></span><span class="line"><span class="cl">	<span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="k">foreach</span> <span class="p">(</span><span class="nv">$Computer</span> <span class="k">in</span> <span class="nv">$ComputerName</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">		<span class="p">{</span>
-</span></span><span class="line"><span class="cl">			<span class="nv">$ProgressCounter</span><span class="p">++</span>
-</span></span><span class="line"><span class="cl">			<span class="nb">Write-Progress</span> <span class="n">-activity</span> <span class="s2">&#34;Running on </span><span class="nv">$Computer</span><span class="s2">&#34;</span> <span class="n">-status</span> <span class="s2">&#34;Please wait ...&#34;</span> <span class="n">-PercentComplete</span> <span class="p">((</span><span class="nv">$ProgressCounter</span> <span class="p">/</span> <span class="nv">$ComputerName</span><span class="p">.</span><span class="n">length</span><span class="p">)</span> <span class="p">*</span> <span class="mf">100</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="p">(</span><span class="nb">Test-Connection</span> <span class="nv">$Computer</span> <span class="n">-Count</span> <span class="mf">1</span> <span class="n">-Quiet</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">			<span class="p">{</span>
-</span></span><span class="line"><span class="cl">				<span class="nb">Write-Verbose</span> <span class="s2">&#34; [</span><span class="p">$(</span><span class="nv">$MyInvocation</span><span class="p">.</span><span class="n">InvocationName</span><span class="p">)</span><span class="s2">] :: Processing </span><span class="nv">$Computer</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">				<span class="k">try</span>
-</span></span><span class="line"><span class="cl">				<span class="p">{</span>
-</span></span><span class="line"><span class="cl">					<span class="nb">Get-WmiObject</span> <span class="n">-Class</span> <span class="n">Win32_DiskDrive</span> <span class="n">-ComputerName</span> <span class="nv">$Computer</span> <span class="n">-Credential</span> <span class="nv">$Credentials</span> <span class="p">|</span> <span class="p">%</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">						<span class="nv">$disk</span> <span class="p">=</span> <span class="nv">$_</span>
-</span></span><span class="line"><span class="cl">						<span class="nv">$partitions</span> <span class="p">=</span> <span class="s2">&#34;ASSOCIATORS OF &#34;</span> <span class="p">+</span>
-</span></span><span class="line"><span class="cl">						<span class="s2">&#34;{Win32_DiskDrive.DeviceID=&#39;</span><span class="p">$(</span><span class="nv">$disk</span><span class="p">.</span><span class="n">DeviceID</span><span class="p">)</span><span class="s2">&#39;} &#34;</span> <span class="p">+</span>
-</span></span><span class="line"><span class="cl">						<span class="s2">&#34;WHERE AssocClass = Win32_DiskDriveToDiskPartition&#34;</span>
-</span></span><span class="line"><span class="cl">						<span class="nb">Get-WmiObject</span> <span class="n">-Query</span> <span class="nv">$partitions</span> <span class="n">-ComputerName</span> <span class="nv">$Computer</span> <span class="n">-Credential</span> <span class="nv">$Credentials</span> <span class="p">|</span> <span class="p">%</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">							<span class="nv">$partition</span> <span class="p">=</span> <span class="nv">$_</span>
-</span></span><span class="line"><span class="cl">							<span class="nv">$drives</span> <span class="p">=</span> <span class="s2">&#34;ASSOCIATORS OF &#34;</span> <span class="p">+</span>
-</span></span><span class="line"><span class="cl">							<span class="s2">&#34;{Win32_DiskPartition.DeviceID=&#39;</span><span class="p">$(</span><span class="nv">$partition</span><span class="p">.</span><span class="n">DeviceID</span><span class="p">)</span><span class="s2">&#39;} &#34;</span> <span class="p">+</span>
-</span></span><span class="line"><span class="cl">							<span class="s2">&#34;WHERE AssocClass = Win32_LogicalDiskToPartition&#34;</span>
-</span></span><span class="line"><span class="cl">							<span class="nb">Get-WmiObject</span> <span class="n">-Query</span> <span class="nv">$drives</span> <span class="n">-ComputerName</span> <span class="nv">$Computer</span> <span class="n">-Credential</span> <span class="nv">$Credentials</span> <span class="p">|</span> <span class="p">%</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">								<span class="nv">$obj</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">-Type</span> <span class="n">PSCustomObject</span> <span class="n">-Property</span> <span class="vm">@</span><span class="p">{</span>
-</span></span><span class="line"><span class="cl">									<span class="n">ComputerName</span> <span class="p">=</span> <span class="nv">$Computer</span>
-</span></span><span class="line"><span class="cl">									<span class="n">Disk</span> <span class="p">=</span> <span class="nv">$disk</span><span class="p">.</span><span class="py">DeviceID</span>
-</span></span><span class="line"><span class="cl">									<span class="n">DiskSize</span> <span class="p">=</span> <span class="p">[</span><span class="no">math</span><span class="p">]::</span><span class="n">Truncate</span><span class="p">(</span><span class="nv">$disk</span><span class="p">.</span><span class="py">Size</span> <span class="p">/</span> <span class="mf">1</span><span class="p">GB);</span>
-</span></span><span class="line"><span class="cl">									<span class="n">DiskModel</span> <span class="p">=</span> <span class="nv">$disk</span><span class="p">.</span><span class="py">Model</span>
-</span></span><span class="line"><span class="cl">									<span class="n">Partition</span> <span class="p">=</span> <span class="nv">$partition</span><span class="p">.</span><span class="py">Name</span>
-</span></span><span class="line"><span class="cl">									<span class="n">DriveLetter</span> <span class="p">=</span> <span class="nv">$_</span><span class="p">.</span><span class="py">DeviceID</span>
-</span></span><span class="line"><span class="cl">									<span class="n">VolumeName</span> <span class="p">=</span> <span class="nv">$_</span><span class="p">.</span><span class="py">VolumeName</span>
-</span></span><span class="line"><span class="cl">									<span class="n">Size</span> <span class="p">=</span> <span class="p">[</span><span class="no">math</span><span class="p">]::</span><span class="n">Truncate</span><span class="p">(</span><span class="nv">$_</span><span class="p">.</span><span class="py">Size</span> <span class="p">/</span> <span class="mf">1</span><span class="p">GB)</span>
-</span></span><span class="line"><span class="cl">									<span class="n">FreeSpace</span> <span class="p">=</span> <span class="p">[</span><span class="no">math</span><span class="p">]::</span><span class="n">Truncate</span><span class="p">(</span><span class="nv">$_</span><span class="p">.</span><span class="py">FreeSpace</span> <span class="p">/</span> <span class="mf">1</span><span class="p">GB)</span>
-</span></span><span class="line"><span class="cl">									<span class="n">SCSIBus</span> <span class="p">=</span> <span class="nv">$disk</span><span class="p">.</span><span class="py">SCSIBus</span>
-</span></span><span class="line"><span class="cl">									<span class="n">SCSITargetId</span> <span class="p">=</span> <span class="nv">$disk</span><span class="p">.</span><span class="py">SCSITargetId</span>
-</span></span><span class="line"><span class="cl">								<span class="p">}</span>
-</span></span><span class="line"><span class="cl">								<span class="nv">$result</span> <span class="p">+=</span> <span class="nv">$obj</span>
-</span></span><span class="line"><span class="cl">							<span class="p">}</span>
-</span></span><span class="line"><span class="cl">						<span class="p">}</span>
-</span></span><span class="line"><span class="cl">					<span class="p">}</span>
-</span></span><span class="line"><span class="cl">				<span class="p">}</span>
-</span></span><span class="line"><span class="cl">				<span class="k">catch</span>
-</span></span><span class="line"><span class="cl">				<span class="p">{</span>
-</span></span><span class="line"><span class="cl">					<span class="nb">Write-Verbose</span> <span class="s2">&#34; Host [</span><span class="nv">$Computer</span><span class="s2">] Failed with Error: </span><span class="p">$(</span><span class="nv">$Error</span><span class="p">[</span><span class="mf">0</span><span class="p">])</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">				<span class="p">}</span>
-</span></span><span class="line"><span class="cl">			<span class="p">}</span>
-</span></span><span class="line"><span class="cl">			<span class="k">else</span>
-</span></span><span class="line"><span class="cl">			<span class="p">{</span>
-</span></span><span class="line"><span class="cl">				<span class="nb">Write-Verbose</span> <span class="s2">&#34; Host [</span><span class="nv">$Computer</span><span class="s2">] Failed Connectivity Test&#34;</span>
-</span></span><span class="line"><span class="cl">			<span class="p">}</span>
-</span></span><span class="line"><span class="cl">		<span class="p">}</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$result</span> <span class="p">|</span> <span class="nb">select </span><span class="n">ComputerName</span><span class="p">,</span><span class="n">Disk</span><span class="p">,</span><span class="n">DriveLetter</span><span class="p">,</span><span class="n">VolumeName</span><span class="p">,</span><span class="n">Size</span><span class="p">,</span><span class="n">FreeSpace</span><span class="p">,</span><span class="n">DiskModel</span><span class="p">,</span><span class="n">Partition</span><span class="p">,</span><span class="n">SCSIBus</span><span class="p">,</span><span class="n">SCSITargetId</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="cl">	<span class="k">End</span>
-</span></span><span class="line"><span class="cl">	<span class="p">{</span>
-</span></span><span class="line"><span class="cl">		<span class="nb">Write-Progress</span> <span class="n">-activity</span> <span class="s2">&#34;Running on </span><span class="nv">$Computer</span><span class="s2">&#34;</span> <span class="n">-Status</span> <span class="s2">&#34;Completed.&#34;</span> <span class="n">-Completed</span>
-</span></span><span class="line"><span class="cl">		<span class="nb">Write-Verbose</span> <span class="s2">&#34; [</span><span class="p">$(</span><span class="nv">$MyInvocation</span><span class="p">.</span><span class="n">InvocationName</span><span class="p">)</span><span class="s2">] :: End Process&#34;</span>
-</span></span><span class="line"><span class="cl">	<span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div>]]></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SCSI on Automate everything</title><link>https://graef.io/tags/scsi/</link><description>Recent content in SCSI on Automate everything</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 10 Aug 2017 11:48:24 +0800</lastBuildDate><atom:link href="https://graef.io/tags/scsi/index.xml" rel="self" type="application/rss+xml"/><item><title>Get-ScsiDisks: Combine Physicaldisk and Logicaldisk Objects</title><link>https://graef.io/get-scsidisks-combine-physicaldisk-and-logicaldisk-objects/</link><pubDate>Thu, 10 Aug 2017 11:48:24 +0800</pubDate><guid>https://graef.io/get-scsidisks-combine-physicaldisk-and-logicaldisk-objects/</guid><description>&lt;p>Hi there, following function &lt;code>Get-ScsiDisks&lt;/code> retrieves disk details for VMWare Guests or any computer with corresponding SCSI disk details like SCSI ID and SCSI Bus. The function concatenates objects consisting of &lt;code>Win32_DiskDrive&lt;/code>, &lt;code>Win32_LogicalDisk&lt;/code> and &lt;code>Win32_DiskDriveToDiskPartition&lt;/code> using WMI. For WinRM you can use Invoke-Command and inject the script.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt"> 10
+&lt;/span>&lt;span class="lnt"> 11
+&lt;/span>&lt;span class="lnt"> 12
+&lt;/span>&lt;span class="lnt"> 13
+&lt;/span>&lt;span class="lnt"> 14
+&lt;/span>&lt;span class="lnt"> 15
+&lt;/span>&lt;span class="lnt"> 16
+&lt;/span>&lt;span class="lnt"> 17
+&lt;/span>&lt;span class="lnt"> 18
+&lt;/span>&lt;span class="lnt"> 19
+&lt;/span>&lt;span class="lnt"> 20
+&lt;/span>&lt;span class="lnt"> 21
+&lt;/span>&lt;span class="lnt"> 22
+&lt;/span>&lt;span class="lnt"> 23
+&lt;/span>&lt;span class="lnt"> 24
+&lt;/span>&lt;span class="lnt"> 25
+&lt;/span>&lt;span class="lnt"> 26
+&lt;/span>&lt;span class="lnt"> 27
+&lt;/span>&lt;span class="lnt"> 28
+&lt;/span>&lt;span class="lnt"> 29
+&lt;/span>&lt;span class="lnt"> 30
+&lt;/span>&lt;span class="lnt"> 31
+&lt;/span>&lt;span class="lnt"> 32
+&lt;/span>&lt;span class="lnt"> 33
+&lt;/span>&lt;span class="lnt"> 34
+&lt;/span>&lt;span class="lnt"> 35
+&lt;/span>&lt;span class="lnt"> 36
+&lt;/span>&lt;span class="lnt"> 37
+&lt;/span>&lt;span class="lnt"> 38
+&lt;/span>&lt;span class="lnt"> 39
+&lt;/span>&lt;span class="lnt"> 40
+&lt;/span>&lt;span class="lnt"> 41
+&lt;/span>&lt;span class="lnt"> 42
+&lt;/span>&lt;span class="lnt"> 43
+&lt;/span>&lt;span class="lnt"> 44
+&lt;/span>&lt;span class="lnt"> 45
+&lt;/span>&lt;span class="lnt"> 46
+&lt;/span>&lt;span class="lnt"> 47
+&lt;/span>&lt;span class="lnt"> 48
+&lt;/span>&lt;span class="lnt"> 49
+&lt;/span>&lt;span class="lnt"> 50
+&lt;/span>&lt;span class="lnt"> 51
+&lt;/span>&lt;span class="lnt"> 52
+&lt;/span>&lt;span class="lnt"> 53
+&lt;/span>&lt;span class="lnt"> 54
+&lt;/span>&lt;span class="lnt"> 55
+&lt;/span>&lt;span class="lnt"> 56
+&lt;/span>&lt;span class="lnt"> 57
+&lt;/span>&lt;span class="lnt"> 58
+&lt;/span>&lt;span class="lnt"> 59
+&lt;/span>&lt;span class="lnt"> 60
+&lt;/span>&lt;span class="lnt"> 61
+&lt;/span>&lt;span class="lnt"> 62
+&lt;/span>&lt;span class="lnt"> 63
+&lt;/span>&lt;span class="lnt"> 64
+&lt;/span>&lt;span class="lnt"> 65
+&lt;/span>&lt;span class="lnt"> 66
+&lt;/span>&lt;span class="lnt"> 67
+&lt;/span>&lt;span class="lnt"> 68
+&lt;/span>&lt;span class="lnt"> 69
+&lt;/span>&lt;span class="lnt"> 70
+&lt;/span>&lt;span class="lnt"> 71
+&lt;/span>&lt;span class="lnt"> 72
+&lt;/span>&lt;span class="lnt"> 73
+&lt;/span>&lt;span class="lnt"> 74
+&lt;/span>&lt;span class="lnt"> 75
+&lt;/span>&lt;span class="lnt"> 76
+&lt;/span>&lt;span class="lnt"> 77
+&lt;/span>&lt;span class="lnt"> 78
+&lt;/span>&lt;span class="lnt"> 79
+&lt;/span>&lt;span class="lnt"> 80
+&lt;/span>&lt;span class="lnt"> 81
+&lt;/span>&lt;span class="lnt"> 82
+&lt;/span>&lt;span class="lnt"> 83
+&lt;/span>&lt;span class="lnt"> 84
+&lt;/span>&lt;span class="lnt"> 85
+&lt;/span>&lt;span class="lnt"> 86
+&lt;/span>&lt;span class="lnt"> 87
+&lt;/span>&lt;span class="lnt"> 88
+&lt;/span>&lt;span class="lnt"> 89
+&lt;/span>&lt;span class="lnt"> 90
+&lt;/span>&lt;span class="lnt"> 91
+&lt;/span>&lt;span class="lnt"> 92
+&lt;/span>&lt;span class="lnt"> 93
+&lt;/span>&lt;span class="lnt"> 94
+&lt;/span>&lt;span class="lnt"> 95
+&lt;/span>&lt;span class="lnt"> 96
+&lt;/span>&lt;span class="lnt"> 97
+&lt;/span>&lt;span class="lnt"> 98
+&lt;/span>&lt;span class="lnt"> 99
+&lt;/span>&lt;span class="lnt">100
+&lt;/span>&lt;span class="lnt">101
+&lt;/span>&lt;span class="lnt">102
+&lt;/span>&lt;span class="lnt">103
+&lt;/span>&lt;span class="lnt">104
+&lt;/span>&lt;span class="lnt">105
+&lt;/span>&lt;span class="lnt">106
+&lt;/span>&lt;span class="lnt">107
+&lt;/span>&lt;span class="lnt">108
+&lt;/span>&lt;span class="lnt">109
+&lt;/span>&lt;span class="lnt">110
+&lt;/span>&lt;span class="lnt">111
+&lt;/span>&lt;span class="lnt">112
+&lt;/span>&lt;span class="lnt">113
+&lt;/span>&lt;span class="lnt">114
+&lt;/span>&lt;span class="lnt">115
+&lt;/span>&lt;span class="lnt">116
+&lt;/span>&lt;span class="lnt">117
+&lt;/span>&lt;span class="lnt">118
+&lt;/span>&lt;span class="lnt">119
+&lt;/span>&lt;span class="lnt">120
+&lt;/span>&lt;span class="lnt">121
+&lt;/span>&lt;span class="lnt">122
+&lt;/span>&lt;span class="lnt">123
+&lt;/span>&lt;span class="lnt">124
+&lt;/span>&lt;span class="lnt">125
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-powershell" data-lang="powershell">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">Function&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nb">Get-ScsiDisks&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">&amp;lt;#
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">.&lt;/span>&lt;span class="sd">SYNOPSIS&lt;/span>&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Retrieves disk details for VMWare Guests with corresponding SCSI disk details like SCSI ID
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> and SCSI Bus.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">.&lt;/span>&lt;span class="sd">DESCRIPTION&lt;/span>&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Retrieves a concatenated object consisting of Win32_DiskDrive, Win32_LogicalDisk and
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Win32_DiskDriveToDiskPartition using WMI. For WinRM you can use Invoke-Command and inject the script.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">.PARAMETER ComputerName
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> A single Computer or an array of computer names. The default is localhost ($env:COMPUTERNAME).
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">.PARAMETER Credentials
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Commit Credentials for a different domain.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">.PARAMETER Verbose
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Run in Verbose Mode.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">.&lt;/span>&lt;span class="sd">EXAMPLE&lt;/span>&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> PS C:&amp;gt; Get-ScsiDisks
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> ComputerName Disk DriveLetter VolumeName Size FreeSpace DiskModel
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> ------------ ---- ----------- ---------- ---- --------- ---------
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> SERVER \.PHYSICALDRIVE1 D: Data 767 767 VMware Virtual di...
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> SERVER \.PHYSICALDRIVE0 C: OS 59 39 VMware Virtual di...
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">.&lt;/span>&lt;span class="sd">EXAMPLE&lt;/span>&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">	PS C:&amp;gt; Get-ScsiDisks | Out-GridView
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">.&lt;/span>&lt;span class="sd">EXAMPLE&lt;/span>&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">	PS C:&amp;gt; Get-ScsiDisks | ft -a
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">.&lt;/span>&lt;span class="sd">EXAMPLE&lt;/span>&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">	PS C:&amp;gt; Get-ScsiDisks -ComputerName (gc &amp;#39;C:VMs.txt&amp;#39;) -Credentials Get-Credential
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">.&lt;/span>&lt;span class="sd">LINK&lt;/span>&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">Home
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">.&lt;/span>&lt;span class="sd">NOTES&lt;/span>&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Author: Sebastian Gräf
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Email: ps@graef.io
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Date: September 12, 2017
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> PSVer: 3.0/4.0/5.0
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">#&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="p">[&lt;/span>&lt;span class="nb">Cmdletbinding&lt;/span>&lt;span class="p">()]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="k">Param&lt;/span> &lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="p">[&lt;/span>&lt;span class="nb">Parameter&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="na">ValueFromPipelineByPropertyName&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="vm">$true&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="na">ValueFromPipeline&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="vm">$true&lt;/span>&lt;span class="p">)]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="nv">$ComputerName&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nv">$Env:COMPUTERNAME&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="p">[&lt;/span>&lt;span class="nb">Parameter&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="na">ValueFromPipelineByPropertyName&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="vm">$true&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="na">ValueFromPipeline&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="vm">$true&lt;/span>&lt;span class="p">)]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="p">[&lt;/span>&lt;span class="n">ValidateNotNull&lt;/span>&lt;span class="p">()]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="p">[&lt;/span>&lt;span class="no">System.Management.Automation.PSCredential&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="n">System&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">Management&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">Automation&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">Credential&lt;/span>&lt;span class="p">()]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="nv">$Credentials&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="no">System.Management.Automation.PSCredential&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">Empty&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="k">Begin&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="nb">Write-Verbose&lt;/span> &lt;span class="s2">&amp;#34; [&lt;/span>&lt;span class="p">$(&lt;/span>&lt;span class="nv">$MyInvocation&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">InvocationName&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="s2">] :: Start Process&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="nv">$result&lt;/span>&lt;span class="p">=&lt;/span>&lt;span class="vm">@&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="nv">$ProgressCounter&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="mf">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="k">Process&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="k">foreach&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nv">$Computer&lt;/span> &lt;span class="k">in&lt;/span> &lt;span class="nv">$ComputerName&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">			&lt;span class="nv">$ProgressCounter&lt;/span>&lt;span class="p">++&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">			&lt;span class="nb">Write-Progress&lt;/span> &lt;span class="n">-activity&lt;/span> &lt;span class="s2">&amp;#34;Running on &lt;/span>&lt;span class="nv">$Computer&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span> &lt;span class="n">-status&lt;/span> &lt;span class="s2">&amp;#34;Please wait ...&amp;#34;&lt;/span> &lt;span class="n">-PercentComplete&lt;/span> &lt;span class="p">((&lt;/span>&lt;span class="nv">$ProgressCounter&lt;/span> &lt;span class="p">/&lt;/span> &lt;span class="nv">$ComputerName&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">length&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">*&lt;/span> &lt;span class="mf">100&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">			&lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nb">Test-Connection&lt;/span> &lt;span class="nv">$Computer&lt;/span> &lt;span class="n">-Count&lt;/span> &lt;span class="mf">1&lt;/span> &lt;span class="n">-Quiet&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">			&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">				&lt;span class="nb">Write-Verbose&lt;/span> &lt;span class="s2">&amp;#34; [&lt;/span>&lt;span class="p">$(&lt;/span>&lt;span class="nv">$MyInvocation&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">InvocationName&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="s2">] :: Processing &lt;/span>&lt;span class="nv">$Computer&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">				&lt;span class="k">try&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">				&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">					&lt;span class="nb">Get-WmiObject&lt;/span> &lt;span class="n">-Class&lt;/span> &lt;span class="n">Win32_DiskDrive&lt;/span> &lt;span class="n">-ComputerName&lt;/span> &lt;span class="nv">$Computer&lt;/span> &lt;span class="n">-Credential&lt;/span> &lt;span class="nv">$Credentials&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="p">%&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">						&lt;span class="nv">$disk&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nv">$_&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">						&lt;span class="nv">$partitions&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;ASSOCIATORS OF &amp;#34;&lt;/span> &lt;span class="p">+&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">						&lt;span class="s2">&amp;#34;{Win32_DiskDrive.DeviceID=&amp;#39;&lt;/span>&lt;span class="p">$(&lt;/span>&lt;span class="nv">$disk&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">DeviceID&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="s2">&amp;#39;} &amp;#34;&lt;/span> &lt;span class="p">+&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">						&lt;span class="s2">&amp;#34;WHERE AssocClass = Win32_DiskDriveToDiskPartition&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">						&lt;span class="nb">Get-WmiObject&lt;/span> &lt;span class="n">-Query&lt;/span> &lt;span class="nv">$partitions&lt;/span> &lt;span class="n">-ComputerName&lt;/span> &lt;span class="nv">$Computer&lt;/span> &lt;span class="n">-Credential&lt;/span> &lt;span class="nv">$Credentials&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="p">%&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">							&lt;span class="nv">$partition&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nv">$_&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">							&lt;span class="nv">$drives&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;ASSOCIATORS OF &amp;#34;&lt;/span> &lt;span class="p">+&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">							&lt;span class="s2">&amp;#34;{Win32_DiskPartition.DeviceID=&amp;#39;&lt;/span>&lt;span class="p">$(&lt;/span>&lt;span class="nv">$partition&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">DeviceID&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="s2">&amp;#39;} &amp;#34;&lt;/span> &lt;span class="p">+&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">							&lt;span class="s2">&amp;#34;WHERE AssocClass = Win32_LogicalDiskToPartition&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">							&lt;span class="nb">Get-WmiObject&lt;/span> &lt;span class="n">-Query&lt;/span> &lt;span class="nv">$drives&lt;/span> &lt;span class="n">-ComputerName&lt;/span> &lt;span class="nv">$Computer&lt;/span> &lt;span class="n">-Credential&lt;/span> &lt;span class="nv">$Credentials&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="p">%&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">								&lt;span class="nv">$obj&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nb">New-Object&lt;/span> &lt;span class="n">-Type&lt;/span> &lt;span class="n">PSCustomObject&lt;/span> &lt;span class="n">-Property&lt;/span> &lt;span class="vm">@&lt;/span>&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">									&lt;span class="n">ComputerName&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nv">$Computer&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">									&lt;span class="n">Disk&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nv">$disk&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">DeviceID&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">									&lt;span class="n">DiskSize&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="no">math&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">Truncate&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nv">$disk&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">Size&lt;/span> &lt;span class="p">/&lt;/span> &lt;span class="mf">1&lt;/span>&lt;span class="p">GB);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">									&lt;span class="n">DiskModel&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nv">$disk&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">Model&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">									&lt;span class="n">Partition&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nv">$partition&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">Name&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">									&lt;span class="n">DriveLetter&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nv">$_&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">DeviceID&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">									&lt;span class="n">VolumeName&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nv">$_&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">VolumeName&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">									&lt;span class="n">Size&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="no">math&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">Truncate&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nv">$_&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">Size&lt;/span> &lt;span class="p">/&lt;/span> &lt;span class="mf">1&lt;/span>&lt;span class="p">GB)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">									&lt;span class="n">FreeSpace&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="no">math&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">Truncate&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nv">$_&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">FreeSpace&lt;/span> &lt;span class="p">/&lt;/span> &lt;span class="mf">1&lt;/span>&lt;span class="p">GB)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">									&lt;span class="n">SCSIBus&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nv">$disk&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">SCSIBus&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">									&lt;span class="n">SCSITargetId&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nv">$disk&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">SCSITargetId&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">								&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">								&lt;span class="nv">$result&lt;/span> &lt;span class="p">+=&lt;/span> &lt;span class="nv">$obj&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">							&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">						&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">					&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">				&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">				&lt;span class="k">catch&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">				&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">					&lt;span class="nb">Write-Verbose&lt;/span> &lt;span class="s2">&amp;#34; Host [&lt;/span>&lt;span class="nv">$Computer&lt;/span>&lt;span class="s2">] Failed with Error: &lt;/span>&lt;span class="p">$(&lt;/span>&lt;span class="nv">$Error&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mf">0&lt;/span>&lt;span class="p">])&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">				&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">			&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">			&lt;span class="k">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">			&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">				&lt;span class="nb">Write-Verbose&lt;/span> &lt;span class="s2">&amp;#34; Host [&lt;/span>&lt;span class="nv">$Computer&lt;/span>&lt;span class="s2">] Failed Connectivity Test&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">			&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$result&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="nb">select &lt;/span>&lt;span class="n">ComputerName&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">Disk&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">DriveLetter&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">VolumeName&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">Size&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">FreeSpace&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">DiskModel&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">Partition&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">SCSIBus&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">SCSITargetId&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="k">End&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="nb">Write-Progress&lt;/span> &lt;span class="n">-activity&lt;/span> &lt;span class="s2">&amp;#34;Running on &lt;/span>&lt;span class="nv">$Computer&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span> &lt;span class="n">-Status&lt;/span> &lt;span class="s2">&amp;#34;Completed.&amp;#34;&lt;/span> &lt;span class="n">-Completed&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="nb">Write-Verbose&lt;/span> &lt;span class="s2">&amp;#34; [&lt;/span>&lt;span class="p">$(&lt;/span>&lt;span class="nv">$MyInvocation&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">InvocationName&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="s2">] :: End Process&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

@@ -1,175 +1,205 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Scripts - Category - Automate everything</title><link>https://graef.io/categories/scripts/</link><description>Scripts - Category - Automate everything</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 22 Mar 2025 10:22:10 +1000</lastBuildDate><atom:link href="https://graef.io/categories/scripts/" rel="self" type="application/rss+xml"/><item><title>Automating Repository Management in Github and Azure Devops With Powershell</title><link>https://graef.io/automating-repository-management-in-github-and-azure-devops-with-powershell/</link><pubDate>Sat, 22 Mar 2025 10:22:10 +1000</pubDate><author>Author</author><guid>https://graef.io/automating-repository-management-in-github-and-azure-devops-with-powershell/</guid><description><![CDATA[<p>Working in large enterprise environments often means managing a complex landscape of repositories across multiple GitHub organizations and Azure DevOps projects. Keeping these repositories up to date—especially when working with multiple engineering teams—can be a daunting task. That’s where automation comes in.</p>
-<p>To simplify this, I’ve developed a consolidated PowerShell script that combines the functionality of my previous scripts into one:</p>
-<ul>
-<li><a href="https://github.com/segraef/Scripts/blob/main/PowerShell/Update-Repos.ps1" target="_blank" rel="noopener noreffer">Update-Repos.ps1</a></li>
-</ul>
-<p>This script helps automate the process of cloning and updating repositories, making it significantly easier to manage a large number of repos efficiently.</p>]]></description></item><item><title>How to install Azure CLI</title><link>https://graef.io/how-to-install-azure-cli/</link><pubDate>Sat, 06 Mar 2021 00:00:00 +0000</pubDate><author>Author</author><guid>https://graef.io/how-to-install-azure-cli/</guid><description><![CDATA[<p>Let&rsquo;s keep it easy with these one-liner&rsquo;s you can use for Windows as well as Linux to install or update Azure CLI.</p>]]></description></item><item><title>Azure Pipelines Container Agents for Azure Devops</title><link>https://graef.io/azure-pipelines-container-agents-for-azure-devops/</link><pubDate>Mon, 07 Dec 2020 14:06:02 +0800</pubDate><author>Author</author><guid>https://graef.io/azure-pipelines-container-agents-for-azure-devops/</guid><description>&lt;p>Create self-hosted Azure Pipelines Container Agents for Azure Devops.&lt;/p></description></item><item><title>Programmatically Create Azure Pipelines</title><link>https://graef.io/programmatically-create-azure-pipelines/</link><pubDate>Sat, 07 Mar 2020 13:10:29 +0800</pubDate><author>Author</author><guid>https://graef.io/programmatically-create-azure-pipelines/</guid><description>&lt;p>This script &lt;a href="https://github.com/segraef/New-AzPipeline" target="_blank" rel="noopener noreffer">New-AzPipeline&lt;/a> lets you programmatically create Azure Pipelines based on your folder structure.&lt;/p></description></item><item><title>Function Lock-Workstation locally and remotely</title><link>https://graef.io/function-lock-workstation-locally-and-remotely/</link><pubDate>Sun, 04 Aug 2019 00:00:00 +0000</pubDate><author>Author</author><guid>https://graef.io/function-lock-workstation-locally-and-remotely/</guid><description>&lt;p>You can do everything with PowerShell, as well as locking your workstation with one simple function call.&lt;/p></description></item><item><title>Get Azure VM Cores (vCPUs) per Region</title><link>https://graef.io/get-azure-vm-cores-per-region/</link><pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate><author>Author</author><guid>https://graef.io/get-azure-vm-cores-per-region/</guid><description>&lt;p>If you need a script which outputs you the overall VMCore amount per region, there you go.&lt;/p></description></item><item><title>Get Local Account Memberships</title><link>https://graef.io/get-local-account-memberships/</link><pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate><author>Author</author><guid>https://graef.io/get-local-account-memberships/</guid><description><![CDATA[<p>Okay, yeah there are plenty of scripts out which give you local accounts via <code>WMI</code> or <code>ADSI</code> and yes scripts exist also which give you all local groups but there is not one which gives you both (of course there are also some) but what if you’re looking to implement this as a CustomScriptExtension to your Azure VM?</p>]]></description></item><item><title>Get and Set Timezones via PowerShell remotely</title><link>https://graef.io/get-and-set-timezones-via-powershell-remotely/</link><pubDate>Thu, 28 Jun 2018 00:00:00 +0000</pubDate><author>Author</author><guid>https://graef.io/get-and-set-timezones-via-powershell-remotely/</guid><description><![CDATA[<p>As published in my Technet Gallery Script Center <a href="https://gallery.technet.microsoft.com/scriptcenter/Get-Timezones-PowerShell-24781869" target="_blank" rel="noopener noreffer">here</a>, you can get current timezones remotely via PowerShell with Get-Timezones. Get-Timezones is using <code>WMI</code> to communicate with your servers.</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span><span class="lnt">20
-</span><span class="lnt">21
-</span><span class="lnt">22
-</span><span class="lnt">23
-</span><span class="lnt">24
-</span><span class="lnt">25
-</span><span class="lnt">26
-</span><span class="lnt">27
-</span><span class="lnt">28
-</span><span class="lnt">29
-</span><span class="lnt">30
-</span><span class="lnt">31
-</span><span class="lnt">32
-</span><span class="lnt">33
-</span><span class="lnt">34
-</span><span class="lnt">35
-</span><span class="lnt">36
-</span><span class="lnt">37
-</span><span class="lnt">38
-</span><span class="lnt">39
-</span><span class="lnt">40
-</span><span class="lnt">41
-</span><span class="lnt">42
-</span><span class="lnt">43
-</span><span class="lnt">44
-</span><span class="lnt">45
-</span><span class="lnt">46
-</span><span class="lnt">47
-</span><span class="lnt">48
-</span><span class="lnt">49
-</span><span class="lnt">50
-</span><span class="lnt">51
-</span><span class="lnt">52
-</span><span class="lnt">53
-</span><span class="lnt">54
-</span><span class="lnt">55
-</span><span class="lnt">56
-</span><span class="lnt">57
-</span><span class="lnt">58
-</span><span class="lnt">59
-</span><span class="lnt">60
-</span><span class="lnt">61
-</span><span class="lnt">62
-</span><span class="lnt">63
-</span><span class="lnt">64
-</span><span class="lnt">65
-</span><span class="lnt">66
-</span><span class="lnt">67
-</span><span class="lnt">68
-</span><span class="lnt">69
-</span><span class="lnt">70
-</span><span class="lnt">71
-</span><span class="lnt">72
-</span><span class="lnt">73
-</span><span class="lnt">74
-</span><span class="lnt">75
-</span><span class="lnt">76
-</span><span class="lnt">77
-</span><span class="lnt">78
-</span><span class="lnt">79
-</span><span class="lnt">80
-</span><span class="lnt">81
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="kd">Function</span><span class="w"> </span><span class="nb">Get-Timezones</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">    <span class="cm">&lt;#
-</span></span></span><span class="line"><span class="cl"><span class="cm">    .</span><span class="sd">SYNOPSIS</span><span class="cm">
-</span></span></span><span class="line"><span class="cl"><span class="cm">    Retrieves timezones of local or remote computers via WMI.
-</span></span></span><span class="line"><span class="cl"><span class="cm">
-</span></span></span><span class="line"><span class="cl"><span class="cm">    .</span><span class="sd">DESCRIPTION</span><span class="cm">
-</span></span></span><span class="line"><span class="cl"><span class="cm">    Retrieves timezones of local or remote computers via WMI.
-</span></span></span><span class="line"><span class="cl"><span class="cm">
-</span></span></span><span class="line"><span class="cl"><span class="cm">    .PARAMETER ComputerName
-</span></span></span><span class="line"><span class="cl"><span class="cm">    A single Computer or an array of computer names. The default is localhost ($env:COMPUTERNAME).
-</span></span></span><span class="line"><span class="cl"><span class="cm">
-</span></span></span><span class="line"><span class="cl"><span class="cm">    .PARAMETER Credentials
-</span></span></span><span class="line"><span class="cl"><span class="cm">    Commit Credentials for a different domain.
-</span></span></span><span class="line"><span class="cl"><span class="cm">
-</span></span></span><span class="line"><span class="cl"><span class="cm">    .PARAMETER Verbose
-</span></span></span><span class="line"><span class="cl"><span class="cm">    Run in Verbose Mode.
-</span></span></span><span class="line"><span class="cl"><span class="cm">
-</span></span></span><span class="line"><span class="cl"><span class="cm">    .</span><span class="sd">EXAMPLE</span><span class="cm">
-</span></span></span><span class="line"><span class="cl"><span class="cm">    PS C:\&amp;amp;amp;amp;gt; Get-Timezones -ComputerName (gc &#39;C:\computers.txt&#39;) -Credentials Get-Credential
-</span></span></span><span class="line"><span class="cl"><span class="cm">
-</span></span></span><span class="line"><span class="cl"><span class="cm">    ComputerName TimezoneName DaylightSaving TimezoneCaption
-</span></span></span><span class="line"><span class="cl"><span class="cm">    ------------ ------------ -------------- ---------------
-</span></span></span><span class="line"><span class="cl"><span class="cm">    SERVER01 W. Europe Standard Time yes (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna
-</span></span></span><span class="line"><span class="cl"><span class="cm">    SERVER02 W. Europe Standard Time yes (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna
-</span></span></span><span class="line"><span class="cl"><span class="cm">
-</span></span></span><span class="line"><span class="cl"><span class="cm">    .</span><span class="sd">NOTES</span><span class="cm">
-</span></span></span><span class="line"><span class="cl"><span class="cm">    Author: Sebastian Gräf
-</span></span></span><span class="line"><span class="cl"><span class="cm">    Website: https://graef.io
-</span></span></span><span class="line"><span class="cl"><span class="cm">    Email: ps@graef.io
-</span></span></span><span class="line"><span class="cl"><span class="cm">    Date: June 27, 2017
-</span></span></span><span class="line"><span class="cl"><span class="cm">    PSVer: 3.0/4.0/5.0
-</span></span></span><span class="line"><span class="cl"><span class="cm">    #&gt;</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="p">[</span><span class="nb">Cmdletbinding</span><span class="p">()]</span>
-</span></span><span class="line"><span class="cl">    <span class="k">Param</span> <span class="p">(</span>
-</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="nb">Parameter</span><span class="p">(</span><span class="na">ValueFromPipelineByPropertyName</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">,</span> <span class="na">ValueFromPipeline</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">)]</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$ComputerName</span> <span class="p">=</span> <span class="nv">$Env:COMPUTERNAME</span><span class="p">,</span>
-</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="nb">Parameter</span><span class="p">(</span><span class="na">ValueFromPipelineByPropertyName</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">,</span> <span class="na">ValueFromPipeline</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">)]</span>
-</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="n">ValidateNotNull</span><span class="p">()]</span>
-</span></span><span class="line"><span class="cl">        <span class="p">[</span><span class="no">System.Management.Automation.PSCredential</span><span class="p">][</span><span class="n">System</span><span class="p">.</span><span class="py">Management</span><span class="p">.</span><span class="py">Automation</span><span class="p">.</span><span class="py">Credential</span><span class="p">()]</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$Credentials</span> <span class="p">=</span> <span class="p">[</span><span class="no">System.Management.Automation.PSCredential</span><span class="p">]::</span><span class="n">Empty</span>
-</span></span><span class="line"><span class="cl">    <span class="p">)</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">Begin</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Verbose</span> <span class="s2">&#34; [</span><span class="p">$(</span><span class="nv">$MyInvocation</span><span class="p">.</span><span class="n">InvocationName</span><span class="p">)</span><span class="s2">] :: Start Process&#34;</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$Results</span> <span class="p">=</span> <span class="vm">@</span><span class="p">()</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$ProgressCounter</span> <span class="p">=</span> <span class="mf">0</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">    <span class="k">Process</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$Computer</span> <span class="k">in</span> <span class="nv">$ComputerName</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">            <span class="nv">$ProgressCounter</span><span class="p">++</span>
-</span></span><span class="line"><span class="cl">            <span class="nb">Write-Progress</span> <span class="n">-activity</span> <span class="s2">&#34;Running on </span><span class="nv">$Computer</span><span class="s2">&#34;</span> <span class="n">-status</span> <span class="s2">&#34;Please wait ...&#34;</span> <span class="n">-PercentComplete</span> <span class="p">((</span><span class="nv">$ProgressCounter</span> <span class="p">/</span> <span class="nv">$ComputerName</span><span class="p">.</span><span class="n">length</span><span class="p">)</span> <span class="p">*</span> <span class="mf">100</span><span class="p">)</span>
-</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="p">(</span><span class="nb">Test-Connection</span> <span class="nv">$Computer</span> <span class="n">-Count</span> <span class="mf">1</span> <span class="n">-Quiet</span><span class="p">)</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">                <span class="nb">Write-Verbose</span> <span class="s2">&#34; [</span><span class="p">$(</span><span class="nv">$MyInvocation</span><span class="p">.</span><span class="n">InvocationName</span><span class="p">)</span><span class="s2">] :: Processing </span><span class="nv">$Computer</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">                <span class="k">try</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">                    <span class="nv">$win32_timezone</span> <span class="p">=</span> <span class="nb">Get-WmiObject</span> <span class="n">-Class</span> <span class="n">win32_timezone</span> <span class="n">-ComputerName</span> <span class="nv">$Computer</span> <span class="n">-ErrorAction</span> <span class="n">Stop</span> <span class="n">-Credential</span> <span class="nv">$Credentials</span>
-</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="p">(</span><span class="nv">$win32_timezone</span><span class="p">.</span><span class="py">DaylightBias</span> <span class="o">-eq</span> <span class="mf">0</span><span class="p">)</span> <span class="p">{</span> <span class="nv">$daylightsaving</span> <span class="p">=</span> <span class="s2">&#34;no&#34;</span> <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="nv">$daylightsaving</span> <span class="p">=</span> <span class="s2">&#34;yes&#34;</span> <span class="p">}</span>
-</span></span><span class="line"><span class="cl">                    <span class="nv">$obj</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">-Type</span> <span class="n">PSCustomObject</span> <span class="n">-Property</span> <span class="vm">@</span><span class="p">{</span>
-</span></span><span class="line"><span class="cl">                        <span class="n">ComputerName</span>    <span class="p">=</span> <span class="nv">$Computer</span>
-</span></span><span class="line"><span class="cl">                        <span class="n">TimezoneCaption</span> <span class="p">=</span> <span class="nv">$win32_timezone</span><span class="p">.</span><span class="py">Caption</span>
-</span></span><span class="line"><span class="cl">                        <span class="n">TimezoneName</span>    <span class="p">=</span> <span class="nv">$win32_timezone</span><span class="p">.</span><span class="py">StandardName</span>
-</span></span><span class="line"><span class="cl">                        <span class="n">DaylightSaving</span>  <span class="p">=</span> <span class="nv">$daylightsaving</span>
-</span></span><span class="line"><span class="cl">                    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">                    <span class="nv">$Results</span> <span class="p">+=</span> <span class="nv">$obj</span>
-</span></span><span class="line"><span class="cl">                <span class="p">}</span>
-</span></span><span class="line"><span class="cl">                <span class="k">catch</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">                    <span class="nb">Write-Verbose</span> <span class="s2">&#34; Host [</span><span class="nv">$Computer</span><span class="s2">] Failed with Error: </span><span class="p">$(</span><span class="nv">$Error</span><span class="p">[</span><span class="mf">0</span><span class="p">])</span><span class="s2">&#34;</span>
-</span></span><span class="line"><span class="cl">                <span class="p">}</span>
-</span></span><span class="line"><span class="cl">            <span class="p">}</span>
-</span></span><span class="line"><span class="cl">            <span class="k">else</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">                <span class="nb">Write-Verbose</span> <span class="s2">&#34; Host [</span><span class="nv">$Computer</span><span class="s2">] Failed Connectivity Test&#34;</span>
-</span></span><span class="line"><span class="cl">            <span class="p">}</span>
-</span></span><span class="line"><span class="cl">        <span class="p">}</span>
-</span></span><span class="line"><span class="cl">        <span class="nv">$Results</span> <span class="p">|</span> <span class="nb">select </span><span class="n">ComputerName</span><span class="p">,</span> <span class="n">TimezoneName</span><span class="p">,</span> <span class="n">DaylightSaving</span><span class="p">,</span> <span class="n">TimezoneCaption</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl">    <span class="k">End</span> <span class="p">{</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Progress</span> <span class="n">-activity</span> <span class="s2">&#34;Running on </span><span class="nv">$Computer</span><span class="s2">&#34;</span> <span class="n">-Status</span> <span class="s2">&#34;Completed.&#34;</span> <span class="n">-Completed</span>
-</span></span><span class="line"><span class="cl">        <span class="nb">Write-Verbose</span> <span class="s2">&#34; [</span><span class="p">$(</span><span class="nv">$MyInvocation</span><span class="p">.</span><span class="n">InvocationName</span><span class="p">)</span><span class="s2">] :: End Process&#34;</span>
-</span></span><span class="line"><span class="cl">    <span class="p">}</span>
-</span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></td></tr></table>
-</div>
-</div><p>This will give you following output:</p>]]></description></item><item><title>Get-LogonHistory: Who was logged on to my server?</title><link>https://graef.io/get-logonhistory-who-was-logged-on-to-my-server/</link><pubDate>Thu, 05 Oct 2017 11:26:46 +0800</pubDate><author>Author</author><guid>https://graef.io/get-logonhistory-who-was-logged-on-to-my-server/</guid><description>&lt;p>Every System Administrator comes into a situation where you want to see who and how many users were logged on to your servers either via Remote Desktop or via script.&lt;/p></description></item><item><title>Get-PSVersions: Retrieve Powershell version remotely</title><link>https://graef.io/get-psversions-retrieve-powershell-version-remotely/</link><pubDate>Fri, 22 Sep 2017 11:51:06 +0800</pubDate><author>Author</author><guid>https://graef.io/get-psversions-retrieve-powershell-version-remotely/</guid><description><![CDATA[<p>Okay at the end it’s a simple <code>$PSVersion</code> wrapped in an <code>Invoke-Command</code> but hey these simple things are needful in case you need to run it against of 100s of servers and not just locally. With the help of <code>Invoke-Command</code> via WinRM and <code>$PSVersionTable.psversion</code> wrapped in a foreach you can retrieve PowerShell version of your remote computers indifferent if you need to use credentials to run it against a different domain than you currently reside. Just use the below function <code>Get-PSVersions</code>, simple but good.</p>]]></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Scripts on Automate everything</title><link>https://graef.io/categories/scripts/</link><description>Recent content in Scripts on Automate everything</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 22 Mar 2025 10:22:10 +1000</lastBuildDate><atom:link href="https://graef.io/categories/scripts/index.xml" rel="self" type="application/rss+xml"/><item><title>Automating Repository Management in Github and Azure Devops With Powershell</title><link>https://graef.io/automating-repository-management-in-github-and-azure-devops-with-powershell/</link><pubDate>Sat, 22 Mar 2025 10:22:10 +1000</pubDate><guid>https://graef.io/automating-repository-management-in-github-and-azure-devops-with-powershell/</guid><description>&lt;p>Working in large enterprise environments often means managing a complex landscape of repositories across multiple GitHub organizations and Azure DevOps projects. Keeping these repositories up to date—especially when working with multiple engineering teams—can be a daunting task. That’s where automation comes in.&lt;/p>
+&lt;p>To simplify this, I’ve developed a consolidated PowerShell script that combines the functionality of my previous scripts into one:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/segraef/Scripts/blob/main/PowerShell/Update-Repos.ps1" target="_blank" rel="noopener noreffer">Update-Repos.ps1&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>This script helps automate the process of cloning and updating repositories, making it significantly easier to manage a large number of repos efficiently.&lt;/p></description></item><item><title>How to install Azure CLI</title><link>https://graef.io/how-to-install-azure-cli/</link><pubDate>Sat, 06 Mar 2021 00:00:00 +0000</pubDate><guid>https://graef.io/how-to-install-azure-cli/</guid><description>&lt;p>Let&amp;rsquo;s keep it easy with these one-liner&amp;rsquo;s you can use for Windows as well as Linux to install or update Azure CLI.&lt;/p></description></item><item><title>Azure Pipelines Container Agents for Azure Devops</title><link>https://graef.io/azure-pipelines-container-agents-for-azure-devops/</link><pubDate>Mon, 07 Dec 2020 14:06:02 +0800</pubDate><guid>https://graef.io/azure-pipelines-container-agents-for-azure-devops/</guid><description>&lt;p>Create self-hosted Azure Pipelines Container Agents for Azure Devops.&lt;/p></description></item><item><title>Programmatically Create Azure Pipelines</title><link>https://graef.io/programmatically-create-azure-pipelines/</link><pubDate>Sat, 07 Mar 2020 13:10:29 +0800</pubDate><guid>https://graef.io/programmatically-create-azure-pipelines/</guid><description>&lt;p>This script &lt;a href="https://github.com/segraef/New-AzPipeline" target="_blank" rel="noopener noreffer">New-AzPipeline&lt;/a> lets you programmatically create Azure Pipelines based on your folder structure.&lt;/p></description></item><item><title>Function Lock-Workstation locally and remotely</title><link>https://graef.io/function-lock-workstation-locally-and-remotely/</link><pubDate>Sun, 04 Aug 2019 00:00:00 +0000</pubDate><guid>https://graef.io/function-lock-workstation-locally-and-remotely/</guid><description>&lt;p>You can do everything with PowerShell, as well as locking your workstation with one simple function call.&lt;/p></description></item><item><title>Get Azure VM Cores (vCPUs) per Region</title><link>https://graef.io/get-azure-vm-cores-per-region/</link><pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate><guid>https://graef.io/get-azure-vm-cores-per-region/</guid><description>&lt;p>If you need a script which outputs you the overall VMCore amount per region, there you go.&lt;/p></description></item><item><title>Get Local Account Memberships</title><link>https://graef.io/get-local-account-memberships/</link><pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate><guid>https://graef.io/get-local-account-memberships/</guid><description>&lt;p>Okay, yeah there are plenty of scripts out which give you local accounts via &lt;code>WMI&lt;/code> or &lt;code>ADSI&lt;/code> and yes scripts exist also which give you all local groups but there is not one which gives you both (of course there are also some) but what if you’re looking to implement this as a CustomScriptExtension to your Azure VM?&lt;/p></description></item><item><title>Get and Set Timezones via PowerShell remotely</title><link>https://graef.io/get-and-set-timezones-via-powershell-remotely/</link><pubDate>Thu, 28 Jun 2018 00:00:00 +0000</pubDate><guid>https://graef.io/get-and-set-timezones-via-powershell-remotely/</guid><description>&lt;p>As published in my Technet Gallery Script Center &lt;a href="https://gallery.technet.microsoft.com/scriptcenter/Get-Timezones-PowerShell-24781869" target="_blank" rel="noopener noreffer">here&lt;/a>, you can get current timezones remotely via PowerShell with Get-Timezones. Get-Timezones is using &lt;code>WMI&lt;/code> to communicate with your servers.&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;span class="lnt">23
+&lt;/span>&lt;span class="lnt">24
+&lt;/span>&lt;span class="lnt">25
+&lt;/span>&lt;span class="lnt">26
+&lt;/span>&lt;span class="lnt">27
+&lt;/span>&lt;span class="lnt">28
+&lt;/span>&lt;span class="lnt">29
+&lt;/span>&lt;span class="lnt">30
+&lt;/span>&lt;span class="lnt">31
+&lt;/span>&lt;span class="lnt">32
+&lt;/span>&lt;span class="lnt">33
+&lt;/span>&lt;span class="lnt">34
+&lt;/span>&lt;span class="lnt">35
+&lt;/span>&lt;span class="lnt">36
+&lt;/span>&lt;span class="lnt">37
+&lt;/span>&lt;span class="lnt">38
+&lt;/span>&lt;span class="lnt">39
+&lt;/span>&lt;span class="lnt">40
+&lt;/span>&lt;span class="lnt">41
+&lt;/span>&lt;span class="lnt">42
+&lt;/span>&lt;span class="lnt">43
+&lt;/span>&lt;span class="lnt">44
+&lt;/span>&lt;span class="lnt">45
+&lt;/span>&lt;span class="lnt">46
+&lt;/span>&lt;span class="lnt">47
+&lt;/span>&lt;span class="lnt">48
+&lt;/span>&lt;span class="lnt">49
+&lt;/span>&lt;span class="lnt">50
+&lt;/span>&lt;span class="lnt">51
+&lt;/span>&lt;span class="lnt">52
+&lt;/span>&lt;span class="lnt">53
+&lt;/span>&lt;span class="lnt">54
+&lt;/span>&lt;span class="lnt">55
+&lt;/span>&lt;span class="lnt">56
+&lt;/span>&lt;span class="lnt">57
+&lt;/span>&lt;span class="lnt">58
+&lt;/span>&lt;span class="lnt">59
+&lt;/span>&lt;span class="lnt">60
+&lt;/span>&lt;span class="lnt">61
+&lt;/span>&lt;span class="lnt">62
+&lt;/span>&lt;span class="lnt">63
+&lt;/span>&lt;span class="lnt">64
+&lt;/span>&lt;span class="lnt">65
+&lt;/span>&lt;span class="lnt">66
+&lt;/span>&lt;span class="lnt">67
+&lt;/span>&lt;span class="lnt">68
+&lt;/span>&lt;span class="lnt">69
+&lt;/span>&lt;span class="lnt">70
+&lt;/span>&lt;span class="lnt">71
+&lt;/span>&lt;span class="lnt">72
+&lt;/span>&lt;span class="lnt">73
+&lt;/span>&lt;span class="lnt">74
+&lt;/span>&lt;span class="lnt">75
+&lt;/span>&lt;span class="lnt">76
+&lt;/span>&lt;span class="lnt">77
+&lt;/span>&lt;span class="lnt">78
+&lt;/span>&lt;span class="lnt">79
+&lt;/span>&lt;span class="lnt">80
+&lt;/span>&lt;span class="lnt">81
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-powershell" data-lang="powershell">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">Function&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nb">Get-Timezones&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="cm">&amp;lt;#
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> .&lt;/span>&lt;span class="sd">SYNOPSIS&lt;/span>&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Retrieves timezones of local or remote computers via WMI.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> .&lt;/span>&lt;span class="sd">DESCRIPTION&lt;/span>&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Retrieves timezones of local or remote computers via WMI.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> .PARAMETER ComputerName
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> A single Computer or an array of computer names. The default is localhost ($env:COMPUTERNAME).
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> .PARAMETER Credentials
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Commit Credentials for a different domain.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> .PARAMETER Verbose
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Run in Verbose Mode.
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> .&lt;/span>&lt;span class="sd">EXAMPLE&lt;/span>&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> PS C:\&amp;amp;amp;amp;amp;gt; Get-Timezones -ComputerName (gc &amp;#39;C:\computers.txt&amp;#39;) -Credentials Get-Credential
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> ComputerName TimezoneName DaylightSaving TimezoneCaption
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> ------------ ------------ -------------- ---------------
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> SERVER01 W. Europe Standard Time yes (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> SERVER02 W. Europe Standard Time yes (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> .&lt;/span>&lt;span class="sd">NOTES&lt;/span>&lt;span class="cm">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Author: Sebastian Gräf
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Website: https://graef.io
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Email: ps@graef.io
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Date: June 27, 2017
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> PSVer: 3.0/4.0/5.0
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> #&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[&lt;/span>&lt;span class="nb">Cmdletbinding&lt;/span>&lt;span class="p">()]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">Param&lt;/span> &lt;span class="p">(&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[&lt;/span>&lt;span class="nb">Parameter&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="na">ValueFromPipelineByPropertyName&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="vm">$true&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="na">ValueFromPipeline&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="vm">$true&lt;/span>&lt;span class="p">)]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$ComputerName&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nv">$Env:COMPUTERNAME&lt;/span>&lt;span class="p">,&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[&lt;/span>&lt;span class="nb">Parameter&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="na">ValueFromPipelineByPropertyName&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="vm">$true&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="na">ValueFromPipeline&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="vm">$true&lt;/span>&lt;span class="p">)]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[&lt;/span>&lt;span class="n">ValidateNotNull&lt;/span>&lt;span class="p">()]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[&lt;/span>&lt;span class="no">System.Management.Automation.PSCredential&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="n">System&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">Management&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">Automation&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">Credential&lt;/span>&lt;span class="p">()]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$Credentials&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="no">System.Management.Automation.PSCredential&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">Empty&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">Begin&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">Write-Verbose&lt;/span> &lt;span class="s2">&amp;#34; [&lt;/span>&lt;span class="p">$(&lt;/span>&lt;span class="nv">$MyInvocation&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">InvocationName&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="s2">] :: Start Process&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$Results&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="vm">@&lt;/span>&lt;span class="p">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$ProgressCounter&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="mf">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">Process&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">foreach&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nv">$Computer&lt;/span> &lt;span class="k">in&lt;/span> &lt;span class="nv">$ComputerName&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$ProgressCounter&lt;/span>&lt;span class="p">++&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">Write-Progress&lt;/span> &lt;span class="n">-activity&lt;/span> &lt;span class="s2">&amp;#34;Running on &lt;/span>&lt;span class="nv">$Computer&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span> &lt;span class="n">-status&lt;/span> &lt;span class="s2">&amp;#34;Please wait ...&amp;#34;&lt;/span> &lt;span class="n">-PercentComplete&lt;/span> &lt;span class="p">((&lt;/span>&lt;span class="nv">$ProgressCounter&lt;/span> &lt;span class="p">/&lt;/span> &lt;span class="nv">$ComputerName&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">length&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">*&lt;/span> &lt;span class="mf">100&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nb">Test-Connection&lt;/span> &lt;span class="nv">$Computer&lt;/span> &lt;span class="n">-Count&lt;/span> &lt;span class="mf">1&lt;/span> &lt;span class="n">-Quiet&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">Write-Verbose&lt;/span> &lt;span class="s2">&amp;#34; [&lt;/span>&lt;span class="p">$(&lt;/span>&lt;span class="nv">$MyInvocation&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">InvocationName&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="s2">] :: Processing &lt;/span>&lt;span class="nv">$Computer&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">try&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$win32_timezone&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nb">Get-WmiObject&lt;/span> &lt;span class="n">-Class&lt;/span> &lt;span class="n">win32_timezone&lt;/span> &lt;span class="n">-ComputerName&lt;/span> &lt;span class="nv">$Computer&lt;/span> &lt;span class="n">-ErrorAction&lt;/span> &lt;span class="n">Stop&lt;/span> &lt;span class="n">-Credential&lt;/span> &lt;span class="nv">$Credentials&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nv">$win32_timezone&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">DaylightBias&lt;/span> &lt;span class="o">-eq&lt;/span> &lt;span class="mf">0&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nv">$daylightsaving&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;no&amp;#34;&lt;/span> &lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nv">$daylightsaving&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;yes&amp;#34;&lt;/span> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$obj&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nb">New-Object&lt;/span> &lt;span class="n">-Type&lt;/span> &lt;span class="n">PSCustomObject&lt;/span> &lt;span class="n">-Property&lt;/span> &lt;span class="vm">@&lt;/span>&lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">ComputerName&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nv">$Computer&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">TimezoneCaption&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nv">$win32_timezone&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">Caption&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">TimezoneName&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nv">$win32_timezone&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">StandardName&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">DaylightSaving&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nv">$daylightsaving&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$Results&lt;/span> &lt;span class="p">+=&lt;/span> &lt;span class="nv">$obj&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">catch&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">Write-Verbose&lt;/span> &lt;span class="s2">&amp;#34; Host [&lt;/span>&lt;span class="nv">$Computer&lt;/span>&lt;span class="s2">] Failed with Error: &lt;/span>&lt;span class="p">$(&lt;/span>&lt;span class="nv">$Error&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mf">0&lt;/span>&lt;span class="p">])&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">Write-Verbose&lt;/span> &lt;span class="s2">&amp;#34; Host [&lt;/span>&lt;span class="nv">$Computer&lt;/span>&lt;span class="s2">] Failed Connectivity Test&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$Results&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="nb">select &lt;/span>&lt;span class="n">ComputerName&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">TimezoneName&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">DaylightSaving&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">TimezoneCaption&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">End&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">Write-Progress&lt;/span> &lt;span class="n">-activity&lt;/span> &lt;span class="s2">&amp;#34;Running on &lt;/span>&lt;span class="nv">$Computer&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span> &lt;span class="n">-Status&lt;/span> &lt;span class="s2">&amp;#34;Completed.&amp;#34;&lt;/span> &lt;span class="n">-Completed&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">Write-Verbose&lt;/span> &lt;span class="s2">&amp;#34; [&lt;/span>&lt;span class="p">$(&lt;/span>&lt;span class="nv">$MyInvocation&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">InvocationName&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="s2">] :: End Process&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>This will give you following output:&lt;/p></description></item><item><title>Get-LogonHistory: Who was logged on to my server?</title><link>https://graef.io/get-logonhistory-who-was-logged-on-to-my-server/</link><pubDate>Thu, 05 Oct 2017 11:26:46 +0800</pubDate><guid>https://graef.io/get-logonhistory-who-was-logged-on-to-my-server/</guid><description>&lt;p>Every System Administrator comes into a situation where you want to see who and how many users were logged on to your servers either via Remote Desktop or via script.&lt;/p></description></item><item><title>Get-PSVersions: Retrieve Powershell version remotely</title><link>https://graef.io/get-psversions-retrieve-powershell-version-remotely/</link><pubDate>Fri, 22 Sep 2017 11:51:06 +0800</pubDate><guid>https://graef.io/get-psversions-retrieve-powershell-version-remotely/</guid><description>&lt;p>Okay at the end it’s a simple &lt;code>$PSVersion&lt;/code> wrapped in an &lt;code>Invoke-Command&lt;/code> but hey these simple things are needful in case you need to run it against of 100s of servers and not just locally. With the help of &lt;code>Invoke-Command&lt;/code> via WinRM and &lt;code>$PSVersionTable.psversion&lt;/code> wrapped in a foreach you can retrieve PowerShell version of your remote computers indifferent if you need to use credentials to run it against a different domain than you currently reside. Just use the below function &lt;code>Get-PSVersions&lt;/code>, simple but good.&lt;/p></description></item><item><title>Get-DellTags: Get Dell Tags and Express Service Code remotely</title><link>https://graef.io/get-delltags-get-dell-tags-and-express-service-code-remotely/</link><pubDate>Tue, 15 Aug 2017 11:40:27 +0800</pubDate><guid>https://graef.io/get-delltags-get-dell-tags-and-express-service-code-remotely/</guid><description>&lt;p>Get DELL Tag and Express Service Code remotely for more than one computer.&lt;/p></description></item><item><title>Simulate-Activity: Simulate user mouse and keyboard input with PowerShell</title><link>https://graef.io/simulate-activity-simulate-user-mouse-and-keyboard-input-with-powershell/</link><pubDate>Thu, 10 Aug 2017 11:11:29 +0800</pubDate><guid>https://graef.io/simulate-activity-simulate-user-mouse-and-keyboard-input-with-powershell/</guid><description>&lt;p>If you want to avoid or block coming up your screensaver locally or remotely, take this nice script.&lt;/p></description></item><item><title>Resolve DNS and IP addresses with PowerShell</title><link>https://graef.io/resolve-dns-and-ip-addresses-with-powershell/</link><pubDate>Mon, 10 Jul 2017 11:12:17 +0800</pubDate><guid>https://graef.io/resolve-dns-and-ip-addresses-with-powershell/</guid><description>&lt;p>In this case we’re going to use the method GetHostAddresses of the Dns class of the Sytem.Net namespace.
+For PowerShell 2.0 you can use following Windows PowerShell One Liners:&lt;/p>
+&lt;h3 id="name-to-ip-address-dns-forward">Name to IP Address (DNS Forward)&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-powershell" data-lang="powershell">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="no">System.Net.Dns&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">GetHostAddresses&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;graef.io&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="no">System.Net.Dns&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">GetHostAddresses&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;graef.io&amp;#39;&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="py">IPAddressToString&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="ip-address-to-name-dns-reverse">IP Address to Name (DNS Reverse)&lt;/h3>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-powershell" data-lang="powershell">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="no">System.Net.Dns&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">GetHostbyAddress&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;85.13.135.42&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">HostName&lt;/span> &lt;span class="n">Aliases&lt;/span> &lt;span class="n">AddressList&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">--------&lt;/span> &lt;span class="p">-------&lt;/span> &lt;span class="p">-----------&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">graef&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">io&lt;/span> &lt;span class="p">{}&lt;/span> &lt;span class="p">{&lt;/span>&lt;span class="mf">85.13&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">135&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="mf">42&lt;/span>&lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>As of PowerShell 4.0 you can use the Cmdlet Resolve-DnsName as well as for both Forward and Reverse:&lt;/p></description></item><item><title>Configure Cluster Quorum node weight settings</title><link>https://graef.io/configure-cluster-quorum-node-weight-settings/</link><pubDate>Fri, 23 Jun 2017 11:29:53 +0800</pubDate><guid>https://graef.io/configure-cluster-quorum-node-weight-settings/</guid><description>&lt;p>While using SQL AlwaysOn in connection with a third node on a different location as a DR solution, the third node is needed only in case there is a real Disaster Recovery.&lt;/p></description></item><item><title>How to Install KB Hotfixes only if they are not installed</title><link>https://graef.io/how-to-install-kb-hotfixes-only-if-they-are-not-installed/</link><pubDate>Sun, 02 Apr 2017 11:20:43 +0800</pubDate><guid>https://graef.io/how-to-install-kb-hotfixes-only-if-they-are-not-installed/</guid><description>&lt;p>I just wanted to share you a tiny snippet if you’re looking for a simple PowerShell liner to simply get a KB Hotfix installed. It also verifies if the KB is installed already.&lt;/p></description></item><item><title>KMS: How to Find Windows Server Licensing Details</title><link>https://graef.io/kms-how-to-find-windows-server-licensing-details/</link><pubDate>Fri, 10 Mar 2017 11:13:41 +0800</pubDate><guid>https://graef.io/kms-how-to-find-windows-server-licensing-details/</guid><description>&lt;p>If you&amp;rsquo;re searching for Windows Server Licensing and Activation Details of your Windows machine you can use following statements&lt;/p></description></item></channel></rss>
