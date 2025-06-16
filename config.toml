@@ -381,7 +381,7 @@ theme = "loveit"
         # Or
         # someCSS = "https://cdn.example.com/some.css"
       [params.page.library.js]
-        # clarity = "clarity.js"
+        # clarity = "/js/clarity.js"
         # located in "assets/"
         # Or
         # someJavascript = "https://cdn.example.com/some.js"
@@ -433,6 +433,9 @@ theme = "loveit"
       id = ""
       # server url for your tracker if you're self hosting
       server = ""
+    [params.analytics.clarity]
+      id = "pg6m55thgo"
+      enable = true
 
   #  Cookie consent config
   [params.cookieconsent]
@@ -533,8 +536,6 @@ theme = "loveit"
   page = ["HTML", "MarkDown"]
   section = ["HTML", "RSS"]
   taxonomy = ["HTML", "RSS"]
-  taxonomyTerm = ["HTML"]
-
 
 [languages.en.menu]
   [[languages.en.menu.main]]
