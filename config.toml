@@ -506,7 +506,7 @@ theme = "loveit"
 # Permalinks config
 [Permalinks]
   # posts = ":year/:month/:filename"
-  posts = ":filename"
+  posts = ":contentbasename"
 
 # Privacy config
 [privacy]
@@ -528,6 +528,18 @@ theme = "loveit"
   mediaType = "text/plain"
   isPlainText = true
   isHTML = false
+
+[outputFormats.HTML]
+  mediaType = "text/html"
+  isHTML = true
+  isPlainText = false
+  notAlternative = false
+
+[outputFormats.RSS]
+  mediaType = "application/rss+xml"
+  baseName = "index"
+  isPlainText = false
+  notAlternative = true
 
 # Options to make hugo output files
 [outputs]
