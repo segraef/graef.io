@@ -3,7 +3,7 @@ title: "How Github Copilot Coding Agent(s) make my day"
 description: ""
 date: 2025-07-14T10:06:59+10:00
 lastmod: 2025-07-14T10:06:59+10:00
-draft: true
+draft: false
 resources:
 - name: "featured-image"
   src: "image-11.png"
