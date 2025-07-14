@@ -29,7 +29,8 @@ What then usualy happens is, I'd go ahead and create a contribution by spending 
 
 ### Prerequisites
 
-- Make sure to enable Copilot coding agent (private or [Enterprise](https://docs.github.com/en/copilot/how-tos/agents/copilot-coding-agent/enabling-copilot-coding-agent#enabling-copilot-coding-agent-for-copilot-business-and-copilot-enterprise-subscribers))
+- Make sure to [enable Copilot coding agent](https://docs.github.com/en/copilot/how-tos/agents/copilot-coding-agent/enabling-copilot-coding-agent#overview) in case you are a GitHub Copilot Enterprise or GitHub Copilot Business subscriber ([Enterprise](https://docs.github.com/en/copilot/how-tos/agents/copilot-coding-agent/enabling-copilot-coding-agent#enabling-copilot-coding-agent-for-copilot-business-and-copilot-enterprise-subscribers))
+- If you are a GitHub Copilot Pro+ subscriber, Copilot coding agent is **enabled by default**.
 
 ## Assign Copilot to Issue
 
@@ -65,6 +66,8 @@ After around 10 minutes it finished the initial Implementation, changed the PR t
 ## What's the difference between GitHub Copilot and  GitHub Copilot Coding Agent?
 1. GitHub Copilot + Issue: When you assign Copilot to an issue, your GitHub Copilot Coding Agent (GHCA) gets assigned and starts working on it using GitHub Workflows and Action in its own instance.
 2. GitHub Copilot + Pull Request: When you assign Copilot to a pull request, your GitHub Copilot (GHC) reviews your code and gives feedback in form of a comment.
+
+More details around coding agent vs. agent mode see [Copilot coding agent versus agent mode](https://docs.github.com/en/copilot/concepts/about-copilot-coding-agent#copilot-coding-agent-versus-agent-mode)
 {{< /admonition >}}
 
 ![alt text](image-5.png)
