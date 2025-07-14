@@ -440,11 +440,21 @@ theme = "loveit"
   #  Cookie consent config
   [params.cookieconsent]
     enable = false
+    position = "bottom"
+    theme = "edgeless"
     # text strings used for Cookie consent banner
     [params.cookieconsent.content]
-      message = "If you like Cookies then please consent, Thanks."
-      dismiss = ""
-      link = ""
+      message = "This website uses Microsoft Clarity for analytics to improve your experience. By continuing to use this site, you consent to our use of cookies."
+      dismiss = "Accept"
+      link = "Learn more"
+      href = "https://privacy.microsoft.com/privacystatement"
+    # Configure the appearance of the cookie consent banner
+    [params.cookieconsent.palette]
+      [params.cookieconsent.palette.popup]
+        background = "#1f2937"
+      [params.cookieconsent.palette.button]
+        background = "#3b82f6"
+        text = "#ffffff"
 
   #  CDN config for third-party library files
   [params.cdn]
