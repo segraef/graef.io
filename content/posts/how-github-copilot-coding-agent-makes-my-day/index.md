@@ -9,8 +9,10 @@ resources:
   src: "image-11.png"
 - name: "featured-image-preview"
   src: "featured-image-preview.jpg"
-tags: ["tag1", "tag2"]
-categories: ["Other"]
+tags: ["github", "copilot", "terraform", "automation", "iac", "devops", "workflows", "agents"]
+
+
+categories: ["GitHub", "Copilot", "AI"]
 ---
 
 Ever wished you could delegate your coding tasks and watch them get done while you focus elsewhere? That’s exactly what happened when I assigned an issue to GitHub Copilot Coding Agent. From identifying the problem to drafting a pull request and running checks, it handled the entire workflow, efficiently and autonomously. Here's how it turned a routine fix into a hands-free solution that saved me hours.
