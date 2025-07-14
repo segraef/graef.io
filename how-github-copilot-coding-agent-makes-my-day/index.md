@@ -135,12 +135,9 @@ Of course, I would have used GitHub Copilot (Agent) in Visual Studio Code. But t
 ## Follow-Up Activities
 
 1. [Allowlist endpoints for AVM docker image int he agent's firewall](https://docs.github.com/en/copilot/how-tos/agents/copilot-coding-agent/customizing-or-disabling-the-firewall-for-copilot-coding-agent): In order to enable coding agents to fully run AVM unit tests we're going to allowlisting the following endpoints so the AVM docker image can run all unit tests without any manual intervention in future:
-- https://api.github.com/repos/Azure/tflint-ruleset-avm/releases/tags/v0.14.1
-  - Triggering command: /home/runtimeuser/tflintenv/tflintenv/v0.58.0/tflint --init --config=/src/avm.tflint_example.hcl (http block)
-- https://api.github.com/repos/terraform-linters/tflint-ruleset-terraform/releases/tags/v0.10.0
-  - Triggering command: /home/runtimeuser/tflintenv/tflintenv/v0.58.0/tflint --init --config=/src/avm.tflint.hcl (http block)
-  - Triggering command: /home/runtimeuser/tflintenv/tflintenv/v0.58.0/tflint --init --config=/src/avm.tflint_example.hcl (http block)
-2. Extending Copilot coding agent with MCP servers for [Azure DevOps](https://github.com/microsoft/azure-devops-mcp), [Azure](https://github.com/azure/azure-mcp), [Microsoft Docs](https://github.com/microsoftdocs/mcp) and [Terraform](https://github.com/hashicorp/terraform-mcp-server).
+    - https://api.github.com/repos/Azure/tflint-ruleset-avm/releases/tags/v0.14.1
+    - https://api.github.com/repos/terraform-linters/tflint-ruleset-terraform/releases/tags/v0.10.0
+1. Extending Copilot coding agent with MCP servers for [Azure DevOps](https://github.com/microsoft/azure-devops-mcp), [Azure](https://github.com/azure/azure-mcp), [Microsoft Docs](https://github.com/microsoftdocs/mcp) and [Terraform](https://github.com/hashicorp/terraform-mcp-server).
 
 
 ## Another Copilot coding agent example using Azure AI Foundry
