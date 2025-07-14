@@ -1,7 +1,7 @@
-# How Github Copilot Coding Agent(s) make my day
+# How Github Copilot coding agent(s) make my day
 
 
-Ever wished you could delegate your coding tasks and watch them get done while you focus elsewhere? That’s exactly what happened when I assigned an issue to GitHub Copilot Coding Agent. From identifying the problem to drafting a pull request and running checks, it handled the entire workflow, efficiently and autonomously. Here's how it turned a routine fix into a hands-free solution that saved me hours.
+Ever wished you could delegate your coding tasks and watch them get done while you focus elsewhere? That’s exactly what happened when I assigned an issue to GitHub Copilot coding agent. From identifying the problem to drafting a pull request and running checks, it handled the entire workflow, efficiently and autonomously. Here's how it turned a routine fix into a hands-free solution that saved me hours.
 
 <!--more-->
 
@@ -49,9 +49,9 @@ If you click on **View session** you can observe the agent doing its job in more
 After around 10 minutes it finished the initial Implementation, changed the PR title and description with a detailed description and ready to merge.
 
 {{< admonition info Note >}}
-## What's the difference between GitHub Copilot and  GitHub Copilot Coding Agent?
-1. GitHub Copilot + Issue: When you assign Copilot to an issue, your GitHub Copilot Coding Agent (GHCA) gets assigned and starts working on it using GitHub Workflows and Action in its own instance.
-2. GitHub Copilot + Pull Request: When you assign Copilot to a pull request, your GitHub Copilot (GHC) reviews your code and gives feedback in form of a comment.
+## What's the difference between GitHub Copilot and  GitHub Copilot coding agent?
+1. **GitHub Copilot + Issue**: When you assign Copilot to an issue, your GitHub Copilot coding agent (GHCA) gets assigned and starts working on it using GitHub Workflows and Action in its own instance.
+2. **GitHub Copilot + Pull Request**: When you assign Copilot to a pull request, your GitHub Copilot (GHC) reviews your code and gives feedback in form of a comment.<br>
 
 More details around coding agent vs. agent mode see [Copilot coding agent versus agent mode](https://docs.github.com/en/copilot/concepts/about-copilot-coding-agent#copilot-coding-agent-versus-agent-mode)
 {{< /admonition >}}
@@ -76,7 +76,7 @@ Now what we can see, the linting check failed check because our AVM unit test we
 
 ## Let Copilot do the work
 
-The good thing is, isntead us fixing the issue, we simply tell Copilot to take care of it. For those who are you using GitHub Copilot in agent mode in their local IDE such as Visual Studio Code, it would be the same when you chat with your agent. So I went aheed and instructed it using a prompt in a comment.
+The good thing is, instead us fixing the issue, we simply tell Copilot to take care of it. For those of you using GitHub Copilot in agent mode in their local IDE such as Visual Studio Code, it would be the same when you chat with your agent and give it a prompt. So I went aheed and instructed it using a prompt in a comment.
 
 ![comment prompt instruction](image-8.png)
 
@@ -84,7 +84,7 @@ And as you can see it immediately picked it up and started working on it.
 
 ## Copilot is smart enough to pick up on previous unfinished comments by itself
 
-Now here comes the point, the Coding Agent was still running in the background and didn't push it's files to the `copilot/fix-105` branch yet, therefore Copilot wasn't able to review any files in this pull request. I thought mmh okay let's leave it for now and let's see what it does anyway. After being busy myself with some other work, I went back after some time and was curious to see what Copilot did and look at this, once the agent finished with the initial development and fix, it picked up on my previous comment again (by itself) and started working on it again without me having to trigger it in any way. **Loved it!**
+Now here comes the point, the coding agent was still running in the background and didn't push it's files to the `copilot/fix-105` branch yet, therefore Copilot wasn't able to review any files in this pull request. I thought mmh okay let's leave it for now and let's see what it does anyway. After being busy myself with some other work, I went back after some time and was curious to see what Copilot did and look at this, once the agent finished with the initial development and fix, it picked up on my previous comment again (by itself) and started working on it again without me having to trigger it in any way. **Love it!**
 
 ![alt text](image-9.png)
 
@@ -130,7 +130,7 @@ Overall the agent required 18 minutes whereas the the whole coding exercise wold
 7. local unit testing of outputs
 8. local e2e deployment testing
 
-Of course, I would have used GitHub Copilot (Agent) in Visual Studio Code. But the key point - especially from a scalability perspective - is that as a member of the AVM core team and owner of several Bicep and Terraform modules, I’m constantly managing a high volume of issues (features and provider udpates e.g.). This includes not only my own work but also supporting community members and fellow AVM contributors. In this context, GitHub Copilot Agents (local or Coding Agent) significantly enhance productivity by enabling distributed, delegated, and scaled execution—far beyond what I could achieve alone.
+Of course, I would have used GitHub Copilot (Agent) in Visual Studio Code. But the key point - especially from a scalability perspective - is that as a member of the AVM core team and owner of several Bicep and Terraform modules, I’m constantly managing a high volume of issues (features and provider udpates e.g.). This includes not only my own work but also supporting community members and fellow AVM contributors. In this context, GitHub Copilot Agents (local or coding agent) significantly enhance productivity by enabling distributed, delegated, and scaled execution—far beyond what I could achieve alone.
 
 ## Follow-Up Activities
 
@@ -153,10 +153,10 @@ Here is another example of an issue I let loose Copilot where it fixed the issue
 - [AVM (Azure Verified Modules)](https://aka.ms/avm)
 - [Issue #105 – Cosmos DB Module](https://github.com/Azure/terraform-azurerm-avm-res-documentdb-databaseaccount/issues/105)
 - - [Issue #6 – AI Foundry Module](https://github.com/Azure/terraform-azurerm-avm-ptn-aiml-ai-foundry/issues/6)
-- [Enable Copilot Coding Agent (Enterprise)](https://docs.github.com/en/copilot/how-tos/agents/copilot-coding-agent/enabling-copilot-coding-agent-for-copilot-business-and-copilot-enterprise-subscribers)
+- [Enable Copilot coding agent (Enterprise)](https://docs.github.com/en/copilot/how-tos/agents/copilot-coding-agent/enabling-copilot-coding-agent-for-copilot-business-and-copilot-enterprise-subscribers)
 - [AVM Testing – Contributor Guidelines](https://azure.github.io/Azure-Verified-Modules/contributing/terraform/testing/)
 - [Terraform Cosmos DB Attributes Reference](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cosmosdb_account#attributes-reference)
-- [Firewall Settings - Copilot Coding Agent](https://docs.github.com/en/copilot/how-tos/agents/copilot-coding-agent/customizing-or-disabling-the-firewall-for-copilot-coding-agent)
+- [Firewall Settings - Copilot coding agent](https://docs.github.com/en/copilot/how-tos/agents/copilot-coding-agent/customizing-or-disabling-the-firewall-for-copilot-coding-agent)
 - [Azure DevOps MCP Server](https://github.com/microsoft/azure-devops-mcp)
 - [Azure MCP Server](https://github.com/azure/azure-mcp)
 - [Microsoft Docs MCP Server](https://github.com/microsoftdocs/mcp)
