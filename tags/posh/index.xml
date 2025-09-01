@@ -1,703 +1,703 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posh on Automate everything</title><link>https://graef.io/tags/posh/</link><description>Recent content in Posh on Automate everything</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 23 Jan 2023 16:12:12 +1000</lastBuildDate><atom:link href="https://graef.io/tags/posh/index.xml" rel="self" type="application/rss+xml"/><item><title>How to REST the Have I Been Pwned (HIBP) API</title><link>https://graef.io/how-to-rest-have-i-been-pwned-hibp-api/</link><pubDate>Mon, 23 Jan 2023 16:12:12 +1000</pubDate><guid>https://graef.io/how-to-rest-have-i-been-pwned-hibp-api/</guid><description>&lt;p>Perform REST API requests to the &lt;a href="https://haveibeenpwned.com/API/v3" target="_blank" rel="noopener noreffer">HIBP API&lt;/a> to verify if your email or password have been involved in a data breach.&lt;/p></description></item><item><title>Understanding and Improving Your Cybersecurity Posture in 2023: The Importance of strong Passwords, 2FA and Awareness of Phishing Scams</title><link>https://graef.io/understanding-and-improving-your-cybersecurity-posture-the-importance-of-strong-passwords-2fa-and-awareness-of-phishing-scams/</link><pubDate>Mon, 23 Jan 2023 15:00:26 +1000</pubDate><guid>https://graef.io/understanding-and-improving-your-cybersecurity-posture-the-importance-of-strong-passwords-2fa-and-awareness-of-phishing-scams/</guid><description>&lt;p>Cybersecurity is the practice of protecting internet-connected systems, including hardware, software, and data, from attack, damage, or unauthorized access. One aspect of cybersecurity is protecting personal information, such as passwords, account data but also your privacy. In this article, we revisit the basics in cyber security, as there are daily new attacks and ways hackers try to get personal data.&lt;/p></description></item><item><title>Fresh Development Setup within 10 Minutes using Winget</title><link>https://graef.io/fresh-development-machine-setup-using-winget-within-10-minutes/</link><pubDate>Fri, 13 May 2022 00:00:00 +0000</pubDate><guid>https://graef.io/fresh-development-machine-setup-using-winget-within-10-minutes/</guid><description>&lt;p>Sometimes you have to setup your Laptop/Notebook fresh and also prepare your developer environment and tools you need. I noticed this again today when I rebooted my machine and spent almost 2 hours installing the tools I need to work.&lt;/p>
-&lt;p>I have put together a list of commands you can use to prepare your environment using Windows Package Manager (WinGet) for you which gives you a kick start at the next reset and you can continue working directly after 10 minutes.&lt;/p></description></item><item><title>How to install and update Azure PowerShell 7</title><link>https://graef.io/how-to-install-powershell-7/</link><pubDate>Sat, 06 Mar 2021 00:00:00 +0000</pubDate><guid>https://graef.io/how-to-install-powershell-7/</guid><description>&lt;p>Let&amp;rsquo;s keep it easy with these one-liner&amp;rsquo;s you can use for Windows as well as Linux.&lt;/p></description></item><item><title>Function Lock-Workstation locally and remotely</title><link>https://graef.io/function-lock-workstation-locally-and-remotely/</link><pubDate>Sun, 04 Aug 2019 00:00:00 +0000</pubDate><guid>https://graef.io/function-lock-workstation-locally-and-remotely/</guid><description>&lt;p>You can do everything with PowerShell, as well as locking your workstation with one simple function call.&lt;/p></description></item><item><title>Get Local Account Memberships</title><link>https://graef.io/get-local-account-memberships/</link><pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate><guid>https://graef.io/get-local-account-memberships/</guid><description>&lt;p>Okay, yeah there are plenty of scripts out which give you local accounts via &lt;code>WMI&lt;/code> or &lt;code>ADSI&lt;/code> and yes scripts exist also which give you all local groups but there is not one which gives you both (of course there are also some) but what if you’re looking to implement this as a CustomScriptExtension to your Azure VM?&lt;/p></description></item><item><title>Get Azure Active Directoy Tenant ID and Subscription ID</title><link>https://graef.io/get-aad-tenant-id-and-subscription-id/</link><pubDate>Thu, 09 Aug 2018 00:00:00 +0000</pubDate><guid>https://graef.io/get-aad-tenant-id-and-subscription-id/</guid><description/></item><item><title>Get and Set Timezones via PowerShell remotely</title><link>https://graef.io/get-and-set-timezones-via-powershell-remotely/</link><pubDate>Thu, 28 Jun 2018 00:00:00 +0000</pubDate><guid>https://graef.io/get-and-set-timezones-via-powershell-remotely/</guid><description>&lt;p>As published in my Technet Gallery Script Center &lt;a href="https://gallery.technet.microsoft.com/scriptcenter/Get-Timezones-PowerShell-24781869" target="_blank" rel="noopener noreffer">here&lt;/a>, you can get current timezones remotely via PowerShell with Get-Timezones. Get-Timezones is using &lt;code>WMI&lt;/code> to communicate with your servers.&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
-&lt;/span>&lt;span class="lnt"> 2
-&lt;/span>&lt;span class="lnt"> 3
-&lt;/span>&lt;span class="lnt"> 4
-&lt;/span>&lt;span class="lnt"> 5
-&lt;/span>&lt;span class="lnt"> 6
-&lt;/span>&lt;span class="lnt"> 7
-&lt;/span>&lt;span class="lnt"> 8
-&lt;/span>&lt;span class="lnt"> 9
-&lt;/span>&lt;span class="lnt">10
-&lt;/span>&lt;span class="lnt">11
-&lt;/span>&lt;span class="lnt">12
-&lt;/span>&lt;span class="lnt">13
-&lt;/span>&lt;span class="lnt">14
-&lt;/span>&lt;span class="lnt">15
-&lt;/span>&lt;span class="lnt">16
-&lt;/span>&lt;span class="lnt">17
-&lt;/span>&lt;span class="lnt">18
-&lt;/span>&lt;span class="lnt">19
-&lt;/span>&lt;span class="lnt">20
-&lt;/span>&lt;span class="lnt">21
-&lt;/span>&lt;span class="lnt">22
-&lt;/span>&lt;span class="lnt">23
-&lt;/span>&lt;span class="lnt">24
-&lt;/span>&lt;span class="lnt">25
-&lt;/span>&lt;span class="lnt">26
-&lt;/span>&lt;span class="lnt">27
-&lt;/span>&lt;span class="lnt">28
-&lt;/span>&lt;span class="lnt">29
-&lt;/span>&lt;span class="lnt">30
-&lt;/span>&lt;span class="lnt">31
-&lt;/span>&lt;span class="lnt">32
-&lt;/span>&lt;span class="lnt">33
-&lt;/span>&lt;span class="lnt">34
-&lt;/span>&lt;span class="lnt">35
-&lt;/span>&lt;span class="lnt">36
-&lt;/span>&lt;span class="lnt">37
-&lt;/span>&lt;span class="lnt">38
-&lt;/span>&lt;span class="lnt">39
-&lt;/span>&lt;span class="lnt">40
-&lt;/span>&lt;span class="lnt">41
-&lt;/span>&lt;span class="lnt">42
-&lt;/span>&lt;span class="lnt">43
-&lt;/span>&lt;span class="lnt">44
-&lt;/span>&lt;span class="lnt">45
-&lt;/span>&lt;span class="lnt">46
-&lt;/span>&lt;span class="lnt">47
-&lt;/span>&lt;span class="lnt">48
-&lt;/span>&lt;span class="lnt">49
-&lt;/span>&lt;span class="lnt">50
-&lt;/span>&lt;span class="lnt">51
-&lt;/span>&lt;span class="lnt">52
-&lt;/span>&lt;span class="lnt">53
-&lt;/span>&lt;span class="lnt">54
-&lt;/span>&lt;span class="lnt">55
-&lt;/span>&lt;span class="lnt">56
-&lt;/span>&lt;span class="lnt">57
-&lt;/span>&lt;span class="lnt">58
-&lt;/span>&lt;span class="lnt">59
-&lt;/span>&lt;span class="lnt">60
-&lt;/span>&lt;span class="lnt">61
-&lt;/span>&lt;span class="lnt">62
-&lt;/span>&lt;span class="lnt">63
-&lt;/span>&lt;span class="lnt">64
-&lt;/span>&lt;span class="lnt">65
-&lt;/span>&lt;span class="lnt">66
-&lt;/span>&lt;span class="lnt">67
-&lt;/span>&lt;span class="lnt">68
-&lt;/span>&lt;span class="lnt">69
-&lt;/span>&lt;span class="lnt">70
-&lt;/span>&lt;span class="lnt">71
-&lt;/span>&lt;span class="lnt">72
-&lt;/span>&lt;span class="lnt">73
-&lt;/span>&lt;span class="lnt">74
-&lt;/span>&lt;span class="lnt">75
-&lt;/span>&lt;span class="lnt">76
-&lt;/span>&lt;span class="lnt">77
-&lt;/span>&lt;span class="lnt">78
-&lt;/span>&lt;span class="lnt">79
-&lt;/span>&lt;span class="lnt">80
-&lt;/span>&lt;span class="lnt">81
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-powershell" data-lang="powershell">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">Function&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nb">Get-Timezones&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="cm">&amp;lt;#
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> .&lt;/span>&lt;span class="sd">SYNOPSIS&lt;/span>&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Retrieves timezones of local or remote computers via WMI.
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> .&lt;/span>&lt;span class="sd">DESCRIPTION&lt;/span>&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Retrieves timezones of local or remote computers via WMI.
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> .PARAMETER ComputerName
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> A single Computer or an array of computer names. The default is localhost ($env:COMPUTERNAME).
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> .PARAMETER Credentials
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Commit Credentials for a different domain.
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> .PARAMETER Verbose
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Run in Verbose Mode.
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> .&lt;/span>&lt;span class="sd">EXAMPLE&lt;/span>&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> PS C:\&amp;amp;amp;amp;amp;gt; Get-Timezones -ComputerName (gc &amp;#39;C:\computers.txt&amp;#39;) -Credentials Get-Credential
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> ComputerName TimezoneName DaylightSaving TimezoneCaption
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> ------------ ------------ -------------- ---------------
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> SERVER01 W. Europe Standard Time yes (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> SERVER02 W. Europe Standard Time yes (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> .&lt;/span>&lt;span class="sd">NOTES&lt;/span>&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Author: Sebastian Gräf
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Website: https://graef.io
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Email: ps@graef.io
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Date: June 27, 2017
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> PSVer: 3.0/4.0/5.0
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> #&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[&lt;/span>&lt;span class="nb">Cmdletbinding&lt;/span>&lt;span class="p">()]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">Param&lt;/span> &lt;span class="p">(&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[&lt;/span>&lt;span class="nb">Parameter&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="na">ValueFromPipelineByPropertyName&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="vm">$true&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="na">ValueFromPipeline&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="vm">$true&lt;/span>&lt;span class="p">)]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$ComputerName&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nv">$Env:COMPUTERNAME&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[&lt;/span>&lt;span class="nb">Parameter&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="na">ValueFromPipelineByPropertyName&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="vm">$true&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="na">ValueFromPipeline&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="vm">$true&lt;/span>&lt;span class="p">)]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[&lt;/span>&lt;span class="n">ValidateNotNull&lt;/span>&lt;span class="p">()]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">[&lt;/span>&lt;span class="no">System.Management.Automation.PSCredential&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="n">System&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">Management&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">Automation&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">Credential&lt;/span>&lt;span class="p">()]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$Credentials&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="no">System.Management.Automation.PSCredential&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">Empty&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">Begin&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">Write-Verbose&lt;/span> &lt;span class="s2">&amp;#34; [&lt;/span>&lt;span class="p">$(&lt;/span>&lt;span class="nv">$MyInvocation&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">InvocationName&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="s2">] :: Start Process&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$Results&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="vm">@&lt;/span>&lt;span class="p">()&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$ProgressCounter&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="mf">0&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">Process&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">foreach&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nv">$Computer&lt;/span> &lt;span class="k">in&lt;/span> &lt;span class="nv">$ComputerName&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$ProgressCounter&lt;/span>&lt;span class="p">++&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">Write-Progress&lt;/span> &lt;span class="n">-activity&lt;/span> &lt;span class="s2">&amp;#34;Running on &lt;/span>&lt;span class="nv">$Computer&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span> &lt;span class="n">-status&lt;/span> &lt;span class="s2">&amp;#34;Please wait ...&amp;#34;&lt;/span> &lt;span class="n">-PercentComplete&lt;/span> &lt;span class="p">((&lt;/span>&lt;span class="nv">$ProgressCounter&lt;/span> &lt;span class="p">/&lt;/span> &lt;span class="nv">$ComputerName&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">length&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">*&lt;/span> &lt;span class="mf">100&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nb">Test-Connection&lt;/span> &lt;span class="nv">$Computer&lt;/span> &lt;span class="n">-Count&lt;/span> &lt;span class="mf">1&lt;/span> &lt;span class="n">-Quiet&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">Write-Verbose&lt;/span> &lt;span class="s2">&amp;#34; [&lt;/span>&lt;span class="p">$(&lt;/span>&lt;span class="nv">$MyInvocation&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">InvocationName&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="s2">] :: Processing &lt;/span>&lt;span class="nv">$Computer&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">try&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$win32_timezone&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nb">Get-WmiObject&lt;/span> &lt;span class="n">-Class&lt;/span> &lt;span class="n">win32_timezone&lt;/span> &lt;span class="n">-ComputerName&lt;/span> &lt;span class="nv">$Computer&lt;/span> &lt;span class="n">-ErrorAction&lt;/span> &lt;span class="n">Stop&lt;/span> &lt;span class="n">-Credential&lt;/span> &lt;span class="nv">$Credentials&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nv">$win32_timezone&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">DaylightBias&lt;/span> &lt;span class="o">-eq&lt;/span> &lt;span class="mf">0&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nv">$daylightsaving&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;no&amp;#34;&lt;/span> &lt;span class="p">}&lt;/span> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span> &lt;span class="nv">$daylightsaving&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;yes&amp;#34;&lt;/span> &lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$obj&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nb">New-Object&lt;/span> &lt;span class="n">-Type&lt;/span> &lt;span class="n">PSCustomObject&lt;/span> &lt;span class="n">-Property&lt;/span> &lt;span class="vm">@&lt;/span>&lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">ComputerName&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nv">$Computer&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">TimezoneCaption&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nv">$win32_timezone&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">Caption&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">TimezoneName&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nv">$win32_timezone&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">StandardName&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="n">DaylightSaving&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nv">$daylightsaving&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$Results&lt;/span> &lt;span class="p">+=&lt;/span> &lt;span class="nv">$obj&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">catch&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">Write-Verbose&lt;/span> &lt;span class="s2">&amp;#34; Host [&lt;/span>&lt;span class="nv">$Computer&lt;/span>&lt;span class="s2">] Failed with Error: &lt;/span>&lt;span class="p">$(&lt;/span>&lt;span class="nv">$Error&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mf">0&lt;/span>&lt;span class="p">])&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">Write-Verbose&lt;/span> &lt;span class="s2">&amp;#34; Host [&lt;/span>&lt;span class="nv">$Computer&lt;/span>&lt;span class="s2">] Failed Connectivity Test&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$Results&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="nb">select &lt;/span>&lt;span class="n">ComputerName&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">TimezoneName&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">DaylightSaving&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="n">TimezoneCaption&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">End&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">Write-Progress&lt;/span> &lt;span class="n">-activity&lt;/span> &lt;span class="s2">&amp;#34;Running on &lt;/span>&lt;span class="nv">$Computer&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span> &lt;span class="n">-Status&lt;/span> &lt;span class="s2">&amp;#34;Completed.&amp;#34;&lt;/span> &lt;span class="n">-Completed&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nb">Write-Verbose&lt;/span> &lt;span class="s2">&amp;#34; [&lt;/span>&lt;span class="p">$(&lt;/span>&lt;span class="nv">$MyInvocation&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">InvocationName&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="s2">] :: End Process&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>This will give you following output:&lt;/p></description></item><item><title>Set primary IP address order with multiple IP addresses on a NIC</title><link>https://graef.io/set-primary-ip-address-order-with-multiple-ip-addresses-on-a-nic/</link><pubDate>Sun, 26 Nov 2017 11:29:53 +0800</pubDate><guid>https://graef.io/set-primary-ip-address-order-with-multiple-ip-addresses-on-a-nic/</guid><description>&lt;p>If you’re running a webserver it may be you have to run different services on the same port and need to use multiple IP addresses on the same network interface. This can happen for SMTP or Exchange Servers using several connectors.&lt;/p></description></item><item><title>Get-LogonHistory: Who was logged on to my server?</title><link>https://graef.io/get-logonhistory-who-was-logged-on-to-my-server/</link><pubDate>Thu, 05 Oct 2017 11:26:46 +0800</pubDate><guid>https://graef.io/get-logonhistory-who-was-logged-on-to-my-server/</guid><description>&lt;p>Every System Administrator comes into a situation where you want to see who and how many users were logged on to your servers either via Remote Desktop or via script.&lt;/p></description></item><item><title>Get-PSVersions: Retrieve Powershell version remotely</title><link>https://graef.io/get-psversions-retrieve-powershell-version-remotely/</link><pubDate>Fri, 22 Sep 2017 11:51:06 +0800</pubDate><guid>https://graef.io/get-psversions-retrieve-powershell-version-remotely/</guid><description>&lt;p>Okay at the end it’s a simple &lt;code>$PSVersion&lt;/code> wrapped in an &lt;code>Invoke-Command&lt;/code> but hey these simple things are needful in case you need to run it against of 100s of servers and not just locally. With the help of &lt;code>Invoke-Command&lt;/code> via WinRM and &lt;code>$PSVersionTable.psversion&lt;/code> wrapped in a foreach you can retrieve PowerShell version of your remote computers indifferent if you need to use credentials to run it against a different domain than you currently reside. Just use the below function &lt;code>Get-PSVersions&lt;/code>, simple but good.&lt;/p></description></item><item><title>Resolve-DnsNames: Resolve DNS or IP for multiple Computers</title><link>https://graef.io/resolve-dnsnames-resolve-dns-or-ip-for-multiple-computers/</link><pubDate>Sun, 10 Sep 2017 11:47:24 +0800</pubDate><guid>https://graef.io/resolve-dnsnames-resolve-dns-or-ip-for-multiple-computers/</guid><description>&lt;p>Respective Microsoft&amp;rsquo;s Technet article regarding &lt;code>Resolve-DnsName&lt;/code> I have created a function with the ability to run it against more than only one computer. &lt;code>Resolve-DnsNames&lt;/code> performs a DNS name query resolution for the specified name.&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
-&lt;/span>&lt;span class="lnt"> 2
-&lt;/span>&lt;span class="lnt"> 3
-&lt;/span>&lt;span class="lnt"> 4
-&lt;/span>&lt;span class="lnt"> 5
-&lt;/span>&lt;span class="lnt"> 6
-&lt;/span>&lt;span class="lnt"> 7
-&lt;/span>&lt;span class="lnt"> 8
-&lt;/span>&lt;span class="lnt"> 9
-&lt;/span>&lt;span class="lnt">10
-&lt;/span>&lt;span class="lnt">11
-&lt;/span>&lt;span class="lnt">12
-&lt;/span>&lt;span class="lnt">13
-&lt;/span>&lt;span class="lnt">14
-&lt;/span>&lt;span class="lnt">15
-&lt;/span>&lt;span class="lnt">16
-&lt;/span>&lt;span class="lnt">17
-&lt;/span>&lt;span class="lnt">18
-&lt;/span>&lt;span class="lnt">19
-&lt;/span>&lt;span class="lnt">20
-&lt;/span>&lt;span class="lnt">21
-&lt;/span>&lt;span class="lnt">22
-&lt;/span>&lt;span class="lnt">23
-&lt;/span>&lt;span class="lnt">24
-&lt;/span>&lt;span class="lnt">25
-&lt;/span>&lt;span class="lnt">26
-&lt;/span>&lt;span class="lnt">27
-&lt;/span>&lt;span class="lnt">28
-&lt;/span>&lt;span class="lnt">29
-&lt;/span>&lt;span class="lnt">30
-&lt;/span>&lt;span class="lnt">31
-&lt;/span>&lt;span class="lnt">32
-&lt;/span>&lt;span class="lnt">33
-&lt;/span>&lt;span class="lnt">34
-&lt;/span>&lt;span class="lnt">35
-&lt;/span>&lt;span class="lnt">36
-&lt;/span>&lt;span class="lnt">37
-&lt;/span>&lt;span class="lnt">38
-&lt;/span>&lt;span class="lnt">39
-&lt;/span>&lt;span class="lnt">40
-&lt;/span>&lt;span class="lnt">41
-&lt;/span>&lt;span class="lnt">42
-&lt;/span>&lt;span class="lnt">43
-&lt;/span>&lt;span class="lnt">44
-&lt;/span>&lt;span class="lnt">45
-&lt;/span>&lt;span class="lnt">46
-&lt;/span>&lt;span class="lnt">47
-&lt;/span>&lt;span class="lnt">48
-&lt;/span>&lt;span class="lnt">49
-&lt;/span>&lt;span class="lnt">50
-&lt;/span>&lt;span class="lnt">51
-&lt;/span>&lt;span class="lnt">52
-&lt;/span>&lt;span class="lnt">53
-&lt;/span>&lt;span class="lnt">54
-&lt;/span>&lt;span class="lnt">55
-&lt;/span>&lt;span class="lnt">56
-&lt;/span>&lt;span class="lnt">57
-&lt;/span>&lt;span class="lnt">58
-&lt;/span>&lt;span class="lnt">59
-&lt;/span>&lt;span class="lnt">60
-&lt;/span>&lt;span class="lnt">61
-&lt;/span>&lt;span class="lnt">62
-&lt;/span>&lt;span class="lnt">63
-&lt;/span>&lt;span class="lnt">64
-&lt;/span>&lt;span class="lnt">65
-&lt;/span>&lt;span class="lnt">66
-&lt;/span>&lt;span class="lnt">67
-&lt;/span>&lt;span class="lnt">68
-&lt;/span>&lt;span class="lnt">69
-&lt;/span>&lt;span class="lnt">70
-&lt;/span>&lt;span class="lnt">71
-&lt;/span>&lt;span class="lnt">72
-&lt;/span>&lt;span class="lnt">73
-&lt;/span>&lt;span class="lnt">74
-&lt;/span>&lt;span class="lnt">75
-&lt;/span>&lt;span class="lnt">76
-&lt;/span>&lt;span class="lnt">77
-&lt;/span>&lt;span class="lnt">78
-&lt;/span>&lt;span class="lnt">79
-&lt;/span>&lt;span class="lnt">80
-&lt;/span>&lt;span class="lnt">81
-&lt;/span>&lt;span class="lnt">82
-&lt;/span>&lt;span class="lnt">83
-&lt;/span>&lt;span class="lnt">84
-&lt;/span>&lt;span class="lnt">85
-&lt;/span>&lt;span class="lnt">86
-&lt;/span>&lt;span class="lnt">87
-&lt;/span>&lt;span class="lnt">88
-&lt;/span>&lt;span class="lnt">89
-&lt;/span>&lt;span class="lnt">90
-&lt;/span>&lt;span class="lnt">91
-&lt;/span>&lt;span class="lnt">92
-&lt;/span>&lt;span class="lnt">93
-&lt;/span>&lt;span class="lnt">94
-&lt;/span>&lt;span class="lnt">95
-&lt;/span>&lt;span class="lnt">96
-&lt;/span>&lt;span class="lnt">97
-&lt;/span>&lt;span class="lnt">98
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-powershell" data-lang="powershell">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">Function&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nb">Resolve-DnsNames&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">&amp;lt;#
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">.&lt;/span>&lt;span class="sd">SYNOPSIS&lt;/span>&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Resolves IP or DNS name for one or more computers.
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">.&lt;/span>&lt;span class="sd">DESCRIPTION&lt;/span>&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Resolves IP or DNS name for one or more computers.
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">.PARAMETER ComputerName
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> A single Computer or an array of computer names. The default is localhost ($env:COMPUTERNAME).
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">.PARAMETER IPAddress
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Commit IPAddress to resolve.
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">.PARAMETER Verbose
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Run in Verbose Mode.
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">.&lt;/span>&lt;span class="sd">EXAMPLE&lt;/span>&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> PS C:&amp;gt; Resolve-DnsNames graef.io
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Name Type TTL Section IPAddress
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> ---- ---- --- ------- ---------
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> graef.io AAAA 86336 Answer 2a01:488:42:1000:50ed:84e8:ff91:1f91
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> graef.io A 86336 Answer 80.237.132.232
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">.&lt;/span>&lt;span class="sd">EXAMPLE&lt;/span>&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">	PS C:&amp;gt; Resolve-DnsNames 80.237.132.232
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Name Type TTL Section NameHost
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> ---- ---- --- ------- --------
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> 232.132.237.80.in-addr.arpa PTR 40292 Answer graef.io
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">.&lt;/span>&lt;span class="sd">EXAMPLE&lt;/span>&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> PS C:&amp;gt; Resolve-DnsNames -ComputerName (Get-Content C:ServerList.txt)
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">.&lt;/span>&lt;span class="sd">LINK&lt;/span>&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">Home
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">.&lt;/span>&lt;span class="sd">NOTES&lt;/span>&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Author: Sebastian Gräf
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Email: sebastian@graef.io
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Date: September 10, 2017
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> PSVer: 2.0/3.0/4.0/5.0
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">#&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="p">[&lt;/span>&lt;span class="nb">Cmdletbinding&lt;/span>&lt;span class="p">()]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="k">Param&lt;/span> &lt;span class="p">(&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="p">[&lt;/span>&lt;span class="nb">Parameter&lt;/span>&lt;span class="p">(&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">				 &lt;span class="na">Mandatory&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="vm">$false&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">				 &lt;span class="na">ValueFromPipeline&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="vm">$true&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">				 &lt;span class="na">ValueFromPipelineByPropertyName&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="vm">$true&lt;/span>&lt;span class="p">)]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="p">[&lt;/span>&lt;span class="no">string[]&lt;/span>&lt;span class="p">]&lt;/span>&lt;span class="nv">$ComputerName&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nv">$Env:COMPUTERNAME&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="k">Begin&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="nb">Write-Verbose&lt;/span> &lt;span class="s2">&amp;#34; [&lt;/span>&lt;span class="p">$(&lt;/span>&lt;span class="nv">$MyInvocation&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">InvocationName&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="s2">] :: Start Process&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$ProgressCounter&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="mf">0&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$array&lt;/span>&lt;span class="p">=&lt;/span>&lt;span class="vm">@&lt;/span>&lt;span class="p">()&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="k">Process&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">foreach&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nv">$Computer&lt;/span> &lt;span class="k">in&lt;/span> &lt;span class="nv">$ComputerName&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$ProgressCounter&lt;/span>&lt;span class="p">++&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">			&lt;span class="nb">Write-Progress&lt;/span> &lt;span class="n">-activity&lt;/span> &lt;span class="s2">&amp;#34;Running on &lt;/span>&lt;span class="nv">$Computer&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span> &lt;span class="n">-status&lt;/span> &lt;span class="s2">&amp;#34;Please wait ...&amp;#34;&lt;/span> &lt;span class="n">-PercentComplete&lt;/span> &lt;span class="p">((&lt;/span>&lt;span class="nv">$ProgressCounter&lt;/span> &lt;span class="p">/&lt;/span> &lt;span class="nv">$ComputerName&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">length&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">*&lt;/span> &lt;span class="mf">100&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">				&lt;span class="nb">Write-Verbose&lt;/span> &lt;span class="s2">&amp;#34; [&lt;/span>&lt;span class="p">$(&lt;/span>&lt;span class="nv">$MyInvocation&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">InvocationName&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="s2">] :: Processing &lt;/span>&lt;span class="nv">$Computer&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">				&lt;span class="k">try&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">				&lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$Resolution&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nb">Resolve-DnsName&lt;/span> &lt;span class="nv">$Computer&lt;/span> &lt;span class="n">-ErrorAction&lt;/span> &lt;span class="n">SilentlyContinue&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$obj&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nb">New-Object&lt;/span> &lt;span class="n">PSObject&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$obj&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="nb">Add-Member&lt;/span> &lt;span class="n">NoteProperty&lt;/span> &lt;span class="n">ComputerName&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nv">$Computer&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$obj&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="nb">Add-Member&lt;/span> &lt;span class="n">NoteProperty&lt;/span> &lt;span class="n">Name&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nv">$Resolution&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">Name&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$obj&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="nb">Add-Member&lt;/span> &lt;span class="n">NoteProperty&lt;/span> &lt;span class="nb">Type &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nv">$Resolution&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">Type&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$obj&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="nb">Add-Member&lt;/span> &lt;span class="n">NoteProperty&lt;/span> &lt;span class="n">TTL&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nv">$Resolution&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">TTL&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$obj&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="nb">Add-Member&lt;/span> &lt;span class="n">NoteProperty&lt;/span> &lt;span class="n">Section&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nv">$Resolution&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">Section&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$obj&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="nb">Add-Member&lt;/span> &lt;span class="n">NoteProperty&lt;/span> &lt;span class="n">NameHost&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nv">$Resolution&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">NameHost&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$obj&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="nb">Add-Member&lt;/span> &lt;span class="n">NoteProperty&lt;/span> &lt;span class="n">IPAddress&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nv">$Resolution&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">IPAddress&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$array&lt;/span> &lt;span class="p">+=&lt;/span> &lt;span class="nv">$obj&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">				&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">				&lt;span class="k">catch&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">				&lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">					&lt;span class="nb">Write-Verbose&lt;/span> &lt;span class="s2">&amp;#34; Host [&lt;/span>&lt;span class="nv">$Computer&lt;/span>&lt;span class="s2">] Failed with Error: &lt;/span>&lt;span class="p">$(&lt;/span>&lt;span class="nv">$Error&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mf">0&lt;/span>&lt;span class="p">])&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">				&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	 &lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$array&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="nb">ft
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">&lt;/span> &lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="k">End&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="nb">Write-Verbose&lt;/span> &lt;span class="s2">&amp;#34; [&lt;/span>&lt;span class="p">$(&lt;/span>&lt;span class="nv">$MyInvocation&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">InvocationName&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="s2">] :: End Process&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;div class="details admonition info open">
- &lt;div class="details-summary admonition-title">
- &lt;i class="icon fas fa-info-circle fa-fw">&lt;/i>References&lt;i class="details-icon fas fa-angle-right fa-fw">&lt;/i>
- &lt;/div>
- &lt;div class="details-content">
- &lt;div class="admonition-content">&lt;ul>
-&lt;li>&lt;a href="https://docs.microsoft.com/en-us/powershell/module/dnsclient/resolve-dnsname?view=windowsserver2019-ps" target="_blank" rel="noopener noreffer">Resolve-DnsName&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/div>
- &lt;/div>
- &lt;/div></description></item><item><title>Get-DellTags: Get Dell Tags and Express Service Code remotely</title><link>https://graef.io/get-delltags-get-dell-tags-and-express-service-code-remotely/</link><pubDate>Tue, 15 Aug 2017 11:40:27 +0800</pubDate><guid>https://graef.io/get-delltags-get-dell-tags-and-express-service-code-remotely/</guid><description>&lt;p>Get DELL Tag and Express Service Code remotely for more than one computer.&lt;/p></description></item><item><title>Get-ScsiDisks: Combine Physicaldisk and Logicaldisk Objects</title><link>https://graef.io/get-scsidisks-combine-physicaldisk-and-logicaldisk-objects/</link><pubDate>Thu, 10 Aug 2017 11:48:24 +0800</pubDate><guid>https://graef.io/get-scsidisks-combine-physicaldisk-and-logicaldisk-objects/</guid><description>&lt;p>Hi there, following function &lt;code>Get-ScsiDisks&lt;/code> retrieves disk details for VMWare Guests or any computer with corresponding SCSI disk details like SCSI ID and SCSI Bus. The function concatenates objects consisting of &lt;code>Win32_DiskDrive&lt;/code>, &lt;code>Win32_LogicalDisk&lt;/code> and &lt;code>Win32_DiskDriveToDiskPartition&lt;/code> using WMI. For WinRM you can use Invoke-Command and inject the script.&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
-&lt;/span>&lt;span class="lnt"> 2
-&lt;/span>&lt;span class="lnt"> 3
-&lt;/span>&lt;span class="lnt"> 4
-&lt;/span>&lt;span class="lnt"> 5
-&lt;/span>&lt;span class="lnt"> 6
-&lt;/span>&lt;span class="lnt"> 7
-&lt;/span>&lt;span class="lnt"> 8
-&lt;/span>&lt;span class="lnt"> 9
-&lt;/span>&lt;span class="lnt"> 10
-&lt;/span>&lt;span class="lnt"> 11
-&lt;/span>&lt;span class="lnt"> 12
-&lt;/span>&lt;span class="lnt"> 13
-&lt;/span>&lt;span class="lnt"> 14
-&lt;/span>&lt;span class="lnt"> 15
-&lt;/span>&lt;span class="lnt"> 16
-&lt;/span>&lt;span class="lnt"> 17
-&lt;/span>&lt;span class="lnt"> 18
-&lt;/span>&lt;span class="lnt"> 19
-&lt;/span>&lt;span class="lnt"> 20
-&lt;/span>&lt;span class="lnt"> 21
-&lt;/span>&lt;span class="lnt"> 22
-&lt;/span>&lt;span class="lnt"> 23
-&lt;/span>&lt;span class="lnt"> 24
-&lt;/span>&lt;span class="lnt"> 25
-&lt;/span>&lt;span class="lnt"> 26
-&lt;/span>&lt;span class="lnt"> 27
-&lt;/span>&lt;span class="lnt"> 28
-&lt;/span>&lt;span class="lnt"> 29
-&lt;/span>&lt;span class="lnt"> 30
-&lt;/span>&lt;span class="lnt"> 31
-&lt;/span>&lt;span class="lnt"> 32
-&lt;/span>&lt;span class="lnt"> 33
-&lt;/span>&lt;span class="lnt"> 34
-&lt;/span>&lt;span class="lnt"> 35
-&lt;/span>&lt;span class="lnt"> 36
-&lt;/span>&lt;span class="lnt"> 37
-&lt;/span>&lt;span class="lnt"> 38
-&lt;/span>&lt;span class="lnt"> 39
-&lt;/span>&lt;span class="lnt"> 40
-&lt;/span>&lt;span class="lnt"> 41
-&lt;/span>&lt;span class="lnt"> 42
-&lt;/span>&lt;span class="lnt"> 43
-&lt;/span>&lt;span class="lnt"> 44
-&lt;/span>&lt;span class="lnt"> 45
-&lt;/span>&lt;span class="lnt"> 46
-&lt;/span>&lt;span class="lnt"> 47
-&lt;/span>&lt;span class="lnt"> 48
-&lt;/span>&lt;span class="lnt"> 49
-&lt;/span>&lt;span class="lnt"> 50
-&lt;/span>&lt;span class="lnt"> 51
-&lt;/span>&lt;span class="lnt"> 52
-&lt;/span>&lt;span class="lnt"> 53
-&lt;/span>&lt;span class="lnt"> 54
-&lt;/span>&lt;span class="lnt"> 55
-&lt;/span>&lt;span class="lnt"> 56
-&lt;/span>&lt;span class="lnt"> 57
-&lt;/span>&lt;span class="lnt"> 58
-&lt;/span>&lt;span class="lnt"> 59
-&lt;/span>&lt;span class="lnt"> 60
-&lt;/span>&lt;span class="lnt"> 61
-&lt;/span>&lt;span class="lnt"> 62
-&lt;/span>&lt;span class="lnt"> 63
-&lt;/span>&lt;span class="lnt"> 64
-&lt;/span>&lt;span class="lnt"> 65
-&lt;/span>&lt;span class="lnt"> 66
-&lt;/span>&lt;span class="lnt"> 67
-&lt;/span>&lt;span class="lnt"> 68
-&lt;/span>&lt;span class="lnt"> 69
-&lt;/span>&lt;span class="lnt"> 70
-&lt;/span>&lt;span class="lnt"> 71
-&lt;/span>&lt;span class="lnt"> 72
-&lt;/span>&lt;span class="lnt"> 73
-&lt;/span>&lt;span class="lnt"> 74
-&lt;/span>&lt;span class="lnt"> 75
-&lt;/span>&lt;span class="lnt"> 76
-&lt;/span>&lt;span class="lnt"> 77
-&lt;/span>&lt;span class="lnt"> 78
-&lt;/span>&lt;span class="lnt"> 79
-&lt;/span>&lt;span class="lnt"> 80
-&lt;/span>&lt;span class="lnt"> 81
-&lt;/span>&lt;span class="lnt"> 82
-&lt;/span>&lt;span class="lnt"> 83
-&lt;/span>&lt;span class="lnt"> 84
-&lt;/span>&lt;span class="lnt"> 85
-&lt;/span>&lt;span class="lnt"> 86
-&lt;/span>&lt;span class="lnt"> 87
-&lt;/span>&lt;span class="lnt"> 88
-&lt;/span>&lt;span class="lnt"> 89
-&lt;/span>&lt;span class="lnt"> 90
-&lt;/span>&lt;span class="lnt"> 91
-&lt;/span>&lt;span class="lnt"> 92
-&lt;/span>&lt;span class="lnt"> 93
-&lt;/span>&lt;span class="lnt"> 94
-&lt;/span>&lt;span class="lnt"> 95
-&lt;/span>&lt;span class="lnt"> 96
-&lt;/span>&lt;span class="lnt"> 97
-&lt;/span>&lt;span class="lnt"> 98
-&lt;/span>&lt;span class="lnt"> 99
-&lt;/span>&lt;span class="lnt">100
-&lt;/span>&lt;span class="lnt">101
-&lt;/span>&lt;span class="lnt">102
-&lt;/span>&lt;span class="lnt">103
-&lt;/span>&lt;span class="lnt">104
-&lt;/span>&lt;span class="lnt">105
-&lt;/span>&lt;span class="lnt">106
-&lt;/span>&lt;span class="lnt">107
-&lt;/span>&lt;span class="lnt">108
-&lt;/span>&lt;span class="lnt">109
-&lt;/span>&lt;span class="lnt">110
-&lt;/span>&lt;span class="lnt">111
-&lt;/span>&lt;span class="lnt">112
-&lt;/span>&lt;span class="lnt">113
-&lt;/span>&lt;span class="lnt">114
-&lt;/span>&lt;span class="lnt">115
-&lt;/span>&lt;span class="lnt">116
-&lt;/span>&lt;span class="lnt">117
-&lt;/span>&lt;span class="lnt">118
-&lt;/span>&lt;span class="lnt">119
-&lt;/span>&lt;span class="lnt">120
-&lt;/span>&lt;span class="lnt">121
-&lt;/span>&lt;span class="lnt">122
-&lt;/span>&lt;span class="lnt">123
-&lt;/span>&lt;span class="lnt">124
-&lt;/span>&lt;span class="lnt">125
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-powershell" data-lang="powershell">&lt;span class="line">&lt;span class="cl">&lt;span class="kd">Function&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nb">Get-ScsiDisks&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">&amp;lt;#
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">.&lt;/span>&lt;span class="sd">SYNOPSIS&lt;/span>&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Retrieves disk details for VMWare Guests with corresponding SCSI disk details like SCSI ID
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> and SCSI Bus.
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">.&lt;/span>&lt;span class="sd">DESCRIPTION&lt;/span>&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Retrieves a concatenated object consisting of Win32_DiskDrive, Win32_LogicalDisk and
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Win32_DiskDriveToDiskPartition using WMI. For WinRM you can use Invoke-Command and inject the script.
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">.PARAMETER ComputerName
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> A single Computer or an array of computer names. The default is localhost ($env:COMPUTERNAME).
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">.PARAMETER Credentials
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Commit Credentials for a different domain.
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">.PARAMETER Verbose
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Run in Verbose Mode.
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">.&lt;/span>&lt;span class="sd">EXAMPLE&lt;/span>&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> PS C:&amp;gt; Get-ScsiDisks
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> ComputerName Disk DriveLetter VolumeName Size FreeSpace DiskModel
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> ------------ ---- ----------- ---------- ---- --------- ---------
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> SERVER \.PHYSICALDRIVE1 D: Data 767 767 VMware Virtual di...
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> SERVER \.PHYSICALDRIVE0 C: OS 59 39 VMware Virtual di...
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">.&lt;/span>&lt;span class="sd">EXAMPLE&lt;/span>&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">	PS C:&amp;gt; Get-ScsiDisks | Out-GridView
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">.&lt;/span>&lt;span class="sd">EXAMPLE&lt;/span>&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">	PS C:&amp;gt; Get-ScsiDisks | ft -a
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">.&lt;/span>&lt;span class="sd">EXAMPLE&lt;/span>&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">	PS C:&amp;gt; Get-ScsiDisks -ComputerName (gc &amp;#39;C:VMs.txt&amp;#39;) -Credentials Get-Credential
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">.&lt;/span>&lt;span class="sd">LINK&lt;/span>&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">Home
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">.&lt;/span>&lt;span class="sd">NOTES&lt;/span>&lt;span class="cm">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Author: Sebastian Gräf
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Email: ps@graef.io
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> Date: September 12, 2017
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> PSVer: 3.0/4.0/5.0
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm">#&amp;gt;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="p">[&lt;/span>&lt;span class="nb">Cmdletbinding&lt;/span>&lt;span class="p">()]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="k">Param&lt;/span> &lt;span class="p">(&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="p">[&lt;/span>&lt;span class="nb">Parameter&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="na">ValueFromPipelineByPropertyName&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="vm">$true&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="na">ValueFromPipeline&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="vm">$true&lt;/span>&lt;span class="p">)]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="nv">$ComputerName&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nv">$Env:COMPUTERNAME&lt;/span>&lt;span class="p">,&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="p">[&lt;/span>&lt;span class="nb">Parameter&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="na">ValueFromPipelineByPropertyName&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="vm">$true&lt;/span>&lt;span class="p">,&lt;/span> &lt;span class="na">ValueFromPipeline&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="vm">$true&lt;/span>&lt;span class="p">)]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="p">[&lt;/span>&lt;span class="n">ValidateNotNull&lt;/span>&lt;span class="p">()]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="p">[&lt;/span>&lt;span class="no">System.Management.Automation.PSCredential&lt;/span>&lt;span class="p">][&lt;/span>&lt;span class="n">System&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">Management&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">Automation&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">Credential&lt;/span>&lt;span class="p">()]&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="nv">$Credentials&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="no">System.Management.Automation.PSCredential&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">Empty&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="k">Begin&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="nb">Write-Verbose&lt;/span> &lt;span class="s2">&amp;#34; [&lt;/span>&lt;span class="p">$(&lt;/span>&lt;span class="nv">$MyInvocation&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">InvocationName&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="s2">] :: Start Process&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="nv">$result&lt;/span>&lt;span class="p">=&lt;/span>&lt;span class="vm">@&lt;/span>&lt;span class="p">()&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="nv">$ProgressCounter&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="mf">0&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="k">Process&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="k">foreach&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nv">$Computer&lt;/span> &lt;span class="k">in&lt;/span> &lt;span class="nv">$ComputerName&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">			&lt;span class="nv">$ProgressCounter&lt;/span>&lt;span class="p">++&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">			&lt;span class="nb">Write-Progress&lt;/span> &lt;span class="n">-activity&lt;/span> &lt;span class="s2">&amp;#34;Running on &lt;/span>&lt;span class="nv">$Computer&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span> &lt;span class="n">-status&lt;/span> &lt;span class="s2">&amp;#34;Please wait ...&amp;#34;&lt;/span> &lt;span class="n">-PercentComplete&lt;/span> &lt;span class="p">((&lt;/span>&lt;span class="nv">$ProgressCounter&lt;/span> &lt;span class="p">/&lt;/span> &lt;span class="nv">$ComputerName&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">length&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">*&lt;/span> &lt;span class="mf">100&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">			&lt;span class="k">if&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nb">Test-Connection&lt;/span> &lt;span class="nv">$Computer&lt;/span> &lt;span class="n">-Count&lt;/span> &lt;span class="mf">1&lt;/span> &lt;span class="n">-Quiet&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">			&lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">				&lt;span class="nb">Write-Verbose&lt;/span> &lt;span class="s2">&amp;#34; [&lt;/span>&lt;span class="p">$(&lt;/span>&lt;span class="nv">$MyInvocation&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">InvocationName&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="s2">] :: Processing &lt;/span>&lt;span class="nv">$Computer&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">				&lt;span class="k">try&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">				&lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">					&lt;span class="nb">Get-WmiObject&lt;/span> &lt;span class="n">-Class&lt;/span> &lt;span class="n">Win32_DiskDrive&lt;/span> &lt;span class="n">-ComputerName&lt;/span> &lt;span class="nv">$Computer&lt;/span> &lt;span class="n">-Credential&lt;/span> &lt;span class="nv">$Credentials&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="p">%&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">						&lt;span class="nv">$disk&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nv">$_&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">						&lt;span class="nv">$partitions&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;ASSOCIATORS OF &amp;#34;&lt;/span> &lt;span class="p">+&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">						&lt;span class="s2">&amp;#34;{Win32_DiskDrive.DeviceID=&amp;#39;&lt;/span>&lt;span class="p">$(&lt;/span>&lt;span class="nv">$disk&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">DeviceID&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="s2">&amp;#39;} &amp;#34;&lt;/span> &lt;span class="p">+&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">						&lt;span class="s2">&amp;#34;WHERE AssocClass = Win32_DiskDriveToDiskPartition&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">						&lt;span class="nb">Get-WmiObject&lt;/span> &lt;span class="n">-Query&lt;/span> &lt;span class="nv">$partitions&lt;/span> &lt;span class="n">-ComputerName&lt;/span> &lt;span class="nv">$Computer&lt;/span> &lt;span class="n">-Credential&lt;/span> &lt;span class="nv">$Credentials&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="p">%&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">							&lt;span class="nv">$partition&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nv">$_&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">							&lt;span class="nv">$drives&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="s2">&amp;#34;ASSOCIATORS OF &amp;#34;&lt;/span> &lt;span class="p">+&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">							&lt;span class="s2">&amp;#34;{Win32_DiskPartition.DeviceID=&amp;#39;&lt;/span>&lt;span class="p">$(&lt;/span>&lt;span class="nv">$partition&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">DeviceID&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="s2">&amp;#39;} &amp;#34;&lt;/span> &lt;span class="p">+&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">							&lt;span class="s2">&amp;#34;WHERE AssocClass = Win32_LogicalDiskToPartition&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">							&lt;span class="nb">Get-WmiObject&lt;/span> &lt;span class="n">-Query&lt;/span> &lt;span class="nv">$drives&lt;/span> &lt;span class="n">-ComputerName&lt;/span> &lt;span class="nv">$Computer&lt;/span> &lt;span class="n">-Credential&lt;/span> &lt;span class="nv">$Credentials&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="p">%&lt;/span> &lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">								&lt;span class="nv">$obj&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nb">New-Object&lt;/span> &lt;span class="n">-Type&lt;/span> &lt;span class="n">PSCustomObject&lt;/span> &lt;span class="n">-Property&lt;/span> &lt;span class="vm">@&lt;/span>&lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">									&lt;span class="n">ComputerName&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nv">$Computer&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">									&lt;span class="n">Disk&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nv">$disk&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">DeviceID&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">									&lt;span class="n">DiskSize&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="no">math&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">Truncate&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nv">$disk&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">Size&lt;/span> &lt;span class="p">/&lt;/span> &lt;span class="mf">1&lt;/span>&lt;span class="p">GB);&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">									&lt;span class="n">DiskModel&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nv">$disk&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">Model&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">									&lt;span class="n">Partition&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nv">$partition&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">Name&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">									&lt;span class="n">DriveLetter&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nv">$_&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">DeviceID&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">									&lt;span class="n">VolumeName&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nv">$_&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">VolumeName&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">									&lt;span class="n">Size&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="no">math&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">Truncate&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nv">$_&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">Size&lt;/span> &lt;span class="p">/&lt;/span> &lt;span class="mf">1&lt;/span>&lt;span class="p">GB)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">									&lt;span class="n">FreeSpace&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="p">[&lt;/span>&lt;span class="no">math&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">Truncate&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nv">$_&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">FreeSpace&lt;/span> &lt;span class="p">/&lt;/span> &lt;span class="mf">1&lt;/span>&lt;span class="p">GB)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">									&lt;span class="n">SCSIBus&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nv">$disk&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">SCSIBus&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">									&lt;span class="n">SCSITargetId&lt;/span> &lt;span class="p">=&lt;/span> &lt;span class="nv">$disk&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">SCSITargetId&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">								&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">								&lt;span class="nv">$result&lt;/span> &lt;span class="p">+=&lt;/span> &lt;span class="nv">$obj&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">							&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">						&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">					&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">				&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">				&lt;span class="k">catch&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">				&lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">					&lt;span class="nb">Write-Verbose&lt;/span> &lt;span class="s2">&amp;#34; Host [&lt;/span>&lt;span class="nv">$Computer&lt;/span>&lt;span class="s2">] Failed with Error: &lt;/span>&lt;span class="p">$(&lt;/span>&lt;span class="nv">$Error&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="mf">0&lt;/span>&lt;span class="p">])&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">				&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">			&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">			&lt;span class="k">else&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">			&lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">				&lt;span class="nb">Write-Verbose&lt;/span> &lt;span class="s2">&amp;#34; Host [&lt;/span>&lt;span class="nv">$Computer&lt;/span>&lt;span class="s2">] Failed Connectivity Test&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">			&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nv">$result&lt;/span> &lt;span class="p">|&lt;/span> &lt;span class="nb">select &lt;/span>&lt;span class="n">ComputerName&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">Disk&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">DriveLetter&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">VolumeName&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">Size&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">FreeSpace&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">DiskModel&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">Partition&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">SCSIBus&lt;/span>&lt;span class="p">,&lt;/span>&lt;span class="n">SCSITargetId&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="k">End&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="p">{&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="nb">Write-Progress&lt;/span> &lt;span class="n">-activity&lt;/span> &lt;span class="s2">&amp;#34;Running on &lt;/span>&lt;span class="nv">$Computer&lt;/span>&lt;span class="s2">&amp;#34;&lt;/span> &lt;span class="n">-Status&lt;/span> &lt;span class="s2">&amp;#34;Completed.&amp;#34;&lt;/span> &lt;span class="n">-Completed&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">		&lt;span class="nb">Write-Verbose&lt;/span> &lt;span class="s2">&amp;#34; [&lt;/span>&lt;span class="p">$(&lt;/span>&lt;span class="nv">$MyInvocation&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="n">InvocationName&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="s2">] :: End Process&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">	&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div></description></item><item><title>Simulate-Activity: Simulate user mouse and keyboard input with PowerShell</title><link>https://graef.io/simulate-activity-simulate-user-mouse-and-keyboard-input-with-powershell/</link><pubDate>Thu, 10 Aug 2017 11:11:29 +0800</pubDate><guid>https://graef.io/simulate-activity-simulate-user-mouse-and-keyboard-input-with-powershell/</guid><description>&lt;p>If you want to avoid or block coming up your screensaver locally or remotely, take this nice script.&lt;/p></description></item><item><title>Resolve DNS and IP addresses with PowerShell</title><link>https://graef.io/resolve-dns-and-ip-addresses-with-powershell/</link><pubDate>Mon, 10 Jul 2017 11:12:17 +0800</pubDate><guid>https://graef.io/resolve-dns-and-ip-addresses-with-powershell/</guid><description>&lt;p>In this case we’re going to use the method GetHostAddresses of the Dns class of the Sytem.Net namespace.
-For PowerShell 2.0 you can use following Windows PowerShell One Liners:&lt;/p>
-&lt;h3 id="name-to-ip-address-dns-forward">Name to IP Address (DNS Forward)&lt;/h3>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-powershell" data-lang="powershell">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="no">System.Net.Dns&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">GetHostAddresses&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;graef.io&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="no">System.Net.Dns&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">GetHostAddresses&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;graef.io&amp;#39;&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="py">IPAddressToString&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h3 id="ip-address-to-name-dns-reverse">IP Address to Name (DNS Reverse)&lt;/h3>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;span class="lnt">3
-&lt;/span>&lt;span class="lnt">4
-&lt;/span>&lt;span class="lnt">5
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-powershell" data-lang="powershell">&lt;span class="line">&lt;span class="cl">&lt;span class="p">[&lt;/span>&lt;span class="no">System.Net.Dns&lt;/span>&lt;span class="p">]::&lt;/span>&lt;span class="n">GetHostbyAddress&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="s1">&amp;#39;85.13.135.42&amp;#39;&lt;/span>&lt;span class="p">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">HostName&lt;/span> &lt;span class="n">Aliases&lt;/span> &lt;span class="n">AddressList&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">--------&lt;/span> &lt;span class="p">-------&lt;/span> &lt;span class="p">-----------&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">graef&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">io&lt;/span> &lt;span class="p">{}&lt;/span> &lt;span class="p">{&lt;/span>&lt;span class="mf">85.13&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">135&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="mf">42&lt;/span>&lt;span class="p">}&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>As of PowerShell 4.0 you can use the Cmdlet Resolve-DnsName as well as for both Forward and Reverse:&lt;/p></description></item><item><title>Show non-present devices in Windows with Device Manager</title><link>https://graef.io/show-non-present-devices-in-windows-with-device-manager/</link><pubDate>Tue, 27 Jun 2017 11:29:53 +0800</pubDate><guid>https://graef.io/show-non-present-devices-in-windows-with-device-manager/</guid><description>&lt;p>Open PowerShell or Commmand Shell, enter the following&lt;/p>
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
-&lt;/span>&lt;span class="lnt">2
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">set devmgr_show_nonpresent_devices=1
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">devmgmt.msc
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;figure>&lt;a class="lightgallery" href="https://graef.io/show-non-present-devices-in-windows-with-device-manager/2021-08-10-11-56-22.png" title="/show-non-present-devices-in-windows-with-device-manager/2021-08-10-11-56-22.png" data-thumbnail="/show-non-present-devices-in-windows-with-device-manager/2021-08-10-11-56-22.png" data-sub-html="&lt;h2>.&lt;/h2>">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posh on Automate everything</title><link>https://graef.io/tags/posh/</link><description>Recent content in Posh on Automate everything</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 23 Jan 2023 16:12:12 +1000</lastBuildDate><atom:link href="https://graef.io/tags/posh/index.xml" rel="self" type="application/rss+xml"/><item><title>How to REST the Have I Been Pwned (HIBP) API</title><link>https://graef.io/how-to-rest-have-i-been-pwned-hibp-api/</link><pubDate>Mon, 23 Jan 2023 16:12:12 +1000</pubDate><guid>https://graef.io/how-to-rest-have-i-been-pwned-hibp-api/</guid><description>&lt;p&gt;Perform REST API requests to the &lt;a href="https://haveibeenpwned.com/API/v3" target="_blank" rel="noopener noreffer"&gt;HIBP API&lt;/a&gt; to verify if your email or password have been involved in a data breach.&lt;/p&gt;</description></item><item><title>Understanding and Improving Your Cybersecurity Posture in 2023: The Importance of strong Passwords, 2FA and Awareness of Phishing Scams</title><link>https://graef.io/understanding-and-improving-your-cybersecurity-posture-the-importance-of-strong-passwords-2fa-and-awareness-of-phishing-scams/</link><pubDate>Mon, 23 Jan 2023 15:00:26 +1000</pubDate><guid>https://graef.io/understanding-and-improving-your-cybersecurity-posture-the-importance-of-strong-passwords-2fa-and-awareness-of-phishing-scams/</guid><description>&lt;p&gt;Cybersecurity is the practice of protecting internet-connected systems, including hardware, software, and data, from attack, damage, or unauthorized access. One aspect of cybersecurity is protecting personal information, such as passwords, account data but also your privacy. In this article, we revisit the basics in cyber security, as there are daily new attacks and ways hackers try to get personal data.&lt;/p&gt;</description></item><item><title>Fresh Development Setup within 10 Minutes using Winget</title><link>https://graef.io/fresh-development-machine-setup-using-winget-within-10-minutes/</link><pubDate>Fri, 13 May 2022 00:00:00 +0000</pubDate><guid>https://graef.io/fresh-development-machine-setup-using-winget-within-10-minutes/</guid><description>&lt;p&gt;Sometimes you have to setup your Laptop/Notebook fresh and also prepare your developer environment and tools you need. I noticed this again today when I rebooted my machine and spent almost 2 hours installing the tools I need to work.&lt;/p&gt;
+&lt;p&gt;I have put together a list of commands you can use to prepare your environment using Windows Package Manager (WinGet) for you which gives you a kick start at the next reset and you can continue working directly after 10 minutes.&lt;/p&gt;</description></item><item><title>How to install and update Azure PowerShell 7</title><link>https://graef.io/how-to-install-powershell-7/</link><pubDate>Sat, 06 Mar 2021 00:00:00 +0000</pubDate><guid>https://graef.io/how-to-install-powershell-7/</guid><description>&lt;p&gt;Let&amp;rsquo;s keep it easy with these one-liner&amp;rsquo;s you can use for Windows as well as Linux.&lt;/p&gt;</description></item><item><title>Function Lock-Workstation locally and remotely</title><link>https://graef.io/function-lock-workstation-locally-and-remotely/</link><pubDate>Sun, 04 Aug 2019 00:00:00 +0000</pubDate><guid>https://graef.io/function-lock-workstation-locally-and-remotely/</guid><description>&lt;p&gt;You can do everything with PowerShell, as well as locking your workstation with one simple function call.&lt;/p&gt;</description></item><item><title>Get Local Account Memberships</title><link>https://graef.io/get-local-account-memberships/</link><pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate><guid>https://graef.io/get-local-account-memberships/</guid><description>&lt;p&gt;Okay, yeah there are plenty of scripts out which give you local accounts via &lt;code&gt;WMI&lt;/code&gt; or &lt;code&gt;ADSI&lt;/code&gt; and yes scripts exist also which give you all local groups but there is not one which gives you both (of course there are also some) but what if you’re looking to implement this as a CustomScriptExtension to your Azure VM?&lt;/p&gt;</description></item><item><title>Get Azure Active Directoy Tenant ID and Subscription ID</title><link>https://graef.io/get-aad-tenant-id-and-subscription-id/</link><pubDate>Thu, 09 Aug 2018 00:00:00 +0000</pubDate><guid>https://graef.io/get-aad-tenant-id-and-subscription-id/</guid><description/></item><item><title>Get and Set Timezones via PowerShell remotely</title><link>https://graef.io/get-and-set-timezones-via-powershell-remotely/</link><pubDate>Thu, 28 Jun 2018 00:00:00 +0000</pubDate><guid>https://graef.io/get-and-set-timezones-via-powershell-remotely/</guid><description>&lt;p&gt;As published in my Technet Gallery Script Center &lt;a href="https://gallery.technet.microsoft.com/scriptcenter/Get-Timezones-PowerShell-24781869" target="_blank" rel="noopener noreffer"&gt;here&lt;/a&gt;, you can get current timezones remotely via PowerShell with Get-Timezones. Get-Timezones is using &lt;code&gt;WMI&lt;/code&gt; to communicate with your servers.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;span class="lnt"&gt;18
+&lt;/span&gt;&lt;span class="lnt"&gt;19
+&lt;/span&gt;&lt;span class="lnt"&gt;20
+&lt;/span&gt;&lt;span class="lnt"&gt;21
+&lt;/span&gt;&lt;span class="lnt"&gt;22
+&lt;/span&gt;&lt;span class="lnt"&gt;23
+&lt;/span&gt;&lt;span class="lnt"&gt;24
+&lt;/span&gt;&lt;span class="lnt"&gt;25
+&lt;/span&gt;&lt;span class="lnt"&gt;26
+&lt;/span&gt;&lt;span class="lnt"&gt;27
+&lt;/span&gt;&lt;span class="lnt"&gt;28
+&lt;/span&gt;&lt;span class="lnt"&gt;29
+&lt;/span&gt;&lt;span class="lnt"&gt;30
+&lt;/span&gt;&lt;span class="lnt"&gt;31
+&lt;/span&gt;&lt;span class="lnt"&gt;32
+&lt;/span&gt;&lt;span class="lnt"&gt;33
+&lt;/span&gt;&lt;span class="lnt"&gt;34
+&lt;/span&gt;&lt;span class="lnt"&gt;35
+&lt;/span&gt;&lt;span class="lnt"&gt;36
+&lt;/span&gt;&lt;span class="lnt"&gt;37
+&lt;/span&gt;&lt;span class="lnt"&gt;38
+&lt;/span&gt;&lt;span class="lnt"&gt;39
+&lt;/span&gt;&lt;span class="lnt"&gt;40
+&lt;/span&gt;&lt;span class="lnt"&gt;41
+&lt;/span&gt;&lt;span class="lnt"&gt;42
+&lt;/span&gt;&lt;span class="lnt"&gt;43
+&lt;/span&gt;&lt;span class="lnt"&gt;44
+&lt;/span&gt;&lt;span class="lnt"&gt;45
+&lt;/span&gt;&lt;span class="lnt"&gt;46
+&lt;/span&gt;&lt;span class="lnt"&gt;47
+&lt;/span&gt;&lt;span class="lnt"&gt;48
+&lt;/span&gt;&lt;span class="lnt"&gt;49
+&lt;/span&gt;&lt;span class="lnt"&gt;50
+&lt;/span&gt;&lt;span class="lnt"&gt;51
+&lt;/span&gt;&lt;span class="lnt"&gt;52
+&lt;/span&gt;&lt;span class="lnt"&gt;53
+&lt;/span&gt;&lt;span class="lnt"&gt;54
+&lt;/span&gt;&lt;span class="lnt"&gt;55
+&lt;/span&gt;&lt;span class="lnt"&gt;56
+&lt;/span&gt;&lt;span class="lnt"&gt;57
+&lt;/span&gt;&lt;span class="lnt"&gt;58
+&lt;/span&gt;&lt;span class="lnt"&gt;59
+&lt;/span&gt;&lt;span class="lnt"&gt;60
+&lt;/span&gt;&lt;span class="lnt"&gt;61
+&lt;/span&gt;&lt;span class="lnt"&gt;62
+&lt;/span&gt;&lt;span class="lnt"&gt;63
+&lt;/span&gt;&lt;span class="lnt"&gt;64
+&lt;/span&gt;&lt;span class="lnt"&gt;65
+&lt;/span&gt;&lt;span class="lnt"&gt;66
+&lt;/span&gt;&lt;span class="lnt"&gt;67
+&lt;/span&gt;&lt;span class="lnt"&gt;68
+&lt;/span&gt;&lt;span class="lnt"&gt;69
+&lt;/span&gt;&lt;span class="lnt"&gt;70
+&lt;/span&gt;&lt;span class="lnt"&gt;71
+&lt;/span&gt;&lt;span class="lnt"&gt;72
+&lt;/span&gt;&lt;span class="lnt"&gt;73
+&lt;/span&gt;&lt;span class="lnt"&gt;74
+&lt;/span&gt;&lt;span class="lnt"&gt;75
+&lt;/span&gt;&lt;span class="lnt"&gt;76
+&lt;/span&gt;&lt;span class="lnt"&gt;77
+&lt;/span&gt;&lt;span class="lnt"&gt;78
+&lt;/span&gt;&lt;span class="lnt"&gt;79
+&lt;/span&gt;&lt;span class="lnt"&gt;80
+&lt;/span&gt;&lt;span class="lnt"&gt;81
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-powershell" data-lang="powershell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;Function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;Get-Timezones&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="cm"&gt;&amp;lt;#
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; .&lt;/span&gt;&lt;span class="sd"&gt;SYNOPSIS&lt;/span&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; Retrieves timezones of local or remote computers via WMI.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; .&lt;/span&gt;&lt;span class="sd"&gt;DESCRIPTION&lt;/span&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; Retrieves timezones of local or remote computers via WMI.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; .PARAMETER ComputerName
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; A single Computer or an array of computer names. The default is localhost ($env:COMPUTERNAME).
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; .PARAMETER Credentials
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; Commit Credentials for a different domain.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; .PARAMETER Verbose
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; Run in Verbose Mode.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; .&lt;/span&gt;&lt;span class="sd"&gt;EXAMPLE&lt;/span&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; PS C:\&amp;amp;amp;amp;amp;gt; Get-Timezones -ComputerName (gc &amp;#39;C:\computers.txt&amp;#39;) -Credentials Get-Credential
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; ComputerName TimezoneName DaylightSaving TimezoneCaption
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; ------------ ------------ -------------- ---------------
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; SERVER01 W. Europe Standard Time yes (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; SERVER02 W. Europe Standard Time yes (UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; .&lt;/span&gt;&lt;span class="sd"&gt;NOTES&lt;/span&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; Author: Sebastian Gräf
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; Website: https://graef.io
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; Email: ps@graef.io
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; Date: June 27, 2017
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; PSVer: 3.0/4.0/5.0
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; #&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;Cmdletbinding&lt;/span&gt;&lt;span class="p"&gt;()]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;Param&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;Parameter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="na"&gt;ValueFromPipelineByPropertyName&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="vm"&gt;$true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="na"&gt;ValueFromPipeline&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="vm"&gt;$true&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$ComputerName&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$Env:COMPUTERNAME&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;Parameter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="na"&gt;ValueFromPipelineByPropertyName&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="vm"&gt;$true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="na"&gt;ValueFromPipeline&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="vm"&gt;$true&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;ValidateNotNull&lt;/span&gt;&lt;span class="p"&gt;()]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="no"&gt;System.Management.Automation.PSCredential&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="py"&gt;Management&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="py"&gt;Automation&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="py"&gt;Credential&lt;/span&gt;&lt;span class="p"&gt;()]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$Credentials&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="no"&gt;System.Management.Automation.PSCredential&lt;/span&gt;&lt;span class="p"&gt;]::&lt;/span&gt;&lt;span class="n"&gt;Empty&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;Begin&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nb"&gt;Write-Verbose&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34; [&lt;/span&gt;&lt;span class="p"&gt;$(&lt;/span&gt;&lt;span class="nv"&gt;$MyInvocation&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;InvocationName&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;] :: Start Process&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$Results&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="vm"&gt;@&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$ProgressCounter&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;Process&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;foreach&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$Computer&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;$ComputerName&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$ProgressCounter&lt;/span&gt;&lt;span class="p"&gt;++&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nb"&gt;Write-Progress&lt;/span&gt; &lt;span class="n"&gt;-activity&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;Running on &lt;/span&gt;&lt;span class="nv"&gt;$Computer&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt; &lt;span class="n"&gt;-status&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;Please wait ...&amp;#34;&lt;/span&gt; &lt;span class="n"&gt;-PercentComplete&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;$ProgressCounter&lt;/span&gt; &lt;span class="p"&gt;/&lt;/span&gt; &lt;span class="nv"&gt;$ComputerName&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;length&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;*&lt;/span&gt; &lt;span class="mf"&gt;100&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;Test-Connection&lt;/span&gt; &lt;span class="nv"&gt;$Computer&lt;/span&gt; &lt;span class="n"&gt;-Count&lt;/span&gt; &lt;span class="mf"&gt;1&lt;/span&gt; &lt;span class="n"&gt;-Quiet&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nb"&gt;Write-Verbose&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34; [&lt;/span&gt;&lt;span class="p"&gt;$(&lt;/span&gt;&lt;span class="nv"&gt;$MyInvocation&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;InvocationName&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;] :: Processing &lt;/span&gt;&lt;span class="nv"&gt;$Computer&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;try&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$win32_timezone&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;Get-WmiObject&lt;/span&gt; &lt;span class="n"&gt;-Class&lt;/span&gt; &lt;span class="n"&gt;win32_timezone&lt;/span&gt; &lt;span class="n"&gt;-ComputerName&lt;/span&gt; &lt;span class="nv"&gt;$Computer&lt;/span&gt; &lt;span class="n"&gt;-ErrorAction&lt;/span&gt; &lt;span class="n"&gt;Stop&lt;/span&gt; &lt;span class="n"&gt;-Credential&lt;/span&gt; &lt;span class="nv"&gt;$Credentials&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$win32_timezone&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="py"&gt;DaylightBias&lt;/span&gt; &lt;span class="o"&gt;-eq&lt;/span&gt; &lt;span class="mf"&gt;0&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nv"&gt;$daylightsaving&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;no&amp;#34;&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nv"&gt;$daylightsaving&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;yes&amp;#34;&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$obj&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;New-Object&lt;/span&gt; &lt;span class="n"&gt;-Type&lt;/span&gt; &lt;span class="n"&gt;PSCustomObject&lt;/span&gt; &lt;span class="n"&gt;-Property&lt;/span&gt; &lt;span class="vm"&gt;@&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;ComputerName&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$Computer&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;TimezoneCaption&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$win32_timezone&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="py"&gt;Caption&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;TimezoneName&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$win32_timezone&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="py"&gt;StandardName&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="n"&gt;DaylightSaving&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$daylightsaving&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$Results&lt;/span&gt; &lt;span class="p"&gt;+=&lt;/span&gt; &lt;span class="nv"&gt;$obj&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;catch&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nb"&gt;Write-Verbose&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34; Host [&lt;/span&gt;&lt;span class="nv"&gt;$Computer&lt;/span&gt;&lt;span class="s2"&gt;] Failed with Error: &lt;/span&gt;&lt;span class="p"&gt;$(&lt;/span&gt;&lt;span class="nv"&gt;$Error&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mf"&gt;0&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nb"&gt;Write-Verbose&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34; Host [&lt;/span&gt;&lt;span class="nv"&gt;$Computer&lt;/span&gt;&lt;span class="s2"&gt;] Failed Connectivity Test&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$Results&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="nb"&gt;select &lt;/span&gt;&lt;span class="n"&gt;ComputerName&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;TimezoneName&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;DaylightSaving&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;TimezoneCaption&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;End&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nb"&gt;Write-Progress&lt;/span&gt; &lt;span class="n"&gt;-activity&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;Running on &lt;/span&gt;&lt;span class="nv"&gt;$Computer&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt; &lt;span class="n"&gt;-Status&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;Completed.&amp;#34;&lt;/span&gt; &lt;span class="n"&gt;-Completed&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nb"&gt;Write-Verbose&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34; [&lt;/span&gt;&lt;span class="p"&gt;$(&lt;/span&gt;&lt;span class="nv"&gt;$MyInvocation&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;InvocationName&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;] :: End Process&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;This will give you following output:&lt;/p&gt;</description></item><item><title>Set primary IP address order with multiple IP addresses on a NIC</title><link>https://graef.io/set-primary-ip-address-order-with-multiple-ip-addresses-on-a-nic/</link><pubDate>Sun, 26 Nov 2017 11:29:53 +0800</pubDate><guid>https://graef.io/set-primary-ip-address-order-with-multiple-ip-addresses-on-a-nic/</guid><description>&lt;p&gt;If you’re running a webserver it may be you have to run different services on the same port and need to use multiple IP addresses on the same network interface. This can happen for SMTP or Exchange Servers using several connectors.&lt;/p&gt;</description></item><item><title>Get-LogonHistory: Who was logged on to my server?</title><link>https://graef.io/get-logonhistory-who-was-logged-on-to-my-server/</link><pubDate>Thu, 05 Oct 2017 11:26:46 +0800</pubDate><guid>https://graef.io/get-logonhistory-who-was-logged-on-to-my-server/</guid><description>&lt;p&gt;Every System Administrator comes into a situation where you want to see who and how many users were logged on to your servers either via Remote Desktop or via script.&lt;/p&gt;</description></item><item><title>Get-PSVersions: Retrieve Powershell version remotely</title><link>https://graef.io/get-psversions-retrieve-powershell-version-remotely/</link><pubDate>Fri, 22 Sep 2017 11:51:06 +0800</pubDate><guid>https://graef.io/get-psversions-retrieve-powershell-version-remotely/</guid><description>&lt;p&gt;Okay at the end it’s a simple &lt;code&gt;$PSVersion&lt;/code&gt; wrapped in an &lt;code&gt;Invoke-Command&lt;/code&gt; but hey these simple things are needful in case you need to run it against of 100s of servers and not just locally. With the help of &lt;code&gt;Invoke-Command&lt;/code&gt; via WinRM and &lt;code&gt;$PSVersionTable.psversion&lt;/code&gt; wrapped in a foreach you can retrieve PowerShell version of your remote computers indifferent if you need to use credentials to run it against a different domain than you currently reside. Just use the below function &lt;code&gt;Get-PSVersions&lt;/code&gt;, simple but good.&lt;/p&gt;</description></item><item><title>Resolve-DnsNames: Resolve DNS or IP for multiple Computers</title><link>https://graef.io/resolve-dnsnames-resolve-dns-or-ip-for-multiple-computers/</link><pubDate>Sun, 10 Sep 2017 11:47:24 +0800</pubDate><guid>https://graef.io/resolve-dnsnames-resolve-dns-or-ip-for-multiple-computers/</guid><description>&lt;p&gt;Respective Microsoft&amp;rsquo;s Technet article regarding &lt;code&gt;Resolve-DnsName&lt;/code&gt; I have created a function with the ability to run it against more than only one computer. &lt;code&gt;Resolve-DnsNames&lt;/code&gt; performs a DNS name query resolution for the specified name.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt;10
+&lt;/span&gt;&lt;span class="lnt"&gt;11
+&lt;/span&gt;&lt;span class="lnt"&gt;12
+&lt;/span&gt;&lt;span class="lnt"&gt;13
+&lt;/span&gt;&lt;span class="lnt"&gt;14
+&lt;/span&gt;&lt;span class="lnt"&gt;15
+&lt;/span&gt;&lt;span class="lnt"&gt;16
+&lt;/span&gt;&lt;span class="lnt"&gt;17
+&lt;/span&gt;&lt;span class="lnt"&gt;18
+&lt;/span&gt;&lt;span class="lnt"&gt;19
+&lt;/span&gt;&lt;span class="lnt"&gt;20
+&lt;/span&gt;&lt;span class="lnt"&gt;21
+&lt;/span&gt;&lt;span class="lnt"&gt;22
+&lt;/span&gt;&lt;span class="lnt"&gt;23
+&lt;/span&gt;&lt;span class="lnt"&gt;24
+&lt;/span&gt;&lt;span class="lnt"&gt;25
+&lt;/span&gt;&lt;span class="lnt"&gt;26
+&lt;/span&gt;&lt;span class="lnt"&gt;27
+&lt;/span&gt;&lt;span class="lnt"&gt;28
+&lt;/span&gt;&lt;span class="lnt"&gt;29
+&lt;/span&gt;&lt;span class="lnt"&gt;30
+&lt;/span&gt;&lt;span class="lnt"&gt;31
+&lt;/span&gt;&lt;span class="lnt"&gt;32
+&lt;/span&gt;&lt;span class="lnt"&gt;33
+&lt;/span&gt;&lt;span class="lnt"&gt;34
+&lt;/span&gt;&lt;span class="lnt"&gt;35
+&lt;/span&gt;&lt;span class="lnt"&gt;36
+&lt;/span&gt;&lt;span class="lnt"&gt;37
+&lt;/span&gt;&lt;span class="lnt"&gt;38
+&lt;/span&gt;&lt;span class="lnt"&gt;39
+&lt;/span&gt;&lt;span class="lnt"&gt;40
+&lt;/span&gt;&lt;span class="lnt"&gt;41
+&lt;/span&gt;&lt;span class="lnt"&gt;42
+&lt;/span&gt;&lt;span class="lnt"&gt;43
+&lt;/span&gt;&lt;span class="lnt"&gt;44
+&lt;/span&gt;&lt;span class="lnt"&gt;45
+&lt;/span&gt;&lt;span class="lnt"&gt;46
+&lt;/span&gt;&lt;span class="lnt"&gt;47
+&lt;/span&gt;&lt;span class="lnt"&gt;48
+&lt;/span&gt;&lt;span class="lnt"&gt;49
+&lt;/span&gt;&lt;span class="lnt"&gt;50
+&lt;/span&gt;&lt;span class="lnt"&gt;51
+&lt;/span&gt;&lt;span class="lnt"&gt;52
+&lt;/span&gt;&lt;span class="lnt"&gt;53
+&lt;/span&gt;&lt;span class="lnt"&gt;54
+&lt;/span&gt;&lt;span class="lnt"&gt;55
+&lt;/span&gt;&lt;span class="lnt"&gt;56
+&lt;/span&gt;&lt;span class="lnt"&gt;57
+&lt;/span&gt;&lt;span class="lnt"&gt;58
+&lt;/span&gt;&lt;span class="lnt"&gt;59
+&lt;/span&gt;&lt;span class="lnt"&gt;60
+&lt;/span&gt;&lt;span class="lnt"&gt;61
+&lt;/span&gt;&lt;span class="lnt"&gt;62
+&lt;/span&gt;&lt;span class="lnt"&gt;63
+&lt;/span&gt;&lt;span class="lnt"&gt;64
+&lt;/span&gt;&lt;span class="lnt"&gt;65
+&lt;/span&gt;&lt;span class="lnt"&gt;66
+&lt;/span&gt;&lt;span class="lnt"&gt;67
+&lt;/span&gt;&lt;span class="lnt"&gt;68
+&lt;/span&gt;&lt;span class="lnt"&gt;69
+&lt;/span&gt;&lt;span class="lnt"&gt;70
+&lt;/span&gt;&lt;span class="lnt"&gt;71
+&lt;/span&gt;&lt;span class="lnt"&gt;72
+&lt;/span&gt;&lt;span class="lnt"&gt;73
+&lt;/span&gt;&lt;span class="lnt"&gt;74
+&lt;/span&gt;&lt;span class="lnt"&gt;75
+&lt;/span&gt;&lt;span class="lnt"&gt;76
+&lt;/span&gt;&lt;span class="lnt"&gt;77
+&lt;/span&gt;&lt;span class="lnt"&gt;78
+&lt;/span&gt;&lt;span class="lnt"&gt;79
+&lt;/span&gt;&lt;span class="lnt"&gt;80
+&lt;/span&gt;&lt;span class="lnt"&gt;81
+&lt;/span&gt;&lt;span class="lnt"&gt;82
+&lt;/span&gt;&lt;span class="lnt"&gt;83
+&lt;/span&gt;&lt;span class="lnt"&gt;84
+&lt;/span&gt;&lt;span class="lnt"&gt;85
+&lt;/span&gt;&lt;span class="lnt"&gt;86
+&lt;/span&gt;&lt;span class="lnt"&gt;87
+&lt;/span&gt;&lt;span class="lnt"&gt;88
+&lt;/span&gt;&lt;span class="lnt"&gt;89
+&lt;/span&gt;&lt;span class="lnt"&gt;90
+&lt;/span&gt;&lt;span class="lnt"&gt;91
+&lt;/span&gt;&lt;span class="lnt"&gt;92
+&lt;/span&gt;&lt;span class="lnt"&gt;93
+&lt;/span&gt;&lt;span class="lnt"&gt;94
+&lt;/span&gt;&lt;span class="lnt"&gt;95
+&lt;/span&gt;&lt;span class="lnt"&gt;96
+&lt;/span&gt;&lt;span class="lnt"&gt;97
+&lt;/span&gt;&lt;span class="lnt"&gt;98
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-powershell" data-lang="powershell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;Function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;Resolve-DnsNames&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;&amp;lt;#
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;.&lt;/span&gt;&lt;span class="sd"&gt;SYNOPSIS&lt;/span&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; Resolves IP or DNS name for one or more computers.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;.&lt;/span&gt;&lt;span class="sd"&gt;DESCRIPTION&lt;/span&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; Resolves IP or DNS name for one or more computers.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;.PARAMETER ComputerName
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; A single Computer or an array of computer names. The default is localhost ($env:COMPUTERNAME).
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;.PARAMETER IPAddress
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; Commit IPAddress to resolve.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;.PARAMETER Verbose
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; Run in Verbose Mode.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;.&lt;/span&gt;&lt;span class="sd"&gt;EXAMPLE&lt;/span&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; PS C:&amp;gt; Resolve-DnsNames graef.io
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; Name Type TTL Section IPAddress
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; ---- ---- --- ------- ---------
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; graef.io AAAA 86336 Answer 2a01:488:42:1000:50ed:84e8:ff91:1f91
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; graef.io A 86336 Answer 80.237.132.232
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;.&lt;/span&gt;&lt;span class="sd"&gt;EXAMPLE&lt;/span&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;	PS C:&amp;gt; Resolve-DnsNames 80.237.132.232
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; Name Type TTL Section NameHost
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; ---- ---- --- ------- --------
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; 232.132.237.80.in-addr.arpa PTR 40292 Answer graef.io
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;.&lt;/span&gt;&lt;span class="sd"&gt;EXAMPLE&lt;/span&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; PS C:&amp;gt; Resolve-DnsNames -ComputerName (Get-Content C:ServerList.txt)
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;.&lt;/span&gt;&lt;span class="sd"&gt;LINK&lt;/span&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;Home
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;.&lt;/span&gt;&lt;span class="sd"&gt;NOTES&lt;/span&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; Author: Sebastian Gräf
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; Email: sebastian@graef.io
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; Date: September 10, 2017
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; PSVer: 2.0/3.0/4.0/5.0
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;#&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;	&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;Cmdletbinding&lt;/span&gt;&lt;span class="p"&gt;()]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;	&lt;span class="k"&gt;Param&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;		&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;Parameter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;				 &lt;span class="na"&gt;Mandatory&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="vm"&gt;$false&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;				 &lt;span class="na"&gt;ValueFromPipeline&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="vm"&gt;$true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;				 &lt;span class="na"&gt;ValueFromPipelineByPropertyName&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="vm"&gt;$true&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;		&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="no"&gt;string[]&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="nv"&gt;$ComputerName&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$Env:COMPUTERNAME&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;	&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;	&lt;span class="k"&gt;Begin&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;	&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;		&lt;span class="nb"&gt;Write-Verbose&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34; [&lt;/span&gt;&lt;span class="p"&gt;$(&lt;/span&gt;&lt;span class="nv"&gt;$MyInvocation&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;InvocationName&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;] :: Start Process&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$ProgressCounter&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$array&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="vm"&gt;@&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;	&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;	&lt;span class="k"&gt;Process&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;	&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="k"&gt;foreach&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$Computer&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;$ComputerName&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;		&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$ProgressCounter&lt;/span&gt;&lt;span class="p"&gt;++&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;			&lt;span class="nb"&gt;Write-Progress&lt;/span&gt; &lt;span class="n"&gt;-activity&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;Running on &lt;/span&gt;&lt;span class="nv"&gt;$Computer&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt; &lt;span class="n"&gt;-status&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;Please wait ...&amp;#34;&lt;/span&gt; &lt;span class="n"&gt;-PercentComplete&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;$ProgressCounter&lt;/span&gt; &lt;span class="p"&gt;/&lt;/span&gt; &lt;span class="nv"&gt;$ComputerName&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;length&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;*&lt;/span&gt; &lt;span class="mf"&gt;100&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;				&lt;span class="nb"&gt;Write-Verbose&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34; [&lt;/span&gt;&lt;span class="p"&gt;$(&lt;/span&gt;&lt;span class="nv"&gt;$MyInvocation&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;InvocationName&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;] :: Processing &lt;/span&gt;&lt;span class="nv"&gt;$Computer&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;				&lt;span class="k"&gt;try&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;				&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$Resolution&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;Resolve-DnsName&lt;/span&gt; &lt;span class="nv"&gt;$Computer&lt;/span&gt; &lt;span class="n"&gt;-ErrorAction&lt;/span&gt; &lt;span class="n"&gt;SilentlyContinue&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$obj&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;New-Object&lt;/span&gt; &lt;span class="n"&gt;PSObject&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$obj&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="nb"&gt;Add-Member&lt;/span&gt; &lt;span class="n"&gt;NoteProperty&lt;/span&gt; &lt;span class="n"&gt;ComputerName&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$Computer&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$obj&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="nb"&gt;Add-Member&lt;/span&gt; &lt;span class="n"&gt;NoteProperty&lt;/span&gt; &lt;span class="n"&gt;Name&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$Resolution&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Name&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$obj&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="nb"&gt;Add-Member&lt;/span&gt; &lt;span class="n"&gt;NoteProperty&lt;/span&gt; &lt;span class="nb"&gt;Type &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$Resolution&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Type&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$obj&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="nb"&gt;Add-Member&lt;/span&gt; &lt;span class="n"&gt;NoteProperty&lt;/span&gt; &lt;span class="n"&gt;TTL&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$Resolution&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;TTL&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$obj&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="nb"&gt;Add-Member&lt;/span&gt; &lt;span class="n"&gt;NoteProperty&lt;/span&gt; &lt;span class="n"&gt;Section&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$Resolution&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Section&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$obj&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="nb"&gt;Add-Member&lt;/span&gt; &lt;span class="n"&gt;NoteProperty&lt;/span&gt; &lt;span class="n"&gt;NameHost&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$Resolution&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;NameHost&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$obj&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="nb"&gt;Add-Member&lt;/span&gt; &lt;span class="n"&gt;NoteProperty&lt;/span&gt; &lt;span class="n"&gt;IPAddress&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$Resolution&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;IPAddress&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$array&lt;/span&gt; &lt;span class="p"&gt;+=&lt;/span&gt; &lt;span class="nv"&gt;$obj&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;				&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;				&lt;span class="k"&gt;catch&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;				&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;					&lt;span class="nb"&gt;Write-Verbose&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34; Host [&lt;/span&gt;&lt;span class="nv"&gt;$Computer&lt;/span&gt;&lt;span class="s2"&gt;] Failed with Error: &lt;/span&gt;&lt;span class="p"&gt;$(&lt;/span&gt;&lt;span class="nv"&gt;$Error&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mf"&gt;0&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;				&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;	 &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$array&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="nb"&gt;ft
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nb"&gt;&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;	&lt;span class="k"&gt;End&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;	&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;		&lt;span class="nb"&gt;Write-Verbose&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34; [&lt;/span&gt;&lt;span class="p"&gt;$(&lt;/span&gt;&lt;span class="nv"&gt;$MyInvocation&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;InvocationName&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;] :: End Process&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;	&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;div class="details admonition info open"&gt;
+ &lt;div class="details-summary admonition-title"&gt;
+ &lt;i class="icon fas fa-info-circle fa-fw"&gt;&lt;/i&gt;References&lt;i class="details-icon fas fa-angle-right fa-fw"&gt;&lt;/i&gt;
+ &lt;/div&gt;
+ &lt;div class="details-content"&gt;
+ &lt;div class="admonition-content"&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://docs.microsoft.com/en-us/powershell/module/dnsclient/resolve-dnsname?view=windowsserver2019-ps" target="_blank" rel="noopener noreffer"&gt;Resolve-DnsName&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;</description></item><item><title>Get-DellTags: Get Dell Tags and Express Service Code remotely</title><link>https://graef.io/get-delltags-get-dell-tags-and-express-service-code-remotely/</link><pubDate>Tue, 15 Aug 2017 11:40:27 +0800</pubDate><guid>https://graef.io/get-delltags-get-dell-tags-and-express-service-code-remotely/</guid><description>&lt;p&gt;Get DELL Tag and Express Service Code remotely for more than one computer.&lt;/p&gt;</description></item><item><title>Get-ScsiDisks: Combine Physicaldisk and Logicaldisk Objects</title><link>https://graef.io/get-scsidisks-combine-physicaldisk-and-logicaldisk-objects/</link><pubDate>Thu, 10 Aug 2017 11:48:24 +0800</pubDate><guid>https://graef.io/get-scsidisks-combine-physicaldisk-and-logicaldisk-objects/</guid><description>&lt;p&gt;Hi there, following function &lt;code&gt;Get-ScsiDisks&lt;/code&gt; retrieves disk details for VMWare Guests or any computer with corresponding SCSI disk details like SCSI ID and SCSI Bus. The function concatenates objects consisting of &lt;code&gt;Win32_DiskDrive&lt;/code&gt;, &lt;code&gt;Win32_LogicalDisk&lt;/code&gt; and &lt;code&gt;Win32_DiskDriveToDiskPartition&lt;/code&gt; using WMI. For WinRM you can use Invoke-Command and inject the script.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt; 1
+&lt;/span&gt;&lt;span class="lnt"&gt; 2
+&lt;/span&gt;&lt;span class="lnt"&gt; 3
+&lt;/span&gt;&lt;span class="lnt"&gt; 4
+&lt;/span&gt;&lt;span class="lnt"&gt; 5
+&lt;/span&gt;&lt;span class="lnt"&gt; 6
+&lt;/span&gt;&lt;span class="lnt"&gt; 7
+&lt;/span&gt;&lt;span class="lnt"&gt; 8
+&lt;/span&gt;&lt;span class="lnt"&gt; 9
+&lt;/span&gt;&lt;span class="lnt"&gt; 10
+&lt;/span&gt;&lt;span class="lnt"&gt; 11
+&lt;/span&gt;&lt;span class="lnt"&gt; 12
+&lt;/span&gt;&lt;span class="lnt"&gt; 13
+&lt;/span&gt;&lt;span class="lnt"&gt; 14
+&lt;/span&gt;&lt;span class="lnt"&gt; 15
+&lt;/span&gt;&lt;span class="lnt"&gt; 16
+&lt;/span&gt;&lt;span class="lnt"&gt; 17
+&lt;/span&gt;&lt;span class="lnt"&gt; 18
+&lt;/span&gt;&lt;span class="lnt"&gt; 19
+&lt;/span&gt;&lt;span class="lnt"&gt; 20
+&lt;/span&gt;&lt;span class="lnt"&gt; 21
+&lt;/span&gt;&lt;span class="lnt"&gt; 22
+&lt;/span&gt;&lt;span class="lnt"&gt; 23
+&lt;/span&gt;&lt;span class="lnt"&gt; 24
+&lt;/span&gt;&lt;span class="lnt"&gt; 25
+&lt;/span&gt;&lt;span class="lnt"&gt; 26
+&lt;/span&gt;&lt;span class="lnt"&gt; 27
+&lt;/span&gt;&lt;span class="lnt"&gt; 28
+&lt;/span&gt;&lt;span class="lnt"&gt; 29
+&lt;/span&gt;&lt;span class="lnt"&gt; 30
+&lt;/span&gt;&lt;span class="lnt"&gt; 31
+&lt;/span&gt;&lt;span class="lnt"&gt; 32
+&lt;/span&gt;&lt;span class="lnt"&gt; 33
+&lt;/span&gt;&lt;span class="lnt"&gt; 34
+&lt;/span&gt;&lt;span class="lnt"&gt; 35
+&lt;/span&gt;&lt;span class="lnt"&gt; 36
+&lt;/span&gt;&lt;span class="lnt"&gt; 37
+&lt;/span&gt;&lt;span class="lnt"&gt; 38
+&lt;/span&gt;&lt;span class="lnt"&gt; 39
+&lt;/span&gt;&lt;span class="lnt"&gt; 40
+&lt;/span&gt;&lt;span class="lnt"&gt; 41
+&lt;/span&gt;&lt;span class="lnt"&gt; 42
+&lt;/span&gt;&lt;span class="lnt"&gt; 43
+&lt;/span&gt;&lt;span class="lnt"&gt; 44
+&lt;/span&gt;&lt;span class="lnt"&gt; 45
+&lt;/span&gt;&lt;span class="lnt"&gt; 46
+&lt;/span&gt;&lt;span class="lnt"&gt; 47
+&lt;/span&gt;&lt;span class="lnt"&gt; 48
+&lt;/span&gt;&lt;span class="lnt"&gt; 49
+&lt;/span&gt;&lt;span class="lnt"&gt; 50
+&lt;/span&gt;&lt;span class="lnt"&gt; 51
+&lt;/span&gt;&lt;span class="lnt"&gt; 52
+&lt;/span&gt;&lt;span class="lnt"&gt; 53
+&lt;/span&gt;&lt;span class="lnt"&gt; 54
+&lt;/span&gt;&lt;span class="lnt"&gt; 55
+&lt;/span&gt;&lt;span class="lnt"&gt; 56
+&lt;/span&gt;&lt;span class="lnt"&gt; 57
+&lt;/span&gt;&lt;span class="lnt"&gt; 58
+&lt;/span&gt;&lt;span class="lnt"&gt; 59
+&lt;/span&gt;&lt;span class="lnt"&gt; 60
+&lt;/span&gt;&lt;span class="lnt"&gt; 61
+&lt;/span&gt;&lt;span class="lnt"&gt; 62
+&lt;/span&gt;&lt;span class="lnt"&gt; 63
+&lt;/span&gt;&lt;span class="lnt"&gt; 64
+&lt;/span&gt;&lt;span class="lnt"&gt; 65
+&lt;/span&gt;&lt;span class="lnt"&gt; 66
+&lt;/span&gt;&lt;span class="lnt"&gt; 67
+&lt;/span&gt;&lt;span class="lnt"&gt; 68
+&lt;/span&gt;&lt;span class="lnt"&gt; 69
+&lt;/span&gt;&lt;span class="lnt"&gt; 70
+&lt;/span&gt;&lt;span class="lnt"&gt; 71
+&lt;/span&gt;&lt;span class="lnt"&gt; 72
+&lt;/span&gt;&lt;span class="lnt"&gt; 73
+&lt;/span&gt;&lt;span class="lnt"&gt; 74
+&lt;/span&gt;&lt;span class="lnt"&gt; 75
+&lt;/span&gt;&lt;span class="lnt"&gt; 76
+&lt;/span&gt;&lt;span class="lnt"&gt; 77
+&lt;/span&gt;&lt;span class="lnt"&gt; 78
+&lt;/span&gt;&lt;span class="lnt"&gt; 79
+&lt;/span&gt;&lt;span class="lnt"&gt; 80
+&lt;/span&gt;&lt;span class="lnt"&gt; 81
+&lt;/span&gt;&lt;span class="lnt"&gt; 82
+&lt;/span&gt;&lt;span class="lnt"&gt; 83
+&lt;/span&gt;&lt;span class="lnt"&gt; 84
+&lt;/span&gt;&lt;span class="lnt"&gt; 85
+&lt;/span&gt;&lt;span class="lnt"&gt; 86
+&lt;/span&gt;&lt;span class="lnt"&gt; 87
+&lt;/span&gt;&lt;span class="lnt"&gt; 88
+&lt;/span&gt;&lt;span class="lnt"&gt; 89
+&lt;/span&gt;&lt;span class="lnt"&gt; 90
+&lt;/span&gt;&lt;span class="lnt"&gt; 91
+&lt;/span&gt;&lt;span class="lnt"&gt; 92
+&lt;/span&gt;&lt;span class="lnt"&gt; 93
+&lt;/span&gt;&lt;span class="lnt"&gt; 94
+&lt;/span&gt;&lt;span class="lnt"&gt; 95
+&lt;/span&gt;&lt;span class="lnt"&gt; 96
+&lt;/span&gt;&lt;span class="lnt"&gt; 97
+&lt;/span&gt;&lt;span class="lnt"&gt; 98
+&lt;/span&gt;&lt;span class="lnt"&gt; 99
+&lt;/span&gt;&lt;span class="lnt"&gt;100
+&lt;/span&gt;&lt;span class="lnt"&gt;101
+&lt;/span&gt;&lt;span class="lnt"&gt;102
+&lt;/span&gt;&lt;span class="lnt"&gt;103
+&lt;/span&gt;&lt;span class="lnt"&gt;104
+&lt;/span&gt;&lt;span class="lnt"&gt;105
+&lt;/span&gt;&lt;span class="lnt"&gt;106
+&lt;/span&gt;&lt;span class="lnt"&gt;107
+&lt;/span&gt;&lt;span class="lnt"&gt;108
+&lt;/span&gt;&lt;span class="lnt"&gt;109
+&lt;/span&gt;&lt;span class="lnt"&gt;110
+&lt;/span&gt;&lt;span class="lnt"&gt;111
+&lt;/span&gt;&lt;span class="lnt"&gt;112
+&lt;/span&gt;&lt;span class="lnt"&gt;113
+&lt;/span&gt;&lt;span class="lnt"&gt;114
+&lt;/span&gt;&lt;span class="lnt"&gt;115
+&lt;/span&gt;&lt;span class="lnt"&gt;116
+&lt;/span&gt;&lt;span class="lnt"&gt;117
+&lt;/span&gt;&lt;span class="lnt"&gt;118
+&lt;/span&gt;&lt;span class="lnt"&gt;119
+&lt;/span&gt;&lt;span class="lnt"&gt;120
+&lt;/span&gt;&lt;span class="lnt"&gt;121
+&lt;/span&gt;&lt;span class="lnt"&gt;122
+&lt;/span&gt;&lt;span class="lnt"&gt;123
+&lt;/span&gt;&lt;span class="lnt"&gt;124
+&lt;/span&gt;&lt;span class="lnt"&gt;125
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-powershell" data-lang="powershell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;Function&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nb"&gt;Get-ScsiDisks&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;&amp;lt;#
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;.&lt;/span&gt;&lt;span class="sd"&gt;SYNOPSIS&lt;/span&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; Retrieves disk details for VMWare Guests with corresponding SCSI disk details like SCSI ID
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; and SCSI Bus.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;.&lt;/span&gt;&lt;span class="sd"&gt;DESCRIPTION&lt;/span&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; Retrieves a concatenated object consisting of Win32_DiskDrive, Win32_LogicalDisk and
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; Win32_DiskDriveToDiskPartition using WMI. For WinRM you can use Invoke-Command and inject the script.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;.PARAMETER ComputerName
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; A single Computer or an array of computer names. The default is localhost ($env:COMPUTERNAME).
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;.PARAMETER Credentials
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; Commit Credentials for a different domain.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;.PARAMETER Verbose
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; Run in Verbose Mode.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;.&lt;/span&gt;&lt;span class="sd"&gt;EXAMPLE&lt;/span&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; PS C:&amp;gt; Get-ScsiDisks
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; ComputerName Disk DriveLetter VolumeName Size FreeSpace DiskModel
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; ------------ ---- ----------- ---------- ---- --------- ---------
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; SERVER \.PHYSICALDRIVE1 D: Data 767 767 VMware Virtual di...
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; SERVER \.PHYSICALDRIVE0 C: OS 59 39 VMware Virtual di...
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;.&lt;/span&gt;&lt;span class="sd"&gt;EXAMPLE&lt;/span&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;	PS C:&amp;gt; Get-ScsiDisks | Out-GridView
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;.&lt;/span&gt;&lt;span class="sd"&gt;EXAMPLE&lt;/span&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;	PS C:&amp;gt; Get-ScsiDisks | ft -a
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;.&lt;/span&gt;&lt;span class="sd"&gt;EXAMPLE&lt;/span&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;	PS C:&amp;gt; Get-ScsiDisks -ComputerName (gc &amp;#39;C:VMs.txt&amp;#39;) -Credentials Get-Credential
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;.&lt;/span&gt;&lt;span class="sd"&gt;LINK&lt;/span&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;Home
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;.&lt;/span&gt;&lt;span class="sd"&gt;NOTES&lt;/span&gt;&lt;span class="cm"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; Author: Sebastian Gräf
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; Email: ps@graef.io
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; Date: September 12, 2017
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt; PSVer: 3.0/4.0/5.0
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="cm"&gt;#&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;	&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;Cmdletbinding&lt;/span&gt;&lt;span class="p"&gt;()]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;	&lt;span class="k"&gt;Param&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;		&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;Parameter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="na"&gt;ValueFromPipelineByPropertyName&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="vm"&gt;$true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="na"&gt;ValueFromPipeline&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="vm"&gt;$true&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;		&lt;span class="nv"&gt;$ComputerName&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$Env:COMPUTERNAME&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;		&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;Parameter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="na"&gt;ValueFromPipelineByPropertyName&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="vm"&gt;$true&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="na"&gt;ValueFromPipeline&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="vm"&gt;$true&lt;/span&gt;&lt;span class="p"&gt;)]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;		&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;ValidateNotNull&lt;/span&gt;&lt;span class="p"&gt;()]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;		&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="no"&gt;System.Management.Automation.PSCredential&lt;/span&gt;&lt;span class="p"&gt;][&lt;/span&gt;&lt;span class="n"&gt;System&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="py"&gt;Management&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="py"&gt;Automation&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="py"&gt;Credential&lt;/span&gt;&lt;span class="p"&gt;()]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;		&lt;span class="nv"&gt;$Credentials&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="no"&gt;System.Management.Automation.PSCredential&lt;/span&gt;&lt;span class="p"&gt;]::&lt;/span&gt;&lt;span class="n"&gt;Empty&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;	&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;	&lt;span class="k"&gt;Begin&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;	&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;		&lt;span class="nb"&gt;Write-Verbose&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34; [&lt;/span&gt;&lt;span class="p"&gt;$(&lt;/span&gt;&lt;span class="nv"&gt;$MyInvocation&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;InvocationName&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;] :: Start Process&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;		&lt;span class="nv"&gt;$result&lt;/span&gt;&lt;span class="p"&gt;=&lt;/span&gt;&lt;span class="vm"&gt;@&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;		&lt;span class="nv"&gt;$ProgressCounter&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;	&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;	&lt;span class="k"&gt;Process&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;	&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;		&lt;span class="k"&gt;foreach&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$Computer&lt;/span&gt; &lt;span class="k"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;$ComputerName&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;		&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;			&lt;span class="nv"&gt;$ProgressCounter&lt;/span&gt;&lt;span class="p"&gt;++&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;			&lt;span class="nb"&gt;Write-Progress&lt;/span&gt; &lt;span class="n"&gt;-activity&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;Running on &lt;/span&gt;&lt;span class="nv"&gt;$Computer&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt; &lt;span class="n"&gt;-status&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;Please wait ...&amp;#34;&lt;/span&gt; &lt;span class="n"&gt;-PercentComplete&lt;/span&gt; &lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="nv"&gt;$ProgressCounter&lt;/span&gt; &lt;span class="p"&gt;/&lt;/span&gt; &lt;span class="nv"&gt;$ComputerName&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;length&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;*&lt;/span&gt; &lt;span class="mf"&gt;100&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;			&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;Test-Connection&lt;/span&gt; &lt;span class="nv"&gt;$Computer&lt;/span&gt; &lt;span class="n"&gt;-Count&lt;/span&gt; &lt;span class="mf"&gt;1&lt;/span&gt; &lt;span class="n"&gt;-Quiet&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;			&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;				&lt;span class="nb"&gt;Write-Verbose&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34; [&lt;/span&gt;&lt;span class="p"&gt;$(&lt;/span&gt;&lt;span class="nv"&gt;$MyInvocation&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;InvocationName&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;] :: Processing &lt;/span&gt;&lt;span class="nv"&gt;$Computer&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;				&lt;span class="k"&gt;try&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;				&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;					&lt;span class="nb"&gt;Get-WmiObject&lt;/span&gt; &lt;span class="n"&gt;-Class&lt;/span&gt; &lt;span class="n"&gt;Win32_DiskDrive&lt;/span&gt; &lt;span class="n"&gt;-ComputerName&lt;/span&gt; &lt;span class="nv"&gt;$Computer&lt;/span&gt; &lt;span class="n"&gt;-Credential&lt;/span&gt; &lt;span class="nv"&gt;$Credentials&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="p"&gt;%&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;						&lt;span class="nv"&gt;$disk&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$_&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;						&lt;span class="nv"&gt;$partitions&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;ASSOCIATORS OF &amp;#34;&lt;/span&gt; &lt;span class="p"&gt;+&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;						&lt;span class="s2"&gt;&amp;#34;{Win32_DiskDrive.DeviceID=&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;$(&lt;/span&gt;&lt;span class="nv"&gt;$disk&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DeviceID&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;&amp;#39;} &amp;#34;&lt;/span&gt; &lt;span class="p"&gt;+&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;						&lt;span class="s2"&gt;&amp;#34;WHERE AssocClass = Win32_DiskDriveToDiskPartition&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;						&lt;span class="nb"&gt;Get-WmiObject&lt;/span&gt; &lt;span class="n"&gt;-Query&lt;/span&gt; &lt;span class="nv"&gt;$partitions&lt;/span&gt; &lt;span class="n"&gt;-ComputerName&lt;/span&gt; &lt;span class="nv"&gt;$Computer&lt;/span&gt; &lt;span class="n"&gt;-Credential&lt;/span&gt; &lt;span class="nv"&gt;$Credentials&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="p"&gt;%&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;							&lt;span class="nv"&gt;$partition&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$_&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;							&lt;span class="nv"&gt;$drives&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;ASSOCIATORS OF &amp;#34;&lt;/span&gt; &lt;span class="p"&gt;+&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;							&lt;span class="s2"&gt;&amp;#34;{Win32_DiskPartition.DeviceID=&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;$(&lt;/span&gt;&lt;span class="nv"&gt;$partition&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DeviceID&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;&amp;#39;} &amp;#34;&lt;/span&gt; &lt;span class="p"&gt;+&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;							&lt;span class="s2"&gt;&amp;#34;WHERE AssocClass = Win32_LogicalDiskToPartition&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;							&lt;span class="nb"&gt;Get-WmiObject&lt;/span&gt; &lt;span class="n"&gt;-Query&lt;/span&gt; &lt;span class="nv"&gt;$drives&lt;/span&gt; &lt;span class="n"&gt;-ComputerName&lt;/span&gt; &lt;span class="nv"&gt;$Computer&lt;/span&gt; &lt;span class="n"&gt;-Credential&lt;/span&gt; &lt;span class="nv"&gt;$Credentials&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="p"&gt;%&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;								&lt;span class="nv"&gt;$obj&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;New-Object&lt;/span&gt; &lt;span class="n"&gt;-Type&lt;/span&gt; &lt;span class="n"&gt;PSCustomObject&lt;/span&gt; &lt;span class="n"&gt;-Property&lt;/span&gt; &lt;span class="vm"&gt;@&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;									&lt;span class="n"&gt;ComputerName&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$Computer&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;									&lt;span class="n"&gt;Disk&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$disk&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="py"&gt;DeviceID&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;									&lt;span class="n"&gt;DiskSize&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="no"&gt;math&lt;/span&gt;&lt;span class="p"&gt;]::&lt;/span&gt;&lt;span class="n"&gt;Truncate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$disk&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="py"&gt;Size&lt;/span&gt; &lt;span class="p"&gt;/&lt;/span&gt; &lt;span class="mf"&gt;1&lt;/span&gt;&lt;span class="p"&gt;GB);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;									&lt;span class="n"&gt;DiskModel&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$disk&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="py"&gt;Model&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;									&lt;span class="n"&gt;Partition&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$partition&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="py"&gt;Name&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;									&lt;span class="n"&gt;DriveLetter&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$_&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="py"&gt;DeviceID&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;									&lt;span class="n"&gt;VolumeName&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$_&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="py"&gt;VolumeName&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;									&lt;span class="n"&gt;Size&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="no"&gt;math&lt;/span&gt;&lt;span class="p"&gt;]::&lt;/span&gt;&lt;span class="n"&gt;Truncate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$_&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="py"&gt;Size&lt;/span&gt; &lt;span class="p"&gt;/&lt;/span&gt; &lt;span class="mf"&gt;1&lt;/span&gt;&lt;span class="p"&gt;GB)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;									&lt;span class="n"&gt;FreeSpace&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="no"&gt;math&lt;/span&gt;&lt;span class="p"&gt;]::&lt;/span&gt;&lt;span class="n"&gt;Truncate&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$_&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="py"&gt;FreeSpace&lt;/span&gt; &lt;span class="p"&gt;/&lt;/span&gt; &lt;span class="mf"&gt;1&lt;/span&gt;&lt;span class="p"&gt;GB)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;									&lt;span class="n"&gt;SCSIBus&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$disk&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="py"&gt;SCSIBus&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;									&lt;span class="n"&gt;SCSITargetId&lt;/span&gt; &lt;span class="p"&gt;=&lt;/span&gt; &lt;span class="nv"&gt;$disk&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="py"&gt;SCSITargetId&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;								&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;								&lt;span class="nv"&gt;$result&lt;/span&gt; &lt;span class="p"&gt;+=&lt;/span&gt; &lt;span class="nv"&gt;$obj&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;							&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;						&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;					&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;				&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;				&lt;span class="k"&gt;catch&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;				&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;					&lt;span class="nb"&gt;Write-Verbose&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34; Host [&lt;/span&gt;&lt;span class="nv"&gt;$Computer&lt;/span&gt;&lt;span class="s2"&gt;] Failed with Error: &lt;/span&gt;&lt;span class="p"&gt;$(&lt;/span&gt;&lt;span class="nv"&gt;$Error&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mf"&gt;0&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;				&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;			&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;			&lt;span class="k"&gt;else&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;			&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;				&lt;span class="nb"&gt;Write-Verbose&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34; Host [&lt;/span&gt;&lt;span class="nv"&gt;$Computer&lt;/span&gt;&lt;span class="s2"&gt;] Failed Connectivity Test&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;			&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;		&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt; &lt;span class="nv"&gt;$result&lt;/span&gt; &lt;span class="p"&gt;|&lt;/span&gt; &lt;span class="nb"&gt;select &lt;/span&gt;&lt;span class="n"&gt;ComputerName&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;Disk&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;DriveLetter&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;VolumeName&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;Size&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;FreeSpace&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;DiskModel&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;Partition&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;SCSIBus&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;SCSITargetId&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;	&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;	&lt;span class="k"&gt;End&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;	&lt;span class="p"&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;		&lt;span class="nb"&gt;Write-Progress&lt;/span&gt; &lt;span class="n"&gt;-activity&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;Running on &lt;/span&gt;&lt;span class="nv"&gt;$Computer&lt;/span&gt;&lt;span class="s2"&gt;&amp;#34;&lt;/span&gt; &lt;span class="n"&gt;-Status&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34;Completed.&amp;#34;&lt;/span&gt; &lt;span class="n"&gt;-Completed&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;		&lt;span class="nb"&gt;Write-Verbose&lt;/span&gt; &lt;span class="s2"&gt;&amp;#34; [&lt;/span&gt;&lt;span class="p"&gt;$(&lt;/span&gt;&lt;span class="nv"&gt;$MyInvocation&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;InvocationName&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;] :: End Process&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;	&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description></item><item><title>Simulate-Activity: Simulate user mouse and keyboard input with PowerShell</title><link>https://graef.io/simulate-activity-simulate-user-mouse-and-keyboard-input-with-powershell/</link><pubDate>Thu, 10 Aug 2017 11:11:29 +0800</pubDate><guid>https://graef.io/simulate-activity-simulate-user-mouse-and-keyboard-input-with-powershell/</guid><description>&lt;p&gt;If you want to avoid or block coming up your screensaver locally or remotely, take this nice script.&lt;/p&gt;</description></item><item><title>Resolve DNS and IP addresses with PowerShell</title><link>https://graef.io/resolve-dns-and-ip-addresses-with-powershell/</link><pubDate>Mon, 10 Jul 2017 11:12:17 +0800</pubDate><guid>https://graef.io/resolve-dns-and-ip-addresses-with-powershell/</guid><description>&lt;p&gt;In this case we’re going to use the method GetHostAddresses of the Dns class of the Sytem.Net namespace.
+For PowerShell 2.0 you can use following Windows PowerShell One Liners:&lt;/p&gt;
+&lt;h3 id="name-to-ip-address-dns-forward"&gt;Name to IP Address (DNS Forward)&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-powershell" data-lang="powershell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="no"&gt;System.Net.Dns&lt;/span&gt;&lt;span class="p"&gt;]::&lt;/span&gt;&lt;span class="n"&gt;GetHostAddresses&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;graef.io&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="no"&gt;System.Net.Dns&lt;/span&gt;&lt;span class="p"&gt;]::&lt;/span&gt;&lt;span class="n"&gt;GetHostAddresses&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;graef.io&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="py"&gt;IPAddressToString&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id="ip-address-to-name-dns-reverse"&gt;IP Address to Name (DNS Reverse)&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;span class="lnt"&gt;3
+&lt;/span&gt;&lt;span class="lnt"&gt;4
+&lt;/span&gt;&lt;span class="lnt"&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-powershell" data-lang="powershell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="no"&gt;System.Net.Dns&lt;/span&gt;&lt;span class="p"&gt;]::&lt;/span&gt;&lt;span class="n"&gt;GetHostbyAddress&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;85.13.135.42&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;HostName&lt;/span&gt; &lt;span class="n"&gt;Aliases&lt;/span&gt; &lt;span class="n"&gt;AddressList&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="p"&gt;--------&lt;/span&gt; &lt;span class="p"&gt;-------&lt;/span&gt; &lt;span class="p"&gt;-----------&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="n"&gt;graef&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="py"&gt;io&lt;/span&gt; &lt;span class="p"&gt;{}&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="mf"&gt;85.13&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="py"&gt;135&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mf"&gt;42&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;As of PowerShell 4.0 you can use the Cmdlet Resolve-DnsName as well as for both Forward and Reverse:&lt;/p&gt;</description></item><item><title>Show non-present devices in Windows with Device Manager</title><link>https://graef.io/show-non-present-devices-in-windows-with-device-manager/</link><pubDate>Tue, 27 Jun 2017 11:29:53 +0800</pubDate><guid>https://graef.io/show-non-present-devices-in-windows-with-device-manager/</guid><description>&lt;p&gt;Open PowerShell or Commmand Shell, enter the following&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt"&gt;1
+&lt;/span&gt;&lt;span class="lnt"&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-fallback" data-lang="fallback"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;set devmgr_show_nonpresent_devices=1
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;devmgmt.msc
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;figure&gt;&lt;a class="lightgallery" href="https://graef.io/show-non-present-devices-in-windows-with-device-manager/2021-08-10-11-56-22.png" title="/show-non-present-devices-in-windows-with-device-manager/2021-08-10-11-56-22.png" data-thumbnail="/show-non-present-devices-in-windows-with-device-manager/2021-08-10-11-56-22.png" data-sub-html="&lt;h2&gt;.&lt;/h2&gt;"&gt;
  &lt;img
  class="lazyload"
  src="https://graef.io/svg/loading.min.svg"
  data-src="2021-08-10-11-56-22.png"
  data-srcset="https://graef.io/show-non-present-devices-in-windows-with-device-manager/2021-08-10-11-56-22.png, 2021-08-10-11-56-22.png 1.5x, https://graef.io/show-non-present-devices-in-windows-with-device-manager/2021-08-10-11-56-22.png 2x"
  data-sizes="auto"
- alt="/show-non-present-devices-in-windows-with-device-manager/2021-08-10-11-56-22.png" />
- &lt;/a>&lt;figcaption class="image-caption">.&lt;/figcaption>
- &lt;/figure>
-&lt;p>This will open your device manager with the ability to show hidden devices. Click on View and select &amp;ldquo;Show hidden devices&amp;rdquo;.&lt;/p>
-&lt;figure>&lt;a class="lightgallery" href="https://graef.io/show-non-present-devices-in-windows-with-device-manager/2021-08-10-11-56-49.png" title="/show-non-present-devices-in-windows-with-device-manager/2021-08-10-11-56-49.png" data-thumbnail="/show-non-present-devices-in-windows-with-device-manager/2021-08-10-11-56-49.png" data-sub-html="&lt;h2>.&lt;/h2>">
+ alt="/show-non-present-devices-in-windows-with-device-manager/2021-08-10-11-56-22.png" /&gt;
+ &lt;/a&gt;&lt;figcaption class="image-caption"&gt;.&lt;/figcaption&gt;
+ &lt;/figure&gt;
+&lt;p&gt;This will open your device manager with the ability to show hidden devices. Click on View and select &amp;ldquo;Show hidden devices&amp;rdquo;.&lt;/p&gt;
+&lt;figure&gt;&lt;a class="lightgallery" href="https://graef.io/show-non-present-devices-in-windows-with-device-manager/2021-08-10-11-56-49.png" title="/show-non-present-devices-in-windows-with-device-manager/2021-08-10-11-56-49.png" data-thumbnail="/show-non-present-devices-in-windows-with-device-manager/2021-08-10-11-56-49.png" data-sub-html="&lt;h2&gt;.&lt;/h2&gt;"&gt;
  &lt;img
  class="lazyload"
  src="https://graef.io/svg/loading.min.svg"
  data-src="2021-08-10-11-56-49.png"
  data-srcset="https://graef.io/show-non-present-devices-in-windows-with-device-manager/2021-08-10-11-56-49.png, 2021-08-10-11-56-49.png 1.5x, https://graef.io/show-non-present-devices-in-windows-with-device-manager/2021-08-10-11-56-49.png 2x"
  data-sizes="auto"
- alt="/show-non-present-devices-in-windows-with-device-manager/2021-08-10-11-56-49.png" />
- &lt;/a>&lt;figcaption class="image-caption">.&lt;/figcaption>
- &lt;/figure>
-&lt;p>Select your hidden device you need to remove, right click and select uninstall. That&amp;rsquo;s it!&lt;/p></description></item><item><title>Configure Cluster Quorum node weight settings</title><link>https://graef.io/configure-cluster-quorum-node-weight-settings/</link><pubDate>Fri, 23 Jun 2017 11:29:53 +0800</pubDate><guid>https://graef.io/configure-cluster-quorum-node-weight-settings/</guid><description>&lt;p>While using SQL AlwaysOn in connection with a third node on a different location as a DR solution, the third node is needed only in case there is a real Disaster Recovery.&lt;/p></description></item><item><title>Show-Command: Get a GUI-Interface for any Powershell Cmdlet</title><link>https://graef.io/show-command-get-a-gui-interface-for-any-powershell-cmdlet/</link><pubDate>Sat, 15 Apr 2017 11:37:17 +0800</pubDate><guid>https://graef.io/show-command-get-a-gui-interface-for-any-powershell-cmdlet/</guid><description>&lt;p>Have you ever wondered if there’s an opportunity to easily create a GUI out of every PowerShell Cmdlet?&lt;/p></description></item><item><title>How to Install KB Hotfixes only if they are not installed</title><link>https://graef.io/how-to-install-kb-hotfixes-only-if-they-are-not-installed/</link><pubDate>Sun, 02 Apr 2017 11:20:43 +0800</pubDate><guid>https://graef.io/how-to-install-kb-hotfixes-only-if-they-are-not-installed/</guid><description>&lt;p>I just wanted to share you a tiny snippet if you’re looking for a simple PowerShell liner to simply get a KB Hotfix installed. It also verifies if the KB is installed already.&lt;/p></description></item><item><title>KMS: How to Find Windows Server Licensing Details</title><link>https://graef.io/kms-how-to-find-windows-server-licensing-details/</link><pubDate>Fri, 10 Mar 2017 11:13:41 +0800</pubDate><guid>https://graef.io/kms-how-to-find-windows-server-licensing-details/</guid><description>&lt;p>If you&amp;rsquo;re searching for Windows Server Licensing and Activation Details of your Windows machine you can use following statements&lt;/p></description></item><item><title>GhostBuster: Remove all Non-present and hidden devices in Windows</title><link>https://graef.io/ghostbuster-remove-all-non-present-hidden-devices-from-windows/</link><pubDate>Sun, 12 Feb 2017 11:25:02 +0800</pubDate><guid>https://graef.io/ghostbuster-remove-all-non-present-hidden-devices-from-windows/</guid><description>&lt;p>As described in one of my previous articles &lt;a href="https://graef.io/show-non-present-devices-in-windows-with-device-manager/" rel="">How to show nonpresent devices in Windows with Device Manager&lt;/a> you were able to show nonpresent devices in device manager and delete them one bye one.&lt;/p></description></item></channel></rss>
+ alt="/show-non-present-devices-in-windows-with-device-manager/2021-08-10-11-56-49.png" /&gt;
+ &lt;/a&gt;&lt;figcaption class="image-caption"&gt;.&lt;/figcaption&gt;
+ &lt;/figure&gt;
+&lt;p&gt;Select your hidden device you need to remove, right click and select uninstall. That&amp;rsquo;s it!&lt;/p&gt;</description></item><item><title>Configure Cluster Quorum node weight settings</title><link>https://graef.io/configure-cluster-quorum-node-weight-settings/</link><pubDate>Fri, 23 Jun 2017 11:29:53 +0800</pubDate><guid>https://graef.io/configure-cluster-quorum-node-weight-settings/</guid><description>&lt;p&gt;While using SQL AlwaysOn in connection with a third node on a different location as a DR solution, the third node is needed only in case there is a real Disaster Recovery.&lt;/p&gt;</description></item><item><title>Show-Command: Get a GUI-Interface for any Powershell Cmdlet</title><link>https://graef.io/show-command-get-a-gui-interface-for-any-powershell-cmdlet/</link><pubDate>Sat, 15 Apr 2017 11:37:17 +0800</pubDate><guid>https://graef.io/show-command-get-a-gui-interface-for-any-powershell-cmdlet/</guid><description>&lt;p&gt;Have you ever wondered if there’s an opportunity to easily create a GUI out of every PowerShell Cmdlet?&lt;/p&gt;</description></item><item><title>How to Install KB Hotfixes only if they are not installed</title><link>https://graef.io/how-to-install-kb-hotfixes-only-if-they-are-not-installed/</link><pubDate>Sun, 02 Apr 2017 11:20:43 +0800</pubDate><guid>https://graef.io/how-to-install-kb-hotfixes-only-if-they-are-not-installed/</guid><description>&lt;p&gt;I just wanted to share you a tiny snippet if you’re looking for a simple PowerShell liner to simply get a KB Hotfix installed. It also verifies if the KB is installed already.&lt;/p&gt;</description></item><item><title>KMS: How to Find Windows Server Licensing Details</title><link>https://graef.io/kms-how-to-find-windows-server-licensing-details/</link><pubDate>Fri, 10 Mar 2017 11:13:41 +0800</pubDate><guid>https://graef.io/kms-how-to-find-windows-server-licensing-details/</guid><description>&lt;p&gt;If you&amp;rsquo;re searching for Windows Server Licensing and Activation Details of your Windows machine you can use following statements&lt;/p&gt;</description></item><item><title>GhostBuster: Remove all Non-present and hidden devices in Windows</title><link>https://graef.io/ghostbuster-remove-all-non-present-hidden-devices-from-windows/</link><pubDate>Sun, 12 Feb 2017 11:25:02 +0800</pubDate><guid>https://graef.io/ghostbuster-remove-all-non-present-hidden-devices-from-windows/</guid><description>&lt;p&gt;As described in one of my previous articles &lt;a href="https://graef.io/show-non-present-devices-in-windows-with-device-manager/" rel=""&gt;How to show nonpresent devices in Windows with Device Manager&lt;/a&gt; you were able to show nonpresent devices in device manager and delete them one bye one.&lt;/p&gt;</description></item></channel></rss>
