@@ -19,9 +19,7 @@ categories: ["Other"]
 
 <!--more-->
 
-# Cut Through the AI Noise: A Zero-Bullshit Framework You Can Use Today
-
-Everyone throws “AI” into conversations—like it’s a single shiny object. Most of the time, they’re pointing at ChatGPT. Truth is: ChatGPT is just **one corner** of a massive landscape.
+Everyone throws “AI” into conversations—like it’s a single shiny object. Most of the time, they’re pointing at ChatGPT, Claude, Gemini, and Copilot. Truth is: those are just **corners** of a massive landscape.
 
 If you want to sound credible (or at least not get fooled by buzzwords), you need a baseline framework. Something you can apply in any conversation, whether you’re talking to a CTO, your uncle, or a startup founder pitching their “AI-powered idea.”
 
@@ -46,6 +44,9 @@ AI comes in levels. Knowing which one we’re talking about is step one.
 {{< admonition info Action >}}
 Reality check: **everything in the wild today is ANI.** If someone says otherwise, push back.
 {{< /admonition >}}
+
+
+![alt text](image.png)
 
 ---
 
