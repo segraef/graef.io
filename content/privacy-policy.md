@@ -15,7 +15,9 @@ This website ("graef.io") is committed to protecting your privacy. This policy e
 ### Analytics Data
 We use analytics tools to understand how visitors interact with our website. This helps us improve your experience and optimize our content.
 
-Currently, we use **Microsoft Clarity** for website analytics.
+Currently, we use:
+- **Microsoft Clarity** for website analytics and user behavior tracking
+- **Google Analytics** for website traffic analysis and performance metrics
 
 ### What Analytics Data We Collect
 - Page views and navigation patterns
@@ -35,10 +37,15 @@ We respect your right to control your data. When you first visit our site, you'l
 ### Cookie Categories
 
 #### Analytics Cookies
-These cookies help us understand how visitors interact with our website by collecting information anonymously through Microsoft Clarity. They help us:
-- Improve website performance
+These cookies help us understand how visitors interact with our website by collecting information through our analytics services. They help us:
+- Improve website performance  
 - Understand user behavior patterns
 - Optimize content and navigation
+- Analyze traffic sources and user demographics
+
+Our analytics cookies include:
+- **Microsoft Clarity**: Session recordings and heatmap data
+- **Google Analytics**: Page views, user sessions, and traffic analysis
 
 #### Marketing Cookies
 These cookies may be used to build a profile of your interests and show you relevant content. Currently, we primarily use these for enhanced analytics features.
@@ -46,6 +53,7 @@ These cookies may be used to build a profile of your interests and show you rele
 ## Data Storage and Retention
 
 - **Microsoft Clarity**: Data is stored according to [Microsoft's Privacy Statement](https://privacy.microsoft.com/privacystatement)
+- **Google Analytics**: Data is stored according to [Google's Privacy Policy](https://policies.google.com/privacy) and [Analytics Data Retention](https://support.google.com/analytics/answer/7667196)
 - **Consent Preferences**: Stored locally in your browser for 1 year
 - **No Personal Information**: We don't collect names, emails, or other personal identifiers
 
