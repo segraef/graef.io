@@ -1,1 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CICD on Automate everything</title><link>https://graef.io/tags/cicd/</link><description>Recent content in CICD on Automate everything</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 09 Sep 2024 15:43:57 +1000</lastBuildDate><atom:link href="https://graef.io/tags/cicd/index.xml" rel="self" type="application/rss+xml"/><item><title>Mastering DevOps: Your Guide to Learning, Certification, and Community Engagement</title><link>https://graef.io/devops-basics-studying-learning-and-skilling/</link><pubDate>Mon, 09 Sep 2024 15:43:57 +1000</pubDate><guid>https://graef.io/devops-basics-studying-learning-and-skilling/</guid><description>&lt;p&gt;DevOps is not just a set of tools but a cultural shift towards automation, collaboration, and integration between software development and IT operations. Whether you&amp;rsquo;re new to DevOps or looking to expand your expertise, it&amp;rsquo;s essential to understand its key principles, tools, platforms, and methodologies. This post serves as a roadmap to help you navigate the journey of studying, learning, and becoming certified in DevOps.&lt;/p&gt;</description></item><item><title>Programmatically Create Azure Pipelines</title><link>https://graef.io/programmatically-create-azure-pipelines/</link><pubDate>Sat, 07 Mar 2020 13:10:29 +0800</pubDate><guid>https://graef.io/programmatically-create-azure-pipelines/</guid><description>&lt;p&gt;This script &lt;a href="https://github.com/segraef/New-AzPipeline" target="_blank" rel="noopener noreffer"&gt;New-AzPipeline&lt;/a&gt; lets you programmatically create Azure Pipelines based on your folder structure.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CICD on Automate everything </title>
+    <link>https://graef.io/tags/cicd/</link>
+    <description>Recent content in CICD on Automate everything </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 09 Sep 2024 15:43:57 +1000</lastBuildDate>
+    <atom:link href="https://graef.io/tags/cicd/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mastering DevOps: Your Guide to Learning, Certification, and Community Engagement</title>
+      <link>https://graef.io/devops-basics-studying-learning-and-skilling/</link>
+      <pubDate>Mon, 09 Sep 2024 15:43:57 +1000</pubDate>
+      <guid>https://graef.io/devops-basics-studying-learning-and-skilling/</guid>
+      <description>&lt;p&gt;DevOps is not just a set of tools but a cultural shift towards automation, collaboration, and integration between software development and IT operations. Whether you&amp;rsquo;re new to DevOps or looking to expand your expertise, it&amp;rsquo;s essential to understand its key principles, tools, platforms, and methodologies. This post serves as a roadmap to help you navigate the journey of studying, learning, and becoming certified in DevOps.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Programmatically Create Azure Pipelines</title>
+      <link>https://graef.io/programmatically-create-azure-pipelines/</link>
+      <pubDate>Sat, 07 Mar 2020 13:10:29 +0800</pubDate>
+      <guid>https://graef.io/programmatically-create-azure-pipelines/</guid>
+      <description>&lt;p&gt;This script &lt;a href=&#34;https://github.com/segraef/New-AzPipeline&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;New-AzPipeline&lt;/a&gt; lets you programmatically create Azure Pipelines based on your folder structure.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

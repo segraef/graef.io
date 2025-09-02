@@ -1,16 +1,466 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=X-UA-Compatible content="IE=edge, chrome=1"><title>Create a secure and anonymous Crypto Wallet - Automate everything</title><meta name=Description content="Automate everything - Sebastian Gräf"><meta property="og:url" content="https://graef.io/create-a-secure-and-anonymous-wallet-address/"><meta property="og:site_name" content="Automate everything "><meta property="og:title" content="Create a secure and anonymous Crypto Wallet"><meta property="og:description" content="Creating a wallet address (Bitcoin/Ethereum) is easy, but is it really secure?
-In this article we look at a secure but also anonymous approach using tools like Live USB BitKey to create your own anonymous crypto wallet you can trust."><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2022-01-01T11:41:52+08:00"><meta property="article:modified_time" content="2022-01-01T13:35:57+08:00"><meta property="article:tag" content="Crypto"><meta property="article:tag" content="Wallet"><meta property="article:tag" content="Btc"><meta property="article:tag" content="Secure"><meta property="article:tag" content="Anonymous"><meta property="article:tag" content="Privacy"><meta property="og:image" content="https://graef.io/create-a-secure-and-anonymous-wallet-address/start-bitkey-turnkey-linux.png"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://graef.io/create-a-secure-and-anonymous-wallet-address/start-bitkey-turnkey-linux.png"><meta name=twitter:title content="Create a secure and anonymous Crypto Wallet"><meta name=twitter:description content="Creating a wallet address (Bitcoin/Ethereum) is easy, but is it really secure?
-In this article we look at a secure but also anonymous approach using tools like Live USB BitKey to create your own anonymous crypto wallet you can trust."><meta name=twitter:site content="@segraef"><meta name=application-name content="graef.io - Sebastian Gräf"><meta name=apple-mobile-web-app-title content="graef.io - Sebastian Gräf"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://graef.io/create-a-secure-and-anonymous-wallet-address/><link rel=prev href=https://graef.io/clean-up-local-and-remote-branches/><link rel=next href=https://graef.io/cold-crypto-wallets-and-mitm-attacks/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><meta name=google-site-verification content="google-site-verification=081I19l1P1J3FFLaw1uKtAtY5KcJx_Z9ywiKt60VGP4"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Create a secure and anonymous Crypto Wallet","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/graef.io\/create-a-secure-and-anonymous-wallet-address\/"},"image":["https:\/\/graef.io\/logo.png"],"genre":"posts","keywords":"crypto, wallet, btc, secure, anonymous, privacy, bitcoin, paper wallet, cold wallet, bitkey, coinbase, satoshi, liveusb","wordcount":941,"url":"https:\/\/graef.io\/create-a-secure-and-anonymous-wallet-address\/","datePublished":"2022-01-01T11:41:52+08:00","dateModified":"2022-01-01T13:35:57+08:00","publisher":{"@type":"Organization","name":"greaf.io","logo":"https:\/\/graef.io\/logo.png"},"author":{"@type":"Person","name":"Author"},"description":""}</script></head><body header-desktop=auto header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"light"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"light"==="dark")&&document.body.setAttribute("theme","dark")</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><script type=text/javascript>(function(e,t,n,s,o,i,a){e[n]=e[n]||function(){(e[n].q=e[n].q||[]).push(arguments)},i=t.createElement(s),i.async=1,i.src="https://www.clarity.ms/tag/"+o,a=t.getElementsByTagName(s)[0],a.parentNode.insertBefore(i,a)})(window,document,"clarity","script","pg6m55thgo")</script><div class=header-wrapper><div class=header-title><a href=/ title="Automate everything "><img class="lazyload logo" src=/svg/loading.min.svg data-src=/logo.png data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x" data-sizes=auto alt=/logo.png title=/logo.png></a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/ title=Posts>Posts </a><a class=menu-item href=/categories/projects/ title=Projects>Projects </a><a class=menu-item href=/categories/til/ title="Today I learned">TIL </a><a class=menu-item href=/tags/ title=Tags>Tags </a><a class=menu-item href=/categories/ title=Categories>Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
-<input type=text placeholder="Search titles or contents..." id=search-input-desktop>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw"></i>
-</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw"></i>
-</a><span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i>
-</span></span><a href=javascript:void(0); class="menu-item theme-switch" title><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title="Automate everything "><img class="lazyload logo" src=/svg/loading.min.svg data-src=/logo.png data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x" data-sizes=auto alt=/logo.png title=/logo.png></a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw"></i>
-</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw"></i>
-</a><span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=/posts/ title=Posts>Posts</a><a class=menu-item href=/categories/projects/ title=Projects>Projects</a><a class=menu-item href=/categories/til/ title="Today I learned">TIL</a><a class=menu-item href=/tags/ title=Tags>Tags</a><a class=menu-item href=/categories/ title=Categories>Categories</a><a href=javascript:void(0); class="menu-item theme-switch" title>
-<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Create a secure and anonymous Crypto Wallet</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Author</a></span>&nbsp;<span class=post-category>included in <a href=/categories/crypto/><i class="far fa-folder fa-fw"></i>Crypto</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Saturday, Jan 1, 2022">Saturday, Jan 1, 2022</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;941 words&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div></div><div class="details toc" id=toc-static kept><div class="details-summary toc-title"><span>Contents</span>
-<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#are-you-sure-your-wallet-is-secure-from-hackers>Are you sure your wallet is secure from hackers?</a></li><li><a href=#are-blockchain-transactions-really-anonymous>Are blockchain transactions really anonymous?</a></li><li><a href=#create-a-secure-wallet-the-quick--easy-way>Create a secure wallet (the quick & easy way)</a><ul><li><a href=#security-concerns-you-should-be-aware-of>Security concerns you should be aware of</a></li><li><a href=#security-precautions-you-should-take-care-of>Security Precautions you should take care of</a></li></ul></li><li><a href=#create-a-secure-wallet-the-more-secure-way>Create a secure wallet (the more secure way)</a></li></ul></nav></div></div><div class=content id=content><p>Creating a wallet address (Bitcoin/Ethereum) is easy, but is it really <em>secure</em>?</p><p>In this article we look at a secure but also anonymous approach using tools like Live USB BitKey to create your own anonymous crypto wallet you can trust.</p><p>As soon as you get deeper into the crypto world, you realize that it is essential to take a closer look at the issues of security and anonymity and not to rely on others. Especially when the amounts and number of your transactions increase.</p><h2 id=are-you-sure-your-wallet-is-secure-from-hackers>Are you sure your wallet is secure from hackers?</h2><p>Let&rsquo;s say you&rsquo;re going to transfer $120,000 from your wallet to another wallet</p><ul><li>Can you say with 100% certainty that no one really has access to your wallet or your private key?</li><li>Are you sure there is no <a href=../cold-crypto-wallets-and-mitm-attacks/ rel>middle man</a> active?</li></ul><p>Sending transactions on decentralised blockchains using the Bitcoin or Ethereum protocol are great, but they require even more conscientious handling due to the absence of a central authority. Since there is no bank or liquidity provider that can or will control your transaction in the event of a mistake, you are solely responsible for handling your own money and digital crypto-assets with more care than usual.</p><div class="details admonition warning open"><div class="details-summary admonition-title"><i class="icon fas fa-exclamation-triangle fa-fw"></i>Note<i class="details-icon fas fa-angle-right fa-fw"></i></div><div class=details-content><div class=admonition-content>When you deposit money at a bank, you let them worry about the security, right? However, the keys to your transactions and coins are stored on your computer and that means you are fully responsible for securing them.</div></div></div><h2 id=are-blockchain-transactions-really-anonymous>Are blockchain transactions really anonymous?</h2><p>A blockchain is a public ledger, which means all transactions are publicly viewable.</p><p>When you make a transaction, your wallet address and the transaction details are recorded in the blockchain.</p><div class="details admonition info open"><div class="details-summary admonition-title"><i class="icon fas fa-info-circle fa-fw"></i>Note<i class="details-icon fas fa-angle-right fa-fw"></i></div><div class=details-content><div class=admonition-content>As long as there is no link between your wallet address and your identity, your transaction stays anonymous.</div></div></div><p>However, as soon as a connection is made between your address and your identity - let&rsquo;s say your IP address, your email address or anything else identifiable - your cover is blown. And why? Because from that point on, anybody can link your address to every transaction you&rsquo;ve ever made on the blockchain.</p><h2 id=create-a-secure-wallet-the-quick--easy-way>Create a secure wallet (the quick & easy way)</h2><ol><li>Go to Coinbase.com or binance.com.</li><li>Click create Wallet.</li><li>Done.</li></ol><p>No, that&rsquo;s exactly the reason why I&rsquo;m writing this article. Since it is so <strong>easy</strong> to create a wallet, people are also <strong>too easy</strong> with their wallets. Let it be things like</p><ul><li>writing your seed phrase on a piece of paper and lose it</li><li>writing your seed phrase on a digital note (Notepad, Notes) and don&rsquo;t secure it</li><li>not enabling multi-factor authentication</li><li>not enabling password protection on your soft wallets</li></ul><h3 id=security-concerns-you-should-be-aware-of>Security concerns you should be aware of</h3><p>It&rsquo;s important to sched some light on some major security concerns and you must be aware of common threats, such as</p><ul><li>Modern operating systems are highly complex which lead to large attack surfaces and constant leak of information without the user&rsquo;s knowledge or consent</li><li>Duping users through fake cryptocurrencies</li><li>Phishing methods and scams</li><li>Knowing the confidential lock PIN code of your phone</li><li>Any other attempts to steal your cryptographic keys</li><li>Wallets can be hacked by using old password backups (even if you think you&rsquo;re safe while your password is frequently being changed)</li><li>Sybil attacks</li></ul><h3 id=security-precautions-you-should-take-care-of>Security Precautions you should take care of</h3><p>Make sure to</p><ul><li>Enable Multi-Factor Authentication (MFA)</li><li>Enable Password Protection and don&rsquo;t use the same password everywhere and for everything</li><li>Backup your wallet at multiple secure locations (like on a USB or on your hard drive)</li><li>Keep your computer (Mac, Windows or Linux) up to date with latest security updates and patches</li><li>Be careful when opening emails (Desktop or Mobile), as phishing scams are becoming more and more sophisticated</li><li>Generally use a VPN like NordVPN or ExpressVPN</li><li>Avoid public Wi-Fi&rsquo;s</li><li>Your browser (Chrome/Edge/Mozilla) indicates the sites you&rsquo;re browsing are encrypted with SSL</li><li>Double-check the address of the recipient before sending any payments</li></ul><h2 id=create-a-secure-wallet-the-more-secure-way>Create a secure wallet (the more secure way)</h2><p>Since we&rsquo;re going to create a cold wallet you should know cold wallets can also be referred to as</p><ul><li>Offline Wallets like paper, NFC chips or any data storage medium</li><li>Cold Storage Wallets are hardware (USB) devices like Nano Ledger or Trezor</li></ul><div class="details admonition info open"><div class="details-summary admonition-title"><i class="icon fas fa-info-circle fa-fw"></i>Note<i class="details-icon fas fa-angle-right fa-fw"></i></div><div class=details-content><div class=admonition-content>Hardware wallets, however, can also be called offline wallets, since they do not have direct access to the Internet and vice versa.</div></div></div><div class="details admonition warning open"><div class="details-summary admonition-title"><i class="icon fas fa-exclamation-triangle fa-fw"></i>Air-Gap<i class="details-icon fas fa-angle-right fa-fw"></i></div><div class=details-content><div class=admonition-content>Before you start, remember to disconnect any LAN cables from your computer/laptop.</div></div></div><ol><li>Download the BitKey ISO.</li><li>Create a bootable USB drive with <a href=https://rufus.ie/ target=_blank rel="noopener noreffer">Rufus</a>.</li><li>Start/Boot BitKey from your USB drive.<figure><a class=lightgallery href=/create-a-secure-and-anonymous-wallet-address/start-bitkey-turnkey-linux.png title=/create-a-secure-and-anonymous-wallet-address/start-bitkey-turnkey-linux.png data-thumbnail=/create-a-secure-and-anonymous-wallet-address/start-bitkey-turnkey-linux.png data-sub-html="<h2>Bootscreen BitKey</h2>"><img class=lazyload src=/svg/loading.min.svg data-src=start-bitkey-turnkey-linux.png data-srcset="/create-a-secure-and-anonymous-wallet-address/start-bitkey-turnkey-linux.png, start-bitkey-turnkey-linux.png 1.5x, /create-a-secure-and-anonymous-wallet-address/start-bitkey-turnkey-linux.png 2x" data-sizes=auto alt=/create-a-secure-and-anonymous-wallet-address/start-bitkey-turnkey-linux.png></a><figcaption class=image-caption><strong>Bootscreen BitKey</strong></figcaption></figure></li><li>Remove your BitKey USB boot device.</li><li>Insert a USB drive to save your data on it later.<figure><a class=lightgallery href=/create-a-secure-and-anonymous-wallet-address/bitkey-get-started.png title=/create-a-secure-and-anonymous-wallet-address/bitkey-get-started.png data-thumbnail=/create-a-secure-and-anonymous-wallet-address/bitkey-get-started.png data-sub-html="<h2>Bootscreen BitKey</h2>"><img class=lazyload src=/svg/loading.min.svg data-src=bitkey-get-started.png data-srcset="/create-a-secure-and-anonymous-wallet-address/bitkey-get-started.png, bitkey-get-started.png 1.5x, /create-a-secure-and-anonymous-wallet-address/bitkey-get-started.png 2x" data-sizes=auto alt=/create-a-secure-and-anonymous-wallet-address/bitkey-get-started.png></a><figcaption class=image-caption><strong>Bootscreen BitKey</strong></figcaption></figure></li><li>Now you can decide to choose any Wallet Generator you want to use to generate your address(es)<div class="details admonition danger open"><div class="details-summary admonition-title"><i class="icon fas fa-skull-crossbones fa-fw"></i>Remember<i class="details-icon fas fa-angle-right fa-fw"></i></div><div class=details-content><div class=admonition-content>Do not try to make use of your phone camera to make a photo of your generated keys since this breaks the air-gap. Your mobile phone is usually always connected to the internet.</div></div></div><figure><a class=lightgallery href=/create-a-secure-and-anonymous-wallet-address/electrum.png title=/create-a-secure-and-anonymous-wallet-address/electrum.png data-thumbnail=/create-a-secure-and-anonymous-wallet-address/electrum.png data-sub-html="<h2>Electrum</h2>"><img class=lazyload src=/svg/loading.min.svg data-src=electrum.png data-srcset="/create-a-secure-and-anonymous-wallet-address/electrum.png, electrum.png 1.5x, /create-a-secure-and-anonymous-wallet-address/electrum.png 2x" data-sizes=auto alt=/create-a-secure-and-anonymous-wallet-address/electrum.png></a><figcaption class=image-caption><strong>Electrum</strong></figcaption></figure><figure><a class=lightgallery href=/create-a-secure-and-anonymous-wallet-address/bitaddress.org.png title=/create-a-secure-and-anonymous-wallet-address/bitaddress.org.png data-thumbnail=/create-a-secure-and-anonymous-wallet-address/bitaddress.org.png data-sub-html="<h2>Bitaddress.org</h2>"><img class=lazyload src=/svg/loading.min.svg data-src=bitaddress.org.png data-srcset="/create-a-secure-and-anonymous-wallet-address/bitaddress.org.png, bitaddress.org.png 1.5x, /create-a-secure-and-anonymous-wallet-address/bitaddress.org.png 2x" data-sizes=auto alt=/create-a-secure-and-anonymous-wallet-address/bitaddress.org.png></a><figcaption class=image-caption><strong>Bitaddress.org</strong></figcaption></figure><figure><a class=lightgallery href=/create-a-secure-and-anonymous-wallet-address/warp-wallet2.png title=/create-a-secure-and-anonymous-wallet-address/warp-wallet2.png data-thumbnail=/create-a-secure-and-anonymous-wallet-address/warp-wallet2.png data-sub-html="<h2>Warp Wallet</h2>"><img class=lazyload src=/svg/loading.min.svg data-src=warp-wallet2.png data-srcset="/create-a-secure-and-anonymous-wallet-address/warp-wallet2.png, warp-wallet2.png 1.5x, /create-a-secure-and-anonymous-wallet-address/warp-wallet2.png 2x" data-sizes=auto alt=/create-a-secure-and-anonymous-wallet-address/warp-wallet2.png></a><figcaption class=image-caption><strong>Warp Wallet</strong></figcaption></figure><figure><a class=lightgallery href=/create-a-secure-and-anonymous-wallet-address/coinbin.png title=/create-a-secure-and-anonymous-wallet-address/coinbin.png data-thumbnail=/create-a-secure-and-anonymous-wallet-address/coinbin.png data-sub-html="<h2>Coinb.in</h2>"><img class=lazyload src=/svg/loading.min.svg data-src=coinbin.png data-srcset="/create-a-secure-and-anonymous-wallet-address/coinbin.png, coinbin.png 1.5x, /create-a-secure-and-anonymous-wallet-address/coinbin.png 2x" data-sizes=auto alt=/create-a-secure-and-anonymous-wallet-address/coinbin.png></a><figcaption class=image-caption><strong>Coinb.in</strong></figcaption></figure></li><li>Once you generated your mnemonic seed phrase and/or keys, write them down on to a physical piece of paper or store them on your USB drive.</li></ol><div class="details admonition info open"><div class="details-summary admonition-title"><i class="icon fas fa-info-circle fa-fw"></i>References<i class="details-icon fas fa-angle-right fa-fw"></i></div><div class=details-content><div class=admonition-content><ul><li><a href=../cold-crypto-wallets-and-mitm-attacks/ rel>Cold Crypto Wallets and MITM Attacks</a></li><li><a href=../hot-and-cold-wallet-address/ rel>Hot and Cold Crypto Wallet (Address)</a></li><li><a href=../crypto-token-coins-and-mnemonics/ rel>Crypto Token, Coins and Mnemonics</a></li><li><a href=https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt target=_blank rel="noopener noreffer">BIP39 wordlist</a></li><li><a href=https://www.investopedia.com/news/why-storing-bitcoin-single-wallet-bad-idea/ target=_blank rel="noopener noreffer">Why Storing Bitcoin in a Single Wallet is a Bad Idea</a></li><li><a href=https://dune.network/ledger_extract/ target=_blank rel="noopener noreffer">Extract Private Key from Ledger Mnemonic</a></li><li><a href=https://iancoleman.io/bip39/ target=_blank rel="noopener noreffer">Get/Generate private keys from mnemonic or create own Mnemonic</a></li><li><a href=https://bitaddress.org target=_blank rel="noopener noreffer">Generate Bitcoin Address</a></li><li><a href=https://myetherwallet.com target=_blank rel="noopener noreffer">Generate Ethereum Address</a></li><li><a href=https://bitkey.io/ target=_blank rel="noopener noreffer">Bitkey</a></li><li><a href=https://en.wikipedia.org/wiki/Live_USB target=_blank rel="noopener noreffer">Live USB</a></li><li><a href=https://nakamotoinstitute.org/trusted-third-parties/ target=_blank rel="noopener noreffer">Trusted Third Parties are Security Holes</a></li><li><a href=https://www.turnkeylinux.org/blog/secure-bitcoin-transactions target=_blank rel="noopener noreffer">The closest you can get to perfectly secure Bitcoin transactions (without doing them in your head)</a></li><li><a href=../cold-wallets-and-mitm-attacks/index.en.md rel>Cold Wallets (offline and hardware) and MITM attacks</a></li><li><a href=https://dailyiowan.com/2021/07/07/why-you-need-several-crypto-wallets/ target=_blank rel="noopener noreffer">Why you need several Crypto Wallets</a></li></ul></div></div></div></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>Updated on Saturday, Jan 1, 2022</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md></div><div class=post-info-share><span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://graef.io/create-a-secure-and-anonymous-wallet-address/ data-title="Create a secure and anonymous Crypto Wallet" data-via=segraef data-hashtags="crypto,wallet,btc,secure,anonymous,privacy,bitcoin,paper wallet,cold wallet,bitkey,coinbase,satoshi,liveusb"><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://graef.io/create-a-secure-and-anonymous-wallet-address/ data-hashtag=crypto><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://graef.io/create-a-secure-and-anonymous-wallet-address/><i class="fab fa-linkedin fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://graef.io/create-a-secure-and-anonymous-wallet-address/ data-title="Create a secure and anonymous Crypto Wallet" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=https://graef.io/create-a-secure-and-anonymous-wallet-address/><i class="fab fa-reddit fa-fw"></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/crypto/>Crypto</a>,&nbsp;<a href=/tags/wallet/>Wallet</a>,&nbsp;<a href=/tags/btc/>Btc</a>,&nbsp;<a href=/tags/secure/>Secure</a>,&nbsp;<a href=/tags/anonymous/>Anonymous</a>,&nbsp;<a href=/tags/privacy/>Privacy</a>,&nbsp;<a href=/tags/bitcoin/>Bitcoin</a>,&nbsp;<a href=/tags/paper-wallet/>Paper Wallet</a>,&nbsp;<a href=/tags/cold-wallet/>Cold Wallet</a>,&nbsp;<a href=/tags/bitkey/>Bitkey</a>,&nbsp;<a href=/tags/coinbase/>Coinbase</a>,&nbsp;<a href=/tags/satoshi/>Satoshi</a>,&nbsp;<a href=/tags/liveusb/>Liveusb</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span></section></div><div class=post-nav><a href=/clean-up-local-and-remote-branches/ class=prev rel=prev title="Automatically clean up local once remote branch is deleted"><i class="fas fa-angle-left fa-fw"></i>Automatically clean up local once remote branch is deleted</a>
-<a href=/cold-crypto-wallets-and-mitm-attacks/ class=next rel=next title="Cold Crypto Wallets and MITM Attacks">Cold Crypto Wallets and MITM Attacks<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=utterances></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://utteranc.es/>Utterances</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021 - 2025</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank></a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw"></i>
-</a><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment fa-fw"></i></a></div><link rel=stylesheet href=/lib/lightgallery/lightgallery.min.css><link rel=stylesheet href=/lib/katex/katex.min.css><link rel=stylesheet href=/lib/katex/copy-tex.min.css><script type=text/javascript src=/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/lunr/lunr.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/lightgallery/lightgallery.min.js></script><script type=text/javascript src=/lib/lightgallery/lg-thumbnail.min.js></script><script type=text/javascript src=/lib/lightgallery/lg-zoom.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/sharer/sharer.min.js></script><script type=text/javascript src=/lib/katex/katex.min.js></script><script type=text/javascript src=/lib/katex/auto-render.min.js></script><script type=text/javascript src=/lib/katex/copy-tex.min.js></script><script type=text/javascript src=/lib/katex/mhchem.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:20},comment:{utterances:{darkTheme:"github-dark",issueTerm:"pathname",label:"",lightTheme:"github-light",repo:"segraef/graef.io"}},lightGallery:{actualSize:!1,exThumbImage:"data-thumbnail",hideBarsDelay:2e3,selector:".lightgallery",speed:400,thumbContHeight:80,thumbWidth:80,thumbnail:!0},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=/js/theme.min.js></script><script type=text/javascript>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","UA-99599711-2",{anonymize_ip:!0})</script><script type=text/javascript src="https://www.googletagmanager.com/gtag/js?id=UA-99599711-2" async></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>Create a secure and anonymous Crypto Wallet - Automate everything </title><meta name="Description" content="Automate everything - Sebastian Gräf"><meta property="og:url" content="https://graef.io/create-a-secure-and-anonymous-wallet-address/">
+  <meta property="og:site_name" content="Automate everything ">
+  <meta property="og:title" content="Create a secure and anonymous Crypto Wallet">
+  <meta property="og:description" content="Creating a wallet address (Bitcoin/Ethereum) is easy, but is it really secure?
+In this article we look at a secure but also anonymous approach using tools like Live USB BitKey to create your own anonymous crypto wallet you can trust.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2022-01-01T11:41:52+08:00">
+    <meta property="article:modified_time" content="2022-01-01T13:35:57+08:00">
+    <meta property="article:tag" content="Crypto">
+    <meta property="article:tag" content="Wallet">
+    <meta property="article:tag" content="Btc">
+    <meta property="article:tag" content="Secure">
+    <meta property="article:tag" content="Anonymous">
+    <meta property="article:tag" content="Privacy">
+    <meta property="og:image" content="https://graef.io/create-a-secure-and-anonymous-wallet-address/start-bitkey-turnkey-linux.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://graef.io/create-a-secure-and-anonymous-wallet-address/start-bitkey-turnkey-linux.png">
+  <meta name="twitter:title" content="Create a secure and anonymous Crypto Wallet">
+  <meta name="twitter:description" content="Creating a wallet address (Bitcoin/Ethereum) is easy, but is it really secure?
+In this article we look at a secure but also anonymous approach using tools like Live USB BitKey to create your own anonymous crypto wallet you can trust.">
+      <meta name="twitter:site" content="@segraef">
+<meta name="application-name" content="graef.io - Sebastian Gräf">
+<meta name="apple-mobile-web-app-title" content="graef.io - Sebastian Gräf"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://graef.io/create-a-secure-and-anonymous-wallet-address/" /><link rel="prev" href="https://graef.io/clean-up-local-and-remote-branches/" /><link rel="next" href="https://graef.io/cold-crypto-wallets-and-mitm-attacks/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><meta name="google-site-verification" content="google-site-verification=081I19l1P1J3FFLaw1uKtAtY5KcJx_Z9ywiKt60VGP4" /><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Create a secure and anonymous Crypto Wallet",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/graef.io\/create-a-secure-and-anonymous-wallet-address\/"
+        },"image": ["https:\/\/graef.io\/logo.png"],"genre": "posts","keywords": "crypto, wallet, btc, secure, anonymous, privacy, bitcoin, paper wallet, cold wallet, bitkey, coinbase, satoshi, liveusb","wordcount":  941 ,
+        "url": "https:\/\/graef.io\/create-a-secure-and-anonymous-wallet-address\/","datePublished": "2022-01-01T11:41:52+08:00","dateModified": "2022-01-01T13:35:57+08:00","publisher": {
+            "@type": "Organization",
+            "name": "greaf.io","logo": "https:\/\/graef.io\/logo.png"},"author": {
+                "@type": "Person",
+                "name": "Author"
+            },"description": ""
+    }
+    </script></head>
+
+<body header-desktop="auto" header-mobile="auto"><script
+        type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "pg6m55thgo");
+    </script>
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Automate everything "><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/logo.png"
+        data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x"
+        data-sizes="auto"
+        alt="/logo.png"
+        title="/logo.png" /></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item"
+                    href="/posts/"  title="Posts" > Posts </a><a class="menu-item"
+                    href="/categories/projects/"  title="Projects" > Projects </a><a class="menu-item"
+                    href="/categories/til/"  title="Today I learned" > TIL </a><a class="menu-item"
+                    href="/tags/"  title="Tags" > Tags </a><a class="menu-item"
+                    href="/categories/"  title="Categories" > Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                    <input type="text"
+                        placeholder="Search titles or contents..."
+                        id="search-input-desktop">
+                    <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop"
+                        title="Search">
+                        <i class="fas fa-search fa-fw"></i>
+                    </a>
+                    <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop"
+                        title="Clear">
+                        <i class="fas fa-times-circle fa-fw"></i>
+                    </a>
+                    <span class="search-button search-loading" id="search-loading-desktop">
+                        <i class="fas fa-spinner fa-fw fa-spin"></i>
+                    </span>
+                </span><a href="javascript:void(0);" class="menu-item theme-switch" title="">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Automate everything "><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/logo.png"
+        data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x"
+        data-sizes="auto"
+        alt="/logo.png"
+        title="/logo.png" /></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                <div class="search mobile" id="search-mobile">
+                    <input type="text"
+                        placeholder="Search titles or contents..."
+                        id="search-input-mobile">
+                    <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile"
+                        title="Search">
+                        <i class="fas fa-search fa-fw"></i>
+                    </a>
+                    <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile"
+                        title="Clear">
+                        <i class="fas fa-times-circle fa-fw"></i>
+                    </a>
+                    <span class="search-button search-loading" id="search-loading-mobile">
+                        <i class="fas fa-spinner fa-fw fa-spin"></i>
+                    </span>
+                </div>
+                <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                    Cancel
+                </a>
+            </div><a class="menu-item" href="/posts/" title="Posts" >Posts</a><a class="menu-item" href="/categories/projects/" title="Projects" >Projects</a><a class="menu-item" href="/categories/til/" title="Today I learned" >TIL</a><a class="menu-item" href="/tags/" title="Tags" >Tags</a><a class="menu-item" href="/categories/" title="Categories" >Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+    
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Create a secure and anonymous Crypto Wallet</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Author</a></span>&nbsp;<span class="post-category">included in <a href="/categories/crypto/"><i class="far fa-folder fa-fw"></i>Crypto</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Saturday, Jan 1, 2022">Saturday, Jan 1, 2022</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;941 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#are-you-sure-your-wallet-is-secure-from-hackers">Are you sure your wallet is secure from hackers?</a></li>
+    <li><a href="#are-blockchain-transactions-really-anonymous">Are blockchain transactions really anonymous?</a></li>
+    <li><a href="#create-a-secure-wallet-the-quick--easy-way">Create a secure wallet (the quick &amp; easy way)</a>
+      <ul>
+        <li><a href="#security-concerns-you-should-be-aware-of">Security concerns you should be aware of</a></li>
+        <li><a href="#security-precautions-you-should-take-care-of">Security Precautions you should take care of</a></li>
+      </ul>
+    </li>
+    <li><a href="#create-a-secure-wallet-the-more-secure-way">Create a secure wallet (the more secure way)</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>Creating a wallet address (Bitcoin/Ethereum) is easy, but is it really <em>secure</em>?</p>
+<p>In this article we look at a secure but also anonymous approach using tools like Live USB BitKey to create your own anonymous crypto wallet you can trust.</p>
+<p>As soon as you get deeper into the crypto world, you realize that it is essential to take a closer look at the issues of security and anonymity and not to rely on others. Especially when the amounts and number of your transactions increase.</p>
+<h2 id="are-you-sure-your-wallet-is-secure-from-hackers">Are you sure your wallet is secure from hackers?</h2>
+<p>Let&rsquo;s say you&rsquo;re going to transfer $120,000 from your wallet to another wallet</p>
+<ul>
+<li>Can you say with 100% certainty that no one really has access to your wallet or your private key?</li>
+<li>Are you sure there is no <a href="../cold-crypto-wallets-and-mitm-attacks/" rel="">middle man</a> active?</li>
+</ul>
+<p>Sending transactions on decentralised blockchains using the Bitcoin or Ethereum protocol are great, but they require even more conscientious handling due to the absence of a central authority. Since there is no bank or liquidity provider that can or will control your transaction in the event of a mistake, you are solely responsible for handling your own money and digital crypto-assets with more care than usual.</p>
+<div class="details admonition warning open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw"></i>Note<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">When you deposit money at a bank, you let them worry about the security, right? However, the keys to your transactions and coins are stored on your computer and that means you are fully responsible for securing them.</div>
+        </div>
+    </div>
+<h2 id="are-blockchain-transactions-really-anonymous">Are blockchain transactions really anonymous?</h2>
+<p>A blockchain is a public ledger, which means all transactions are publicly viewable.</p>
+<p>When you make a transaction, your wallet address and the transaction details are recorded in the blockchain.</p>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>Note<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">As long as there is no link between your wallet address and your identity, your transaction stays anonymous.</div>
+        </div>
+    </div>
+<p>However, as soon as a connection is made between your address and your identity - let&rsquo;s say your IP address, your email address or anything else identifiable - your cover is blown. And why? Because from that point on, anybody can link your address to every transaction you&rsquo;ve ever made on the blockchain.</p>
+<h2 id="create-a-secure-wallet-the-quick--easy-way">Create a secure wallet (the quick &amp; easy way)</h2>
+<ol>
+<li>Go to Coinbase.com or binance.com.</li>
+<li>Click create Wallet.</li>
+<li>Done.</li>
+</ol>
+<p>No, that&rsquo;s exactly the reason why I&rsquo;m writing this article. Since it is so <strong>easy</strong> to create a wallet, people are also <strong>too easy</strong> with their wallets. Let it be things like</p>
+<ul>
+<li>writing your seed phrase on a piece of paper and lose it</li>
+<li>writing your seed phrase on a digital note (Notepad, Notes) and don&rsquo;t secure it</li>
+<li>not enabling multi-factor authentication</li>
+<li>not enabling password protection on your soft wallets</li>
+</ul>
+<h3 id="security-concerns-you-should-be-aware-of">Security concerns you should be aware of</h3>
+<p>It&rsquo;s important to sched some light on some major security concerns and you must be aware of common threats, such as</p>
+<ul>
+<li>Modern operating systems are highly complex which lead to large attack surfaces and constant leak of information without the user&rsquo;s knowledge or consent</li>
+<li>Duping users through fake cryptocurrencies</li>
+<li>Phishing methods and scams</li>
+<li>Knowing the confidential lock PIN code of your phone</li>
+<li>Any other attempts to steal your cryptographic keys</li>
+<li>Wallets can be hacked by using old password backups (even if you think you&rsquo;re safe while your password is frequently being changed)</li>
+<li>Sybil attacks</li>
+</ul>
+<h3 id="security-precautions-you-should-take-care-of">Security Precautions you should take care of</h3>
+<p>Make sure to</p>
+<ul>
+<li>Enable Multi-Factor Authentication (MFA)</li>
+<li>Enable Password Protection and don&rsquo;t use the same password everywhere and for everything</li>
+<li>Backup your wallet at multiple secure locations (like on a USB or on your hard drive)</li>
+<li>Keep your computer (Mac, Windows or Linux) up to date with latest security updates and patches</li>
+<li>Be careful when opening emails (Desktop or Mobile), as phishing scams are becoming more and more sophisticated</li>
+<li>Generally use a VPN like NordVPN or ExpressVPN</li>
+<li>Avoid public Wi-Fi&rsquo;s</li>
+<li>Your browser (Chrome/Edge/Mozilla) indicates the sites you&rsquo;re browsing are encrypted with SSL</li>
+<li>Double-check the address of the recipient before sending any payments</li>
+</ul>
+<h2 id="create-a-secure-wallet-the-more-secure-way">Create a secure wallet (the more secure way)</h2>
+<p>Since we&rsquo;re going to create a cold wallet you should know cold wallets can also be referred to as</p>
+<ul>
+<li>Offline Wallets like paper, NFC chips or any data storage medium</li>
+<li>Cold Storage Wallets are hardware (USB) devices like Nano Ledger or Trezor</li>
+</ul>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>Note<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Hardware wallets, however, can also be called offline wallets, since they do not have direct access to the Internet and vice versa.</div>
+        </div>
+    </div>
+<div class="details admonition warning open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw"></i>Air-Gap<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Before you start, remember to disconnect any LAN cables from your computer/laptop.</div>
+        </div>
+    </div>
+<ol>
+<li>Download the BitKey ISO.</li>
+<li>Create a bootable USB drive with <a href="https://rufus.ie/" target="_blank" rel="noopener noreffer">Rufus</a>.</li>
+<li>Start/Boot BitKey from your USB drive.
+<figure><a class="lightgallery" href="/create-a-secure-and-anonymous-wallet-address/start-bitkey-turnkey-linux.png" title="/create-a-secure-and-anonymous-wallet-address/start-bitkey-turnkey-linux.png" data-thumbnail="/create-a-secure-and-anonymous-wallet-address/start-bitkey-turnkey-linux.png" data-sub-html="<h2>Bootscreen BitKey</h2>">
+           <img
+               class="lazyload"
+               src="/svg/loading.min.svg"
+               data-src="start-bitkey-turnkey-linux.png"
+               data-srcset="/create-a-secure-and-anonymous-wallet-address/start-bitkey-turnkey-linux.png, start-bitkey-turnkey-linux.png 1.5x, /create-a-secure-and-anonymous-wallet-address/start-bitkey-turnkey-linux.png 2x"
+               data-sizes="auto"
+               alt="/create-a-secure-and-anonymous-wallet-address/start-bitkey-turnkey-linux.png" />
+       </a><figcaption class="image-caption"><strong>Bootscreen BitKey</strong></figcaption>
+       </figure></li>
+<li>Remove your BitKey USB boot device.</li>
+<li>Insert a USB drive to save your data on it later.
+<figure><a class="lightgallery" href="/create-a-secure-and-anonymous-wallet-address/bitkey-get-started.png" title="/create-a-secure-and-anonymous-wallet-address/bitkey-get-started.png" data-thumbnail="/create-a-secure-and-anonymous-wallet-address/bitkey-get-started.png" data-sub-html="<h2>Bootscreen BitKey</h2>">
+           <img
+               class="lazyload"
+               src="/svg/loading.min.svg"
+               data-src="bitkey-get-started.png"
+               data-srcset="/create-a-secure-and-anonymous-wallet-address/bitkey-get-started.png, bitkey-get-started.png 1.5x, /create-a-secure-and-anonymous-wallet-address/bitkey-get-started.png 2x"
+               data-sizes="auto"
+               alt="/create-a-secure-and-anonymous-wallet-address/bitkey-get-started.png" />
+       </a><figcaption class="image-caption"><strong>Bootscreen BitKey</strong></figcaption>
+       </figure></li>
+<li>Now you can decide to choose any Wallet Generator you want to use to generate your address(es)
+<div class="details admonition danger open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-skull-crossbones fa-fw"></i>Remember<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Do not try to make use of your phone camera to make a photo of your generated keys since this breaks the air-gap. Your mobile phone is usually always connected to the internet.</div>
+        </div>
+    </div>
+<figure><a class="lightgallery" href="/create-a-secure-and-anonymous-wallet-address/electrum.png" title="/create-a-secure-and-anonymous-wallet-address/electrum.png" data-thumbnail="/create-a-secure-and-anonymous-wallet-address/electrum.png" data-sub-html="<h2>Electrum</h2>">
+           <img
+               class="lazyload"
+               src="/svg/loading.min.svg"
+               data-src="electrum.png"
+               data-srcset="/create-a-secure-and-anonymous-wallet-address/electrum.png, electrum.png 1.5x, /create-a-secure-and-anonymous-wallet-address/electrum.png 2x"
+               data-sizes="auto"
+               alt="/create-a-secure-and-anonymous-wallet-address/electrum.png" />
+       </a><figcaption class="image-caption"><strong>Electrum</strong></figcaption>
+       </figure>
+<figure><a class="lightgallery" href="/create-a-secure-and-anonymous-wallet-address/bitaddress.org.png" title="/create-a-secure-and-anonymous-wallet-address/bitaddress.org.png" data-thumbnail="/create-a-secure-and-anonymous-wallet-address/bitaddress.org.png" data-sub-html="<h2>Bitaddress.org</h2>">
+           <img
+               class="lazyload"
+               src="/svg/loading.min.svg"
+               data-src="bitaddress.org.png"
+               data-srcset="/create-a-secure-and-anonymous-wallet-address/bitaddress.org.png, bitaddress.org.png 1.5x, /create-a-secure-and-anonymous-wallet-address/bitaddress.org.png 2x"
+               data-sizes="auto"
+               alt="/create-a-secure-and-anonymous-wallet-address/bitaddress.org.png" />
+       </a><figcaption class="image-caption"><strong>Bitaddress.org</strong></figcaption>
+       </figure>
+<figure><a class="lightgallery" href="/create-a-secure-and-anonymous-wallet-address/warp-wallet2.png" title="/create-a-secure-and-anonymous-wallet-address/warp-wallet2.png" data-thumbnail="/create-a-secure-and-anonymous-wallet-address/warp-wallet2.png" data-sub-html="<h2>Warp Wallet</h2>">
+           <img
+               class="lazyload"
+               src="/svg/loading.min.svg"
+               data-src="warp-wallet2.png"
+               data-srcset="/create-a-secure-and-anonymous-wallet-address/warp-wallet2.png, warp-wallet2.png 1.5x, /create-a-secure-and-anonymous-wallet-address/warp-wallet2.png 2x"
+               data-sizes="auto"
+               alt="/create-a-secure-and-anonymous-wallet-address/warp-wallet2.png" />
+       </a><figcaption class="image-caption"><strong>Warp Wallet</strong></figcaption>
+       </figure>
+<figure><a class="lightgallery" href="/create-a-secure-and-anonymous-wallet-address/coinbin.png" title="/create-a-secure-and-anonymous-wallet-address/coinbin.png" data-thumbnail="/create-a-secure-and-anonymous-wallet-address/coinbin.png" data-sub-html="<h2>Coinb.in</h2>">
+           <img
+               class="lazyload"
+               src="/svg/loading.min.svg"
+               data-src="coinbin.png"
+               data-srcset="/create-a-secure-and-anonymous-wallet-address/coinbin.png, coinbin.png 1.5x, /create-a-secure-and-anonymous-wallet-address/coinbin.png 2x"
+               data-sizes="auto"
+               alt="/create-a-secure-and-anonymous-wallet-address/coinbin.png" />
+       </a><figcaption class="image-caption"><strong>Coinb.in</strong></figcaption>
+       </figure></li>
+<li>Once you generated your mnemonic seed phrase and/or keys, write them down on to a physical piece of paper or store them on your USB drive.</li>
+</ol>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>References<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li><a href="../cold-crypto-wallets-and-mitm-attacks/" rel="">Cold Crypto Wallets and MITM Attacks</a></li>
+<li><a href="../hot-and-cold-wallet-address/" rel="">Hot and Cold Crypto Wallet (Address)</a></li>
+<li><a href="../crypto-token-coins-and-mnemonics/" rel="">Crypto Token, Coins and Mnemonics</a></li>
+<li><a href="https://github.com/bitcoin/bips/blob/master/bip-0039/english.txt" target="_blank" rel="noopener noreffer">BIP39 wordlist</a></li>
+<li><a href="https://www.investopedia.com/news/why-storing-bitcoin-single-wallet-bad-idea/" target="_blank" rel="noopener noreffer">Why Storing Bitcoin in a Single Wallet is a Bad Idea</a></li>
+<li><a href="https://dune.network/ledger_extract/" target="_blank" rel="noopener noreffer">Extract Private Key from Ledger Mnemonic</a></li>
+<li><a href="https://iancoleman.io/bip39/" target="_blank" rel="noopener noreffer">Get/Generate private keys from mnemonic or create own Mnemonic</a></li>
+<li><a href="https://bitaddress.org" target="_blank" rel="noopener noreffer">Generate Bitcoin Address</a></li>
+<li><a href="https://myetherwallet.com" target="_blank" rel="noopener noreffer">Generate Ethereum Address</a></li>
+<li><a href="https://bitkey.io/" target="_blank" rel="noopener noreffer">Bitkey</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Live_USB" target="_blank" rel="noopener noreffer">Live USB</a></li>
+<li><a href="https://nakamotoinstitute.org/trusted-third-parties/" target="_blank" rel="noopener noreffer">Trusted Third Parties are Security Holes</a></li>
+<li><a href="https://www.turnkeylinux.org/blog/secure-bitcoin-transactions" target="_blank" rel="noopener noreffer">The closest you can get to perfectly secure Bitcoin transactions (without doing them in your head)</a></li>
+<li><a href="../cold-wallets-and-mitm-attacks/index.en.md" rel="">Cold Wallets (offline and hardware) and MITM attacks</a></li>
+<li><a href="https://dailyiowan.com/2021/07/07/why-you-need-several-crypto-wallets/" target="_blank" rel="noopener noreffer">Why you need several Crypto Wallets</a></li>
+</ul>
+</div>
+        </div>
+    </div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on Saturday, Jan 1, 2022</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://graef.io/create-a-secure-and-anonymous-wallet-address/" data-title="Create a secure and anonymous Crypto Wallet" data-via="segraef" data-hashtags="crypto,wallet,btc,secure,anonymous,privacy,bitcoin,paper wallet,cold wallet,bitkey,coinbase,satoshi,liveusb"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://graef.io/create-a-secure-and-anonymous-wallet-address/" data-hashtag="crypto"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://graef.io/create-a-secure-and-anonymous-wallet-address/"><i class="fab fa-linkedin fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://graef.io/create-a-secure-and-anonymous-wallet-address/" data-title="Create a secure and anonymous Crypto Wallet" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="https://graef.io/create-a-secure-and-anonymous-wallet-address/"><i class="fab fa-reddit fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/crypto/">Crypto</a>,&nbsp;<a href="/tags/wallet/">Wallet</a>,&nbsp;<a href="/tags/btc/">Btc</a>,&nbsp;<a href="/tags/secure/">Secure</a>,&nbsp;<a href="/tags/anonymous/">Anonymous</a>,&nbsp;<a href="/tags/privacy/">Privacy</a>,&nbsp;<a href="/tags/bitcoin/">Bitcoin</a>,&nbsp;<a href="/tags/paper-wallet/">Paper Wallet</a>,&nbsp;<a href="/tags/cold-wallet/">Cold Wallet</a>,&nbsp;<a href="/tags/bitkey/">Bitkey</a>,&nbsp;<a href="/tags/coinbase/">Coinbase</a>,&nbsp;<a href="/tags/satoshi/">Satoshi</a>,&nbsp;<a href="/tags/liveusb/">Liveusb</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/clean-up-local-and-remote-branches/" class="prev" rel="prev" title="Automatically clean up local once remote branch is deleted"><i class="fas fa-angle-left fa-fw"></i>Automatically clean up local once remote branch is deleted</a>
+            <a href="/cold-crypto-wallets-and-mitm-attacks/" class="next" rel="next" title="Cold Crypto Wallets and MITM Attacks">Cold Crypto Wallets and MITM Attacks<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+    <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">
+<script type="text/javascript">
+// Load Microsoft Clarity
+(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "pg6m55thgo");
+
+// Handle cookie consent for Microsoft Clarity
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if consent was already given
+    var consentCookie = document.cookie.split(';').find(row => row.trim().startsWith('cookieconsent_status='));
+    if (consentCookie) {
+        var status = consentCookie.split('=')[1];
+        if (status === 'allow' && window.clarity) {
+            window.clarity('consentv2', {
+                ad_Storage: 'granted',
+                analytics_Storage: 'granted'
+            });
+        } else if (status === 'deny' && window.clarity) {
+            window.clarity('consentv2', {
+                ad_Storage: 'denied',
+                analytics_Storage: 'denied'
+            });
+        }
+    }
+
+    // Listen for future consent changes
+    window.addEventListener('load', function() {
+        if (window.cookieconsent) {
+            // Monitor cookie changes
+            var observer = new MutationObserver(function() {
+                var consentCookie = document.cookie.split(';').find(row => row.trim().startsWith('cookieconsent_status='));
+                if (consentCookie && window.clarity) {
+                    var status = consentCookie.split('=')[1];
+                    if (status === 'allow') {
+                        window.clarity('consentv2', {
+                            ad_Storage: 'granted',
+                            analytics_Storage: 'granted'
+                        });
+                    } else if (status === 'deny') {
+                        window.clarity('consentv2', {
+                            ad_Storage: 'denied',
+                            analytics_Storage: 'denied'
+                        });
+                    }
+                }
+            });
+            observer.observe(document, { childList: true, subtree: true });
+        }
+    });
+});
+</script></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":20},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"segraef/graef.io"}},"cookieconsent":{"content":{"deny":"Reject","dismiss":"Accept","header":"🍪 Cookie Preferences","href":"/privacy-policy/","link":"Privacy Policy","message":"We use analytics cookies to understand how you interact with our website to improve your experience. We respect your privacy and give you full control over your data."},"enable":true,"palette":{"button":{"background":"#3b82f6","backgroundhover":"#2563eb","text":"#ffffff"},"popup":{"background":"#1f2937","text":"#ffffff"}},"position":"bottom","theme":"edgeless","type":"opt-in"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-99599711-2', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-99599711-2" async></script></body>
+
+</html>

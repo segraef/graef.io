@@ -1,71 +1,662 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=X-UA-Compatible content="IE=edge, chrome=1"><title>Create your own Cryptocurrency Token (Solana) - Automate everything</title><meta name=Description content="Automate everything - Sebastian Gräf"><meta property="og:url" content="https://graef.io/create-your-own-cryptocurrency-token/"><meta property="og:site_name" content="Automate everything "><meta property="og:title" content="Create your own Cryptocurrency Token (Solana)"><meta property="og:description" content="I created my own crypto Token and I want to show you how to create your own - It only takes about 15-30 minutes."><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2022-01-09T08:23:15+08:00"><meta property="article:modified_time" content="2022-01-09T08:23:15+08:00"><meta property="article:tag" content="Crypto"><meta property="article:tag" content="Wallet"><meta property="article:tag" content="Solana"><meta property="article:tag" content="Token"><meta property="article:tag" content="Mint"><meta property="article:tag" content="Blockchain"><meta property="og:image" content="https://graef.io/create-your-own-cryptocurrency-token/token-listing.png"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://graef.io/create-your-own-cryptocurrency-token/token-listing.png"><meta name=twitter:title content="Create your own Cryptocurrency Token (Solana)"><meta name=twitter:description content="I created my own crypto Token and I want to show you how to create your own - It only takes about 15-30 minutes."><meta name=twitter:site content="@segraef"><meta name=application-name content="graef.io - Sebastian Gräf"><meta name=apple-mobile-web-app-title content="graef.io - Sebastian Gräf"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://graef.io/create-your-own-cryptocurrency-token/><link rel=prev href=https://graef.io/how-to-reload-vscode-window/><link rel=next href=https://graef.io/fresh-development-machine-setup-using-winget-within-10-minutes/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><meta name=google-site-verification content="google-site-verification=081I19l1P1J3FFLaw1uKtAtY5KcJx_Z9ywiKt60VGP4"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Create your own Cryptocurrency Token (Solana)","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/graef.io\/create-your-own-cryptocurrency-token\/"},"image":["https:\/\/graef.io\/logo.png"],"genre":"posts","keywords":"crypto, wallet, solana, token, mint, blockchain","wordcount":971,"url":"https:\/\/graef.io\/create-your-own-cryptocurrency-token\/","datePublished":"2022-01-09T08:23:15+08:00","dateModified":"2022-01-09T08:23:15+08:00","publisher":{"@type":"Organization","name":"greaf.io","logo":"https:\/\/graef.io\/logo.png"},"author":{"@type":"Person","name":"Author"},"description":""}</script></head><body header-desktop=auto header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"light"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"light"==="dark")&&document.body.setAttribute("theme","dark")</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><script type=text/javascript>(function(e,t,n,s,o,i,a){e[n]=e[n]||function(){(e[n].q=e[n].q||[]).push(arguments)},i=t.createElement(s),i.async=1,i.src="https://www.clarity.ms/tag/"+o,a=t.getElementsByTagName(s)[0],a.parentNode.insertBefore(i,a)})(window,document,"clarity","script","pg6m55thgo")</script><div class=header-wrapper><div class=header-title><a href=/ title="Automate everything "><img class="lazyload logo" src=/svg/loading.min.svg data-src=/logo.png data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x" data-sizes=auto alt=/logo.png title=/logo.png></a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/ title=Posts>Posts </a><a class=menu-item href=/categories/projects/ title=Projects>Projects </a><a class=menu-item href=/categories/til/ title="Today I learned">TIL </a><a class=menu-item href=/tags/ title=Tags>Tags </a><a class=menu-item href=/categories/ title=Categories>Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
-<input type=text placeholder="Search titles or contents..." id=search-input-desktop>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw"></i>
-</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw"></i>
-</a><span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i>
-</span></span><a href=javascript:void(0); class="menu-item theme-switch" title><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title="Automate everything "><img class="lazyload logo" src=/svg/loading.min.svg data-src=/logo.png data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x" data-sizes=auto alt=/logo.png title=/logo.png></a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw"></i>
-</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw"></i>
-</a><span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=/posts/ title=Posts>Posts</a><a class=menu-item href=/categories/projects/ title=Projects>Projects</a><a class=menu-item href=/categories/til/ title="Today I learned">TIL</a><a class=menu-item href=/tags/ title=Tags>Tags</a><a class=menu-item href=/categories/ title=Categories>Categories</a><a href=javascript:void(0); class="menu-item theme-switch" title>
-<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class=toc id=toc-auto><h2 class=toc-title>Contents</h2><div class=toc-content id=toc-content-auto></div></div><article class="page single"><h1 class="single-title animated flipInX">Create your own Cryptocurrency Token (Solana)</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Author</a></span>&nbsp;<span class=post-category>included in <a href=/categories/crypto/><i class="far fa-folder fa-fw"></i>Crypto</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Sunday, Jan 9, 2022">Sunday, Jan 9, 2022</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;971 words&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div></div><div class="details toc" id=toc-static kept><div class="details-summary toc-title"><span>Contents</span>
-<span><i class="details-icon fas fa-angle-right"></i></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#why-should-you-create-your-own-token>Why should you create your own Token?</a></li><li><a href=#requirements>Requirements</a></li><li><a href=#workflow>Workflow</a></li><li><a href=#set-up-your-solana-wallet>Set up your Solana Wallet</a><ul><li><ul><li><a href=#macos--linux>MacOS & Linux</a></li><li><a href=#windows>Windows</a></li></ul></li><li><a href=#generate-a-file-system-wallet-keypair>Generate a File System Wallet Keypair</a></li><li><a href=#set-solana-config>Set Solana Config</a></li><li><a href=#verify-your-public-key-optional>Verify your Public Key (Optional)</a></li><li><a href=#import-into-your-phantom-wallet-optional>Import into your Phantom Wallet (Optional)</a></li></ul></li><li><a href=#top-up-your-wallet>Top up your wallet</a></li><li><a href=#create-token>Create Token</a><ul><li><a href=#create-token-and-token-account>Create Token and Token Account</a></li><li><a href=#mint-token-account>Mint Token Account</a></li><li><a href=#check-your-token-account-balance>Check your Token Account Balance</a></li></ul></li><li><a href=#limit-token-supply>Limit Token Supply</a></li><li><a href=#transfer-token-to-a-browser-wallet>Transfer token to a browser wallet</a></li><li><a href=#register-your-token>Register your Token</a></li><li><a href=#summary>Summary</a></li></ul></nav></div></div><div class=content id=content><p>I created my own crypto Token and I want to show you how to create your own - It only takes about 15-30 minutes.</p><div class="details admonition note open"><div class="details-summary admonition-title"><i class="icon fas fa-pencil-alt fa-fw"></i>Note<i class="details-icon fas fa-angle-right fa-fw"></i></div><div class=details-content><div class=admonition-content>First of all, we are <strong>NOT</strong> going to create a <strong>cryptocurrency</strong>.<br>We are going to create a cryptocurrency <strong>Token</strong>.</div></div></div><p>If you want to learn more about the differences please check out my other post about basic <a href=https://www.graef.io/crypto-token-coins-and-mnemonics/ target=_blank rel="noopener noreffer">Crypto Tokenomics</a>.</p><h2 id=why-should-you-create-your-own-token>Why should you create your own Token?</h2><p>Custom Tokens can represent an investor&rsquo;s stake in a business or they can serve an economic purpose like a payment instrument. As a token holder, you can use them as a means of payment, utility or trade them with other securities to make a profit.</p><p>But the reason we&rsquo;re creating it is simply to better understand the process behind the blockchain technology - Learning by doing. And simply because it&rsquo;s fun to learn something new in the world of cryptocurrencies.</p><h2 id=requirements>Requirements</h2><ul><li>Computer (Windows, Linux or MacOS)</li><li>Browser (Edge, Chrome or Firefox)</li><li><a href=https://docs.solana.com/cli/install-solana-cli-tools target=_blank rel="noopener noreffer">Solana Tool Suite</a></li><li><a href=https://github.com/join target=_blank rel="noopener noreffer">GitHub Account</a></li><li><a href=https://phantom.app/download target=_blank rel="noopener noreffer">Phantom Wallet</a> (min. 0.1-0.3 <code>$SOL</code> to cover transaction fees)</li><li>Internet</li><li>Brain</li></ul><h2 id=workflow>Workflow</h2><p>Here is a short overview of what we&rsquo;re going to do and to give you the bigger picture:</p><div class=mermaid id=id-1></div><h2 id=set-up-your-solana-wallet>Set up your Solana Wallet</h2><p>Let&rsquo;s start with setting up your Solana Wallet first.</p><div class="details admonition info open"><div class="details-summary admonition-title"><i class="icon fas fa-info-circle fa-fw"></i>Before you begin<i class="details-icon fas fa-angle-right fa-fw"></i></div><div class=details-content><div class=admonition-content>Make sure you have installed the <a href=https://docs.solana.com/cli/install-solana-cli-tools target=_blank rel="noopener noreffer">Solana Command Line Tools</a>.</div></div></div><h4 id=macos--linux>MacOS & Linux</h4><p>Open your Terminal and copy and paste the following command</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>sh -c <span class=s2>&#34;</span><span class=k>$(</span>curl -sSfL https://release.solana.com/v1.9.3/install<span class=k>)</span><span class=s2>&#34;</span>
-</span></span></code></pre></td></tr></table></div></div><h4 id=windows>Windows</h4><p>Open PowerShell or a Command Prompt (cmd.exe) as an Administrator and copy and paste the following command</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>curl https://release.solana.com/v1.9.3/solana-install-init-x86_64-pc-windows-msvc.exe --output C:\temp\solana-install-init.exe --create-dirs
-</span></span></code></pre></td></tr></table></div></div><div class="details admonition info open"><div class="details-summary admonition-title"><i class="icon fas fa-info-circle fa-fw"></i>Release<i class="details-icon fas fa-angle-right fa-fw"></i></div><div class=details-content><div class=admonition-content>Feel free to replace <code>v1.9.3</code> with the release tag matching your desired release version, or just use any of the symbolic channel names: <em>stable</em>, <em>beta</em>, or <em>edge</em>.</div></div></div><p>Confirm you have the desired version of <code>solana</code> installed by entering:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>solana --version
-</span></span></code></pre></td></tr></table></div></div><h3 id=generate-a-file-system-wallet-keypair>Generate a File System Wallet Keypair</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>solana-keygen new --outfile keypair.json
-</span></span></code></pre></td></tr></table></div></div><figure><a class=lightgallery href=/create-your-own-cryptocurrency-token/generate-new-keypair.png title=/create-your-own-cryptocurrency-token/generate-new-keypair.png data-thumbnail=/create-your-own-cryptocurrency-token/generate-new-keypair.png data-sub-html="<h2>Generate a new Wallet Keypair.</h2>"><img class=lazyload src=/svg/loading.min.svg data-src=generate-new-keypair.png data-srcset="/create-your-own-cryptocurrency-token/generate-new-keypair.png, generate-new-keypair.png 1.5x, /create-your-own-cryptocurrency-token/generate-new-keypair.png 2x" data-sizes=auto alt=/create-your-own-cryptocurrency-token/generate-new-keypair.png></a><figcaption class=image-caption><strong>Generate a new Wallet Keypair.</strong></figcaption></figure><p>The content of the <code>keypair.json</code> file looks like this:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>[53,182,131,247,119,117,227,207,112,73,170,126,222,197,244,99,215,107,255,202,33,43,36,17,104,111,157,246,196,192,174,95,240,23,238,206,118,215,154,238,229,96,11,37,156,123,51,223,5,231,17,117,86,136,103,14,75,95,175,132,148,54,1,13]
-</span></span></code></pre></td></tr></table></div></div><p>It&rsquo;s basically an array of 64 values, the first 32 represent the private key</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>private_key_bytes = [53,182,131,247,119,117,227,207,112,73,170,126,222,197,244,99,215,107,255,202,33,43,36,17,104,111,157,246,196,192,174,95]
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>public_key_bytes = [240,23,238,206,118,215,154,238,229,96,11,37,156,123,51,223,5,231,17,117,86,136,103,14,75,95,175,132,148,54,1,13]
-</span></span></code></pre></td></tr></table></div></div><div class="details admonition warning open"><div class="details-summary admonition-title"><i class="icon fas fa-exclamation-triangle fa-fw"></i>Remember<i class="details-icon fas fa-angle-right fa-fw"></i></div><div class=details-content><div class=admonition-content>Your <code>keypair.json</code> file is <strong>unencrypted</strong>. Do <strong>not</strong> share this file with others.</div></div></div><p>Remember, and as we learned in <a href=../hot-and-cold-wallet-address/ rel>Hot and cold Crypto Wallet (Address)</a>, a wallet address like shown in the output above, is just a <em>Base58Check Encoded</em> Public Key Hash.</p><p>That&rsquo;s why your wallet address <code>8mNvt36N7bW3vuWJ3pFDTSWFp2i7fD1MF8bv6mTFMj8f</code> looks different than your <code>public_key_bytes</code>.</p><h3 id=set-solana-config>Set Solana Config</h3><p>By default your <code>RPC URL</code> should be set to <a href=https://api.mainnet-beta.solana.com target=_blank rel="noopener noreffer">https://api.mainnet-beta.solana.com</a> already but here is the command to verify it:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>solana config get
-</span></span></code></pre></td></tr></table></div></div><p>If it&rsquo;s not set to the Mainnet not you can set it with this command:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>solana config set --url https://api.mainnet-beta.solana.com
-</span></span><span class=line><span class=cl>solana config set --keypair keypair.json
-</span></span></code></pre></td></tr></table></div></div><h3 id=verify-your-public-key-optional>Verify your Public Key (Optional)</h3><p>You can also verify if your public key belongs to your key pair with the following command:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>solana-keygen verify 8mNvt36N7bW3vuWJ3pFDTSWFp2i7fD1MF8bv6mTFMj8f .\keypair.json
-</span></span></code></pre></td></tr></table></div></div><figure><a class=lightgallery href=/create-your-own-cryptocurrency-token/verify-public-key.png title=/create-your-own-cryptocurrency-token/verify-public-key.png data-thumbnail=/create-your-own-cryptocurrency-token/verify-public-key.png data-sub-html="<h2>Verify if your public key comes from this Keypair.</h2>"><img class=lazyload src=/svg/loading.min.svg data-src=verify-public-key.png data-srcset="/create-your-own-cryptocurrency-token/verify-public-key.png, verify-public-key.png 1.5x, /create-your-own-cryptocurrency-token/verify-public-key.png 2x" data-sizes=auto alt=/create-your-own-cryptocurrency-token/verify-public-key.png></a><figcaption class=image-caption><strong>Verify if your public key comes from this Keypair.</strong></figcaption></figure><h3 id=import-into-your-phantom-wallet-optional>Import into your Phantom Wallet (Optional)</h3><p>Copy the contents of your <code>keypair.json</code> and hit import on your Phantom Wallet.</p><figure><a class=lightgallery href=/create-your-own-cryptocurrency-token/import-wallet.png title=/create-your-own-cryptocurrency-token/import-wallet.png data-thumbnail=/create-your-own-cryptocurrency-token/import-wallet.png data-sub-html="<h2>Import into your Phantom Wallet.</h2>"><img class=lazyload src=/svg/loading.min.svg data-src=import-wallet.png data-srcset="/create-your-own-cryptocurrency-token/import-wallet.png, import-wallet.png 1.5x, /create-your-own-cryptocurrency-token/import-wallet.png 2x" data-sizes=auto alt=/create-your-own-cryptocurrency-token/import-wallet.png></a><figcaption class=image-caption><strong>Import into your Phantom Wallet.</strong></figcaption></figure><h2 id=top-up-your-wallet>Top up your wallet</h2><p>Let&rsquo;s top up your wallet address you just created with some <code>$SOL</code>to cover the transaction fees.</p><figure><a class=lightgallery href=/create-your-own-cryptocurrency-token/topup.png title=/create-your-own-cryptocurrency-token/topup.png data-thumbnail=/create-your-own-cryptocurrency-token/topup.png data-sub-html="<h2>Top up your Wallet.</h2>"><img class=lazyload src=/svg/loading.min.svg data-src=topup.png data-srcset="/create-your-own-cryptocurrency-token/topup.png, topup.png 1.5x, /create-your-own-cryptocurrency-token/topup.png 2x" data-sizes=auto alt=/create-your-own-cryptocurrency-token/topup.png></a><figcaption class=image-caption><strong>Top up your Wallet.</strong></figcaption></figure><p>If you imported your wallet address into Phantom you can check the balance there or you can use <code>solana balance</code> to check:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>solana balance
-</span></span></code></pre></td></tr></table></div></div><figure><a class=lightgallery href=/create-your-own-cryptocurrency-token/balance.png title=/create-your-own-cryptocurrency-token/balance.png data-thumbnail=/create-your-own-cryptocurrency-token/balance.png data-sub-html="<h2>Check your balance.</h2>"><img class=lazyload src=/svg/loading.min.svg data-src=balance.png data-srcset="/create-your-own-cryptocurrency-token/balance.png, balance.png 1.5x, /create-your-own-cryptocurrency-token/balance.png 2x" data-sizes=auto alt=/create-your-own-cryptocurrency-token/balance.png></a><figcaption class=image-caption><strong>Check your balance.</strong></figcaption></figure><h2 id=create-token>Create Token</h2><p>Now that we have sent some <code>$SOL</code> to our wallet address we can start creating our actual <strong>Token Address</strong>, which we will later use to mint fresh Tokens and send them to our <strong>Token Account</strong> which we will also create in the same process.</p><h3 id=create-token-and-token-account>Create Token and Token Account</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>spl-token create-token
-</span></span></code></pre></td></tr></table></div></div><p>Token Address: <code>2LTQripZZZXekBg5311zu4zdzKr7VwiQ81RzVL62S72q</code></p><figure><a class=lightgallery href=/create-your-own-cryptocurrency-token/create-token.png title=/create-your-own-cryptocurrency-token/create-token.png data-thumbnail=/create-your-own-cryptocurrency-token/create-token.png data-sub-html="<h2>Create your Token.</h2>"><img class=lazyload src=/svg/loading.min.svg data-src=create-token.png data-srcset="/create-your-own-cryptocurrency-token/create-token.png, create-token.png 1.5x, /create-your-own-cryptocurrency-token/create-token.png 2x" data-sizes=auto alt=/create-your-own-cryptocurrency-token/create-token.png></a><figcaption class=image-caption><strong>Create your Token.</strong></figcaption></figure><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>spl-token create-account 2LTQripZZZXekBg5311zu4zdzKr7VwiQ81RzVL62S72q
-</span></span></code></pre></td></tr></table></div></div><p>Token Account: <code>CB7WEx4wtFiy6ftJWbaSvBfw1pbxe3wq65DjEbWmGRve</code></p><figure><a class=lightgallery href=/create-your-own-cryptocurrency-token/create-token-account.png title=/create-your-own-cryptocurrency-token/create-token-account.png data-thumbnail=/create-your-own-cryptocurrency-token/create-token-account.png data-sub-html="<h2>Create your Token Account.</h2>"><img class=lazyload src=/svg/loading.min.svg data-src=create-token-account.png data-srcset="/create-your-own-cryptocurrency-token/create-token-account.png, create-token-account.png 1.5x, /create-your-own-cryptocurrency-token/create-token-account.png 2x" data-sizes=auto alt=/create-your-own-cryptocurrency-token/create-token-account.png></a><figcaption class=image-caption><strong>Create your Token Account.</strong></figcaption></figure><div class="details admonition note open"><div class="details-summary admonition-title"><i class="icon fas fa-pencil-alt fa-fw"></i>Note<i class="details-icon fas fa-angle-right fa-fw"></i></div><div class=details-content><div class=admonition-content>Your Token Account is associated with your Token Address.</div></div></div><h3 id=mint-token-account>Mint Token Account</h3><p>We&rsquo;re going to mint 1.000.000 tokens (out of thin air) with this token address <code>2LTQripZZZXekBg5311zu4zdzKr7VwiQ81RzVL62S72q</code> and then going to send them to our token account <code>CB7WEx4wtFiy6ftJWbaSvBfw1pbxe3wq65DjEbWmGRve</code>.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>spl-token mint 2LTQripZZZXekBg5311zu4zdzKr7VwiQ81RzVL62S72q 1000000 CB7WEx4wtFiy6ftJWbaSvBfw1pbxe3wq65DjEbWmGRve
-</span></span></code></pre></td></tr></table></div></div><h3 id=check-your-token-account-balance>Check your Token Account Balance</h3><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>spl-token accounts
-</span></span></code></pre></td></tr></table></div></div><figure><a class=lightgallery href=/create-your-own-cryptocurrency-token/token-account-balance.png title=/create-your-own-cryptocurrency-token/token-account-balance.png data-thumbnail=/create-your-own-cryptocurrency-token/token-account-balance.png data-sub-html="<h2>Token Account Balance.</h2>"><img class=lazyload src=/svg/loading.min.svg data-src=token-account-balance.png data-srcset="/create-your-own-cryptocurrency-token/token-account-balance.png, token-account-balance.png 1.5x, /create-your-own-cryptocurrency-token/token-account-balance.png 2x" data-sizes=auto alt=/create-your-own-cryptocurrency-token/token-account-balance.png></a><figcaption class=image-caption><strong>Token Account Balance.</strong></figcaption></figure><h2 id=limit-token-supply>Limit Token Supply</h2><p>Let&rsquo;s Limit your supply to prevent unlimited minting.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>spl-token authorize 2LTQripZZZXekBg5311zu4zdzKr7VwiQ81RzVL62S72q mint --disable
-</span></span></code></pre></td></tr></table></div></div><h2 id=transfer-token-to-a-browser-wallet>Transfer token to a browser wallet</h2><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>spl-token transfer --fund-recipient tokenAddress transferAmount recipientAddress
-</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>spl-token transfer --fund-recipient 2LTQripZZZXekBg5311zu4zdzKr7VwiQ81RzVL62S72q 1000000 F7tHkHNUkM2R3w2A6fyVDK29m9y8oNx851nhYoa4SuRp
-</span></span></code></pre></td></tr></table></div></div><h2 id=register-your-token>Register your Token</h2><p>To actually finish the creation of your Token we want to have it officially listed on the Solana Registry.</p><p>I am not going into details here, so feel free to check out my <a href=https://github.com/solana-labs/token-list/pull/12779 target=_blank rel="noopener noreffer">pull request</a> at <a href=https://github.com/solana-labs/token-list/ target=_blank rel="noopener noreffer">github.com/solana-labs/token-list</a> for reference.</p><p>But basically the only details you need for your PR are:</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>1
-</span><span class=lnt>2
-</span><span class=lnt>3
-</span><span class=lnt>4
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=line><span class=cl><span class=s2>&#34;address&#34;</span><span class=err>:</span> <span class=s2>&#34;2LTQripZZZXekBg5311zu4zdzKr7VwiQ81RzVL62S72q&#34;</span><span class=err>,</span>
-</span></span><span class=line><span class=cl><span class=s2>&#34;symbol&#34;</span><span class=err>:</span> <span class=s2>&#34;&lt;yourTokenSymbol&gt;&#34;</span><span class=err>,</span>
-</span></span><span class=line><span class=cl><span class=s2>&#34;name&#34;</span><span class=err>:</span> <span class=s2>&#34;&lt;yourTokenName&gt;&#34;</span><span class=err>,</span>
-</span></span><span class=line><span class=cl><span class=s2>&#34;logoURI&#34;</span><span class=err>:</span> <span class=s2>&#34;https://raw.githubusercontent.com/&lt;yourLogoURI&gt;.png&#34;</span><span class=err>,</span>
-</span></span></code></pre></td></tr></table></div></div><p>Once your PR was merged you can see your token officiall listed on your Phantom wallet and the official solana.com registry (see <a href=https://solscan.io/token/EmU2juRehuHHn3p2qwMbrPiupXdc3JrZdTD1aP5zyhrW target=_blank rel="noopener noreffer">solscan.io</a> or <a href=https://explorer.solana.com/address/EmU2juRehuHHn3p2qwMbrPiupXdc3JrZdTD1aP5zyhrW target=_blank rel="noopener noreffer">Solana Explorer</a>)</p><figure><a class=lightgallery href=/create-your-own-cryptocurrency-token/token-listing.png title=/create-your-own-cryptocurrency-token/token-listing.png data-thumbnail=/create-your-own-cryptocurrency-token/token-listing.png data-sub-html="<h2>Token Listing</h2>"><img class=lazyload src=/svg/loading.min.svg data-src=token-listing.png data-srcset="/create-your-own-cryptocurrency-token/token-listing.png, token-listing.png 1.5x, /create-your-own-cryptocurrency-token/token-listing.png 2x" data-sizes=auto alt=/create-your-own-cryptocurrency-token/token-listing.png></a><figcaption class=image-caption><strong>Token Listing</strong></figcaption></figure><h2 id=summary>Summary</h2><p>Okay, let&rsquo;s summarize the whole thing again and show what we have done. We have created the following:</p><ol><li>We created a Wallet Address: <code>8mNvt36N7bW3vuWJ3pFDTSWFp2i7fD1MF8bv6mTFMj8f</code> to be used as a so called Authority to fund the creation but also to mint our Token.</li><li>We created a Token (Address): <code>2LTQripZZZXekBg5311zu4zdzKr7VwiQ81RzVL62S72q</code> which is then associated to our Token Account: <code>CB7WEx4wtFiy6ftJWbaSvBfw1pbxe3wq65DjEbWmGRve</code>.</li><li>In the end we registered our Token <code>2LTQripZZZXekBg5311zu4zdzKr7VwiQ81RzVL62S72q</code> on the Solana Token Registry to make it available.</li></ol><p>If you want to know how to create a secure wallet address, check out my post <a href=../create-a-secure-and-anonymous-wallet-address/ rel>Create a secure and anonymous Crypto Wallet</a>.</p><div class="details admonition info open"><div class="details-summary admonition-title"><i class="icon fas fa-info-circle fa-fw"></i>References<i class="details-icon fas fa-angle-right fa-fw"></i></div><div class=details-content><div class=admonition-content><ul><li><a href=https://spl.solana.com/token target=_blank rel="noopener noreffer">Solana Token Program</a></li><li><a href=../create-a-secure-and-anonymous-wallet-address/ rel>Create a secure and anonymous Crypto Wallet</a></li><li><a href=../hot-and-cold-wallet-address/ rel>Hot and Cold Crypto Wallet (Address)</a></li><li><a href=../crypto-token-coins-and-mnemonics/ rel>Crypto Token, Coins and Mnemonics</a></li><li><a href=https://bitaddress.org target=_blank rel="noopener noreffer">Generate Bitcoin Address</a></li><li><a href=https://myetherwallet.com target=_blank rel="noopener noreffer">Generate Ethereum Address</a></li><li><a href=http://maxtaco.github.io/bitcoin/2014/01/16/how-jason-bourne-stores-his-bitcoin/ target=_blank rel="noopener noreffer">How Jason Bourne Stores His Bitcoin</a></li><li><a href=https://nakamotoinstitute.org/trusted-third-parties/ target=_blank rel="noopener noreffer">Trusted Third Parties are Security Holes</a></li></ul></div></div></div></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>Updated on Sunday, Jan 9, 2022</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md></div><div class=post-info-share><span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://graef.io/create-your-own-cryptocurrency-token/ data-title="Create your own Cryptocurrency Token (Solana)" data-via=segraef data-hashtags=crypto,wallet,solana,token,mint,blockchain><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://graef.io/create-your-own-cryptocurrency-token/ data-hashtag=crypto><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://graef.io/create-your-own-cryptocurrency-token/><i class="fab fa-linkedin fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://graef.io/create-your-own-cryptocurrency-token/ data-title="Create your own Cryptocurrency Token (Solana)" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=https://graef.io/create-your-own-cryptocurrency-token/><i class="fab fa-reddit fa-fw"></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/crypto/>Crypto</a>,&nbsp;<a href=/tags/wallet/>Wallet</a>,&nbsp;<a href=/tags/solana/>Solana</a>,&nbsp;<a href=/tags/token/>Token</a>,&nbsp;<a href=/tags/mint/>Mint</a>,&nbsp;<a href=/tags/blockchain/>Blockchain</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span></section></div><div class=post-nav><a href=/how-to-reload-vscode-window/ class=prev rel=prev title="How to reload your VSCode Window"><i class="fas fa-angle-left fa-fw"></i>How to reload your VSCode Window</a>
-<a href=/fresh-development-machine-setup-using-winget-within-10-minutes/ class=next rel=next title="Fresh Development Setup within 10 Minutes using Winget">Fresh Development Setup within 10 Minutes using Winget<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=utterances></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://utteranc.es/>Utterances</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021 - 2025</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank></a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw"></i>
-</a><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment fa-fw"></i></a></div><link rel=stylesheet href=/lib/lightgallery/lightgallery.min.css><link rel=stylesheet href=/lib/katex/katex.min.css><link rel=stylesheet href=/lib/katex/copy-tex.min.css><link rel=stylesheet href=/lib/mermaid/mermaid.min.css><script type=text/javascript src=/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/lunr/lunr.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/lightgallery/lightgallery.min.js></script><script type=text/javascript src=/lib/lightgallery/lg-thumbnail.min.js></script><script type=text/javascript src=/lib/lightgallery/lg-zoom.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/sharer/sharer.min.js></script><script type=text/javascript src=/lib/katex/katex.min.js></script><script type=text/javascript src=/lib/katex/auto-render.min.js></script><script type=text/javascript src=/lib/katex/copy-tex.min.js></script><script type=text/javascript src=/lib/katex/mhchem.min.js></script><script type=text/javascript src=/lib/mermaid/mermaid.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:20},comment:{utterances:{darkTheme:"github-dark",issueTerm:"pathname",label:"",lightTheme:"github-light",repo:"segraef/graef.io"}},data:{"id-1":`stateDiagram
-    [*] --> CreateWallet
-    CreateWallet --> TokenAddress
-    TokenAddress --> TokenAccount
-    TokenAddress --> Mint
-    Mint --> TokenAccount
-    Mint --> TokenAddress
-    TokenAccount --> LimitSupply
-    LimitSupply --> RegisterToken
-    RegisterToken --> [*]`},lightGallery:{actualSize:!1,exThumbImage:"data-thumbnail",hideBarsDelay:2e3,selector:".lightgallery",speed:400,thumbContHeight:80,thumbWidth:80,thumbnail:!0},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=/js/theme.min.js></script><script type=text/javascript>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","UA-99599711-2",{anonymize_ip:!0})</script><script type=text/javascript src="https://www.googletagmanager.com/gtag/js?id=UA-99599711-2" async></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>Create your own Cryptocurrency Token (Solana) - Automate everything </title><meta name="Description" content="Automate everything - Sebastian Gräf"><meta property="og:url" content="https://graef.io/create-your-own-cryptocurrency-token/">
+  <meta property="og:site_name" content="Automate everything ">
+  <meta property="og:title" content="Create your own Cryptocurrency Token (Solana)">
+  <meta property="og:description" content="I created my own crypto Token and I want to show you how to create your own - It only takes about 15-30 minutes.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2022-01-09T08:23:15+08:00">
+    <meta property="article:modified_time" content="2022-01-09T08:23:15+08:00">
+    <meta property="article:tag" content="Crypto">
+    <meta property="article:tag" content="Wallet">
+    <meta property="article:tag" content="Solana">
+    <meta property="article:tag" content="Token">
+    <meta property="article:tag" content="Mint">
+    <meta property="article:tag" content="Blockchain">
+    <meta property="og:image" content="https://graef.io/create-your-own-cryptocurrency-token/token-listing.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://graef.io/create-your-own-cryptocurrency-token/token-listing.png">
+  <meta name="twitter:title" content="Create your own Cryptocurrency Token (Solana)">
+  <meta name="twitter:description" content="I created my own crypto Token and I want to show you how to create your own - It only takes about 15-30 minutes.">
+      <meta name="twitter:site" content="@segraef">
+<meta name="application-name" content="graef.io - Sebastian Gräf">
+<meta name="apple-mobile-web-app-title" content="graef.io - Sebastian Gräf"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://graef.io/create-your-own-cryptocurrency-token/" /><link rel="prev" href="https://graef.io/how-to-reload-vscode-window/" /><link rel="next" href="https://graef.io/fresh-development-machine-setup-using-winget-within-10-minutes/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><meta name="google-site-verification" content="google-site-verification=081I19l1P1J3FFLaw1uKtAtY5KcJx_Z9ywiKt60VGP4" /><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Create your own Cryptocurrency Token (Solana)",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/graef.io\/create-your-own-cryptocurrency-token\/"
+        },"image": ["https:\/\/graef.io\/logo.png"],"genre": "posts","keywords": "crypto, wallet, solana, token, mint, blockchain","wordcount":  971 ,
+        "url": "https:\/\/graef.io\/create-your-own-cryptocurrency-token\/","datePublished": "2022-01-09T08:23:15+08:00","dateModified": "2022-01-09T08:23:15+08:00","publisher": {
+            "@type": "Organization",
+            "name": "greaf.io","logo": "https:\/\/graef.io\/logo.png"},"author": {
+                "@type": "Person",
+                "name": "Author"
+            },"description": ""
+    }
+    </script></head>
+
+<body header-desktop="auto" header-mobile="auto"><script
+        type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "pg6m55thgo");
+    </script>
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Automate everything "><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/logo.png"
+        data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x"
+        data-sizes="auto"
+        alt="/logo.png"
+        title="/logo.png" /></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item"
+                    href="/posts/"  title="Posts" > Posts </a><a class="menu-item"
+                    href="/categories/projects/"  title="Projects" > Projects </a><a class="menu-item"
+                    href="/categories/til/"  title="Today I learned" > TIL </a><a class="menu-item"
+                    href="/tags/"  title="Tags" > Tags </a><a class="menu-item"
+                    href="/categories/"  title="Categories" > Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                    <input type="text"
+                        placeholder="Search titles or contents..."
+                        id="search-input-desktop">
+                    <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop"
+                        title="Search">
+                        <i class="fas fa-search fa-fw"></i>
+                    </a>
+                    <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop"
+                        title="Clear">
+                        <i class="fas fa-times-circle fa-fw"></i>
+                    </a>
+                    <span class="search-button search-loading" id="search-loading-desktop">
+                        <i class="fas fa-spinner fa-fw fa-spin"></i>
+                    </span>
+                </span><a href="javascript:void(0);" class="menu-item theme-switch" title="">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Automate everything "><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/logo.png"
+        data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x"
+        data-sizes="auto"
+        alt="/logo.png"
+        title="/logo.png" /></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                <div class="search mobile" id="search-mobile">
+                    <input type="text"
+                        placeholder="Search titles or contents..."
+                        id="search-input-mobile">
+                    <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile"
+                        title="Search">
+                        <i class="fas fa-search fa-fw"></i>
+                    </a>
+                    <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile"
+                        title="Clear">
+                        <i class="fas fa-times-circle fa-fw"></i>
+                    </a>
+                    <span class="search-button search-loading" id="search-loading-mobile">
+                        <i class="fas fa-spinner fa-fw fa-spin"></i>
+                    </span>
+                </div>
+                <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                    Cancel
+                </a>
+            </div><a class="menu-item" href="/posts/" title="Posts" >Posts</a><a class="menu-item" href="/categories/projects/" title="Projects" >Projects</a><a class="menu-item" href="/categories/til/" title="Today I learned" >TIL</a><a class="menu-item" href="/tags/" title="Tags" >Tags</a><a class="menu-item" href="/categories/" title="Categories" >Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+    
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Create your own Cryptocurrency Token (Solana)</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Author</a></span>&nbsp;<span class="post-category">included in <a href="/categories/crypto/"><i class="far fa-folder fa-fw"></i>Crypto</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Sunday, Jan 9, 2022">Sunday, Jan 9, 2022</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;971 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#why-should-you-create-your-own-token">Why should you create your own Token?</a></li>
+    <li><a href="#requirements">Requirements</a></li>
+    <li><a href="#workflow">Workflow</a></li>
+    <li><a href="#set-up-your-solana-wallet">Set up your Solana Wallet</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#macos--linux">MacOS &amp; Linux</a></li>
+            <li><a href="#windows">Windows</a></li>
+          </ul>
+        </li>
+        <li><a href="#generate-a-file-system-wallet-keypair">Generate a File System Wallet Keypair</a></li>
+        <li><a href="#set-solana-config">Set Solana Config</a></li>
+        <li><a href="#verify-your-public-key-optional">Verify your Public Key (Optional)</a></li>
+        <li><a href="#import-into-your-phantom-wallet-optional">Import into your Phantom Wallet (Optional)</a></li>
+      </ul>
+    </li>
+    <li><a href="#top-up-your-wallet">Top up your wallet</a></li>
+    <li><a href="#create-token">Create Token</a>
+      <ul>
+        <li><a href="#create-token-and-token-account">Create Token and Token Account</a></li>
+        <li><a href="#mint-token-account">Mint Token Account</a></li>
+        <li><a href="#check-your-token-account-balance">Check your Token Account Balance</a></li>
+      </ul>
+    </li>
+    <li><a href="#limit-token-supply">Limit Token Supply</a></li>
+    <li><a href="#transfer-token-to-a-browser-wallet">Transfer token to a browser wallet</a></li>
+    <li><a href="#register-your-token">Register your Token</a></li>
+    <li><a href="#summary">Summary</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>I created my own crypto Token and I want to show you how to create your own - It only takes about 15-30 minutes.</p>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>Note<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">First of all, we are <strong>NOT</strong> going to create a <strong>cryptocurrency</strong>.<br>
+We are going to create a cryptocurrency <strong>Token</strong>.</div>
+        </div>
+    </div>
+<p>If you want to learn more about the differences please check out my other post about basic <a href="https://www.graef.io/crypto-token-coins-and-mnemonics/" target="_blank" rel="noopener noreffer">Crypto Tokenomics</a>.</p>
+<h2 id="why-should-you-create-your-own-token">Why should you create your own Token?</h2>
+<p>Custom Tokens can represent an investor&rsquo;s stake in a business or they can serve an economic purpose like a payment instrument. As a token holder, you can use them as a means of payment, utility or trade them with other securities to make a profit.</p>
+<p>But the reason we&rsquo;re creating it is simply to better understand the process behind the blockchain technology - Learning by doing. And simply because it&rsquo;s fun to learn something new in the world of cryptocurrencies.</p>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>Computer (Windows, Linux or MacOS)</li>
+<li>Browser (Edge, Chrome or Firefox)</li>
+<li><a href="https://docs.solana.com/cli/install-solana-cli-tools" target="_blank" rel="noopener noreffer">Solana Tool Suite</a></li>
+<li><a href="https://github.com/join" target="_blank" rel="noopener noreffer">GitHub Account</a></li>
+<li><a href="https://phantom.app/download" target="_blank" rel="noopener noreffer">Phantom Wallet</a> (min. 0.1-0.3 <code>$SOL</code> to cover transaction fees)</li>
+<li>Internet</li>
+<li>Brain</li>
+</ul>
+<h2 id="workflow">Workflow</h2>
+<p>Here is a short overview of what we&rsquo;re going to do and to give you the bigger picture:</p>
+<div class="mermaid" id="id-1"></div>
+<h2 id="set-up-your-solana-wallet">Set up your Solana Wallet</h2>
+<p>Let&rsquo;s start with setting up your Solana Wallet first.</p>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>Before you begin<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Make sure you have installed the <a href="https://docs.solana.com/cli/install-solana-cli-tools" target="_blank" rel="noopener noreffer">Solana Command Line Tools</a>.</div>
+        </div>
+    </div>
+<h4 id="macos--linux">MacOS &amp; Linux</h4>
+<p>Open your Terminal and copy and paste the following command</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">sh -c <span class="s2">&#34;</span><span class="k">$(</span>curl -sSfL https://release.solana.com/v1.9.3/install<span class="k">)</span><span class="s2">&#34;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="windows">Windows</h4>
+<p>Open PowerShell or a Command Prompt (cmd.exe) as an Administrator and copy and paste the following command</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">curl https://release.solana.com/v1.9.3/solana-install-init-x86_64-pc-windows-msvc.exe --output C:\temp\solana-install-init.exe --create-dirs
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>Release<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Feel free to replace <code>v1.9.3</code> with the release tag matching your desired release version, or just use any of the symbolic channel names: <em>stable</em>, <em>beta</em>, or <em>edge</em>.</div>
+        </div>
+    </div>
+<p>Confirm you have the desired version of <code>solana</code> installed by entering:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">solana --version
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="generate-a-file-system-wallet-keypair">Generate a File System Wallet Keypair</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">solana-keygen new --outfile keypair.json
+</span></span></code></pre></td></tr></table>
+</div>
+</div><figure><a class="lightgallery" href="/create-your-own-cryptocurrency-token/generate-new-keypair.png" title="/create-your-own-cryptocurrency-token/generate-new-keypair.png" data-thumbnail="/create-your-own-cryptocurrency-token/generate-new-keypair.png" data-sub-html="<h2>Generate a new Wallet Keypair.</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="generate-new-keypair.png"
+            data-srcset="/create-your-own-cryptocurrency-token/generate-new-keypair.png, generate-new-keypair.png 1.5x, /create-your-own-cryptocurrency-token/generate-new-keypair.png 2x"
+            data-sizes="auto"
+            alt="/create-your-own-cryptocurrency-token/generate-new-keypair.png" />
+    </a><figcaption class="image-caption"><strong>Generate a new Wallet Keypair.</strong></figcaption>
+    </figure>
+<p>The content of the <code>keypair.json</code> file looks like this:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">[53,182,131,247,119,117,227,207,112,73,170,126,222,197,244,99,215,107,255,202,33,43,36,17,104,111,157,246,196,192,174,95,240,23,238,206,118,215,154,238,229,96,11,37,156,123,51,223,5,231,17,117,86,136,103,14,75,95,175,132,148,54,1,13]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>It&rsquo;s basically an array of 64 values, the first 32 represent the private key</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">private_key_bytes = [53,182,131,247,119,117,227,207,112,73,170,126,222,197,244,99,215,107,255,202,33,43,36,17,104,111,157,246,196,192,174,95]
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">public_key_bytes = [240,23,238,206,118,215,154,238,229,96,11,37,156,123,51,223,5,231,17,117,86,136,103,14,75,95,175,132,148,54,1,13]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="details admonition warning open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw"></i>Remember<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Your <code>keypair.json</code> file is <strong>unencrypted</strong>. Do <strong>not</strong> share this file with others.</div>
+        </div>
+    </div>
+<p>Remember, and as we learned in <a href="../hot-and-cold-wallet-address/" rel="">Hot and cold Crypto Wallet (Address)</a>, a wallet address like shown in the output above, is just a <em>Base58Check Encoded</em> Public Key Hash.</p>
+<p>That&rsquo;s why your wallet address <code>8mNvt36N7bW3vuWJ3pFDTSWFp2i7fD1MF8bv6mTFMj8f</code> looks different than your <code>public_key_bytes</code>.</p>
+<h3 id="set-solana-config">Set Solana Config</h3>
+<p>By default your <code>RPC URL</code> should be set to <a href="https://api.mainnet-beta.solana.com" target="_blank" rel="noopener noreffer">https://api.mainnet-beta.solana.com</a> already but here is the command to verify it:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">solana config get
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>If it&rsquo;s not set to the Mainnet not you can set it with this command:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">solana config set --url https://api.mainnet-beta.solana.com
+</span></span><span class="line"><span class="cl">solana config set --keypair keypair.json
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="verify-your-public-key-optional">Verify your Public Key (Optional)</h3>
+<p>You can also verify if your public key belongs to your key pair with the following command:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">solana-keygen verify 8mNvt36N7bW3vuWJ3pFDTSWFp2i7fD1MF8bv6mTFMj8f .\keypair.json
+</span></span></code></pre></td></tr></table>
+</div>
+</div><figure><a class="lightgallery" href="/create-your-own-cryptocurrency-token/verify-public-key.png" title="/create-your-own-cryptocurrency-token/verify-public-key.png" data-thumbnail="/create-your-own-cryptocurrency-token/verify-public-key.png" data-sub-html="<h2>Verify if your public key comes from this Keypair.</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="verify-public-key.png"
+            data-srcset="/create-your-own-cryptocurrency-token/verify-public-key.png, verify-public-key.png 1.5x, /create-your-own-cryptocurrency-token/verify-public-key.png 2x"
+            data-sizes="auto"
+            alt="/create-your-own-cryptocurrency-token/verify-public-key.png" />
+    </a><figcaption class="image-caption"><strong>Verify if your public key comes from this Keypair.</strong></figcaption>
+    </figure>
+<h3 id="import-into-your-phantom-wallet-optional">Import into your Phantom Wallet (Optional)</h3>
+<p>Copy the contents of your <code>keypair.json</code> and hit import on your Phantom Wallet.</p>
+<figure><a class="lightgallery" href="/create-your-own-cryptocurrency-token/import-wallet.png" title="/create-your-own-cryptocurrency-token/import-wallet.png" data-thumbnail="/create-your-own-cryptocurrency-token/import-wallet.png" data-sub-html="<h2>Import into your Phantom Wallet.</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="import-wallet.png"
+            data-srcset="/create-your-own-cryptocurrency-token/import-wallet.png, import-wallet.png 1.5x, /create-your-own-cryptocurrency-token/import-wallet.png 2x"
+            data-sizes="auto"
+            alt="/create-your-own-cryptocurrency-token/import-wallet.png" />
+    </a><figcaption class="image-caption"><strong>Import into your Phantom Wallet.</strong></figcaption>
+    </figure>
+<h2 id="top-up-your-wallet">Top up your wallet</h2>
+<p>Let&rsquo;s top up your wallet address you just created with some <code>$SOL</code>to cover the transaction fees.</p>
+<figure><a class="lightgallery" href="/create-your-own-cryptocurrency-token/topup.png" title="/create-your-own-cryptocurrency-token/topup.png" data-thumbnail="/create-your-own-cryptocurrency-token/topup.png" data-sub-html="<h2>Top up your Wallet.</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="topup.png"
+            data-srcset="/create-your-own-cryptocurrency-token/topup.png, topup.png 1.5x, /create-your-own-cryptocurrency-token/topup.png 2x"
+            data-sizes="auto"
+            alt="/create-your-own-cryptocurrency-token/topup.png" />
+    </a><figcaption class="image-caption"><strong>Top up your Wallet.</strong></figcaption>
+    </figure>
+<p>If you imported your wallet address into Phantom you can check the balance there or you can use <code>solana balance</code> to check:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">solana balance
+</span></span></code></pre></td></tr></table>
+</div>
+</div><figure><a class="lightgallery" href="/create-your-own-cryptocurrency-token/balance.png" title="/create-your-own-cryptocurrency-token/balance.png" data-thumbnail="/create-your-own-cryptocurrency-token/balance.png" data-sub-html="<h2>Check your balance.</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="balance.png"
+            data-srcset="/create-your-own-cryptocurrency-token/balance.png, balance.png 1.5x, /create-your-own-cryptocurrency-token/balance.png 2x"
+            data-sizes="auto"
+            alt="/create-your-own-cryptocurrency-token/balance.png" />
+    </a><figcaption class="image-caption"><strong>Check your balance.</strong></figcaption>
+    </figure>
+<h2 id="create-token">Create Token</h2>
+<p>Now that we have sent some <code>$SOL</code> to our wallet address we can start creating our actual <strong>Token Address</strong>, which we will later use to mint fresh Tokens and send them to our <strong>Token Account</strong> which we will also create in the same process.</p>
+<h3 id="create-token-and-token-account">Create Token and Token Account</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">spl-token create-token
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Token Address: <code>2LTQripZZZXekBg5311zu4zdzKr7VwiQ81RzVL62S72q</code></p>
+<figure><a class="lightgallery" href="/create-your-own-cryptocurrency-token/create-token.png" title="/create-your-own-cryptocurrency-token/create-token.png" data-thumbnail="/create-your-own-cryptocurrency-token/create-token.png" data-sub-html="<h2>Create your Token.</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="create-token.png"
+            data-srcset="/create-your-own-cryptocurrency-token/create-token.png, create-token.png 1.5x, /create-your-own-cryptocurrency-token/create-token.png 2x"
+            data-sizes="auto"
+            alt="/create-your-own-cryptocurrency-token/create-token.png" />
+    </a><figcaption class="image-caption"><strong>Create your Token.</strong></figcaption>
+    </figure>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">spl-token create-account 2LTQripZZZXekBg5311zu4zdzKr7VwiQ81RzVL62S72q
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Token Account: <code>CB7WEx4wtFiy6ftJWbaSvBfw1pbxe3wq65DjEbWmGRve</code></p>
+<figure><a class="lightgallery" href="/create-your-own-cryptocurrency-token/create-token-account.png" title="/create-your-own-cryptocurrency-token/create-token-account.png" data-thumbnail="/create-your-own-cryptocurrency-token/create-token-account.png" data-sub-html="<h2>Create your Token Account.</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="create-token-account.png"
+            data-srcset="/create-your-own-cryptocurrency-token/create-token-account.png, create-token-account.png 1.5x, /create-your-own-cryptocurrency-token/create-token-account.png 2x"
+            data-sizes="auto"
+            alt="/create-your-own-cryptocurrency-token/create-token-account.png" />
+    </a><figcaption class="image-caption"><strong>Create your Token Account.</strong></figcaption>
+    </figure>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>Note<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Your Token Account is associated with your Token Address.</div>
+        </div>
+    </div>
+<h3 id="mint-token-account">Mint Token Account</h3>
+<p>We&rsquo;re going to mint 1.000.000 tokens (out of thin air) with this token address <code>2LTQripZZZXekBg5311zu4zdzKr7VwiQ81RzVL62S72q</code> and then going to send them to our token account <code>CB7WEx4wtFiy6ftJWbaSvBfw1pbxe3wq65DjEbWmGRve</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">spl-token mint 2LTQripZZZXekBg5311zu4zdzKr7VwiQ81RzVL62S72q 1000000 CB7WEx4wtFiy6ftJWbaSvBfw1pbxe3wq65DjEbWmGRve
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="check-your-token-account-balance">Check your Token Account Balance</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">spl-token accounts
+</span></span></code></pre></td></tr></table>
+</div>
+</div><figure><a class="lightgallery" href="/create-your-own-cryptocurrency-token/token-account-balance.png" title="/create-your-own-cryptocurrency-token/token-account-balance.png" data-thumbnail="/create-your-own-cryptocurrency-token/token-account-balance.png" data-sub-html="<h2>Token Account Balance.</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="token-account-balance.png"
+            data-srcset="/create-your-own-cryptocurrency-token/token-account-balance.png, token-account-balance.png 1.5x, /create-your-own-cryptocurrency-token/token-account-balance.png 2x"
+            data-sizes="auto"
+            alt="/create-your-own-cryptocurrency-token/token-account-balance.png" />
+    </a><figcaption class="image-caption"><strong>Token Account Balance.</strong></figcaption>
+    </figure>
+<h2 id="limit-token-supply">Limit Token Supply</h2>
+<p>Let&rsquo;s Limit your supply to prevent unlimited minting.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">spl-token authorize 2LTQripZZZXekBg5311zu4zdzKr7VwiQ81RzVL62S72q mint --disable
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="transfer-token-to-a-browser-wallet">Transfer token to a browser wallet</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">spl-token transfer --fund-recipient tokenAddress transferAmount recipientAddress
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">spl-token transfer --fund-recipient 2LTQripZZZXekBg5311zu4zdzKr7VwiQ81RzVL62S72q 1000000 F7tHkHNUkM2R3w2A6fyVDK29m9y8oNx851nhYoa4SuRp
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="register-your-token">Register your Token</h2>
+<p>To actually finish the creation of your Token we want to have it officially listed on the Solana Registry.</p>
+<p>I am not going into details here, so feel free to check out my <a href="https://github.com/solana-labs/token-list/pull/12779" target="_blank" rel="noopener noreffer">pull request</a> at <a href="https://github.com/solana-labs/token-list/" target="_blank" rel="noopener noreffer">github.com/solana-labs/token-list</a> for reference.</p>
+<p>But basically the only details you need for your PR are:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="s2">&#34;address&#34;</span><span class="err">:</span> <span class="s2">&#34;2LTQripZZZXekBg5311zu4zdzKr7VwiQ81RzVL62S72q&#34;</span><span class="err">,</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;symbol&#34;</span><span class="err">:</span> <span class="s2">&#34;&lt;yourTokenSymbol&gt;&#34;</span><span class="err">,</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;name&#34;</span><span class="err">:</span> <span class="s2">&#34;&lt;yourTokenName&gt;&#34;</span><span class="err">,</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;logoURI&#34;</span><span class="err">:</span> <span class="s2">&#34;https://raw.githubusercontent.com/&lt;yourLogoURI&gt;.png&#34;</span><span class="err">,</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Once your PR was merged you can see your token officiall listed on your Phantom wallet and the official solana.com registry (see <a href="https://solscan.io/token/EmU2juRehuHHn3p2qwMbrPiupXdc3JrZdTD1aP5zyhrW" target="_blank" rel="noopener noreffer">solscan.io</a> or <a href="https://explorer.solana.com/address/EmU2juRehuHHn3p2qwMbrPiupXdc3JrZdTD1aP5zyhrW" target="_blank" rel="noopener noreffer">Solana Explorer</a>)</p>
+<figure><a class="lightgallery" href="/create-your-own-cryptocurrency-token/token-listing.png" title="/create-your-own-cryptocurrency-token/token-listing.png" data-thumbnail="/create-your-own-cryptocurrency-token/token-listing.png" data-sub-html="<h2>Token Listing</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="token-listing.png"
+            data-srcset="/create-your-own-cryptocurrency-token/token-listing.png, token-listing.png 1.5x, /create-your-own-cryptocurrency-token/token-listing.png 2x"
+            data-sizes="auto"
+            alt="/create-your-own-cryptocurrency-token/token-listing.png" />
+    </a><figcaption class="image-caption"><strong>Token Listing</strong></figcaption>
+    </figure>
+<h2 id="summary">Summary</h2>
+<p>Okay, let&rsquo;s summarize the whole thing again and show what we have done. We have created the following:</p>
+<ol>
+<li>We created a Wallet Address: <code>8mNvt36N7bW3vuWJ3pFDTSWFp2i7fD1MF8bv6mTFMj8f</code> to be used as a so called Authority to fund the creation but also to mint our Token.</li>
+<li>We created a Token (Address): <code>2LTQripZZZXekBg5311zu4zdzKr7VwiQ81RzVL62S72q</code> which is then associated to our Token Account: <code>CB7WEx4wtFiy6ftJWbaSvBfw1pbxe3wq65DjEbWmGRve</code>.</li>
+<li>In the end we registered our Token <code>2LTQripZZZXekBg5311zu4zdzKr7VwiQ81RzVL62S72q</code> on the Solana Token Registry to make it available.</li>
+</ol>
+<p>If you want to know how to create a secure wallet address, check out my post <a href="../create-a-secure-and-anonymous-wallet-address/" rel="">Create a secure and anonymous Crypto Wallet</a>.</p>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>References<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li><a href="https://spl.solana.com/token" target="_blank" rel="noopener noreffer">Solana Token Program</a></li>
+<li><a href="../create-a-secure-and-anonymous-wallet-address/" rel="">Create a secure and anonymous Crypto Wallet</a></li>
+<li><a href="../hot-and-cold-wallet-address/" rel="">Hot and Cold Crypto Wallet (Address)</a></li>
+<li><a href="../crypto-token-coins-and-mnemonics/" rel="">Crypto Token, Coins and Mnemonics</a></li>
+<li><a href="https://bitaddress.org" target="_blank" rel="noopener noreffer">Generate Bitcoin Address</a></li>
+<li><a href="https://myetherwallet.com" target="_blank" rel="noopener noreffer">Generate Ethereum Address</a></li>
+<li><a href="http://maxtaco.github.io/bitcoin/2014/01/16/how-jason-bourne-stores-his-bitcoin/" target="_blank" rel="noopener noreffer">How Jason Bourne Stores His Bitcoin</a></li>
+<li><a href="https://nakamotoinstitute.org/trusted-third-parties/" target="_blank" rel="noopener noreffer">Trusted Third Parties are Security Holes</a></li>
+</ul>
+</div>
+        </div>
+    </div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on Sunday, Jan 9, 2022</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://graef.io/create-your-own-cryptocurrency-token/" data-title="Create your own Cryptocurrency Token (Solana)" data-via="segraef" data-hashtags="crypto,wallet,solana,token,mint,blockchain"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://graef.io/create-your-own-cryptocurrency-token/" data-hashtag="crypto"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://graef.io/create-your-own-cryptocurrency-token/"><i class="fab fa-linkedin fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://graef.io/create-your-own-cryptocurrency-token/" data-title="Create your own Cryptocurrency Token (Solana)" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="https://graef.io/create-your-own-cryptocurrency-token/"><i class="fab fa-reddit fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/crypto/">Crypto</a>,&nbsp;<a href="/tags/wallet/">Wallet</a>,&nbsp;<a href="/tags/solana/">Solana</a>,&nbsp;<a href="/tags/token/">Token</a>,&nbsp;<a href="/tags/mint/">Mint</a>,&nbsp;<a href="/tags/blockchain/">Blockchain</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/how-to-reload-vscode-window/" class="prev" rel="prev" title="How to reload your VSCode Window"><i class="fas fa-angle-left fa-fw"></i>How to reload your VSCode Window</a>
+            <a href="/fresh-development-machine-setup-using-winget-within-10-minutes/" class="next" rel="next" title="Fresh Development Setup within 10 Minutes using Winget">Fresh Development Setup within 10 Minutes using Winget<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+    <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">
+<script type="text/javascript">
+// Load Microsoft Clarity
+(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "pg6m55thgo");
+
+// Handle cookie consent for Microsoft Clarity
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if consent was already given
+    var consentCookie = document.cookie.split(';').find(row => row.trim().startsWith('cookieconsent_status='));
+    if (consentCookie) {
+        var status = consentCookie.split('=')[1];
+        if (status === 'allow' && window.clarity) {
+            window.clarity('consentv2', {
+                ad_Storage: 'granted',
+                analytics_Storage: 'granted'
+            });
+        } else if (status === 'deny' && window.clarity) {
+            window.clarity('consentv2', {
+                ad_Storage: 'denied',
+                analytics_Storage: 'denied'
+            });
+        }
+    }
+
+    // Listen for future consent changes
+    window.addEventListener('load', function() {
+        if (window.cookieconsent) {
+            // Monitor cookie changes
+            var observer = new MutationObserver(function() {
+                var consentCookie = document.cookie.split(';').find(row => row.trim().startsWith('cookieconsent_status='));
+                if (consentCookie && window.clarity) {
+                    var status = consentCookie.split('=')[1];
+                    if (status === 'allow') {
+                        window.clarity('consentv2', {
+                            ad_Storage: 'granted',
+                            analytics_Storage: 'granted'
+                        });
+                    } else if (status === 'deny') {
+                        window.clarity('consentv2', {
+                            ad_Storage: 'denied',
+                            analytics_Storage: 'denied'
+                        });
+                    }
+                }
+            });
+            observer.observe(document, { childList: true, subtree: true });
+        }
+    });
+});
+</script></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":20},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"segraef/graef.io"}},"cookieconsent":{"content":{"deny":"Reject","dismiss":"Accept","header":"🍪 Cookie Preferences","href":"/privacy-policy/","link":"Privacy Policy","message":"We use analytics cookies to understand how you interact with our website to improve your experience. We respect your privacy and give you full control over your data."},"enable":true,"palette":{"button":{"background":"#3b82f6","backgroundhover":"#2563eb","text":"#ffffff"},"popup":{"background":"#1f2937","text":"#ffffff"}},"position":"bottom","theme":"edgeless","type":"opt-in"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-99599711-2', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-99599711-2" async></script></body>
+
+</html>

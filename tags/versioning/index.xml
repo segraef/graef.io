@@ -1,6 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Versioning on Automate everything</title><link>https://graef.io/tags/versioning/</link><description>Recent content in Versioning on Automate everything</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 22 Mar 2025 10:22:10 +1000</lastBuildDate><atom:link href="https://graef.io/tags/versioning/index.xml" rel="self" type="application/rss+xml"/><item><title>Automating Repository Management in Github and Azure Devops With Powershell</title><link>https://graef.io/automating-repository-management-in-github-and-azure-devops-with-powershell/</link><pubDate>Sat, 22 Mar 2025 10:22:10 +1000</pubDate><guid>https://graef.io/automating-repository-management-in-github-and-azure-devops-with-powershell/</guid><description>&lt;p&gt;Working in large enterprise environments often means managing a complex landscape of repositories across multiple GitHub organizations and Azure DevOps projects. Keeping these repositories up to date—especially when working with multiple engineering teams—can be a daunting task. That’s where automation comes in.&lt;/p&gt;
-&lt;p&gt;To simplify this, I’ve developed a consolidated PowerShell script that combines the functionality of my previous scripts into one:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/segraef/Scripts/blob/main/PowerShell/Update-Repos.ps1" target="_blank" rel="noopener noreffer"&gt;Update-Repos.ps1&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;This script helps automate the process of cloning and updating repositories, making it significantly easier to manage a large number of repos efficiently.&lt;/p&gt;</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Versioning on Automate everything </title>
+    <link>https://graef.io/tags/versioning/</link>
+    <description>Recent content in Versioning on Automate everything </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 22 Mar 2025 10:22:10 +1000</lastBuildDate>
+    <atom:link href="https://graef.io/tags/versioning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Automating Repository Management in Github and Azure Devops With Powershell</title>
+      <link>https://graef.io/automating-repository-management-in-github-and-azure-devops-with-powershell/</link>
+      <pubDate>Sat, 22 Mar 2025 10:22:10 +1000</pubDate>
+      <guid>https://graef.io/automating-repository-management-in-github-and-azure-devops-with-powershell/</guid>
+      <description>&lt;p&gt;Working in large enterprise environments often means managing a complex landscape of repositories across multiple GitHub organizations and Azure DevOps projects. Keeping these repositories up to date—especially when working with multiple engineering teams—can be a daunting task. That’s where automation comes in.&lt;/p&gt;&#xA;&lt;p&gt;To simplify this, I’ve developed a consolidated PowerShell script that combines the functionality of my previous scripts into one:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://github.com/segraef/Scripts/blob/main/PowerShell/Update-Repos.ps1&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;Update-Repos.ps1&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;This script helps automate the process of cloning and updating repositories, making it significantly easier to manage a large number of repos efficiently.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

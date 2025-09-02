@@ -1,0 +1,237 @@
+/* Microsoft Clarity Cookie Consent Banner Styles */
+.clarity-consent-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: rgba(31, 41, 55, 0.95);
+  backdrop-filter: blur(10px);
+  color: #ffffff;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.consent-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.consent-content {
+  text-align: center;
+}
+
+.consent-title {
+  margin: 0 0 12px 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.consent-description {
+  margin: 0 0 20px 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+.consent-details {
+  margin: 15px 0 20px 0;
+}
+
+.consent-expandable {
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.consent-expandable summary {
+  cursor: pointer;
+  font-weight: 500;
+  padding: 8px 0;
+  outline: none;
+  color: #3b82f6;
+}
+
+.consent-expandable summary:hover {
+  opacity: 0.8;
+}
+
+.cookie-categories {
+  padding: 15px 0 10px 20px;
+}
+
+.cookie-category {
+  margin-bottom: 15px;
+}
+
+.cookie-category h4 {
+  margin: 0 0 5px 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.cookie-category p {
+  margin: 0;
+  font-size: 0.85rem;
+  opacity: 0.8;
+  line-height: 1.4;
+}
+
+.consent-buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.consent-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 120px;
+}
+
+.consent-btn-accept {
+  background: #3b82f6;
+  color: #ffffff;
+}
+
+.consent-btn-accept:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+.consent-btn-necessary {
+  background: #6b7280;
+  color: #ffffff;
+}
+
+.consent-btn-necessary:hover {
+  background: #4b5563;
+  transform: translateY(-1px);
+}
+
+.consent-btn-reject {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.consent-btn-reject:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+.consent-links {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.consent-link {
+  color: #3b82f6;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+}
+
+.consent-link:hover {
+  text-decoration: underline;
+}
+
+.consent-reset {
+  color: inherit;
+  opacity: 0.7;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .consent-container {
+    padding: 16px;
+  }
+
+  .consent-title {
+    font-size: 1.1rem;
+  }
+
+  .consent-description {
+    font-size: 0.9rem;
+  }
+
+  .consent-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .consent-btn {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* Dark theme support */
+@media (prefers-color-scheme: dark) {
+  .clarity-consent-banner {
+    background: rgba(17, 24, 39, 0.95);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .clarity-consent-banner {
+    animation: none;
+  }
+
+  .consent-btn {
+    transition: none;
+  }
+
+  .consent-btn:hover {
+    transform: none;
+  }
+}
+
+/* Theme customizable styles */
+.clarity-consent-banner.theme-custom {
+  background: var(--consent-bg, rgba(31, 41, 55, 0.95));
+  color: var(--consent-text, #ffffff);
+}
+
+.theme-custom .consent-btn-accept {
+  background: var(--consent-btn-bg, #3b82f6);
+  color: var(--consent-btn-text, #ffffff);
+}
+
+.theme-custom .consent-btn-accept:hover {
+  background: var(--consent-btn-hover, #2563eb);
+}
+
+.theme-custom .consent-link {
+  color: var(--consent-link-color, #3b82f6);
+}
+
+.theme-custom .consent-expandable summary {
+  color: var(--consent-link-color, #3b82f6);
+}
+
+.theme-custom .consent-btn-reject {
+  color: var(--consent-text, #ffffff);
+}

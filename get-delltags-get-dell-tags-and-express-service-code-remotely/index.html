@@ -1,318 +1,579 @@
-<!doctype html><html lang=en><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><meta http-equiv=X-UA-Compatible content="IE=edge, chrome=1"><title>Get-DellTags: Get Dell Tags and Express Service Code remotely - Automate everything</title><meta name=Description content="Automate everything - Sebastian Gräf"><meta property="og:url" content="https://graef.io/get-delltags-get-dell-tags-and-express-service-code-remotely/"><meta property="og:site_name" content="Automate everything "><meta property="og:title" content="Get-DellTags: Get Dell Tags and Express Service Code remotely"><meta property="og:description" content="Get DELL Tag and Express Service Code remotely for more than one computer."><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2017-08-15T11:40:27+08:00"><meta property="article:modified_time" content="2017-08-15T11:40:27+08:00"><meta property="article:tag" content="Automation"><meta property="article:tag" content="Scripts"><meta property="article:tag" content="Powershell"><meta property="article:tag" content="Posh"><meta property="article:tag" content="Pwsh"><meta property="article:tag" content="Windows"><meta property="og:image" content="https://graef.io/get-delltags-get-dell-tags-and-express-service-code-remotely/featured-image.png"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://graef.io/get-delltags-get-dell-tags-and-express-service-code-remotely/featured-image.png"><meta name=twitter:title content="Get-DellTags: Get Dell Tags and Express Service Code remotely"><meta name=twitter:description content="Get DELL Tag and Express Service Code remotely for more than one computer."><meta name=twitter:site content="@segraef"><meta name=application-name content="graef.io - Sebastian Gräf"><meta name=apple-mobile-web-app-title content="graef.io - Sebastian Gräf"><meta name=theme-color content="#ffffff"><meta name=msapplication-TileColor content="#da532c"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link rel=manifest href=/site.webmanifest><link rel=canonical href=https://graef.io/get-delltags-get-dell-tags-and-express-service-code-remotely/><link rel=prev href=https://graef.io/get-scsidisks-combine-physicaldisk-and-logicaldisk-objects/><link rel=next href=https://graef.io/resolve-dnsnames-resolve-dns-or-ip-for-multiple-computers/><link rel=stylesheet href=/lib/normalize/normalize.min.css><link rel=stylesheet href=/css/style.min.css><link rel=stylesheet href=/lib/fontawesome-free/all.min.css><link rel=stylesheet href=/lib/animate/animate.min.css><meta name=google-site-verification content="google-site-verification=081I19l1P1J3FFLaw1uKtAtY5KcJx_Z9ywiKt60VGP4"><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Get-DellTags: Get Dell Tags and Express Service Code remotely","inLanguage":"en","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/graef.io\/get-delltags-get-dell-tags-and-express-service-code-remotely\/"},"image":["https:\/\/graef.io\/logo.png"],"genre":"posts","keywords":"Automation, scripts, PowerShell, posh, pwsh, Windows","wordcount":621,"url":"https:\/\/graef.io\/get-delltags-get-dell-tags-and-express-service-code-remotely\/","datePublished":"2017-08-15T11:40:27+08:00","dateModified":"2017-08-15T11:40:27+08:00","publisher":{"@type":"Organization","name":"greaf.io","logo":"https:\/\/graef.io\/logo.png"},"author":{"@type":"Person","name":"Author"},"description":""}</script></head><body header-desktop=auto header-mobile=auto><script type=text/javascript>(window.localStorage&&localStorage.getItem("theme")?localStorage.getItem("theme")==="dark":"light"==="auto"?window.matchMedia("(prefers-color-scheme: dark)").matches:"light"==="dark")&&document.body.setAttribute("theme","dark")</script><div id=mask></div><div class=wrapper><header class=desktop id=header-desktop><script type=text/javascript>(function(e,t,n,s,o,i,a){e[n]=e[n]||function(){(e[n].q=e[n].q||[]).push(arguments)},i=t.createElement(s),i.async=1,i.src="https://www.clarity.ms/tag/"+o,a=t.getElementsByTagName(s)[0],a.parentNode.insertBefore(i,a)})(window,document,"clarity","script","pg6m55thgo")</script><div class=header-wrapper><div class=header-title><a href=/ title="Automate everything "><img class="lazyload logo" src=/svg/loading.min.svg data-src=/logo.png data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x" data-sizes=auto alt=/logo.png title=/logo.png></a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/ title=Posts>Posts </a><a class=menu-item href=/categories/projects/ title=Projects>Projects </a><a class=menu-item href=/categories/til/ title="Today I learned">TIL </a><a class=menu-item href=/tags/ title=Tags>Tags </a><a class=menu-item href=/categories/ title=Categories>Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id=search-desktop>
-<input type=text placeholder="Search titles or contents..." id=search-input-desktop>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-desktop title=Search><i class="fas fa-search fa-fw"></i>
-</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-desktop title=Clear><i class="fas fa-times-circle fa-fw"></i>
-</a><span class="search-button search-loading" id=search-loading-desktop><i class="fas fa-spinner fa-fw fa-spin"></i>
-</span></span><a href=javascript:void(0); class="menu-item theme-switch" title><i class="fas fa-adjust fa-fw"></i></a></div></div></div></header><header class=mobile id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title="Automate everything "><img class="lazyload logo" src=/svg/loading.min.svg data-src=/logo.png data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x" data-sizes=auto alt=/logo.png title=/logo.png></a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><div class=search-wrapper><div class="search mobile" id=search-mobile><input type=text placeholder="Search titles or contents..." id=search-input-mobile>
-<a href=javascript:void(0); class="search-button search-toggle" id=search-toggle-mobile title=Search><i class="fas fa-search fa-fw"></i>
-</a><a href=javascript:void(0); class="search-button search-clear" id=search-clear-mobile title=Clear><i class="fas fa-times-circle fa-fw"></i>
-</a><span class="search-button search-loading" id=search-loading-mobile><i class="fas fa-spinner fa-fw fa-spin"></i></span></div><a href=javascript:void(0); class=search-cancel id=search-cancel-mobile>Cancel</a></div><a class=menu-item href=/posts/ title=Posts>Posts</a><a class=menu-item href=/categories/projects/ title=Projects>Projects</a><a class=menu-item href=/categories/til/ title="Today I learned">TIL</a><a class=menu-item href=/tags/ title=Tags>Tags</a><a class=menu-item href=/categories/ title=Categories>Categories</a><a href=javascript:void(0); class="menu-item theme-switch" title>
-<i class="fas fa-adjust fa-fw"></i></a></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><article class="page single"><h1 class="single-title animated flipInX">Get-DellTags: Get Dell Tags and Express Service Code remotely</h1><div class=post-meta><div class=post-meta-line><span class=post-author><a href=/ title=Author rel=author class=author><i class="fas fa-user-circle fa-fw"></i>Author</a></span>&nbsp;<span class=post-category>included in <a href=/categories/scripts/><i class="far fa-folder fa-fw"></i>Scripts</a>&nbsp;<a href=/categories/powershell/><i class="far fa-folder fa-fw"></i>PowerShell</a>&nbsp;<a href=/categories/windows-server/><i class="far fa-folder fa-fw"></i>Windows Server</a></span></div><div class=post-meta-line><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Tuesday, Aug 15, 2017">Tuesday, Aug 15, 2017</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;621 words&nbsp;
-<i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div></div><div class=featured-image><img class=lazyload src=/svg/loading.min.svg data-src=/get-delltags-get-dell-tags-and-express-service-code-remotely/featured-image.png data-srcset="/get-delltags-get-dell-tags-and-express-service-code-remotely/featured-image.png, /get-delltags-get-dell-tags-and-express-service-code-remotely/featured-image.png 1.5x, /get-delltags-get-dell-tags-and-express-service-code-remotely/featured-image.png 2x" data-sizes=auto alt=/get-delltags-get-dell-tags-and-express-service-code-remotely/featured-image.png title=/get-delltags-get-dell-tags-and-express-service-code-remotely/featured-image.png></div><div class=content id=content><p>Get DELL Tag and Express Service Code remotely for more than one computer.</p><p>You can also commit different credentials for a specific domain.
-The below function Get-DellTags retrieves serials remotely from your machines. With the help of the function ConvertSerial the serial gets converted into a DELL Express Service Code on the fly.</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt>  1
-</span><span class=lnt>  2
-</span><span class=lnt>  3
-</span><span class=lnt>  4
-</span><span class=lnt>  5
-</span><span class=lnt>  6
-</span><span class=lnt>  7
-</span><span class=lnt>  8
-</span><span class=lnt>  9
-</span><span class=lnt> 10
-</span><span class=lnt> 11
-</span><span class=lnt> 12
-</span><span class=lnt> 13
-</span><span class=lnt> 14
-</span><span class=lnt> 15
-</span><span class=lnt> 16
-</span><span class=lnt> 17
-</span><span class=lnt> 18
-</span><span class=lnt> 19
-</span><span class=lnt> 20
-</span><span class=lnt> 21
-</span><span class=lnt> 22
-</span><span class=lnt> 23
-</span><span class=lnt> 24
-</span><span class=lnt> 25
-</span><span class=lnt> 26
-</span><span class=lnt> 27
-</span><span class=lnt> 28
-</span><span class=lnt> 29
-</span><span class=lnt> 30
-</span><span class=lnt> 31
-</span><span class=lnt> 32
-</span><span class=lnt> 33
-</span><span class=lnt> 34
-</span><span class=lnt> 35
-</span><span class=lnt> 36
-</span><span class=lnt> 37
-</span><span class=lnt> 38
-</span><span class=lnt> 39
-</span><span class=lnt> 40
-</span><span class=lnt> 41
-</span><span class=lnt> 42
-</span><span class=lnt> 43
-</span><span class=lnt> 44
-</span><span class=lnt> 45
-</span><span class=lnt> 46
-</span><span class=lnt> 47
-</span><span class=lnt> 48
-</span><span class=lnt> 49
-</span><span class=lnt> 50
-</span><span class=lnt> 51
-</span><span class=lnt> 52
-</span><span class=lnt> 53
-</span><span class=lnt> 54
-</span><span class=lnt> 55
-</span><span class=lnt> 56
-</span><span class=lnt> 57
-</span><span class=lnt> 58
-</span><span class=lnt> 59
-</span><span class=lnt> 60
-</span><span class=lnt> 61
-</span><span class=lnt> 62
-</span><span class=lnt> 63
-</span><span class=lnt> 64
-</span><span class=lnt> 65
-</span><span class=lnt> 66
-</span><span class=lnt> 67
-</span><span class=lnt> 68
-</span><span class=lnt> 69
-</span><span class=lnt> 70
-</span><span class=lnt> 71
-</span><span class=lnt> 72
-</span><span class=lnt> 73
-</span><span class=lnt> 74
-</span><span class=lnt> 75
-</span><span class=lnt> 76
-</span><span class=lnt> 77
-</span><span class=lnt> 78
-</span><span class=lnt> 79
-</span><span class=lnt> 80
-</span><span class=lnt> 81
-</span><span class=lnt> 82
-</span><span class=lnt> 83
-</span><span class=lnt> 84
-</span><span class=lnt> 85
-</span><span class=lnt> 86
-</span><span class=lnt> 87
-</span><span class=lnt> 88
-</span><span class=lnt> 89
-</span><span class=lnt> 90
-</span><span class=lnt> 91
-</span><span class=lnt> 92
-</span><span class=lnt> 93
-</span><span class=lnt> 94
-</span><span class=lnt> 95
-</span><span class=lnt> 96
-</span><span class=lnt> 97
-</span><span class=lnt> 98
-</span><span class=lnt> 99
-</span><span class=lnt>100
-</span><span class=lnt>101
-</span><span class=lnt>102
-</span><span class=lnt>103
-</span><span class=lnt>104
-</span><span class=lnt>105
-</span><span class=lnt>106
-</span><span class=lnt>107
-</span><span class=lnt>108
-</span><span class=lnt>109
-</span><span class=lnt>110
-</span><span class=lnt>111
-</span><span class=lnt>112
-</span><span class=lnt>113
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-powershell data-lang=powershell><span class=line><span class=cl><span class=kd>Function</span><span class=w> </span><span class=nb>Get-DellTags</span>
-</span></span><span class=line><span class=cl><span class=p>{</span>
-</span></span><span class=line><span class=cl><span class=cm>&lt;#
-</span></span></span><span class=line><span class=cl><span class=cm>.</span><span class=sd>SYNOPSIS</span><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>    Retrieves the serial on a local or remote computer using Invoke-Command and converts into a DELL Express Service Code.
-</span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>.</span><span class=sd>DESCRIPTION</span><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>    Gets the PowerShell version on a local or remote computer using Invoke-Command.
-</span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>.PARAMETER ComputerName
-</span></span></span><span class=line><span class=cl><span class=cm>    A single Computer or an array of computer names. The default is localhost ($env:COMPUTERNAME).
-</span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>.PARAMETER Credentials
-</span></span></span><span class=line><span class=cl><span class=cm>    Commit PSCredential object or using Get-Credentials.
-</span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>.PARAMETER Verbose
-</span></span></span><span class=line><span class=cl><span class=cm>    Run in Verbose Mode.
-</span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>.</span><span class=sd>EXAMPLE</span><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>    PS C:&gt; Get-DellTags -ComputerName Server01
-</span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>    ComputerName    DellTag ExpressServiceCode URL
-</span></span></span><span class=line><span class=cl><span class=cm>    ------------    ------- ------------------ ---
-</span></span></span><span class=line><span class=cl><span class=cm>    Server01        FV9SAX4        34542623560 https://www.dell.com/support/home/us/en/19/product-support/servicetag/FV9SAX4/Research
-</span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>.</span><span class=sd>EXAMPLE</span><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>	PS C:&gt; Get-DellTags -ComputerName Server01,Server02 -Credentials Get-Credentials
-</span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>.</span><span class=sd>EXAMPLE</span><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>    PS C:&gt; Get-DellTags -ComputerName (Get-Content C:ServerList.txt)
-</span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>.</span><span class=sd>LINK</span><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>Home
-</span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>.</span><span class=sd>NOTES</span><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>    Author:  Sebastian Gräf
-</span></span></span><span class=line><span class=cl><span class=cm>    Email:   sebastian@graef.io
-</span></span></span><span class=line><span class=cl><span class=cm>    Date:    September 9, 2017
-</span></span></span><span class=line><span class=cl><span class=cm>    PSVer:   2.0/3.0/4.0/5.0
-</span></span></span><span class=line><span class=cl><span class=cm>#&gt;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=p>[</span><span class=nb>Cmdletbinding</span><span class=p>()]</span>
-</span></span><span class=line><span class=cl>	<span class=k>Param</span> <span class=p>(</span>
-</span></span><span class=line><span class=cl>		<span class=p>[</span><span class=nb>Parameter</span><span class=p>(</span>
-</span></span><span class=line><span class=cl>				   <span class=na>Mandatory</span> <span class=p>=</span> <span class=vm>$false</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>				   <span class=na>ValueFromPipeline</span> <span class=p>=</span> <span class=vm>$true</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>				   <span class=na>ValueFromPipelineByPropertyName</span> <span class=p>=</span> <span class=vm>$true</span><span class=p>)]</span>
-</span></span><span class=line><span class=cl>		<span class=p>[</span><span class=no>string[]</span><span class=p>]</span><span class=nv>$ComputerName</span> <span class=p>=</span> <span class=nv>$Env:COMPUTERNAME</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>		<span class=p>[</span><span class=nb>Parameter</span><span class=p>(</span>
-</span></span><span class=line><span class=cl>				   <span class=na>ValueFromPipelineByPropertyName</span> <span class=p>=</span> <span class=vm>$true</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>				   <span class=na>Mandatory</span> <span class=p>=</span> <span class=vm>$false</span><span class=p>,</span>
-</span></span><span class=line><span class=cl>				   <span class=na>ValueFromPipeline</span> <span class=p>=</span> <span class=vm>$true</span><span class=p>)]</span>
-</span></span><span class=line><span class=cl>		<span class=p>[</span><span class=nb>Alias</span><span class=p>(</span>
-</span></span><span class=line><span class=cl>			   <span class=s1>&#39;PSCredential&#39;</span>
-</span></span><span class=line><span class=cl>			   <span class=p>)]</span>
-</span></span><span class=line><span class=cl>		<span class=p>[</span><span class=n>ValidateNotNull</span><span class=p>()]</span>
-</span></span><span class=line><span class=cl>		<span class=p>[</span><span class=no>System.Management.Automation.PSCredential</span><span class=p>]</span>
-</span></span><span class=line><span class=cl>		<span class=p>[</span><span class=n>System</span><span class=p>.</span><span class=py>Management</span><span class=p>.</span><span class=py>Automation</span><span class=p>.</span><span class=py>Credential</span><span class=p>()]</span>
-</span></span><span class=line><span class=cl>		<span class=nv>$Credentials</span> <span class=p>=</span> <span class=p>[</span><span class=no>System.Management.Automation.PSCredential</span><span class=p>]::</span><span class=n>Empty</span>
-</span></span><span class=line><span class=cl>	<span class=p>)</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=k>Begin</span>
-</span></span><span class=line><span class=cl>	<span class=p>{</span>
-</span></span><span class=line><span class=cl>		<span class=nb>Write-Verbose</span> <span class=s2>&#34; [</span><span class=p>$(</span><span class=nv>$MyInvocation</span><span class=p>.</span><span class=n>InvocationName</span><span class=p>)</span><span class=s2>] :: Start Process&#34;</span>
-</span></span><span class=line><span class=cl>        <span class=nv>$ProgressCounter</span> <span class=p>=</span> <span class=mf>0</span>
-</span></span><span class=line><span class=cl>	<span class=p>}</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>	<span class=k>Process</span>
-</span></span><span class=line><span class=cl>	<span class=p>{</span>
-</span></span><span class=line><span class=cl>		<span class=k>foreach</span> <span class=p>(</span><span class=nv>$Computer</span> <span class=k>in</span> <span class=nv>$ComputerName</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>		<span class=p>{</span>
-</span></span><span class=line><span class=cl>            <span class=nv>$ProgressCounter</span><span class=p>++</span>
-</span></span><span class=line><span class=cl>			<span class=nb>Write-Progress</span> <span class=n>-activity</span> <span class=s2>&#34;Running on </span><span class=nv>$Computer</span><span class=s2>&#34;</span> <span class=n>-status</span> <span class=s2>&#34;Please wait ...&#34;</span> <span class=n>-PercentComplete</span> <span class=p>((</span><span class=nv>$ProgressCounter</span> <span class=p>/</span> <span class=nv>$ComputerName</span><span class=p>.</span><span class=n>length</span><span class=p>)</span> <span class=p>*</span> <span class=mf>100</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>			<span class=k>if</span> <span class=p>(</span><span class=nb>Test-Connection</span> <span class=nv>$Computer</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>			<span class=p>{</span>
-</span></span><span class=line><span class=cl>				<span class=nb>Write-Verbose</span> <span class=s2>&#34; [</span><span class=p>$(</span><span class=nv>$MyInvocation</span><span class=p>.</span><span class=n>InvocationName</span><span class=p>)</span><span class=s2>] :: Processing </span><span class=nv>$Computer</span><span class=s2>&#34;</span>
-</span></span><span class=line><span class=cl>				<span class=k>try</span>
-</span></span><span class=line><span class=cl>				<span class=p>{</span>
-</span></span><span class=line><span class=cl>					<span class=c>## If you want to use WMI</span>
-</span></span><span class=line><span class=cl>                    <span class=c>#$DellServiceTag = Get-WmiObject Win32_Bios -Credential $Credentials -ComputerName $Computer</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>                    <span class=c>## If you want to use CIM</span>
-</span></span><span class=line><span class=cl>                    <span class=c>#$DellServiceTag = Get-CimInstance Win32_Bios -Credential $Credentials -ComputerName $Computer</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>                    <span class=nv>$DellServiceTag</span> <span class=p>=</span> <span class=nb>Invoke-Command</span> <span class=n>-Computername</span> <span class=nv>$Computer</span> <span class=n>-Scriptblock</span> <span class=p>{</span> <span class=nb>Get-CimInstance</span> <span class=n>Win32_Bios</span> <span class=p>}</span> <span class=n>-Credential</span> <span class=nv>$Credentials</span>
-</span></span><span class=line><span class=cl>					<span class=n>ConvertDellSerial</span> <span class=nv>$DellServiceTag</span><span class=p>.</span><span class=py>serialnumber</span>
-</span></span><span class=line><span class=cl>					<span class=nv>$DellTags</span> <span class=p>=</span> <span class=vm>@</span><span class=p>()</span>
-</span></span><span class=line><span class=cl>					<span class=nv>$WMIObject</span> <span class=p>=</span> <span class=nb>New-Object</span> <span class=n>PSObject</span>
-</span></span><span class=line><span class=cl>					<span class=nv>$WMIObject</span> <span class=p>|</span> <span class=nb>add-member</span> <span class=n>Noteproperty</span> <span class=n>ComputerName</span> <span class=nv>$Computer</span> <span class=n>-Force</span>
-</span></span><span class=line><span class=cl>					<span class=nv>$WMIObject</span> <span class=p>|</span> <span class=nb>add-member</span> <span class=n>Noteproperty</span> <span class=n>DellTag</span> <span class=nv>$DellServiceTag</span><span class=p>.</span><span class=py>serialnumber</span> <span class=n>-Force</span>
-</span></span><span class=line><span class=cl>					<span class=nv>$WMIObject</span> <span class=p>|</span> <span class=nb>add-member</span> <span class=n>Noteproperty</span> <span class=n>ExpressServiceCode</span> <span class=nv>$Serial</span> <span class=n>-Force</span>
-</span></span><span class=line><span class=cl>					<span class=nv>$WMIObject</span> <span class=p>|</span> <span class=nb>add-member</span> <span class=n>Noteproperty</span> <span class=n>URL</span> <span class=s2>&#34;https://www.dell.com/support/home/us/en/19/product-support/servicetag/</span><span class=p>$(</span><span class=nv>$DellServiceTag</span><span class=p>.</span><span class=n>serialnumber</span><span class=p>)</span><span class=s2>/Research&#34;</span> <span class=n>-Force</span>
-</span></span><span class=line><span class=cl>					<span class=nv>$DellTags</span> <span class=p>+=</span> <span class=nv>$WMIObject</span>
-</span></span><span class=line><span class=cl>					<span class=nv>$DellTags</span>
-</span></span><span class=line><span class=cl>				<span class=p>}</span>
-</span></span><span class=line><span class=cl>				<span class=k>catch</span>
-</span></span><span class=line><span class=cl>				<span class=p>{</span>
-</span></span><span class=line><span class=cl>					<span class=nb>Write-Verbose</span> <span class=s2>&#34; Host [</span><span class=nv>$Computer</span><span class=s2>] Failed with Error: </span><span class=p>$(</span><span class=nv>$Error</span><span class=p>[</span><span class=mf>0</span><span class=p>])</span><span class=s2>&#34;</span>
-</span></span><span class=line><span class=cl>				<span class=p>}</span>
-</span></span><span class=line><span class=cl>			<span class=p>}</span>
-</span></span><span class=line><span class=cl>			<span class=k>else</span>
-</span></span><span class=line><span class=cl>			<span class=p>{</span>
-</span></span><span class=line><span class=cl>				<span class=nb>Write-Verbose</span> <span class=s2>&#34; Host [</span><span class=nv>$Computer</span><span class=s2>] Failed Connectivity Test &#34;</span>
-</span></span><span class=line><span class=cl>			<span class=p>}</span>
-</span></span><span class=line><span class=cl>		<span class=p>}</span>
-</span></span><span class=line><span class=cl>	<span class=p>}</span>
-</span></span><span class=line><span class=cl>	<span class=k>End</span>
-</span></span><span class=line><span class=cl>	<span class=p>{</span>
-</span></span><span class=line><span class=cl>		<span class=nb>Write-Verbose</span> <span class=s2>&#34; [</span><span class=p>$(</span><span class=nv>$MyInvocation</span><span class=p>.</span><span class=n>InvocationName</span><span class=p>)</span><span class=s2>] :: End Process&#34;</span>
-</span></span><span class=line><span class=cl>	<span class=p>}</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre tabindex=0 class=chroma><code><span class=lnt> 1
-</span><span class=lnt> 2
-</span><span class=lnt> 3
-</span><span class=lnt> 4
-</span><span class=lnt> 5
-</span><span class=lnt> 6
-</span><span class=lnt> 7
-</span><span class=lnt> 8
-</span><span class=lnt> 9
-</span><span class=lnt>10
-</span><span class=lnt>11
-</span><span class=lnt>12
-</span><span class=lnt>13
-</span><span class=lnt>14
-</span><span class=lnt>15
-</span><span class=lnt>16
-</span><span class=lnt>17
-</span><span class=lnt>18
-</span><span class=lnt>19
-</span><span class=lnt>20
-</span><span class=lnt>21
-</span><span class=lnt>22
-</span><span class=lnt>23
-</span><span class=lnt>24
-</span><span class=lnt>25
-</span><span class=lnt>26
-</span><span class=lnt>27
-</span><span class=lnt>28
-</span><span class=lnt>29
-</span><span class=lnt>30
-</span><span class=lnt>31
-</span><span class=lnt>32
-</span><span class=lnt>33
-</span><span class=lnt>34
-</span><span class=lnt>35
-</span><span class=lnt>36
-</span><span class=lnt>37
-</span><span class=lnt>38
-</span><span class=lnt>39
-</span></code></pre></td><td class=lntd><pre tabindex=0 class=chroma><code class=language-powershell data-lang=powershell><span class=line><span class=cl><span class=kd>Function</span><span class=w> </span><span class=nb>ConvertSerial</span>
-</span></span><span class=line><span class=cl><span class=p>{</span>
-</span></span><span class=line><span class=cl><span class=cm>&lt;#
-</span></span></span><span class=line><span class=cl><span class=cm>.</span><span class=sd>SYNOPSIS</span><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>    Converts DELL Tag Serial into a DELL Express Service Code.
-</span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>.</span><span class=sd>DESCRIPTION</span><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>    Converts DELL Tag Serial into a DELL Express Service Code.
-</span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>.PARAMETER Serial
-</span></span></span><span class=line><span class=cl><span class=cm>    Commit serial string.
-</span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>.</span><span class=sd>LINK</span><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>Home
-</span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>.</span><span class=sd>NOTES</span><span class=cm>
-</span></span></span><span class=line><span class=cl><span class=cm>    Author:  Sebastian Gräf
-</span></span></span><span class=line><span class=cl><span class=cm>    Email:   ps@graef.io
-</span></span></span><span class=line><span class=cl><span class=cm>    Date:    September 9, 2017
-</span></span></span><span class=line><span class=cl><span class=cm>    PSVer:   2.0/3.0/4.0/5.0
-</span></span></span><span class=line><span class=cl><span class=cm>#&gt;</span>
-</span></span><span class=line><span class=cl>	<span class=k>param</span> <span class=p>(</span><span class=nv>$Serial</span><span class=p>)</span>
-</span></span><span class=line><span class=cl>	<span class=nv>$36Base</span> <span class=p>=</span> <span class=s2>&#34;0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ&#34;</span>
-</span></span><span class=line><span class=cl>	<span class=nv>$SerialLength</span> <span class=p>=</span> <span class=nv>$Serial</span><span class=p>.</span><span class=py>length</span>
-</span></span><span class=line><span class=cl>	<span class=nv>$Script:DellServiceCode</span> <span class=p>=</span> <span class=mf>0</span>
-</span></span><span class=line><span class=cl>	<span class=k>for</span> <span class=p>(</span><span class=nv>$x</span> <span class=p>=</span> <span class=mf>0</span><span class=p>;</span> <span class=nv>$x</span> <span class=o>-lt</span> <span class=nv>$SerialLength</span><span class=p>;</span> <span class=nv>$x</span><span class=p>++)</span>
-</span></span><span class=line><span class=cl>	<span class=p>{</span>
-</span></span><span class=line><span class=cl>		<span class=k>for</span> <span class=p>(</span><span class=nv>$y</span> <span class=p>=</span> <span class=mf>0</span><span class=p>;</span> <span class=nv>$y</span> <span class=o>-lt</span> <span class=mf>36</span><span class=p>;</span> <span class=nv>$y</span><span class=p>++)</span>
-</span></span><span class=line><span class=cl>		<span class=p>{</span>
-</span></span><span class=line><span class=cl>			<span class=k>if</span> <span class=p>(</span><span class=nv>$Serial</span><span class=p>.</span><span class=py>substring</span><span class=p>(</span><span class=nv>$x</span><span class=p>,</span> <span class=mf>1</span><span class=p>)</span> <span class=o>-eq</span> <span class=nv>$36Base</span><span class=p>.</span><span class=py>substring</span><span class=p>(</span><span class=nv>$y</span><span class=p>,</span> <span class=mf>1</span><span class=p>))</span>
-</span></span><span class=line><span class=cl>			<span class=p>{</span>
-</span></span><span class=line><span class=cl>				<span class=nv>$answer</span> <span class=p>=</span> <span class=p>((</span><span class=nv>$y</span><span class=p>)</span> <span class=p>*</span> <span class=p>([</span><span class=no>math</span><span class=p>]::</span><span class=n>pow</span><span class=p>(</span><span class=mf>36</span><span class=p>,</span> <span class=nv>$SerialLength</span> <span class=p>-</span> <span class=nv>$x</span> <span class=p>-</span> <span class=mf>1</span><span class=p>)))</span>
-</span></span><span class=line><span class=cl>				<span class=nv>$Script:DellServiceCode</span> <span class=p>+=</span> <span class=nv>$answer</span>
-</span></span><span class=line><span class=cl>			<span class=p>}</span>
-</span></span><span class=line><span class=cl>		<span class=p>}</span>
-</span></span><span class=line><span class=cl>	<span class=p>}</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
-</span></span></code></pre></td></tr></table></div></div></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>Updated on Tuesday, Aug 15, 2017</span></div><div class=post-info-license></div></div><div class=post-info-line><div class=post-info-md></div><div class=post-info-share><span><a href=javascript:void(0); title="Share on Twitter" data-sharer=twitter data-url=https://graef.io/get-delltags-get-dell-tags-and-express-service-code-remotely/ data-title="Get-DellTags: Get Dell Tags and Express Service Code remotely" data-via=segraef data-hashtags=Automation,scripts,PowerShell,posh,pwsh,Windows><i class="fab fa-twitter fa-fw"></i></a><a href=javascript:void(0); title="Share on Facebook" data-sharer=facebook data-url=https://graef.io/get-delltags-get-dell-tags-and-express-service-code-remotely/ data-hashtag=Automation><i class="fab fa-facebook-square fa-fw"></i></a><a href=javascript:void(0); title="Share on Linkedin" data-sharer=linkedin data-url=https://graef.io/get-delltags-get-dell-tags-and-express-service-code-remotely/><i class="fab fa-linkedin fa-fw"></i></a><a href=javascript:void(0); title="Share on WhatsApp" data-sharer=whatsapp data-url=https://graef.io/get-delltags-get-dell-tags-and-express-service-code-remotely/ data-title="Get-DellTags: Get Dell Tags and Express Service Code remotely" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href=javascript:void(0); title="Share on Reddit" data-sharer=reddit data-url=https://graef.io/get-delltags-get-dell-tags-and-express-service-code-remotely/><i class="fab fa-reddit fa-fw"></i></a></span></div></div></div><div class=post-info-more><section class=post-tags><i class="fas fa-tags fa-fw"></i>&nbsp;<a href=/tags/automation/>Automation</a>,&nbsp;<a href=/tags/scripts/>Scripts</a>,&nbsp;<a href=/tags/powershell/>Powershell</a>,&nbsp;<a href=/tags/posh/>Posh</a>,&nbsp;<a href=/tags/pwsh/>Pwsh</a>,&nbsp;<a href=/tags/windows/>Windows</a></section><section><span><a href=javascript:void(0); onclick=window.history.back()>Back</a></span>&nbsp;|&nbsp;<span><a href=/>Home</a></span></section></div><div class=post-nav><a href=/get-scsidisks-combine-physicaldisk-and-logicaldisk-objects/ class=prev rel=prev title="Get-ScsiDisks: Combine Physicaldisk and Logicaldisk Objects"><i class="fas fa-angle-left fa-fw"></i>Get-ScsiDisks: Combine Physicaldisk and Logicaldisk Objects</a>
-<a href=/resolve-dnsnames-resolve-dns-or-ip-for-multiple-computers/ class=next rel=next title="Resolve-DnsNames: Resolve DNS or IP for multiple Computers">Resolve-DnsNames: Resolve DNS or IP for multiple Computers<i class="fas fa-angle-right fa-fw"></i></a></div></div><div id=comments><div id=utterances></div><noscript>Please enable JavaScript to view the comments powered by <a href=https://utteranc.es/>Utterances</a>.</noscript></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line><i class="far fa-copyright fa-fw"></i><span itemprop=copyrightYear>2021 - 2025</span><span class=author itemprop=copyrightHolder>&nbsp;<a href=/ target=_blank></a></span></div></div></footer></div><div id=fixed-buttons><a href=# id=back-to-top class=fixed-button title="Back to Top"><i class="fas fa-arrow-up fa-fw"></i>
-</a><a href=# id=view-comments class=fixed-button title="View Comments"><i class="fas fa-comment fa-fw"></i></a></div><link rel=stylesheet href=/lib/lightgallery/lightgallery.min.css><link rel=stylesheet href=/lib/katex/katex.min.css><link rel=stylesheet href=/lib/katex/copy-tex.min.css><script type=text/javascript src=/lib/smooth-scroll/smooth-scroll.min.js></script><script type=text/javascript src=/lib/autocomplete/autocomplete.min.js></script><script type=text/javascript src=/lib/lunr/lunr.min.js></script><script type=text/javascript src=/lib/lazysizes/lazysizes.min.js></script><script type=text/javascript src=/lib/lightgallery/lightgallery.min.js></script><script type=text/javascript src=/lib/lightgallery/lg-thumbnail.min.js></script><script type=text/javascript src=/lib/lightgallery/lg-zoom.min.js></script><script type=text/javascript src=/lib/clipboard/clipboard.min.js></script><script type=text/javascript src=/lib/sharer/sharer.min.js></script><script type=text/javascript src=/lib/katex/katex.min.js></script><script type=text/javascript src=/lib/katex/auto-render.min.js></script><script type=text/javascript src=/lib/katex/copy-tex.min.js></script><script type=text/javascript src=/lib/katex/mhchem.min.js></script><script type=text/javascript>window.config={code:{copyTitle:"Copy to clipboard",maxShownLines:20},comment:{utterances:{darkTheme:"github-dark",issueTerm:"pathname",label:"",lightTheme:"github-light",repo:"segraef/graef.io"}},lightGallery:{actualSize:!1,exThumbImage:"data-thumbnail",hideBarsDelay:2e3,selector:".lightgallery",speed:400,thumbContHeight:80,thumbWidth:80,thumbnail:!0},math:{delimiters:[{display:!0,left:"$$",right:"$$"},{display:!0,left:"\\[",right:"\\]"},{display:!1,left:"$",right:"$"},{display:!1,left:"\\(",right:"\\)"}],strict:!1},search:{highlightTag:"em",lunrIndexURL:"/index.json",maxResultLength:10,noResultsFound:"No results found",snippetLength:30,type:"lunr"}}</script><script type=text/javascript src=/js/theme.min.js></script><script type=text/javascript>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","UA-99599711-2",{anonymize_ip:!0})</script><script type=text/javascript src="https://www.googletagmanager.com/gtag/js?id=UA-99599711-2" async></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>Get-DellTags: Get Dell Tags and Express Service Code remotely - Automate everything </title><meta name="Description" content="Automate everything - Sebastian Gräf"><meta property="og:url" content="https://graef.io/get-delltags-get-dell-tags-and-express-service-code-remotely/">
+  <meta property="og:site_name" content="Automate everything ">
+  <meta property="og:title" content="Get-DellTags: Get Dell Tags and Express Service Code remotely">
+  <meta property="og:description" content="Get DELL Tag and Express Service Code remotely for more than one computer.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2017-08-15T11:40:27+08:00">
+    <meta property="article:modified_time" content="2017-08-15T11:40:27+08:00">
+    <meta property="article:tag" content="Automation">
+    <meta property="article:tag" content="Scripts">
+    <meta property="article:tag" content="Powershell">
+    <meta property="article:tag" content="Posh">
+    <meta property="article:tag" content="Pwsh">
+    <meta property="article:tag" content="Windows">
+    <meta property="og:image" content="https://graef.io/get-delltags-get-dell-tags-and-express-service-code-remotely/featured-image.png">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://graef.io/get-delltags-get-dell-tags-and-express-service-code-remotely/featured-image.png">
+  <meta name="twitter:title" content="Get-DellTags: Get Dell Tags and Express Service Code remotely">
+  <meta name="twitter:description" content="Get DELL Tag and Express Service Code remotely for more than one computer.">
+      <meta name="twitter:site" content="@segraef">
+<meta name="application-name" content="graef.io - Sebastian Gräf">
+<meta name="apple-mobile-web-app-title" content="graef.io - Sebastian Gräf"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://graef.io/get-delltags-get-dell-tags-and-express-service-code-remotely/" /><link rel="prev" href="https://graef.io/get-scsidisks-combine-physicaldisk-and-logicaldisk-objects/" /><link rel="next" href="https://graef.io/resolve-dnsnames-resolve-dns-or-ip-for-multiple-computers/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><meta name="google-site-verification" content="google-site-verification=081I19l1P1J3FFLaw1uKtAtY5KcJx_Z9ywiKt60VGP4" /><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Get-DellTags: Get Dell Tags and Express Service Code remotely",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/graef.io\/get-delltags-get-dell-tags-and-express-service-code-remotely\/"
+        },"image": ["https:\/\/graef.io\/logo.png"],"genre": "posts","keywords": "Automation, scripts, PowerShell, posh, pwsh, Windows","wordcount":  621 ,
+        "url": "https:\/\/graef.io\/get-delltags-get-dell-tags-and-express-service-code-remotely\/","datePublished": "2017-08-15T11:40:27+08:00","dateModified": "2017-08-15T11:40:27+08:00","publisher": {
+            "@type": "Organization",
+            "name": "greaf.io","logo": "https:\/\/graef.io\/logo.png"},"author": {
+                "@type": "Person",
+                "name": "Author"
+            },"description": ""
+    }
+    </script></head>
+
+<body header-desktop="auto" header-mobile="auto"><script
+        type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "pg6m55thgo");
+    </script>
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Automate everything "><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/logo.png"
+        data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x"
+        data-sizes="auto"
+        alt="/logo.png"
+        title="/logo.png" /></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item"
+                    href="/posts/"  title="Posts" > Posts </a><a class="menu-item"
+                    href="/categories/projects/"  title="Projects" > Projects </a><a class="menu-item"
+                    href="/categories/til/"  title="Today I learned" > TIL </a><a class="menu-item"
+                    href="/tags/"  title="Tags" > Tags </a><a class="menu-item"
+                    href="/categories/"  title="Categories" > Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                    <input type="text"
+                        placeholder="Search titles or contents..."
+                        id="search-input-desktop">
+                    <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop"
+                        title="Search">
+                        <i class="fas fa-search fa-fw"></i>
+                    </a>
+                    <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop"
+                        title="Clear">
+                        <i class="fas fa-times-circle fa-fw"></i>
+                    </a>
+                    <span class="search-button search-loading" id="search-loading-desktop">
+                        <i class="fas fa-spinner fa-fw fa-spin"></i>
+                    </span>
+                </span><a href="javascript:void(0);" class="menu-item theme-switch" title="">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Automate everything "><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/logo.png"
+        data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x"
+        data-sizes="auto"
+        alt="/logo.png"
+        title="/logo.png" /></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                <div class="search mobile" id="search-mobile">
+                    <input type="text"
+                        placeholder="Search titles or contents..."
+                        id="search-input-mobile">
+                    <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile"
+                        title="Search">
+                        <i class="fas fa-search fa-fw"></i>
+                    </a>
+                    <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile"
+                        title="Clear">
+                        <i class="fas fa-times-circle fa-fw"></i>
+                    </a>
+                    <span class="search-button search-loading" id="search-loading-mobile">
+                        <i class="fas fa-spinner fa-fw fa-spin"></i>
+                    </span>
+                </div>
+                <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                    Cancel
+                </a>
+            </div><a class="menu-item" href="/posts/" title="Posts" >Posts</a><a class="menu-item" href="/categories/projects/" title="Projects" >Projects</a><a class="menu-item" href="/categories/til/" title="Today I learned" >TIL</a><a class="menu-item" href="/tags/" title="Tags" >Tags</a><a class="menu-item" href="/categories/" title="Categories" >Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+    
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><article class="page single"><h1 class="single-title animated flipInX">Get-DellTags: Get Dell Tags and Express Service Code remotely</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Author</a></span>&nbsp;<span class="post-category">included in <a href="/categories/scripts/"><i class="far fa-folder fa-fw"></i>Scripts</a>&nbsp;<a href="/categories/powershell/"><i class="far fa-folder fa-fw"></i>PowerShell</a>&nbsp;<a href="/categories/windows-server/"><i class="far fa-folder fa-fw"></i>Windows Server</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Tuesday, Aug 15, 2017">Tuesday, Aug 15, 2017</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;621 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/get-delltags-get-dell-tags-and-express-service-code-remotely/featured-image.png"
+        data-srcset="/get-delltags-get-dell-tags-and-express-service-code-remotely/featured-image.png, /get-delltags-get-dell-tags-and-express-service-code-remotely/featured-image.png 1.5x, /get-delltags-get-dell-tags-and-express-service-code-remotely/featured-image.png 2x"
+        data-sizes="auto"
+        alt="/get-delltags-get-dell-tags-and-express-service-code-remotely/featured-image.png"
+        title="/get-delltags-get-dell-tags-and-express-service-code-remotely/featured-image.png" /></div><div class="content" id="content"><p>Get DELL Tag and Express Service Code remotely for more than one computer.</p>
+<p>You can also commit different credentials for a specific domain.
+The below function Get-DellTags retrieves serials remotely from your machines. With the help of the function ConvertSerial the serial gets converted into a DELL Express Service Code on the fly.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="kd">Function</span><span class="w"> </span><span class="nb">Get-DellTags</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="cm">&lt;#
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">SYNOPSIS</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Retrieves the serial on a local or remote computer using Invoke-Command and converts into a DELL Express Service Code.
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">DESCRIPTION</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Gets the PowerShell version on a local or remote computer using Invoke-Command.
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.PARAMETER ComputerName
+</span></span></span><span class="line"><span class="cl"><span class="cm">    A single Computer or an array of computer names. The default is localhost ($env:COMPUTERNAME).
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.PARAMETER Credentials
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Commit PSCredential object or using Get-Credentials.
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.PARAMETER Verbose
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Run in Verbose Mode.
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">EXAMPLE</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    PS C:&gt; Get-DellTags -ComputerName Server01
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    ComputerName    DellTag ExpressServiceCode URL
+</span></span></span><span class="line"><span class="cl"><span class="cm">    ------------    ------- ------------------ ---
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Server01        FV9SAX4        34542623560 https://www.dell.com/support/home/us/en/19/product-support/servicetag/FV9SAX4/Research
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">EXAMPLE</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">	PS C:&gt; Get-DellTags -ComputerName Server01,Server02 -Credentials Get-Credentials
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">EXAMPLE</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    PS C:&gt; Get-DellTags -ComputerName (Get-Content C:ServerList.txt)
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">LINK</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">Home
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">NOTES</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Author:  Sebastian Gräf
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Email:   sebastian@graef.io
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Date:    September 9, 2017
+</span></span></span><span class="line"><span class="cl"><span class="cm">    PSVer:   2.0/3.0/4.0/5.0
+</span></span></span><span class="line"><span class="cl"><span class="cm">#&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="p">[</span><span class="nb">Cmdletbinding</span><span class="p">()]</span>
+</span></span><span class="line"><span class="cl">	<span class="k">Param</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">		<span class="p">[</span><span class="nb">Parameter</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">				   <span class="na">Mandatory</span> <span class="p">=</span> <span class="vm">$false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">				   <span class="na">ValueFromPipeline</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">				   <span class="na">ValueFromPipelineByPropertyName</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">		<span class="p">[</span><span class="no">string[]</span><span class="p">]</span><span class="nv">$ComputerName</span> <span class="p">=</span> <span class="nv">$Env:COMPUTERNAME</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		<span class="p">[</span><span class="nb">Parameter</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">				   <span class="na">ValueFromPipelineByPropertyName</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">				   <span class="na">Mandatory</span> <span class="p">=</span> <span class="vm">$false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">				   <span class="na">ValueFromPipeline</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">		<span class="p">[</span><span class="nb">Alias</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">			   <span class="s1">&#39;PSCredential&#39;</span>
+</span></span><span class="line"><span class="cl">			   <span class="p">)]</span>
+</span></span><span class="line"><span class="cl">		<span class="p">[</span><span class="n">ValidateNotNull</span><span class="p">()]</span>
+</span></span><span class="line"><span class="cl">		<span class="p">[</span><span class="no">System.Management.Automation.PSCredential</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">		<span class="p">[</span><span class="n">System</span><span class="p">.</span><span class="py">Management</span><span class="p">.</span><span class="py">Automation</span><span class="p">.</span><span class="py">Credential</span><span class="p">()]</span>
+</span></span><span class="line"><span class="cl">		<span class="nv">$Credentials</span> <span class="p">=</span> <span class="p">[</span><span class="no">System.Management.Automation.PSCredential</span><span class="p">]::</span><span class="n">Empty</span>
+</span></span><span class="line"><span class="cl">	<span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">Begin</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nb">Write-Verbose</span> <span class="s2">&#34; [</span><span class="p">$(</span><span class="nv">$MyInvocation</span><span class="p">.</span><span class="n">InvocationName</span><span class="p">)</span><span class="s2">] :: Start Process&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$ProgressCounter</span> <span class="p">=</span> <span class="mf">0</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">Process</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">foreach</span> <span class="p">(</span><span class="nv">$Computer</span> <span class="k">in</span> <span class="nv">$ComputerName</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="nv">$ProgressCounter</span><span class="p">++</span>
+</span></span><span class="line"><span class="cl">			<span class="nb">Write-Progress</span> <span class="n">-activity</span> <span class="s2">&#34;Running on </span><span class="nv">$Computer</span><span class="s2">&#34;</span> <span class="n">-status</span> <span class="s2">&#34;Please wait ...&#34;</span> <span class="n">-PercentComplete</span> <span class="p">((</span><span class="nv">$ProgressCounter</span> <span class="p">/</span> <span class="nv">$ComputerName</span><span class="p">.</span><span class="n">length</span><span class="p">)</span> <span class="p">*</span> <span class="mf">100</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="p">(</span><span class="nb">Test-Connection</span> <span class="nv">$Computer</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="nb">Write-Verbose</span> <span class="s2">&#34; [</span><span class="p">$(</span><span class="nv">$MyInvocation</span><span class="p">.</span><span class="n">InvocationName</span><span class="p">)</span><span class="s2">] :: Processing </span><span class="nv">$Computer</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">				<span class="k">try</span>
+</span></span><span class="line"><span class="cl">				<span class="p">{</span>
+</span></span><span class="line"><span class="cl">					<span class="c">## If you want to use WMI</span>
+</span></span><span class="line"><span class="cl">                    <span class="c">#$DellServiceTag = Get-WmiObject Win32_Bios -Credential $Credentials -ComputerName $Computer</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                    <span class="c">## If you want to use CIM</span>
+</span></span><span class="line"><span class="cl">                    <span class="c">#$DellServiceTag = Get-CimInstance Win32_Bios -Credential $Credentials -ComputerName $Computer</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                    <span class="nv">$DellServiceTag</span> <span class="p">=</span> <span class="nb">Invoke-Command</span> <span class="n">-Computername</span> <span class="nv">$Computer</span> <span class="n">-Scriptblock</span> <span class="p">{</span> <span class="nb">Get-CimInstance</span> <span class="n">Win32_Bios</span> <span class="p">}</span> <span class="n">-Credential</span> <span class="nv">$Credentials</span>
+</span></span><span class="line"><span class="cl">					<span class="n">ConvertDellSerial</span> <span class="nv">$DellServiceTag</span><span class="p">.</span><span class="py">serialnumber</span>
+</span></span><span class="line"><span class="cl">					<span class="nv">$DellTags</span> <span class="p">=</span> <span class="vm">@</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">					<span class="nv">$WMIObject</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">PSObject</span>
+</span></span><span class="line"><span class="cl">					<span class="nv">$WMIObject</span> <span class="p">|</span> <span class="nb">add-member</span> <span class="n">Noteproperty</span> <span class="n">ComputerName</span> <span class="nv">$Computer</span> <span class="n">-Force</span>
+</span></span><span class="line"><span class="cl">					<span class="nv">$WMIObject</span> <span class="p">|</span> <span class="nb">add-member</span> <span class="n">Noteproperty</span> <span class="n">DellTag</span> <span class="nv">$DellServiceTag</span><span class="p">.</span><span class="py">serialnumber</span> <span class="n">-Force</span>
+</span></span><span class="line"><span class="cl">					<span class="nv">$WMIObject</span> <span class="p">|</span> <span class="nb">add-member</span> <span class="n">Noteproperty</span> <span class="n">ExpressServiceCode</span> <span class="nv">$Serial</span> <span class="n">-Force</span>
+</span></span><span class="line"><span class="cl">					<span class="nv">$WMIObject</span> <span class="p">|</span> <span class="nb">add-member</span> <span class="n">Noteproperty</span> <span class="n">URL</span> <span class="s2">&#34;https://www.dell.com/support/home/us/en/19/product-support/servicetag/</span><span class="p">$(</span><span class="nv">$DellServiceTag</span><span class="p">.</span><span class="n">serialnumber</span><span class="p">)</span><span class="s2">/Research&#34;</span> <span class="n">-Force</span>
+</span></span><span class="line"><span class="cl">					<span class="nv">$DellTags</span> <span class="p">+=</span> <span class="nv">$WMIObject</span>
+</span></span><span class="line"><span class="cl">					<span class="nv">$DellTags</span>
+</span></span><span class="line"><span class="cl">				<span class="p">}</span>
+</span></span><span class="line"><span class="cl">				<span class="k">catch</span>
+</span></span><span class="line"><span class="cl">				<span class="p">{</span>
+</span></span><span class="line"><span class="cl">					<span class="nb">Write-Verbose</span> <span class="s2">&#34; Host [</span><span class="nv">$Computer</span><span class="s2">] Failed with Error: </span><span class="p">$(</span><span class="nv">$Error</span><span class="p">[</span><span class="mf">0</span><span class="p">])</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">				<span class="p">}</span>
+</span></span><span class="line"><span class="cl">			<span class="p">}</span>
+</span></span><span class="line"><span class="cl">			<span class="k">else</span>
+</span></span><span class="line"><span class="cl">			<span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="nb">Write-Verbose</span> <span class="s2">&#34; Host [</span><span class="nv">$Computer</span><span class="s2">] Failed Connectivity Test &#34;</span>
+</span></span><span class="line"><span class="cl">			<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">End</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nb">Write-Verbose</span> <span class="s2">&#34; [</span><span class="p">$(</span><span class="nv">$MyInvocation</span><span class="p">.</span><span class="n">InvocationName</span><span class="p">)</span><span class="s2">] :: End Process&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="kd">Function</span><span class="w"> </span><span class="nb">ConvertSerial</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="cm">&lt;#
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">SYNOPSIS</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Converts DELL Tag Serial into a DELL Express Service Code.
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">DESCRIPTION</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Converts DELL Tag Serial into a DELL Express Service Code.
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.PARAMETER Serial
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Commit serial string.
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">LINK</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">Home
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">NOTES</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Author:  Sebastian Gräf
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Email:   ps@graef.io
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Date:    September 9, 2017
+</span></span></span><span class="line"><span class="cl"><span class="cm">    PSVer:   2.0/3.0/4.0/5.0
+</span></span></span><span class="line"><span class="cl"><span class="cm">#&gt;</span>
+</span></span><span class="line"><span class="cl">	<span class="k">param</span> <span class="p">(</span><span class="nv">$Serial</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nv">$36Base</span> <span class="p">=</span> <span class="s2">&#34;0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nv">$SerialLength</span> <span class="p">=</span> <span class="nv">$Serial</span><span class="p">.</span><span class="py">length</span>
+</span></span><span class="line"><span class="cl">	<span class="nv">$Script:DellServiceCode</span> <span class="p">=</span> <span class="mf">0</span>
+</span></span><span class="line"><span class="cl">	<span class="k">for</span> <span class="p">(</span><span class="nv">$x</span> <span class="p">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nv">$x</span> <span class="o">-lt</span> <span class="nv">$SerialLength</span><span class="p">;</span> <span class="nv">$x</span><span class="p">++)</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">for</span> <span class="p">(</span><span class="nv">$y</span> <span class="p">=</span> <span class="mf">0</span><span class="p">;</span> <span class="nv">$y</span> <span class="o">-lt</span> <span class="mf">36</span><span class="p">;</span> <span class="nv">$y</span><span class="p">++)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="p">(</span><span class="nv">$Serial</span><span class="p">.</span><span class="py">substring</span><span class="p">(</span><span class="nv">$x</span><span class="p">,</span> <span class="mf">1</span><span class="p">)</span> <span class="o">-eq</span> <span class="nv">$36Base</span><span class="p">.</span><span class="py">substring</span><span class="p">(</span><span class="nv">$y</span><span class="p">,</span> <span class="mf">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">			<span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="nv">$answer</span> <span class="p">=</span> <span class="p">((</span><span class="nv">$y</span><span class="p">)</span> <span class="p">*</span> <span class="p">([</span><span class="no">math</span><span class="p">]::</span><span class="n">pow</span><span class="p">(</span><span class="mf">36</span><span class="p">,</span> <span class="nv">$SerialLength</span> <span class="p">-</span> <span class="nv">$x</span> <span class="p">-</span> <span class="mf">1</span><span class="p">)))</span>
+</span></span><span class="line"><span class="cl">				<span class="nv">$Script:DellServiceCode</span> <span class="p">+=</span> <span class="nv">$answer</span>
+</span></span><span class="line"><span class="cl">			<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on Tuesday, Aug 15, 2017</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://graef.io/get-delltags-get-dell-tags-and-express-service-code-remotely/" data-title="Get-DellTags: Get Dell Tags and Express Service Code remotely" data-via="segraef" data-hashtags="Automation,scripts,PowerShell,posh,pwsh,Windows"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://graef.io/get-delltags-get-dell-tags-and-express-service-code-remotely/" data-hashtag="Automation"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://graef.io/get-delltags-get-dell-tags-and-express-service-code-remotely/"><i class="fab fa-linkedin fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://graef.io/get-delltags-get-dell-tags-and-express-service-code-remotely/" data-title="Get-DellTags: Get Dell Tags and Express Service Code remotely" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="https://graef.io/get-delltags-get-dell-tags-and-express-service-code-remotely/"><i class="fab fa-reddit fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/automation/">Automation</a>,&nbsp;<a href="/tags/scripts/">Scripts</a>,&nbsp;<a href="/tags/powershell/">Powershell</a>,&nbsp;<a href="/tags/posh/">Posh</a>,&nbsp;<a href="/tags/pwsh/">Pwsh</a>,&nbsp;<a href="/tags/windows/">Windows</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/get-scsidisks-combine-physicaldisk-and-logicaldisk-objects/" class="prev" rel="prev" title="Get-ScsiDisks: Combine Physicaldisk and Logicaldisk Objects"><i class="fas fa-angle-left fa-fw"></i>Get-ScsiDisks: Combine Physicaldisk and Logicaldisk Objects</a>
+            <a href="/resolve-dnsnames-resolve-dns-or-ip-for-multiple-computers/" class="next" rel="next" title="Resolve-DnsNames: Resolve DNS or IP for multiple Computers">Resolve-DnsNames: Resolve DNS or IP for multiple Computers<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+    <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">
+<script type="text/javascript">
+// Load Microsoft Clarity
+(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "pg6m55thgo");
+
+// Handle cookie consent for Microsoft Clarity
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if consent was already given
+    var consentCookie = document.cookie.split(';').find(row => row.trim().startsWith('cookieconsent_status='));
+    if (consentCookie) {
+        var status = consentCookie.split('=')[1];
+        if (status === 'allow' && window.clarity) {
+            window.clarity('consentv2', {
+                ad_Storage: 'granted',
+                analytics_Storage: 'granted'
+            });
+        } else if (status === 'deny' && window.clarity) {
+            window.clarity('consentv2', {
+                ad_Storage: 'denied',
+                analytics_Storage: 'denied'
+            });
+        }
+    }
+
+    // Listen for future consent changes
+    window.addEventListener('load', function() {
+        if (window.cookieconsent) {
+            // Monitor cookie changes
+            var observer = new MutationObserver(function() {
+                var consentCookie = document.cookie.split(';').find(row => row.trim().startsWith('cookieconsent_status='));
+                if (consentCookie && window.clarity) {
+                    var status = consentCookie.split('=')[1];
+                    if (status === 'allow') {
+                        window.clarity('consentv2', {
+                            ad_Storage: 'granted',
+                            analytics_Storage: 'granted'
+                        });
+                    } else if (status === 'deny') {
+                        window.clarity('consentv2', {
+                            ad_Storage: 'denied',
+                            analytics_Storage: 'denied'
+                        });
+                    }
+                }
+            });
+            observer.observe(document, { childList: true, subtree: true });
+        }
+    });
+});
+</script></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":20},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"segraef/graef.io"}},"cookieconsent":{"content":{"deny":"Reject","dismiss":"Accept","header":"🍪 Cookie Preferences","href":"/privacy-policy/","link":"Privacy Policy","message":"We use analytics cookies to understand how you interact with our website to improve your experience. We respect your privacy and give you full control over your data."},"enable":true,"palette":{"button":{"background":"#3b82f6","backgroundhover":"#2563eb","text":"#ffffff"},"popup":{"background":"#1f2937","text":"#ffffff"}},"position":"bottom","theme":"edgeless","type":"opt-in"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-99599711-2', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-99599711-2" async></script></body>
+
+</html>
