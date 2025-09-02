@@ -381,7 +381,7 @@ theme = "loveit"
         # Or
         # someCSS = "https://cdn.example.com/some.css"
       [params.page.library.js]
-        # clarity = "/js/clarity.js"
+        # cookiePreferences = "/js/cookie-preferences.js"
         # located in "assets/"
         # Or
         # someJavascript = "https://cdn.example.com/some.js"
@@ -439,22 +439,26 @@ theme = "loveit"
 
   #  Cookie consent config
   [params.cookieconsent]
-    enable = false
+    enable = true
     position = "bottom"
     theme = "edgeless"
     # text strings used for Cookie consent banner
     [params.cookieconsent.content]
-      message = "This website uses Microsoft Clarity for analytics to improve your experience. By continuing to use this site, you consent to our use of cookies."
+      header = "🍪 Cookie Preferences"
+      message = "We use analytics cookies to understand how you interact with our website to improve your experience. We respect your privacy and give you full control over your data."
       dismiss = "Accept"
-      link = "Learn more"
-      href = "https://privacy.microsoft.com/privacystatement"
+      deny = "Reject"
+      link = "Privacy Policy"
+      href = "/privacy-policy/"
     # Configure the appearance of the cookie consent banner
     [params.cookieconsent.palette]
       [params.cookieconsent.palette.popup]
         background = "#1f2937"
+        text = "#ffffff"
       [params.cookieconsent.palette.button]
         background = "#3b82f6"
         text = "#ffffff"
+        backgroundHover = "#2563eb"
 
   #  CDN config for third-party library files
   [params.cdn]

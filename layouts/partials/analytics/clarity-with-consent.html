@@ -1,0 +1,137 @@
+{{- if and .Site.Params.analytics.enable .Site.Params.analytics.clarity.enable .Site.Params.analytics.clarity.id -}}
+<script type="text/javascript">
+  // Microsoft Clarity setup with Consent V2 API
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "{{ .Site.Params.analytics.clarity.id }}");
+
+  // Cookie consent manager for Microsoft Clarity
+  window.ClarityConsentManager = {
+    cookieName: 'clarity_consent_v2',
+
+    // Get stored consent preferences
+    getConsent: function() {
+      try {
+        const consent = localStorage.getItem(this.cookieName);
+        return consent ? JSON.parse(consent) : null;
+      } catch (e) {
+        return null;
+      }
+    },
+
+    // Store consent preferences
+    setConsent: function(adStorage, analyticsStorage) {
+      const consent = {
+        ad_storage: adStorage,
+        analytics_storage: analyticsStorage,
+        timestamp: Date.now()
+      };
+
+      try {
+        localStorage.setItem(this.cookieName, JSON.stringify(consent));
+      } catch (e) {
+        console.warn('Could not save consent preferences');
+      }
+
+      // Send consent to Microsoft Clarity
+      this.sendConsentToClarity(adStorage, analyticsStorage);
+    },
+
+    // Send consent decision to Microsoft Clarity
+    sendConsentToClarity: function(adStorage, analyticsStorage) {
+      if (window.clarity) {
+        window.clarity('consentv2', {
+          ad_Storage: adStorage,
+          analytics_Storage: analyticsStorage
+        });
+      }
+    },
+
+    // Check and apply existing consent
+    applyExistingConsent: function() {
+      const consent = this.getConsent();
+      if (consent) {
+        // Check if consent is not older than 1 year
+        const oneYear = 365 * 24 * 60 * 60 * 1000; // 1 year in milliseconds
+        if (Date.now() - consent.timestamp < oneYear) {
+          this.sendConsentToClarity(consent.ad_storage, consent.analytics_storage);
+          return true; // Consent applied
+        }
+      }
+      return false; // No valid consent found
+    },
+
+    // Accept all cookies
+    acceptAll: function() {
+      this.setConsent('granted', 'granted');
+      this.hideBanner();
+    },
+
+    // Reject all cookies
+    rejectAll: function() {
+      this.setConsent('denied', 'denied');
+      this.hideBanner();
+    },
+
+    // Accept only necessary cookies (analytics only)
+    acceptNecessary: function() {
+      this.setConsent('denied', 'granted');
+      this.hideBanner();
+    },
+
+    // Show the consent banner
+    showBanner: function() {
+      const banner = document.getElementById('clarity-consent-banner');
+      if (banner) {
+        banner.style.display = 'block';
+        banner.setAttribute('aria-hidden', 'false');
+      }
+    },
+
+    // Hide the consent banner
+    hideBanner: function() {
+      const banner = document.getElementById('clarity-consent-banner');
+      if (banner) {
+        banner.style.display = 'none';
+        banner.setAttribute('aria-hidden', 'true');
+      }
+    },
+
+    // Reset consent (for testing or user preference change)
+    resetConsent: function() {
+      try {
+        localStorage.removeItem(this.cookieName);
+      } catch (e) {
+        console.warn('Could not remove consent preferences');
+      }
+
+      // Clear Clarity cookies by denying consent
+      if (window.clarity) {
+        window.clarity('consent', false);
+      }
+
+      this.showBanner();
+    },
+
+    // Initialize the consent manager
+    init: function() {
+      // Check for existing consent
+      if (!this.applyExistingConsent()) {
+        // No valid consent found, show banner
+        this.showBanner();
+      }
+    }
+  };
+
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      window.ClarityConsentManager.init();
+    });
+  } else {
+    window.ClarityConsentManager.init();
+  }
+</script>
+{{- end -}}

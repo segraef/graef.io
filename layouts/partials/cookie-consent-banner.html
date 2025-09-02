@@ -1,0 +1,54 @@
+{{- if and .Site.Params.analytics.enable .Site.Params.analytics.clarity.enable .Site.Params.analytics.clarity.id .Site.Params.cookieconsent.enable -}}
+<div id="clarity-consent-banner" class="clarity-consent-banner" style="display: none;" aria-hidden="true" role="dialog" aria-labelledby="consent-title" aria-describedby="consent-description">
+  <div class="consent-container">
+    <div class="consent-content">
+      <h3 id="consent-title" class="consent-title">
+        {{ .Site.Params.cookieconsent.content.header | default "🍪 Cookie Preferences" }}
+      </h3>
+      <p id="consent-description" class="consent-description">
+        {{ .Site.Params.cookieconsent.content.message | default "We use Microsoft Clarity to analyze how you interact with our website to improve your experience. We respect your privacy and give you full control over your data." }}
+      </p>
+
+      <div class="consent-details">
+        <details class="consent-expandable">
+          <summary>Cookie Details</summary>
+          <div class="cookie-categories">
+            <div class="cookie-category">
+              <h4>📊 Analytics Cookies</h4>
+              <p>These cookies help us understand how visitors interact with our website by collecting information anonymously through Microsoft Clarity.</p>
+            </div>
+            <div class="cookie-category">
+              <h4>🎯 Marketing Cookies</h4>
+              <p>These cookies may be used to build a profile of your interests and show you relevant content on other sites.</p>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <div class="consent-buttons">
+        <button type="button" class="consent-btn consent-btn-accept" onclick="window.ClarityConsentManager.acceptAll()">
+          {{ .Site.Params.cookieconsent.content.acceptAll | default "Accept All" }}
+        </button>
+        <button type="button" class="consent-btn consent-btn-necessary" onclick="window.ClarityConsentManager.acceptNecessary()">
+          {{ .Site.Params.cookieconsent.content.acceptNecessary | default "Accept Necessary" }}
+        </button>
+        <button type="button" class="consent-btn consent-btn-reject" onclick="window.ClarityConsentManager.rejectAll()">
+          {{ .Site.Params.cookieconsent.content.reject | default "Reject All" }}
+        </button>
+      </div>
+
+      <div class="consent-links">
+        {{ with .Site.Params.cookieconsent.content.href }}
+        <a href="{{ . }}" target="_blank" rel="noopener noreferrer" class="consent-link">
+          {{ $.Site.Params.cookieconsent.content.link | default "Privacy Policy" }}
+        </a>
+        {{ end }}
+        {{ if .Site.Params.cookieconsent.content.href }}&nbsp;•&nbsp;{{ end }}
+        <button type="button" class="consent-link consent-reset" onclick="window.ClarityConsentManager.resetConsent()">
+          Reset Preferences
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+{{- end -}}
