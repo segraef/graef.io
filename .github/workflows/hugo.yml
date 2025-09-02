@@ -20,8 +20,8 @@ jobs:
           hugo-version: 'latest'
           extended: true
 
-      - name: Minify
-        run: hugo --minify
+      - name: Hugo
+        run: hugo
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
