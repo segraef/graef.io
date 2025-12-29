@@ -1,14 +1,8 @@
-{{/* Override the default header to include our new consent-aware Clarity implementation */}}
+{{/* Consent-aware Clarity implementation */}}
 {{ partial "analytics/clarity-with-consent.html" . }}
 
-{{/* Include the cookie consent banner */}}
-{{ partial "cookie-consent-banner.html" . }}
-
-{{/* Include consent banner CSS */}}
+{{/* Include cookie preferences JavaScript (Manage Cookies) */}}
 {{- if and .Site.Params.analytics.enable .Site.Params.analytics.clarity.enable .Site.Params.cookieconsent.enable -}}
-<link rel="stylesheet" href="{{ "css/clarity-consent.css" | relURL }}" />
-
-{{/* Include cookie preferences JavaScript */}}
 {{- $cookiePrefsJS := resources.Get "js/cookie-preferences.js" | minify -}}
 <script src="{{ $cookiePrefsJS.RelPermalink }}"></script>
 {{- end -}}

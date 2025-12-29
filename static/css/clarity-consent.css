@@ -1,3 +1,31 @@
+.clarity-consent-banner.compact .consent-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.clarity-consent-banner.compact .consent-meta {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  white-space: nowrap;
+}
+
+.clarity-consent-banner.compact .consent-meta .consent-link {
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  .clarity-consent-banner.compact .consent-layout {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+  .clarity-consent-banner.compact .consent-meta {
+    font-size: 0.78rem;
+    opacity: 0.85;
+  }
+}
 /* Microsoft Clarity Cookie Consent Banner Styles */
 .clarity-consent-banner {
   position: fixed;
@@ -234,4 +262,34 @@
 
 .theme-custom .consent-btn-reject {
   color: var(--consent-text, #ffffff);
+}
+
+/* Compact variant: minimal height and tighter spacing */
+.clarity-consent-banner.compact {
+  backdrop-filter: none;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.12);
+}
+
+.clarity-consent-banner.compact .consent-container {
+  padding: 10px 12px;
+}
+
+.clarity-consent-banner.compact .consent-buttons {
+  margin: 0;
+  gap: 8px;
+}
+
+.clarity-consent-banner.compact .consent-btn {
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  min-width: auto;
+}
+
+@media (max-width: 768px) {
+  .clarity-consent-banner.compact .consent-container {
+    padding: 8px 10px;
+  }
+  .clarity-consent-banner.compact .consent-btn {
+    width: auto;
+  }
 }

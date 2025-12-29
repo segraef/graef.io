@@ -1,0 +1,23 @@
+{{- $content := .Site.Params.cookieconsent.content -}}
+{{- $acceptAll := $content.acceptAll | default $content.dismiss | default "Accept" -}}
+{{- $acceptNecessary := $content.acceptNecessary | default "Accept Necessary" -}}
+{{- $reject := $content.reject | default $content.deny | default "Reject" -}}
+{{- $linkText := $content.link | default "Privacy Policy" -}}
+{{- $href := $content.href | default "/privacy-policy/" -}}
+
+<div id="clarity-consent-banner" class="clarity-consent-banner theme-custom compact" role="dialog" aria-live="polite" aria-hidden="true">
+	<div class="consent-container">
+		<div class="consent-layout">
+			<div class="consent-buttons" role="group" aria-label="Cookie consent options">
+				<button class="consent-btn consent-btn-accept" type="button" onclick="window.ClarityConsentManager && window.ClarityConsentManager.acceptAll()">{{ $acceptAll }}</button>
+				<button class="consent-btn consent-btn-necessary" type="button" onclick="window.ClarityConsentManager && window.ClarityConsentManager.acceptNecessary()">{{ $acceptNecessary }}</button>
+				<button class="consent-btn consent-btn-reject" type="button" onclick="window.ClarityConsentManager && window.ClarityConsentManager.rejectAll()">{{ $reject }}</button>
+			</div>
+			<div class="consent-meta">
+				<a class="consent-link" href="{{ $href }}">{{ $linkText }}</a>
+				<span aria-hidden="true">·</span>
+				<button class="consent-link consent-reset" type="button" onclick="window.ClarityConsentManager && window.ClarityConsentManager.resetConsent()">Reset</button>
+			</div>
+		</div>
+	</div>
+</div>

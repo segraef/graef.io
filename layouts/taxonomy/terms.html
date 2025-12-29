@@ -13,7 +13,7 @@
             {{- .Params.Title | default (T $taxonomies) | default $taxonomies | dict "Some" | T "allSome" -}}
         </h2>
 
-        {{- /* Categories Page */ -}}
+        {{- /* Categories Terms Page */ -}}
         {{- if eq $taxonomies "categories" -}}
             <div class="categories-card">
                 {{- range $terms -}}
@@ -45,7 +45,7 @@
                 {{- end -}}
             </div>
 
-        {{- /* Tag Cloud Page */ -}}
+        {{- /* Tag Cloud Terms Page */ -}}
         {{- else if eq $taxonomies "tags" -}}
             <div class="tag-cloud-tags">
                 {{- range $.Site.Taxonomies.tags.ByCount -}}

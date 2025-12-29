@@ -37,6 +37,11 @@
 
       // Send consent to Microsoft Clarity
       this.sendConsentToClarity(adStorage, analyticsStorage);
+
+      // Debug: log state
+      try {
+        console.info('[ClarityConsent] setConsent', consent);
+      } catch (e) {}
     },
 
     // Send consent decision to Microsoft Clarity
@@ -46,6 +51,11 @@
           ad_Storage: adStorage,
           analytics_Storage: analyticsStorage
         });
+
+        // Debug: log API call
+        try {
+          console.info('[ClarityConsent] consentv2 sent', { ad_Storage: adStorage, analytics_Storage: analyticsStorage });
+        } catch (e) {}
       }
     },
 
@@ -57,6 +67,7 @@
         const oneYear = 365 * 24 * 60 * 60 * 1000; // 1 year in milliseconds
         if (Date.now() - consent.timestamp < oneYear) {
           this.sendConsentToClarity(consent.ad_storage, consent.analytics_storage);
+          try { console.info('[ClarityConsent] applied existing', consent); } catch (e) {}
           return true; // Consent applied
         }
       }
@@ -112,7 +123,19 @@
         window.clarity('consent', false);
       }
 
-      this.showBanner();
+      // Remove cookieconsent status cookie to re-prompt
+      (function deleteCookie(name){
+        try {
+          document.cookie = name + '=; Max-Age=0; path=/;';
+        } catch (e) {}
+      })('cookieconsent_status');
+
+      // Re-initialize cookieconsent if available
+      if (window.cookieconsent && window.config && window.config.cookieconsent) {
+        try {
+          window.cookieconsent.initialise(window.config.cookieconsent);
+        } catch (e) {}
+      }
     },
 
     // Initialize the consent manager
@@ -129,9 +152,66 @@
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function() {
       window.ClarityConsentManager.init();
+      // Bridge cookieconsent UI to Clarity consent
+      setupCookieConsentBridge();
     });
   } else {
     window.ClarityConsentManager.init();
+    setupCookieConsentBridge();
+  }
+
+  // Bridge cookieconsent (LoveIt theme) events to ClarityConsentManager
+  function setupCookieConsentBridge() {
+    // Helper to read cookie value
+    function readCookie(name) {
+      const match = document.cookie.match(new RegExp('(?:^|; )' + name.replace(/([.$?*|{}()\[\]\\\/\+^])/g, '\\$1') + '=([^;]*)'));
+      return match ? decodeURIComponent(match[1]) : null;
+    }
+
+    // Apply existing cookieconsent decision
+    const status = readCookie('cookieconsent_status');
+    if (status === 'allow') {
+      window.ClarityConsentManager.setConsent('granted', 'granted');
+    } else if (status === 'deny') {
+      window.ClarityConsentManager.setConsent('denied', 'denied');
+    }
+
+    // Optional dev badge: show state when enabled via query or localStorage
+    try {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('clarity_debug') === '1') localStorage.setItem('clarity_debug', '1');
+      const debugOn = localStorage.getItem('clarity_debug') === '1';
+      if (debugOn) {
+        renderConsentDebugBadge(status);
+      }
+    } catch (e) {}
+
+    // Listen for allow/deny clicks on the banner
+    document.addEventListener('click', function(e) {
+      const target = e.target;
+      if (!target) return;
+      if (target.classList && target.classList.contains('cc-allow')) {
+        window.ClarityConsentManager.acceptAll();
+        try { renderConsentDebugBadge('allow'); } catch (e) {}
+      } else if (target.classList && target.classList.contains('cc-deny')) {
+        window.ClarityConsentManager.rejectAll();
+        try { renderConsentDebugBadge('deny'); } catch (e) {}
+      }
+    });
+  }
+
+  // Minimal badge in bottom-left to show current consent state (dev only)
+  function renderConsentDebugBadge(cookieStatus) {
+    const existing = document.getElementById('clarity-consent-debug');
+    const consent = window.ClarityConsentManager.getConsent && window.ClarityConsentManager.getConsent();
+    const ad = consent?.ad_storage || 'unknown';
+    const analytics = consent?.analytics_storage || 'unknown';
+    const text = `Clarity: ads=${ad}, analytics=${analytics} • banner=${cookieStatus || 'n/a'}`;
+    const el = existing || document.createElement('div');
+    el.id = 'clarity-consent-debug';
+    el.textContent = text;
+    el.style.cssText = 'position:fixed;left:10px;bottom:10px;padding:6px 8px;background:#111827;color:#fff;border-radius:4px;font-size:12px;opacity:.85;z-index:10000;pointer-events:none;';
+    if (!existing) document.body.appendChild(el);
   }
 </script>
 {{- end -}}
