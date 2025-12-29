@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on Automate everything </title>
+    <link>https://graef.io/tags/pages/</link>
+    <description>Recent content in Pages on Automate everything </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 11 Dec 2022 09:10:54 +0800</lastBuildDate>
+    <atom:link href="https://graef.io/tags/pages/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Create a Static Web Page With Github Pages and Hugo</title>
+      <link>https://graef.io/create-your-static-page-with-github-pages/</link>
+      <pubDate>Sun, 11 Dec 2022 09:10:54 +0800</pubDate>
+      <guid>https://graef.io/create-your-static-page-with-github-pages/</guid>
+      <description>&lt;p&gt;You can use GitHub Pages to host a website about yourself, your organization, or your project directly from a repository on GitHub.com. Hugo takes &lt;code&gt;Markdown&lt;/code&gt;, runs them through a theme template, and spits out HTML files that you can easily deploy online – extremely fast.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

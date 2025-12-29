@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Copilot on Automate everything </title>
+    <link>https://graef.io/tags/copilot/</link>
+    <description>Recent content in Copilot on Automate everything </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 14 Jul 2025 10:06:59 +1000</lastBuildDate>
+    <atom:link href="https://graef.io/tags/copilot/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How Github Copilot coding agent(s) make my day</title>
+      <link>https://graef.io/how-github-copilot-coding-agent-makes-my-day/</link>
+      <pubDate>Mon, 14 Jul 2025 10:06:59 +1000</pubDate>
+      <guid>https://graef.io/how-github-copilot-coding-agent-makes-my-day/</guid>
+      <description>&lt;p&gt;Ever wished you could delegate your coding tasks and watch them get done while you focus elsewhere? That’s exactly what happened when I assigned an issue to GitHub Copilot coding agent. From identifying the problem to drafting a pull request and running checks, it handled the entire workflow, efficiently and autonomously. Here&amp;rsquo;s how it turned a routine fix into a hands-free solution that saved me hours.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

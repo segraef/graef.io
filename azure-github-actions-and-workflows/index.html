@@ -17,10 +17,10 @@
     <meta property="article:modified_time" content="2020-10-03T17:52:07+08:00">
     <meta property="article:tag" content="Automation">
     <meta property="article:tag" content="Scripts">
-    <meta property="article:tag" content="Powershell">
+    <meta property="article:tag" content="PowerShell">
     <meta property="article:tag" content="Bicep">
     <meta property="article:tag" content="Json">
-    <meta property="article:tag" content="Github">
+    <meta property="article:tag" content="GitHub">
     <meta property="og:image" content="https://graef.io/azure-github-actions-and-workflows/featured-image.png">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -193,7 +193,8 @@
 <h2 id="how-do-github-actions-work">How do GitHub Actions work?</h2>
 <p>Different <a href="https://docs.github.com/en/actions/creating-actions/about-actions#types-of-actions" target="_blank" rel="noopener noreffer">types</a> of GitHub Actions can be build with Docker container and JavaScript. Actions require a <a href="https://docs.github.com/en/articles/metadata-syntax-for-github-actions" target="_blank" rel="noopener noreffer">metadata file</a> to define the inputs, outputs and main entrypoint for your action. The metadata filename must be either <code>action.yml</code> or <code>action.yaml</code>.</p>
 <blockquote>
-<p>A very important part here is the main entrypoint. The strengths of GitHub Actions is that you can use whatever code you prefer and that’s where your entrypoint comes into play. The GitHub Action executes the entrypoint in your specific language. If you’re good in Python, C#, Go or even Bash, go ahead and use your preferred language.</p></blockquote>
+<p>A very important part here is the main entrypoint. The strengths of GitHub Actions is that you can use whatever code you prefer and that’s where your entrypoint comes into play. The GitHub Action executes the entrypoint in your specific language. If you’re good in Python, C#, Go or even Bash, go ahead and use your preferred language.</p>
+</blockquote>
 <p>If you plan to combine your own actions, workflows, and code in a single repository, I recommend storing actions in the <code>.github</code> directory (unless you plan to use public Actions). For example, <code>.github/actions/action-a</code> and <code>.github/actions/action-b</code>.</p>
 <h2 id="where-do-github-workflows-come-into-play">Where do GitHub Workflows come into play?</h2>
 <p>You can think of continuous integration (CI) and continuous deployment (CD) directly in your GitHub repository. Workflows are custom automated processes that you can set up in your repository to build, test, package, release, or deploy any code project on GitHub. Compared with Azure Pipelines in Azure DevOps you have pipeline tasks which execute specific steps. GitHub workflows in turn use GitHub Actions to execute these as steps. To use an Action in a workflow, you must include it as a step.</p>
@@ -208,7 +209,8 @@
 with which you can then run Azure CLI or Azure PowerShell scripts to create and manage any Azure resource.</li>
 </ul>
 <blockquote>
-<p>See sample workflow with public Actions below.</p></blockquote>
+<p>See sample workflow with public Actions below.</p>
+</blockquote>
 <p>Other options are to use or create your own Actions (see <a href="https://github.com/segraef/aga" target="_blank" rel="noopener noreffer">segraef/aga</a>).</p>
 <h2 id="sample-workflow-with-public-actions">Sample Workflow with public Actions</h2>
 <p>This example workflow uses following publicly available Actions</p>
@@ -257,7 +259,8 @@ with which you can then run Azure CLI or Azure PowerShell scripts to create and 
     </a><figcaption class="image-caption">Representation of the actual GitHub Workflow run.</figcaption>
     </figure>
 <blockquote>
-<p>Congratulations you just created and started your first GitHub Workflow!</p></blockquote>
+<p>Congratulations you just created and started your first GitHub Workflow!</p>
+</blockquote>
 <div class="details admonition info open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-info-circle fa-fw"></i>References<i class="details-icon fas fa-angle-right fa-fw"></i>
@@ -286,7 +289,7 @@ with which you can then run Azure CLI or Azure PowerShell scripts to create and 
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/automation/">Automation</a>,&nbsp;<a href="/tags/scripts/">Scripts</a>,&nbsp;<a href="/tags/powershell/">Powershell</a>,&nbsp;<a href="/tags/bicep/">Bicep</a>,&nbsp;<a href="/tags/json/">Json</a>,&nbsp;<a href="/tags/github/">Github</a>,&nbsp;<a href="/tags/git/">Git</a>,&nbsp;<a href="/tags/action/">Action</a>,&nbsp;<a href="/tags/workflow/">Workflow</a>,&nbsp;<a href="/tags/yaml/">YAML</a>,&nbsp;<a href="/tags/arm/">ARM</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/automation/">Automation</a>,&nbsp;<a href="/tags/scripts/">Scripts</a>,&nbsp;<a href="/tags/powershell/">PowerShell</a>,&nbsp;<a href="/tags/bicep/">Bicep</a>,&nbsp;<a href="/tags/json/">Json</a>,&nbsp;<a href="/tags/github/">GitHub</a>,&nbsp;<a href="/tags/git/">Git</a>,&nbsp;<a href="/tags/action/">Action</a>,&nbsp;<a href="/tags/workflow/">Workflow</a>,&nbsp;<a href="/tags/yaml/">YAML</a>,&nbsp;<a href="/tags/arm/">ARM</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
         </section>

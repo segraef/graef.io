@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Bitcoin on Automate everything </title>
+    <link>https://graef.io/tags/bitcoin/</link>
+    <description>Recent content in Bitcoin on Automate everything </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 04 Jan 2022 13:35:57 +0800</lastBuildDate>
+    <atom:link href="https://graef.io/tags/bitcoin/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hot and cold Crypto Wallet (Address)</title>
+      <link>https://graef.io/hot-and-cold-wallet-address/</link>
+      <pubDate>Tue, 04 Jan 2022 11:41:52 +0800</pubDate>
+      <guid>https://graef.io/hot-and-cold-wallet-address/</guid>
+      <description>&lt;p&gt;Today I learned how to explain the differences between a hot and cold crypto wallet and a wallet address.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Crypto Tokens, Coins and Mnemonics</title>
+      <link>https://graef.io/crypto-token-coins-and-mnemonics/</link>
+      <pubDate>Mon, 03 Jan 2022 11:41:52 +0800</pubDate>
+      <guid>https://graef.io/crypto-token-coins-and-mnemonics/</guid>
+      <description>&lt;p&gt;Today I learned to simply explain the difference between a crypto token, coin and a mnemonic.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Create a secure and anonymous Crypto Wallet</title>
+      <link>https://graef.io/create-a-secure-and-anonymous-wallet-address/</link>
+      <pubDate>Sat, 01 Jan 2022 11:41:52 +0800</pubDate>
+      <guid>https://graef.io/create-a-secure-and-anonymous-wallet-address/</guid>
+      <description>&lt;p&gt;Creating a wallet address (Bitcoin/Ethereum) is easy, but is it really &lt;em&gt;secure&lt;/em&gt;?&lt;/p&gt;&#xA;&lt;p&gt;In this article we look at a secure but also anonymous approach using tools like Live USB BitKey to create your own anonymous crypto wallet you can trust.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

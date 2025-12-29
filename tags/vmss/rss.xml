@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vmss on Automate everything </title>
+    <link>https://graef.io/tags/vmss/</link>
+    <description>Recent content in Vmss on Automate everything </description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 28 Sep 2023 20:06:10 +1000</lastBuildDate>
+    <atom:link href="https://graef.io/tags/vmss/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Create your own official Azure Pipelines Agent Images and GitHub Actions Runner Images</title>
+      <link>https://graef.io/create-your-own-official-azure-pipeline-agents-images-and-github-actions-runner-images/</link>
+      <pubDate>Thu, 28 Sep 2023 20:06:10 +1000</pubDate>
+      <guid>https://graef.io/create-your-own-official-azure-pipeline-agents-images-and-github-actions-runner-images/</guid>
+      <description>&lt;p&gt;Let&amp;rsquo;s create your own Azure Pipelines Agent Images or GitHub Actions Runner Images based on the official &lt;a href=&#34;https://github.com/actions/runner-images/&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;source code&lt;/a&gt; used for &lt;a href=&#34;https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;GitHub-hosted runners&lt;/a&gt; used for Actions, as well as for &lt;a href=&#34;https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted?view=azure-devops#use-a-microsoft-hosted-agent&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;Microsoft-hosted agents&lt;/a&gt; used for Azure Pipelines. I prepared both Azure Pipelines and GitHub Workflow examples for you to choose from. It also can create your Virtual Machine Scale Set (VMSS) with the latest VM image to easily use for self-hosted scale-set agents in Azure DevOps.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

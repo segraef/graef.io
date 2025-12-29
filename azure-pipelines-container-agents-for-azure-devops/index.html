@@ -253,11 +253,11 @@
 </span></code></pre></td>
 <td class="lntd">
 <pre tabindex="0" class="chroma"><code class="language-yml" data-lang="yml"><span class="line"><span class="cl"><span class="l">acrName             = &lt;acrName&gt;                            </span><span class="w"> </span><span class="c"># Azure Container Registry Name (needs to be unique)</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">adoUrl              = https://dev.azure.com/&lt;organization&gt; </span><span class="w"> </span><span class="c"># Azure DevOps Organization URL</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">agentPool           = &lt;agentPool&gt;                          </span><span class="w"> </span><span class="c"># agent-pool name</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">location            = &lt;location&gt;                           </span><span class="w"> </span><span class="c"># where your resources will be created</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">resourceGroupName   = &lt;resourceGroupName&gt;                  </span><span class="w"> </span><span class="c"># where your agents will be placed</span><span class="w">
-</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="l">serviceConnection   = &lt;serviceConnection&gt;                  </span><span class="w"> </span><span class="c"># arm service connection name</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="l">adoUrl              = https://dev.azure.com/&lt;organization&gt; </span><span class="w"> </span><span class="c"># Azure DevOps Organization URL</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="l">agentPool           = &lt;agentPool&gt;                          </span><span class="w"> </span><span class="c"># agent-pool name</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="l">location            = &lt;location&gt;                           </span><span class="w"> </span><span class="c"># where your resources will be created</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="l">resourceGroupName   = &lt;resourceGroupName&gt;                  </span><span class="w"> </span><span class="c"># where your agents will be placed</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="l">serviceConnection   = &lt;serviceConnection&gt;                  </span><span class="w"> </span><span class="c"># arm service connection name</span><span class="w">
 </span></span></span></code></pre></td></tr></table>
 </div>
 </div></li>
@@ -268,7 +268,8 @@
 <h2 id="helper-scripts">Helper Scripts</h2>
 <p>Instead using an Azure Pipeline you can also run also these tasks locally using your local machine as agent. For that you can find a Helper file <a href="https://github.com/segraef/apa/blob/master/PipelineAgents/2020-01-09/Scripts/New-PipelineAgents.ps1" target="_blank" rel="noopener noreffer">here</a>.</p>
 <blockquote>
-<p>If you&rsquo;re not familiar with Docker at all I recommend the <a href="https://docs.docker.com/get-started/" target="_blank" rel="noopener noreffer">Docker Quickstart</a>.</p></blockquote>
+<p>If you&rsquo;re not familiar with Docker at all I recommend the <a href="https://docs.docker.com/get-started/" target="_blank" rel="noopener noreffer">Docker Quickstart</a>.</p>
+</blockquote>
 <h2 id="docker-container-image-contents">Docker Container image contents</h2>
 <p>The docker container images are based on the official <a href="https://github.com/actions/virtual-environments" target="_blank" rel="noopener noreffer">Azure Pipelines VM images for Microsoft-hosted CI/CD</a>.</p>
 <h3 id="ubuntu--debian">Ubuntu / Debian</h3>
@@ -326,7 +327,7 @@
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/automation/">Automation</a>,&nbsp;<a href="/tags/scripts/">Scripts</a>,&nbsp;<a href="/tags/azure/">Azure</a>,&nbsp;<a href="/tags/container/">Container</a>,&nbsp;<a href="/tags/acr/">ACR</a>,&nbsp;<a href="/tags/ado/">ADO</a>,&nbsp;<a href="/tags/devops/">DevOps</a>,&nbsp;<a href="/tags/iac/">Iac</a>,&nbsp;<a href="/tags/aci/">ACI</a>,&nbsp;<a href="/tags/build/">Build</a>,&nbsp;<a href="/tags/github/">Github</a>,&nbsp;<a href="/tags/pipeline/">Pipeline</a>,&nbsp;<a href="/tags/kubectl/">Kubectl</a>,&nbsp;<a href="/tags/terraform/">Terraform</a>,&nbsp;<a href="/tags/docker/">Docker</a>,&nbsp;<a href="/tags/git/">Git</a>,&nbsp;<a href="/tags/chocolatey/">Chocolatey</a>,&nbsp;<a href="/tags/powershell/">Powershell</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/automation/">Automation</a>,&nbsp;<a href="/tags/scripts/">Scripts</a>,&nbsp;<a href="/tags/azure/">Azure</a>,&nbsp;<a href="/tags/container/">Container</a>,&nbsp;<a href="/tags/acr/">ACR</a>,&nbsp;<a href="/tags/ado/">ADO</a>,&nbsp;<a href="/tags/devops/">DevOps</a>,&nbsp;<a href="/tags/iac/">Iac</a>,&nbsp;<a href="/tags/aci/">ACI</a>,&nbsp;<a href="/tags/build/">Build</a>,&nbsp;<a href="/tags/github/">GitHub</a>,&nbsp;<a href="/tags/pipeline/">Pipeline</a>,&nbsp;<a href="/tags/kubectl/">Kubectl</a>,&nbsp;<a href="/tags/terraform/">Terraform</a>,&nbsp;<a href="/tags/docker/">Docker</a>,&nbsp;<a href="/tags/git/">Git</a>,&nbsp;<a href="/tags/chocolatey/">Chocolatey</a>,&nbsp;<a href="/tags/powershell/">PowerShell</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
         </section>
