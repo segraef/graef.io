@@ -86,10 +86,7 @@
       
       this.sendConsentToClarity(adStorage, analyticsStorage);
 
-      
-      try {
-        console.info('[ClarityConsent] setConsent', consent);
-      } catch (e) {}
+
     },
 
     
@@ -99,11 +96,6 @@
           ad_Storage: adStorage,
           analytics_Storage: analyticsStorage
         });
-
-        
-        try {
-          console.info('[ClarityConsent] consentv2 sent', { ad_Storage: adStorage, analytics_Storage: analyticsStorage });
-        } catch (e) {}
       }
     },
 
@@ -115,7 +107,6 @@
         const oneYear = 365 * 24 * 60 * 60 * 1000; 
         if (Date.now() - consent.timestamp < oneYear) {
           this.sendConsentToClarity(consent.ad_storage, consent.analytics_storage);
-          try { console.info('[ClarityConsent] applied existing', consent); } catch (e) {}
           return true; 
         }
       }
@@ -225,16 +216,6 @@
     }
 
     
-    try {
-      const params = new URLSearchParams(window.location.search);
-      if (params.get('clarity_debug') === '1') localStorage.setItem('clarity_debug', '1');
-      const debugOn = localStorage.getItem('clarity_debug') === '1';
-      if (debugOn) {
-        renderConsentDebugBadge(status);
-      }
-    } catch (e) {}
-
-    
     document.addEventListener('click', function(e) {
       const target = e.target;
       if (!target) return;
@@ -243,23 +224,8 @@
         try { renderConsentDebugBadge('allow'); } catch (e) {}
       } else if (target.classList && target.classList.contains('cc-deny')) {
         window.ClarityConsentManager.rejectAll();
-        try { renderConsentDebugBadge('deny'); } catch (e) {}
       }
     });
-  }
-
-  
-  function renderConsentDebugBadge(cookieStatus) {
-    const existing = document.getElementById('clarity-consent-debug');
-    const consent = window.ClarityConsentManager.getConsent && window.ClarityConsentManager.getConsent();
-    const ad = consent?.ad_storage || 'unknown';
-    const analytics = consent?.analytics_storage || 'unknown';
-    const text = `Clarity: ads=${ad}, analytics=${analytics} • banner=${cookieStatus || 'n/a'}`;
-    const el = existing || document.createElement('div');
-    el.id = 'clarity-consent-debug';
-    el.textContent = text;
-    el.style.cssText = 'position:fixed;left:10px;bottom:10px;padding:6px 8px;background:#111827;color:#fff;border-radius:4px;font-size:12px;opacity:.85;z-index:10000;pointer-events:none;';
-    if (!existing) document.body.appendChild(el);
   }
 </script>
 
@@ -727,7 +693,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-</script></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":20},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"segraef/graef.io"}},"cookieconsent":{"content":{"deny":"Reject","dismiss":"Accept","header":"🍪 Cookie Preferences","href":"/privacy-policy/","link":"Privacy Policy","message":"We use analytics cookies to understand how you interact with our website to improve your experience. We respect your privacy and give you full control over your data."},"enable":true,"palette":{"button":{"background":"#3b82f6","backgroundhover":"#2563eb","text":"#ffffff"},"popup":{"background":"#1f2937","text":"#ffffff"}},"position":"bottom","theme":"edgeless","type":"opt-in"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+</script></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":20},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"segraef/graef.io"}},"cookieconsent":{"content":{"deny":"Reject","dismiss":"Accept","header":"🍪 Cookie Preferences","href":"/privacy-policy/","link":"Privacy Policy","message":"We use analytics cookies to understand how you interact with our website to improve your experience. We respect your privacy and give you full control over your data."},"enable":true,"palette":{"button":{"background":"#3b82f6","backgroundhover":"#2563eb","text":"#ffffff"},"popup":{"background":"#1f2937","text":"#ffffff"}},"position":"bottom","staticfooter":false,"theme":"edgeless","type":"opt-in"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
             window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
             gtag('config', 'UA-99599711-2', { 'anonymize_ip': true });
         </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-99599711-2" async></script></body>
