@@ -551,7 +551,8 @@ theme = "loveit"
 
 [outputFormats.RSS]
   mediaType = "application/rss+xml"
-  baseName = "index"
+  # Use a non-index base name to avoid directory defaulting to XML
+  baseName = "rss"
   isPlainText = false
   notAlternative = true
 
@@ -562,6 +563,8 @@ theme = "loveit"
   page = ["HTML", "MarkDown"]
   section = ["HTML", "RSS"]
   taxonomy = ["HTML", "RSS"]
+  # Ensure taxonomy term pages (e.g., /tags/<term>/) render HTML
+  taxonomyTerm = ["HTML"]
 
 [languages.en.menu]
   [[languages.en.menu.main]]
