@@ -16,7 +16,7 @@ An alias is an alternate name for a cmdlet, function, executable file, including
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2021-08-01T09:33:25+08:00">
     <meta property="article:modified_time" content="2021-08-01T09:33:25+08:00">
-    <meta property="article:tag" content="TIL">
+    <meta property="article:tag" content="Til">
     <meta property="article:tag" content="PowerShell">
     <meta property="article:tag" content="Scripts">
     <meta property="article:tag" content="Get-Alias">
@@ -49,7 +49,224 @@ An alias is an alternate name for a cmdlet, function, executable file, including
                 "name": "Author"
             },"description": ""
     }
-    </script></head>
+    </script>
+<script type="text/javascript">
+  
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "pg6m55thgo");
+
+  
+  window.ClarityConsentManager = {
+    cookieName: 'clarity_consent_v2',
+
+    
+    getConsent: function() {
+      try {
+        const consent = localStorage.getItem(this.cookieName);
+        return consent ? JSON.parse(consent) : null;
+      } catch (e) {
+        return null;
+      }
+    },
+
+    
+    setConsent: function(adStorage, analyticsStorage) {
+      const consent = {
+        ad_storage: adStorage,
+        analytics_storage: analyticsStorage,
+        timestamp: Date.now()
+      };
+
+      try {
+        localStorage.setItem(this.cookieName, JSON.stringify(consent));
+      } catch (e) {
+        console.warn('Could not save consent preferences');
+      }
+
+      
+      this.sendConsentToClarity(adStorage, analyticsStorage);
+
+      
+      try {
+        console.info('[ClarityConsent] setConsent', consent);
+      } catch (e) {}
+    },
+
+    
+    sendConsentToClarity: function(adStorage, analyticsStorage) {
+      if (window.clarity) {
+        window.clarity('consentv2', {
+          ad_Storage: adStorage,
+          analytics_Storage: analyticsStorage
+        });
+
+        
+        try {
+          console.info('[ClarityConsent] consentv2 sent', { ad_Storage: adStorage, analytics_Storage: analyticsStorage });
+        } catch (e) {}
+      }
+    },
+
+    
+    applyExistingConsent: function() {
+      const consent = this.getConsent();
+      if (consent) {
+        
+        const oneYear = 365 * 24 * 60 * 60 * 1000; 
+        if (Date.now() - consent.timestamp < oneYear) {
+          this.sendConsentToClarity(consent.ad_storage, consent.analytics_storage);
+          try { console.info('[ClarityConsent] applied existing', consent); } catch (e) {}
+          return true; 
+        }
+      }
+      return false; 
+    },
+
+    
+    acceptAll: function() {
+      this.setConsent('granted', 'granted');
+      this.hideBanner();
+    },
+
+    
+    rejectAll: function() {
+      this.setConsent('denied', 'denied');
+      this.hideBanner();
+    },
+
+    
+    acceptNecessary: function() {
+      this.setConsent('denied', 'granted');
+      this.hideBanner();
+    },
+
+    
+    showBanner: function() {
+      const banner = document.getElementById('clarity-consent-banner');
+      if (banner) {
+        banner.style.display = 'block';
+        banner.setAttribute('aria-hidden', 'false');
+      }
+    },
+
+    
+    hideBanner: function() {
+      const banner = document.getElementById('clarity-consent-banner');
+      if (banner) {
+        banner.style.display = 'none';
+        banner.setAttribute('aria-hidden', 'true');
+      }
+    },
+
+    
+    resetConsent: function() {
+      try {
+        localStorage.removeItem(this.cookieName);
+      } catch (e) {
+        console.warn('Could not remove consent preferences');
+      }
+
+      
+      if (window.clarity) {
+        window.clarity('consent', false);
+      }
+
+      
+      (function deleteCookie(name){
+        try {
+          document.cookie = name + '=; Max-Age=0; path=/;';
+        } catch (e) {}
+      })('cookieconsent_status');
+
+      
+      if (window.cookieconsent && window.config && window.config.cookieconsent) {
+        try {
+          window.cookieconsent.initialise(window.config.cookieconsent);
+        } catch (e) {}
+      }
+    },
+
+    
+    init: function() {
+      
+      if (!this.applyExistingConsent()) {
+        
+        this.showBanner();
+      }
+    }
+  };
+
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      window.ClarityConsentManager.init();
+      
+      setupCookieConsentBridge();
+    });
+  } else {
+    window.ClarityConsentManager.init();
+    setupCookieConsentBridge();
+  }
+
+  
+  function setupCookieConsentBridge() {
+    
+    function readCookie(name) {
+      const match = document.cookie.match(new RegExp('(?:^|; )' + name.replace(/([.$?*|{}()\[\]\\\/\+^])/g, '\\$1') + '=([^;]*)'));
+      return match ? decodeURIComponent(match[1]) : null;
+    }
+
+    
+    const status = readCookie('cookieconsent_status');
+    if (status === 'allow') {
+      window.ClarityConsentManager.setConsent('granted', 'granted');
+    } else if (status === 'deny') {
+      window.ClarityConsentManager.setConsent('denied', 'denied');
+    }
+
+    
+    try {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('clarity_debug') === '1') localStorage.setItem('clarity_debug', '1');
+      const debugOn = localStorage.getItem('clarity_debug') === '1';
+      if (debugOn) {
+        renderConsentDebugBadge(status);
+      }
+    } catch (e) {}
+
+    
+    document.addEventListener('click', function(e) {
+      const target = e.target;
+      if (!target) return;
+      if (target.classList && target.classList.contains('cc-allow')) {
+        window.ClarityConsentManager.acceptAll();
+        try { renderConsentDebugBadge('allow'); } catch (e) {}
+      } else if (target.classList && target.classList.contains('cc-deny')) {
+        window.ClarityConsentManager.rejectAll();
+        try { renderConsentDebugBadge('deny'); } catch (e) {}
+      }
+    });
+  }
+
+  
+  function renderConsentDebugBadge(cookieStatus) {
+    const existing = document.getElementById('clarity-consent-debug');
+    const consent = window.ClarityConsentManager.getConsent && window.ClarityConsentManager.getConsent();
+    const ad = consent?.ad_storage || 'unknown';
+    const analytics = consent?.analytics_storage || 'unknown';
+    const text = `Clarity: ads=${ad}, analytics=${analytics} • banner=${cookieStatus || 'n/a'}`;
+    const el = existing || document.createElement('div');
+    el.id = 'clarity-consent-debug';
+    el.textContent = text;
+    el.style.cssText = 'position:fixed;left:10px;bottom:10px;padding:6px 8px;background:#111827;color:#fff;border-radius:4px;font-size:12px;opacity:.85;z-index:10000;pointer-events:none;';
+    if (!existing) document.body.appendChild(el);
+  }
+</script>
+
+<script src="/js/cookie-preferences.min.js"></script></head>
 
 <body header-desktop="auto" header-mobile="auto"><script
         type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
@@ -512,7 +729,7 @@ An alias is an alternate name for a cmdlet, function, executable file, including
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/til/">TIL</a>,&nbsp;<a href="/tags/powershell/">PowerShell</a>,&nbsp;<a href="/tags/scripts/">Scripts</a>,&nbsp;<a href="/tags/get-alias/">Get-Alias</a>,&nbsp;<a href="/tags/alias/">Alias</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/til/">Til</a>,&nbsp;<a href="/tags/powershell/">PowerShell</a>,&nbsp;<a href="/tags/scripts/">Scripts</a>,&nbsp;<a href="/tags/get-alias/">Get-Alias</a>,&nbsp;<a href="/tags/alias/">Alias</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
         </section>
