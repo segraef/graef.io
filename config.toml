@@ -442,6 +442,7 @@ theme = "loveit"
     enable = true
     position = "bottom"
     theme = "edgeless"
+    staticFooter = false
     # text strings used for Cookie consent banner
     [params.cookieconsent.content]
       header = "🍪 Cookie Preferences"
