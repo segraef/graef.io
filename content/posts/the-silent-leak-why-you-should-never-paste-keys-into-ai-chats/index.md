@@ -100,11 +100,26 @@ secrets/
 **Add a `.copilotignore` or `.cursorignore`** to your repo root to prevent your AI assistant from indexing sensitive files:
 
 ```
-# .copilotignore
+# .copilotignore / .cursorignore
 .env
 .env.*
 secrets/
 infra/credentials/
+```
+
+**For Claude Code**, there's no ignore file — instead, add `permissions.deny` rules to `.claude/settings.json` in your project. Commit this file so the whole team gets the same protection:
+
+```json
+{
+  "permissions": {
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./secrets/**)",
+      "Read(./config/credentials.json)"
+    ]
+  }
+}
 ```
 
 **Enable GitHub secret scanning and push protection** on every repository — personal and organisational. Push protection blocks commits containing known secret patterns before they ever hit the remote.
@@ -144,7 +159,7 @@ GitHub has built several layers of protection that are opt-in or need configurat
 - **Copilot content exclusions**: In Copilot Business/Enterprise, admins can exclude specific files or paths from being sent as context to the Copilot API. Configure it in your organisation's Copilot policy settings.
 - **`.copilotignore`**: Works like `.gitignore` but tells Copilot which files to skip during workspace indexing.
 
-Claude Code respects a `.claudeignore` file in your project root with the same `.gitignore` syntax. Cursor respects `.cursorignore`. Use them.
+Claude Code uses `permissions.deny` in `.claude/settings.json` to block file reads — no separate ignore file. Cursor respects `.cursorignore`. Use them.
 
 ## Final Thoughts
 
@@ -159,7 +174,8 @@ Treat every AI chat session the same way you'd treat a public Slack channel. Bec
 - [GitHub Copilot data privacy](https://docs.github.com/en/copilot/responsible-use-of-github-copilot-features/responsible-use-of-github-copilot-chat-in-your-ide)
 - [GitHub secret scanning](https://docs.github.com/en/code-security/secret-scanning/introduction/about-secret-scanning)
 - [GitHub push protection](https://docs.github.com/en/code-security/secret-scanning/introduction/about-push-protection)
-- [Claude Code security](https://docs.anthropic.com/en/docs/claude-code/security)
+- [Claude Code security](https://code.claude.com/docs/en/security)
+- [Claude Code settings & excluding sensitive files](https://code.claude.com/docs/en/settings)
 - [Cursor privacy & indexing](https://docs.cursor.com/context/codebase-indexing)
 - [detect-secrets](https://github.com/Yelp/detect-secrets)
 - [GitGuardian: Secrets in AI-generated code](https://blog.gitguardian.com/secrets-in-ai-generated-code/)
