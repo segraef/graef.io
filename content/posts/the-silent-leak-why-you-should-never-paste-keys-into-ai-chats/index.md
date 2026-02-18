@@ -57,10 +57,10 @@ To make this concrete, here's the rough data flow when you use an AI coding assi
 
 {{< mermaid >}}
 graph LR
-    A["Your IDE / Editor"] -->|"Prompt + workspace context"| B["AI Provider API"]
-    B -->|"Completion / suggestion"| A
-    A -->|"Stored locally"| C["Chat history (local JSON)"]
-    B -->|"Retained for telemetry"| D["Provider logs (variable retention)"]
+    A[Your IDE / Editor] -->|Prompt + workspace context| B[AI Provider API]
+    B -->|Completion / suggestion| A
+    A -->|Stored locally| C[Chat history]
+    B -->|Retained for telemetry| D[Provider logs]
 {{< /mermaid >}}
 
 The key point: **workspace context** is bundled with your prompt automatically. Depending on the tool, this includes open files, recently edited files, relevant files detected by the assistant's indexer, and — critically — files that match patterns the tool considers useful, like `.env*`.
