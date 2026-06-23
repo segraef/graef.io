@@ -56,9 +56,16 @@
 				<description></description>
 			</item>
 			<item>
+				<title>Azure</title>
+				<link>https://graef.io/categories/azure/</link>
+				<pubDate>Wed, 12 Jun 2024 08:13:11 +1000</pubDate>
+				<guid>https://graef.io/categories/azure/</guid>
+				<description></description>
+			</item>
+			<item>
 				<title>Other</title>
 				<link>https://graef.io/categories/other/</link>
-				<pubDate>Wed, 12 Jun 2024 08:13:11 +1000</pubDate>
+				<pubDate>Thu, 28 Sep 2023 20:06:10 +1000</pubDate>
 				<guid>https://graef.io/categories/other/</guid>
 				<description></description>
 			</item>
@@ -95,13 +102,6 @@
 				<link>https://graef.io/categories/powershell/</link>
 				<pubDate>Sun, 01 Aug 2021 09:33:25 +0800</pubDate>
 				<guid>https://graef.io/categories/powershell/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>Azure</title>
-				<link>https://graef.io/categories/azure/</link>
-				<pubDate>Sat, 06 Mar 2021 00:00:00 +0000</pubDate>
-				<guid>https://graef.io/categories/azure/</guid>
 				<description></description>
 			</item>
 			<item>

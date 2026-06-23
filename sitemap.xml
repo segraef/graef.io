@@ -11,8 +11,8 @@
             <loc>https://graef.io/categories/copilot/</loc><lastmod>2025-07-14T10:06:59&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/tags/copilot/</loc><lastmod>2025-07-14T10:06:59&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/tags/devops/</loc><lastmod>2025-07-14T10:06:59&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://graef.io/tags/github/</loc><lastmod>2025-07-14T10:06:59&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/categories/github/</loc><lastmod>2025-07-14T10:06:59&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://graef.io/tags/github/</loc><lastmod>2025-07-14T10:06:59&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/how-github-copilot-coding-agent-makes-my-day/</loc><lastmod>2025-07-14T10:06:59&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/tags/iac/</loc><lastmod>2025-07-14T10:06:59&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/posts/</loc><lastmod>2025-07-14T10:06:59&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -40,15 +40,16 @@
             <loc>https://graef.io/tags/infrastructureascode/</loc><lastmod>2024-09-09T15:43:57&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/devops-basics-studying-learning-and-skilling/</loc><lastmod>2024-09-09T15:43:57&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/tags/aoai/</loc><lastmod>2024-06-12T08:13:11&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://graef.io/categories/azure/</loc><lastmod>2024-06-12T08:13:11&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/tags/oai/</loc><lastmod>2024-06-12T08:13:11&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/tags/openai/</loc><lastmod>2024-06-12T08:13:11&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://graef.io/categories/other/</loc><lastmod>2024-06-12T08:13:11&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/understanding-the-differences-between-openai-and-microsoft-azure-openai/</loc><lastmod>2024-06-12T08:13:11&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/privacy-policy/</loc><lastmod>2024-01-01T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/tags/agent/</loc><lastmod>2023-09-28T20:06:10&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/create-your-own-official-azure-pipeline-agents-images-and-github-actions-runner-images/</loc><lastmod>2023-09-28T20:06:10&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/tags/golden-image/</loc><lastmod>2023-09-28T20:06:10&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/tags/image/</loc><lastmod>2023-09-28T20:06:10&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://graef.io/categories/other/</loc><lastmod>2023-09-28T20:06:10&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/tags/packer/</loc><lastmod>2023-09-28T20:06:10&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/tags/packer-build/</loc><lastmod>2023-09-28T20:06:10&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/tags/packerfile/</loc><lastmod>2023-09-28T20:06:10&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -186,7 +187,6 @@
             <loc>https://graef.io/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-2/</loc><lastmod>2021-05-11T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-1/</loc><lastmod>2021-03-09T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/tags/az-cli/</loc><lastmod>2021-03-06T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://graef.io/categories/azure/</loc><lastmod>2021-03-06T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/tags/cli/</loc><lastmod>2021-03-06T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/how-to-install-powershell-7/</loc><lastmod>2021-03-06T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/how-to-install-azure-cli/</loc><lastmod>2021-03-06T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
