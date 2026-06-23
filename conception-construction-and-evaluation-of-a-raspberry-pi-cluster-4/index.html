@@ -7,27 +7,27 @@
     <meta name="robots" content="noodp" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <title>Conception, Construction and Evaluation of a Raspberry Pi Cluster (4/4) - Automate everything </title><meta name="Description" content="Automate everything - Sebastian Gräf"><meta property="og:url" content="https://graef.io/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/">
-  <meta property="og:site_name" content="Automate everything ">
-  <meta property="og:title" content="Conception, Construction and Evaluation of a Raspberry Pi Cluster (4/4)">
-  <meta property="og:description" content="The goal of this work is to create an affordable, energy efficient and portable mini-supercomputer. Ideally, a cluster computer with little or no carbon footprint, individual elements that are inexpensive to replace, and a portable system that can be easily disassembled and reassembled.">
-  <meta property="og:locale" content="en">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2021-07-23T00:00:00+00:00">
-    <meta property="article:modified_time" content="2021-07-23T00:00:00+00:00">
-    <meta property="article:tag" content="Raspberry">
-    <meta property="article:tag" content="Pi">
-    <meta property="article:tag" content="Cluster">
-    <meta property="article:tag" content="Failover">
-    <meta property="article:tag" content="Kubernetes">
-    <meta property="article:tag" content="K8s">
-    <meta property="og:image" content="https://graef.io/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/picube5.jpg">
+	<meta property="og:site_name" content="Automate everything ">
+	<meta property="og:title" content="Conception, Construction and Evaluation of a Raspberry Pi Cluster (4/4)">
+	<meta property="og:description" content="The goal of this work is to create an affordable, energy efficient and portable mini-supercomputer. Ideally, a cluster computer with little or no carbon footprint, individual elements that are inexpensive to replace, and a portable system that can be easily disassembled and reassembled.">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2021-07-23T00:00:00+00:00">
+		<meta property="article:modified_time" content="2021-07-23T00:00:00+00:00">
+		<meta property="article:tag" content="Raspberry">
+		<meta property="article:tag" content="Pi">
+		<meta property="article:tag" content="Cluster">
+		<meta property="article:tag" content="Failover">
+		<meta property="article:tag" content="Kubernetes">
+		<meta property="article:tag" content="K8s">
+		<meta property="og:image" content="https://graef.io/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/picube5.jpg">
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://graef.io/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/picube5.jpg">
-  <meta name="twitter:title" content="Conception, Construction and Evaluation of a Raspberry Pi Cluster (4/4)">
-  <meta name="twitter:description" content="The goal of this work is to create an affordable, energy efficient and portable mini-supercomputer. Ideally, a cluster computer with little or no carbon footprint, individual elements that are inexpensive to replace, and a portable system that can be easily disassembled and reassembled.">
-      <meta name="twitter:site" content="@segraef">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="https://graef.io/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/picube5.jpg">
+	<meta name="twitter:title" content="Conception, Construction and Evaluation of a Raspberry Pi Cluster (4/4)">
+	<meta name="twitter:description" content="The goal of this work is to create an affordable, energy efficient and portable mini-supercomputer. Ideally, a cluster computer with little or no carbon footprint, individual elements that are inexpensive to replace, and a portable system that can be easily disassembled and reassembled.">
+			<meta name="twitter:site" content="@segraef">
 <meta name="application-name" content="graef.io - Sebastian Gräf">
 <meta name="apple-mobile-web-app-title" content="graef.io - Sebastian Gräf"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -583,45 +583,45 @@ EUR. This construct is contrasted with a simple Linux cluster for
 comparison. This Linux cluster consists of commercially available PCs
 with comparable core data to that of the Raspberry Pi nodes.</p>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left"></th>
-          <th style="text-align: left"><strong>Raspberry Pi 3 Model B</strong></th>
-          <th style="text-align: left"><strong>Linux PC</strong></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><strong>CPU</strong></td>
-          <td style="text-align: left">Cortex-A53 1.2 GHz Quadcore</td>
-          <td style="text-align: left">Intel Celeron J1900 2 GHz Quadcore</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>RAM</strong></td>
-          <td style="text-align: left">1024 MB</td>
-          <td style="text-align: left">4 GB RAM</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>Network</strong></td>
-          <td style="text-align: left">100 Mbps</td>
-          <td style="text-align: left">1000 Mbps</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>Current Consumption</strong></td>
-          <td style="text-align: left">max. 4 Watt / h</td>
-          <td style="text-align: left">max. 10 Watt / h</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>Price per computer</strong></td>
-          <td style="text-align: left">approx. 35 €</td>
-          <td style="text-align: left">approx. 95 €</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>Total price</strong></td>
-          <td style="text-align: left">approx. 175 €</td>
-          <td style="text-align: left">approx. 475 €</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left"></th>
+					<th style="text-align: left"><strong>Raspberry Pi 3 Model B</strong></th>
+					<th style="text-align: left"><strong>Linux PC</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong>CPU</strong></td>
+					<td style="text-align: left">Cortex-A53 1.2 GHz Quadcore</td>
+					<td style="text-align: left">Intel Celeron J1900 2 GHz Quadcore</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>RAM</strong></td>
+					<td style="text-align: left">1024 MB</td>
+					<td style="text-align: left">4 GB RAM</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>Network</strong></td>
+					<td style="text-align: left">100 Mbps</td>
+					<td style="text-align: left">1000 Mbps</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>Current Consumption</strong></td>
+					<td style="text-align: left">max. 4 Watt / h</td>
+					<td style="text-align: left">max. 10 Watt / h</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>Price per computer</strong></td>
+					<td style="text-align: left">approx. 35 €</td>
+					<td style="text-align: left">approx. 95 €</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>Total price</strong></td>
+					<td style="text-align: left">approx. 175 €</td>
+					<td style="text-align: left">approx. 475 €</td>
+			</tr>
+	</tbody>
 </table>
 <p><strong>Table 2</strong>: <em>Cost comparison of the core components of Raspberry Pi and Linux PC.</em></p>
 <p>If we now compare the core data, we can see that the comparison system
@@ -642,35 +642,35 @@ that quickly gives an impression of the system performance. For this
 purpose, a CPU benchmark is run on both systems, which calculates all
 prime numbers up to 20000, and the results are shown in <strong>Table 3</strong> and <strong>Figure 31</strong>.</p>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left"></th>
-          <th style="text-align: left"><strong>Raspberry Pi 3 Model B</strong></th>
-          <th style="text-align: left"><strong>Linux PC</strong></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><strong>CPU benchmark</strong></td>
-          <td style="text-align: left">Prime number calulation</td>
-          <td style="text-align: left">Prime number calculation</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>Threads (process parts)</strong></td>
-          <td style="text-align: left">4</td>
-          <td style="text-align: left">4</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>Limit</strong></td>
-          <td style="text-align: left">20000</td>
-          <td style="text-align: left">20000</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>Calculation time</strong></td>
-          <td style="text-align: left">115.1536 seconds</td>
-          <td style="text-align: left">11.2800 seconds</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left"></th>
+					<th style="text-align: left"><strong>Raspberry Pi 3 Model B</strong></th>
+					<th style="text-align: left"><strong>Linux PC</strong></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong>CPU benchmark</strong></td>
+					<td style="text-align: left">Prime number calulation</td>
+					<td style="text-align: left">Prime number calculation</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>Threads (process parts)</strong></td>
+					<td style="text-align: left">4</td>
+					<td style="text-align: left">4</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>Limit</strong></td>
+					<td style="text-align: left">20000</td>
+					<td style="text-align: left">20000</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>Calculation time</strong></td>
+					<td style="text-align: left">115.1536 seconds</td>
+					<td style="text-align: left">11.2800 seconds</td>
+			</tr>
+	</tbody>
 </table>
 <p><strong>Table</strong> <strong>3</strong>: <em>Comparison times of the prime number calculation up to 20000.</em></p>
 <figure><a class="lightgallery" href="/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3324.png" title="/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3324.png" data-thumbnail="/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3324.png" data-sub-html="<h2>Source: Own representation.  Figure 31: Results of the sysbench benchmark run on node rpi2.</h2>">
@@ -698,50 +698,50 @@ all components and sits at the end of the power chain. Summarizing with
 all installed components, you get a total power consumption of 13.75
 watts in idle and 34 watts at maximum load (see <strong>Table 4</strong>).</p>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left"></th>
-          <th style="text-align: left"><strong>Power consumption</strong></th>
-          <th style="text-align: left"></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left"><strong>Component</strong></td>
-          <td style="text-align: left"><strong>Idle</strong></td>
-          <td style="text-align: left"><strong>maximum</strong></td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Raspberry Pi 3 Model B</td>
-          <td style="text-align: left">2 Watt</td>
-          <td style="text-align: left">4 Watt</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Edimax ES-5800G V2 Gigabit Switch (8-Port)</td>
-          <td style="text-align: left">2.4 watt</td>
-          <td style="text-align: left">2.4 watt</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">LCD display module 1602 HD44780 with TWI controller</td>
-          <td style="text-align: left">0.1 watt</td>
-          <td style="text-align: left">0.1 watt</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Antec TRICOOL 92mm 4-pin case fan</td>
-          <td style="text-align: left">1.25 watt</td>
-          <td style="text-align: left">1.25 watt</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">Anear 60 Watt USB Charger (6-Port)</td>
-          <td style="text-align: left">-</td>
-          <td style="text-align: left">-</td>
-      </tr>
-      <tr>
-          <td style="text-align: left"><strong>Total power consumption</strong></td>
-          <td style="text-align: left"><strong>13,75 Watt</strong></td>
-          <td style="text-align: left"><strong>23,75 Watt</strong></td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left"></th>
+					<th style="text-align: left"><strong>Power consumption</strong></th>
+					<th style="text-align: left"></th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left"><strong>Component</strong></td>
+					<td style="text-align: left"><strong>Idle</strong></td>
+					<td style="text-align: left"><strong>maximum</strong></td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Raspberry Pi 3 Model B</td>
+					<td style="text-align: left">2 Watt</td>
+					<td style="text-align: left">4 Watt</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Edimax ES-5800G V2 Gigabit Switch (8-Port)</td>
+					<td style="text-align: left">2.4 watt</td>
+					<td style="text-align: left">2.4 watt</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">LCD display module 1602 HD44780 with TWI controller</td>
+					<td style="text-align: left">0.1 watt</td>
+					<td style="text-align: left">0.1 watt</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Antec TRICOOL 92mm 4-pin case fan</td>
+					<td style="text-align: left">1.25 watt</td>
+					<td style="text-align: left">1.25 watt</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">Anear 60 Watt USB Charger (6-Port)</td>
+					<td style="text-align: left">-</td>
+					<td style="text-align: left">-</td>
+			</tr>
+			<tr>
+					<td style="text-align: left"><strong>Total power consumption</strong></td>
+					<td style="text-align: left"><strong>13,75 Watt</strong></td>
+					<td style="text-align: left"><strong>23,75 Watt</strong></td>
+			</tr>
+	</tbody>
 </table>
 <p><strong>Table</strong> <strong>4</strong>: <em>Total power consumption of the PiCube in idle mode and maximum CPU load of 100%.</em></p>
 <p>In the following test, CPU load is generated using the Sysbench prime
@@ -771,28 +771,28 @@ period of 5 minutes:</p>
 <li><strong>Temp3</strong>: In case, with heatsink on SoC, with active cooling.</li>
 </ul>
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">**CPU utilization (%)</th>
-          <th style="text-align: left">Temp1 (°C)</th>
-          <th style="text-align: left">Temp2 (°C)</th>
-          <th style="text-align: left">Temp3 (°C)</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">0</td>
-          <td style="text-align: left">39</td>
-          <td style="text-align: left">39</td>
-          <td style="text-align: left">44</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">100</td>
-          <td style="text-align: left">77</td>
-          <td style="text-align: left">77</td>
-          <td style="text-align: left">82</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left">**CPU utilization (%)</th>
+					<th style="text-align: left">Temp1 (°C)</th>
+					<th style="text-align: left">Temp2 (°C)</th>
+					<th style="text-align: left">Temp3 (°C)</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">0</td>
+					<td style="text-align: left">39</td>
+					<td style="text-align: left">39</td>
+					<td style="text-align: left">44</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">100</td>
+					<td style="text-align: left">77</td>
+					<td style="text-align: left">77</td>
+					<td style="text-align: left">82</td>
+			</tr>
+	</tbody>
 </table>
 <p><strong>Table</strong> <strong>5</strong>: <em>Measured values of heat generation without active cooling.</em></p>
 <p>Next, we look at three temperature profiles of a Raspberry Pi processor.
@@ -814,28 +814,28 @@ over a period of 10 minutes:</p>
 </figure>
 
 <table>
-  <thead>
-      <tr>
-          <th style="text-align: left">**CPU utilization (%)</th>
-          <th style="text-align: left">Temp1 (°C)</th>
-          <th style="text-align: left">Temp2 (°C)</th>
-          <th style="text-align: left">Temp3 (°C)</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td style="text-align: left">0</td>
-          <td style="text-align: left">44</td>
-          <td style="text-align: left">32,2</td>
-          <td style="text-align: left">27,8</td>
-      </tr>
-      <tr>
-          <td style="text-align: left">100</td>
-          <td style="text-align: left">83,3</td>
-          <td style="text-align: left">83,3</td>
-          <td style="text-align: left">69,8</td>
-      </tr>
-  </tbody>
+	<thead>
+			<tr>
+					<th style="text-align: left">**CPU utilization (%)</th>
+					<th style="text-align: left">Temp1 (°C)</th>
+					<th style="text-align: left">Temp2 (°C)</th>
+					<th style="text-align: left">Temp3 (°C)</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td style="text-align: left">0</td>
+					<td style="text-align: left">44</td>
+					<td style="text-align: left">32,2</td>
+					<td style="text-align: left">27,8</td>
+			</tr>
+			<tr>
+					<td style="text-align: left">100</td>
+					<td style="text-align: left">83,3</td>
+					<td style="text-align: left">83,3</td>
+					<td style="text-align: left">69,8</td>
+			</tr>
+	</tbody>
 </table>
 <p><strong>Table</strong> <strong>6</strong>: <em>Measured values</em></p>
 <p>The heat development of the circuit boards of each individual computer
