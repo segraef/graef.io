@@ -7,6 +7,10 @@
 		<generator>Hugo</generator>
 		<language>en</language>
 		
+			<managingEditor>sebastian@graef.io (Seb)</managingEditor>
+		
+		
+			<webMaster>sebastian@graef.io (Seb)</webMaster>
 		
 		
 		
@@ -16,7 +20,7 @@
 			<item>
 				<title>Clean Up and Sync Your Git Fork</title>
 				<link>https://graef.io/clean-up-and-sync-your-git-fork/</link>
-				<pubDate>Thu, 09 Sep 2021 13:16:50 +0800</pubDate>
+				<pubDate>Thu, 09 Sep 2021 13:16:50 +0800</pubDate><author>sebastian@graef.io (Seb)</author>
 				<guid>https://graef.io/clean-up-and-sync-your-git-fork/</guid>
 				<description>&lt;p&gt;If you want to start with your fork from scratch while remaining the current upstream/main as your base use this.&lt;/p&gt;</description>
 			</item>

@@ -7,6 +7,10 @@
 		<generator>Hugo</generator>
 		<language>en</language>
 		
+			<managingEditor>sebastian@graef.io (Seb)</managingEditor>
+		
+		
+			<webMaster>sebastian@graef.io (Seb)</webMaster>
 		
 		
 		
@@ -16,7 +20,7 @@
 			<item>
 				<title>How to Create Your Own Have I Been Pwned (HIBP) API Request With Python</title>
 				<link>https://graef.io/how-to-create-your-own-have-i-been-pwned-api-request-with-python/</link>
-				<pubDate>Mon, 23 Jan 2023 15:25:11 +1000</pubDate>
+				<pubDate>Mon, 23 Jan 2023 15:25:11 +1000</pubDate><author>sebastian@graef.io (Seb)</author>
 				<guid>https://graef.io/how-to-create-your-own-have-i-been-pwned-api-request-with-python/</guid>
 				<description>&lt;p&gt;The idea is to create my own Python script performing REST API requests to the HIBP API to check if mail accounts or password show up in one of the latest breaches. And yes I was just bored and wanted to learn how to do API calls in Python.&lt;/p&gt;</description>
 			</item>

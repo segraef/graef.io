@@ -7,6 +7,10 @@
 		<generator>Hugo</generator>
 		<language>en</language>
 		
+			<managingEditor>sebastian@graef.io (Seb)</managingEditor>
+		
+		
+			<webMaster>sebastian@graef.io (Seb)</webMaster>
 		
 		
 		
@@ -16,7 +20,7 @@
 			<item>
 				<title>Azure Pipelines Container Agents for Azure Devops</title>
 				<link>https://graef.io/azure-pipelines-container-agents-for-azure-devops/</link>
-				<pubDate>Mon, 07 Dec 2020 14:06:02 +0800</pubDate>
+				<pubDate>Mon, 07 Dec 2020 14:06:02 +0800</pubDate><author>sebastian@graef.io (Seb)</author>
 				<guid>https://graef.io/azure-pipelines-container-agents-for-azure-devops/</guid>
 				<description>&lt;p&gt;Create self-hosted Azure Pipelines Container Agents for Azure Devops.&lt;/p&gt;</description>
 			</item>

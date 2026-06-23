@@ -7,6 +7,10 @@
 		<generator>Hugo</generator>
 		<language>en</language>
 		
+			<managingEditor>sebastian@graef.io (Seb)</managingEditor>
+		
+		
+			<webMaster>sebastian@graef.io (Seb)</webMaster>
 		
 		
 		
@@ -16,7 +20,7 @@
 			<item>
 				<title>Mastering DevOps: Your Guide to Learning, Certification, and Community Engagement</title>
 				<link>https://graef.io/devops-basics-studying-learning-and-skilling/</link>
-				<pubDate>Mon, 09 Sep 2024 15:43:57 +1000</pubDate>
+				<pubDate>Mon, 09 Sep 2024 15:43:57 +1000</pubDate><author>sebastian@graef.io (Seb)</author>
 				<guid>https://graef.io/devops-basics-studying-learning-and-skilling/</guid>
 				<description>&lt;p&gt;DevOps is not just a set of tools but a cultural shift towards automation, collaboration, and integration between software development and IT operations. Whether you&amp;rsquo;re new to DevOps or looking to expand your expertise, it&amp;rsquo;s essential to understand its key principles, tools, platforms, and methodologies. This post serves as a roadmap to help you navigate the journey of studying, learning, and becoming certified in DevOps.&lt;/p&gt;</description>
 			</item>

@@ -7,6 +7,10 @@
 		<generator>Hugo</generator>
 		<language>en</language>
 		
+			<managingEditor>sebastian@graef.io (Seb)</managingEditor>
+		
+		
+			<webMaster>sebastian@graef.io (Seb)</webMaster>
 		
 		
 		
@@ -16,7 +20,7 @@
 			<item>
 				<title>From Code to Canvas: A Guide for Prompting Stunning AI Art with MidJourney (2/3)</title>
 				<link>https://graef.io/from-code-to-canvas-a-guide-for-prompting-stunning-ai-art-with-midjourney-2/</link>
-				<pubDate>Fri, 03 Feb 2023 14:12:25 +1000</pubDate>
+				<pubDate>Fri, 03 Feb 2023 14:12:25 +1000</pubDate><author>sebastian@graef.io (Seb)</author>
 				<guid>https://graef.io/from-code-to-canvas-a-guide-for-prompting-stunning-ai-art-with-midjourney-2/</guid>
 				<description>&lt;p&gt;Welcome to the second part of guided prompting for Midjourney to unlock your artistic potential and create jaw-dropping AI art with exclusive cheat codes. These expert hacks will take your art to new heights, no coding skills required!&lt;/p&gt;</description>
 			</item>

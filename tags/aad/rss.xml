@@ -7,6 +7,10 @@
 		<generator>Hugo</generator>
 		<language>en</language>
 		
+			<managingEditor>sebastian@graef.io (Seb)</managingEditor>
+		
+		
+			<webMaster>sebastian@graef.io (Seb)</webMaster>
 		
 		
 		
@@ -16,7 +20,7 @@
 			<item>
 				<title>Get Azure Active Directoy Tenant ID and Subscription ID</title>
 				<link>https://graef.io/get-aad-tenant-id-and-subscription-id/</link>
-				<pubDate>Thu, 09 Aug 2018 00:00:00 +0000</pubDate>
+				<pubDate>Thu, 09 Aug 2018 00:00:00 +0000</pubDate><author>sebastian@graef.io (Seb)</author>
 				<guid>https://graef.io/get-aad-tenant-id-and-subscription-id/</guid>
 				<description></description>
 			</item>

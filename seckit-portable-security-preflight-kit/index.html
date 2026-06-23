@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>SecKit: A Portable Security Pre-flight Kit for Repos and AI Agents - Automate everything </title><meta name="Description" content="One script you run before you work in any repo: scan for secrets and vulnerable dependencies, vet an AI agent skill or MCP server before you install it, harden the repo, and audit your GitHub or Azure DevOps posture. macOS, Linux, and Windows."><meta property="og:url" content="https://graef.io/seckit-portable-security-preflight-kit/">
+	<meta property="og:site_name" content="Automate everything ">
+	<meta property="og:title" content="SecKit: A Portable Security Pre-flight Kit for Repos and AI Agents">
+	<meta property="og:description" content="One script you run before you work in any repo: scan for secrets and vulnerable dependencies, vet an AI agent skill or MCP server before you install it, harden the repo, and audit your GitHub or Azure DevOps posture. macOS, Linux, and Windows.">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2026-06-23T14:00:00+10:00">
+		<meta property="article:modified_time" content="2026-06-23T14:00:00+10:00">
+		<meta property="article:tag" content="Security">
+		<meta property="article:tag" content="DevOps">
+		<meta property="article:tag" content="Ai">
+		<meta property="article:tag" content="Mcp">
+		<meta property="article:tag" content="Supply-Chain">
+		<meta property="article:tag" content="Gitleaks">
+		<meta property="og:image" content="https://graef.io/seckit-portable-security-preflight-kit/featured-image.png">
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="https://graef.io/seckit-portable-security-preflight-kit/featured-image.png">
+	<meta name="twitter:title" content="SecKit: A Portable Security Pre-flight Kit for Repos and AI Agents">
+	<meta name="twitter:description" content="One script you run before you work in any repo: scan for secrets and vulnerable dependencies, vet an AI agent skill or MCP server before you install it, harden the repo, and audit your GitHub or Azure DevOps posture. macOS, Linux, and Windows.">
+			<meta name="twitter:site" content="@segraef">
+<meta name="application-name" content="graef.io - Sebastian Gräf">
+<meta name="apple-mobile-web-app-title" content="graef.io - Sebastian Gräf"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://graef.io/seckit-portable-security-preflight-kit/" /><link rel="prev" href="https://graef.io/how-github-copilot-coding-agent-makes-my-day/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><meta name="google-site-verification" content="google-site-verification=081I19l1P1J3FFLaw1uKtAtY5KcJx_Z9ywiKt60VGP4" /><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "SecKit: A Portable Security Pre-flight Kit for Repos and AI Agents",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/graef.io\/seckit-portable-security-preflight-kit\/"
+        },"image": ["https:\/\/graef.io\/logo.png"],"genre": "posts","keywords": "security, devops, ai, mcp, supply-chain, gitleaks, copilot, automation, powershell","wordcount":  1065 ,
+        "url": "https:\/\/graef.io\/seckit-portable-security-preflight-kit\/","datePublished": "2026-06-23T14:00:00+10:00","dateModified": "2026-06-23T14:00:00+10:00","publisher": {
+            "@type": "Organization",
+            "name": "greaf.io","logo": "https:\/\/graef.io\/logo.png"},"author": {
+                "@type": "Person",
+                "name": "Seb"
+            },"description": "One script you run before you work in any repo: scan for secrets and vulnerable dependencies, vet an AI agent skill or MCP server before you install it, harden the repo, and audit your GitHub or Azure DevOps posture. macOS, Linux, and Windows."
+    }
+    </script>
+<script type="text/javascript">
+  
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "pg6m55thgo");
+
+  
+  window.ClarityConsentManager = {
+    cookieName: 'clarity_consent_v2',
+
+    
+    getConsent: function() {
+      try {
+        const consent = localStorage.getItem(this.cookieName);
+        return consent ? JSON.parse(consent) : null;
+      } catch (e) {
+        return null;
+      }
+    },
+
+    
+    setConsent: function(adStorage, analyticsStorage) {
+      const consent = {
+        ad_storage: adStorage,
+        analytics_storage: analyticsStorage,
+        timestamp: Date.now()
+      };
+
+      try {
+        localStorage.setItem(this.cookieName, JSON.stringify(consent));
+      } catch (e) {
+        console.warn('Could not save consent preferences');
+      }
+
+      
+      this.sendConsentToClarity(adStorage, analyticsStorage);
+
+
+    },
+
+    
+    sendConsentToClarity: function(adStorage, analyticsStorage) {
+      if (window.clarity) {
+        window.clarity('consentv2', {
+          ad_Storage: adStorage,
+          analytics_Storage: analyticsStorage
+        });
+      }
+    },
+
+    
+    applyExistingConsent: function() {
+      const consent = this.getConsent();
+      if (consent) {
+        
+        const oneYear = 365 * 24 * 60 * 60 * 1000; 
+        if (Date.now() - consent.timestamp < oneYear) {
+          this.sendConsentToClarity(consent.ad_storage, consent.analytics_storage);
+          return true; 
+        }
+      }
+      return false; 
+    },
+
+    
+    acceptAll: function() {
+      this.setConsent('granted', 'granted');
+      this.hideBanner();
+    },
+
+    
+    rejectAll: function() {
+      this.setConsent('denied', 'denied');
+      this.hideBanner();
+    },
+
+    
+    acceptNecessary: function() {
+      this.setConsent('denied', 'granted');
+      this.hideBanner();
+    },
+
+    
+    showBanner: function() {
+      const banner = document.getElementById('clarity-consent-banner');
+      if (banner) {
+        banner.style.display = 'block';
+        banner.setAttribute('aria-hidden', 'false');
+      }
+    },
+
+    
+    hideBanner: function() {
+      const banner = document.getElementById('clarity-consent-banner');
+      if (banner) {
+        banner.style.display = 'none';
+        banner.setAttribute('aria-hidden', 'true');
+      }
+    },
+
+    
+    resetConsent: function() {
+      try {
+        localStorage.removeItem(this.cookieName);
+      } catch (e) {
+        console.warn('Could not remove consent preferences');
+      }
+
+      
+      if (window.clarity) {
+        window.clarity('consent', false);
+      }
+
+      
+      (function deleteCookie(name){
+        try {
+          document.cookie = name + '=; Max-Age=0; path=/;';
+        } catch (e) {}
+      })('cookieconsent_status');
+
+      
+      if (window.cookieconsent && window.config && window.config.cookieconsent) {
+        try {
+          window.cookieconsent.initialise(window.config.cookieconsent);
+        } catch (e) {}
+      }
+    },
+
+    
+    init: function() {
+      
+      if (!this.applyExistingConsent()) {
+        
+        this.showBanner();
+      }
+    }
+  };
+
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      window.ClarityConsentManager.init();
+      
+      setupCookieConsentBridge();
+    });
+  } else {
+    window.ClarityConsentManager.init();
+    setupCookieConsentBridge();
+  }
+
+  
+  function setupCookieConsentBridge() {
+    
+    function readCookie(name) {
+      const match = document.cookie.match(new RegExp('(?:^|; )' + name.replace(/([.$?*|{}()\[\]\\\/\+^])/g, '\\$1') + '=([^;]*)'));
+      return match ? decodeURIComponent(match[1]) : null;
+    }
+
+    
+    const status = readCookie('cookieconsent_status');
+    if (status === 'allow') {
+      window.ClarityConsentManager.setConsent('granted', 'granted');
+    } else if (status === 'deny') {
+      window.ClarityConsentManager.setConsent('denied', 'denied');
+    }
+
+    
+    document.addEventListener('click', function(e) {
+      const target = e.target;
+      if (!target) return;
+      if (target.classList && target.classList.contains('cc-allow')) {
+        window.ClarityConsentManager.acceptAll();
+        try { renderConsentDebugBadge('allow'); } catch (e) {}
+      } else if (target.classList && target.classList.contains('cc-deny')) {
+        window.ClarityConsentManager.rejectAll();
+      }
+    });
+  }
+</script>
+
+<script src="/js/cookie-preferences.min.js"></script></head>
+
+<body header-desktop="auto" header-mobile="auto"><script
+        type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "pg6m55thgo");
+    </script>
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Automate everything "><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/logo.png"
+        data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x"
+        data-sizes="auto"
+        alt="/logo.png"
+        title="/logo.png" /></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item"
+                    href="/posts/"  title="Posts" > Posts </a><a class="menu-item"
+                    href="/categories/projects/"  title="Projects" > Projects </a><a class="menu-item"
+                    href="/categories/til/"  title="Today I learned" > TIL </a><a class="menu-item"
+                    href="/tags/"  title="Tags" > Tags </a><a class="menu-item"
+                    href="/categories/"  title="Categories" > Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                    <input type="text"
+                        placeholder="Search titles or contents..."
+                        id="search-input-desktop">
+                    <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop"
+                        title="Search">
+                        <i class="fas fa-search fa-fw"></i>
+                    </a>
+                    <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop"
+                        title="Clear">
+                        <i class="fas fa-times-circle fa-fw"></i>
+                    </a>
+                    <span class="search-button search-loading" id="search-loading-desktop">
+                        <i class="fas fa-spinner fa-fw fa-spin"></i>
+                    </span>
+                </span><a href="javascript:void(0);" class="menu-item theme-switch" title="">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Automate everything "><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/logo.png"
+        data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x"
+        data-sizes="auto"
+        alt="/logo.png"
+        title="/logo.png" /></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                <div class="search mobile" id="search-mobile">
+                    <input type="text"
+                        placeholder="Search titles or contents..."
+                        id="search-input-mobile">
+                    <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile"
+                        title="Search">
+                        <i class="fas fa-search fa-fw"></i>
+                    </a>
+                    <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile"
+                        title="Clear">
+                        <i class="fas fa-times-circle fa-fw"></i>
+                    </a>
+                    <span class="search-button search-loading" id="search-loading-mobile">
+                        <i class="fas fa-spinner fa-fw fa-spin"></i>
+                    </span>
+                </div>
+                <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                    Cancel
+                </a>
+            </div><a class="menu-item" href="/posts/" title="Posts" >Posts</a><a class="menu-item" href="/categories/projects/" title="Projects" >Projects</a><a class="menu-item" href="/categories/til/" title="Today I learned" >TIL</a><a class="menu-item" href="/tags/" title="Tags" >Tags</a><a class="menu-item" href="/categories/" title="Categories" >Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+    
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">SecKit: A Portable Security Pre-flight Kit for Repos and AI Agents</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://graef.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Seb</a></span>&nbsp;<span class="post-category">included in <a href="/categories/security/"><i class="far fa-folder fa-fw"></i>Security</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Tuesday, Jun 23, 2026">Tuesday, Jun 23, 2026</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1065 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;5 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/seckit-portable-security-preflight-kit/featured-image.png"
+        data-srcset="/seckit-portable-security-preflight-kit/featured-image.png, /seckit-portable-security-preflight-kit/featured-image.png 1.5x, /seckit-portable-security-preflight-kit/featured-image.png 2x"
+        data-sizes="auto"
+        alt="/seckit-portable-security-preflight-kit/featured-image.png"
+        title="One script you run before you work in any repo: scan for secrets and vulnerable dependencies, vet an AI agent skill or MCP server before you install it, harden the repo, and audit your GitHub or Azure DevOps posture. macOS, Linux, and Windows." /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#run-it">Run it</a></li>
+    <li><a href="#the-actions">The actions</a></li>
+    <li><a href="#vetting-an-ai-skill-before-you-install-it">Vetting an AI skill before you install it</a></li>
+    <li><a href="#hardening-a-repo-and-the-npm-worm-vector">Hardening a repo, and the npm worm vector</a></li>
+    <li><a href="#audit-and-enforce-your-cloud-posture">Audit and enforce your cloud posture</a></li>
+    <li><a href="#run-it-in-ci">Run it in CI</a></li>
+    <li><a href="#why-i-built-it">Why I built it</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>You clone a repo, open it in your editor, and your AI assistant starts indexing it. You install a Claude skill or an MCP server someone shared. You add a dependency. Every one of those is a moment where something untrusted touches your machine, and almost nobody runs a check first. SecKit is the pre-flight you run before any of it: one script, every platform.</p>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>What this is<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><a href="https://github.com/segraef/sec-kit" target="_blank" rel="noopener noreffer">SecKit</a> is a single portable script (<code>seckit.sh</code> for macOS/Linux, <code>seckit.ps1</code> for Windows) that bundles secret scanning, dependency and IaC checks, AI-agent-skill vetting, repo hardening, and cloud posture auditing behind one command. MIT licensed.</div>
+        </div>
+    </div>
+<h2 id="run-it">Run it</h2>
+<p>No install step for the kit itself. Clone and run.</p>
+<p><strong>macOS / Linux (zsh/bash):</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone https://github.com/segraef/sec-kit.git <span class="o">&amp;&amp;</span> <span class="nb">cd</span> sec-kit
+</span></span><span class="line"><span class="cl">bash seckit.sh            <span class="c1"># interactive menu</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Windows (PowerShell):</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="err">:</span><span class="p">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">segraef</span><span class="p">/</span><span class="nb">sec-kit</span><span class="p">.</span><span class="n">git</span><span class="p">;</span> <span class="nb">cd sec-kit</span>
+</span></span><span class="line"><span class="cl"><span class="n">pwsh</span> <span class="p">./</span><span class="n">seckit</span><span class="p">.</span><span class="py">ps1</span>         <span class="c"># interactive menu</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><figure><a class="lightgallery" href="/seckit-portable-security-preflight-kit/seckit-menu.png" title="/seckit-portable-security-preflight-kit/seckit-menu.png" data-thumbnail="/seckit-portable-security-preflight-kit/seckit-menu.png" data-sub-html="<h2>The interactive menu: pick an action by number or letter.</h2>">
+        <img
+            class="lazyload"
+            src="/svg/loading.min.svg"
+            data-src="seckit-menu.png"
+            data-srcset="/seckit-portable-security-preflight-kit/seckit-menu.png, seckit-menu.png 1.5x, /seckit-portable-security-preflight-kit/seckit-menu.png 2x"
+            data-sizes="auto"
+            alt="/seckit-portable-security-preflight-kit/seckit-menu.png" width="100%" />
+    </a><figcaption class="image-caption">The interactive menu: pick an action by number or letter.</figcaption>
+    </figure>
+<p>Run it either way. With no arguments you get the interactive menu above; pass a command and it runs that one action and exits, so <code>bash seckit.sh doctor</code> (or <code>pwsh ./seckit.ps1 doctor</code>) drops straight into scripts and CI without a prompt.</p>
+<p>The first thing to run on a fresh machine is <code>doctor</code>, then <code>install</code>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">bash seckit.sh doctor     <span class="c1"># which scanners are present, which are missing</span>
+</span></span><span class="line"><span class="cl">bash seckit.sh install    <span class="c1"># pull the missing ones via brew/npm/pipx/scoop</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">pwsh</span> <span class="p">./</span><span class="n">seckit</span><span class="p">.</span><span class="py">ps1</span> <span class="n">doctor</span>
+</span></span><span class="line"><span class="cl"><span class="n">pwsh</span> <span class="p">./</span><span class="n">seckit</span><span class="p">.</span><span class="py">ps1</span> <span class="n">install</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>doctor</code> reports on the tools SecKit orchestrates (jq, yq, gh, az, gitleaks, semgrep, checkov, osv-scanner, trufflehog, pre-commit); <code>install</code> provisions whatever is missing. You run the scanners through SecKit; you do not wire each one up by hand.</p>
+<h2 id="the-actions">The actions</h2>
+<p>SecKit is one verb plus an action. Here is the whole surface.</p>
+<table>
+	<thead>
+			<tr>
+					<th>Action</th>
+					<th>What it does</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td><code>doctor</code></td>
+					<td>Reports which scanners and clients are installed and which are missing.</td>
+			</tr>
+			<tr>
+					<td><code>install</code></td>
+					<td>Installs every missing scanner via brew/npm/pipx/scoop.</td>
+			</tr>
+			<tr>
+					<td><code>scan</code></td>
+					<td>Sweeps a folder of repos for vulnerable dependencies, code/IaC flaws, malware, and secrets.</td>
+			</tr>
+			<tr>
+					<td><code>scan-skill</code></td>
+					<td>Statically vets an AI agent skill or MCP server before you install it. Never executes it.</td>
+			</tr>
+			<tr>
+					<td><code>harden</code></td>
+					<td>Drops pre-commit, gitleaks, SECURITY.md, CODEOWNERS, Dependabot, CodeQL, and PR templates into a repo.</td>
+			</tr>
+			<tr>
+					<td><code>agent</code></td>
+					<td>Installs the SecKit playbook as a Claude subagent, Copilot chat mode, Cursor rule, or <code>AGENTS.md</code> section.</td>
+			</tr>
+			<tr>
+					<td><code>mcp</code></td>
+					<td>Wires official MCP servers (Semgrep, Snyk, OSV, Trivy, Scorecard, GitHub, ADO, Microsoft Learn, Terraform, Foundry) into your AI client.</td>
+			</tr>
+			<tr>
+					<td><code>audit</code></td>
+					<td>Read-only posture check against a GitHub org/repo or Azure DevOps project. Every call is a GET.</td>
+			</tr>
+			<tr>
+					<td><code>enforce</code></td>
+					<td>Writes the settings <code>audit</code> flagged as missing. Dry-run by default.</td>
+			</tr>
+			<tr>
+					<td><code>reminders</code></td>
+					<td>Prints every security reminder in the kit as a checklist.</td>
+			</tr>
+	</tbody>
+</table>
+<!-- TODO: short GIF of an interactive `seckit scan` run producing the markdown report -->
+<div class="mermaid" id="id-1"></div>
+<h2 id="vetting-an-ai-skill-before-you-install-it">Vetting an AI skill before you install it</h2>
+<p>This is the action I reach for most, because it covers a gap nothing else does. People install Claude skills, Copilot extensions, and MCP servers from a zip or a git URL without reading a line of them. An MCP server is code that your agent will hand tools and context to. A poisoned one can exfiltrate your tokens or inject instructions into the model.</p>
+<p><code>scan-skill</code> reads the target statically, it never runs it, and checks for prompt injection, data exfiltration, credential theft, supply-chain RCE, obfuscation, over-broad agency, and MCP tool poisoning. It prints a 0 to 100 risk verdict and a markdown report.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">bash seckit.sh scan-skill ./some-skill          <span class="c1"># local dir</span>
+</span></span><span class="line"><span class="cl">bash seckit.sh scan-skill https://github.com/x/y <span class="c1"># git URL</span>
+</span></span><span class="line"><span class="cl">bash seckit.sh scan-skill ./skill.zip            <span class="c1"># archive</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">pwsh</span> <span class="p">./</span><span class="n">seckit</span><span class="p">.</span><span class="py">ps1</span> <span class="nb">scan-skill</span> <span class="p">./</span><span class="nb">some-skill</span>
+</span></span><span class="line"><span class="cl"><span class="n">pwsh</span> <span class="p">./</span><span class="n">seckit</span><span class="p">.</span><span class="py">ps1</span> <span class="nb">scan-skill</span> <span class="n">https</span><span class="err">:</span><span class="p">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">x</span><span class="p">/</span><span class="n">y</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>Why static-only matters<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">SecKit never executes the thing it is judging. That is the point. If vetting an untrusted skill required running it, the vetting would be the attack vector.</div>
+        </div>
+    </div>
+<!-- TODO: screenshot of a scan-skill risk verdict (the 0-100 score + markdown report) -->
+<h2 id="hardening-a-repo-and-the-npm-worm-vector">Hardening a repo, and the npm worm vector</h2>
+<p><code>harden</code> drops the security baseline into a repo so the next commit is clean: pre-commit hooks, a gitleaks config, <code>SECURITY.md</code>, <code>CODEOWNERS</code>, Dependabot, CodeQL, and PR templates.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">bash seckit.sh harden /path/to/repo
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">pwsh</span> <span class="p">./</span><span class="n">seckit</span><span class="p">.</span><span class="py">ps1</span> <span class="n">harden</span> <span class="n">C:</span><span class="p">\</span><span class="n">path</span><span class="p">\</span><span class="n">to</span><span class="p">\</span><span class="n">repo</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>On a repo with a <code>package.json</code> it also closes a vector a scanner cannot. Self-propagating npm worms run their payload from a package&rsquo;s <code>preinstall</code>/<code>install</code>/<code>postinstall</code> hook <strong>during <code>npm install</code>, before any of your code runs</strong>. By the time an advisory exists for a new variant, the hook has already shipped your tokens out. <code>harden</code> appends <code>ignore-scripts=true</code> to <code>.npmrc</code>, so no dependency lifecycle script runs on install, even one no scanner has catalogued yet.</p>
+<p>The trade-off is handled rather than dumped on you: a few legit deps (<code>esbuild</code>, <code>sharp</code>, <code>bcrypt</code>) build native code in those hooks, so <code>harden</code> prints exactly which deps in your tree do this and the generated <code>.npmrc</code> documents how to allowlist them.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">npx --yes @lavamoat/allow-scripts auto   <span class="c1"># write a vetted allowlist</span>
+</span></span><span class="line"><span class="cl">npx --yes @lavamoat/allow-scripts        <span class="c1"># run ONLY allowlisted scripts, post-install</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="audit-and-enforce-your-cloud-posture">Audit and enforce your cloud posture</h2>
+<p><code>audit</code> is a read-only posture check against a GitHub org/repo or an Azure DevOps project. Every call is a GET, so it is safe to point at anything. <code>enforce</code> then writes back the missing settings, and it is dry-run by default.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">bash seckit.sh audit  --github segraef/sec-kit
+</span></span><span class="line"><span class="cl">bash seckit.sh enforce --github segraef/sec-kit            <span class="c1"># dry-run</span>
+</span></span><span class="line"><span class="cl">bash seckit.sh enforce --github segraef/sec-kit --apply    <span class="c1"># actually write</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">pwsh</span> <span class="p">./</span><span class="n">seckit</span><span class="p">.</span><span class="py">ps1</span> <span class="n">audit</span>  <span class="n">-GitHub</span> <span class="n">segraef</span><span class="p">/</span><span class="nb">sec-kit</span>
+</span></span><span class="line"><span class="cl"><span class="n">pwsh</span> <span class="p">./</span><span class="n">seckit</span><span class="p">.</span><span class="py">ps1</span> <span class="n">enforce</span> <span class="n">-GitHub</span> <span class="n">segraef</span><span class="p">/</span><span class="nb">sec-kit</span>          <span class="c"># dry-run</span>
+</span></span><span class="line"><span class="cl"><span class="n">pwsh</span> <span class="p">./</span><span class="n">seckit</span><span class="p">.</span><span class="py">ps1</span> <span class="n">enforce</span> <span class="n">-GitHub</span> <span class="n">segraef</span><span class="p">/</span><span class="nb">sec-kit</span> <span class="n">-Apply</span>   <span class="c"># actually write</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="details admonition warning open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw"></i>enforce writes<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><code>audit</code> never changes anything. <code>enforce</code> does, but only with <code>--apply</code> / <code>-Apply</code>. Run the dry-run first and read the diff before you let it write.</div>
+        </div>
+    </div>
+<h2 id="run-it-in-ci">Run it in CI</h2>
+<p>The same flow drops into a pipeline. The provided workflows clone SecKit at run time, run <code>install</code> then <code>scan</code>, and publish the markdown report as a build artifact, so the only thing your repo needs is the one file. Both are soft-fail by default; flip the gate to block merges on findings when you are ready.</p>
+<ul>
+<li>GitHub Actions: <code>.github/workflows/seckit-scan.yml</code></li>
+<li>Azure Pipelines: <code>.pipelines/seckit-scan.yml</code></li>
+</ul>
+<h2 id="why-i-built-it">Why I built it</h2>
+<p>I keep writing about the same failure mode: <a href="../the-silent-leak-why-you-should-never-paste-keys-into-ai-chats/" rel="">secrets pasted into AI chats</a>, <a href="../remove-secrets-from-git-history/" rel="">secrets that live forever in git history</a>, and AI assistants that read your <code>.env</code> without asking. SecKit is the other half of that: a single thing you run before the risky moment instead of cleaning up after it. Pre-flight, not post-mortem.</p>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>References<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li><a href="https://github.com/segraef/sec-kit" target="_blank" rel="noopener noreffer">segraef/sec-kit on GitHub</a></li>
+<li><a href="../the-silent-leak-why-you-should-never-paste-keys-into-ai-chats/" rel="">The Silent Leak: Why You Should Never Paste Keys into AI Chats</a></li>
+<li><a href="../remove-secrets-from-git-history/" rel="">Secrets Hide in Your Git History, Even After You Delete Them</a></li>
+<li><a href="../copilot-with-your-own-data/" rel="">Copilot with Your Own Data</a></li>
+</ul>
+</div>
+        </div>
+    </div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on Tuesday, Jun 23, 2026</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://graef.io/seckit-portable-security-preflight-kit/" data-title="SecKit: A Portable Security Pre-flight Kit for Repos and AI Agents" data-via="segraef" data-hashtags="security,devops,ai,mcp,supply-chain,gitleaks,copilot,automation,powershell"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://graef.io/seckit-portable-security-preflight-kit/" data-hashtag="security"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://graef.io/seckit-portable-security-preflight-kit/"><i class="fab fa-linkedin fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://graef.io/seckit-portable-security-preflight-kit/" data-title="SecKit: A Portable Security Pre-flight Kit for Repos and AI Agents" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="https://graef.io/seckit-portable-security-preflight-kit/"><i class="fab fa-reddit fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/security/">Security</a>,&nbsp;<a href="/tags/devops/">DevOps</a>,&nbsp;<a href="/tags/ai/">Ai</a>,&nbsp;<a href="/tags/mcp/">Mcp</a>,&nbsp;<a href="/tags/supply-chain/">Supply-Chain</a>,&nbsp;<a href="/tags/gitleaks/">Gitleaks</a>,&nbsp;<a href="/tags/copilot/">Copilot</a>,&nbsp;<a href="/tags/automation/">Automation</a>,&nbsp;<a href="/tags/powershell/">PowerShell</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/how-github-copilot-coding-agent-makes-my-day/" class="prev" rel="prev" title="How Github Copilot coding agent(s) make my day"><i class="fas fa-angle-left fa-fw"></i>How Github Copilot coding agent(s) make my day</a></div>
+</div>
+<div id="comments"><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://graef.io" target="_blank">Seb</a></span></div>
+        </div>
+    </footer></div>
+
+    <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">
+<script type="text/javascript">
+// Load Microsoft Clarity
+(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "pg6m55thgo");
+
+// Handle cookie consent for Microsoft Clarity
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if consent was already given
+    var consentCookie = document.cookie.split(';').find(row => row.trim().startsWith('cookieconsent_status='));
+    if (consentCookie) {
+        var status = consentCookie.split('=')[1];
+        if (status === 'allow' && window.clarity) {
+            window.clarity('consentv2', {
+                ad_Storage: 'granted',
+                analytics_Storage: 'granted'
+            });
+        } else if (status === 'deny' && window.clarity) {
+            window.clarity('consentv2', {
+                ad_Storage: 'denied',
+                analytics_Storage: 'denied'
+            });
+        }
+    }
+
+    // Listen for future consent changes
+    window.addEventListener('load', function() {
+        if (window.cookieconsent) {
+            // Monitor cookie changes
+            var observer = new MutationObserver(function() {
+                var consentCookie = document.cookie.split(';').find(row => row.trim().startsWith('cookieconsent_status='));
+                if (consentCookie && window.clarity) {
+                    var status = consentCookie.split('=')[1];
+                    if (status === 'allow') {
+                        window.clarity('consentv2', {
+                            ad_Storage: 'granted',
+                            analytics_Storage: 'granted'
+                        });
+                    } else if (status === 'deny') {
+                        window.clarity('consentv2', {
+                            ad_Storage: 'denied',
+                            analytics_Storage: 'denied'
+                        });
+                    }
+                }
+            });
+            observer.observe(document, { childList: true, subtree: true });
+        }
+    });
+});
+</script></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":20},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"segraef/graef.io"}},"cookieconsent":{"content":{"deny":"Reject","dismiss":"Accept","header":"🍪 Cookie Preferences","href":"/privacy-policy/","link":"Privacy Policy","message":"We use analytics cookies to understand how you interact with our website to improve your experience. We respect your privacy and give you full control over your data."},"enable":true,"palette":{"button":{"background":"#3b82f6","backgroundhover":"#2563eb","text":"#ffffff"},"popup":{"background":"#1f2937","text":"#ffffff"}},"position":"bottom","staticfooter":false,"theme":"edgeless","type":"opt-in"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-99599711-2', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-99599711-2" async></script></body>
+
+</html>

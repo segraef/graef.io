@@ -7,6 +7,10 @@
 		<generator>Hugo</generator>
 		<language>en</language>
 		
+			<managingEditor>sebastian@graef.io (Seb)</managingEditor>
+		
+		
+			<webMaster>sebastian@graef.io (Seb)</webMaster>
 		
 		
 		
@@ -16,14 +20,14 @@
 			<item>
 				<title>Azure Pipelines Container Agents for Azure Devops</title>
 				<link>https://graef.io/azure-pipelines-container-agents-for-azure-devops/</link>
-				<pubDate>Mon, 07 Dec 2020 14:06:02 +0800</pubDate>
+				<pubDate>Mon, 07 Dec 2020 14:06:02 +0800</pubDate><author>sebastian@graef.io (Seb)</author>
 				<guid>https://graef.io/azure-pipelines-container-agents-for-azure-devops/</guid>
 				<description>&lt;p&gt;Create self-hosted Azure Pipelines Container Agents for Azure Devops.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Programmatically Create Azure Pipelines</title>
 				<link>https://graef.io/programmatically-create-azure-pipelines/</link>
-				<pubDate>Sat, 07 Mar 2020 13:10:29 +0800</pubDate>
+				<pubDate>Sat, 07 Mar 2020 13:10:29 +0800</pubDate><author>sebastian@graef.io (Seb)</author>
 				<guid>https://graef.io/programmatically-create-azure-pipelines/</guid>
 				<description>&lt;p&gt;This script &lt;a href=&#34;https://github.com/segraef/New-AzPipeline&#34; target=&#34;_blank&#34; rel=&#34;noopener noreffer&#34;&gt;New-AzPipeline&lt;/a&gt; lets you programmatically create Azure Pipelines based on your folder structure.&lt;/p&gt;</description>
 			</item>

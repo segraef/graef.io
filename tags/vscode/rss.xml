@@ -7,6 +7,10 @@
 		<generator>Hugo</generator>
 		<language>en</language>
 		
+			<managingEditor>sebastian@graef.io (Seb)</managingEditor>
+		
+		
+			<webMaster>sebastian@graef.io (Seb)</webMaster>
 		
 		
 		
@@ -16,21 +20,21 @@
 			<item>
 				<title>How to reload your VSCode Window</title>
 				<link>https://graef.io/how-to-reload-vscode-window/</link>
-				<pubDate>Fri, 07 Jan 2022 08:23:15 +0800</pubDate>
+				<pubDate>Fri, 07 Jan 2022 08:23:15 +0800</pubDate><author>sebastian@graef.io (Seb)</author>
 				<guid>https://graef.io/how-to-reload-vscode-window/</guid>
 				<description>&lt;p&gt;Today I learned how to reload/restart my window in Visual Studio Code.&lt;/p&gt;&#xA;&lt;p&gt;This is especially helpful if you want to restart Visual Studio and leave all your current terminals open.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Find and replace with a newline in Visual Studio Code</title>
 				<link>https://graef.io/find-and-replace-with-a-newline-in-visual-studio-code/</link>
-				<pubDate>Fri, 06 Aug 2021 15:16:19 +0800</pubDate>
+				<pubDate>Fri, 06 Aug 2021 15:16:19 +0800</pubDate><author>sebastian@graef.io (Seb)</author>
 				<guid>https://graef.io/find-and-replace-with-a-newline-in-visual-studio-code/</guid>
 				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Today I learned&lt;/strong&gt; How to &lt;em&gt;&lt;strong&gt;find and replace&lt;/strong&gt;&lt;/em&gt; with a newline in Visual Studio Code.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;In the local searchbox (&lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;F&lt;/kbd&gt;) you can insert newlines by pressing &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;Enter&lt;/kbd&gt;.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Visual Studio Code Keyboard Shortcuts</title>
 				<link>https://graef.io/visual-studio-code-keyboard-shortcuts/</link>
-				<pubDate>Mon, 02 Aug 2021 15:30:25 +0800</pubDate>
+				<pubDate>Mon, 02 Aug 2021 15:30:25 +0800</pubDate><author>sebastian@graef.io (Seb)</author>
 				<guid>https://graef.io/visual-studio-code-keyboard-shortcuts/</guid>
 				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Today I learned&lt;/strong&gt; Visual Studio Code Keyboard Shortcuts for Windows, macOs and Linux.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Visual Studio Code lets you perform most tasks directly from the keyboard. This page lists out the default bindings (keyboard shortcuts).&lt;/p&gt;</description>
 			</item>

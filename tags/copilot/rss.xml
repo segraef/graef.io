@@ -7,16 +7,27 @@
 		<generator>Hugo</generator>
 		<language>en</language>
 		
+			<managingEditor>sebastian@graef.io (Seb)</managingEditor>
+		
+		
+			<webMaster>sebastian@graef.io (Seb)</webMaster>
 		
 		
 		
-			<lastBuildDate>Mon, 14 Jul 2025 10:06:59 +1000</lastBuildDate>
+			<lastBuildDate>Tue, 23 Jun 2026 14:00:00 +1000</lastBuildDate>
 		
 			<atom:link href="https://graef.io/tags/copilot/rss.xml" rel="self" type="application/rss+xml" />
 			<item>
+				<title>SecKit: A Portable Security Pre-flight Kit for Repos and AI Agents</title>
+				<link>https://graef.io/seckit-portable-security-preflight-kit/</link>
+				<pubDate>Tue, 23 Jun 2026 14:00:00 +1000</pubDate><author>sebastian@graef.io (Seb)</author>
+				<guid>https://graef.io/seckit-portable-security-preflight-kit/</guid>
+				<description>&lt;p&gt;You clone a repo, open it in your editor, and your AI assistant starts indexing it. You install a Claude skill or an MCP server someone shared. You add a dependency. Every one of those is a moment where something untrusted touches your machine, and almost nobody runs a check first. SecKit is the pre-flight you run before any of it: one script, every platform.&lt;/p&gt;</description>
+			</item>
+			<item>
 				<title>How Github Copilot coding agent(s) make my day</title>
 				<link>https://graef.io/how-github-copilot-coding-agent-makes-my-day/</link>
-				<pubDate>Mon, 14 Jul 2025 10:06:59 +1000</pubDate>
+				<pubDate>Mon, 14 Jul 2025 10:06:59 +1000</pubDate><author>sebastian@graef.io (Seb)</author>
 				<guid>https://graef.io/how-github-copilot-coding-agent-makes-my-day/</guid>
 				<description>&lt;p&gt;Ever wished you could delegate your coding tasks and watch them get done while you focus elsewhere? That’s exactly what happened when I assigned an issue to GitHub Copilot coding agent. From identifying the problem to drafting a pull request and running checks, it handled the entire workflow, efficiently and autonomously. Here&amp;rsquo;s how it turned a routine fix into a hands-free solution that saved me hours.&lt;/p&gt;</description>
 			</item>

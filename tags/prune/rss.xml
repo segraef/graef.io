@@ -7,6 +7,10 @@
 		<generator>Hugo</generator>
 		<language>en</language>
 		
+			<managingEditor>sebastian@graef.io (Seb)</managingEditor>
+		
+		
+			<webMaster>sebastian@graef.io (Seb)</webMaster>
 		
 		
 		
@@ -16,7 +20,7 @@
 			<item>
 				<title>Automatically clean up local once remote branch is deleted</title>
 				<link>https://graef.io/clean-up-local-and-remote-branches/</link>
-				<pubDate>Mon, 20 Sep 2021 12:14:02 +0800</pubDate>
+				<pubDate>Mon, 20 Sep 2021 12:14:02 +0800</pubDate><author>sebastian@graef.io (Seb)</author>
 				<guid>https://graef.io/clean-up-local-and-remote-branches/</guid>
 				<description>&lt;p&gt;Use this nice PowerShell and Bash one-liner to automatically clean up (delete) your local branch once your remote branch is deleted (merged).&lt;/p&gt;</description>
 			</item>

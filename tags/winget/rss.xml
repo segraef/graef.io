@@ -7,6 +7,10 @@
 		<generator>Hugo</generator>
 		<language>en</language>
 		
+			<managingEditor>sebastian@graef.io (Seb)</managingEditor>
+		
+		
+			<webMaster>sebastian@graef.io (Seb)</webMaster>
 		
 		
 		
@@ -16,14 +20,14 @@
 			<item>
 				<title>Fresh Development Setup within 10 Minutes using Winget</title>
 				<link>https://graef.io/fresh-development-machine-setup-using-winget-within-10-minutes/</link>
-				<pubDate>Fri, 13 May 2022 00:00:00 +0000</pubDate>
+				<pubDate>Fri, 13 May 2022 00:00:00 +0000</pubDate><author>sebastian@graef.io (Seb)</author>
 				<guid>https://graef.io/fresh-development-machine-setup-using-winget-within-10-minutes/</guid>
 				<description>&lt;p&gt;Sometimes you have to setup your Laptop/Notebook fresh and also prepare your developer environment and tools you need. I noticed this again today when I rebooted my machine and spent almost 2 hours installing the tools I need to work.&lt;/p&gt;&#xA;&lt;p&gt;I have put together a list of commands you can use to prepare your environment using Windows Package Manager (WinGet) for you which gives you a kick start at the next reset and you can continue working directly after 10 minutes.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>How to install and update Azure PowerShell 7</title>
 				<link>https://graef.io/how-to-install-powershell-7/</link>
-				<pubDate>Sat, 06 Mar 2021 00:00:00 +0000</pubDate>
+				<pubDate>Sat, 06 Mar 2021 00:00:00 +0000</pubDate><author>sebastian@graef.io (Seb)</author>
 				<guid>https://graef.io/how-to-install-powershell-7/</guid>
 				<description>&lt;p&gt;Let&amp;rsquo;s keep it easy with these one-liner&amp;rsquo;s you can use for Windows as well as Linux.&lt;/p&gt;</description>
 			</item>

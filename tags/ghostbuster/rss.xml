@@ -7,6 +7,10 @@
 		<generator>Hugo</generator>
 		<language>en</language>
 		
+			<managingEditor>sebastian@graef.io (Seb)</managingEditor>
+		
+		
+			<webMaster>sebastian@graef.io (Seb)</webMaster>
 		
 		
 		
@@ -16,7 +20,7 @@
 			<item>
 				<title>GhostBuster: Remove all Non-present and hidden devices in Windows</title>
 				<link>https://graef.io/ghostbuster-remove-all-non-present-hidden-devices-from-windows/</link>
-				<pubDate>Sun, 12 Feb 2017 11:25:02 +0800</pubDate>
+				<pubDate>Sun, 12 Feb 2017 11:25:02 +0800</pubDate><author>sebastian@graef.io (Seb)</author>
 				<guid>https://graef.io/ghostbuster-remove-all-non-present-hidden-devices-from-windows/</guid>
 				<description>&lt;p&gt;As described in one of my previous articles &lt;a href=&#34;https://graef.io/show-non-present-devices-in-windows-with-device-manager/&#34; rel=&#34;&#34;&gt;How to show nonpresent devices in Windows with Device Manager&lt;/a&gt; you were able to show nonpresent devices in device manager and delete them one bye one.&lt;/p&gt;</description>
 			</item>
