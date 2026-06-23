@@ -145,12 +145,11 @@ GitHub has built several layers of protection that are opt-in or need configurat
 - **Secret scanning**: Scans every push for 200+ secret patterns (API keys, tokens, connection strings). Free for public repos, available for private repos on Advanced Security.
 - **Push protection**: Blocks the push entirely if a secret is detected. No second chances needed.
 - **Copilot content exclusions**: In Copilot Business/Enterprise, admins can exclude specific files or paths from being sent as context to the Copilot API. Configure it in your organisation's Copilot policy settings.
-- **`.copilotignore`**: Works like `.gitignore` but tells Copilot which files to skip during workspace indexing.
 
-Claude Code uses `permissions.deny` in `.claude/settings.json` to block file reads, no separate ignore file. Cursor respects `.cursorignore`. Use them.
+Claude Code uses `permissions.deny` in `.claude/settings.json` to block file reads, no separate ignore file. Cursor respects a `.cursorignore` that keeps matched files out of both indexing and chat context. Use them.
 
 {{< admonition tip "Run a pre-flight check" >}}
-[SecKit](../seckit-portable-security-preflight-kit/) folds this into one script: it sweeps a repo for exposed secrets and vets an AI skill or MCP server before you install it, so you catch the leak before the assistant ever reads it.
+[SecKit](../seckit-portable-security-preflight-kit/) folds this into one script: it sweeps a repo for exposed secrets and vets an AI skill or MCP server before you install it. `seckit harden` also drops the guardrails in for you, the Claude Code `settings.json` deny rules, the GitHub Copilot content-exclusion file, and a `.cursorignore`, so the assistant is blocked from reading sensitive files before it ever gets the chance.
 {{< /admonition >}}
 
 ## Final Thoughts

@@ -18,7 +18,7 @@
 		
 			<atom:link href="https://graef.io/tags/rss.xml" rel="self" type="application/rss+xml" />
 			<item>
-				<title>AI</title>
+				<title>Ai</title>
 				<link>https://graef.io/tags/ai/</link>
 				<pubDate>Tue, 23 Jun 2026 14:00:00 +1000</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
 				<guid>https://graef.io/tags/ai/</guid>
@@ -39,7 +39,7 @@
 				<description></description>
 			</item>
 			<item>
-				<title>Devops</title>
+				<title>DevOps</title>
 				<link>https://graef.io/tags/devops/</link>
 				<pubDate>Tue, 23 Jun 2026 14:00:00 +1000</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
 				<guid>https://graef.io/tags/devops/</guid>
@@ -60,7 +60,7 @@
 				<description></description>
 			</item>
 			<item>
-				<title>PowerShell</title>
+				<title>Powershell</title>
 				<link>https://graef.io/tags/powershell/</link>
 				<pubDate>Tue, 23 Jun 2026 14:00:00 +1000</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
 				<guid>https://graef.io/tags/powershell/</guid>
@@ -88,7 +88,7 @@
 				<description></description>
 			</item>
 			<item>
-				<title>Github</title>
+				<title>GitHub</title>
 				<link>https://graef.io/tags/github/</link>
 				<pubDate>Tue, 23 Jun 2026 10:00:00 +1000</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
 				<guid>https://graef.io/tags/github/</guid>
@@ -200,7 +200,7 @@
 				<description></description>
 			</item>
 			<item>
-				<title>CICD</title>
+				<title>Cicd</title>
 				<link>https://graef.io/tags/cicd/</link>
 				<pubDate>Mon, 09 Sep 2024 15:43:57 +1000</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
 				<guid>https://graef.io/tags/cicd/</guid>
@@ -326,7 +326,7 @@
 				<description></description>
 			</item>
 			<item>
-				<title>VM</title>
+				<title>Vm</title>
 				<link>https://graef.io/tags/vm/</link>
 				<pubDate>Thu, 28 Sep 2023 20:06:10 +1000</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
 				<guid>https://graef.io/tags/vm/</guid>
@@ -571,7 +571,7 @@
 				<description></description>
 			</item>
 			<item>
-				<title>TIL</title>
+				<title>Til</title>
 				<link>https://graef.io/tags/til/</link>
 				<pubDate>Mon, 23 Jan 2023 15:25:11 +1000</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
 				<guid>https://graef.io/tags/til/</guid>
