@@ -13,6 +13,14 @@ You clone a repo, open it in your editor, and your AI assistant starts indexing 
 
 No install step for the kit itself. Clone and run.
 
+{{< admonition tip "Why trust this one?" >}}
+Fair question. SecKit scans itself after every release.
+
+[![CI](https://github.com/segraef/sec-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/segraef/sec-kit/actions/workflows/ci.yml)
+[![Scanned with SecKit](https://img.shields.io/badge/scanned%20with-SecKit-1f6feb)](https://github.com/segraef/sec-kit/actions/workflows/ci.yml?query=branch%3Amain)
+[![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/segraef/sec-kit/blob/main/LICENSE)
+{{< /admonition >}}
+
 **macOS / Linux (zsh/bash):**
 
 ```bash
