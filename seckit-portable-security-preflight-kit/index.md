@@ -1,4 +1,4 @@
-# SecKit: A Portable Security Pre-flight Kit for Repos and AI Agents
+# SecKit: A portable security pre-flight kit for repos and AI agents
 
 
 You clone a repo, open it in your editor, and your AI assistant starts indexing it. You install a Claude skill or an MCP server someone shared. You add a dependency. Every one of those is a moment where something untrusted touches your machine, and almost nobody runs a check first. SecKit is the pre-flight you run before any of it: one script, every platform.

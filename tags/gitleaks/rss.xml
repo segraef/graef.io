@@ -18,7 +18,7 @@
 		
 			<atom:link href="https://graef.io/tags/gitleaks/rss.xml" rel="self" type="application/rss+xml" />
 			<item>
-				<title>SecKit: A Portable Security Pre-flight Kit for Repos and AI Agents</title>
+				<title>SecKit: A portable security pre-flight kit for repos and AI agents</title>
 				<link>https://graef.io/seckit-portable-security-preflight-kit/</link>
 				<pubDate>Tue, 23 Jun 2026 14:00:00 +1000</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
 				<guid>https://graef.io/seckit-portable-security-preflight-kit/</guid>

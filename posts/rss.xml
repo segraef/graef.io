@@ -5,7 +5,7 @@
         <description>All Posts | Automate everything </description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>sebastian@graef.io (Sebastian Gräf)</managingEditor>
             <webMaster>sebastian@graef.io (Sebastian Gräf)</webMaster><lastBuildDate>Tue, 23 Jun 2026 14:00:00 &#43;1000</lastBuildDate><atom:link href="https://graef.io/posts/" rel="self" type="application/rss+xml" /><item>
-    <title>SecKit: A Portable Security Pre-flight Kit for Repos and AI Agents</title>
+    <title>SecKit: A portable security pre-flight kit for repos and AI agents</title>
     <link>https://graef.io/seckit-portable-security-preflight-kit/</link>
     <pubDate>Tue, 23 Jun 2026 14:00:00 &#43;1000</pubDate>
     <author>Author</author>
@@ -13,7 +13,7 @@
     <description><![CDATA[<p>You clone a repo, open it in your editor, and your AI assistant starts indexing it. You install a Claude skill or an MCP server someone shared. You add a dependency. Every one of those is a moment where something untrusted touches your machine, and almost nobody runs a check first. SecKit is the pre-flight you run before any of it: one script, every platform.</p>]]></description>
 </item>
 <item>
-    <title>Secrets Hide in Your Git History, Even After You Delete Them</title>
+    <title>Secrets hide in your Git history, even after you delete them</title>
     <link>https://graef.io/remove-secrets-from-git-history/</link>
     <pubDate>Tue, 23 Jun 2026 10:00:00 &#43;1000</pubDate>
     <author>Author</author>

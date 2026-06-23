@@ -1,4 +1,4 @@
-# Secrets Hide in Your Git History, Even After You Delete Them
+# Secrets hide in your Git history, even after you delete them
 
 
 You committed an API key by accident. You notice, delete the line, commit again, and push. Crisis averted, right? No. That key is still sitting in your git history, one `git log -p` away from anyone who clones the repo. A new commit only adds a layer on top. It never removes the old one.
