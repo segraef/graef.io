@@ -7,10 +7,10 @@
 		<generator>Hugo</generator>
 		<language>en</language>
 		
-			<managingEditor>sebastian@graef.io (Seb)</managingEditor>
+			<managingEditor>sebastian@graef.io (Sebastian Gräf)</managingEditor>
 		
 		
-			<webMaster>sebastian@graef.io (Seb)</webMaster>
+			<webMaster>sebastian@graef.io (Sebastian Gräf)</webMaster>
 		
 		
 		
@@ -20,7 +20,7 @@
 			<item>
 				<title>How to adjust Windows Failover Cluster &#39;Response to Resource Failure&#39; Policy</title>
 				<link>https://graef.io/how-to-adjust-windows-failover-cluster-response-to-resource-failure-policy/</link>
-				<pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate><author>sebastian@graef.io (Seb)</author>
+				<pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
 				<guid>https://graef.io/how-to-adjust-windows-failover-cluster-response-to-resource-failure-policy/</guid>
 				<description>&lt;p&gt;The purpose of this article is to show how to adjust Windows Failover Cluster &amp;ldquo;Response to resource failure&amp;rdquo; policy.&lt;/p&gt;</description>
 			</item>

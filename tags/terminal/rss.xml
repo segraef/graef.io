@@ -7,10 +7,10 @@
 		<generator>Hugo</generator>
 		<language>en</language>
 		
-			<managingEditor>sebastian@graef.io (Seb)</managingEditor>
+			<managingEditor>sebastian@graef.io (Sebastian Gräf)</managingEditor>
 		
 		
-			<webMaster>sebastian@graef.io (Seb)</webMaster>
+			<webMaster>sebastian@graef.io (Sebastian Gräf)</webMaster>
 		
 		
 		
@@ -20,7 +20,7 @@
 			<item>
 				<title>How to reload your VSCode Window</title>
 				<link>https://graef.io/how-to-reload-vscode-window/</link>
-				<pubDate>Fri, 07 Jan 2022 08:23:15 +0800</pubDate><author>sebastian@graef.io (Seb)</author>
+				<pubDate>Fri, 07 Jan 2022 08:23:15 +0800</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
 				<guid>https://graef.io/how-to-reload-vscode-window/</guid>
 				<description>&lt;p&gt;Today I learned how to reload/restart my window in Visual Studio Code.&lt;/p&gt;&#xA;&lt;p&gt;This is especially helpful if you want to restart Visual Studio and leave all your current terminals open.&lt;/p&gt;</description>
 			</item>

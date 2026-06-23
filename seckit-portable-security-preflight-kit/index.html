@@ -16,8 +16,8 @@
 		<meta property="article:published_time" content="2026-06-23T14:00:00+10:00">
 		<meta property="article:modified_time" content="2026-06-23T14:00:00+10:00">
 		<meta property="article:tag" content="Security">
-		<meta property="article:tag" content="DevOps">
-		<meta property="article:tag" content="Ai">
+		<meta property="article:tag" content="Devops">
+		<meta property="article:tag" content="AI">
 		<meta property="article:tag" content="Mcp">
 		<meta property="article:tag" content="Supply-Chain">
 		<meta property="article:tag" content="Gitleaks">
@@ -31,7 +31,7 @@
 <meta name="application-name" content="graef.io - Sebastian Gräf">
 <meta name="apple-mobile-web-app-title" content="graef.io - Sebastian Gräf"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://graef.io/seckit-portable-security-preflight-kit/" /><link rel="prev" href="https://graef.io/how-github-copilot-coding-agent-makes-my-day/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><meta name="google-site-verification" content="google-site-verification=081I19l1P1J3FFLaw1uKtAtY5KcJx_Z9ywiKt60VGP4" /><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://graef.io/seckit-portable-security-preflight-kit/" /><link rel="prev" href="https://graef.io/remove-secrets-from-git-history/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><meta name="google-site-verification" content="google-site-verification=081I19l1P1J3FFLaw1uKtAtY5KcJx_Z9ywiKt60VGP4" /><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -40,12 +40,12 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/graef.io\/seckit-portable-security-preflight-kit\/"
-        },"image": ["https:\/\/graef.io\/logo.png"],"genre": "posts","keywords": "security, devops, ai, mcp, supply-chain, gitleaks, copilot, automation, powershell","wordcount":  1077 ,
+        },"image": ["https:\/\/graef.io\/logo.png"],"genre": "posts","keywords": "security, devops, ai, mcp, supply-chain, gitleaks, copilot, automation, powershell","wordcount":  1120 ,
         "url": "https:\/\/graef.io\/seckit-portable-security-preflight-kit\/","datePublished": "2026-06-23T14:00:00+10:00","dateModified": "2026-06-23T14:00:00+10:00","publisher": {
             "@type": "Organization",
             "name": "greaf.io","logo": "https:\/\/graef.io\/logo.png"},"author": {
                 "@type": "Person",
-                "name": "Seb"
+                "name": "Sebastian Gräf"
             },"description": "One script you run before you work in any repo: scan for secrets and vulnerable dependencies, vet an AI agent skill or MCP server before you install it, harden the repo, and audit your GitHub or Azure DevOps posture. macOS, Linux, and Windows."
     }
     </script>
@@ -336,8 +336,8 @@
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">SecKit: A Portable Security Pre-flight Kit for Repos and AI Agents</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://graef.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Seb</a></span>&nbsp;<span class="post-category">included in <a href="/categories/security/"><i class="far fa-folder fa-fw"></i>Security</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Tuesday, Jun 23, 2026">Tuesday, Jun 23, 2026</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1077 words&nbsp;
+            <div class="post-meta-line"><span class="post-author"><a href="https://graef.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Sebastian Gräf</a></span>&nbsp;<span class="post-category">included in <a href="/categories/security/"><i class="far fa-folder fa-fw"></i>Security</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Tuesday, Jun 23, 2026">Tuesday, Jun 23, 2026</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1120 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -514,7 +514,25 @@
 	</tbody>
 </table>
 <!-- TODO: short GIF of an interactive `seckit scan` run producing the markdown report -->
-<div class="mermaid" id="id-1"></div>
+<pre class="mermaid-graph" id="mmd-3" style="background:none;border:none;padding:0;text-align:center;line-height:normal;">
+graph LR
+    A[Clone any repo / get a skill] --> B{seckit}
+    B --> C[scan: deps, secrets, IaC, malware]
+    B --> D[scan-skill: vet AI skill / MCP]
+    B --> E[harden: pre-commit, gitleaks, CodeQL]
+    B --> F[audit -> enforce: GitHub / ADO posture]
+    C --> G[markdown report]
+    D --> G
+</pre>
+<script type="module">
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+  if (!window.__mermaidReady) {
+    mermaid.initialize({ startOnLoad: false, securityLevel: "strict" });
+    window.__mermaidReady = true;
+  }
+  await mermaid.run({ nodes: [document.getElementById("mmd-3")] });
+</script>
+
 <h2 id="vetting-an-ai-skill-before-you-install-it">Vetting an AI skill before you install it</h2>
 <p>This is the action I reach for most, because it covers a gap nothing else does. People install Claude skills, Copilot extensions, and MCP servers from a zip or a git URL without reading a line of them. An MCP server is code that your agent will hand tools and context to. A poisoned one can exfiltrate your tokens or inject instructions into the model.</p>
 <p><code>scan-skill</code> reads the target statically, it never runs it, and checks for prompt injection, data exfiltration, credential theft, supply-chain RCE, obfuscation, over-broad agency, and MCP tool poisoning. It prints a 0 to 100 risk verdict and a markdown report.</p>
@@ -630,7 +648,6 @@
 <li><a href="https://github.com/segraef/sec-kit" target="_blank" rel="noopener noreffer">segraef/sec-kit on GitHub</a></li>
 <li><a href="../the-silent-leak-why-you-should-never-paste-keys-into-ai-chats/" rel="">The Silent Leak: Why You Should Never Paste Keys into AI Chats</a></li>
 <li><a href="../remove-secrets-from-git-history/" rel="">Secrets Hide in Your Git History, Even After You Delete Them</a></li>
-<li><a href="../copilot-with-your-own-data/" rel="">Copilot with Your Own Data</a></li>
 </ul>
 </div>
         </div>
@@ -651,19 +668,19 @@
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/security/">Security</a>,&nbsp;<a href="/tags/devops/">DevOps</a>,&nbsp;<a href="/tags/ai/">Ai</a>,&nbsp;<a href="/tags/mcp/">Mcp</a>,&nbsp;<a href="/tags/supply-chain/">Supply-Chain</a>,&nbsp;<a href="/tags/gitleaks/">Gitleaks</a>,&nbsp;<a href="/tags/copilot/">Copilot</a>,&nbsp;<a href="/tags/automation/">Automation</a>,&nbsp;<a href="/tags/powershell/">Powershell</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/security/">Security</a>,&nbsp;<a href="/tags/devops/">Devops</a>,&nbsp;<a href="/tags/ai/">AI</a>,&nbsp;<a href="/tags/mcp/">Mcp</a>,&nbsp;<a href="/tags/supply-chain/">Supply-Chain</a>,&nbsp;<a href="/tags/gitleaks/">Gitleaks</a>,&nbsp;<a href="/tags/copilot/">Copilot</a>,&nbsp;<a href="/tags/automation/">Automation</a>,&nbsp;<a href="/tags/powershell/">PowerShell</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/how-github-copilot-coding-agent-makes-my-day/" class="prev" rel="prev" title="How Github Copilot coding agent(s) make my day"><i class="fas fa-angle-left fa-fw"></i>How Github Copilot coding agent(s) make my day</a></div>
+    <div class="post-nav"><a href="/remove-secrets-from-git-history/" class="prev" rel="prev" title="Secrets Hide in Your Git History, Even After You Delete Them"><i class="fas fa-angle-left fa-fw"></i>Secrets Hide in Your Git History, Even After You Delete Them</a></div>
 </div>
 <div id="comments"><div id="utterances"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
             </noscript></div></article></div>
         </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://graef.io" target="_blank">Seb</a></span></div>
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://graef.io" target="_blank">Sebastian Gräf</a></span></div>
         </div>
     </footer></div>
 

@@ -7,10 +7,10 @@
 		<generator>Hugo</generator>
 		<language>en</language>
 		
-			<managingEditor>sebastian@graef.io (Seb)</managingEditor>
+			<managingEditor>sebastian@graef.io (Sebastian Gräf)</managingEditor>
 		
 		
-			<webMaster>sebastian@graef.io (Seb)</webMaster>
+			<webMaster>sebastian@graef.io (Sebastian Gräf)</webMaster>
 		
 		
 		
@@ -20,7 +20,7 @@
 			<item>
 				<title>Find and replace with a newline in Visual Studio Code</title>
 				<link>https://graef.io/find-and-replace-with-a-newline-in-visual-studio-code/</link>
-				<pubDate>Fri, 06 Aug 2021 15:16:19 +0800</pubDate><author>sebastian@graef.io (Seb)</author>
+				<pubDate>Fri, 06 Aug 2021 15:16:19 +0800</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
 				<guid>https://graef.io/find-and-replace-with-a-newline-in-visual-studio-code/</guid>
 				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Today I learned&lt;/strong&gt; How to &lt;em&gt;&lt;strong&gt;find and replace&lt;/strong&gt;&lt;/em&gt; with a newline in Visual Studio Code.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;In the local searchbox (&lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;F&lt;/kbd&gt;) you can insert newlines by pressing &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;Enter&lt;/kbd&gt;.&lt;/p&gt;</description>
 			</item>

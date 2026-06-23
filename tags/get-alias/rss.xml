@@ -7,10 +7,10 @@
 		<generator>Hugo</generator>
 		<language>en</language>
 		
-			<managingEditor>sebastian@graef.io (Seb)</managingEditor>
+			<managingEditor>sebastian@graef.io (Sebastian Gräf)</managingEditor>
 		
 		
-			<webMaster>sebastian@graef.io (Seb)</webMaster>
+			<webMaster>sebastian@graef.io (Sebastian Gräf)</webMaster>
 		
 		
 		
@@ -20,7 +20,7 @@
 			<item>
 				<title>How to get a list of PowerShell Aliases</title>
 				<link>https://graef.io/get-powershell-aliases/</link>
-				<pubDate>Sun, 01 Aug 2021 09:33:25 +0800</pubDate><author>sebastian@graef.io (Seb)</author>
+				<pubDate>Sun, 01 Aug 2021 09:33:25 +0800</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
 				<guid>https://graef.io/get-powershell-aliases/</guid>
 				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Today I learned&lt;/strong&gt; How to get a list of PowerShell Aliases.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;An alias is an alternate name for a cmdlet, function, executable file, including scripts. PowerShell includes a set of built-in aliases. You can add your own aliases to the current session and to your PowerShell profile.&lt;/p&gt;</description>
 			</item>

@@ -16,7 +16,7 @@
 		<meta property="article:published_time" content="2023-06-11T16:37:59+10:00">
 		<meta property="article:modified_time" content="2023-06-11T16:37:59+10:00">
 		<meta property="article:tag" content="Gpt">
-		<meta property="article:tag" content="Ai">
+		<meta property="article:tag" content="AI">
 		<meta property="article:tag" content="Azure">
 		<meta property="article:tag" content="Cognitive">
 		<meta property="article:tag" content="Openai">
@@ -40,12 +40,12 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/graef.io\/building-your-own-gpt-powered-ai-voice-assistant-with-azure-cognitive-services-and-openai\/"
-        },"image": ["https:\/\/graef.io\/logo.png"],"genre": "posts","keywords": "gpt, ai, azure, cognitive, openai, nlp, synthesis, language, processing, mycroft, picroft","wordcount":  709 ,
+        },"image": ["https:\/\/graef.io\/logo.png"],"genre": "posts","keywords": "gpt, ai, azure, cognitive, openai, nlp, synthesis, language, processing, mycroft, picroft","wordcount":  724 ,
         "url": "https:\/\/graef.io\/building-your-own-gpt-powered-ai-voice-assistant-with-azure-cognitive-services-and-openai\/","datePublished": "2023-06-11T16:37:59+10:00","dateModified": "2023-06-11T16:37:59+10:00","publisher": {
             "@type": "Organization",
             "name": "greaf.io","logo": "https:\/\/graef.io\/logo.png"},"author": {
                 "@type": "Person",
-                "name": "Seb"
+                "name": "Sebastian Gräf"
             },"description": ""
     }
     </script>
@@ -336,8 +336,8 @@
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Build your own GPT-Powered AI Voice Assistant with Azure OpenAI and Cognitive Services</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="https://graef.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Seb</a></span>&nbsp;<span class="post-category">included in <a href="/categories/ai/"><i class="far fa-folder fa-fw"></i>AI</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Sunday, Jun 11, 2023">Sunday, Jun 11, 2023</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;709 words&nbsp;
+            <div class="post-meta-line"><span class="post-author"><a href="https://graef.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Sebastian Gräf</a></span>&nbsp;<span class="post-category">included in <a href="/categories/ai/"><i class="far fa-folder fa-fw"></i>AI</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Sunday, Jun 11, 2023">Sunday, Jun 11, 2023</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;724 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -391,7 +391,20 @@
 </div>
 </div><h2 id="workflow">Workflow</h2>
 <p>Let me give you the bigger picture upfront for a better understanding what we&rsquo;re going to do:</p>
-<div class="mermaid" id="id-1"></div>
+<pre class="mermaid-graph" id="mmd-0" style="background:none;border:none;padding:0;text-align:center;line-height:normal;">
+graph TB
+    SpeechToText("Azure Cognitive Services (STT)") --> AzureOpenAI("Azure OpenAI")
+    AzureOpenAI --> TextToSpeech("Azure Cognitive Services (TTS)")
+</pre>
+<script type="module">
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+  if (!window.__mermaidReady) {
+    mermaid.initialize({ startOnLoad: false, securityLevel: "strict" });
+    window.__mermaidReady = true;
+  }
+  await mermaid.run({ nodes: [document.getElementById("mmd-0")] });
+</script>
+
 <ol>
 <li>The Speech-to-Text (STT) <code>SpeechRecognizer</code> component from Cognitive Services recognizes your speech and language and converts it into text.</li>
 <li>The OpenAI component sits in between which acts as the AI voice assistant component, it takes the input from the <code>SpeechRecognizer</code> and generates an intelligent response using a GPT-model.</li>
@@ -577,7 +590,7 @@ All voices can be found <a href="https://learn.microsoft.com/en-us/azure/cogniti
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/gpt/">Gpt</a>,&nbsp;<a href="/tags/ai/">Ai</a>,&nbsp;<a href="/tags/azure/">Azure</a>,&nbsp;<a href="/tags/cognitive/">Cognitive</a>,&nbsp;<a href="/tags/openai/">Openai</a>,&nbsp;<a href="/tags/nlp/">Nlp</a>,&nbsp;<a href="/tags/synthesis/">Synthesis</a>,&nbsp;<a href="/tags/language/">Language</a>,&nbsp;<a href="/tags/processing/">Processing</a>,&nbsp;<a href="/tags/mycroft/">Mycroft</a>,&nbsp;<a href="/tags/picroft/">Picroft</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/gpt/">Gpt</a>,&nbsp;<a href="/tags/ai/">AI</a>,&nbsp;<a href="/tags/azure/">Azure</a>,&nbsp;<a href="/tags/cognitive/">Cognitive</a>,&nbsp;<a href="/tags/openai/">Openai</a>,&nbsp;<a href="/tags/nlp/">Nlp</a>,&nbsp;<a href="/tags/synthesis/">Synthesis</a>,&nbsp;<a href="/tags/language/">Language</a>,&nbsp;<a href="/tags/processing/">Processing</a>,&nbsp;<a href="/tags/mycroft/">Mycroft</a>,&nbsp;<a href="/tags/picroft/">Picroft</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
         </section>
@@ -590,7 +603,7 @@ All voices can be found <a href="https://learn.microsoft.com/en-us/azure/cogniti
                 Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
             </noscript></div></article></div>
         </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://graef.io" target="_blank">Seb</a></span></div>
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://graef.io" target="_blank">Sebastian Gräf</a></span></div>
         </div>
     </footer></div>
 

@@ -7,10 +7,10 @@
 		<generator>Hugo</generator>
 		<language>en</language>
 		
-			<managingEditor>sebastian@graef.io (Seb)</managingEditor>
+			<managingEditor>sebastian@graef.io (Sebastian Gräf)</managingEditor>
 		
 		
-			<webMaster>sebastian@graef.io (Seb)</webMaster>
+			<webMaster>sebastian@graef.io (Sebastian Gräf)</webMaster>
 		
 		
 		
@@ -20,7 +20,7 @@
 			<item>
 				<title>Expired Azure credentials</title>
 				<link>https://graef.io/expired-azure-credentials/</link>
-				<pubDate>Thu, 26 Oct 2017 15:00:50 +0800</pubDate><author>sebastian@graef.io (Seb)</author>
+				<pubDate>Thu, 26 Oct 2017 15:00:50 +0800</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
 				<guid>https://graef.io/expired-azure-credentials/</guid>
 				<description>&lt;p&gt;In case you get this error below, this error is mostly due to outdated Modules or at least in this case the AzureRM module.&lt;/p&gt;</description>
 			</item>

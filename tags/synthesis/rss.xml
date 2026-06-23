@@ -7,10 +7,10 @@
 		<generator>Hugo</generator>
 		<language>en</language>
 		
-			<managingEditor>sebastian@graef.io (Seb)</managingEditor>
+			<managingEditor>sebastian@graef.io (Sebastian Gräf)</managingEditor>
 		
 		
-			<webMaster>sebastian@graef.io (Seb)</webMaster>
+			<webMaster>sebastian@graef.io (Sebastian Gräf)</webMaster>
 		
 		
 		
@@ -20,7 +20,7 @@
 			<item>
 				<title>Build your own GPT-Powered AI Voice Assistant with Azure OpenAI and Cognitive Services</title>
 				<link>https://graef.io/building-your-own-gpt-powered-ai-voice-assistant-with-azure-cognitive-services-and-openai/</link>
-				<pubDate>Sun, 11 Jun 2023 16:37:59 +1000</pubDate><author>sebastian@graef.io (Seb)</author>
+				<pubDate>Sun, 11 Jun 2023 16:37:59 +1000</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
 				<guid>https://graef.io/building-your-own-gpt-powered-ai-voice-assistant-with-azure-cognitive-services-and-openai/</guid>
 				<description>&lt;p&gt;Let&amp;rsquo;s build your own AI voice assistant which is better than Amazon&amp;rsquo;s &lt;strong&gt;Alexa&lt;/strong&gt; using Azure Cognitive Services (SST and TTS) and OpenAI. All you need is a bit of basic Python understanding, an Azure account, a microphone and a speaker. This will take about 15 minutes to set up and you&amp;rsquo;ll be done.&lt;/p&gt;</description>
 			</item>

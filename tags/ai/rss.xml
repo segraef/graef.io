@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
 	<channel>
-		<title>Ai on Automate everything </title>
+		<title>AI on Automate everything </title>
 		<link>https://graef.io/tags/ai/</link>
-		<description>Recent content in Ai on Automate everything </description>
+		<description>Recent content in AI on Automate everything </description>
 		<generator>Hugo</generator>
 		<language>en</language>
 		
-			<managingEditor>sebastian@graef.io (Seb)</managingEditor>
+			<managingEditor>sebastian@graef.io (Sebastian Gräf)</managingEditor>
 		
 		
-			<webMaster>sebastian@graef.io (Seb)</webMaster>
+			<webMaster>sebastian@graef.io (Sebastian Gräf)</webMaster>
 		
 		
 		
@@ -20,28 +20,35 @@
 			<item>
 				<title>SecKit: A Portable Security Pre-flight Kit for Repos and AI Agents</title>
 				<link>https://graef.io/seckit-portable-security-preflight-kit/</link>
-				<pubDate>Tue, 23 Jun 2026 14:00:00 +1000</pubDate><author>sebastian@graef.io (Seb)</author>
+				<pubDate>Tue, 23 Jun 2026 14:00:00 +1000</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
 				<guid>https://graef.io/seckit-portable-security-preflight-kit/</guid>
 				<description>&lt;p&gt;You clone a repo, open it in your editor, and your AI assistant starts indexing it. You install a Claude skill or an MCP server someone shared. You add a dependency. Every one of those is a moment where something untrusted touches your machine, and almost nobody runs a check first. SecKit is the pre-flight you run before any of it: one script, every platform.&lt;/p&gt;</description>
 			</item>
 			<item>
+				<title>The Silent Leak: Why You Should Never Paste Keys into AI Chats</title>
+				<link>https://graef.io/the-silent-leak-why-you-should-never-paste-keys-into-ai-chats/</link>
+				<pubDate>Wed, 18 Feb 2026 16:59:37 +1000</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
+				<guid>https://graef.io/the-silent-leak-why-you-should-never-paste-keys-into-ai-chats/</guid>
+				<description>&lt;p&gt;You&amp;rsquo;re debugging a failing API call. Frustrated, you paste your key straight into the chat with GitHub Copilot or Claude to get a faster answer. Feels harmless, right? It&amp;rsquo;s not. And the problem goes deeper than you think, your AI assistant might already be reading your &lt;code&gt;.env&lt;/code&gt; file without you even knowing.&lt;/p&gt;</description>
+			</item>
+			<item>
 				<title>Build your own GPT-Powered AI Voice Assistant with Azure OpenAI and Cognitive Services</title>
 				<link>https://graef.io/building-your-own-gpt-powered-ai-voice-assistant-with-azure-cognitive-services-and-openai/</link>
-				<pubDate>Sun, 11 Jun 2023 16:37:59 +1000</pubDate><author>sebastian@graef.io (Seb)</author>
+				<pubDate>Sun, 11 Jun 2023 16:37:59 +1000</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
 				<guid>https://graef.io/building-your-own-gpt-powered-ai-voice-assistant-with-azure-cognitive-services-and-openai/</guid>
 				<description>&lt;p&gt;Let&amp;rsquo;s build your own AI voice assistant which is better than Amazon&amp;rsquo;s &lt;strong&gt;Alexa&lt;/strong&gt; using Azure Cognitive Services (SST and TTS) and OpenAI. All you need is a bit of basic Python understanding, an Azure account, a microphone and a speaker. This will take about 15 minutes to set up and you&amp;rsquo;ll be done.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>From Code to Canvas: A Guide for Prompting Stunning AI Art with MidJourney (1/3)</title>
 				<link>https://graef.io/from-code-to-canvas-a-guide-for-prompting-stunning-ai-art-with-midjourney-1/</link>
-				<pubDate>Fri, 03 Feb 2023 14:12:25 +1000</pubDate><author>sebastian@graef.io (Seb)</author>
+				<pubDate>Fri, 03 Feb 2023 14:12:25 +1000</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
 				<guid>https://graef.io/from-code-to-canvas-a-guide-for-prompting-stunning-ai-art-with-midjourney-1/</guid>
 				<description>&lt;p&gt;Unlock your artistic potential and create jaw-dropping AI art with these exclusive cheat codes for Midjourney. These expert hacks will take your art to new heights, no coding skills required!&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>From Code to Canvas: A Guide for Prompting Stunning AI Art with MidJourney (2/3)</title>
 				<link>https://graef.io/from-code-to-canvas-a-guide-for-prompting-stunning-ai-art-with-midjourney-2/</link>
-				<pubDate>Fri, 03 Feb 2023 14:12:25 +1000</pubDate><author>sebastian@graef.io (Seb)</author>
+				<pubDate>Fri, 03 Feb 2023 14:12:25 +1000</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
 				<guid>https://graef.io/from-code-to-canvas-a-guide-for-prompting-stunning-ai-art-with-midjourney-2/</guid>
 				<description>&lt;p&gt;Welcome to the second part of guided prompting for Midjourney to unlock your artistic potential and create jaw-dropping AI art with exclusive cheat codes. These expert hacks will take your art to new heights, no coding skills required!&lt;/p&gt;</description>
 			</item>

@@ -30,7 +30,7 @@
         "@type": "WebSite",
         "url": "https:\/\/graef.io\/","inLanguage": "en","author": {
                 "@type": "Person",
-                "name": "Seb"
+                "name": "Sebastian Gräf"
             },"description": "Automate everything - Sebastian Gräf","image": "https:\/\/graef.io\/logo.png","thumbnailUrl": "https:\/\/graef.io\/logo.png","name": "Automate everything "
     }
     </script>
@@ -326,6 +326,293 @@
         alt="/logo.png"
         title="/logo.png" /></a></div><h2 class="home-subtitle"><div id="id-1" class="typeit"></div></h2><div class="links"><a href="https://github.com/segraef" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw"></i></a><a href="https://linkedin.com/in/sgraef" title="LinkedIn" target="_blank" rel="noopener noreffer me"><i class="fab fa-linkedin fa-fw"></i></a><a href="https://twitter.com/segraef" title="Twitter" target="_blank" rel="noopener noreffer me"><i class="fab fa-twitter fa-fw"></i></a><a href="mailto:contactme@linkedin" title="Email" rel=" me"><i class="far fa-envelope fa-fw"></i></a><a href="/index.xml" title="RSS" target="_blank" rel="noopener noreffer me"><i class="fas fa-rss fa-fw"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
+            <a href="/get-delltags-get-dell-tags-and-express-service-code-remotely/"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/get-delltags-get-dell-tags-and-express-service-code-remotely/featured-image.png"
+        data-srcset="/get-delltags-get-dell-tags-and-express-service-code-remotely/featured-image.png, /get-delltags-get-dell-tags-and-express-service-code-remotely/featured-image.png 1.5x, /get-delltags-get-dell-tags-and-express-service-code-remotely/featured-image.png 2x"
+        data-sizes="auto"
+        alt="/get-delltags-get-dell-tags-and-express-service-code-remotely/featured-image.png"
+        title="/get-delltags-get-dell-tags-and-express-service-code-remotely/featured-image.png" /></a>
+        </div><h1 class="single-title" itemprop="name headline">
+        <a href="/get-delltags-get-dell-tags-and-express-service-code-remotely/">Get-DellTags: Get Dell Tags and Express Service Code remotely</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://graef.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Sebastian Gräf</a></span>&nbsp;<span class="post-publish">published on <time datetime="Tuesday, Aug 15, 2017">Tuesday, Aug 15, 2017</time></span>&nbsp;<span class="post-category">included in <a href="/categories/scripts/"><i class="far fa-folder fa-fw"></i>Scripts</a>&nbsp;<a href="/categories/powershell/"><i class="far fa-folder fa-fw"></i>PowerShell</a>&nbsp;<a href="/categories/windows-server/"><i class="far fa-folder fa-fw"></i>Windows Server</a></span></div><div class="content"><p>Get DELL Tag and Express Service Code remotely for more than one computer.</p></div><div class="post-footer">
+        <a href="/get-delltags-get-dell-tags-and-express-service-code-remotely/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/automation/">Automation</a>,&nbsp;<a href="/tags/scripts/">Scripts</a>,&nbsp;<a href="/tags/powershell/">PowerShell</a>,&nbsp;<a href="/tags/posh/">Posh</a>,&nbsp;<a href="/tags/pwsh/">Pwsh</a>,&nbsp;<a href="/tags/windows/">Windows</a></div></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
+            <a href="/get-scsidisks-combine-physicaldisk-and-logicaldisk-objects/"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/get-scsidisks-combine-physicaldisk-and-logicaldisk-objects/featured-image-preview.png"
+        data-srcset="/get-scsidisks-combine-physicaldisk-and-logicaldisk-objects/featured-image-preview.png, /get-scsidisks-combine-physicaldisk-and-logicaldisk-objects/featured-image-preview.png 1.5x, /get-scsidisks-combine-physicaldisk-and-logicaldisk-objects/featured-image-preview.png 2x"
+        data-sizes="auto"
+        alt="/get-scsidisks-combine-physicaldisk-and-logicaldisk-objects/featured-image-preview.png"
+        title="/get-scsidisks-combine-physicaldisk-and-logicaldisk-objects/featured-image-preview.png" /></a>
+        </div><h1 class="single-title" itemprop="name headline">
+        <a href="/get-scsidisks-combine-physicaldisk-and-logicaldisk-objects/">Get-ScsiDisks: Combine Physicaldisk and Logicaldisk Objects</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://graef.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Sebastian Gräf</a></span>&nbsp;<span class="post-publish">published on <time datetime="Thursday, Aug 10, 2017">Thursday, Aug 10, 2017</time></span>&nbsp;<span class="post-category">included in <a href="/categories/windows/"><i class="far fa-folder fa-fw"></i>Windows</a>&nbsp;<a href="/categories/windows-server/"><i class="far fa-folder fa-fw"></i>Windows Server</a></span></div><div class="content"><p>Hi there, following function <code>Get-ScsiDisks</code> retrieves disk details for VMWare Guests or any computer with corresponding SCSI disk details like SCSI ID and SCSI Bus. The function concatenates objects consisting of <code>Win32_DiskDrive</code>, <code>Win32_LogicalDisk</code> and <code>Win32_DiskDriveToDiskPartition</code> using WMI. For WinRM you can use Invoke-Command and inject the script.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="kd">Function</span><span class="w"> </span><span class="nb">Get-ScsiDisks</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="cm">&lt;#
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">SYNOPSIS</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Retrieves disk details for VMWare Guests with corresponding SCSI disk details like SCSI ID
+</span></span></span><span class="line"><span class="cl"><span class="cm">    and SCSI Bus.
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">DESCRIPTION</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Retrieves a concatenated object consisting of Win32_DiskDrive, Win32_LogicalDisk and
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Win32_DiskDriveToDiskPartition using WMI. For WinRM you can use Invoke-Command and inject the script.
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.PARAMETER ComputerName
+</span></span></span><span class="line"><span class="cl"><span class="cm">    A single Computer or an array of computer names. The default is localhost ($env:COMPUTERNAME).
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.PARAMETER Credentials
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Commit Credentials for a different domain.
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.PARAMETER Verbose
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Run in Verbose Mode.
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">EXAMPLE</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    PS C:&gt; Get-ScsiDisks
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    ComputerName    Disk               DriveLetter VolumeName  Size FreeSpace DiskModel
+</span></span></span><span class="line"><span class="cl"><span class="cm">    ------------    ----               ----------- ----------  ---- --------- ---------
+</span></span></span><span class="line"><span class="cl"><span class="cm">    SERVER          \.PHYSICALDRIVE1 D:          Data         767       767 VMware Virtual di...
+</span></span></span><span class="line"><span class="cl"><span class="cm">    SERVER          \.PHYSICALDRIVE0 C:          OS            59        39 VMware Virtual di...
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">EXAMPLE</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">	PS C:&gt; Get-ScsiDisks | Out-GridView
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">EXAMPLE</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">	PS C:&gt; Get-ScsiDisks | ft -a
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">EXAMPLE</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">	PS C:&gt; Get-ScsiDisks -ComputerName (gc &#39;C:VMs.txt&#39;) -Credentials Get-Credential
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">LINK</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">Home
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">.</span><span class="sd">NOTES</span><span class="cm">
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Author:  Sebastian Gräf
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Email:   ps@graef.io
+</span></span></span><span class="line"><span class="cl"><span class="cm">    Date:    September 12, 2017
+</span></span></span><span class="line"><span class="cl"><span class="cm">    PSVer:   3.0/4.0/5.0
+</span></span></span><span class="line"><span class="cl"><span class="cm">#&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="p">[</span><span class="nb">Cmdletbinding</span><span class="p">()]</span>
+</span></span><span class="line"><span class="cl">	<span class="k">Param</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">		<span class="p">[</span><span class="nb">Parameter</span><span class="p">(</span><span class="na">ValueFromPipelineByPropertyName</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">,</span> <span class="na">ValueFromPipeline</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">		<span class="nv">$ComputerName</span> <span class="p">=</span> <span class="nv">$Env:COMPUTERNAME</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		<span class="p">[</span><span class="nb">Parameter</span><span class="p">(</span><span class="na">ValueFromPipelineByPropertyName</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">,</span> <span class="na">ValueFromPipeline</span> <span class="p">=</span> <span class="vm">$true</span><span class="p">)]</span>
+</span></span><span class="line"><span class="cl">		<span class="p">[</span><span class="n">ValidateNotNull</span><span class="p">()]</span>
+</span></span><span class="line"><span class="cl">		<span class="p">[</span><span class="no">System.Management.Automation.PSCredential</span><span class="p">][</span><span class="n">System</span><span class="p">.</span><span class="py">Management</span><span class="p">.</span><span class="py">Automation</span><span class="p">.</span><span class="py">Credential</span><span class="p">()]</span>
+</span></span><span class="line"><span class="cl">		<span class="nv">$Credentials</span> <span class="p">=</span> <span class="p">[</span><span class="no">System.Management.Automation.PSCredential</span><span class="p">]::</span><span class="n">Empty</span>
+</span></span><span class="line"><span class="cl">	<span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">Begin</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nb">Write-Verbose</span> <span class="s2">&#34; [</span><span class="p">$(</span><span class="nv">$MyInvocation</span><span class="p">.</span><span class="n">InvocationName</span><span class="p">)</span><span class="s2">] :: Start Process&#34;</span>
+</span></span><span class="line"><span class="cl">		<span class="nv">$result</span><span class="p">=</span><span class="vm">@</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">		<span class="nv">$ProgressCounter</span> <span class="p">=</span> <span class="mf">0</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="k">Process</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="k">foreach</span> <span class="p">(</span><span class="nv">$Computer</span> <span class="k">in</span> <span class="nv">$ComputerName</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">		<span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="nv">$ProgressCounter</span><span class="p">++</span>
+</span></span><span class="line"><span class="cl">			<span class="nb">Write-Progress</span> <span class="n">-activity</span> <span class="s2">&#34;Running on </span><span class="nv">$Computer</span><span class="s2">&#34;</span> <span class="n">-status</span> <span class="s2">&#34;Please wait ...&#34;</span> <span class="n">-PercentComplete</span> <span class="p">((</span><span class="nv">$ProgressCounter</span> <span class="p">/</span> <span class="nv">$ComputerName</span><span class="p">.</span><span class="n">length</span><span class="p">)</span> <span class="p">*</span> <span class="mf">100</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="k">if</span> <span class="p">(</span><span class="nb">Test-Connection</span> <span class="nv">$Computer</span> <span class="n">-Count</span> <span class="mf">1</span> <span class="n">-Quiet</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="nb">Write-Verbose</span> <span class="s2">&#34; [</span><span class="p">$(</span><span class="nv">$MyInvocation</span><span class="p">.</span><span class="n">InvocationName</span><span class="p">)</span><span class="s2">] :: Processing </span><span class="nv">$Computer</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">				<span class="k">try</span>
+</span></span><span class="line"><span class="cl">				<span class="p">{</span>
+</span></span><span class="line"><span class="cl">					<span class="nb">Get-WmiObject</span> <span class="n">-Class</span> <span class="n">Win32_DiskDrive</span> <span class="n">-ComputerName</span> <span class="nv">$Computer</span> <span class="n">-Credential</span> <span class="nv">$Credentials</span> <span class="p">|</span> <span class="p">%</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">						<span class="nv">$disk</span> <span class="p">=</span> <span class="nv">$_</span>
+</span></span><span class="line"><span class="cl">						<span class="nv">$partitions</span> <span class="p">=</span> <span class="s2">&#34;ASSOCIATORS OF &#34;</span> <span class="p">+</span>
+</span></span><span class="line"><span class="cl">						<span class="s2">&#34;{Win32_DiskDrive.DeviceID=&#39;</span><span class="p">$(</span><span class="nv">$disk</span><span class="p">.</span><span class="n">DeviceID</span><span class="p">)</span><span class="s2">&#39;} &#34;</span> <span class="p">+</span>
+</span></span><span class="line"><span class="cl">						<span class="s2">&#34;WHERE AssocClass = Win32_DiskDriveToDiskPartition&#34;</span>
+</span></span><span class="line"><span class="cl">						<span class="nb">Get-WmiObject</span> <span class="n">-Query</span> <span class="nv">$partitions</span> <span class="n">-ComputerName</span> <span class="nv">$Computer</span> <span class="n">-Credential</span> <span class="nv">$Credentials</span> <span class="p">|</span> <span class="p">%</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">							<span class="nv">$partition</span> <span class="p">=</span> <span class="nv">$_</span>
+</span></span><span class="line"><span class="cl">							<span class="nv">$drives</span> <span class="p">=</span> <span class="s2">&#34;ASSOCIATORS OF &#34;</span> <span class="p">+</span>
+</span></span><span class="line"><span class="cl">							<span class="s2">&#34;{Win32_DiskPartition.DeviceID=&#39;</span><span class="p">$(</span><span class="nv">$partition</span><span class="p">.</span><span class="n">DeviceID</span><span class="p">)</span><span class="s2">&#39;} &#34;</span> <span class="p">+</span>
+</span></span><span class="line"><span class="cl">							<span class="s2">&#34;WHERE AssocClass = Win32_LogicalDiskToPartition&#34;</span>
+</span></span><span class="line"><span class="cl">							<span class="nb">Get-WmiObject</span> <span class="n">-Query</span> <span class="nv">$drives</span> <span class="n">-ComputerName</span> <span class="nv">$Computer</span> <span class="n">-Credential</span> <span class="nv">$Credentials</span> <span class="p">|</span> <span class="p">%</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">								<span class="nv">$obj</span> <span class="p">=</span> <span class="nb">New-Object</span> <span class="n">-Type</span> <span class="n">PSCustomObject</span> <span class="n">-Property</span> <span class="vm">@</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">									<span class="n">ComputerName</span> <span class="p">=</span> <span class="nv">$Computer</span>
+</span></span><span class="line"><span class="cl">									<span class="n">Disk</span> <span class="p">=</span> <span class="nv">$disk</span><span class="p">.</span><span class="py">DeviceID</span>
+</span></span><span class="line"><span class="cl">									<span class="n">DiskSize</span> <span class="p">=</span> <span class="p">[</span><span class="no">math</span><span class="p">]::</span><span class="n">Truncate</span><span class="p">(</span><span class="nv">$disk</span><span class="p">.</span><span class="py">Size</span> <span class="p">/</span> <span class="mf">1</span><span class="p">GB);</span>
+</span></span><span class="line"><span class="cl">									<span class="n">DiskModel</span> <span class="p">=</span> <span class="nv">$disk</span><span class="p">.</span><span class="py">Model</span>
+</span></span><span class="line"><span class="cl">									<span class="n">Partition</span> <span class="p">=</span> <span class="nv">$partition</span><span class="p">.</span><span class="py">Name</span>
+</span></span><span class="line"><span class="cl">									<span class="n">DriveLetter</span> <span class="p">=</span> <span class="nv">$_</span><span class="p">.</span><span class="py">DeviceID</span>
+</span></span><span class="line"><span class="cl">									<span class="n">VolumeName</span> <span class="p">=</span> <span class="nv">$_</span><span class="p">.</span><span class="py">VolumeName</span>
+</span></span><span class="line"><span class="cl">									<span class="n">Size</span> <span class="p">=</span> <span class="p">[</span><span class="no">math</span><span class="p">]::</span><span class="n">Truncate</span><span class="p">(</span><span class="nv">$_</span><span class="p">.</span><span class="py">Size</span> <span class="p">/</span> <span class="mf">1</span><span class="p">GB)</span>
+</span></span><span class="line"><span class="cl">									<span class="n">FreeSpace</span> <span class="p">=</span> <span class="p">[</span><span class="no">math</span><span class="p">]::</span><span class="n">Truncate</span><span class="p">(</span><span class="nv">$_</span><span class="p">.</span><span class="py">FreeSpace</span> <span class="p">/</span> <span class="mf">1</span><span class="p">GB)</span>
+</span></span><span class="line"><span class="cl">									<span class="n">SCSIBus</span> <span class="p">=</span> <span class="nv">$disk</span><span class="p">.</span><span class="py">SCSIBus</span>
+</span></span><span class="line"><span class="cl">									<span class="n">SCSITargetId</span> <span class="p">=</span> <span class="nv">$disk</span><span class="p">.</span><span class="py">SCSITargetId</span>
+</span></span><span class="line"><span class="cl">								<span class="p">}</span>
+</span></span><span class="line"><span class="cl">								<span class="nv">$result</span> <span class="p">+=</span> <span class="nv">$obj</span>
+</span></span><span class="line"><span class="cl">							<span class="p">}</span>
+</span></span><span class="line"><span class="cl">						<span class="p">}</span>
+</span></span><span class="line"><span class="cl">					<span class="p">}</span>
+</span></span><span class="line"><span class="cl">				<span class="p">}</span>
+</span></span><span class="line"><span class="cl">				<span class="k">catch</span>
+</span></span><span class="line"><span class="cl">				<span class="p">{</span>
+</span></span><span class="line"><span class="cl">					<span class="nb">Write-Verbose</span> <span class="s2">&#34; Host [</span><span class="nv">$Computer</span><span class="s2">] Failed with Error: </span><span class="p">$(</span><span class="nv">$Error</span><span class="p">[</span><span class="mf">0</span><span class="p">])</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">				<span class="p">}</span>
+</span></span><span class="line"><span class="cl">			<span class="p">}</span>
+</span></span><span class="line"><span class="cl">			<span class="k">else</span>
+</span></span><span class="line"><span class="cl">			<span class="p">{</span>
+</span></span><span class="line"><span class="cl">				<span class="nb">Write-Verbose</span> <span class="s2">&#34; Host [</span><span class="nv">$Computer</span><span class="s2">] Failed Connectivity Test&#34;</span>
+</span></span><span class="line"><span class="cl">			<span class="p">}</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="nv">$result</span> <span class="p">|</span> <span class="nb">select </span><span class="n">ComputerName</span><span class="p">,</span><span class="n">Disk</span><span class="p">,</span><span class="n">DriveLetter</span><span class="p">,</span><span class="n">VolumeName</span><span class="p">,</span><span class="n">Size</span><span class="p">,</span><span class="n">FreeSpace</span><span class="p">,</span><span class="n">DiskModel</span><span class="p">,</span><span class="n">Partition</span><span class="p">,</span><span class="n">SCSIBus</span><span class="p">,</span><span class="n">SCSITargetId</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">End</span>
+</span></span><span class="line"><span class="cl">	<span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="nb">Write-Progress</span> <span class="n">-activity</span> <span class="s2">&#34;Running on </span><span class="nv">$Computer</span><span class="s2">&#34;</span> <span class="n">-Status</span> <span class="s2">&#34;Completed.&#34;</span> <span class="n">-Completed</span>
+</span></span><span class="line"><span class="cl">		<span class="nb">Write-Verbose</span> <span class="s2">&#34; [</span><span class="p">$(</span><span class="nv">$MyInvocation</span><span class="p">.</span><span class="n">InvocationName</span><span class="p">)</span><span class="s2">] :: End Process&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer">
+        <a href="/get-scsidisks-combine-physicaldisk-and-logicaldisk-objects/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/automation/">Automation</a>,&nbsp;<a href="/tags/scripts/">Scripts</a>,&nbsp;<a href="/tags/powershell/">PowerShell</a>,&nbsp;<a href="/tags/posh/">Posh</a>,&nbsp;<a href="/tags/pwsh/">Pwsh</a>,&nbsp;<a href="/tags/windows/">Windows</a>,&nbsp;<a href="/tags/scsi/">SCSI</a></div></div>
+</article>
+<article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
             <a href="/simulate-activity-simulate-user-mouse-and-keyboard-input-with-powershell/"><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -336,9 +623,9 @@
         title="/simulate-activity-simulate-user-mouse-and-keyboard-input-with-powershell/featured-image-preview.png" /></a>
         </div><h1 class="single-title" itemprop="name headline">
         <a href="/simulate-activity-simulate-user-mouse-and-keyboard-input-with-powershell/">Simulate-Activity: Simulate user mouse and keyboard input with PowerShell</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="https://graef.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Seb</a></span>&nbsp;<span class="post-publish">published on <time datetime="Thursday, Aug 10, 2017">Thursday, Aug 10, 2017</time></span>&nbsp;<span class="post-category">included in <a href="/categories/scripts/"><i class="far fa-folder fa-fw"></i>Scripts</a>&nbsp;<a href="/categories/powershell/"><i class="far fa-folder fa-fw"></i>PowerShell</a>&nbsp;<a href="/categories/windows-server/"><i class="far fa-folder fa-fw"></i>Windows Server</a></span></div><div class="content"><p>If you want to avoid or block coming up your screensaver locally or remotely, take this nice script.</p></div><div class="post-footer">
+    </h1><div class="post-meta"><span class="post-author"><a href="https://graef.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Sebastian Gräf</a></span>&nbsp;<span class="post-publish">published on <time datetime="Thursday, Aug 10, 2017">Thursday, Aug 10, 2017</time></span>&nbsp;<span class="post-category">included in <a href="/categories/scripts/"><i class="far fa-folder fa-fw"></i>Scripts</a>&nbsp;<a href="/categories/powershell/"><i class="far fa-folder fa-fw"></i>PowerShell</a>&nbsp;<a href="/categories/windows-server/"><i class="far fa-folder fa-fw"></i>Windows Server</a></span></div><div class="content"><p>If you want to avoid or block coming up your screensaver locally or remotely, take this nice script.</p></div><div class="post-footer">
         <a href="/simulate-activity-simulate-user-mouse-and-keyboard-input-with-powershell/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/automation/">Automation</a>,&nbsp;<a href="/tags/scripts/">Scripts</a>,&nbsp;<a href="/tags/powershell/">Powershell</a>,&nbsp;<a href="/tags/posh/">Posh</a>,&nbsp;<a href="/tags/pwsh/">Pwsh</a>,&nbsp;<a href="/tags/windows/">Windows</a></div></div>
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/automation/">Automation</a>,&nbsp;<a href="/tags/scripts/">Scripts</a>,&nbsp;<a href="/tags/powershell/">PowerShell</a>,&nbsp;<a href="/tags/posh/">Posh</a>,&nbsp;<a href="/tags/pwsh/">Pwsh</a>,&nbsp;<a href="/tags/windows/">Windows</a></div></div>
 </article>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
             <a href="/resolve-dns-and-ip-addresses-with-powershell/"><img
@@ -351,7 +638,7 @@
         title="/resolve-dns-and-ip-addresses-with-powershell/featured-image-preview.png" /></a>
         </div><h1 class="single-title" itemprop="name headline">
         <a href="/resolve-dns-and-ip-addresses-with-powershell/">Resolve DNS and IP addresses with PowerShell</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="https://graef.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Seb</a></span>&nbsp;<span class="post-publish">published on <time datetime="Monday, Jul 10, 2017">Monday, Jul 10, 2017</time></span>&nbsp;<span class="post-category">included in <a href="/categories/scripts/"><i class="far fa-folder fa-fw"></i>Scripts</a>&nbsp;<a href="/categories/powershell/"><i class="far fa-folder fa-fw"></i>PowerShell</a>&nbsp;<a href="/categories/windows-server/"><i class="far fa-folder fa-fw"></i>Windows Server</a></span></div><div class="content"><p>In this case we’re going to use the method GetHostAddresses of the Dns class of the Sytem.Net namespace.
+    </h1><div class="post-meta"><span class="post-author"><a href="https://graef.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Sebastian Gräf</a></span>&nbsp;<span class="post-publish">published on <time datetime="Monday, Jul 10, 2017">Monday, Jul 10, 2017</time></span>&nbsp;<span class="post-category">included in <a href="/categories/scripts/"><i class="far fa-folder fa-fw"></i>Scripts</a>&nbsp;<a href="/categories/powershell/"><i class="far fa-folder fa-fw"></i>PowerShell</a>&nbsp;<a href="/categories/windows-server/"><i class="far fa-folder fa-fw"></i>Windows Server</a></span></div><div class="content"><p>In this case we’re going to use the method GetHostAddresses of the Dns class of the Sytem.Net namespace.
 For PowerShell 2.0 you can use following Windows PowerShell One Liners:</p>
 <h3 id="name-to-ip-address-dns-forward">Name to IP Address (DNS Forward)</h3>
 <div class="highlight"><div class="chroma">
@@ -383,60 +670,7 @@ For PowerShell 2.0 you can use following Windows PowerShell One Liners:</p>
 </div>
 </div><p>As of PowerShell 4.0 you can use the Cmdlet Resolve-DnsName as well as for both Forward and Reverse:</p></div><div class="post-footer">
         <a href="/resolve-dns-and-ip-addresses-with-powershell/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/automation/">Automation</a>,&nbsp;<a href="/tags/scripts/">Scripts</a>,&nbsp;<a href="/tags/powershell/">Powershell</a>,&nbsp;<a href="/tags/posh/">Posh</a>,&nbsp;<a href="/tags/pwsh/">Pwsh</a>,&nbsp;<a href="/tags/windows/">Windows</a>,&nbsp;<a href="/tags/dns/">DNS</a>,&nbsp;<a href="/tags/ip/">IP</a></div></div>
-</article>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
-        <a href="/show-non-present-devices-in-windows-with-device-manager/">Show non-present devices in Windows with Device Manager</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="https://graef.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Seb</a></span>&nbsp;<span class="post-publish">published on <time datetime="Tuesday, Jun 27, 2017">Tuesday, Jun 27, 2017</time></span>&nbsp;<span class="post-category">included in <a href="/categories/windows-server/"><i class="far fa-folder fa-fw"></i>Windows Server</a></span></div><div class="content"><p>Open PowerShell or Commmand Shell, enter the following</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">set devmgr_show_nonpresent_devices=1
-</span></span><span class="line"><span class="cl">devmgmt.msc
-</span></span></code></pre></td></tr></table>
-</div>
-</div><figure><a class="lightgallery" href="/show-non-present-devices-in-windows-with-device-manager/2021-08-10-11-56-22.png" title="/show-non-present-devices-in-windows-with-device-manager/2021-08-10-11-56-22.png" data-thumbnail="/show-non-present-devices-in-windows-with-device-manager/2021-08-10-11-56-22.png" data-sub-html="<h2>.</h2>">
-        <img
-            class="lazyload"
-            src="/svg/loading.min.svg"
-            data-src="2021-08-10-11-56-22.png"
-            data-srcset="/show-non-present-devices-in-windows-with-device-manager/2021-08-10-11-56-22.png, 2021-08-10-11-56-22.png 1.5x, /show-non-present-devices-in-windows-with-device-manager/2021-08-10-11-56-22.png 2x"
-            data-sizes="auto"
-            alt="/show-non-present-devices-in-windows-with-device-manager/2021-08-10-11-56-22.png" />
-    </a><figcaption class="image-caption">.</figcaption>
-    </figure>
-<p>This will open your device manager with the ability to show hidden devices. Click on View and select &ldquo;Show hidden devices&rdquo;.</p>
-<figure><a class="lightgallery" href="/show-non-present-devices-in-windows-with-device-manager/2021-08-10-11-56-49.png" title="/show-non-present-devices-in-windows-with-device-manager/2021-08-10-11-56-49.png" data-thumbnail="/show-non-present-devices-in-windows-with-device-manager/2021-08-10-11-56-49.png" data-sub-html="<h2>.</h2>">
-        <img
-            class="lazyload"
-            src="/svg/loading.min.svg"
-            data-src="2021-08-10-11-56-49.png"
-            data-srcset="/show-non-present-devices-in-windows-with-device-manager/2021-08-10-11-56-49.png, 2021-08-10-11-56-49.png 1.5x, /show-non-present-devices-in-windows-with-device-manager/2021-08-10-11-56-49.png 2x"
-            data-sizes="auto"
-            alt="/show-non-present-devices-in-windows-with-device-manager/2021-08-10-11-56-49.png" />
-    </a><figcaption class="image-caption">.</figcaption>
-    </figure>
-<p>Select your hidden device you need to remove, right click and select uninstall. That&rsquo;s it!</p></div><div class="post-footer">
-        <a href="/show-non-present-devices-in-windows-with-device-manager/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/automation/">Automation</a>,&nbsp;<a href="/tags/scripts/">Scripts</a>,&nbsp;<a href="/tags/powershell/">Powershell</a>,&nbsp;<a href="/tags/posh/">Posh</a>,&nbsp;<a href="/tags/pwsh/">Pwsh</a>,&nbsp;<a href="/tags/windows/">Windows</a></div></div>
-</article>
-<article class="single summary" itemscope itemtype="http://schema.org/Article"><div class="featured-image-preview">
-            <a href="/configure-cluster-quorum-node-weight-settings/"><img
-        class="lazyload"
-        src="/svg/loading.min.svg"
-        data-src="/configure-cluster-quorum-node-weight-settings/featured-image-preview.png"
-        data-srcset="/configure-cluster-quorum-node-weight-settings/featured-image-preview.png, /configure-cluster-quorum-node-weight-settings/featured-image-preview.png 1.5x, /configure-cluster-quorum-node-weight-settings/featured-image-preview.png 2x"
-        data-sizes="auto"
-        alt="/configure-cluster-quorum-node-weight-settings/featured-image-preview.png"
-        title="/configure-cluster-quorum-node-weight-settings/featured-image-preview.png" /></a>
-        </div><h1 class="single-title" itemprop="name headline">
-        <a href="/configure-cluster-quorum-node-weight-settings/">Configure Cluster Quorum node weight settings</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="https://graef.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Seb</a></span>&nbsp;<span class="post-publish">published on <time datetime="Friday, Jun 23, 2017">Friday, Jun 23, 2017</time></span>&nbsp;<span class="post-category">included in <a href="/categories/scripts/"><i class="far fa-folder fa-fw"></i>Scripts</a>&nbsp;<a href="/categories/powershell/"><i class="far fa-folder fa-fw"></i>PowerShell</a>&nbsp;<a href="/categories/windows-server/"><i class="far fa-folder fa-fw"></i>Windows Server</a></span></div><div class="content"><p>While using SQL AlwaysOn in connection with a third node on a different location as a DR solution, the third node is needed only in case there is a real Disaster Recovery.</p></div><div class="post-footer">
-        <a href="/configure-cluster-quorum-node-weight-settings/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/automation/">Automation</a>,&nbsp;<a href="/tags/scripts/">Scripts</a>,&nbsp;<a href="/tags/powershell/">Powershell</a>,&nbsp;<a href="/tags/posh/">Posh</a>,&nbsp;<a href="/tags/pwsh/">Pwsh</a>,&nbsp;<a href="/tags/windows/">Windows</a></div></div>
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/automation/">Automation</a>,&nbsp;<a href="/tags/scripts/">Scripts</a>,&nbsp;<a href="/tags/powershell/">PowerShell</a>,&nbsp;<a href="/tags/posh/">Posh</a>,&nbsp;<a href="/tags/pwsh/">Pwsh</a>,&nbsp;<a href="/tags/windows/">Windows</a>,&nbsp;<a href="/tags/dns/">DNS</a>,&nbsp;<a href="/tags/ip/">IP</a></div></div>
 </article>
 <ul class="pagination"><li class="page-item ">
                     <span class="page-link">
@@ -466,7 +700,7 @@ For PowerShell 2.0 you can use following Windows PowerShell One Liners:</p>
                     </span>
                 </li></ul></div></div>
         </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://graef.io" target="_blank">Seb</a></span></div>
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://graef.io" target="_blank">Sebastian Gräf</a></span></div>
         </div>
     </footer></div>
 

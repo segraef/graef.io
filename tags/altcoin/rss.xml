@@ -7,10 +7,10 @@
 		<generator>Hugo</generator>
 		<language>en</language>
 		
-			<managingEditor>sebastian@graef.io (Seb)</managingEditor>
+			<managingEditor>sebastian@graef.io (Sebastian Gräf)</managingEditor>
 		
 		
-			<webMaster>sebastian@graef.io (Seb)</webMaster>
+			<webMaster>sebastian@graef.io (Sebastian Gräf)</webMaster>
 		
 		
 		
@@ -20,7 +20,7 @@
 			<item>
 				<title>Crypto Tokens, Coins and Mnemonics</title>
 				<link>https://graef.io/crypto-token-coins-and-mnemonics/</link>
-				<pubDate>Mon, 03 Jan 2022 11:41:52 +0800</pubDate><author>sebastian@graef.io (Seb)</author>
+				<pubDate>Mon, 03 Jan 2022 11:41:52 +0800</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
 				<guid>https://graef.io/crypto-token-coins-and-mnemonics/</guid>
 				<description>&lt;p&gt;Today I learned to simply explain the difference between a crypto token, coin and a mnemonic.&lt;/p&gt;</description>
 			</item>

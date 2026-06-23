@@ -7,10 +7,10 @@
 		<generator>Hugo</generator>
 		<language>en</language>
 		
-			<managingEditor>sebastian@graef.io (Seb)</managingEditor>
+			<managingEditor>sebastian@graef.io (Sebastian Gräf)</managingEditor>
 		
 		
-			<webMaster>sebastian@graef.io (Seb)</webMaster>
+			<webMaster>sebastian@graef.io (Sebastian Gräf)</webMaster>
 		
 		
 		
@@ -20,7 +20,7 @@
 			<item>
 				<title>Visual Studio Code Keyboard Shortcuts</title>
 				<link>https://graef.io/visual-studio-code-keyboard-shortcuts/</link>
-				<pubDate>Mon, 02 Aug 2021 15:30:25 +0800</pubDate><author>sebastian@graef.io (Seb)</author>
+				<pubDate>Mon, 02 Aug 2021 15:30:25 +0800</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
 				<guid>https://graef.io/visual-studio-code-keyboard-shortcuts/</guid>
 				<description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;Today I learned&lt;/strong&gt; Visual Studio Code Keyboard Shortcuts for Windows, macOs and Linux.&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Visual Studio Code lets you perform most tasks directly from the keyboard. This page lists out the default bindings (keyboard shortcuts).&lt;/p&gt;</description>
 			</item>

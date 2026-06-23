@@ -161,7 +161,5 @@ I keep writing about the same failure mode: [secrets pasted into AI chats](../th
 {{< admonition info References >}}
 - [segraef/sec-kit on GitHub](https://github.com/segraef/sec-kit)
 - [The Silent Leak: Why You Should Never Paste Keys into AI Chats](../the-silent-leak-why-you-should-never-paste-keys-into-ai-chats/)
-- [Secrets Hide in Your Git History, Even After You Delete Them](../remove-secrets-from-git-history/)
-- [Copilot with Your Own Data](../copilot-with-your-own-data/)
-{{< /admonition >}}
+- [Secrets Hide in Your Git History, Even After You Delete Them](../remove-secrets-from-git-history/){{< /admonition >}}
 

@@ -7,10 +7,10 @@
 		<generator>Hugo</generator>
 		<language>en</language>
 		
-			<managingEditor>sebastian@graef.io (Seb)</managingEditor>
+			<managingEditor>sebastian@graef.io (Sebastian Gräf)</managingEditor>
 		
 		
-			<webMaster>sebastian@graef.io (Seb)</webMaster>
+			<webMaster>sebastian@graef.io (Sebastian Gräf)</webMaster>
 		
 		
 		
@@ -20,7 +20,7 @@
 			<item>
 				<title>Wordpress Basic Settings in config.php</title>
 				<link>https://graef.io/wordpress-basic-settings-in-configphp/</link>
-				<pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate><author>sebastian@graef.io (Seb)</author>
+				<pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
 				<guid>https://graef.io/wordpress-basic-settings-in-configphp/</guid>
 				<description>&lt;p&gt;1&lt;/p&gt;</description>
 			</item>

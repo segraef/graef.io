@@ -17,11 +17,17 @@
             <loc>https://graef.io/tags/security/</loc><lastmod>2026-06-23T14:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://graef.io/tags/supply-chain/</loc><lastmod>2026-06-23T14:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://graef.io/tags/</loc><lastmod>2026-06-23T14:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://graef.io/tags/git/</loc><lastmod>2026-06-23T10:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://graef.io/tags/github/</loc><lastmod>2026-06-23T10:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://graef.io/tags/secrets/</loc><lastmod>2026-06-23T10:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://graef.io/remove-secrets-from-git-history/</loc><lastmod>2026-06-23T10:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://graef.io/tags/claude/</loc><lastmod>2026-02-18T16:59:37&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://graef.io/tags/cursor/</loc><lastmod>2026-02-18T16:59:37&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://graef.io/the-silent-leak-why-you-should-never-paste-keys-into-ai-chats/</loc><lastmod>2026-02-18T16:59:37&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/tags/agents/</loc><lastmod>2025-07-14T10:06:59&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/categories/ai/</loc><lastmod>2025-07-14T10:06:59&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/categories/copilot/</loc><lastmod>2025-07-14T10:06:59&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/categories/github/</loc><lastmod>2025-07-14T10:06:59&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://graef.io/tags/github/</loc><lastmod>2025-07-14T10:06:59&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/how-github-copilot-coding-agent-makes-my-day/</loc><lastmod>2025-07-14T10:06:59&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/tags/iac/</loc><lastmod>2025-07-14T10:06:59&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/tags/terraform/</loc><lastmod>2025-07-14T10:06:59&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -29,7 +35,6 @@
             <loc>https://graef.io/privacy/</loc><lastmod>2025-07-14T00:00:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/automating-repository-management-in-github-and-azure-devops-with-powershell/</loc><lastmod>2025-03-22T10:22:10&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/tags/azure/</loc><lastmod>2025-03-22T10:22:10&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://graef.io/tags/git/</loc><lastmod>2025-03-22T10:22:10&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/tags/management/</loc><lastmod>2025-03-22T10:22:10&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/tags/repository/</loc><lastmod>2025-03-22T10:22:10&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/tags/scripting/</loc><lastmod>2025-03-22T10:22:10&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>

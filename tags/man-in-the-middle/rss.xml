@@ -7,10 +7,10 @@
 		<generator>Hugo</generator>
 		<language>en</language>
 		
-			<managingEditor>sebastian@graef.io (Seb)</managingEditor>
+			<managingEditor>sebastian@graef.io (Sebastian Gräf)</managingEditor>
 		
 		
-			<webMaster>sebastian@graef.io (Seb)</webMaster>
+			<webMaster>sebastian@graef.io (Sebastian Gräf)</webMaster>
 		
 		
 		
@@ -20,7 +20,7 @@
 			<item>
 				<title>Cold Crypto Wallets and MITM Attacks</title>
 				<link>https://graef.io/cold-crypto-wallets-and-mitm-attacks/</link>
-				<pubDate>Sun, 02 Jan 2022 13:35:57 +0800</pubDate><author>sebastian@graef.io (Seb)</author>
+				<pubDate>Sun, 02 Jan 2022 13:35:57 +0800</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
 				<guid>https://graef.io/cold-crypto-wallets-and-mitm-attacks/</guid>
 				<description>&lt;p&gt;Are my cold wallet and the generated addresses really secure? I would like to familiarise you with the security topics of cold wallets and what you should pay attention to.&lt;/p&gt;</description>
 			</item>

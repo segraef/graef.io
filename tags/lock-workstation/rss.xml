@@ -7,10 +7,10 @@
 		<generator>Hugo</generator>
 		<language>en</language>
 		
-			<managingEditor>sebastian@graef.io (Seb)</managingEditor>
+			<managingEditor>sebastian@graef.io (Sebastian Gräf)</managingEditor>
 		
 		
-			<webMaster>sebastian@graef.io (Seb)</webMaster>
+			<webMaster>sebastian@graef.io (Sebastian Gräf)</webMaster>
 		
 		
 		
@@ -20,7 +20,7 @@
 			<item>
 				<title>Function Lock-Workstation locally and remotely</title>
 				<link>https://graef.io/function-lock-workstation-locally-and-remotely/</link>
-				<pubDate>Sun, 04 Aug 2019 00:00:00 +0000</pubDate><author>sebastian@graef.io (Seb)</author>
+				<pubDate>Sun, 04 Aug 2019 00:00:00 +0000</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
 				<guid>https://graef.io/function-lock-workstation-locally-and-remotely/</guid>
 				<description>&lt;p&gt;You can do everything with PowerShell, as well as locking your workstation with one simple function call.&lt;/p&gt;</description>
 			</item>
