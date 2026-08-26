@@ -29,7 +29,7 @@
 				<link>https://graef.io/get-local-account-memberships/</link>
 				<pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
 				<guid>https://graef.io/get-local-account-memberships/</guid>
-				<description>&lt;p&gt;Okay, yeah there are plenty of scripts out which give you local accounts via &lt;code&gt;WMI&lt;/code&gt; or &lt;code&gt;ADSI&lt;/code&gt; and yes scripts exist also which give you all local groups but there is not one which gives you both (of course there are also some) but what if you’re looking to implement this as a CustomScriptExtension to your Azure VM?&lt;/p&gt;</description>
+				<description>&lt;p&gt;Okay, yeah there are plenty of scripts out which give you local accounts via &lt;code&gt;WMI&lt;/code&gt; or &lt;code&gt;ADSI&lt;/code&gt; and yes scripts exist also which give you all local groups but there is not one which gives you both (of course there are also some) but what if you&amp;rsquo;re looking to implement this as a CustomScriptExtension to your Azure VM?&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Get Azure Active Directoy Tenant ID and Subscription ID</title>

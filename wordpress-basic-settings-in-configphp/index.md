@@ -3,7 +3,7 @@
 1
 <!--more-->
 
-The main configuration of WordPress is handled by wp-config.php which is responsible for database access, language, API keys, security and more. Anything changed in this file takes direct influence to your site’s settings and appearance.
+The main configuration of WordPress is handled by wp-config.php which is responsible for database access, language, API keys, security and more. Anything changed in this file takes direct influence to your site's settings and appearance.
 Settings set in wp-config.php are considered as global and overwrite all parameters in your admin panel.
 
 #### General

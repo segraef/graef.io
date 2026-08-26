@@ -365,18 +365,18 @@
     <li><a href="#sample-workflow-to-run-inlinescript-using-azure-powershell">Sample workflow to run inlinescript using Azure PowerShell</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p>Let me give you an introduction how to use the power of GitHub Actions and Workflows to deploy resources into Azure. I’m going to explain you the basics of GitHub Actions, Workflows, runners and how to deploy resources into Azure. At the end of this post you should have understood how GitHub Actions and Workflows work together to give you a kickstart to run your own.</p>
+            </div><div class="content" id="content"><p>Let me give you an introduction how to use the power of GitHub Actions and Workflows to deploy resources into Azure. I&rsquo;m going to explain you the basics of GitHub Actions, Workflows, runners and how to deploy resources into Azure. At the end of this post you should have understood how GitHub Actions and Workflows work together to give you a kickstart to run your own.</p>
 <h2 id="prerequisites">Prerequisites</h2>
-<p>The only thing you need is a GitHub Account. If you don’t have an account yet then you should create one <a href="https://github.com/join" target="_blank" rel="noopener noreffer">here</a>.</p>
+<p>The only thing you need is a GitHub Account. If you don&rsquo;t have an account yet then you should create one <a href="https://github.com/join" target="_blank" rel="noopener noreffer">here</a>.</p>
 <h2 id="what-is-a-github-action">What is a GitHub Action?</h2>
 <p>A GitHub Action is an individual task that you can combine with other Actions to create jobs and customize your workflow with the help of specific steps. You can either use Actions shared by the GitHub community or create your own</p>
 <h2 id="why-github-actions">Why GitHub Actions?</h2>
-<p>That’s the cool thing about GitHub Actions, it is what the name says, an Action. Usually you have code sitting in your GitHub repository and now you want to get this code running or deployed. Simply said, GitHub Actions help you automate your software development workflows in the same place you store code and collaborate on pull requests and issues without the need of a 3rd party CI/CD platform like Azure DevOps or Jenkins.</p>
+<p>That&rsquo;s the cool thing about GitHub Actions, it is what the name says, an Action. Usually you have code sitting in your GitHub repository and now you want to get this code running or deployed. Simply said, GitHub Actions help you automate your software development workflows in the same place you store code and collaborate on pull requests and issues without the need of a 3rd party CI/CD platform like Azure DevOps or Jenkins.</p>
 <p>Another advantage of using Actions is that you can reference other publicly available repositories on GitHub directly.</p>
 <h2 id="how-do-github-actions-work">How do GitHub Actions work?</h2>
 <p>Different <a href="https://docs.github.com/en/actions/creating-actions/about-actions#types-of-actions" target="_blank" rel="noopener noreffer">types</a> of GitHub Actions can be build with Docker container and JavaScript. Actions require a <a href="https://docs.github.com/en/articles/metadata-syntax-for-github-actions" target="_blank" rel="noopener noreffer">metadata file</a> to define the inputs, outputs and main entrypoint for your action. The metadata filename must be either <code>action.yml</code> or <code>action.yaml</code>.</p>
 <blockquote>
-<p>A very important part here is the main entrypoint. The strengths of GitHub Actions is that you can use whatever code you prefer and that’s where your entrypoint comes into play. The GitHub Action executes the entrypoint in your specific language. If you’re good in Python, C#, Go or even Bash, go ahead and use your preferred language.</p>
+<p>A very important part here is the main entrypoint. The strengths of GitHub Actions is that you can use whatever code you prefer and that&rsquo;s where your entrypoint comes into play. The GitHub Action executes the entrypoint in your specific language. If you&rsquo;re good in Python, C#, Go or even Bash, go ahead and use your preferred language.</p>
 </blockquote>
 <p>If you plan to combine your own actions, workflows, and code in a single repository, I recommend storing actions in the <code>.github</code> directory (unless you plan to use public Actions). For example, <code>.github/actions/action-a</code> and <code>.github/actions/action-b</code>.</p>
 <h2 id="where-do-github-workflows-come-into-play">Where do GitHub Workflows come into play?</h2>
@@ -412,7 +412,7 @@ with which you can then run Azure CLI or Azure PowerShell scripts to create and 
 <pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">az</span> <span class="n">ad</span> <span class="nb">sp create-for</span><span class="n">-rbac</span> <span class="p">-</span><span class="n">-name</span> <span class="s2">&#34;&lt;spName&gt;&#34;</span> <span class="p">-</span><span class="n">-role</span> <span class="n">contributor</span> <span class="p">-</span><span class="n">-scopes</span> <span class="p">/</span><span class="n">subscriptions</span><span class="p">/&lt;</span><span class="n">subscriptionId</span><span class="p">&gt;</span> <span class="p">-</span><span class="n">-sdk-auth</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>Once you’ve created your credentials go ahead and add them as secret <code>AZURE_CREDENTIALS</code> to your GitHub repository.</p>
+</div><p>Once you&rsquo;ve created your credentials go ahead and add them as secret <code>AZURE_CREDENTIALS</code> to your GitHub repository.</p>
 <!--<figure><a class="lightgallery" href="2021-08-12-17-57-22.png" title="2021-08-12-17-57-22.png" data-thumbnail="2021-08-12-17-57-22.png" data-sub-html="<h2>Finished example deployment of a storage account in Azure defined in main.bicep.</h2>">
         <img
             class="lazyload"
@@ -424,7 +424,7 @@ with which you can then run Azure CLI or Azure PowerShell scripts to create and 
     </a><figcaption class="image-caption">Finished example deployment of a storage account in Azure defined in main.bicep.</figcaption>
     </figure>-->
 <h2 id="dependencies-on-other-github-actions">Dependencies on other GitHub Actions</h2>
-<p>If you’re looking for a way to use managed identities, you can also use my GitHub action (<a href="https://github.com/segraef/azlogin" target="_blank" rel="noopener noreffer"><code>segraef/azlogin</code></a>) which I’ve equipped with the ability to use managed identities. Remember, <a href="https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview" target="_blank" rel="noopener noreffer">Managed Identities</a> can only be used in conjunction with Self-Hosted Runners.</p>
+<p>If you&rsquo;re looking for a way to use managed identities, you can also use my GitHub action (<a href="https://github.com/segraef/azlogin" target="_blank" rel="noopener noreffer"><code>segraef/azlogin</code></a>) which I&rsquo;ve equipped with the ability to use managed identities. Remember, <a href="https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview" target="_blank" rel="noopener noreffer">Managed Identities</a> can only be used in conjunction with Self-Hosted Runners.</p>
 <p>Once login is done, Azure PowerShell action will use the same session to run the script.</p>
 <h2 id="sample-workflow-to-run-inlinescript-using-azure-powershell">Sample workflow to run inlinescript using Azure PowerShell</h2>
 <p>The following sample workflow can be found <a href="https://github.com/segraef/aga/blob/master/.github/workflows/example.yml" target="_blank" rel="noopener noreffer">here</a>.</p>

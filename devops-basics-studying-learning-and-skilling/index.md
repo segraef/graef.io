@@ -92,13 +92,13 @@ Understanding DevOps processes is vital to ensure smooth workflows:
 
 If you're looking to deepen your understanding of DevOps principles, the following books are invaluable:
 
-- [The Phoenix Project​](https://amzn.asia/d/3fBuGFu)
-- [The Unicorn Project​](https://amzn.asia/d/fM2sbP8)
-- [The DevOps Handbook​](https://amzn.asia/d/aZHw7NQ)
-- [Accelerate: The Science of Lean Software and DevOps​](https://amzn.asia/d/a9Kvd5F)
-- [Site Reliability Engineering: How Google Runs Production​](https://amzn.asia/d/hD5dKw4)
-- [Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment​](https://amzn.asia/d/0Zkl2Aq)
-- [Team Topologies: Organizing Business and Technology Teams for Fast Flow​](https://amzn.asia/d/hCYirsS)
+- [The Phoenix Project](https://amzn.asia/d/3fBuGFu)
+- [The Unicorn Project](https://amzn.asia/d/fM2sbP8)
+- [The DevOps Handbook](https://amzn.asia/d/aZHw7NQ)
+- [Accelerate: The Science of Lean Software and DevOps](https://amzn.asia/d/a9Kvd5F)
+- [Site Reliability Engineering: How Google Runs Production](https://amzn.asia/d/hD5dKw4)
+- [Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment](https://amzn.asia/d/0Zkl2Aq)
+- [Team Topologies: Organizing Business and Technology Teams for Fast Flow](https://amzn.asia/d/hCYirsS)
 
 These books cover topics from team dynamics and SRE practices to delivering software reliably through automated processes. They form the backbone of your DevOps knowledge, offering theoretical insights and practical examples.
 
@@ -106,8 +106,8 @@ These books cover topics from team dynamics and SRE practices to delivering soft
 
 Here are some excellent resources to start learning or refine your expertise:
 
-- [Microsoft's DevOps Resource Center​](https://learn.microsoft.com/en-us/devops/)
-- [The DevOps Lab​](https://learn.microsoft.com/en-us/shows/devops-lab/)
+- [Microsoft's DevOps Resource Center](https://learn.microsoft.com/en-us/devops/)
+- [The DevOps Lab](https://learn.microsoft.com/en-us/shows/devops-lab/)
 
 Both platforms offer detailed tutorials, walkthroughs, and practical labs to help you practice real-world scenarios.
 
@@ -115,8 +115,8 @@ Both platforms offer detailed tutorials, walkthroughs, and practical labs to hel
 
 Certifications not only validate your knowledge but also make you more marketable to potential employers. Below are some of the key certifications to consider:
 
-- [DevOps Engineer Expert (AZ-400)​](https://learn.microsoft.com/en-us/credentials/certifications/exams/az-400/)
-- [AZ-104](https://learn.microsoft.com/en-us/credentials/certifications/azure-administrator/) / [AZ-204](https://learn.microsoft.com/en-us/credentials/certifications/azure-developer/) + [AZ-400](https://learn.microsoft.com/en-us/credentials/certifications/exams/az-400/) = [Microsoft Certified: DevOps Engineer Expert​](https://learn.microsoft.com/en-us/credentials/certifications/devops-engineer/)
+- [DevOps Engineer Expert (AZ-400)](https://learn.microsoft.com/en-us/credentials/certifications/exams/az-400/)
+- [AZ-104](https://learn.microsoft.com/en-us/credentials/certifications/azure-administrator/) / [AZ-204](https://learn.microsoft.com/en-us/credentials/certifications/azure-developer/) + [AZ-400](https://learn.microsoft.com/en-us/credentials/certifications/exams/az-400/) = [Microsoft Certified: DevOps Engineer Expert](https://learn.microsoft.com/en-us/credentials/certifications/devops-engineer/)
 - [GitHub Certifications](https://resources.github.com/learn/certifications/) (Foundations, Actions, Advanced Security, Admin)
 - [HashiCorp Certified: Terraform Associate](https://www.hashicorp.com/certification/terraform-associate)
 - [Linux Foundation Certified IT Associate](https://training.linuxfoundation.org/certification/certified-it-associate/) (LFCA)
@@ -129,7 +129,7 @@ These certifications will help you build a solid foundation in cloud platforms, 
 
 Becoming part of a thriving community is an essential aspect of growing as a DevOps professional. It provides you with support, mentorship, and ongoing learning opportunities. One notable community is:
 
-- [Azure Verified Modules​](https://aka.ms/avm)
+- [Azure Verified Modules](https://aka.ms/avm)
 
 Azure Verified Modules focus on **Infrastructure as Code (IaC)** development, **Azure DevOps** and **GitHub** best practices. It's a great way to connect with global teams, experts, and mentors across industries, sharing insights and projects that help you advance your skills.
 

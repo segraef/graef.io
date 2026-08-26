@@ -40,7 +40,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/graef.io\/conception-construction-and-evaluation-of-a-raspberry-pi-cluster\/"
-        },"image": ["https:\/\/graef.io\/logo.png"],"genre": "posts","keywords": "Raspberry, Pi, cluster, failover, Kubernetes, k8s, docker, HypriotOS, PiCube, GPIO, YAML, Bash","wordcount":  17000 ,
+        },"image": ["https:\/\/graef.io\/logo.png"],"genre": "posts","keywords": "Raspberry, Pi, cluster, failover, Kubernetes, k8s, docker, HypriotOS, PiCube, GPIO, YAML, Bash","wordcount":  16975 ,
         "url": "https:\/\/graef.io\/conception-construction-and-evaluation-of-a-raspberry-pi-cluster\/","datePublished": "2021-08-09T00:00:00+00:00","dateModified": "2021-08-09T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "greaf.io","logo": "https:\/\/graef.io\/logo.png"},"author": {
@@ -337,7 +337,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Conception, Construction and Evaluation of a Raspberry Pi Cluster</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://graef.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Sebastian Gräf</a></span>&nbsp;<span class="post-category">included in <a href="/categories/projects/"><i class="far fa-folder fa-fw"></i>Projects</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Monday, Aug 9, 2021">Monday, Aug 9, 2021</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;17000 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Monday, Aug 9, 2021">Monday, Aug 9, 2021</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;16975 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;80 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -466,7 +466,7 @@
 <h2 id="background">Background</h2>
 <p>This chapter covers the basic technologies that form the basis of parallel and distributed systems. These technologies build on each other, as in a layer system, and are dependent on each other. Architectures and techniques based on this, such as virtualization or cluster computing, in turn provide the basic framework for container virtualization and its management systems.</p>
 <h3 id="parallel-and-distributed-systems">Parallel and distributed systems</h3>
-<p>Until computers evolved into distributed computing systems, there have been fundamental changes in various computing technologies over the past decades, which we will briefly discuss in order to make the basic framework of parallel and distributed systems more understandable.</p>
+<p>Until computers evolved into distributed computing systems, there have been fundamental changes in various computing technologies over the past decades, which we will briefly discuss to make the basic framework of parallel and distributed systems more understandable.</p>
 <h4 id="amdahls-and-gustafsons-law">Amdahl's and Gustafson's law</h4>
 <p>At the beginning of this work, the theoretically unlimited increase of computing power was mentioned. Amdahl's law (named in 1967 after Gene Amdahl) deals exactly with this question, namely whether an unlimited increase in speed can be achieved with an increasing number of processors. It describes, how the parallelization of a software affects the acceleration of this. One divides thereby the software into not parallel, thus sequentially executable and parallel executable portions. Sequential parts are process initializations, communication and the memory management. These parts are necessary for the synchronization of the parallel parts. They form dependencies among themselves and are therefore not able to be executed in parallel. Parallel executable parts are the processors, which are used for computation. It is very important to estimate how much performance gain is achieved by adding a certain number of processing units in parallel working system. Sometimes it happens that adding a larger number of computing units does not necessarily improve the performance, because the expected performance tends to decrease or oversaturate if we blindly add more computing resources. Therefore, it is very important to have a rough estimate of the optimized number of resources to use. Suppose a hypothetical system has only one processor with a normalized runtime of $1$. Now we consider how much time the program needs in the parallelizable portion and denote this portion by $P$. The runtime of the sequential part is thus $(1 - P)$.</p>
 <p>The runtime of the sequential part does not change, but the parallelizable part is optimally distributed to all processors and therefore runs N times as fast. This results in the following runtime formula: <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
@@ -475,7 +475,7 @@
 <p>$$Time\ gain\ according\ to\ Amdahl$$
 $$= \ \frac{original\ duration}{\text{new\ duration}}$$
 $$= \frac{1}{(1 - P) + \frac{P}{N}}$$</p>
-<p>Here N is the number of processors and P the runtime portion of the parallelizable program. Gene Amdahl called the time or also speed gain Speedup. With the help of a massive parallelism the time of the parallelizable portion can be reduced arbitrarily, the sequential portion remains unaffected thereby however. As the number of processors increases, the communication overhead between the processors also increases, so that above a certain number, they tend to be busy communicating rather than processing the problem. This reduces the performance and refers to this as an overhead in the task distribution. A program cannot be completely parallelized, so that all processors are always busy with work at the same time. No matter how many processor units are used and the proportion of applications that cannot be parallelized is, for example, one percent, the speedup can be a maximum of 100. Gene Amdahl thus concluded that it makes no sense to keep increasing the computing units in order to generate unlimited computing
+<p>Here N is the number of processors and P the runtime portion of the parallelizable program. Gene Amdahl called the time or also speed gain Speedup. With the help of a massive parallelism the time of the parallelizable portion can be reduced arbitrarily, the sequential portion remains unaffected thereby however. As the number of processors increases, the communication overhead between the processors also increases, so that above a certain number, they tend to be busy communicating rather than processing the problem. This reduces the performance and refers to this as an overhead in the task distribution. A program cannot be completely parallelized, so that all processors are always busy with work at the same time. No matter how many processor units are used and the proportion of applications that cannot be parallelized is, for example, one percent, the speedup can be a maximum of 100. Gene Amdahl thus concluded that it makes no sense to keep increasing the computing units to generate unlimited computing
 power. <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
 <p>Amdahl's model remains valid until the total number of computing operations remains the same while the number of computing units continues to increase. However, if in our hypothetical simulation the job size increases while the number of computational units continues to increase, then Gustafson's law must be invoked. John Gustafson established this law in 1988, which states that as long as the problem being addressed is large enough it can be efficiently parallelized. Unlike Amdahl, Gustafson shows that massive parallelization is nevertheless worthwhile. A parallel system cannot become arbitrarily fast, but it can solve arbitrarily large problems in the same amount of
 time. <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></p>
@@ -585,8 +585,8 @@ time. <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">
 <p>As soon as the term cloud is mentioned, it predominantly refers to a specific usage model of cloud computing. The various types of these usage models are defined below: <sup id="fnref:21"><a href="#fn:21" class="footnote-ref" role="doc-noteref">21</a></sup></p>
 <ul>
 <li><strong>Private cloud</strong>: The English term &quot;private&quot; translates into German as &quot;privat&quot; and, in the context of cloud, stands for &quot;not for the public&quot;. A company uses a private cloud in a secure environment such as its own internal network. This does not necessarily mean that the IT infrastructure used is the property of the company, as it can also be provided by third parties. Private merely clarifies that a company is the sole user of this model. This has the advantage that it retains control in terms of data protection, even if third-party providers such as Amazon or Microsoft manage private cloud environments.</li>
-<li><strong>Public cloud</strong>: A public cloud provides access to abstracted IT infrastructures and services for a large number of users. Customers can use services and infrastructures via the Internet. Examples are file hosting services such as Google Drive from Google Inc. or Dropbox from Dropbox Inc.</li>
-<li><strong>Hybrid cloud</strong>: A hybrid form of the two variants mentioned above is the hybrid cloud. Users are offered the option of processing business-critical data with a focus on data protection in private cloud environments. Non-sensitive data is made available in the public cloud using cloud services such as IaaS or PaaS on the Internet. Hybrid clouds offer a further advantage in that performance peaks occurring at short notice are compensated for by shifting services from the private to the public cloud. Hybrid clouds enable the gradual merging of public and private cloud services in order to be able to utilize existing infrastructure hardware for as long as possible.</li>
+<li><strong>Public cloud</strong>: A public cloud provides access to abstracted IT infrastructures and services for many users. Customers can use services and infrastructures via the Internet. Examples are file hosting services such as Google Drive from Google Inc. or Dropbox from Dropbox Inc.</li>
+<li><strong>Hybrid cloud</strong>: A hybrid form of the two variants mentioned above is the hybrid cloud. Users are offered the option of processing business-critical data with a focus on data protection in private cloud environments. Non-sensitive data is made available in the public cloud using cloud services such as IaaS or PaaS on the Internet. Hybrid clouds offer a further advantage in that performance peaks occurring at short notice are compensated for by shifting services from the private to the public cloud. Hybrid clouds enable the gradual merging of public and private cloud services to be able to use existing infrastructure hardware for as long as possible.</li>
 </ul>
 <p><strong>Figure 6</strong> shows an overview of private, public and hybrid cloud environments and illustrates the relationship between a private and public network. For example, a private network is a VPN, while the Internet belongs to the public network segment.</p>
 <figure><a class="lightgallery" href="/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/media/image727.png" title="/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/media/image727.png" data-thumbnail="/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/media/image727.png" data-sub-html="<h2>Source: Own representation based on (Bedner, 2012, p. 37); (Matros, 2012, p. 67)  Figure 6: Relationship between public, private and hybrid cloud models.</h2>">
@@ -773,7 +773,7 @@ thus assumes the active part. <sup id="fnref:31"><a href="#fn:31" class="footnot
 simulation applications, in parallel on all cluster nodes. The
 combination of all cluster nodes thus results in immensely high
 computing power. All nodes must consist of homogeneous or similar
-hardware components in order to simplify the administration effort and
+hardware components to simplify the administration effort and
 maintenance and to be able to handle error sources more easily.
 Furthermore, all nodes are connected to each other via a local network
 and usually access a common data storage. As soon as an application
@@ -1125,7 +1125,7 @@ system, since the unit costs for individual nodes are low. <sup id="fnref:51"><a
 <p>General Purpose Input Output (GPIO) is the name for programmable inputs
 and outputs for general purposes. A Raspberry Pi has a total of 40 GPIO
 pins, twelve of which are for power supply and 28 of which serve as an
-interface to other systems in order to communicate with or control them.
+interface to other systems to communicate with or control them.
 GPIO pins 3 and 5 (see <strong>Figure 18</strong>) enable devices such as an LCD display
 to be addressed by means of an Inter-Integrated Circuit (I2C), a serial
 data bus.</p>
@@ -1165,7 +1165,7 @@ design concept is fundamentally based on certain design requirements,
 which we will discuss in more detail in the design decisions (see <a href="#design-decisions" rel="">Design decisions</a>).</p>
 <h4 id="cost-and-energy-efficiency">Cost and energy efficiency</h4>
 <p>The factors of cost and energy efficiency are paramount and
-predominantly influence the conception and design. In order to keep the
+predominantly influence the conception and design. to keep the
 acquisition costs as low as possible but still be able to offer
 efficient computing power, Raspberry Pi single-board computers in
 version 3 are to be installed. The use of unnecessary cable lengths or
@@ -1182,7 +1182,7 @@ on a mobile basis.</p>
 <h4 id="scaling-and-resilience">Scaling and resilience</h4>
 <p>Scaling is to be considered in this system in two respects. On the one
 hand, the user should be given the option of connecting the entire
-system with other clusters in order to be able to scale cluster-wise at
+system with other clusters to be able to scale cluster-wise at
 this level. Here we also speak of horizontal scaling. On the other hand,
 it should be possible to scale vertically or node by node within a
 cluster by adding or removing individual nodes. This is done either
@@ -1294,7 +1294,7 @@ since the design of the cube case does not have exactly equal faces, we
 decide to use PiCube, since a cube is a regular hexahedron. A hexahedron
 has six faces of equal size.</p>
 <h4 id="simplicity-elastic-clip-concept">Simplicity: Elastic Clip Concept</h4>
-<p>In order to allow easy assembly and reassembly, without the use of
+<p>to allow easy assembly and reassembly, without the use of
 additional tools or fastening screws of any kind, the Elastic Clip
 concept by Patrick Fenner was used. This concept allows to create a slim
 and elegant design. For this purpose, we use acrylic glass, which is
@@ -1665,7 +1665,7 @@ system's startup configuration:</p>
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><strong>Listing 3</strong>: <em>The HypriotOS image is downloaded, copied to the SD card using flash and a given YAML configuration.</em></p>
-<p>Time is precious and, in order to save it, we prepare the respective
+<p>Time is precious and, to save it, we prepare the respective
 image for each individual Raspberry Pi and thus take advantage of the
 automatic provisioning. Due to the use of a total of 5 cluster nodes,
 the manual installation, configuration and maintenance of each
@@ -1701,7 +1701,7 @@ for the next step, the actual configuration of the cluster, after about
 <h4 id="installing-and-configuring-kubernetes">Installing and configuring Kubernetes</h4>
 <p>All five nodes are now configured in the same way as described below,
 the order is not decisive here. The connection to the individual
-Raspberry Pis is established via Secure Shell (SSH). In order to
+Raspberry Pis is established via Secure Shell (SSH). to
 establish this secure connection over the network, the terminal program
 putty is used. As soon as the connection is established, a &quot;sudo
 update&quot; is performed to update the current package installation lists
@@ -1867,8 +1867,8 @@ swapped out or scaled:</p>
 </span></span><span class="line"><span class="cl">php-apache-3046963998-xkbw1 0/1 Pending 0 1m
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><strong>Listing 5</strong>: <em>Observing CPU utilization increase to 250% while pods are swapped out to provide resources.</em></p>
-<p>Two minutes after the user load simulation stops, the CPU utilization
+</div><p><strong>Listing 5</strong>: <em>Observing CPU use increase to 250% while pods are swapped out to provide resources.</em></p>
+<p>Two minutes after the user load simulation stops, the CPU use
 drops back to zero and the drop from seven to one pod can be seen.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -1898,18 +1898,18 @@ drops back to zero and the drop from seven to one pod can be seen.</p>
 </span></span><span class="line"><span class="cl">php-apache-3046963998-ddpgp 1/1 Running 0 9m
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><strong>Listing 6</strong>: <em>Watching CPU utilization drop to zero percent and drop to one pod.</em></p>
+</div><p><strong>Listing 6</strong>: <em>Watching CPU use drop to zero percent and drop to one pod.</em></p>
 <p>As can be seen (see <strong>Listing 1</strong>), it is very easy to dynamically adjust
 the number of pods to the load, by enabling the cluster autoscaler.</p>
 <p>Automatic and dynamic scaling can also be very helpful when there are
-irregularities in cluster utilization. For example, development-related
+irregularities in cluster use. For example, development-related
 clusters or continuous computing operations can be run on weekends or at
 night. Compute-intensive applications can be better scheduled so that a
 cluster is optimally utilized. In all cases, the cluster can be used
 optimally. Either reduce the number of unused nodes to save energy or
 scale to the limit to provide enough computing power. Depending on which
 case occurs, a dynamically scaling cluster ensures that at high or low
-utilization, all tasks are solved in the most efficient way.</p>
+use, all tasks are solved in the most efficient way.</p>
 <h3 id="fail-safe">Fail-safe</h3>
 <p>As with each element of our cluster, we ensure that more than one
 instance of each component is running simultaneously. Setting the number
@@ -2171,7 +2171,7 @@ period of 5 minutes:</p>
 <table>
 	<thead>
 			<tr>
-					<th style="text-align: left">**CPU utilization (%)</th>
+					<th style="text-align: left">**CPU use (%)</th>
 					<th style="text-align: left">Temp1 (°C)</th>
 					<th style="text-align: left">Temp2 (°C)</th>
 					<th style="text-align: left">Temp3 (°C)</th>
@@ -2214,7 +2214,7 @@ over a period of 10 minutes:</p>
 <table>
 	<thead>
 			<tr>
-					<th style="text-align: left">**CPU utilization (%)</th>
+					<th style="text-align: left">**CPU use (%)</th>
 					<th style="text-align: left">Temp1 (°C)</th>
 					<th style="text-align: left">Temp2 (°C)</th>
 					<th style="text-align: left">Temp3 (°C)</th>
@@ -2266,7 +2266,7 @@ of this. <sup id="fnref:62"><a href="#fn:62" class="footnote-ref" role="doc-note
 <p>In the following, container virtualization is exploited and pre-built
 BOINC client images of Docker are used. These images are prefabricated
 containers, which are started as scalable pods on the PiCube and scale
-automatically in order to utilize the entire computing power of the
+automatically to use the entire computing power of the
 cluster. To do this, you register with the SETI@home project and create
 an account. Using this account data, you generate a container
 application called k8s-boinc-demo and start it on the cluster with a
@@ -2284,8 +2284,8 @@ workload across worker nodes rpi2 to rpi5 after launch. <sup id="fnref:63"><a hr
     </a><figcaption class="image-caption">Source: Own representation. <br> <strong>Figure 32</strong>: <em>Overview of the utilization, status and distribution of the pods on the nodes rpi2 to rpi5.</em></figcaption>
     </figure>
 <p>Within the SETI@home account, we define how the individual clients or
-pods are utilized. The CPU utilization is left at the default value of
-100% and after about 5 minutes you can see how the CPU utilization of
+pods are utilized. The CPU use is left at the default value of
+100% and after about 5 minutes you can see how the CPU use of
 all cluster nodes increases to 100% and remains constant at this value
 (see <strong>Figure 33</strong>). The cluster now computes data of the SETI@home project.</p>
 <figure><a class="lightgallery" href="/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/media/image3822.png" title="/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/media/image3822.png" data-thumbnail="/conception-construction-and-evaluation-of-a-raspberry-pi-cluster/media/image3822.png" data-sub-html="<h2>Source: Own representation.  Figure 33: The CPU utilization of node rpi3 at 100%.</h2>">

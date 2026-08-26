@@ -1,7 +1,7 @@
 # Github Action for Project Bicep (ARM DSL)
 
 
-All ARM enthusiasts among us will now probably cry out and be happy. Microsoft announced a new ARM DSL, called Bicep. I won’t go into too much detail here, as I’m more into how to use a GitHub Action to use Bicep to generate an ARM template out of a .bice file. But let me give you some context to [Bicep](https://github.com/Azure/bicep).
+All ARM enthusiasts among us will now probably cry out and be happy. Microsoft announced a new ARM DSL, called Bicep. I won't go into too much detail here, as I'm more into how to use a GitHub Action to use Bicep to generate an ARM template out of a .bice file. But let me give you some context to [Bicep](https://github.com/Azure/bicep).
 
 <!--more-->
 

@@ -1,7 +1,7 @@
 # How Github Copilot coding agent(s) make my day
 
 
-Ever wished you could delegate your coding tasks and watch them get done while you focus elsewhere? That’s exactly what happened when I assigned an issue to GitHub Copilot coding agent. From identifying the problem to drafting a pull request and running checks, it handled the entire workflow, efficiently and autonomously. Here's how it turned a routine fix into a hands-free solution that saved me hours.
+Ever wished you could delegate your coding tasks and watch them get done while you focus elsewhere? That's exactly what happened when I assigned an issue to GitHub Copilot coding agent. From identifying the problem to drafting a pull request and running checks, it handled the entire workflow, efficiently and autonomously. Here's how it turned a routine fix into a hands-free solution that saved me hours.
 
 <!--more-->
 
@@ -22,7 +22,7 @@ What then usualy happens is, I'd go ahead and create a contribution by spending 
 
 ![Assign Copilot to issue](image.png)
 
-What happens next? Copilot takes the issue description and creates a pull request in order to work on it.
+What happens next? Copilot takes the issue description and creates a pull request to work on it.
 
 ![create and lnk pull request](image-1.png)
 
@@ -49,7 +49,7 @@ If you click on **View session** you can observe the agent doing its job in more
 After around 10 minutes it finished the initial Implementation, changed the PR title and description with a detailed description and ready to merge.
 
 {{< admonition info Note >}}
-## What's the difference between GitHub Copilot and  GitHub Copilot coding agent?
+## What's the difference between GitHub Copilot and GitHub Copilot coding agent?
 1. **GitHub Copilot + Issue**: When you assign Copilot to an issue, your GitHub Copilot coding agent (GHCA) gets assigned and starts working on it using GitHub Workflows and Action in its own instance.
 2. **GitHub Copilot + Pull Request**: When you assign Copilot to a pull request, your GitHub Copilot (GHC) reviews your code and gives feedback in form of a comment.<br>
 
@@ -130,11 +130,11 @@ Overall the agent required 18 minutes whereas the the whole coding exercise wold
 7. local unit testing of outputs
 8. local e2e deployment testing
 
-Of course, I would have used GitHub Copilot (Agent) in Visual Studio Code. But the key point - especially from a scalability perspective - is that as a member of the AVM core team and owner of several Bicep and Terraform modules, I’m constantly managing a high volume of issues (features and provider udpates e.g.). This includes not only my own work but also supporting community members and fellow AVM contributors. In this context, GitHub Copilot Agents (local or coding agent) significantly enhance productivity by enabling distributed, delegated, and scaled execution—far beyond what I could achieve alone.
+Of course, I would have used GitHub Copilot (Agent) in Visual Studio Code. But the key point - especially from a scalability perspective - is that as a member of the AVM core team and owner of several Bicep and Terraform modules, I'm constantly managing a high volume of issues (features and provider udpates e.g.). This includes not only my own work but also supporting community members and fellow AVM contributors. In this context, GitHub Copilot Agents (local or coding agent) significantly enhance productivity by enabling distributed, delegated, and scaled execution, far beyond what I could achieve alone.
 
 ## Follow-Up Activities
 
-1. [Allowlist endpoints for AVM docker image in the agent's firewall](https://docs.github.com/en/copilot/how-tos/agents/copilot-coding-agent/customizing-or-disabling-the-firewall-for-copilot-coding-agent): In order to enable coding agents to fully run AVM unit tests we're going to allowlisting the following endpoints so the AVM docker image can run all unit tests without any manual intervention in future:
+1. [Allowlist endpoints for AVM docker image in the agent's firewall](https://docs.github.com/en/copilot/how-tos/agents/copilot-coding-agent/customizing-or-disabling-the-firewall-for-copilot-coding-agent): to enable coding agents to fully run AVM unit tests we're going to allowlisting the following endpoints so the AVM docker image can run all unit tests without any manual intervention in future:
     - https://api.github.com/repos/Azure/tflint-ruleset-avm/releases/tags/v0.14.1
     - https://api.github.com/repos/terraform-linters/tflint-ruleset-terraform/releases/tags/v0.10.0
 1. Extending Copilot coding agent with MCP servers for [Azure DevOps](https://github.com/microsoft/azure-devops-mcp), [Azure](https://github.com/azure/azure-mcp), [Microsoft Docs](https://github.com/microsoftdocs/mcp) and [Terraform](https://github.com/hashicorp/terraform-mcp-server).
@@ -148,10 +148,10 @@ Here is another example of an issue I let loose Copilot where it fixed the issue
 {{< admonition info References >}}
 - [Azure AI Foundry pattern module](https://registry.terraform.io/modules/Azure/avm-ptn-aiml-ai-foundry)
 - [AVM (Azure Verified Modules)](https://aka.ms/avm)
-- [Issue #105 – Cosmos DB Module](https://github.com/Azure/terraform-azurerm-avm-res-documentdb-databaseaccount/issues/105)
-- - [Issue #6 – AI Foundry Module](https://github.com/Azure/terraform-azurerm-avm-ptn-aiml-ai-foundry/issues/6)
+- [Issue #105, Cosmos DB Module](https://github.com/Azure/terraform-azurerm-avm-res-documentdb-databaseaccount/issues/105)
+- - [Issue #6, AI Foundry Module](https://github.com/Azure/terraform-azurerm-avm-ptn-aiml-ai-foundry/issues/6)
 - [Enable Copilot coding agent (Enterprise)](https://docs.github.com/en/copilot/how-tos/agents/copilot-coding-agent/enabling-copilot-coding-agent-for-copilot-business-and-copilot-enterprise-subscribers)
-- [AVM Testing – Contributor Guidelines](https://azure.github.io/Azure-Verified-Modules/contributing/terraform/testing/)
+- [AVM Testing, Contributor Guidelines](https://azure.github.io/Azure-Verified-Modules/contributing/terraform/testing/)
 - [Terraform Cosmos DB Attributes Reference](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/cosmosdb_account#attributes-reference)
 - [Firewall Settings - Copilot coding agent](https://docs.github.com/en/copilot/how-tos/agents/copilot-coding-agent/customizing-or-disabling-the-firewall-for-copilot-coding-agent)
 - [Azure DevOps MCP Server](https://github.com/microsoft/azure-devops-mcp)

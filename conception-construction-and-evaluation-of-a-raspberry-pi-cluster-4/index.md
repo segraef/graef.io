@@ -31,29 +31,29 @@ image is launched, causing a web server to run with the corresponding
 web page as a pod. Kubernetes\' autoscaler is enabled with the following
 configuration: [^60]
 
--   **KUBE_AUTOSCALER_MIN_NODES = 1**: The minimum number of nodes to be
+- **KUBE_AUTOSCALER_MIN_NODES = 1**: The minimum number of nodes to be
     used is one.
 
--   **KUBE_AUTOSCALER_MAX_NODES = 4**: The maximum number of nodes to be
+- **KUBE_AUTOSCALER_MAX_NODES = 4**: The maximum number of nodes to be
     used is four. The fifth node thus retains the function as master.
 
--   **KUBE_ENABLE_CLUSTER_AUTOSCALER = true**: Activation of the
+- **KUBE_ENABLE_CLUSTER_AUTOSCALER = true**: Activation of the
     autoscaler.
 
 The pod with the web server container is started with the following
 properties:
 
--   **CPU-PERCENT = 50**: This configuration value specifies the value
+- **CPU-PERCENT = 50**: This configuration value specifies the value
     that is maintained to keep all pods at an average CPU load of 50
     percent.
 
--   As soon as a pod requires more than half of its available computing
+- As soon as a pod requires more than half of its available computing
     power, another pod instance is automatically replicated or an exact
     copy of the running pod is created.
 
--   **MIN = 1**: At least one Pod is used for scaling.
+- **MIN = 1**: At least one Pod is used for scaling.
 
--   **MAX = 10**: A maximum of ten replicas of a pod can be used for
+- **MAX = 10**: A maximum of ten replicas of a pod can be used for
     scaling.
 
 After the pod is started and user load is simulated, an increase in CPU
@@ -80,9 +80,9 @@ php-apache-3046963998-tmwg1 1/1 Running 0 1m
 php-apache-3046963998-xkbw1 0/1 Pending 0 1m
 ```
 
-**Listing 5**: *Observing CPU utilization increase to 250% while pods are swapped out to provide resources.*
+**Listing 5**: *Observing CPU use increase to 250% while pods are swapped out to provide resources.*
 
-Two minutes after the user load simulation stops, the CPU utilization
+Two minutes after the user load simulation stops, the CPU use
 drops back to zero and the drop from seven to one pod can be seen.
 
 ```
@@ -99,20 +99,20 @@ NAME RUNNING STATUS AVAILABLE AGE
 php-apache-3046963998-ddpgp 1/1 Running 0 9m
 ```
 
-**Listing 6**: *Watching CPU utilization drop to zero percent and drop to one pod.*
+**Listing 6**: *Watching CPU use drop to zero percent and drop to one pod.*
 
 As can be seen (see **Listing 1**), it is very easy to dynamically adjust
 the number of pods to the load, by enabling the cluster autoscaler.
 
 Automatic and dynamic scaling can also be very helpful when there are
-irregularities in cluster utilization. For example, development-related
+irregularities in cluster use. For example, development-related
 clusters or continuous computing operations can be run on weekends or at
 night. Compute-intensive applications can be better scheduled so that a
 cluster is optimally utilized. In all cases, the cluster can be used
 optimally. Either reduce the number of unused nodes to save energy or
 scale to the limit to provide enough computing power. Depending on which
 case occurs, a dynamically scaling cluster ensures that at high or low
-utilization, all tasks are solved in the most efficient way.
+use, all tasks are solved in the most efficient way.
 
 ### Fail-safe
 
@@ -137,20 +137,20 @@ these pods will be moved to a different node, thus preserving the core
 services of the cluster. Here, one considers potential failure
 scenarios:
 
--   **Loss of the master node**: If not configured for HA, loss of the
+- **Loss of the master node**: If not configured for HA, loss of the
     master node or its services will have a severe impact on the
     application. The cluster will not be able to respond to commands or
     deploy nodes. Each service in the master node is critical and is
     configured appropriately for HA, so a worker node automatically
     steps in as the master.
 
--   **Loss of worker nodes**: Kubernetes is able to automatically detect
+- **Loss of worker nodes**: Kubernetes is able to automatically detect
     and repair pods. Depending on how the services are balanced, there
     may be an impact on the end users of the application. If any pods on
     a node are not responding, kubelet detects this and informs the
     master to use a different pod.
 
--   **Network failure**: The master and worker nodes in a Kubernetes
+- **Network failure**: The master and worker nodes in a Kubernetes
     cluster can become unreachable due to network failures. In some
     cases, they are treated as node failures. In this case, other nodes
     are used accordingly to replace the respective node that is
@@ -176,14 +176,14 @@ EUR. This construct is contrasted with a simple Linux cluster for
 comparison. This Linux cluster consists of commercially available PCs
 with comparable core data to that of the Raspberry Pi nodes.
 
-|                         | **Raspberry Pi 3 Model B**  | **Linux PC**                       |
+| | **Raspberry Pi 3 Model B** | **Linux PC** |
 | :---------------------- | :-------------------------- | :--------------------------------- |
-| **CPU**                 | Cortex-A53 1.2 GHz Quadcore | Intel Celeron J1900 2 GHz Quadcore |
-| **RAM**                 | 1024 MB                     | 4 GB RAM                           |
-| **Network**             | 100 Mbps                    | 1000 Mbps                          |
-| **Current Consumption** | max. 4 Watt / h             | max. 10 Watt / h                   |
-| **Price per computer**  | approx. 35 €                | approx. 95 €                       |
-| **Total price**         | approx. 175 €               | approx. 475 €                      |
+| **CPU** | Cortex-A53 1.2 GHz Quadcore | Intel Celeron J1900 2 GHz Quadcore |
+| **RAM** | 1024 MB | 4 GB RAM |
+| **Network** | 100 Mbps | 1000 Mbps |
+| **Current Consumption** | max. 4 Watt / h | max. 10 Watt / h |
+| **Price per computer** | approx. 35 € | approx. 95 € |
+| **Total price** | approx. 175 € | approx. 475 € |
 
 **Table 2**: *Cost comparison of the core components of Raspberry Pi and Linux PC.*
 
@@ -206,12 +206,12 @@ that quickly gives an impression of the system performance. For this
 purpose, a CPU benchmark is run on both systems, which calculates all
 prime numbers up to 20000, and the results are shown in **Table 3** and **Figure 31**.
 
-|                             | **Raspberry Pi 3 Model B** | **Linux PC**             |
+| | **Raspberry Pi 3 Model B** | **Linux PC** |
 | :-------------------------- | :------------------------- | :----------------------- |
-| **CPU benchmark**           | Prime number calulation    | Prime number calculation |
-| **Threads (process parts)** | 4                          | 4                        |
-| **Limit**                   | 20000                      | 20000                    |
-| **Calculation time**        | 115.1536 seconds           | 11.2800 seconds          |
+| **CPU benchmark** | Prime number calulation | Prime number calculation |
+| **Threads (process parts)** | 4 | 4 |
+| **Limit** | 20000 | 20000 |
+| **Calculation time** | 115.1536 seconds | 11.2800 seconds |
 
 **Table** **3**: *Comparison times of the prime number calculation up to 20000.*
 
@@ -234,15 +234,15 @@ all components and sits at the end of the power chain. Summarizing with
 all installed components, you get a total power consumption of 13.75
 watts in idle and 34 watts at maximum load (see **Table 4**).
 
-|                                                     | **Power consumption** |                |
+| | **Power consumption** | |
 | :-------------------------------------------------- | :-------------------- | :------------- |
-| **Component**                                       | **Idle**              | **maximum**    |
-| Raspberry Pi 3 Model B                              | 2 Watt                | 4 Watt         |
-| Edimax ES-5800G V2 Gigabit Switch (8-Port)          | 2.4 watt              | 2.4 watt       |
-| LCD display module 1602 HD44780 with TWI controller | 0.1 watt              | 0.1 watt       |
-| Antec TRICOOL 92mm 4-pin case fan                   | 1.25 watt             | 1.25 watt      |
-| Anear 60 Watt USB Charger (6-Port)                  | \-                    | \-             |
-| **Total power consumption**                         | **13,75 Watt**        | **23,75 Watt** |
+| **Component** | **Idle** | **maximum** |
+| Raspberry Pi 3 Model B | 2 Watt | 4 Watt |
+| Edimax ES-5800G V2 Gigabit Switch (8-Port) | 2.4 watt | 2.4 watt |
+| LCD display module 1602 HD44780 with TWI controller | 0.1 watt | 0.1 watt |
+| Antec TRICOOL 92mm 4-pin case fan | 1.25 watt | 1.25 watt |
+| Anear 60 Watt USB Charger (6-Port) | \- | \- |
+| **Total power consumption** | **13,75 Watt** | **23,75 Watt** |
 
 **Table** **4**: *Total power consumption of the PiCube in idle mode and maximum CPU load of 100%.*
 
@@ -264,14 +264,14 @@ In the following, we look at three temperature curves in the case. The
 CPU clock frequency is 1.2 GHz and the CPU voltage is 1.325 volts over a
 period of 5 minutes:
 
--   **Temp1**: In case, without heatsink on SoC, without active cooling.
--   **Temp2**: In case, with heatsink on SoC, without active cooling.
--   **Temp3**: In case, with heatsink on SoC, with active cooling.
+- **Temp1**: In case, without heatsink on SoC, without active cooling.
+- **Temp2**: In case, with heatsink on SoC, without active cooling.
+- **Temp3**: In case, with heatsink on SoC, with active cooling.
 
-| **CPU utilization (%) | Temp1 (°C) | Temp2 (°C) | Temp3 (°C) |
+| **CPU use (%) | Temp1 (°C) | Temp2 (°C) | Temp3 (°C) |
 | :-------------------- | :--------- | :--------- | :--------- |
-| 0                     | 39         | 39         | 44         |
-| 100                   | 77         | 77         | 82         |
+| 0 | 39 | 39 | 44 |
+| 100 | 77 | 77 | 82 |
 
 **Table** **5**: *Measured values of heat generation without active cooling.*
 
@@ -279,9 +279,9 @@ Next, we look at three temperature profiles of a Raspberry Pi processor.
 The CPU clock frequency is 1.2 GHz and the CPU voltage is 1.325 volts
 over a period of 10 minutes:
 
--   **Temp1**: CPU, without heat sink on SoC, without active cooling.
--   **Temp2**: CPU, with heat sink on SoC, without active cooling.
--   **Temp3**: CPU, with heat sink on SoC, with active cooling.
+- **Temp1**: CPU, without heat sink on SoC, without active cooling.
+- **Temp2**: CPU, with heat sink on SoC, without active cooling.
+- **Temp3**: CPU, with heat sink on SoC, with active cooling.
 
 <br>
 {{< figure src="media/image345.png" >}}
@@ -291,10 +291,10 @@ over a period of 10 minutes:
 {{< figure src="media/image3630.png" >}}
 
 
-| **CPU utilization (%) | Temp1 (°C) | Temp2 (°C) | Temp3 (°C) |
+| **CPU use (%) | Temp1 (°C) | Temp2 (°C) | Temp3 (°C) |
 | :-------------------- | :--------- | :--------- | :--------- |
-| 0                     | 44         | 32,2       | 27,8       |
-| 100                   | 83,3       | 83,3       | 69,8       |
+| 0 | 44 | 32,2 | 27,8 |
+| 100 | 83,3 | 83,3 | 69,8 |
 
 **Table** **6**: *Measured values*
 
@@ -331,7 +331,7 @@ of this. [^62]
 In the following, container virtualization is exploited and pre-built
 BOINC client images of Docker are used. These images are prefabricated
 containers, which are started as scalable pods on the PiCube and scale
-automatically in order to utilize the entire computing power of the
+automatically to use the entire computing power of the
 cluster. To do this, you register with the SETI\@home project and create
 an account. Using this account data, you generate a container
 application called k8s-boinc-demo and start it on the cluster with a
@@ -342,8 +342,8 @@ workload across worker nodes rpi2 to rpi5 after launch. [^63]
 {{< image src="media/image3712.png" caption="Source: Own representation. <br> **Figure 32**: *Overview of the utilization, status and distribution of the pods on the nodes rpi2 to rpi5.*" >}}
 
 Within the SETI\@home account, we define how the individual clients or
-pods are utilized. The CPU utilization is left at the default value of
-100% and after about 5 minutes you can see how the CPU utilization of
+pods are utilized. The CPU use is left at the default value of
+100% and after about 5 minutes you can see how the CPU use of
 all cluster nodes increases to 100% and remains constant at this value
 (see **Figure 33**). The cluster now computes data of the SETI\@home project.
 

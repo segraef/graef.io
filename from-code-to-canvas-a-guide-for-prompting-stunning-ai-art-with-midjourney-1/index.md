@@ -49,7 +49,7 @@ The double colon `::` is used to divide a prompt into parts. You can put a numbe
 
 |jelly:: fish|jelly::2 fish|
 |---|---|
-| ![](20230306152531.png)    | ![](20230306152317.png)    |
+| ![](20230306152531.png) | ![](20230306152317.png) |
 | *Jelly* and *fish* are considered separate words. | *Jelly* is twice as important as *cake*.|
 
 More details see [Multi Prompts](https://docs.midjourney.com/docs/multi-prompts)
@@ -119,7 +119,7 @@ Let's say you want to have your character/style look like something you have in 
 
 | Base Image | Generated Image |
 |---|---|
-| ![](20230306165037.png)      | ![](20230306165221.png)    |
+| ![](20230306165037.png) | ![](20230306165221.png) |
 | Credits: [Suren Manvelyan](https://www.behance.net/paronsuren) | Prompt: `http://graef.io/from-code-to-canvas-a-guide-for-prompting-stunning-ai-art-with-midjourney/20230306165037.png:: Celestial mist superimposed over human eye::5 close up view of eye only ::5` |
 
 {{< admonition info Note >}}

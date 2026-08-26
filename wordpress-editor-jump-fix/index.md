@@ -1,7 +1,7 @@
 # Wordpress Editor Jump Fix
 
 
-I’m not quite sure why WordPress does this but it seems to happen after some major upgrades or if one of your themes is not aligned correctly. The editor is jumping up and down while writing posts and this drives me insane! It seems not to happen everytime but mostly after a wordpress update happened or changing something on the interface.
+I'm not quite sure why WordPress does this but it seems to happen after some major upgrades or if one of your themes is not aligned correctly. The editor is jumping up and down while writing posts and this drives me insane! It seems not to happen everytime but mostly after a wordpress update happened or changing something on the interface.
 
 <!--more-->
 

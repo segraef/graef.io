@@ -14,21 +14,21 @@
 		
 		
 		
-			<lastBuildDate>Tue, 23 Jun 2026 14:00:00 +1000</lastBuildDate>
+			<lastBuildDate>Wed, 26 Aug 2026 09:00:00 +1000</lastBuildDate>
 		
 			<atom:link href="https://graef.io/categories/rss.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>AI</title>
+				<link>https://graef.io/categories/ai/</link>
+				<pubDate>Wed, 26 Aug 2026 09:00:00 +1000</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
+				<guid>https://graef.io/categories/ai/</guid>
+				<description></description>
+			</item>
 			<item>
 				<title>Security</title>
 				<link>https://graef.io/categories/security/</link>
 				<pubDate>Tue, 23 Jun 2026 14:00:00 +1000</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
 				<guid>https://graef.io/categories/security/</guid>
-				<description></description>
-			</item>
-			<item>
-				<title>AI</title>
-				<link>https://graef.io/categories/ai/</link>
-				<pubDate>Mon, 14 Jul 2025 10:06:59 +1000</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
-				<guid>https://graef.io/categories/ai/</guid>
 				<description></description>
 			</item>
 			<item>

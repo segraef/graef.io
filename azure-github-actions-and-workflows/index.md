@@ -1,13 +1,13 @@
 # Azure Github Actions and Workflows
 
 
-Let me give you an introduction how to use the power of GitHub Actions and Workflows to deploy resources into Azure. I’m going to explain you the basics of GitHub Actions, Workflows, runners and how to deploy resources into Azure. At the end of this post you should have understood how GitHub Actions and Workflows work together to give you a kickstart to run your own.
+Let me give you an introduction how to use the power of GitHub Actions and Workflows to deploy resources into Azure. I'm going to explain you the basics of GitHub Actions, Workflows, runners and how to deploy resources into Azure. At the end of this post you should have understood how GitHub Actions and Workflows work together to give you a kickstart to run your own.
 
 <!--more-->
 
 ## Prerequisites
 
-The only thing you need is a GitHub Account. If you don’t have an account yet then you should create one [here](https://github.com/join).
+The only thing you need is a GitHub Account. If you don't have an account yet then you should create one [here](https://github.com/join).
 
 ## What is a GitHub Action?
 
@@ -15,7 +15,7 @@ A GitHub Action is an individual task that you can combine with other Actions to
 
 ## Why GitHub Actions?
 
-That’s the cool thing about GitHub Actions, it is what the name says, an Action. Usually you have code sitting in your GitHub repository and now you want to get this code running or deployed. Simply said, GitHub Actions help you automate your software development workflows in the same place you store code and collaborate on pull requests and issues without the need of a 3rd party CI/CD platform like Azure DevOps or Jenkins.
+That's the cool thing about GitHub Actions, it is what the name says, an Action. Usually you have code sitting in your GitHub repository and now you want to get this code running or deployed. Simply said, GitHub Actions help you automate your software development workflows in the same place you store code and collaborate on pull requests and issues without the need of a 3rd party CI/CD platform like Azure DevOps or Jenkins.
 
 Another advantage of using Actions is that you can reference other publicly available repositories on GitHub directly.
 
@@ -23,7 +23,7 @@ Another advantage of using Actions is that you can reference other publicly avai
 
 Different [types](https://docs.github.com/en/actions/creating-actions/about-actions#types-of-actions) of GitHub Actions can be build with Docker container and JavaScript. Actions require a [metadata file](https://docs.github.com/en/articles/metadata-syntax-for-github-actions) to define the inputs, outputs and main entrypoint for your action. The metadata filename must be either `action.yml` or `action.yaml`.
 
-> A very important part here is the main entrypoint. The strengths of GitHub Actions is that you can use whatever code you prefer and that’s where your entrypoint comes into play. The GitHub Action executes the entrypoint in your specific language. If you’re good in Python, C#, Go or even Bash, go ahead and use your preferred language.
+> A very important part here is the main entrypoint. The strengths of GitHub Actions is that you can use whatever code you prefer and that's where your entrypoint comes into play. The GitHub Action executes the entrypoint in your specific language. If you're good in Python, C#, Go or even Bash, go ahead and use your preferred language.
 
 
 If you plan to combine your own actions, workflows, and code in a single repository, I recommend storing actions in the `.github` directory (unless you plan to use public Actions). For example, `.github/actions/action-a` and `.github/actions/action-b`.
@@ -68,14 +68,14 @@ In order for this action to log into your environment you need Azure service pri
 az ad sp create-for-rbac --name "<spName>" --role contributor --scopes /subscriptions/<subscriptionId> --sdk-auth
 ```
 
-Once you’ve created your credentials go ahead and add them as secret `AZURE_CREDENTIALS` to your GitHub repository.
+Once you've created your credentials go ahead and add them as secret `AZURE_CREDENTIALS` to your GitHub repository.
 
 <!--{{< image src="2021-08-12-17-57-22.png" caption="Finished example deployment of a storage account in Azure defined in main.bicep." >}}-->
 
 
 ## Dependencies on other GitHub Actions
 
-If you’re looking for a way to use managed identities, you can also use my GitHub action ([`segraef/azlogin`](https://github.com/segraef/azlogin)) which I’ve equipped with the ability to use managed identities. Remember, [Managed Identities](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview) can only be used in conjunction with Self-Hosted Runners.
+If you're looking for a way to use managed identities, you can also use my GitHub action ([`segraef/azlogin`](https://github.com/segraef/azlogin)) which I've equipped with the ability to use managed identities. Remember, [Managed Identities](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview) can only be used in conjunction with Self-Hosted Runners.
 
 Once login is done, Azure PowerShell action will use the same session to run the script.
 

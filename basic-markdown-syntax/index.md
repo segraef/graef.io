@@ -24,11 +24,11 @@ Some of the key benefits are:
 
 John Gruber, the author of Markdown, puts it like this:
 
-> The overriding design goal for Markdown’s formatting syntax is to make it as readable as possible.
+> The overriding design goal for Markdown's formatting syntax is to make it as readable as possible.
 > The idea is that a Markdown-formatted document should be publishable as-is, as plain text,
-> without looking like it’s been marked up with tags or formatting instructions.
-> While Markdown’s syntax has been influenced by several existing text-to-HTML filters,
-> the single biggest source of inspiration for Markdown’s syntax is the format of plain text email.
+> without looking like it's been marked up with tags or formatting instructions.
+> While Markdown's syntax has been influenced by several existing text-to-HTML filters,
+> the single biggest source of inspiration for Markdown's syntax is the format of plain text email.
 >
 > {{< style "text-align: right;" >}}-- _John Gruber_{{< /style >}}
 
@@ -560,9 +560,9 @@ The rendered output looks like this:
 
 | Option | Description |
 | ------ | ----------- |
-| data   | path to data files to supply the data that will be passed into templates. |
+| data | path to data files to supply the data that will be passed into templates. |
 | engine | engine to be used for processing templates. Handlebars is the default. |
-| ext    | extension to be used for dest files. |
+| ext | extension to be used for dest files. |
 
 The HTML looks like this:
 
@@ -608,9 +608,9 @@ The rendered output looks like this:
 
 | Option | Description |
 |:------:| -----------:|
-| data   | path to data files to supply the data that will be passed into templates. |
+| data | path to data files to supply the data that will be passed into templates. |
 | engine | engine to be used for processing templates. Handlebars is the default. |
-| ext    | extension to be used for dest files. |
+| ext | extension to be used for dest files. |
 {{< /admonition >}}
 
 ## 11 Links {#links}
@@ -687,9 +687,9 @@ The specific placement of the anchor tag seems to be arbitrary. They are placed 
 
 Footnotes allow you to add notes and references without cluttering the body of the document. When you create a footnote, a superscript number with a link appears where you added the footnote reference. Readers can click the link to jump to the content of the footnote at the bottom of the page.
 
-To create a footnote reference, add a caret and an identifier inside brackets (`[^1]`). Identifiers can be numbers or words, but they can’t contain spaces or tabs. Identifiers only correlate the footnote reference with the footnote itself — in the output, footnotes are numbered sequentially.
+To create a footnote reference, add a caret and an identifier inside brackets (`[^1]`). Identifiers can be numbers or words, but they can't contain spaces or tabs. Identifiers only correlate the footnote reference with the footnote itself, in the output, footnotes are numbered sequentially.
 
-Add the footnote using another caret and number inside brackets with a colon and text (`[^1]: My footnote.`). You don’t have to put footnotes at the end of the document. You can put them anywhere except inside other elements like lists, block quotes, and tables.
+Add the footnote using another caret and number inside brackets with a colon and text (`[^1]: My footnote.`). You don't have to put footnotes at the end of the document. You can put them anywhere except inside other elements like lists, block quotes, and tables.
 
 ```markdown
 This is a digital footnote[^1].
@@ -738,7 +738,7 @@ With a reference later in the document defining the URL location:
 [id]: https://octodex.github.com/images/dojocat.jpg  "The Dojocat"
 ```
 
-[id]: https://octodex.github.com/images/dojocat.jpg  "The Dojocat"
+[id]: https://octodex.github.com/images/dojocat.jpg "The Dojocat"
 
 {{< admonition tip >}}
 **LoveIt** theme has [special shortcode for image](../theme-documentation-extended-shortcodes#image), which provides more features.

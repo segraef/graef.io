@@ -1,26 +1,25 @@
 # Automating Repository Management in Github and Azure Devops With Powershell
 
 
-Working in large enterprise environments often means managing a complex landscape of repositories across multiple GitHub organizations and Azure DevOps projects. Keeping these repositories up to date—especially when working with multiple engineering teams—can be a daunting task. That’s where automation comes in.
+Working in large enterprise environments often means managing a complex landscape of repositories across multiple GitHub organizations and Azure DevOps projects. Keeping these repositories up to date, especially when working with multiple engineering teams, can be a daunting task. That's where automation comes in.
 
-To simplify this, I’ve developed a consolidated PowerShell script that combines the functionality of my previous scripts into one:
+To simplify this, I've developed a consolidated PowerShell script that combines the functionality of my previous scripts into one:
 
 - [Update-Repos.ps1](https://github.com/segraef/Scripts/blob/main/PowerShell/Update-Repos.ps1)
 
-This script helps automate the process of cloning and updating repositories, making it significantly easier to manage a large number of repos efficiently.
+This script helps automate the process of cloning and updating repositories, making it significantly easier to manage many repos efficiently.
 
 <!--more-->
 
 ## A Small Part of a Larger PowerShell Toolkit
 
 This script is just a tiny piece of a broader collection of PowerShell snippets and scripts that I develop, use, and refine during my global engagements. I maintain a whole [Scripts repository](https://github.com/segraef/Scripts/blob/main/PowerShell/) where I collect and publish various automation tools that help streamline workflows in enterprise environments. Feel free to explore and use them!
-
 ## A Unified Solution for GitHub & Azure DevOps
 
 The **Update-Repos.ps1** script is designed to streamline repository management by:
 
 - Retrieving a list of repositories from GitHub organizations and Azure DevOps projects
-- Cloning repositories if they don’t already exist locally
+- Cloning repositories if they don't already exist locally
 - Updating repositories that are already cloned
 - Ensuring local repositories stay in sync with remote changes
 
@@ -30,7 +29,7 @@ When working with multiple repositories across teams, keeping everything updated
 ### Key Features
 - Supports both GitHub and Azure DevOps repositories
 - Retrieves repository lists dynamically
-- Clones repositories if they don’t exist
+- Clones repositories if they don't exist
 - Updates existing repositories to stay in sync with remote changes
 - Reduces manual effort, allowing teams to focus on development
 
@@ -69,7 +68,6 @@ You can check out the script here:
 - [Update-Repos.ps1](https://github.com/segraef/Scripts/blob/main/PowerShell/Update-Repos.ps1)
 
 If you have any questions or suggestions, feel free to reach out!
-
 ---
 
 {{< admonition info References >}}

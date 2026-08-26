@@ -14,21 +14,56 @@
 		
 		
 		
-			<lastBuildDate>Tue, 23 Jun 2026 14:00:00 +1000</lastBuildDate>
+			<lastBuildDate>Wed, 26 Aug 2026 09:00:00 +1000</lastBuildDate>
 		
 			<atom:link href="https://graef.io/tags/rss.xml" rel="self" type="application/rss+xml" />
 			<item>
 				<title>Ai</title>
 				<link>https://graef.io/tags/ai/</link>
-				<pubDate>Tue, 23 Jun 2026 14:00:00 +1000</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
+				<pubDate>Wed, 26 Aug 2026 09:00:00 +1000</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
 				<guid>https://graef.io/tags/ai/</guid>
 				<description></description>
 			</item>
 			<item>
 				<title>Automation</title>
 				<link>https://graef.io/tags/automation/</link>
-				<pubDate>Tue, 23 Jun 2026 14:00:00 +1000</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
+				<pubDate>Wed, 26 Aug 2026 09:00:00 +1000</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
 				<guid>https://graef.io/tags/automation/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Detection</title>
+				<link>https://graef.io/tags/detection/</link>
+				<pubDate>Wed, 26 Aug 2026 09:00:00 +1000</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
+				<guid>https://graef.io/tags/detection/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Humanizer</title>
+				<link>https://graef.io/tags/humanizer/</link>
+				<pubDate>Wed, 26 Aug 2026 09:00:00 +1000</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
+				<guid>https://graef.io/tags/humanizer/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Llm</title>
+				<link>https://graef.io/tags/llm/</link>
+				<pubDate>Wed, 26 Aug 2026 09:00:00 +1000</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
+				<guid>https://graef.io/tags/llm/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Tooling</title>
+				<link>https://graef.io/tags/tooling/</link>
+				<pubDate>Wed, 26 Aug 2026 09:00:00 +1000</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
+				<guid>https://graef.io/tags/tooling/</guid>
+				<description></description>
+			</item>
+			<item>
+				<title>Writing</title>
+				<link>https://graef.io/tags/writing/</link>
+				<pubDate>Wed, 26 Aug 2026 09:00:00 +1000</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
+				<guid>https://graef.io/tags/writing/</guid>
 				<description></description>
 			</item>
 			<item>
@@ -571,7 +606,7 @@
 				<description></description>
 			</item>
 			<item>
-				<title>Til</title>
+				<title>TIL</title>
 				<link>https://graef.io/tags/til/</link>
 				<pubDate>Mon, 23 Jan 2023 15:25:11 +1000</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
 				<guid>https://graef.io/tags/til/</guid>
@@ -683,7 +718,7 @@
 				<description></description>
 			</item>
 			<item>
-				<title>VSCode</title>
+				<title>Vscode</title>
 				<link>https://graef.io/tags/vscode/</link>
 				<pubDate>Fri, 07 Jan 2022 08:23:15 +0800</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
 				<guid>https://graef.io/tags/vscode/</guid>

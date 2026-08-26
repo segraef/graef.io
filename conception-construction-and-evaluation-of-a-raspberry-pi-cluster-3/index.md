@@ -25,12 +25,12 @@ LCD display, network ports, HDMI port, and power connector provide the
 proper slots for the cables to be subsequently connected outside of the
 case. The assembly is done according to the steps mentioned below:
 
-1.  Connecting the single board computers together using hex spacers.
-2.  Screw on the attached Raspberry Pis on the left inner side.
-3.  Attachment of the switch to the base plate.
-4.  Attaching the LCD display and USB sockets to the front panel.
-5.  Screwing the USB charger to the right side plate.
-6.  Mounting the case fan, HDMI and network jacks.
+1. Connecting the single board computers together using hex spacers.
+2. Screw on the attached Raspberry Pis on the left inner side.
+3. Attachment of the switch to the base plate.
+4. Attaching the LCD display and USB sockets to the front panel.
+5. Screwing the USB charger to the right side plate.
+6. Mounting the case fan, HDMI and network jacks.
 
 After the entire interior has been assembled, the side panels are
 clipped in step by step. To do this, start with the base plate, onto
@@ -105,10 +105,10 @@ configuration. Thus, it is very easy to pass values into a configuration
 which will be initialized and applied when each node is started for the
 first time. Examples for start parameters, which can be preconfigured:
 
--   Hostname
--   WLAN -SSID
--   WLAN password
--   Static or dynamic IPaddress
+- Hostname
+- WLAN -SSID
+- WLAN password
+- Static or dynamic IPaddress
 
 The YAML files for our nodes look like this, with the hostname for the
 respective Raspberry Pi adjusted accordingly:
@@ -137,7 +137,7 @@ flash \--config https://github.com/hypriot/image-builder-rpi/releases/download/v
 
 **Listing 3**: *The HypriotOS image is downloaded, copied to the SD card using flash and a given YAML configuration.*
 
-Time is precious and, in order to save it, we prepare the respective
+Time is precious and, to save it, we prepare the respective
 image for each individual Raspberry Pi and thus take advantage of the
 automatic provisioning. Due to the use of a total of 5 cluster nodes,
 the manual installation, configuration and maintenance of each
@@ -170,7 +170,7 @@ for the next step, the actual configuration of the cluster, after about
 
 All five nodes are now configured in the same way as described below,
 the order is not decisive here. The connection to the individual
-Raspberry Pis is established via Secure Shell (SSH). In order to
+Raspberry Pis is established via Secure Shell (SSH). to
 establish this secure connection over the network, the terminal program
 putty is used. As soon as the connection is established, a \"sudo
 update\" is performed to update the current package installation lists

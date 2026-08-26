@@ -1,7 +1,7 @@
 # Resolve DNS and IP addresses with PowerShell
 
 
-In this case we’re going to use the method GetHostAddresses of the Dns class of the Sytem.Net namespace.
+In this case we're going to use the method GetHostAddresses of the Dns class of the Sytem.Net namespace.
 For PowerShell 2.0 you can use following Windows PowerShell One Liners:
 
 ### Name to IP Address (DNS Forward)

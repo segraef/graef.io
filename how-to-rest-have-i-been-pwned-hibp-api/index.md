@@ -10,7 +10,7 @@ Perform REST API requests to the [HIBP API](https://haveibeenpwned.com/API/v3) t
 - [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) (VSCode) or [Postman](https://www.postman.com/downloads/)
 - [HIBP API Key](https://haveibeenpwned.com/API/v3)
 
-I prefer integrated extensions like [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) within my developer workspace to not have to switch between applications -  Yeah I'm lazy, so what.
+I prefer integrated extensions like [REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) within my developer workspace to not have to switch between applications - Yeah I'm lazy, so what.
 
 A working version for REST calls for email, passwords and breaches can be found at [segraef/Scripts/REST](https://github.com/segraef/Scripts/tree/main/REST) or my [tiny HIBP web app](https://hibq.azurewebsites.net) I wrote using Python and Flask but let me give you the single snippet here to give you the idea:
 

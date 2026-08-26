@@ -22,10 +22,10 @@ possibilities and considering a modular expandability of the cluster. [^52]
 The main focus in the design of this Raspberry Pi cluster is on the
 following requirement criteria:
 
--   Cost Efficiency.
--   Energy efficiency.
--   Scalability.
--   Resilience.
+- Cost Efficiency.
+- Energy efficiency.
+- Scalability.
+- Resilience.
 
 Further criteria are a visual and easy-to-read status and information
 display of current system values, ideal cooling and optimization of the
@@ -36,7 +36,7 @@ which we will discuss in more detail in the design decisions (see [Design decisi
 #### Cost and energy efficiency
 
 The factors of cost and energy efficiency are paramount and
-predominantly influence the conception and design. In order to keep the
+predominantly influence the conception and design. to keep the
 acquisition costs as low as possible but still be able to offer
 efficient computing power, Raspberry Pi single-board computers in
 version 3 are to be installed. The use of unnecessary cable lengths or
@@ -56,7 +56,7 @@ on a mobile basis.
 
 Scaling is to be considered in this system in two respects. On the one
 hand, the user should be given the option of connecting the entire
-system with other clusters in order to be able to scale cluster-wise at
+system with other clusters to be able to scale cluster-wise at
 this level. Here we also speak of horizontal scaling. On the other hand,
 it should be possible to scale vertically or node by node within a
 cluster by adding or removing individual nodes. This is done either
@@ -105,12 +105,12 @@ correspondingly good removal of this warm air and to avoid heat
 accumulation inside the case, this should be done in several stages and
 can only be ensured with the help of an active case fan:
 
-1.  Absorption of cold outside air at the front and transport to the
+1. Absorption of cold outside air at the front and transport to the
     passive cooling elements inside the housing.
 
-2.  Dissipation of heat from the surface of the components (CPU, IC)
+2. Dissipation of heat from the surface of the components (CPU, IC)
 
-3.  Removal of heated air from the rear of the housing.
+3. Removal of heated air from the rear of the housing.
 
 The design of the case should be adapted accordingly so that the
 supplied air flow can optimally flow into the case, include all
@@ -129,10 +129,10 @@ should the connections of internal components such as power, network or
 control cables. In addition, the following connections should be
 available externally on the housing:
 
--   1x current
--   2x network
--   1x HDMI
--   2x USB
+- 1x current
+- 2x network
+- 1x HDMI
+- 2x USB
 
 #### Modularity
 
@@ -180,7 +180,7 @@ has six faces of equal size.
 
 #### Simplicity: Elastic Clip Concept
 
-In order to allow easy assembly and reassembly, without the use of
+to allow easy assembly and reassembly, without the use of
 additional tools or fastening screws of any kind, the Elastic Clip
 concept by Patrick Fenner was used. This concept allows to create a slim
 and elegant design. For this purpose, we use acrylic glass, which is
@@ -281,24 +281,24 @@ the Gigabit switch, the USB charger and the USB cables. The rest of the
 hardware, such as the LCD display, cables and plastic screws, are in the
 price range of 0.65 to 9.80 EUR.
 
-| **Unit(s)** | **Component**                                       | **Unit price**  |
+| **Unit(s)** | **Component** | **Unit price** |
 | :---------: | :-------------------------------------------------- | :-------------- |
-|      5      | Raspberry Pi 3 Model B                              | 42.70 Euro      |
-|      5      | SanDisk Ultra 8 GB microSDHCUHS -I Class 10         | 6.65 Euro       |
-|      1      | Edimax ES-5800G V2 Gigabit Switch (8-Port)          | 22.99 Euro      |
-|      1      | Anear 60 Watt USB Charger (6-Port)                  | 18.99 Euro      |
-|      5      | Micro USB cable (15 cm)                             | 2.75 Euro       |
-|      5      | Transparent power cord (15 cm)                      | 0.79 Euro       |
-|      2      | RJ45 jack (female-male)                             | 2.74 Euro       |
-|      1      | Dual USB 2.0-A female-male connector                | 4.53 Euro       |
-|      1      | LCD display module 1602 HD44780 with TWI controller | 4.45 Euro       |
-|      1      | AC 250V 2.5A IEC320 C7 socket                       | 1.39 Euro       |
-|      1      | C7 power cable 90 degree angled (1 meter)           | 3.26 Euro       |
-|      1      | Cable jumpers (female-female. 40 wires. 20 cm)      | 0.65 Euro       |
-|     56      | M3 Nylon Hex Spacer Nuts and Bolts White            | 0.05 Euro       |
-|      1      | Antec TRICOOL 92mm 4-pin case fan                   | 9.80 Euro       |
-|      1      | Milling cut of the acrylic sheets                   | 20 Euro         |
-|             | **Total price incl. VAT**                           | **358.79 Euro** |
+| 5 | Raspberry Pi 3 Model B | 42.70 Euro |
+| 5 | SanDisk Ultra 8 GB microSDHCUHS -I Class 10 | 6.65 Euro |
+| 1 | Edimax ES-5800G V2 Gigabit Switch (8-Port) | 22.99 Euro |
+| 1 | Anear 60 Watt USB Charger (6-Port) | 18.99 Euro |
+| 5 | Micro USB cable (15 cm) | 2.75 Euro |
+| 5 | Transparent power cord (15 cm) | 0.79 Euro |
+| 2 | RJ45 jack (female-male) | 2.74 Euro |
+| 1 | Dual USB 2.0-A female-male connector | 4.53 Euro |
+| 1 | LCD display module 1602 HD44780 with TWI controller | 4.45 Euro |
+| 1 | AC 250V 2.5A IEC320 C7 socket | 1.39 Euro |
+| 1 | C7 power cable 90 degree angled (1 meter) | 3.26 Euro |
+| 1 | Cable jumpers (female-female. 40 wires. 20 cm) | 0.65 Euro |
+| 56 | M3 Nylon Hex Spacer Nuts and Bolts White | 0.05 Euro |
+| 1 | Antec TRICOOL 92mm 4-pin case fan | 9.80 Euro |
+| 1 | Milling cut of the acrylic sheets | 20 Euro |
+| | **Total price incl. VAT** | **358.79 Euro** |
 
 **Table** **1**: *Listing of individual and total price of all components.*
 

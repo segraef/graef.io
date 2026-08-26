@@ -7,7 +7,7 @@ Every System Administrator comes into a situation where you want to see who and 
 
 This little function evaluates the System log with the help of Get-EventLog and delivers you the latest logon and logoff events for every user.
 
-I’ve left you the Invoke-Command commented if you want to use PowerShell Remoting (WinRM).
+I've left you the Invoke-Command commented if you want to use PowerShell Remoting (WinRM).
 
 ```powershell
 Function Get-LogonHistory
@@ -116,7 +116,7 @@ Function Get-LogonHistory
 }
 ```
 
-Please keep in mind, it evaluates every event, this means even if a user was doing actions remotely using a powershell script or just logged on, it will be displayed as well. If you want to distinguish between script logons you can easily have a look at the logon and logoff times. If a user account was only logged for some seconds … then this is an indicator for a remote script logon.
+Please keep in mind, it evaluates every event, this means even if a user was doing actions remotely using a powershell script or just logged on, it will be displayed as well. If you want to distinguish between script logons you can easily have a look at the logon and logoff times. If a user account was only logged for some seconds ... then this is an indicator for a remote script logon.
 
 The script will give you following output:
 

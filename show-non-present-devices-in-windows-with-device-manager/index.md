@@ -18,7 +18,7 @@ Select your hidden device you need to remove, right click and select uninstall. 
 
 {{< image src="2021-08-10-11-57-02.png" caption="." >}}
 
-In case you need to remove multiple orphan / hidden / ghosted devices like disks on Windows Failover Cluster Nodes you can use [Ghostbuster](https://graef.io/ghostbuster-remove-all-non-present-hidden-devices-from-windows/) for that. See my other [article about Ghostbuster](https://graef.io/ghostbuster-remove-all-non-present-hidden-devices-from-windows/) as well.
+In case you need to remove multiple orphan / hidden / ghosted devices like disks on Windows Failover Cluster Nodes you can use [Ghostbuster](https://graef.io/ghostbuster-remove-all-non-present-hidden-devices-from-windows/) for that. See my other [article about Ghostbuster](https://graef.io/ghostbuster-remove-all-non-present-hidden-devices-from-windows/) as well.
 
 
 

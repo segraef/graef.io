@@ -1,7 +1,7 @@
 # Get-PSVersions: Retrieve Powershell version remotely
 
 
-Okay at the end it’s a simple `$PSVersion` wrapped in an `Invoke-Command` but hey these simple things are needful in case you need to run it against of 100s of servers and not just locally. With the help of `Invoke-Command` via WinRM and `$PSVersionTable.psversion` wrapped in a foreach you can retrieve PowerShell version of your remote computers indifferent if you need to use credentials to run it against a different domain than you currently reside. Just use the below function `Get-PSVersions`, simple but good.
+Okay at the end it's a simple `$PSVersion` wrapped in an `Invoke-Command` but hey these simple things are needful in case you need to run it against of 100s of servers and not just locally. With the help of `Invoke-Command` via WinRM and `$PSVersionTable.psversion` wrapped in a foreach you can retrieve PowerShell version of your remote computers indifferent if you need to use credentials to run it against a different domain than you currently reside. Just use the below function `Get-PSVersions`, simple but good.
 
 ```powershell
 Function Get-PSVersions

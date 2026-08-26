@@ -40,7 +40,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/graef.io\/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-1\/"
-        },"image": ["https:\/\/graef.io\/logo.png"],"genre": "posts","keywords": "Raspberry, Pi, cluster, failover, Kubernetes, k8s, docker, HypriotOS, PiCube, GPIO, YAML, Bash","wordcount":  9187 ,
+        },"image": ["https:\/\/graef.io\/logo.png"],"genre": "posts","keywords": "Raspberry, Pi, cluster, failover, Kubernetes, k8s, docker, HypriotOS, PiCube, GPIO, YAML, Bash","wordcount":  9174 ,
         "url": "https:\/\/graef.io\/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-1\/","datePublished": "2021-03-09T00:00:00+00:00","dateModified": "2021-03-09T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "greaf.io","logo": "https:\/\/graef.io\/logo.png"},"author": {
@@ -337,7 +337,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Conception, Construction and Evaluation of a Raspberry Pi Cluster (1/4)</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://graef.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Sebastian Gräf</a></span>&nbsp;<span class="post-category">included in <a href="/categories/projects/"><i class="far fa-folder fa-fw"></i>Projects</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Tuesday, Mar 9, 2021">Tuesday, Mar 9, 2021</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;9187 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Tuesday, Mar 9, 2021">Tuesday, Mar 9, 2021</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;9174 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;44 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -408,7 +408,7 @@
 <h2 id="background">Background</h2>
 <p>This chapter covers the basic technologies that form the basis of parallel and distributed systems. These technologies build on each other, as in a layer system, and are dependent on each other. Architectures and techniques based on this, such as virtualization or cluster computing, in turn provide the basic framework for container virtualization and its management systems.</p>
 <h3 id="parallel-and-distributed-systems">Parallel and distributed systems</h3>
-<p>Until computers evolved into distributed computing systems, there have been fundamental changes in various computing technologies over the past decades, which we will briefly discuss in order to make the basic framework of parallel and distributed systems more understandable.</p>
+<p>Until computers evolved into distributed computing systems, there have been fundamental changes in various computing technologies over the past decades, which we will briefly discuss to make the basic framework of parallel and distributed systems more understandable.</p>
 <h4 id="amdahls-and-gustafsons-law">Amdahl's and Gustafson's law</h4>
 <p>At the beginning of this work, the theoretically unlimited increase of computing power was mentioned. Amdahl's law (named in 1967 after Gene Amdahl) deals exactly with this question, namely whether an unlimited increase in speed can be achieved with an increasing number of processors. It describes, how the parallelization of a software affects the acceleration of this. One divides thereby the software into not parallel, thus sequentially executable and parallel executable portions. Sequential parts are process initializations, communication and the memory management. These parts are necessary for the synchronization of the parallel parts. They form dependencies among themselves and are therefore not able to be executed in parallel. Parallel executable parts are the processors, which are used for computation. It is very important to estimate how much performance gain is achieved by adding a certain number of processing units in parallel working system. Sometimes it happens that adding a larger number of computing units does not necessarily improve the performance, because the expected performance tends to decrease or oversaturate if we blindly add more computing resources. Therefore, it is very important to have a rough estimate of the optimized number of resources to use. Suppose a hypothetical system has only one processor with a normalized runtime of $1$. Now we consider how much time the program needs in the parallelizable portion and denote this portion by $P$. The runtime of the sequential part is thus $(1 - P)$.</p>
 <p>The runtime of the sequential part does not change, but the parallelizable part is optimally distributed to all processors and therefore runs N times as fast. This results in the following runtime formula: [^1]</p>
@@ -417,7 +417,7 @@
 <p>$$Time\ gain\ according\ to\ Amdahl$$
 $$= \ \frac{original\ duration}{\text{new\ duration}}$$
 $$= \frac{1}{(1 - P) + \frac{P}{N}}$$</p>
-<p>Here N is the number of processors and P the runtime portion of the parallelizable program. Gene Amdahl called the time or also speed gain Speedup. With the help of a massive parallelism the time of the parallelizable portion can be reduced arbitrarily, the sequential portion remains unaffected thereby however. As the number of processors increases, the communication overhead between the processors also increases, so that above a certain number, they tend to be busy communicating rather than processing the problem. This reduces the performance and refers to this as an overhead in the task distribution. A program cannot be completely parallelized, so that all processors are always busy with work at the same time. No matter how many processor units are used and the proportion of applications that cannot be parallelized is, for example, one percent, the speedup can be a maximum of 100. Gene Amdahl thus concluded that it makes no sense to keep increasing the computing units in order to generate unlimited computing
+<p>Here N is the number of processors and P the runtime portion of the parallelizable program. Gene Amdahl called the time or also speed gain Speedup. With the help of a massive parallelism the time of the parallelizable portion can be reduced arbitrarily, the sequential portion remains unaffected thereby however. As the number of processors increases, the communication overhead between the processors also increases, so that above a certain number, they tend to be busy communicating rather than processing the problem. This reduces the performance and refers to this as an overhead in the task distribution. A program cannot be completely parallelized, so that all processors are always busy with work at the same time. No matter how many processor units are used and the proportion of applications that cannot be parallelized is, for example, one percent, the speedup can be a maximum of 100. Gene Amdahl thus concluded that it makes no sense to keep increasing the computing units to generate unlimited computing
 power. [^2]</p>
 <p>Amdahl's model remains valid until the total number of computing operations remains the same while the number of computing units continues to increase. However, if in our hypothetical simulation the job size increases while the number of computational units continues to increase, then Gustafson's law must be invoked. John Gustafson established this law in 1988, which states that as long as the problem being addressed is large enough it can be efficiently parallelized. Unlike Amdahl, Gustafson shows that massive parallelization is nevertheless worthwhile. A parallel system cannot become arbitrarily fast, but it can solve arbitrarily large problems in the same amount of
 time. [^3]</p>
@@ -527,8 +527,8 @@ time. [^3]</p>
 <p>As soon as the term cloud is mentioned, it predominantly refers to a specific usage model of cloud computing. The various types of these usage models are defined below: [^21]</p>
 <ul>
 <li><strong>Private cloud</strong>: The English term &quot;private&quot; translates into German as &quot;privat&quot; and, in the context of cloud, stands for &quot;not for the public&quot;. A company uses a private cloud in a secure environment such as its own internal network. This does not necessarily mean that the IT infrastructure used is the property of the company, as it can also be provided by third parties. Private merely clarifies that a company is the sole user of this model. This has the advantage that it retains control in terms of data protection, even if third-party providers such as Amazon or Microsoft manage private cloud environments.</li>
-<li><strong>Public cloud</strong>: A public cloud provides access to abstracted IT infrastructures and services for a large number of users. Customers can use services and infrastructures via the Internet. Examples are file hosting services such as Google Drive from Google Inc. or Dropbox from Dropbox Inc.</li>
-<li><strong>Hybrid cloud</strong>: A hybrid form of the two variants mentioned above is the hybrid cloud. Users are offered the option of processing business-critical data with a focus on data protection in private cloud environments. Non-sensitive data is made available in the public cloud using cloud services such as IaaS or PaaS on the Internet. Hybrid clouds offer a further advantage in that performance peaks occurring at short notice are compensated for by shifting services from the private to the public cloud. Hybrid clouds enable the gradual merging of public and private cloud services in order to be able to utilize existing infrastructure hardware for as long as possible.</li>
+<li><strong>Public cloud</strong>: A public cloud provides access to abstracted IT infrastructures and services for many users. Customers can use services and infrastructures via the Internet. Examples are file hosting services such as Google Drive from Google Inc. or Dropbox from Dropbox Inc.</li>
+<li><strong>Hybrid cloud</strong>: A hybrid form of the two variants mentioned above is the hybrid cloud. Users are offered the option of processing business-critical data with a focus on data protection in private cloud environments. Non-sensitive data is made available in the public cloud using cloud services such as IaaS or PaaS on the Internet. Hybrid clouds offer a further advantage in that performance peaks occurring at short notice are compensated for by shifting services from the private to the public cloud. Hybrid clouds enable the gradual merging of public and private cloud services to be able to use existing infrastructure hardware for as long as possible.</li>
 </ul>
 <p><strong>Figure 6</strong> shows an overview of private, public and hybrid cloud environments and illustrates the relationship between a private and public network. For example, a private network is a VPN, while the Internet belongs to the public network segment.</p>
 <figure><a class="lightgallery" href="/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-1/media/image727.png" title="/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-1/media/image727.png" data-thumbnail="/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-1/media/image727.png" data-sub-html="<h2>Source: Own representation based on (Bedner, 2012, p. 37); (Matros, 2012, p. 67)  Figure 6: Relationship between public, private and hybrid cloud models.</h2>">
@@ -715,7 +715,7 @@ thus assumes the active part. [^31]</p>
 simulation applications, in parallel on all cluster nodes. The
 combination of all cluster nodes thus results in immensely high
 computing power. All nodes must consist of homogeneous or similar
-hardware components in order to simplify the administration effort and
+hardware components to simplify the administration effort and
 maintenance and to be able to handle error sources more easily.
 Furthermore, all nodes are connected to each other via a local network
 and usually access a common data storage. As soon as an application
@@ -1067,7 +1067,7 @@ system, since the unit costs for individual nodes are low. [^51]</p>
 <p>General Purpose Input Output (GPIO) is the name for programmable inputs
 and outputs for general purposes. A Raspberry Pi has a total of 40 GPIO
 pins, twelve of which are for power supply and 28 of which serve as an
-interface to other systems in order to communicate with or control them.
+interface to other systems to communicate with or control them.
 GPIO pins 3 and 5 (see <strong>Figure 18</strong>) enable devices such as an LCD display
 to be addressed by means of an Inter-Integrated Circuit (I2C), a serial
 data bus.</p>

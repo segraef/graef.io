@@ -50,7 +50,7 @@
 				<link>https://graef.io/set-primary-ip-address-order-with-multiple-ip-addresses-on-a-nic/</link>
 				<pubDate>Sun, 26 Nov 2017 11:29:53 +0800</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
 				<guid>https://graef.io/set-primary-ip-address-order-with-multiple-ip-addresses-on-a-nic/</guid>
-				<description>&lt;p&gt;If you’re running a webserver it may be you have to run different services on the same port and need to use multiple IP addresses on the same network interface. This can happen for SMTP or Exchange Servers using several connectors.&lt;/p&gt;</description>
+				<description>&lt;p&gt;If you&amp;rsquo;re running a webserver it may be you have to run different services on the same port and need to use multiple IP addresses on the same network interface. This can happen for SMTP or Exchange Servers using several connectors.&lt;/p&gt;</description>
 			</item>
 	</channel>
 </rss>

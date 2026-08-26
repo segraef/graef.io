@@ -1,7 +1,7 @@
 # Get Local Account Memberships
 
 
-Okay, yeah there are plenty of scripts out which give you local accounts via `WMI` or `ADSI` and yes scripts exist also which give you all local groups but there is not one which gives you both (of course there are also some) but what if you’re looking to implement this as a CustomScriptExtension to your Azure VM?
+Okay, yeah there are plenty of scripts out which give you local accounts via `WMI` or `ADSI` and yes scripts exist also which give you all local groups but there is not one which gives you both (of course there are also some) but what if you're looking to implement this as a CustomScriptExtension to your Azure VM?
 
 <!--more-->
 
@@ -105,5 +105,5 @@ Once digested and imported with Import-Clixml you get the same output as before.
 
 So why are we doing it this way?
 
-Consider that, you’re going to execute a Custom Script Extension on your VM without having remote access to it, yes you don’t have access to it BUT you know you can use the Azure VMAgent which is by default installed on every VM in Azure. With having a Custom Script Extension executed including any of your script, e.g. "Get-LocalAccountMemberships” you can grab details from your machine without accessing it at all.
+Consider that, you're going to execute a Custom Script Extension on your VM without having remote access to it, yes you don't have access to it BUT you know you can use the Azure VMAgent which is by default installed on every VM in Azure. With having a Custom Script Extension executed including any of your script, e.g. "Get-LocalAccountMemberships" you can grab details from your machine without accessing it at all.
 

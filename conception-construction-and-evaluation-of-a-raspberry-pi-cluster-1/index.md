@@ -23,7 +23,7 @@ This chapter covers the basic technologies that form the basis of parallel and d
 
 ### Parallel and distributed systems
 
-Until computers evolved into distributed computing systems, there have been fundamental changes in various computing technologies over the past decades, which we will briefly discuss in order to make the basic framework of parallel and distributed systems more understandable.
+Until computers evolved into distributed computing systems, there have been fundamental changes in various computing technologies over the past decades, which we will briefly discuss to make the basic framework of parallel and distributed systems more understandable.
 
 #### Amdahl\'s and Gustafson\'s law
 
@@ -39,7 +39,7 @@ $$Time\ gain\ according\ to\ Amdahl\$$
 $$= \ \frac{original\ duration}{\text{new\ duration}}\$$
 $$= \frac{1}{(1 - P) + \frac{P}{N}}$$
 
-Here N is the number of processors and P the runtime portion of the parallelizable program. Gene Amdahl called the time or also speed gain Speedup. With the help of a massive parallelism the time of the parallelizable portion can be reduced arbitrarily, the sequential portion remains unaffected thereby however. As the number of processors increases, the communication overhead between the processors also increases, so that above a certain number, they tend to be busy communicating rather than processing the problem. This reduces the performance and refers to this as an overhead in the task distribution. A program cannot be completely parallelized, so that all processors are always busy with work at the same time. No matter how many processor units are used and the proportion of applications that cannot be parallelized is, for example, one percent, the speedup can be a maximum of 100. Gene Amdahl thus concluded that it makes no sense to keep increasing the computing units in order to generate unlimited computing
+Here N is the number of processors and P the runtime portion of the parallelizable program. Gene Amdahl called the time or also speed gain Speedup. With the help of a massive parallelism the time of the parallelizable portion can be reduced arbitrarily, the sequential portion remains unaffected thereby however. As the number of processors increases, the communication overhead between the processors also increases, so that above a certain number, they tend to be busy communicating rather than processing the problem. This reduces the performance and refers to this as an overhead in the task distribution. A program cannot be completely parallelized, so that all processors are always busy with work at the same time. No matter how many processor units are used and the proportion of applications that cannot be parallelized is, for example, one percent, the speedup can be a maximum of 100. Gene Amdahl thus concluded that it makes no sense to keep increasing the computing units to generate unlimited computing
 power. [^2]
 
 Amdahl\'s model remains valid until the total number of computing operations remains the same while the number of computing units continues to increase. However, if in our hypothetical simulation the job size increases while the number of computational units continues to increase, then Gustafson\'s law must be invoked. John Gustafson established this law in 1988, which states that as long as the problem being addressed is large enough it can be efficiently parallelized. Unlike Amdahl, Gustafson shows that massive parallelization is nevertheless worthwhile. A parallel system cannot become arbitrarily fast, but it can solve arbitrarily large problems in the same amount of
@@ -53,11 +53,11 @@ Client-server models are the basic techniques for operating distributed systems.
 
 Operating systems (OS) such as Red Hat Enterprise Linux or Windows Server use the above concept and thus provide a client-server system. This is done by establishing the connection to the server on the client side and providing access to services and resources on the server side. Within these operating systems servers are simple programs, which are usually started automatically and run passively in the background. In the Linux environment these programs are called \"daemon\", under Windows Server they are called \"service\". In practice, however, different types of these server services are usually encountered. Examples of this are: [^5]
 
--   **Mail server**: Communication service for electronic mail (e-mail).
--   **Web server**: Transmitting web pages to clients.
--   **File server**: A file server makes files available on a network.
+- **Mail server**: Communication service for electronic mail (e-mail).
+- **Web server**: Transmitting web pages to clients.
+- **File server**: A file server makes files available on a network.
 
-####  Peer-to-peer
+#### Peer-to-peer
 
 Peer-to-peer (P2P) systems are the opposite of client-server systems. In client-server networks, a server is not necessarily a specific computer. Server and client are referred to as roles in this context, since a computer can also act as a server and a client at the same time. In a P2P system, this distribution of roles does not exist; all computers have equal rights. A computer in a network is a peer because it can be a client and a server at the same time. It can both use and provide services. The functionality, the provision of a service, is therefore provided decentrally in a P2P system. [^6]
 
@@ -73,9 +73,9 @@ Grid computing is a distributed computing technique that aims to connect loosely
 
 Grid computing can be divided into the following classifications:
 
--   **Computing Grid**: access to distributed computing resources.
--   **Data Grid**: Access to distributed data volumes and storage capacity.
--   **Service Grid**: Access to distributed applications and services.
+- **Computing Grid**: access to distributed computing resources.
+- **Data Grid**: Access to distributed data volumes and storage capacity.
+- **Service Grid**: Access to distributed applications and services.
 
 A computing grid is comparable to a power grid. For the consumer, everything that happens behind a socket is hidden, but he can conveniently use the power offered, the electricity. A computing grid is similar in comparison, it connects to the computing network and uses the computing power offered. High costs or lack of financial resources pose solving complex problems as a difficulty for scientific and economic institutions. But due to the possibility like, the bundling of resources of different organizations, it is possible to solve computationally intensive problems cost-efficiently. [^10]
 
@@ -89,9 +89,9 @@ The software platform Berkeley Open Infrastructure for Network Computing (BOINC)
 
 Other well-known RPC projects using BOINC are: [^13]
 
--   **SETI** **\@home** (Search for Extra-Terrestrial Intelligence at home): study of radio signal data from the Arecibo Observatory radio telescope in Puerto Rico used as evidence of extraterrestrial technology.
--   **MilkyWay\@home**: research in modeling and determining the evolution of the Milky Way Galaxy.
--   **Einstein\@home**: The project examines data collected by the LIGO and GEO600 gravitational wave detectors for evidence of periodic sources, such as rapidly rotating neutron stars, which are the gravitational equivalent of pulsars (pulsating radio sources).
+- **SETI** **\@home** (Search for Extra-Terrestrial Intelligence at home): study of radio signal data from the Arecibo Observatory radio telescope in Puerto Rico used as evidence of extraterrestrial technology.
+- **MilkyWay\@home**: research in modeling and determining the evolution of the Milky Way Galaxy.
+- **Einstein\@home**: The project examines data collected by the LIGO and GEO600 gravitational wave detectors for evidence of periodic sources, such as rapidly rotating neutron stars, which are the gravitational equivalent of pulsars (pulsating radio sources).
 
 {{< image src="media/image46.jpeg" caption="Source: (Kroeker, 2011, p. 15) <br> **Figure 3**: *Grid-based simulation of gravitational waves generated by the merger of two black holes.*" >}}
 
@@ -122,9 +122,9 @@ Grid computing is seen as the forerunner of cloud computing, although the focus 
 In practice, the following three abstraction or business models have become established for the provision of cloud services: [^20]
 
 - **On-premise**: On-premise means on the customer\'s own premises or locally on site. The customer is responsible for managing its own IT infrastructure, which it usually administers in its own data center and on its own hardware.
--   **PaaS** **- Platform as a Service**: The maintenance and management of hardware, operating systems and runtime environments for computer programs is taken over by the cloud provider. The user focuses only on his applications. A typical example of PaaS is scalable SQL databases (structured query language).
--   **IaaS** **- Infrastructure as a Service**: The entire infrastructure consisting of network, storage, server hardware and virtualization layer (see [Container Management Systems](#container-management-systems)) is provided by the cloud provider. The user assumes responsibility for the upper layers such as the operating system and applications.
--   **SaaS** **- Software as a Service:** In this model, the entire hardware and software infrastructure is offered and managed. The user thus has the option of directly using software services, such as web servers or e-mail, without any effort.
+- **PaaS** **- Platform as a Service**: The maintenance and management of hardware, operating systems and runtime environments for computer programs is taken over by the cloud provider. The user focuses only on his applications. A typical example of PaaS is scalable SQL databases (structured query language).
+- **IaaS** **- Infrastructure as a Service**: The entire infrastructure consisting of network, storage, server hardware and virtualization layer (see [Container Management Systems](#container-management-systems)) is provided by the cloud provider. The user assumes responsibility for the upper layers such as the operating system and applications.
+- **SaaS** **- Software as a Service:** In this model, the entire hardware and software infrastructure is offered and managed. The user thus has the option of directly using software services, such as web servers or e-mail, without any effort.
 
 The figure below shows a breakdown of the business models mentioned. Here, blue denotes the company\'s own share of the administration effort. Neutral stands for the segments which the cloud provider manages and administers.
 
@@ -133,8 +133,8 @@ The figure below shows a breakdown of the business models mentioned. Here, blue 
 As soon as the term cloud is mentioned, it predominantly refers to a specific usage model of cloud computing. The various types of these usage models are defined below: [^21]
 
 - **Private cloud**: The English term \"private\" translates into German as \"privat\" and, in the context of cloud, stands for \"not for the public\". A company uses a private cloud in a secure environment such as its own internal network. This does not necessarily mean that the IT infrastructure used is the property of the company, as it can also be provided by third parties. Private merely clarifies that a company is the sole user of this model. This has the advantage that it retains control in terms of data protection, even if third-party providers such as Amazon or Microsoft manage private cloud environments.
-- **Public cloud**: A public cloud provides access to abstracted IT infrastructures and services for a large number of users. Customers can use services and infrastructures via the Internet. Examples are file hosting services such as Google Drive from Google Inc. or Dropbox from Dropbox Inc.
-- **Hybrid cloud**: A hybrid form of the two variants mentioned above is the hybrid cloud. Users are offered the option of processing business-critical data with a focus on data protection in private cloud environments. Non-sensitive data is made available in the public cloud using cloud services such as IaaS or PaaS on the Internet. Hybrid clouds offer a further advantage in that performance peaks occurring at short notice are compensated for by shifting services from the private to the public cloud. Hybrid clouds enable the gradual merging of public and private cloud services in order to be able to utilize existing infrastructure hardware for as long as possible.
+- **Public cloud**: A public cloud provides access to abstracted IT infrastructures and services for many users. Customers can use services and infrastructures via the Internet. Examples are file hosting services such as Google Drive from Google Inc. or Dropbox from Dropbox Inc.
+- **Hybrid cloud**: A hybrid form of the two variants mentioned above is the hybrid cloud. Users are offered the option of processing business-critical data with a focus on data protection in private cloud environments. Non-sensitive data is made available in the public cloud using cloud services such as IaaS or PaaS on the Internet. Hybrid clouds offer a further advantage in that performance peaks occurring at short notice are compensated for by shifting services from the private to the public cloud. Hybrid clouds enable the gradual merging of public and private cloud services to be able to use existing infrastructure hardware for as long as possible.
 
 **Figure 6** shows an overview of private, public and hybrid cloud environments and illustrates the relationship between a private and public network. For example, a private network is a VPN, while the Internet belongs to the public network segment.
 
@@ -303,16 +303,16 @@ The goal of HPC clusters is to process complex computing tasks or
 simulation applications, in parallel on all cluster nodes. The
 combination of all cluster nodes thus results in immensely high
 computing power. All nodes must consist of homogeneous or similar
-hardware components in order to simplify the administration effort and
+hardware components to simplify the administration effort and
 maintenance and to be able to handle error sources more easily.
 Furthermore, all nodes are connected to each other via a local network
 and usually access a common data storage. As soon as an application
 falls into one of the following categories, increased requirements are
 placed on memory, network and processors:
 
--   computing-intensive applications
--   memory-intensive applications
--   communication-intensive applications
+- computing-intensive applications
+- memory-intensive applications
+- communication-intensive applications
 
 Because of this, these types of clusters must provide high resilience,
 high availability, and high redundancy.
@@ -359,7 +359,7 @@ requests evenly across all servers. [^35]
 Management for intelligent distribution of data streams is handled by
 these various distribution algorithms:
 
--   **Round-Robin algorithm**: All computational requests and loads are
+- **Round-Robin algorithm**: All computational requests and loads are
     distributed evenly to each server, regardless of the current number
     of connections or response times. Round-robin is best suited when
     the servers in the cluster have equal processing capabilities based
@@ -367,7 +367,7 @@ these various distribution algorithms:
     they can handle, while others will consume only a portion of their
     resources.
 
--   **Weighted Round-Robin**: A weighted round-robin algorithm takes
+- **Weighted Round-Robin**: A weighted round-robin algorithm takes
     into account the different processing capabilities of each server.
     Users manually assign a performance weight to each server, and a
     scheduling sequence is automatically generated depending on the
@@ -377,10 +377,10 @@ these various distribution algorithms:
     strengths and maintain a performance equilibrium according to their
     weightings.
 
--   **Least-Connection Algorithm**: Only requests are sent to the server
+- **Least-Connection Algorithm**: Only requests are sent to the server
     in a cluster based on which currently serves the fewest connections.
 
--   **Load-Based Algorithm**: Similar to Least-Connection, only certain
+- **Load-Based Algorithm**: Similar to Least-Connection, only certain
     requests are sent to the cluster; in a load-balanced algorithm, only
     requests are sent to servers that currently have the lowest load.
 
@@ -575,21 +575,21 @@ containers. [^47]
 
 The following services run on the individual worker nodes: [^48]
 
--   **Docker**: providing the container engine.
--   **kubelet**: Agent, which takes over the management of the
+- **Docker**: providing the container engine.
+- **kubelet**: Agent, which takes over the management of the
     containers.
--   **kube-proxy**: Service that handles network management and port
+- **kube-proxy**: Service that handles network management and port
     forwarding to and from containers.
 
 The main nodes take care of the management and controlling of all nodes.
 The following services are divided here: [^49]
 
--   **kube-apiserver**: User interface to the nodes.
--   **etcd**: Storage location of the cluster configurations, the
+- **kube-apiserver**: User interface to the nodes.
+- **etcd**: Storage location of the cluster configurations, the
     so-called key-value store.
--   **kube-scheduler**: The scheduler determines, depending on the
+- **kube-scheduler**: The scheduler determines, depending on the
     available resources, which worker nodes are assigned which pods.
--   **kube-controller-manager**: This manager service takes over the
+- **kube-controller-manager**: This manager service takes over the
     controlling functions and monitors if all nodes are working, which
     pods are assigned to which service and manages port forwarding.
 
@@ -626,7 +626,7 @@ system, since the unit costs for individual nodes are low. [^51]
 General Purpose Input Output (GPIO) is the name for programmable inputs
 and outputs for general purposes. A Raspberry Pi has a total of 40 GPIO
 pins, twelve of which are for power supply and 28 of which serve as an
-interface to other systems in order to communicate with or control them.
+interface to other systems to communicate with or control them.
 GPIO pins 3 and 5 (see **Figure 18**) enable devices such as an LCD display
 to be addressed by means of an Inter-Integrated Circuit (I2C), a serial
 data bus.

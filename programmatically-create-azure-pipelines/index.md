@@ -82,7 +82,7 @@ Based on this structure `New-AzPipeline.ps1` recognizes
 
 ## Contributions
 
- Thanks to [@simonbms](https://github.com/simonbms) for helping me out with the object comparions in order to have only the latest folders picked for the `-Latest` switch.
+ Thanks to [@simonbms](https://github.com/simonbms) for helping me out with the object comparions to have only the latest folders picked for the `-Latest` switch.
 
 {{< admonition info References >}}
 <!---

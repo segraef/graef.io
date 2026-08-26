@@ -29,14 +29,14 @@
 				<link>https://graef.io/get-local-account-memberships/</link>
 				<pubDate>Thu, 21 Feb 2019 00:00:00 +0000</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
 				<guid>https://graef.io/get-local-account-memberships/</guid>
-				<description>&lt;p&gt;Okay, yeah there are plenty of scripts out which give you local accounts via &lt;code&gt;WMI&lt;/code&gt; or &lt;code&gt;ADSI&lt;/code&gt; and yes scripts exist also which give you all local groups but there is not one which gives you both (of course there are also some) but what if you’re looking to implement this as a CustomScriptExtension to your Azure VM?&lt;/p&gt;</description>
+				<description>&lt;p&gt;Okay, yeah there are plenty of scripts out which give you local accounts via &lt;code&gt;WMI&lt;/code&gt; or &lt;code&gt;ADSI&lt;/code&gt; and yes scripts exist also which give you all local groups but there is not one which gives you both (of course there are also some) but what if you&amp;rsquo;re looking to implement this as a CustomScriptExtension to your Azure VM?&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Get-PSVersions: Retrieve Powershell version remotely</title>
 				<link>https://graef.io/get-psversions-retrieve-powershell-version-remotely/</link>
 				<pubDate>Fri, 22 Sep 2017 11:51:06 +0800</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
 				<guid>https://graef.io/get-psversions-retrieve-powershell-version-remotely/</guid>
-				<description>&lt;p&gt;Okay at the end it’s a simple &lt;code&gt;$PSVersion&lt;/code&gt; wrapped in an &lt;code&gt;Invoke-Command&lt;/code&gt; but hey these simple things are needful in case you need to run it against of 100s of servers and not just locally. With the help of &lt;code&gt;Invoke-Command&lt;/code&gt; via WinRM and &lt;code&gt;$PSVersionTable.psversion&lt;/code&gt; wrapped in a foreach you can retrieve PowerShell version of your remote computers indifferent if you need to use credentials to run it against a different domain than you currently reside. Just use the below function &lt;code&gt;Get-PSVersions&lt;/code&gt;, simple but good.&lt;/p&gt;</description>
+				<description>&lt;p&gt;Okay at the end it&amp;rsquo;s a simple &lt;code&gt;$PSVersion&lt;/code&gt; wrapped in an &lt;code&gt;Invoke-Command&lt;/code&gt; but hey these simple things are needful in case you need to run it against of 100s of servers and not just locally. With the help of &lt;code&gt;Invoke-Command&lt;/code&gt; via WinRM and &lt;code&gt;$PSVersionTable.psversion&lt;/code&gt; wrapped in a foreach you can retrieve PowerShell version of your remote computers indifferent if you need to use credentials to run it against a different domain than you currently reside. Just use the below function &lt;code&gt;Get-PSVersions&lt;/code&gt;, simple but good.&lt;/p&gt;</description>
 			</item>
 			<item>
 				<title>Resolve-DnsNames: Resolve DNS or IP for multiple Computers</title>

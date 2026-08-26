@@ -1,7 +1,7 @@
 # How to Install KB Hotfixes only if they are not installed
 
 
- I just wanted to share you a tiny snippet if you’re looking for a simple PowerShell liner to simply get a KB Hotfix installed. It also verifies if the KB is installed already.
+ I just wanted to share you a tiny snippet if you're looking for a simple PowerShell liner to simply get a KB Hotfix installed. It also verifies if the KB is installed already.
 
  <!--more-->
 

@@ -334,7 +334,7 @@
             <div class="post-meta-line"><span class="post-author"><a href="https://graef.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Sebastian Gräf</a></span>&nbsp;<span class="post-category">included in <a href="/categories/azure/"><i class="far fa-folder fa-fw"></i>Azure</a>&nbsp;<a href="/categories/windows/"><i class="far fa-folder fa-fw"></i>Windows</a>&nbsp;<a href="/categories/windows-server/"><i class="far fa-folder fa-fw"></i>Windows Server</a>&nbsp;<a href="/categories/scripts/"><i class="far fa-folder fa-fw"></i>Scripts</a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Thursday, Feb 21, 2019">Thursday, Feb 21, 2019</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;619 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
-        </div><div class="content" id="content"><p>Okay, yeah there are plenty of scripts out which give you local accounts via <code>WMI</code> or <code>ADSI</code> and yes scripts exist also which give you all local groups but there is not one which gives you both (of course there are also some) but what if you’re looking to implement this as a CustomScriptExtension to your Azure VM?</p>
+        </div><div class="content" id="content"><p>Okay, yeah there are plenty of scripts out which give you local accounts via <code>WMI</code> or <code>ADSI</code> and yes scripts exist also which give you all local groups but there is not one which gives you both (of course there are also some) but what if you&rsquo;re looking to implement this as a CustomScriptExtension to your Azure VM?</p>
 <p>Especially if the Custom Script Extension Output is limited to only 4096 characters? Did you know that? This script was developed to minimize the output of local accounts and their group memberships and gives you a meaningful expression of user accounts sitting on your VM. Check this out:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -498,7 +498,7 @@
     </a><figcaption class="image-caption">.</figcaption>
     </figure>
 <p>So why are we doing it this way?</p>
-<p>Consider that, you’re going to execute a Custom Script Extension on your VM without having remote access to it, yes you don’t have access to it BUT you know you can use the Azure VMAgent which is by default installed on every VM in Azure. With having a Custom Script Extension executed including any of your script, e.g. &ldquo;Get-LocalAccountMemberships” you can grab details from your machine without accessing it at all.</p></div><div class="post-footer" id="post-footer">
+<p>Consider that, you&rsquo;re going to execute a Custom Script Extension on your VM without having remote access to it, yes you don&rsquo;t have access to it BUT you know you can use the Azure VMAgent which is by default installed on every VM in Azure. With having a Custom Script Extension executed including any of your script, e.g. &ldquo;Get-LocalAccountMemberships&rdquo; you can grab details from your machine without accessing it at all.</p></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">

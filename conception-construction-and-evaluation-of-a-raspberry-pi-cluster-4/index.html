@@ -40,7 +40,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/graef.io\/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4\/"
-        },"image": ["https:\/\/graef.io\/logo.png"],"genre": "posts","keywords": "Raspberry, Pi, cluster, failover, Kubernetes, k8s, docker, HypriotOS, PiCube, GPIO, YAML, Bash","wordcount":  4293 ,
+        },"image": ["https:\/\/graef.io\/logo.png"],"genre": "posts","keywords": "Raspberry, Pi, cluster, failover, Kubernetes, k8s, docker, HypriotOS, PiCube, GPIO, YAML, Bash","wordcount":  4291 ,
         "url": "https:\/\/graef.io\/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4\/","datePublished": "2021-07-23T00:00:00+00:00","dateModified": "2021-07-23T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "greaf.io","logo": "https:\/\/graef.io\/logo.png"},"author": {
@@ -337,7 +337,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Conception, Construction and Evaluation of a Raspberry Pi Cluster (4/4)</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://graef.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Sebastian Gräf</a></span>&nbsp;<span class="post-category">included in <a href="/categories/projects/"><i class="far fa-folder fa-fw"></i>Projects</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Friday, Jul 23, 2021">Friday, Jul 23, 2021</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;4293 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Friday, Jul 23, 2021">Friday, Jul 23, 2021</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;4291 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;21 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -469,8 +469,8 @@ swapped out or scaled:</p>
 </span></span><span class="line"><span class="cl">php-apache-3046963998-xkbw1 0/1 Pending 0 1m
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><strong>Listing 5</strong>: <em>Observing CPU utilization increase to 250% while pods are swapped out to provide resources.</em></p>
-<p>Two minutes after the user load simulation stops, the CPU utilization
+</div><p><strong>Listing 5</strong>: <em>Observing CPU use increase to 250% while pods are swapped out to provide resources.</em></p>
+<p>Two minutes after the user load simulation stops, the CPU use
 drops back to zero and the drop from seven to one pod can be seen.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -500,18 +500,18 @@ drops back to zero and the drop from seven to one pod can be seen.</p>
 </span></span><span class="line"><span class="cl">php-apache-3046963998-ddpgp 1/1 Running 0 9m
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p><strong>Listing 6</strong>: <em>Watching CPU utilization drop to zero percent and drop to one pod.</em></p>
+</div><p><strong>Listing 6</strong>: <em>Watching CPU use drop to zero percent and drop to one pod.</em></p>
 <p>As can be seen (see <strong>Listing 1</strong>), it is very easy to dynamically adjust
 the number of pods to the load, by enabling the cluster autoscaler.</p>
 <p>Automatic and dynamic scaling can also be very helpful when there are
-irregularities in cluster utilization. For example, development-related
+irregularities in cluster use. For example, development-related
 clusters or continuous computing operations can be run on weekends or at
 night. Compute-intensive applications can be better scheduled so that a
 cluster is optimally utilized. In all cases, the cluster can be used
 optimally. Either reduce the number of unused nodes to save energy or
 scale to the limit to provide enough computing power. Depending on which
 case occurs, a dynamically scaling cluster ensures that at high or low
-utilization, all tasks are solved in the most efficient way.</p>
+use, all tasks are solved in the most efficient way.</p>
 <h3 id="fail-safe">Fail-safe</h3>
 <p>As with each element of our cluster, we ensure that more than one
 instance of each component is running simultaneously. Setting the number
@@ -773,7 +773,7 @@ period of 5 minutes:</p>
 <table>
 	<thead>
 			<tr>
-					<th style="text-align: left">**CPU utilization (%)</th>
+					<th style="text-align: left">**CPU use (%)</th>
 					<th style="text-align: left">Temp1 (°C)</th>
 					<th style="text-align: left">Temp2 (°C)</th>
 					<th style="text-align: left">Temp3 (°C)</th>
@@ -816,7 +816,7 @@ over a period of 10 minutes:</p>
 <table>
 	<thead>
 			<tr>
-					<th style="text-align: left">**CPU utilization (%)</th>
+					<th style="text-align: left">**CPU use (%)</th>
 					<th style="text-align: left">Temp1 (°C)</th>
 					<th style="text-align: left">Temp2 (°C)</th>
 					<th style="text-align: left">Temp3 (°C)</th>
@@ -868,7 +868,7 @@ of this. <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-notere
 <p>In the following, container virtualization is exploited and pre-built
 BOINC client images of Docker are used. These images are prefabricated
 containers, which are started as scalable pods on the PiCube and scale
-automatically in order to utilize the entire computing power of the
+automatically to use the entire computing power of the
 cluster. To do this, you register with the SETI@home project and create
 an account. Using this account data, you generate a container
 application called k8s-boinc-demo and start it on the cluster with a
@@ -886,8 +886,8 @@ workload across worker nodes rpi2 to rpi5 after launch. <sup id="fnref:5"><a hre
     </a><figcaption class="image-caption">Source: Own representation. <br> <strong>Figure 32</strong>: <em>Overview of the utilization, status and distribution of the pods on the nodes rpi2 to rpi5.</em></figcaption>
     </figure>
 <p>Within the SETI@home account, we define how the individual clients or
-pods are utilized. The CPU utilization is left at the default value of
-100% and after about 5 minutes you can see how the CPU utilization of
+pods are utilized. The CPU use is left at the default value of
+100% and after about 5 minutes you can see how the CPU use of
 all cluster nodes increases to 100% and remains constant at this value
 (see <strong>Figure 33</strong>). The cluster now computes data of the SETI@home project.</p>
 <figure><a class="lightgallery" href="/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3822.png" title="/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3822.png" data-thumbnail="/conception-construction-and-evaluation-of-a-raspberry-pi-cluster-4/media/image3822.png" data-sub-html="<h2>Source: Own representation.  Figure 33: The CPU utilization of node rpi3 at 100%.</h2>">

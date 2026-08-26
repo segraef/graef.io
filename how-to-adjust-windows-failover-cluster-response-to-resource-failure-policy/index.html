@@ -338,7 +338,7 @@
                 <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
         </div><div class="content" id="content"><p>The purpose of this article is to show how to adjust Windows Failover Cluster &ldquo;Response to resource failure&rdquo; policy.</p>
 <p>If a Cluster Core Resource like File Share Witness or Disk Quorum is in a failing state and offline, the cluster runs into jeopardy and will fail once the active node gets rebooted as no vote can be set to the quorum. To avoid this you should decrease the value of time your cluster core resource attempts to restart. The lower the value the higher the amount of retries your resource has to restart itself.</p>
-<p>To increase restart attempts for the Cluster Core Resource you need to adjust the &ldquo;Response to resource failure” policy from one hour to 15 minutes.</p>
+<p>To increase restart attempts for the Cluster Core Resource you need to adjust the &ldquo;Response to resource failure&rdquo; policy from one hour to 15 minutes.</p>
 <figure><a class="lightgallery" href="/how-to-adjust-windows-failover-cluster-response-to-resource-failure-policy/2017-06-01_12-31-03.png" title="/how-to-adjust-windows-failover-cluster-response-to-resource-failure-policy/2017-06-01_12-31-03.png" data-thumbnail="/how-to-adjust-windows-failover-cluster-response-to-resource-failure-policy/2017-06-01_12-31-03.png" data-sub-html="<h2>.</h2>">
         <img
             class="lazyload"
@@ -349,7 +349,7 @@
             alt="/how-to-adjust-windows-failover-cluster-response-to-resource-failure-policy/2017-06-01_12-31-03.png" />
     </a><figcaption class="image-caption">.</figcaption>
     </figure>
-<p>So with a given period for restarts of 15 minutes, maximum restarts in the specified period of 1 and &ldquo;If all the restart attempts fail, begin restarting again after the specified period of period” of 15 minutes. The resource will try restarting itself again every 15 minutes instead every hour until it’s brought back up online.</p></div><div class="post-footer" id="post-footer">
+<p>So with a given period for restarts of 15 minutes, maximum restarts in the specified period of 1 and &ldquo;If all the restart attempts fail, begin restarting again after the specified period of period&rdquo; of 15 minutes. The resource will try restarting itself again every 15 minutes instead every hour until it&rsquo;s brought back up online.</p></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">

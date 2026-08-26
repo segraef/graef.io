@@ -14,9 +14,16 @@
 		
 		
 		
-			<lastBuildDate>Tue, 23 Jun 2026 14:00:00 +1000</lastBuildDate>
+			<lastBuildDate>Wed, 26 Aug 2026 09:00:00 +1000</lastBuildDate>
 		
 			<atom:link href="https://graef.io/tags/ai/rss.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>How to detect AI text, and how to humanise it (without lying)</title>
+				<link>https://graef.io/how-to-detect-and-humanise-ai-text/</link>
+				<pubDate>Wed, 26 Aug 2026 09:00:00 +1000</pubDate><author>sebastian@graef.io (Sebastian Gräf)</author>
+				<guid>https://graef.io/how-to-detect-and-humanise-ai-text/</guid>
+				<description>&lt;p&gt;You wrote the post yourself. Sunday morning, two coffees, no assistant. On Monday a reader pastes it into an AI detector, it lights up red, and now you are in a comment thread defending your own sentences. Or the reverse: you used an LLM for a first draft and it reads like every other LLM draft, smooth, confident, and dead. Both problems have the same root, and neither is solved by the &amp;ldquo;undetectable AI humanizer&amp;rdquo; tools the internet keeps selling you.&lt;/p&gt;</description>
+			</item>
 			<item>
 				<title>SecKit: A portable security pre-flight kit for repos and AI agents</title>
 				<link>https://graef.io/seckit-portable-security-preflight-kit/</link>

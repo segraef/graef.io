@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>How to detect AI text, and how to humanise it (without lying) - Automate everything </title><meta name="Description" content="AI detectors are sold as truth machines. They are not. Here is how detection works, why it fails, what Microsoft&#39;s own Copilot guidance says, and how to humanise AI writing the honest way: by fixing the writing, not gaming the detector. Plus the tool I built to do it."><meta property="og:url" content="https://graef.io/how-to-detect-and-humanise-ai-text/">
+	<meta property="og:site_name" content="Automate everything ">
+	<meta property="og:title" content="How to detect AI text, and how to humanise it (without lying)">
+	<meta property="og:description" content="AI detectors are sold as truth machines. They are not. Here is how detection works, why it fails, what Microsoft&#39;s own Copilot guidance says, and how to humanise AI writing the honest way: by fixing the writing, not gaming the detector. Plus the tool I built to do it.">
+	<meta property="og:locale" content="en">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2026-08-26T09:00:00+10:00">
+		<meta property="article:modified_time" content="2026-08-26T09:00:00+10:00">
+		<meta property="article:tag" content="Ai">
+		<meta property="article:tag" content="Writing">
+		<meta property="article:tag" content="Detection">
+		<meta property="article:tag" content="Humanizer">
+		<meta property="article:tag" content="Llm">
+		<meta property="article:tag" content="Tooling">
+		<meta property="og:image" content="https://graef.io/logo.png">
+
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="https://graef.io/logo.png">
+	<meta name="twitter:title" content="How to detect AI text, and how to humanise it (without lying)">
+	<meta name="twitter:description" content="AI detectors are sold as truth machines. They are not. Here is how detection works, why it fails, what Microsoft&#39;s own Copilot guidance says, and how to humanise AI writing the honest way: by fixing the writing, not gaming the detector. Plus the tool I built to do it.">
+			<meta name="twitter:site" content="@segraef">
+<meta name="application-name" content="graef.io - Sebastian Gräf">
+<meta name="apple-mobile-web-app-title" content="graef.io - Sebastian Gräf"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://graef.io/how-to-detect-and-humanise-ai-text/" /><link rel="prev" href="https://graef.io/seckit-portable-security-preflight-kit/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><meta name="google-site-verification" content="google-site-verification=081I19l1P1J3FFLaw1uKtAtY5KcJx_Z9ywiKt60VGP4" /><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "How to detect AI text, and how to humanise it (without lying)",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/graef.io\/how-to-detect-and-humanise-ai-text\/"
+        },"image": ["https:\/\/graef.io\/logo.png"],"genre": "posts","keywords": "ai, writing, detection, humanizer, llm, tooling, automation","wordcount":  1626 ,
+        "url": "https:\/\/graef.io\/how-to-detect-and-humanise-ai-text\/","datePublished": "2026-08-26T09:00:00+10:00","dateModified": "2026-08-26T09:00:00+10:00","publisher": {
+            "@type": "Organization",
+            "name": "greaf.io","logo": "https:\/\/graef.io\/logo.png"},"author": {
+                "@type": "Person",
+                "name": "Sebastian Gräf"
+            },"description": "AI detectors are sold as truth machines. They are not. Here is how detection works, why it fails, what Microsoft's own Copilot guidance says, and how to humanise AI writing the honest way: by fixing the writing, not gaming the detector. Plus the tool I built to do it."
+    }
+    </script>
+<script type="text/javascript">
+  
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "pg6m55thgo");
+
+  
+  window.ClarityConsentManager = {
+    cookieName: 'clarity_consent_v2',
+
+    
+    getConsent: function() {
+      try {
+        const consent = localStorage.getItem(this.cookieName);
+        return consent ? JSON.parse(consent) : null;
+      } catch (e) {
+        return null;
+      }
+    },
+
+    
+    setConsent: function(adStorage, analyticsStorage) {
+      const consent = {
+        ad_storage: adStorage,
+        analytics_storage: analyticsStorage,
+        timestamp: Date.now()
+      };
+
+      try {
+        localStorage.setItem(this.cookieName, JSON.stringify(consent));
+      } catch (e) {
+        console.warn('Could not save consent preferences');
+      }
+
+      
+      this.sendConsentToClarity(adStorage, analyticsStorage);
+
+
+    },
+
+    
+    sendConsentToClarity: function(adStorage, analyticsStorage) {
+      if (window.clarity) {
+        window.clarity('consentv2', {
+          ad_Storage: adStorage,
+          analytics_Storage: analyticsStorage
+        });
+      }
+    },
+
+    
+    applyExistingConsent: function() {
+      const consent = this.getConsent();
+      if (consent) {
+        
+        const oneYear = 365 * 24 * 60 * 60 * 1000; 
+        if (Date.now() - consent.timestamp < oneYear) {
+          this.sendConsentToClarity(consent.ad_storage, consent.analytics_storage);
+          return true; 
+        }
+      }
+      return false; 
+    },
+
+    
+    acceptAll: function() {
+      this.setConsent('granted', 'granted');
+      this.hideBanner();
+    },
+
+    
+    rejectAll: function() {
+      this.setConsent('denied', 'denied');
+      this.hideBanner();
+    },
+
+    
+    acceptNecessary: function() {
+      this.setConsent('denied', 'granted');
+      this.hideBanner();
+    },
+
+    
+    showBanner: function() {
+      const banner = document.getElementById('clarity-consent-banner');
+      if (banner) {
+        banner.style.display = 'block';
+        banner.setAttribute('aria-hidden', 'false');
+      }
+    },
+
+    
+    hideBanner: function() {
+      const banner = document.getElementById('clarity-consent-banner');
+      if (banner) {
+        banner.style.display = 'none';
+        banner.setAttribute('aria-hidden', 'true');
+      }
+    },
+
+    
+    resetConsent: function() {
+      try {
+        localStorage.removeItem(this.cookieName);
+      } catch (e) {
+        console.warn('Could not remove consent preferences');
+      }
+
+      
+      if (window.clarity) {
+        window.clarity('consent', false);
+      }
+
+      
+      (function deleteCookie(name){
+        try {
+          document.cookie = name + '=; Max-Age=0; path=/;';
+        } catch (e) {}
+      })('cookieconsent_status');
+
+      
+      if (window.cookieconsent && window.config && window.config.cookieconsent) {
+        try {
+          window.cookieconsent.initialise(window.config.cookieconsent);
+        } catch (e) {}
+      }
+    },
+
+    
+    init: function() {
+      
+      if (!this.applyExistingConsent()) {
+        
+        this.showBanner();
+      }
+    }
+  };
+
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      window.ClarityConsentManager.init();
+      
+      setupCookieConsentBridge();
+    });
+  } else {
+    window.ClarityConsentManager.init();
+    setupCookieConsentBridge();
+  }
+
+  
+  function setupCookieConsentBridge() {
+    
+    function readCookie(name) {
+      const match = document.cookie.match(new RegExp('(?:^|; )' + name.replace(/([.$?*|{}()\[\]\\\/\+^])/g, '\\$1') + '=([^;]*)'));
+      return match ? decodeURIComponent(match[1]) : null;
+    }
+
+    
+    const status = readCookie('cookieconsent_status');
+    if (status === 'allow') {
+      window.ClarityConsentManager.setConsent('granted', 'granted');
+    } else if (status === 'deny') {
+      window.ClarityConsentManager.setConsent('denied', 'denied');
+    }
+
+    
+    document.addEventListener('click', function(e) {
+      const target = e.target;
+      if (!target) return;
+      if (target.classList && target.classList.contains('cc-allow')) {
+        window.ClarityConsentManager.acceptAll();
+        try { renderConsentDebugBadge('allow'); } catch (e) {}
+      } else if (target.classList && target.classList.contains('cc-deny')) {
+        window.ClarityConsentManager.rejectAll();
+      }
+    });
+  }
+</script>
+
+<script src="/js/cookie-preferences.min.js"></script></head>
+
+<body header-desktop="auto" header-mobile="auto"><script
+        type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "pg6m55thgo");
+    </script>
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Automate everything "><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/logo.png"
+        data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x"
+        data-sizes="auto"
+        alt="/logo.png"
+        title="/logo.png" /></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item"
+                    href="/posts/"  title="Posts" > Posts </a><a class="menu-item"
+                    href="/categories/projects/"  title="Projects" > Projects </a><a class="menu-item"
+                    href="/categories/til/"  title="Today I learned" > TIL </a><a class="menu-item"
+                    href="/tags/"  title="Tags" > Tags </a><a class="menu-item"
+                    href="/categories/"  title="Categories" > Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                    <input type="text"
+                        placeholder="Search titles or contents..."
+                        id="search-input-desktop">
+                    <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop"
+                        title="Search">
+                        <i class="fas fa-search fa-fw"></i>
+                    </a>
+                    <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop"
+                        title="Clear">
+                        <i class="fas fa-times-circle fa-fw"></i>
+                    </a>
+                    <span class="search-button search-loading" id="search-loading-desktop">
+                        <i class="fas fa-spinner fa-fw fa-spin"></i>
+                    </span>
+                </span><a href="javascript:void(0);" class="menu-item theme-switch" title="">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Automate everything "><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/logo.png"
+        data-srcset="/logo.png, /logo.png 1.5x, /logo.png 2x"
+        data-sizes="auto"
+        alt="/logo.png"
+        title="/logo.png" /></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                <div class="search mobile" id="search-mobile">
+                    <input type="text"
+                        placeholder="Search titles or contents..."
+                        id="search-input-mobile">
+                    <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile"
+                        title="Search">
+                        <i class="fas fa-search fa-fw"></i>
+                    </a>
+                    <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile"
+                        title="Clear">
+                        <i class="fas fa-times-circle fa-fw"></i>
+                    </a>
+                    <span class="search-button search-loading" id="search-loading-mobile">
+                        <i class="fas fa-spinner fa-fw fa-spin"></i>
+                    </span>
+                </div>
+                <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                    Cancel
+                </a>
+            </div><a class="menu-item" href="/posts/" title="Posts" >Posts</a><a class="menu-item" href="/categories/projects/" title="Projects" >Projects</a><a class="menu-item" href="/categories/til/" title="Today I learned" >TIL</a><a class="menu-item" href="/tags/" title="Tags" >Tags</a><a class="menu-item" href="/categories/" title="Categories" >Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+    
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">How to detect AI text, and how to humanise it (without lying)</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://graef.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>Sebastian Gräf</a></span>&nbsp;<span class="post-category">included in <a href="/categories/ai/"><i class="far fa-folder fa-fw"></i>AI</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Wednesday, Aug 26, 2026">Wednesday, Aug 26, 2026</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1626 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;8 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#how-detectors-work">How detectors work</a></li>
+    <li><a href="#why-they-fail">Why they fail</a></li>
+    <li><a href="#what-microsoft-says">What Microsoft says</a></li>
+    <li><a href="#how-to-humanise-honestly">How to humanise, honestly</a></li>
+    <li><a href="#the-tool">The tool</a></li>
+    <li><a href="#do-not-use-it-to-lie">Do not use it to lie</a></li>
+    <li><a href="#final-thoughts">Final Thoughts</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>You wrote the post yourself. Sunday morning, two coffees, no assistant. On Monday a reader pastes it into an AI detector, it lights up red, and now you are in a comment thread defending your own sentences. Or the reverse: you used an LLM for a first draft and it reads like every other LLM draft, smooth, confident, and dead. Both problems have the same root, and neither is solved by the &ldquo;undetectable AI humanizer&rdquo; tools the internet keeps selling you.</p>
+<h2 id="how-detectors-work">How detectors work</h2>
+<p>Detectors do not read your text. They measure its shape.</p>
+<ul>
+<li><strong>Perplexity.</strong> How surprising each next word is to a language model. An LLM picks the likely word every time, so its output is smooth and predictable. Nobody writes like that.</li>
+<li><strong>Burstiness.</strong> How much sentence length and rhythm swing. People write a long sentence, then a short one. Models hold a steady beat. GPTZero built its product on this pair (Tian, 2023).</li>
+<li><strong>Stylometry.</strong> Fingerprints in syntax, punctuation, and word choice. Kobak et al. tracked more than 14 million PubMed abstracts and found that <code>delves</code>, <code>underscores</code>, <code>intricate</code>, and <code>pivotal</code> jumped after ChatGPT shipped. At least 10 percent of 2024 abstracts show LLM assistance, from vocabulary alone.</li>
+<li><strong>Trained classifiers.</strong> A model trained on labelled human and AI samples. OpenAI&rsquo;s own detector was one of these.</li>
+<li><strong>Watermarking.</strong> The generator biases its own token choices toward a secret list so the text can be checked later. Works only if the vendor watermarks and you hold the key.</li>
+</ul>
+<table>
+	<thead>
+			<tr>
+					<th>Approach</th>
+					<th>What it measures</th>
+					<th>Breaks when</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Perplexity + burstiness (GPTZero, ZeroGPT)</td>
+					<td>Predictability and rhythm</td>
+					<td>Text is short, formulaic, or by a non-native writer</td>
+			</tr>
+			<tr>
+					<td>Probability curvature (DetectGPT)</td>
+					<td>How the score shifts under small edits</td>
+					<td>One paraphrase pass</td>
+			</tr>
+			<tr>
+					<td>Trained classifier (OpenAI, retired)</td>
+					<td>Whatever the training set taught it</td>
+					<td>The next model release</td>
+			</tr>
+			<tr>
+					<td>Excess vocabulary (Kobak et al.)</td>
+					<td>Word frequency drift across a corpus</td>
+					<td>A single document; the author edits the words</td>
+			</tr>
+			<tr>
+					<td>Watermarking (Kirchenbauer, SynthID-Text)</td>
+					<td>A hidden token bias planted at generation</td>
+					<td>Paraphrase, or any model that does not watermark</td>
+			</tr>
+	</tbody>
+</table>
+<h2 id="why-they-fail">Why they fail</h2>
+<p>Here is the part the vendors leave off the box.</p>
+<ul>
+<li><strong>One paraphrase breaks them.</strong> Sadasivan et al. (2023) paraphrased AI text once and re-ran DetectGPT. AUROC dropped from 96.5 to 25.2. Worse than a coin flip. The same paper proves a ceiling: as models improve, the best possible detector trends toward random guessing. That is maths, not an engineering gap someone closes next quarter.</li>
+<li><strong>They punish non-native writers.</strong> Liang et al. (2023) fed 91 TOEFL essays by non-native English speakers to seven popular detectors. On average 61 percent were flagged as AI, and 98 percent were flagged by at least one detector. The same detectors got US eighth-grade essays almost perfectly right. Simpler vocabulary reads as &ldquo;machine&rdquo; to a perplexity model.</li>
+<li><strong>The biggest vendor gave up.</strong> OpenAI shut down its own classifier in July 2023, citing low accuracy.</li>
+</ul>
+<p>Microsoft&rsquo;s own explainer says the same thing more politely: detectors &ldquo;work best with predictable, low-complexity text&rdquo;, they &ldquo;mislabel human writing as machine-generated, especially when the author is a non-native English speaker&rdquo;, and results are &ldquo;most helpful when paired with human judgment.&rdquo;</p>
+<p>A detector score is a hint. It is never a verdict. Anyone failing a student or firing a writer on the strength of one is flipping a coin and calling it evidence.</p>
+<h2 id="what-microsoft-says">What Microsoft says</h2>
+<p>Microsoft has two Copilot 101 pages on this. Read fairly, they say:</p>
+<ul>
+<li><strong>Detectors</strong> look at perplexity, burstiness, lexical diversity, uniform sentence structure, and stylometric &ldquo;fingerprints&rdquo; in syntax and punctuation.</li>
+<li><strong>Humanisers</strong> &ldquo;add natural tone and variation&rdquo;: emotional language, personal reflections, varied sentence flow, &ldquo;light imperfections&rdquo;, and &ldquo;natural pauses&rdquo;.</li>
+<li><strong>To humanise by hand</strong>, mix long and short sentences, lead with the point, swap <code>utilize</code> and <code>commence</code> for plain words, replace vague phrases with specifics, cut <code>in order to</code>, <code>basically</code>, and <code>just</code>, read it aloud, and keep paragraphs to three or four sentences.</li>
+<li><strong>Free humaniser tools</strong> are &ldquo;not always accurate&rdquo;. Treat their output as a draft and edit it.</li>
+<li><strong>Humanising &ldquo;doesn&rsquo;t replace disclosure where it&rsquo;s required.&rdquo;</strong></li>
+</ul>
+<p>Most of that is decent editing advice. The word-level tips miss the point, though. The tell is uniformity, not vocabulary. Even sentence lengths, even hedging, the same shapes resolved the same way, paragraph after paragraph. Swap <code>delve</code> for <code>explore</code> across a whole document and you get a uniform humaniser dialect, which is a machine fingerprint with a different accent. The signature moved. It did not leave.</p>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>The one thing to remember<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Detectors key on flat rhythm, predictable words, formulaic structure, and filler. Those are the same things that make writing bad. Fix the writing and the score follows, for the same reason. You never need to game anything.</div>
+        </div>
+    </div>
+<h2 id="how-to-humanise-honestly">How to humanise, honestly</h2>
+<p>A word-swap script on its own gives you text that is clean and still sterile, and sterile is as detectable as slop. The approach that holds up is a hybrid. Every mature open-source tool I looked at converged on it:</p>
+<ol>
+<li><strong>Deterministic pass first.</strong> Fix everything with one correct answer. Fast, free, idempotent, no hallucination.</li>
+<li><strong>One scoped rewrite.</strong> You, or an LLM under strict rules, fix rhythm and structure. Single pass. It adds no facts. An invented specific reads convincingly human, which makes it more dangerous than the vague phrase it replaced.</li>
+<li><strong>Deterministic scan at the end.</strong> Catch anything the rewrite let back in.</li>
+</ol>
+<pre class="mermaid-graph" id="mmd-1" style="background:none;border:none;padding:0;text-align:center;line-height:normal;">
+flowchart LR
+    A[Markdown in] --> B[Protect code, shortcodes, front matter]
+    B --> C[Auto-fix: typography, dashes, filler, boilerplate]
+    C --> D[Score: burstiness, CoV, TTR, slop density]
+    D --> E[Single rewrite: rhythm and structure, no new facts]
+    E --> F[Final scan: no dashes crept back, re-score]
+</pre>
+<script type="module">
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+  if (!window.__mermaidReady) {
+    mermaid.initialize({ startOnLoad: false, securityLevel: "strict" });
+    window.__mermaidReady = true;
+  }
+  await mermaid.run({ nodes: [document.getElementById("mmd-1")] });
+</script>
+
+<p>What the deterministic pass fixes safely:</p>
+<ul>
+<li><strong>Em and en dashes in prose</strong> become a comma, full stop, or parentheses. Numeric ranges (page 12 to 15, the years 2018 to 2026) are protected.</li>
+<li><strong>Curly quotes</strong> become straight quotes.</li>
+<li><strong>Zero-width characters</strong>, soft hyphens, and non-breaking spaces are deleted.</li>
+<li><strong>Chatbot boilerplate.</strong> <code>Certainly!</code>, <code>Great question!</code>, <code>I hope this helps</code>, and knowledge-cutoff disclaimers. Zero legitimate uses in a blog post.</li>
+<li><strong>Verbose filler with one answer.</strong> <code>in order to</code> becomes <code>to</code>, <code>utilize</code> becomes <code>use</code>, <code>due to the fact that</code> becomes <code>because</code>.</li>
+</ul>
+<p>What it only flags, because the right fix depends on meaning:</p>
+<ul>
+<li><strong>AI vocabulary.</strong> <code>delve</code>, <code>tapestry</code>, <code>pivotal</code>, <code>crucial</code>. <code>robust</code> is fine in a statistics paper. Frequency is the tell, not the word.</li>
+<li><strong>Negative parallelism.</strong> <code>it's not just X, it's Y</code>. Say what it is.</li>
+<li><strong>Copula avoidance</strong> and trailing significance clauses. <code>serves as a testament to</code> means <code>shows</code>. <code>..., underscoring its importance</code> gets deleted.</li>
+<li><strong>Significance inflation.</strong> <code>marks a pivotal moment</code>, <code>plays a crucial role</code>. State the effect or cut it.</li>
+</ul>
+<div class="details admonition warning open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw"></i>Do not fabricate, do not over-correct<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Never add a fact, number, or quote the source did not contain. And do not sand off real voice: specific details, mixed feelings, dry asides, a sentence that runs long because the thought did. Those swings are the signal you want to keep.</div>
+        </div>
+    </div>
+<h2 id="the-tool">The tool</h2>
+<p>I put this into a small open-source tool: <a href="https://github.com/segraef/humaniser" target="_blank" rel="noopener noreffer">segraef/humaniser</a>. Plain Python, no dependencies, 3.9 or newer, macOS, Linux, or Windows. It is markup-aware, so it never touches front matter, code blocks, inline code, shortcodes, HTML tags, links, or URLs.</p>
+<p><strong>macOS / Linux (zsh/bash)</strong>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">git clone https://github.com/segraef/humaniser.git <span class="o">&amp;&amp;</span> <span class="nb">cd</span> humaniser
+</span></span><span class="line"><span class="cl">python3 humanise.py path/to/post.md             <span class="c1"># report only: fixes it would make, flags, scores</span>
+</span></span><span class="line"><span class="cl">python3 humanise.py path/to/post.md --fix       <span class="c1"># apply the safe fixes in place</span>
+</span></span><span class="line"><span class="cl">python3 humanise.py content/posts --check       <span class="c1"># whole directory, exit 1 if anything reads as AI</span>
+</span></span><span class="line"><span class="cl">python3 detector.py path/to/post.md             <span class="c1"># local rhythm + vocabulary score, 0 to 100</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>Windows (PowerShell)</strong>:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="err">:</span><span class="p">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">segraef</span><span class="p">/</span><span class="n">humaniser</span><span class="p">.</span><span class="n">git</span><span class="p">;</span> <span class="nb">cd </span><span class="n">humaniser</span>
+</span></span><span class="line"><span class="cl"><span class="n">python3</span> <span class="p">.\</span><span class="n">humanise</span><span class="p">.</span><span class="py">py</span> <span class="n">path</span><span class="p">\</span><span class="n">to</span><span class="p">\</span><span class="n">post</span><span class="p">.</span><span class="nb">md </span><span class="p">-</span><span class="n">-fix</span>
+</span></span><span class="line"><span class="cl"><span class="n">python3</span> <span class="p">.\</span><span class="n">humanise</span><span class="p">.</span><span class="py">py</span> <span class="n">content</span><span class="p">\</span><span class="n">posts</span> <span class="p">-</span><span class="n">-check</span>
+</span></span><span class="line"><span class="cl"><span class="n">python3</span> <span class="p">.\</span><span class="n">detector</span><span class="p">.</span><span class="py">py</span> <span class="n">path</span><span class="p">\</span><span class="n">to</span><span class="p">\</span><span class="n">post</span><span class="p">.</span><span class="nb">md
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>--latest N</code> narrows a directory to its newest posts by front-matter date, so <code>python3 humanise.py --latest 5 content/posts --fix</code> cleans the five newest instead of your whole archive. <code>--check</code> is the one you wire into pre-commit or CI.</p>
+<p>The rewrite half is a <code>SKILL.md</code> for Claude Code, Copilot, or Cursor. It reads the script&rsquo;s flags, does one scoped pass plus a self-audit, refuses to invent facts, and scans its own output for dashes before it returns.</p>
+<p>Here is <code>detector.py</code> on this post, the one you are reading:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">content/posts/how-to-detect-and-humanise-ai-text/index.md
+</span></span><span class="line"><span class="cl">  AI likelihood: 4.4/100  -&gt; likely human
+</span></span><span class="line"><span class="cl">  burstiness 0.75 | CoV 0.88 | TTR 0.47 | trigram-rep 0.01 | slop 1.5/1000w
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><code>humanise.py</code> caught my own filler while I wrote this. Good.</p>
+<h2 id="do-not-use-it-to-lie">Do not use it to lie</h2>
+<ul>
+<li><strong>Editing for quality is editing.</strong> Hiding authorship is something else.</li>
+<li><strong>Disclose where it matters.</strong> School, journalism, legal, anywhere a policy asks. Cleaning up the prose does not cancel that obligation. Microsoft says the same, and they are selling the thing.</li>
+<li><strong>Skip the evasion tricks.</strong> Homoglyphs, zero-width characters, deliberate typos. Every serious normaliser strips them (the watermarking reference code ships a homoglyph canoniser and a Unicode sanitiser), and they make the text worse for the humans you wrote it for.</li>
+</ul>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>An AI detector is a breathalyser that goes off on mouthwash and misses the vodka after one paraphrase. Useful as a hint. Worthless as evidence. Do not let one decide anything that matters.</p>
+<p>The fix for AI-sounding text is the fix for bad text: vary the rhythm, cut the filler, say the concrete thing, keep your voice. Do that and the detectors go quiet on their own. Do it to hide who wrote it and you have a smoother lie, which is still a lie.</p>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>References<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li><a href="https://www.microsoft.com/en-us/microsoft-copilot/copilot-101/undetectable-ai-humanizers" target="_blank" rel="noopener noreffer">Microsoft Copilot 101: Undetectable AI and humanizers</a></li>
+<li><a href="https://www.microsoft.com/en-us/microsoft-copilot/copilot-101/humanize-ai-text" target="_blank" rel="noopener noreffer">Microsoft Copilot 101: How to humanize AI text</a></li>
+<li><a href="https://arxiv.org/abs/2303.11156" target="_blank" rel="noopener noreffer">Sadasivan et al. 2023, Can AI-Generated Text be Reliably Detected? (arXiv:2303.11156)</a></li>
+<li><a href="https://arxiv.org/abs/2304.02819" target="_blank" rel="noopener noreffer">Liang et al. 2023, GPT Detectors Are Biased Against Non-Native English Writers (arXiv:2304.02819)</a></li>
+<li><a href="https://arxiv.org/abs/2406.07016" target="_blank" rel="noopener noreffer">Kobak et al. 2024, Delving into ChatGPT usage in academic writing through excess vocabulary (arXiv:2406.07016)</a></li>
+<li><a href="https://gptzero.me/" target="_blank" rel="noopener noreffer">Tian 2023, GPTZero</a></li>
+<li><a href="https://github.com/segraef/humaniser" target="_blank" rel="noopener noreffer">segraef/humaniser</a></li>
+<li><a href="https://github.com/blader/humanizer" target="_blank" rel="noopener noreffer">blader/humanizer</a></li>
+<li><a href="../the-silent-leak-why-you-should-never-paste-keys-into-ai-chats/" rel="">The Silent Leak: Why You Should Never Paste Keys into AI Chats</a></li>
+</ul>
+</div>
+        </div>
+    </div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on Wednesday, Aug 26, 2026</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://graef.io/how-to-detect-and-humanise-ai-text/" data-title="How to detect AI text, and how to humanise it (without lying)" data-via="segraef" data-hashtags="ai,writing,detection,humanizer,llm,tooling,automation"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://graef.io/how-to-detect-and-humanise-ai-text/" data-hashtag="ai"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://graef.io/how-to-detect-and-humanise-ai-text/"><i class="fab fa-linkedin fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://graef.io/how-to-detect-and-humanise-ai-text/" data-title="How to detect AI text, and how to humanise it (without lying)" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="https://graef.io/how-to-detect-and-humanise-ai-text/"><i class="fab fa-reddit fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/ai/">Ai</a>,&nbsp;<a href="/tags/writing/">Writing</a>,&nbsp;<a href="/tags/detection/">Detection</a>,&nbsp;<a href="/tags/humanizer/">Humanizer</a>,&nbsp;<a href="/tags/llm/">Llm</a>,&nbsp;<a href="/tags/tooling/">Tooling</a>,&nbsp;<a href="/tags/automation/">Automation</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/seckit-portable-security-preflight-kit/" class="prev" rel="prev" title="SecKit: A portable security pre-flight kit for repos and AI agents"><i class="fas fa-angle-left fa-fw"></i>SecKit: A portable security pre-flight kit for repos and AI agents</a></div>
+</div>
+<div id="comments"><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://graef.io" target="_blank">Sebastian Gräf</a></span></div>
+        </div>
+    </footer></div>
+
+    <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">
+<script type="text/javascript">
+// Load Microsoft Clarity
+(function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "pg6m55thgo");
+
+// Handle cookie consent for Microsoft Clarity
+document.addEventListener('DOMContentLoaded', function() {
+    // Check if consent was already given
+    var consentCookie = document.cookie.split(';').find(row => row.trim().startsWith('cookieconsent_status='));
+    if (consentCookie) {
+        var status = consentCookie.split('=')[1];
+        if (status === 'allow' && window.clarity) {
+            window.clarity('consentv2', {
+                ad_Storage: 'granted',
+                analytics_Storage: 'granted'
+            });
+        } else if (status === 'deny' && window.clarity) {
+            window.clarity('consentv2', {
+                ad_Storage: 'denied',
+                analytics_Storage: 'denied'
+            });
+        }
+    }
+
+    // Listen for future consent changes
+    window.addEventListener('load', function() {
+        if (window.cookieconsent) {
+            // Monitor cookie changes
+            var observer = new MutationObserver(function() {
+                var consentCookie = document.cookie.split(';').find(row => row.trim().startsWith('cookieconsent_status='));
+                if (consentCookie && window.clarity) {
+                    var status = consentCookie.split('=')[1];
+                    if (status === 'allow') {
+                        window.clarity('consentv2', {
+                            ad_Storage: 'granted',
+                            analytics_Storage: 'granted'
+                        });
+                    } else if (status === 'deny') {
+                        window.clarity('consentv2', {
+                            ad_Storage: 'denied',
+                            analytics_Storage: 'denied'
+                        });
+                    }
+                }
+            });
+            observer.observe(document, { childList: true, subtree: true });
+        }
+    });
+});
+</script></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":20},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"segraef/graef.io"}},"cookieconsent":{"content":{"deny":"Reject","dismiss":"Accept","header":"🍪 Cookie Preferences","href":"/privacy-policy/","link":"Privacy Policy","message":"We use analytics cookies to understand how you interact with our website to improve your experience. We respect your privacy and give you full control over your data."},"enable":true,"palette":{"button":{"background":"#3b82f6","backgroundhover":"#2563eb","text":"#ffffff"},"popup":{"background":"#1f2937","text":"#ffffff"}},"position":"bottom","staticfooter":false,"theme":"edgeless","type":"opt-in"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-99599711-2', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-99599711-2" async></script></body>
+
+</html>

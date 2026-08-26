@@ -2,30 +2,36 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://graef.io/tags/ai/</loc><lastmod>2026-06-23T14:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://graef.io/</loc><lastmod>2026-06-23T14:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://graef.io/tags/automation/</loc><lastmod>2026-06-23T14:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://graef.io/categories/</loc><lastmod>2026-06-23T14:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://graef.io/tags/copilot/</loc><lastmod>2026-06-23T14:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://graef.io/tags/devops/</loc><lastmod>2026-06-23T14:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://graef.io/tags/gitleaks/</loc><lastmod>2026-06-23T14:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://graef.io/tags/mcp/</loc><lastmod>2026-06-23T14:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://graef.io/posts/</loc><lastmod>2026-06-23T14:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://graef.io/tags/powershell/</loc><lastmod>2026-06-23T14:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://graef.io/seckit-portable-security-preflight-kit/</loc><lastmod>2026-06-23T14:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://graef.io/categories/security/</loc><lastmod>2026-06-23T14:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://graef.io/tags/security/</loc><lastmod>2026-06-23T14:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://graef.io/tags/supply-chain/</loc><lastmod>2026-06-23T14:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://graef.io/tags/</loc><lastmod>2026-06-23T14:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://graef.io/tags/git/</loc><lastmod>2026-06-23T10:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://graef.io/tags/github/</loc><lastmod>2026-06-23T10:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://graef.io/tags/secrets/</loc><lastmod>2026-06-23T10:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://graef.io/remove-secrets-from-git-history/</loc><lastmod>2026-06-23T10:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://graef.io/tags/ai/</loc><lastmod>2026-08-26T09:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://graef.io/categories/ai/</loc><lastmod>2026-08-26T09:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://graef.io/</loc><lastmod>2026-08-26T09:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://graef.io/tags/automation/</loc><lastmod>2026-08-26T09:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://graef.io/categories/</loc><lastmod>2026-08-26T09:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://graef.io/tags/detection/</loc><lastmod>2026-08-26T09:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://graef.io/how-to-detect-and-humanise-ai-text/</loc><lastmod>2026-08-26T09:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://graef.io/tags/humanizer/</loc><lastmod>2026-08-26T09:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://graef.io/tags/llm/</loc><lastmod>2026-08-26T09:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://graef.io/posts/</loc><lastmod>2026-08-26T09:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://graef.io/tags/</loc><lastmod>2026-08-26T09:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://graef.io/tags/tooling/</loc><lastmod>2026-08-26T09:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://graef.io/tags/writing/</loc><lastmod>2026-08-26T09:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://graef.io/tags/copilot/</loc><lastmod>2026-06-23T14:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://graef.io/tags/devops/</loc><lastmod>2026-06-23T14:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://graef.io/tags/gitleaks/</loc><lastmod>2026-06-23T14:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://graef.io/tags/mcp/</loc><lastmod>2026-06-23T14:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://graef.io/tags/powershell/</loc><lastmod>2026-06-23T14:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://graef.io/seckit-portable-security-preflight-kit/</loc><lastmod>2026-06-23T14:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://graef.io/categories/security/</loc><lastmod>2026-06-23T14:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://graef.io/tags/security/</loc><lastmod>2026-06-23T14:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://graef.io/tags/supply-chain/</loc><lastmod>2026-06-23T14:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://graef.io/tags/git/</loc><lastmod>2026-06-23T10:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://graef.io/tags/github/</loc><lastmod>2026-06-23T10:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://graef.io/tags/secrets/</loc><lastmod>2026-06-23T10:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://graef.io/remove-secrets-from-git-history/</loc><lastmod>2026-06-23T10:00:00&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/tags/claude/</loc><lastmod>2026-02-18T16:59:37&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/tags/cursor/</loc><lastmod>2026-02-18T16:59:37&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/the-silent-leak-why-you-should-never-paste-keys-into-ai-chats/</loc><lastmod>2026-02-18T16:59:37&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/tags/agents/</loc><lastmod>2025-07-14T10:06:59&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://graef.io/categories/ai/</loc><lastmod>2025-07-14T10:06:59&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/categories/copilot/</loc><lastmod>2025-07-14T10:06:59&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/categories/github/</loc><lastmod>2025-07-14T10:06:59&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://graef.io/how-github-copilot-coding-agent-makes-my-day/</loc><lastmod>2025-07-14T10:06:59&#43;10:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>

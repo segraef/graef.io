@@ -1,7 +1,7 @@
 # Create a Static Web Page With Github Pages and Hugo
 
 
-You can use GitHub Pages to host a website about yourself, your organization, or your project directly from a repository on GitHub.com. Hugo takes `Markdown`, runs them through a theme template, and spits out HTML files that you can easily deploy online – extremely fast.
+You can use GitHub Pages to host a website about yourself, your organization, or your project directly from a repository on GitHub.com. Hugo takes `Markdown`, runs them through a theme template, and spits out HTML files that you can easily deploy online, extremely fast.
 
 <!--more-->
 
@@ -13,7 +13,7 @@ You can host your site on GitHub's `github.io` domain or your own custom domain.
 
 # Why Hugo and not Gatsby or Jekyll?
 
-A static site generator like Hugo takes `Markdown` content files, runs them through a theme template, and spits out HTML files that you can easily deploy online – and it does all of this extremely fast.
+A static site generator like Hugo takes `Markdown` content files, runs them through a theme template, and spits out HTML files that you can easily deploy online, and it does all of this extremely fast.
 
 Primarily because of speed, performance, simplicity, easy setup and most importantly the templates look generally better.
 More details see [Gatsby vs. Jekyll vs. Hugo](https://www.gatsbyjs.com/features/jamstack/gatsby-vs-jekyll-vs-hugo)
@@ -33,10 +33,10 @@ Hugo [Quick Start](https://gohugo.io/getting-started/quick-start/)
 
 Following are the most importang `hugo` commands you need, of course there are more but you don't need them for now, otherwise just type `hugo help`.
 
-`hugo config` – displays the configuration for a Hugo site
-`hugo new` – lets you create new content for your site
-`hugo server` – starts a local development server
-`hugo version` – displays the current Hugo version
+`hugo config`, displays the configuration for a Hugo site
+`hugo new`, lets you create new content for your site
+`hugo server`, starts a local development server
+`hugo version`, displays the current Hugo version
 
 # Hugo Configuration File
 
@@ -69,7 +69,7 @@ Once you've choosen a theme and cloned (or submoduled) it into your `/themes/` d
 
 `hugo server -D`
 
-Hugo will then build your site’s pages and make them available at [`http://localhost:1313/`](http://localhost:1313/).
+Hugo will then build your site's pages and make them available at [`http://localhost:1313/`](http://localhost:1313/).
 
 ![](hugo-server.png)
 

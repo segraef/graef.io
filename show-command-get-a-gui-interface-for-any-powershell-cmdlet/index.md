@@ -1,14 +1,14 @@
 # Show-Command: Get a GUI-Interface for any Powershell Cmdlet
 
 
-Have you ever wondered if there’s an opportunity to easily create a GUI out of every PowerShell Cmdlet?
+Have you ever wondered if there's an opportunity to easily create a GUI out of every PowerShell Cmdlet?
 
 <!--more-->
 
-In many cases this can be very useful for example if your Cmdlet hs too many parameters to list or just to see what’s it offering on Common parameters as well.
+In many cases this can be very useful for example if your Cmdlet hs too many parameters to list or just to see what's it offering on Common parameters as well.
 
 Just use the Show-Command cmdlet with any PowerShell cmdlet to bring up a GUI interface.
-Let’s try this with the Get-Service Cmdlet and see what’s happening!
+Let's try this with the Get-Service Cmdlet and see what's happening!
 
 ```powershell
 Show-Command Get-Service

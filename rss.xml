@@ -4,9 +4,17 @@
         <link>https://graef.io/</link>
         <description>Automate everything - Sebastian Gräf</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>sebastian@graef.io (Sebastian Gräf)</managingEditor>
-            <webMaster>sebastian@graef.io (Sebastian Gräf)</webMaster><lastBuildDate>Tue, 23 Jun 2026 14:00:00 &#43;1000</lastBuildDate>
+            <webMaster>sebastian@graef.io (Sebastian Gräf)</webMaster><lastBuildDate>Wed, 26 Aug 2026 09:00:00 &#43;1000</lastBuildDate>
             <atom:link href="https://graef.io/rss.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>How to detect AI text, and how to humanise it (without lying)</title>
+    <link>https://graef.io/how-to-detect-and-humanise-ai-text/</link>
+    <pubDate>Wed, 26 Aug 2026 09:00:00 &#43;1000</pubDate>
+    <author>Author</author>
+    <guid>https://graef.io/how-to-detect-and-humanise-ai-text/</guid>
+    <description><![CDATA[<p>You wrote the post yourself. Sunday morning, two coffees, no assistant. On Monday a reader pastes it into an AI detector, it lights up red, and now you are in a comment thread defending your own sentences. Or the reverse: you used an LLM for a first draft and it reads like every other LLM draft, smooth, confident, and dead. Both problems have the same root, and neither is solved by the &ldquo;undetectable AI humanizer&rdquo; tools the internet keeps selling you.</p>]]></description>
+</item>
+<item>
     <title>SecKit: A portable security pre-flight kit for repos and AI agents</title>
     <link>https://graef.io/seckit-portable-security-preflight-kit/</link>
     <pubDate>Tue, 23 Jun 2026 14:00:00 &#43;1000</pubDate>
@@ -36,7 +44,7 @@
     <pubDate>Mon, 14 Jul 2025 10:06:59 &#43;1000</pubDate>
     <author>Author</author>
     <guid>https://graef.io/how-github-copilot-coding-agent-makes-my-day/</guid>
-    <description><![CDATA[<p>Ever wished you could delegate your coding tasks and watch them get done while you focus elsewhere? That’s exactly what happened when I assigned an issue to GitHub Copilot coding agent. From identifying the problem to drafting a pull request and running checks, it handled the entire workflow, efficiently and autonomously. Here&rsquo;s how it turned a routine fix into a hands-free solution that saved me hours.</p>]]></description>
+    <description><![CDATA[<p>Ever wished you could delegate your coding tasks and watch them get done while you focus elsewhere? That&rsquo;s exactly what happened when I assigned an issue to GitHub Copilot coding agent. From identifying the problem to drafting a pull request and running checks, it handled the entire workflow, efficiently and autonomously. Here&rsquo;s how it turned a routine fix into a hands-free solution that saved me hours.</p>]]></description>
 </item>
 <item>
     <title>Automating Repository Management in Github and Azure Devops With Powershell</title>
@@ -44,12 +52,12 @@
     <pubDate>Sat, 22 Mar 2025 10:22:10 &#43;1000</pubDate>
     <author>Author</author>
     <guid>https://graef.io/automating-repository-management-in-github-and-azure-devops-with-powershell/</guid>
-    <description><![CDATA[<p>Working in large enterprise environments often means managing a complex landscape of repositories across multiple GitHub organizations and Azure DevOps projects. Keeping these repositories up to date—especially when working with multiple engineering teams—can be a daunting task. That’s where automation comes in.</p>
-<p>To simplify this, I’ve developed a consolidated PowerShell script that combines the functionality of my previous scripts into one:</p>
+    <description><![CDATA[<p>Working in large enterprise environments often means managing a complex landscape of repositories across multiple GitHub organizations and Azure DevOps projects. Keeping these repositories up to date, especially when working with multiple engineering teams, can be a daunting task. That&rsquo;s where automation comes in.</p>
+<p>To simplify this, I&rsquo;ve developed a consolidated PowerShell script that combines the functionality of my previous scripts into one:</p>
 <ul>
 <li><a href="https://github.com/segraef/Scripts/blob/main/PowerShell/Update-Repos.ps1" target="_blank" rel="noopener noreffer">Update-Repos.ps1</a></li>
 </ul>
-<p>This script helps automate the process of cloning and updating repositories, making it significantly easier to manage a large number of repos efficiently.</p>]]></description>
+<p>This script helps automate the process of cloning and updating repositories, making it significantly easier to manage many repos efficiently.</p>]]></description>
 </item>
 <item>
     <title>Mastering DevOps: Your Guide to Learning, Certification, and Community Engagement</title>
@@ -65,7 +73,7 @@
     <pubDate>Wed, 12 Jun 2024 08:13:11 &#43;1000</pubDate>
     <author>Author</author>
     <guid>https://graef.io/understanding-the-differences-between-openai-and-microsoft-azure-openai/</guid>
-    <description><![CDATA[<p>When comparing OpenAI and Microsoft Azure OpenAI, it’s important to recognize their unique strengths and collaborative potential. Both entities leverage cutting-edge AI technology, yet they serve different audiences and purposes, offering distinct features and benefits.</p>]]></description>
+    <description><![CDATA[<p>When comparing OpenAI and Microsoft Azure OpenAI, it&rsquo;s important to recognize their unique strengths and collaborative potential. Both entities leverage cutting-edge AI technology, yet they serve different audiences and purposes, offering distinct features and benefits.</p>]]></description>
 </item>
 <item>
     <title>Create your own official Azure Pipelines Agent Images and GitHub Actions Runner Images</title>
@@ -82,14 +90,6 @@
     <author>Author</author>
     <guid>https://graef.io/building-your-own-gpt-powered-ai-voice-assistant-with-azure-cognitive-services-and-openai/</guid>
     <description><![CDATA[<p>Let&rsquo;s build your own AI voice assistant which is better than Amazon&rsquo;s <strong>Alexa</strong> using Azure Cognitive Services (SST and TTS) and OpenAI. All you need is a bit of basic Python understanding, an Azure account, a microphone and a speaker. This will take about 15 minutes to set up and you&rsquo;ll be done.</p>]]></description>
-</item>
-<item>
-    <title>From Code to Canvas: A Guide for Prompting Stunning AI Art with MidJourney (1/3)</title>
-    <link>https://graef.io/from-code-to-canvas-a-guide-for-prompting-stunning-ai-art-with-midjourney-1/</link>
-    <pubDate>Fri, 03 Feb 2023 14:12:25 &#43;1000</pubDate>
-    <author>Author</author>
-    <guid>https://graef.io/from-code-to-canvas-a-guide-for-prompting-stunning-ai-art-with-midjourney-1/</guid>
-    <description><![CDATA[<p>Unlock your artistic potential and create jaw-dropping AI art with these exclusive cheat codes for Midjourney. These expert hacks will take your art to new heights, no coding skills required!</p>]]></description>
 </item>
 </channel>
 </rss>

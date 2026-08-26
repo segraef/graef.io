@@ -23,7 +23,7 @@ This chapter covers the basic technologies that form the basis of parallel and d
 
 ### Parallel and distributed systems
 
-Until computers evolved into distributed computing systems, there have been fundamental changes in various computing technologies over the past decades, which we will briefly discuss in order to make the basic framework of parallel and distributed systems more understandable.
+Until computers evolved into distributed computing systems, there have been fundamental changes in various computing technologies over the past decades, which we will briefly discuss to make the basic framework of parallel and distributed systems more understandable.
 
 #### Amdahl\'s and Gustafson\'s law
 
@@ -39,7 +39,7 @@ $$Time\ gain\ according\ to\ Amdahl\$$
 $$= \ \frac{original\ duration}{\text{new\ duration}}\$$
 $$= \frac{1}{(1 - P) + \frac{P}{N}}$$
 
-Here N is the number of processors and P the runtime portion of the parallelizable program. Gene Amdahl called the time or also speed gain Speedup. With the help of a massive parallelism the time of the parallelizable portion can be reduced arbitrarily, the sequential portion remains unaffected thereby however. As the number of processors increases, the communication overhead between the processors also increases, so that above a certain number, they tend to be busy communicating rather than processing the problem. This reduces the performance and refers to this as an overhead in the task distribution. A program cannot be completely parallelized, so that all processors are always busy with work at the same time. No matter how many processor units are used and the proportion of applications that cannot be parallelized is, for example, one percent, the speedup can be a maximum of 100. Gene Amdahl thus concluded that it makes no sense to keep increasing the computing units in order to generate unlimited computing
+Here N is the number of processors and P the runtime portion of the parallelizable program. Gene Amdahl called the time or also speed gain Speedup. With the help of a massive parallelism the time of the parallelizable portion can be reduced arbitrarily, the sequential portion remains unaffected thereby however. As the number of processors increases, the communication overhead between the processors also increases, so that above a certain number, they tend to be busy communicating rather than processing the problem. This reduces the performance and refers to this as an overhead in the task distribution. A program cannot be completely parallelized, so that all processors are always busy with work at the same time. No matter how many processor units are used and the proportion of applications that cannot be parallelized is, for example, one percent, the speedup can be a maximum of 100. Gene Amdahl thus concluded that it makes no sense to keep increasing the computing units to generate unlimited computing
 power. [^2]
 
 Amdahl\'s model remains valid until the total number of computing operations remains the same while the number of computing units continues to increase. However, if in our hypothetical simulation the job size increases while the number of computational units continues to increase, then Gustafson\'s law must be invoked. John Gustafson established this law in 1988, which states that as long as the problem being addressed is large enough it can be efficiently parallelized. Unlike Amdahl, Gustafson shows that massive parallelization is nevertheless worthwhile. A parallel system cannot become arbitrarily fast, but it can solve arbitrarily large problems in the same amount of
@@ -53,11 +53,11 @@ Client-server models are the basic techniques for operating distributed systems.
 
 Operating systems (OS) such as Red Hat Enterprise Linux or Windows Server use the above concept and thus provide a client-server system. This is done by establishing the connection to the server on the client side and providing access to services and resources on the server side. Within these operating systems servers are simple programs, which are usually started automatically and run passively in the background. In the Linux environment these programs are called \"daemon\", under Windows Server they are called \"service\". In practice, however, different types of these server services are usually encountered. Examples of this are: [^5]
 
--   **Mail server**: Communication service for electronic mail (e-mail).
--   **Web server**: Transmitting web pages to clients.
--   **File server**: A file server makes files available on a network.
+- **Mail server**: Communication service for electronic mail (e-mail).
+- **Web server**: Transmitting web pages to clients.
+- **File server**: A file server makes files available on a network.
 
-####  Peer-to-peer
+#### Peer-to-peer
 
 Peer-to-peer (P2P) systems are the opposite of client-server systems. In client-server networks, a server is not necessarily a specific computer. Server and client are referred to as roles in this context, since a computer can also act as a server and a client at the same time. In a P2P system, this distribution of roles does not exist; all computers have equal rights. A computer in a network is a peer because it can be a client and a server at the same time. It can both use and provide services. The functionality, the provision of a service, is therefore provided decentrally in a P2P system. [^6]
 
@@ -73,9 +73,9 @@ Grid computing is a distributed computing technique that aims to connect loosely
 
 Grid computing can be divided into the following classifications:
 
--   **Computing Grid**: access to distributed computing resources.
--   **Data Grid**: Access to distributed data volumes and storage capacity.
--   **Service Grid**: Access to distributed applications and services.
+- **Computing Grid**: access to distributed computing resources.
+- **Data Grid**: Access to distributed data volumes and storage capacity.
+- **Service Grid**: Access to distributed applications and services.
 
 A computing grid is comparable to a power grid. For the consumer, everything that happens behind a socket is hidden, but he can conveniently use the power offered, the electricity. A computing grid is similar in comparison, it connects to the computing network and uses the computing power offered. High costs or lack of financial resources pose solving complex problems as a difficulty for scientific and economic institutions. But due to the possibility like, the bundling of resources of different organizations, it is possible to solve computationally intensive problems cost-efficiently. [^10]
 
@@ -89,9 +89,9 @@ The software platform Berkeley Open Infrastructure for Network Computing (BOINC)
 
 Other well-known RPC projects using BOINC are: [^13]
 
--   **SETI** **\@home** (Search for Extra-Terrestrial Intelligence at home): study of radio signal data from the Arecibo Observatory radio telescope in Puerto Rico used as evidence of extraterrestrial technology.
--   **MilkyWay\@home**: research in modeling and determining the evolution of the Milky Way Galaxy.
--   **Einstein\@home**: The project examines data collected by the LIGO and GEO600 gravitational wave detectors for evidence of periodic sources, such as rapidly rotating neutron stars, which are the gravitational equivalent of pulsars (pulsating radio sources).
+- **SETI** **\@home** (Search for Extra-Terrestrial Intelligence at home): study of radio signal data from the Arecibo Observatory radio telescope in Puerto Rico used as evidence of extraterrestrial technology.
+- **MilkyWay\@home**: research in modeling and determining the evolution of the Milky Way Galaxy.
+- **Einstein\@home**: The project examines data collected by the LIGO and GEO600 gravitational wave detectors for evidence of periodic sources, such as rapidly rotating neutron stars, which are the gravitational equivalent of pulsars (pulsating radio sources).
 
 {{< image src="media/image46.jpeg" caption="Source: (Kroeker, 2011, p. 15) <br> **Figure 3**: *Grid-based simulation of gravitational waves generated by the merger of two black holes.*" >}}
 
@@ -122,9 +122,9 @@ Grid computing is seen as the forerunner of cloud computing, although the focus 
 In practice, the following three abstraction or business models have become established for the provision of cloud services: [^20]
 
 - **On-premise**: On-premise means on the customer\'s own premises or locally on site. The customer is responsible for managing its own IT infrastructure, which it usually administers in its own data center and on its own hardware.
--   **PaaS** **- Platform as a Service**: The maintenance and management of hardware, operating systems and runtime environments for computer programs is taken over by the cloud provider. The user focuses only on his applications. A typical example of PaaS is scalable SQL databases (structured query language).
--   **IaaS** **- Infrastructure as a Service**: The entire infrastructure consisting of network, storage, server hardware and virtualization layer (see [Container Management Systems](#container-management-systems)) is provided by the cloud provider. The user assumes responsibility for the upper layers such as the operating system and applications.
--   **SaaS** **- Software as a Service:** In this model, the entire hardware and software infrastructure is offered and managed. The user thus has the option of directly using software services, such as web servers or e-mail, without any effort.
+- **PaaS** **- Platform as a Service**: The maintenance and management of hardware, operating systems and runtime environments for computer programs is taken over by the cloud provider. The user focuses only on his applications. A typical example of PaaS is scalable SQL databases (structured query language).
+- **IaaS** **- Infrastructure as a Service**: The entire infrastructure consisting of network, storage, server hardware and virtualization layer (see [Container Management Systems](#container-management-systems)) is provided by the cloud provider. The user assumes responsibility for the upper layers such as the operating system and applications.
+- **SaaS** **- Software as a Service:** In this model, the entire hardware and software infrastructure is offered and managed. The user thus has the option of directly using software services, such as web servers or e-mail, without any effort.
 
 The figure below shows a breakdown of the business models mentioned. Here, blue denotes the company\'s own share of the administration effort. Neutral stands for the segments which the cloud provider manages and administers.
 
@@ -133,8 +133,8 @@ The figure below shows a breakdown of the business models mentioned. Here, blue 
 As soon as the term cloud is mentioned, it predominantly refers to a specific usage model of cloud computing. The various types of these usage models are defined below: [^21]
 
 - **Private cloud**: The English term \"private\" translates into German as \"privat\" and, in the context of cloud, stands for \"not for the public\". A company uses a private cloud in a secure environment such as its own internal network. This does not necessarily mean that the IT infrastructure used is the property of the company, as it can also be provided by third parties. Private merely clarifies that a company is the sole user of this model. This has the advantage that it retains control in terms of data protection, even if third-party providers such as Amazon or Microsoft manage private cloud environments.
-- **Public cloud**: A public cloud provides access to abstracted IT infrastructures and services for a large number of users. Customers can use services and infrastructures via the Internet. Examples are file hosting services such as Google Drive from Google Inc. or Dropbox from Dropbox Inc.
-- **Hybrid cloud**: A hybrid form of the two variants mentioned above is the hybrid cloud. Users are offered the option of processing business-critical data with a focus on data protection in private cloud environments. Non-sensitive data is made available in the public cloud using cloud services such as IaaS or PaaS on the Internet. Hybrid clouds offer a further advantage in that performance peaks occurring at short notice are compensated for by shifting services from the private to the public cloud. Hybrid clouds enable the gradual merging of public and private cloud services in order to be able to utilize existing infrastructure hardware for as long as possible.
+- **Public cloud**: A public cloud provides access to abstracted IT infrastructures and services for many users. Customers can use services and infrastructures via the Internet. Examples are file hosting services such as Google Drive from Google Inc. or Dropbox from Dropbox Inc.
+- **Hybrid cloud**: A hybrid form of the two variants mentioned above is the hybrid cloud. Users are offered the option of processing business-critical data with a focus on data protection in private cloud environments. Non-sensitive data is made available in the public cloud using cloud services such as IaaS or PaaS on the Internet. Hybrid clouds offer a further advantage in that performance peaks occurring at short notice are compensated for by shifting services from the private to the public cloud. Hybrid clouds enable the gradual merging of public and private cloud services to be able to use existing infrastructure hardware for as long as possible.
 
 **Figure 6** shows an overview of private, public and hybrid cloud environments and illustrates the relationship between a private and public network. For example, a private network is a VPN, while the Internet belongs to the public network segment.
 
@@ -303,16 +303,16 @@ The goal of HPC clusters is to process complex computing tasks or
 simulation applications, in parallel on all cluster nodes. The
 combination of all cluster nodes thus results in immensely high
 computing power. All nodes must consist of homogeneous or similar
-hardware components in order to simplify the administration effort and
+hardware components to simplify the administration effort and
 maintenance and to be able to handle error sources more easily.
 Furthermore, all nodes are connected to each other via a local network
 and usually access a common data storage. As soon as an application
 falls into one of the following categories, increased requirements are
 placed on memory, network and processors:
 
--   computing-intensive applications
--   memory-intensive applications
--   communication-intensive applications
+- computing-intensive applications
+- memory-intensive applications
+- communication-intensive applications
 
 Because of this, these types of clusters must provide high resilience,
 high availability, and high redundancy.
@@ -359,7 +359,7 @@ requests evenly across all servers. [^35]
 Management for intelligent distribution of data streams is handled by
 these various distribution algorithms:
 
--   **Round-Robin algorithm**: All computational requests and loads are
+- **Round-Robin algorithm**: All computational requests and loads are
     distributed evenly to each server, regardless of the current number
     of connections or response times. Round-robin is best suited when
     the servers in the cluster have equal processing capabilities based
@@ -367,7 +367,7 @@ these various distribution algorithms:
     they can handle, while others will consume only a portion of their
     resources.
 
--   **Weighted Round-Robin**: A weighted round-robin algorithm takes
+- **Weighted Round-Robin**: A weighted round-robin algorithm takes
     into account the different processing capabilities of each server.
     Users manually assign a performance weight to each server, and a
     scheduling sequence is automatically generated depending on the
@@ -377,10 +377,10 @@ these various distribution algorithms:
     strengths and maintain a performance equilibrium according to their
     weightings.
 
--   **Least-Connection Algorithm**: Only requests are sent to the server
+- **Least-Connection Algorithm**: Only requests are sent to the server
     in a cluster based on which currently serves the fewest connections.
 
--   **Load-Based Algorithm**: Similar to Least-Connection, only certain
+- **Load-Based Algorithm**: Similar to Least-Connection, only certain
     requests are sent to the cluster; in a load-balanced algorithm, only
     requests are sent to servers that currently have the lowest load.
 
@@ -575,21 +575,21 @@ containers. [^47]
 
 The following services run on the individual worker nodes: [^48]
 
--   **Docker**: providing the container engine.
--   **kubelet**: Agent, which takes over the management of the
+- **Docker**: providing the container engine.
+- **kubelet**: Agent, which takes over the management of the
     containers.
--   **kube-proxy**: Service that handles network management and port
+- **kube-proxy**: Service that handles network management and port
     forwarding to and from containers.
 
 The main nodes take care of the management and controlling of all nodes.
 The following services are divided here: [^49]
 
--   **kube-apiserver**: User interface to the nodes.
--   **etcd**: Storage location of the cluster configurations, the
+- **kube-apiserver**: User interface to the nodes.
+- **etcd**: Storage location of the cluster configurations, the
     so-called key-value store.
--   **kube-scheduler**: The scheduler determines, depending on the
+- **kube-scheduler**: The scheduler determines, depending on the
     available resources, which worker nodes are assigned which pods.
--   **kube-controller-manager**: This manager service takes over the
+- **kube-controller-manager**: This manager service takes over the
     controlling functions and monitors if all nodes are working, which
     pods are assigned to which service and manages port forwarding.
 
@@ -626,7 +626,7 @@ system, since the unit costs for individual nodes are low. [^51]
 General Purpose Input Output (GPIO) is the name for programmable inputs
 and outputs for general purposes. A Raspberry Pi has a total of 40 GPIO
 pins, twelve of which are for power supply and 28 of which serve as an
-interface to other systems in order to communicate with or control them.
+interface to other systems to communicate with or control them.
 GPIO pins 3 and 5 (see **Figure 18**) enable devices such as an LCD display
 to be addressed by means of an Inter-Integrated Circuit (I2C), a serial
 data bus.
@@ -650,10 +650,10 @@ possibilities and considering a modular expandability of the cluster. [^52]
 The main focus in the design of this Raspberry Pi cluster is on the
 following requirement criteria:
 
--   Cost Efficiency.
--   Energy efficiency.
--   Scalability.
--   Resilience.
+- Cost Efficiency.
+- Energy efficiency.
+- Scalability.
+- Resilience.
 
 Further criteria are a visual and easy-to-read status and information
 display of current system values, ideal cooling and optimization of the
@@ -664,7 +664,7 @@ which we will discuss in more detail in the design decisions (see [Design decisi
 #### Cost and energy efficiency
 
 The factors of cost and energy efficiency are paramount and
-predominantly influence the conception and design. In order to keep the
+predominantly influence the conception and design. to keep the
 acquisition costs as low as possible but still be able to offer
 efficient computing power, Raspberry Pi single-board computers in
 version 3 are to be installed. The use of unnecessary cable lengths or
@@ -684,7 +684,7 @@ on a mobile basis.
 
 Scaling is to be considered in this system in two respects. On the one
 hand, the user should be given the option of connecting the entire
-system with other clusters in order to be able to scale cluster-wise at
+system with other clusters to be able to scale cluster-wise at
 this level. Here we also speak of horizontal scaling. On the other hand,
 it should be possible to scale vertically or node by node within a
 cluster by adding or removing individual nodes. This is done either
@@ -733,12 +733,12 @@ correspondingly good removal of this warm air and to avoid heat
 accumulation inside the case, this should be done in several stages and
 can only be ensured with the help of an active case fan:
 
-1.  Absorption of cold outside air at the front and transport to the
+1. Absorption of cold outside air at the front and transport to the
     passive cooling elements inside the housing.
 
-2.  Dissipation of heat from the surface of the components (CPU, IC)
+2. Dissipation of heat from the surface of the components (CPU, IC)
 
-3.  Removal of heated air from the rear of the housing.
+3. Removal of heated air from the rear of the housing.
 
 The design of the case should be adapted accordingly so that the
 supplied air flow can optimally flow into the case, include all
@@ -757,10 +757,10 @@ should the connections of internal components such as power, network or
 control cables. In addition, the following connections should be
 available externally on the housing:
 
--   1x current
--   2x network
--   1x HDMI
--   2x USB
+- 1x current
+- 2x network
+- 1x HDMI
+- 2x USB
 
 #### Modularity
 
@@ -808,7 +808,7 @@ has six faces of equal size.
 
 #### Simplicity: Elastic Clip Concept
 
-In order to allow easy assembly and reassembly, without the use of
+to allow easy assembly and reassembly, without the use of
 additional tools or fastening screws of any kind, the Elastic Clip
 concept by Patrick Fenner was used. This concept allows to create a slim
 and elegant design. For this purpose, we use acrylic glass, which is
@@ -909,24 +909,24 @@ the Gigabit switch, the USB charger and the USB cables. The rest of the
 hardware, such as the LCD display, cables and plastic screws, are in the
 price range of 0.65 to 9.80 EUR.
 
-| **Unit(s)** | **Component**                                       | **Unit price**  |
+| **Unit(s)** | **Component** | **Unit price** |
 | :---------: | :-------------------------------------------------- | :-------------- |
-|      5      | Raspberry Pi 3 Model B                              | 42.70 Euro      |
-|      5      | SanDisk Ultra 8 GB microSDHCUHS -I Class 10         | 6.65 Euro       |
-|      1      | Edimax ES-5800G V2 Gigabit Switch (8-Port)          | 22.99 Euro      |
-|      1      | Anear 60 Watt USB Charger (6-Port)                  | 18.99 Euro      |
-|      5      | Micro USB cable (15 cm)                             | 2.75 Euro       |
-|      5      | Transparent power cord (15 cm)                      | 0.79 Euro       |
-|      2      | RJ45 jack (female-male)                             | 2.74 Euro       |
-|      1      | Dual USB 2.0-A female-male connector                | 4.53 Euro       |
-|      1      | LCD display module 1602 HD44780 with TWI controller | 4.45 Euro       |
-|      1      | AC 250V 2.5A IEC320 C7 socket                       | 1.39 Euro       |
-|      1      | C7 power cable 90 degree angled (1 meter)           | 3.26 Euro       |
-|      1      | Cable jumpers (female-female. 40 wires. 20 cm)      | 0.65 Euro       |
-|     56      | M3 Nylon Hex Spacer Nuts and Bolts White            | 0.05 Euro       |
-|      1      | Antec TRICOOL 92mm 4-pin case fan                   | 9.80 Euro       |
-|      1      | Milling cut of the acrylic sheets                   | 20 Euro         |
-|             | **Total price incl. VAT**                           | **358.79 Euro** |
+| 5 | Raspberry Pi 3 Model B | 42.70 Euro |
+| 5 | SanDisk Ultra 8 GB microSDHCUHS -I Class 10 | 6.65 Euro |
+| 1 | Edimax ES-5800G V2 Gigabit Switch (8-Port) | 22.99 Euro |
+| 1 | Anear 60 Watt USB Charger (6-Port) | 18.99 Euro |
+| 5 | Micro USB cable (15 cm) | 2.75 Euro |
+| 5 | Transparent power cord (15 cm) | 0.79 Euro |
+| 2 | RJ45 jack (female-male) | 2.74 Euro |
+| 1 | Dual USB 2.0-A female-male connector | 4.53 Euro |
+| 1 | LCD display module 1602 HD44780 with TWI controller | 4.45 Euro |
+| 1 | AC 250V 2.5A IEC320 C7 socket | 1.39 Euro |
+| 1 | C7 power cable 90 degree angled (1 meter) | 3.26 Euro |
+| 1 | Cable jumpers (female-female. 40 wires. 20 cm) | 0.65 Euro |
+| 56 | M3 Nylon Hex Spacer Nuts and Bolts White | 0.05 Euro |
+| 1 | Antec TRICOOL 92mm 4-pin case fan | 9.80 Euro |
+| 1 | Milling cut of the acrylic sheets | 20 Euro |
+| | **Total price incl. VAT** | **358.79 Euro** |
 
 **Table** **1**: *Listing of individual and total price of all components.*
 
@@ -954,12 +954,12 @@ LCD display, network ports, HDMI port, and power connector provide the
 proper slots for the cables to be subsequently connected outside of the
 case. The assembly is done according to the steps mentioned below:
 
-1.  Connecting the single board computers together using hex spacers.
-2.  Screw on the attached Raspberry Pis on the left inner side.
-3.  Attachment of the switch to the base plate.
-4.  Attaching the LCD display and USB sockets to the front panel.
-5.  Screwing the USB charger to the right side plate.
-6.  Mounting the case fan, HDMI and network jacks.
+1. Connecting the single board computers together using hex spacers.
+2. Screw on the attached Raspberry Pis on the left inner side.
+3. Attachment of the switch to the base plate.
+4. Attaching the LCD display and USB sockets to the front panel.
+5. Screwing the USB charger to the right side plate.
+6. Mounting the case fan, HDMI and network jacks.
 
 After the entire interior has been assembled, the side panels are
 clipped in step by step. To do this, start with the base plate, onto
@@ -1034,10 +1034,10 @@ configuration. Thus, it is very easy to pass values into a configuration
 which will be initialized and applied when each node is started for the
 first time. Examples for start parameters, which can be preconfigured:
 
--   Hostname
--   WLAN -SSID
--   WLAN password
--   Static or dynamic IPaddress
+- Hostname
+- WLAN -SSID
+- WLAN password
+- Static or dynamic IPaddress
 
 The YAML files for our nodes look like this, with the hostname for the
 respective Raspberry Pi adjusted accordingly:
@@ -1066,7 +1066,7 @@ flash \--config https://github.com/hypriot/image-builder-rpi/releases/download/v
 
 **Listing 3**: *The HypriotOS image is downloaded, copied to the SD card using flash and a given YAML configuration.*
 
-Time is precious and, in order to save it, we prepare the respective
+Time is precious and, to save it, we prepare the respective
 image for each individual Raspberry Pi and thus take advantage of the
 automatic provisioning. Due to the use of a total of 5 cluster nodes,
 the manual installation, configuration and maintenance of each
@@ -1099,7 +1099,7 @@ for the next step, the actual configuration of the cluster, after about
 
 All five nodes are now configured in the same way as described below,
 the order is not decisive here. The connection to the individual
-Raspberry Pis is established via Secure Shell (SSH). In order to
+Raspberry Pis is established via Secure Shell (SSH). to
 establish this secure connection over the network, the terminal program
 putty is used. As soon as the connection is established, a \"sudo
 update\" is performed to update the current package installation lists
@@ -1161,29 +1161,29 @@ image is launched, causing a web server to run with the corresponding
 web page as a pod. Kubernetes\' autoscaler is enabled with the following
 configuration: [^60]
 
--   **KUBE_AUTOSCALER_MIN_NODES = 1**: The minimum number of nodes to be
+- **KUBE_AUTOSCALER_MIN_NODES = 1**: The minimum number of nodes to be
     used is one.
 
--   **KUBE_AUTOSCALER_MAX_NODES = 4**: The maximum number of nodes to be
+- **KUBE_AUTOSCALER_MAX_NODES = 4**: The maximum number of nodes to be
     used is four. The fifth node thus retains the function as master.
 
--   **KUBE_ENABLE_CLUSTER_AUTOSCALER = true**: Activation of the
+- **KUBE_ENABLE_CLUSTER_AUTOSCALER = true**: Activation of the
     autoscaler.
 
 The pod with the web server container is started with the following
 properties:
 
--   **CPU-PERCENT = 50**: This configuration value specifies the value
+- **CPU-PERCENT = 50**: This configuration value specifies the value
     that is maintained to keep all pods at an average CPU load of 50
     percent.
 
--   As soon as a pod requires more than half of its available computing
+- As soon as a pod requires more than half of its available computing
     power, another pod instance is automatically replicated or an exact
     copy of the running pod is created.
 
--   **MIN = 1**: At least one Pod is used for scaling.
+- **MIN = 1**: At least one Pod is used for scaling.
 
--   **MAX = 10**: A maximum of ten replicas of a pod can be used for
+- **MAX = 10**: A maximum of ten replicas of a pod can be used for
     scaling.
 
 After the pod is started and user load is simulated, an increase in CPU
@@ -1210,9 +1210,9 @@ php-apache-3046963998-tmwg1 1/1 Running 0 1m
 php-apache-3046963998-xkbw1 0/1 Pending 0 1m
 ```
 
-**Listing 5**: *Observing CPU utilization increase to 250% while pods are swapped out to provide resources.*
+**Listing 5**: *Observing CPU use increase to 250% while pods are swapped out to provide resources.*
 
-Two minutes after the user load simulation stops, the CPU utilization
+Two minutes after the user load simulation stops, the CPU use
 drops back to zero and the drop from seven to one pod can be seen.
 
 ```
@@ -1229,20 +1229,20 @@ NAME RUNNING STATUS AVAILABLE AGE
 php-apache-3046963998-ddpgp 1/1 Running 0 9m
 ```
 
-**Listing 6**: *Watching CPU utilization drop to zero percent and drop to one pod.*
+**Listing 6**: *Watching CPU use drop to zero percent and drop to one pod.*
 
 As can be seen (see **Listing 1**), it is very easy to dynamically adjust
 the number of pods to the load, by enabling the cluster autoscaler.
 
 Automatic and dynamic scaling can also be very helpful when there are
-irregularities in cluster utilization. For example, development-related
+irregularities in cluster use. For example, development-related
 clusters or continuous computing operations can be run on weekends or at
 night. Compute-intensive applications can be better scheduled so that a
 cluster is optimally utilized. In all cases, the cluster can be used
 optimally. Either reduce the number of unused nodes to save energy or
 scale to the limit to provide enough computing power. Depending on which
 case occurs, a dynamically scaling cluster ensures that at high or low
-utilization, all tasks are solved in the most efficient way.
+use, all tasks are solved in the most efficient way.
 
 ### Fail-safe
 
@@ -1267,20 +1267,20 @@ these pods will be moved to a different node, thus preserving the core
 services of the cluster. Here, one considers potential failure
 scenarios:
 
--   **Loss of the master node**: If not configured for HA, loss of the
+- **Loss of the master node**: If not configured for HA, loss of the
     master node or its services will have a severe impact on the
     application. The cluster will not be able to respond to commands or
     deploy nodes. Each service in the master node is critical and is
     configured appropriately for HA, so a worker node automatically
     steps in as the master.
 
--   **Loss of worker nodes**: Kubernetes is able to automatically detect
+- **Loss of worker nodes**: Kubernetes is able to automatically detect
     and repair pods. Depending on how the services are balanced, there
     may be an impact on the end users of the application. If any pods on
     a node are not responding, kubelet detects this and informs the
     master to use a different pod.
 
--   **Network failure**: The master and worker nodes in a Kubernetes
+- **Network failure**: The master and worker nodes in a Kubernetes
     cluster can become unreachable due to network failures. In some
     cases, they are treated as node failures. In this case, other nodes
     are used accordingly to replace the respective node that is
@@ -1306,14 +1306,14 @@ EUR. This construct is contrasted with a simple Linux cluster for
 comparison. This Linux cluster consists of commercially available PCs
 with comparable core data to that of the Raspberry Pi nodes.
 
-|                         | **Raspberry Pi 3 Model B**  | **Linux PC**                       |
+| | **Raspberry Pi 3 Model B** | **Linux PC** |
 | :---------------------- | :-------------------------- | :--------------------------------- |
-| **CPU**                 | Cortex-A53 1.2 GHz Quadcore | Intel Celeron J1900 2 GHz Quadcore |
-| **RAM**                 | 1024 MB                     | 4 GB RAM                           |
-| **Network**             | 100 Mbps                    | 1000 Mbps                          |
-| **Current Consumption** | max. 4 Watt / h             | max. 10 Watt / h                   |
-| **Price per computer**  | approx. 35 €                | approx. 95 €                       |
-| **Total price**         | approx. 175 €               | approx. 475 €                      |
+| **CPU** | Cortex-A53 1.2 GHz Quadcore | Intel Celeron J1900 2 GHz Quadcore |
+| **RAM** | 1024 MB | 4 GB RAM |
+| **Network** | 100 Mbps | 1000 Mbps |
+| **Current Consumption** | max. 4 Watt / h | max. 10 Watt / h |
+| **Price per computer** | approx. 35 € | approx. 95 € |
+| **Total price** | approx. 175 € | approx. 475 € |
 
 **Table 2**: *Cost comparison of the core components of Raspberry Pi and Linux PC.*
 
@@ -1336,12 +1336,12 @@ that quickly gives an impression of the system performance. For this
 purpose, a CPU benchmark is run on both systems, which calculates all
 prime numbers up to 20000, and the results are shown in **Table 3** and **Figure 31**.
 
-|                             | **Raspberry Pi 3 Model B** | **Linux PC**             |
+| | **Raspberry Pi 3 Model B** | **Linux PC** |
 | :-------------------------- | :------------------------- | :----------------------- |
-| **CPU benchmark**           | Prime number calulation    | Prime number calculation |
-| **Threads (process parts)** | 4                          | 4                        |
-| **Limit**                   | 20000                      | 20000                    |
-| **Calculation time**        | 115.1536 seconds           | 11.2800 seconds          |
+| **CPU benchmark** | Prime number calulation | Prime number calculation |
+| **Threads (process parts)** | 4 | 4 |
+| **Limit** | 20000 | 20000 |
+| **Calculation time** | 115.1536 seconds | 11.2800 seconds |
 
 **Table** **3**: *Comparison times of the prime number calculation up to 20000.*
 
@@ -1364,15 +1364,15 @@ all components and sits at the end of the power chain. Summarizing with
 all installed components, you get a total power consumption of 13.75
 watts in idle and 34 watts at maximum load (see **Table 4**).
 
-|                                                     | **Power consumption** |                |
+| | **Power consumption** | |
 | :-------------------------------------------------- | :-------------------- | :------------- |
-| **Component**                                       | **Idle**              | **maximum**    |
-| Raspberry Pi 3 Model B                              | 2 Watt                | 4 Watt         |
-| Edimax ES-5800G V2 Gigabit Switch (8-Port)          | 2.4 watt              | 2.4 watt       |
-| LCD display module 1602 HD44780 with TWI controller | 0.1 watt              | 0.1 watt       |
-| Antec TRICOOL 92mm 4-pin case fan                   | 1.25 watt             | 1.25 watt      |
-| Anear 60 Watt USB Charger (6-Port)                  | \-                    | \-             |
-| **Total power consumption**                         | **13,75 Watt**        | **23,75 Watt** |
+| **Component** | **Idle** | **maximum** |
+| Raspberry Pi 3 Model B | 2 Watt | 4 Watt |
+| Edimax ES-5800G V2 Gigabit Switch (8-Port) | 2.4 watt | 2.4 watt |
+| LCD display module 1602 HD44780 with TWI controller | 0.1 watt | 0.1 watt |
+| Antec TRICOOL 92mm 4-pin case fan | 1.25 watt | 1.25 watt |
+| Anear 60 Watt USB Charger (6-Port) | \- | \- |
+| **Total power consumption** | **13,75 Watt** | **23,75 Watt** |
 
 **Table** **4**: *Total power consumption of the PiCube in idle mode and maximum CPU load of 100%.*
 
@@ -1394,14 +1394,14 @@ In the following, we look at three temperature curves in the case. The
 CPU clock frequency is 1.2 GHz and the CPU voltage is 1.325 volts over a
 period of 5 minutes:
 
--   **Temp1**: In case, without heatsink on SoC, without active cooling.
--   **Temp2**: In case, with heatsink on SoC, without active cooling.
--   **Temp3**: In case, with heatsink on SoC, with active cooling.
+- **Temp1**: In case, without heatsink on SoC, without active cooling.
+- **Temp2**: In case, with heatsink on SoC, without active cooling.
+- **Temp3**: In case, with heatsink on SoC, with active cooling.
 
-| **CPU utilization (%) | Temp1 (°C) | Temp2 (°C) | Temp3 (°C) |
+| **CPU use (%) | Temp1 (°C) | Temp2 (°C) | Temp3 (°C) |
 | :-------------------- | :--------- | :--------- | :--------- |
-| 0                     | 39         | 39         | 44         |
-| 100                   | 77         | 77         | 82         |
+| 0 | 39 | 39 | 44 |
+| 100 | 77 | 77 | 82 |
 
 **Table** **5**: *Measured values of heat generation without active cooling.*
 
@@ -1409,9 +1409,9 @@ Next, we look at three temperature profiles of a Raspberry Pi processor.
 The CPU clock frequency is 1.2 GHz and the CPU voltage is 1.325 volts
 over a period of 10 minutes:
 
--   **Temp1**: CPU, without heat sink on SoC, without active cooling.
--   **Temp2**: CPU, with heat sink on SoC, without active cooling.
--   **Temp3**: CPU, with heat sink on SoC, with active cooling.
+- **Temp1**: CPU, without heat sink on SoC, without active cooling.
+- **Temp2**: CPU, with heat sink on SoC, without active cooling.
+- **Temp3**: CPU, with heat sink on SoC, with active cooling.
 
 <br>
 {{< figure src="media/image345.png" >}}
@@ -1421,10 +1421,10 @@ over a period of 10 minutes:
 {{< figure src="media/image3630.png" >}}
 
 
-| **CPU utilization (%) | Temp1 (°C) | Temp2 (°C) | Temp3 (°C) |
+| **CPU use (%) | Temp1 (°C) | Temp2 (°C) | Temp3 (°C) |
 | :-------------------- | :--------- | :--------- | :--------- |
-| 0                     | 44         | 32,2       | 27,8       |
-| 100                   | 83,3       | 83,3       | 69,8       |
+| 0 | 44 | 32,2 | 27,8 |
+| 100 | 83,3 | 83,3 | 69,8 |
 
 **Table** **6**: *Measured values*
 
@@ -1461,7 +1461,7 @@ of this. [^62]
 In the following, container virtualization is exploited and pre-built
 BOINC client images of Docker are used. These images are prefabricated
 containers, which are started as scalable pods on the PiCube and scale
-automatically in order to utilize the entire computing power of the
+automatically to use the entire computing power of the
 cluster. To do this, you register with the SETI\@home project and create
 an account. Using this account data, you generate a container
 application called k8s-boinc-demo and start it on the cluster with a
@@ -1472,8 +1472,8 @@ workload across worker nodes rpi2 to rpi5 after launch. [^63]
 {{< image src="media/image3712.png" caption="Source: Own representation. <br> **Figure 32**: *Overview of the utilization, status and distribution of the pods on the nodes rpi2 to rpi5.*" >}}
 
 Within the SETI\@home account, we define how the individual clients or
-pods are utilized. The CPU utilization is left at the default value of
-100% and after about 5 minutes you can see how the CPU utilization of
+pods are utilized. The CPU use is left at the default value of
+100% and after about 5 minutes you can see how the CPU use of
 all cluster nodes increases to 100% and remains constant at this value
 (see **Figure 33**). The cluster now computes data of the SETI\@home project.
 
